@@ -1,0 +1,44 @@
+# uc
+if $user_text='dialog':
+	$args['t']='<table width=100% border=1>'
+	:for
+	if args['i']<arrsize('$id_replic'):
+		$args['t']+="<tr>"
+			$args['t']+="<td>"+str(args['i'])+"</td>"
+			$args['t']+="<td>"+$replace($replace($id_replic[args['i']],'<','&lt;'),'>','&gt;')+"</td>"
+			$args['t']+="<td>"+$replace($replace($source_replic[args['i']],'<','&lt;'),'>','&gt;')+"</td>"
+			$args['t']+="<td>"+$replace($replace($sets_replic[args['i']],'<','&lt;'),'>','&gt;')+"</td>"
+			$args['t']+="<td>"+$replace($replace($position_replic[args['i']],'<','&lt;'),'>','&gt;')+"</td>"
+			$args['t']+="<td>"+$replace($replace(kolvo_replic[args['i']],'<','&lt;'),'>','&gt;')+"</td>"
+		$args['t']+="</tr>"
+		args['i']+=1
+		jump 'for'
+	end
+	$args['t']+="</table>"
+	*pl $args['t']
+end
+if $user_text='log': $func('#array.prnt#','$log')
+if $user_text='666': usehtml=1-usehtml
+if $user_text='777': *clr
+if instr($user_text,'>>> '): dynamic $replace($user_text,'>>> ')
+if $user_text='555':
+	args['sec1']=msecscount
+	:for_i
+	if args['i']<10000:
+		gosub 'dialog.get.daughter',$id_replic[30],'','$rbTEMP_ID'
+		killvar '$rbTEMP_ID'
+		args['i']+=1
+		jump 'for_i'
+	end
+	args['sec2']=msecscount
+	time[]=args['sec2']-args['sec1']
+	args['i']=0
+	:for_time
+	if args['i']<arrsize('time'):
+		args['time']+=time[args['i']]
+		args['i']+=1
+		jump 'for_time'
+	end
+	pl "<<time[]>>|<<args['time']/arrsize('time')>>"
+end
+--- uc ---------------------------------
