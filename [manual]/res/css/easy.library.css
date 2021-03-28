@@ -1,0 +1,195 @@
+/* ---------------------- easy.libraries -------------------------- */
+.em_AROUND {
+ box-sizing:border-box;
+ color:#000000;
+ background: #fff694;
+ padding:0.75em;
+ width:100%;
+ border: 2px solid #666;
+ border-radius: 5px;
+ font-family: Arial, serif;
+}
+.em_AROUND h1 {
+ padding:0.25em 0;
+ text-align: center;
+ color:#000000;
+ transition: background 1s ease;
+ border-radius: 3px;
+}
+.em_AROUND h1:hover {background-color:#ffffff56;}
+.em_AROUND h2 {color:#000088}
+.em_AROUND h3 {color:#008800}
+.em_AROUND h4 {color:#008888;}
+
+.em_Warning {
+ text-align: justify;
+ color: #ff0000;
+ margin-bottom: 0.5em;
+}
+.em_Epigraph{
+ width:100%;
+ text-align:right;
+ font-size:0.75em;
+}
+.em_Epigraph div {
+ display:inline-block;
+ width:100%;
+ max-width:500px;
+ text-align:justify;
+ text-indent:1.5em;
+}
+ul.em_TT {
+ padding:0;
+ margin-left:1.5em;
+ list-style:none;
+ color:#000000;
+ font-family:monospace;
+}
+.em_subText p {
+ font-size:0.75em;
+ text-align:right;
+}
+.em_PAGE > p {
+ margin:0.5em 0;
+ text-indent:1.50em;
+ color:#000000;
+ text-align:justify;
+}
+ol.em_LI {
+ margin-left:1.5em;
+ margin-right:1.5em;
+ text-align:justify;
+}
+p.em_CODE, div.em_CODE {
+ padding:0.5em 1.0em;
+ color:#000000;
+ font-family:monospace;
+ font-weight: bolder;
+ border:1px solid #00000099;
+ overflow:auto;
+ text-indent: 0;
+}
+.em_PAGE p a, .em_PAGE div a {
+ color:#0000ff;
+}
+.em_PAGE p a:hover, .em_PAGE div a:hover {
+ text-decoration:none;
+}
+a.emHREFTT {
+ text-decoration:none;
+ font-family:monospace;
+ color:#005500;
+ transition: background 1s ease;
+}
+a.emHREFHH {text-decoration:none; color:#884400;}
+a.emHREFTT:hover {background-color:#ffffff9f;}
+.emFUNC, .emOPRT, .emFOLD, .emTEXT, .emVAR, .emNUM, .emARR, .emCOMM, .em_MARKER {font-weight:bold;font-family:monospace;}
+.emFUNC {color:#ff8800;} /*цвет выделения функций*/
+.emOPRT {color:#008899;} /*цвет выделения операторов*/
+.emFOLD {color:#000000;background:#F6F6BC;} /*цвет выделения папок*/
+.emTEXT {color:#008800;} /*цвет выделения текстовых значений*/
+.emVAR {color:#aa0000;}
+.emNUM {color:#880088;font-size:1.2em;}
+.emARR {color:#444400;}
+.emCOMM {color:#888888;}
+.em_MARKER {color:#999900;}
+
+.em_VIOL, .em_BLU, .em_DBLU, .em_RED, .em_BLCK {font-family: monospace;}
+.em_VIOL {color:#880088;}
+.em_BLU {color:#008888;}
+.em_DBLU {color:#000088;}
+.em_RED {color:#ff0000;}
+.em_BLCK {color:#000000;}
+
+.emTEXT > .emTEXT {
+ color:#004400;
+}
+.emVAR > .emNUM {
+ color:#000000;
+ font-size:1.0em;
+ }
+.emOPRT > .emOPRT {
+ color:#004444;
+}
+.emVAR > .emVAR {
+ color:#660000;
+}
+.emCOMM > .emCOMM {
+ color:#ff0000;
+}
+table.emTEXT{
+ border:0;
+ padding:0;
+ border-spacing:0;
+}
+table.em_plusBRD{
+ border:1px solid #00000078;
+ border-spacing:0.2em;
+ background-color:#f6f6bc;
+ font-family:monospace;
+ color:#000000;
+}
+table.em_plusBRD td{
+ border:1px solid #00000078;
+ padding:0.3em;
+ background-color:#fff694;
+ vertical-align: top;
+}
+
+/* история версий */
+ul.em_Version > li {
+ margin:0.5em 0;
+ text-align: justify;
+}
+p.em_PF{
+ white-space: pre;
+ overflow:auto;
+ padding:0.75em;
+ border:1px solid #88880099;
+ text-indent: 0;
+}
+td > p.em_PF {border:0;}
+.em_STEP {
+ margin:0 0 0 1.5em;
+ padding:0;
+ text-align: justify;
+}
+a.em_PRIM {
+ text-decoration:none;
+ font-size:0.55em;
+ vertical-align:top;
+}
+a.em_PRIM:hover {
+ background-color:#ffffff;
+}
+p.em_SCREEN, div.em_SCREEN {
+ border:1px solid #88888899;
+ padding:0.5em 1.25em;
+ box-shadow:0 0 0.25em;
+ margin:1.0em 2.0em;
+ text-indent:0;
+}
+p.em_ACTBTN {
+ border:1px solid #88880088;
+ border-radius:2px;
+ background-color: #ffffff88;
+ padding:0.5em;
+ box-shadow:0.15em 0.15em 0.25em #888888;
+ text-indent: 0;
+ display:inline-block;
+}
+ol.em_ROME {
+ list-style-type: upper-roman;
+}
+ol.em_ROME li ol, ol.em_ROME li ul {
+ margin:0;
+ padding:0 1.5em;
+}
+p.em_TERMIN {
+ text-indent: -1.5em;
+ margin-left:2.5em;
+}
+p.em_TERMIN > span:first-child {
+ color:#440088;
+}
+/* ---------------------- easy.libraries -------------------------- */
