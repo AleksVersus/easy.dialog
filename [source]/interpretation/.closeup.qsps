@@ -1,0 +1,13 @@
+# dialog.closeup
+! закрывает диалог и восстанавливает описание локации и действия
+*clr
+*pl $DIALOG_VALUE['screen.main']
+cla
+dynamic $DIALOG_VALUE['screen.acts']
+clr
+pl $DIALOG_VALUE['screen.stat']
+usehtml=DIALOG_VALUE['screen.html']
+! -------- массив, в котором  хранятся текущие настройки диалога
+killvar '$DIALOG_VALUE'
+gosub 'dialog.killtemp'
+--- dialog.closeup ---------------------------------

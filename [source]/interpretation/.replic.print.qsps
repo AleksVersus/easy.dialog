@@ -1,0 +1,181 @@
+# dialog.replic.print
+! Выводим реплику на экран
+$args[0] = $args[0]	&	!	идентификатор реплики
+args['rpit']=arrpos('$id_replic',$args[0])
+$args['type:source']=$func('get.tag.num',$source_replic[args['rpit']],'type-replic')
+$args['block']=$func('#widetrim#',$func('get.tag.cont',$source_replic[args['rpit']],'frase-block'),'[TRIM]')
+if $args['type:source']='quest' or $args['block']<>'':
+	! $sets_replic[args['rpit']]
+	$args['npc.sets']=$func('get.tag.num',$sets_replic[args['rpit']],'npc')
+	$args['npc.name']=$func('get.tag.cont',$args['npc.sets'],'name')
+	$args['npc.name.font']=$func('get.tag.num',$args['npc.sets'],'ncolor')
+	$args['npc.name.attrib']=$func('get.tag.num',$args['npc.sets'],'nattrib')
+	$args['npc.frase.font']=$func('get.tag.num',$args['npc.sets'],'fcolor')
+	$args['npc.frase.attrib']=$func('get.tag.num',$args['npc.sets'],'fattrib')
+	$args['npc.tire']=$func('get.tag.num',$args['npc.sets'],'tire')
+	if $args['npc.name']<>'':
+		if $args['npc.name.font']<>'':
+			$args['npc.name.font.open']='<font color=#'+$args['npc.name.font']+'>'
+			$args['npc.name.font.close']='</font>'
+		else
+			$args['npc.name.font.open']='<font color=#ff0000><a href="exec:gosub ''inputText'',''logs''">#</a></font>'
+		end
+		if instr($args['npc.name.attrib'],'-i')<>0:
+			$args['npc.name.attrib.italic.open']='<i>'
+			$args['npc.name.attrib.italic.close']='</i>'
+		end
+		if instr($args['npc.name.attrib'],'-b')<>0:
+			$args['npc.name.attrib.bold.open']='<b>'
+			$args['npc.name.attrib.bold.close']='</b>'
+		end
+		$args['npc.name']=$args['npc.name.font.open']+$args['npc.name.attrib.italic.open']+$args['npc.name.attrib.bold.open']+$args['npc.name']+':'+$args['npc.name.attrib.bold.close']+$args['npc.name.attrib.italic.close']+$args['npc.name.font.close']
+	end
+	! ----------------------------------------------------------- фразы ---------------------------------------------------
+		if $args['npc.frase.font']<>'':
+			$args['npc.frase.font.open']='<font color=#'+$args['npc.frase.font']+'>'
+			$args['npc.frase.font.close']='</font>'
+		else
+			$args['npc.frase.font.open']='<font color=#ff0000><a href="exec:gosub ''inputText'',''logs''">#</a></font>'
+		end
+		if instr($args['npc.frase.attrib'],'-i')<>0:
+			$args['npc.frase.attrib.italic.open']='<i>'
+			$args['npc.frase.attrib.italic.close']='</i>'
+		end
+		if instr($args['npc.frase.attrib'],'-b')<>0:
+			$args['npc.frase.attrib.bold.open']='<b>'
+			$args['npc.frase.attrib.bold.close']='</b>'
+		end
+		if $args['block']='':
+			$args['npc.repl']=$func('dialog.replic.get',$args[0])
+			$args['npc.frase']=$args['npc.frase.font.open']+$args['npc.frase.attrib.italic.open']+$args['npc.frase.attrib.bold.open']
+			$args['npc.frase']+=$args['npc.repl']
+			$args['npc.frase']+=$args['npc.frase.attrib.bold.close']+$args['npc.frase.attrib.italic.close']+$args['npc.frase.font.close']
+		end
+	! ----------------------------------------------------------- фразы ---------------------------------------------------
+	
+	! ------------------------------------------------------ тире ---------------------------------------------------------
+		if $args['npc.tire']='nope':
+			$args['npc.tire']=''
+		elseif $args['npc.tire']<>'':
+			$args['npc.tire']=$args['npc.tire']
+		else
+			$args['npc.tire']='<font color=#ff0000><a href="exec:gosub ''inputText'',''logs''">#</a></font>'
+		end
+		if $args['npc.tire']<>'':
+			$args['npc.tire']=$args['npc.frase.font.open']+$args['npc.frase.attrib.italic.open']+$args['npc.frase.attrib.bold.open']+$args['npc.tire']
+			$args['npc.tire']+=$args['npc.frase.attrib.bold.close']+$args['npc.frase.attrib.italic.close']+$args['npc.frase.font.close']
+		end
+	! ------------------------------------------------------ тире ---------------------------------------------------------
+	
+	if $args['npc.repl']<>'' and $DIALOG_VALUE['answer.view']<>'answer.href':
+		*pl $args['npc.name']+$args['npc.tire']+$args['npc.frase']
+	elseif  $args['npc.repl']<>'' and $DIALOG_VALUE['answer.view']='answer.href':
+		gosub 'dialog.replic.addDIV',$args['npc.name']+$args['npc.tire']+$args['npc.frase']
+	end
+end
+if $args['type:source']='answer' or $args['block']<>'':
+	! $sets_replic[args['rpit']]
+	$args['hero.sets']=$func('get.tag.num',$sets_replic[args['rpit']],'hero')
+	$args['hero.name']=$func('get.tag.cont',$args['hero.sets'],'name')
+	$args['hero.name.font']=$func('get.tag.num',$args['hero.sets'],'ncolor')
+	$args['hero.name.attrib']=$func('get.tag.num',$args['hero.sets'],'nattrib')
+	$args['hero.frase.font']=$func('get.tag.num',$args['hero.sets'],'fcolor')
+	$args['hero.frase.attrib']=$func('get.tag.num',$args['hero.sets'],'fattrib')
+	$args['hero.tire']=$func('get.tag.num',$args['hero.sets'],'tire')
+	if $args['hero.name']<>'':
+		if $args['hero.name.font']<>'':
+			$args['hero.name.font.open']='<font color=#'+$args['hero.name.font']+'>'
+			$args['hero.name.font.close']='</font>'
+		else
+			$args['hero.name.font.open']='<font color=#ff0000><a href="exec:gosub ''inputText'',''logs''">#</a></font>'
+		end
+		if instr($args['hero.name.attrib'],'-i')<>0:
+			$args['hero.name.attrib.italic.open']='<i>'
+			$args['hero.name.attrib.italic.close']='</i>'
+		end
+		if instr($args['hero.name.attrib'],'-b')<>0:
+			$args['hero.name.attrib.bold.open']='<b>'
+			$args['hero.name.attrib.bold.close']='</b>'
+		end
+		$args['hero.name']=$args['hero.name.font.open']+$args['hero.name.attrib.italic.open']+$args['hero.name.attrib.bold.open']+$args['hero.name']+':'+$args['hero.name.attrib.bold.close']+$args['hero.name.attrib.italic.close']+$args['hero.name.font.close']
+	end
+	
+	! ----------------------------------------------------------- фразы ---------------------------------------------------
+		if $args['hero.frase.font']<>'':
+			$args['hero.frase.font.open']='<font color=#'+$args['hero.frase.font']+'>'
+			$args['hero.frase.font.close']='</font>'
+		else
+			$args['hero.frase.font.open']='<font color=#ff0000><a href="exec:gosub ''inputText'',''logs''">#</a></font>'
+		end
+		if instr($args['hero.frase.attrib'],'-i')<>0:
+			$args['hero.frase.attrib.italic.open']='<i>'
+			$args['hero.frase.attrib.italic.close']='</i>'
+		end
+		if instr($args['hero.frase.attrib'],'-b')<>0:
+			$args['hero.frase.attrib.bold.open']='<b>'
+			$args['hero.frase.attrib.bold.close']='</b>'
+		end
+		if $args['block']='':
+			$args['hero.repl']=$func('dialog.replic.get',$args[0])
+			$args['hero.frase']=$args['hero.frase.font.open']+$args['hero.frase.attrib.italic.open']+$args['hero.frase.attrib.bold.open']
+			$args['hero.frase']+=$args['hero.repl']
+			$args['hero.frase']+=$args['hero.frase.attrib.bold.close']+$args['hero.frase.attrib.italic.close']+$args['hero.frase.font.close']
+		end
+	! ----------------------------------------------------------- фразы ---------------------------------------------------
+	if $args['hero.tire']='nope':
+		$args['hero.tire']=''
+	elseif $args['hero.tire']<>'':
+		$args['hero.tire']=$args['hero.tire']
+	else
+		$args['hero.name.attrib.bold.open']='<font color=#ff0000><a href="exec:gosub ''inputText'',''logs''">#</a></font>'
+	end
+	if $args['hero.tire']<>'':
+		$args['hero.tire']=$args['hero.frase.font.open']+$args['hero.frase.attrib.italic.open']+$args['hero.frase.attrib.bold.open']+$args['hero.tire']
+		$args['hero.tire']+=$args['hero.frase.attrib.bold.close']+$args['hero.frase.attrib.italic.close']+$args['hero.frase.font.close']
+	end
+	
+	if $args['hero.repl']<>'' and $DIALOG_VALUE['answer.view']<>'answer.href':
+		*pl $args['hero.name']+$args['hero.tire']+$args['hero.frase']
+	elseif  $args['hero.repl']<>'' and $DIALOG_VALUE['answer.view']='answer.href':
+		gosub 'dialog.replic.addDIV',$args['hero.name']+$args['hero.tire']+$args['hero.frase']
+	end
+end
+if $position_replic[args['rpit']]='':
+	!	Заголовок диалога
+	$args['dialog.head']=$func('dialog.replic.get',$args[0])
+	if $args['dialog.head']<>'' and $DIALOG_VALUE['answer.view']<>'answer.href':
+		*pl $args['dialog.head']
+	elseif  $args['dialog.head']<>'' and $DIALOG_VALUE['answer.view']='answer.href':
+		! if head=fixed -- фиксированный заголовок, всегда вверху диалога
+		gosub 'dialog.replic.addDIV',$args['dialog.head']
+	end
+end
+if  $args['block']<>'':
+	gosub '#str.inArray#',$args['block'],'$easy_dialog_temp_var2'
+	:block-frase
+	if arrsize('$easy_dialog_temp_var2')>0:
+		if instr($easy_dialog_temp_var2[0],'<npc-name>')<>0:
+			$args['frase']=$args['npc.name']+$args['npc.tire']
+			$args['frase']+=$args['npc.frase.font.open']+$args['npc.frase.attrib.italic.open']+$args['npc.frase.attrib.bold.open']
+			$args['frase']+=$replace($easy_dialog_temp_var2[0],'<npc-name>')
+			$args['frase']+=$args['npc.frase.attrib.bold.close']+$args['npc.frase.attrib.italic.close']+$args['npc.frase.font.close']
+		elseif instr($easy_dialog_temp_var2[0],'<hero-name>')<>0:
+			$args['frase']=$args['hero.name']+$args['hero.tire']
+			$args['frase']+=$args['hero.frase.font.open']+$args['hero.frase.attrib.italic.open']+$args['hero.frase.attrib.bold.open']
+			$args['frase']+=$replace($easy_dialog_temp_var2[0],'<hero-name>')
+			$args['frase']+=$args['hero.frase.attrib.bold.close']+$args['hero.frase.attrib.italic.close']+$args['hero.frase.font.close']
+		elseif $easy_dialog_temp_var2[0]<>'':
+			$args['frase']=$easy_dialog_temp_var2[0]
+		end
+		if $DIALOG_VALUE['answer.view']<>'answer.href':
+			*pl $args['frase']
+		else
+			gosub 'dialog.replic.addDIV',$args['frase']
+		end
+		wait 500
+		killvar '$easy_dialog_temp_var2',0
+		jump 'block-frase'
+	end
+	killvar '$easy_dialog_temp_var2'
+end
+--- dialog.replic.print ---------------------------------

@@ -1,0 +1,12 @@
+{
+	"project":
+	[
+		{
+			"build":"D:\\my\\GameDev\\QuestSoftPlayer\\games\\+releases+\\+lib+\\easy.dialog.2.qsp",
+			"folders":[{"path":"."}]
+		}
+	],
+	"converter":"D:\\my\\GameDev\\QuestSoftPlayer\\QSP 570 QG 400b\\txt2gam.exe",
+	"player":"D:\\my\\GameDev\\QuestSoftPlayer\\QSP 570 QG 400b\\qspgui.exe",
+	"save_txt2gam":"False"
+}

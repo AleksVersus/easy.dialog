@@ -1,0 +1,28 @@
+# !easy.dialog!
+if $args[0]="":
+usehtml=1
+"<font size=7><font face=Arial>easy.dialog v 2.0.0</font> для QSP 5.7.0</font>"
+"
+По всем вопросам и предложениям обращаться:
+
+*	e-mail: aleksversus@mail.ru
+*	tg: aleks_versus
+*	http: aleksversus.narod.ru
+*	https://vk.com/id40090736
+
+Обучающие видео по программированию на QSP:
+
+*	https://www.youtube.com/channel/UCwX8RW2B9yTUFdlivtCGAgA
+
+Переменные:
+
+$id_replic[] — уникальный идентификатор реплики
+$source_replic[] — исходник реплики
+$sets_replic[] — настройки текущей реплики
+kolvo_replic[] — подсчёт числа вызовов текущей реплики
+$position_replic[] — расположение реплики в дереве других реплик
+"
+elseif $args[0]='version':
+	result=2000
+end
+--- !easy.dialog! ---------------------------------

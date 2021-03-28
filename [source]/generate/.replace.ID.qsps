@@ -1,0 +1,32 @@
+# dialog.replace.ID
+$args[0]=$args[0]	&	!	уникальный ай-ди корневой реплики
+args['i']=0
+:for
+if args['i']<arrsize('$easy_dialog_base_ID'):
+	! запоминаем старый
+	$args['old.ID']=$easy_dialog_base_ID[args['i']]
+	if $easy_dialog_base_ID[args['i']]='' and $easy_dialog_base_PS[args['i']]='' and $easy_dialog_base_SC[args['i']]='' and $easy_dialog_base_ST[args['i']]='':
+		killvar '$easy_dialog_base_ID',args['i']
+		killvar '$easy_dialog_base_PS',args['i']
+		killvar '$easy_dialog_base_SC',args['i']
+		killvar '$easy_dialog_base_ST',args['i']
+		killvar 'easy_dialog_base_KOL',args['i']
+		jump 'for'
+	end
+	if $args['old.ID']<>$args[0]:
+		! генерируем уникальный идентификатор реплики
+		$args['new.ID']=$args[0]+'.'+$func('#rndstr#',8,'буквы и цифры')
+		! записываем новый вместо старого
+		$easy_dialog_base_ID[args['i']]=$args['new.ID']
+		! ищем старый в easy_dialog_base_PS
+		:pos_old
+		args['pos']=arrpos('$easy_dialog_base_PS',$args['old.ID'])
+		if args['pos']<>-1:
+			$easy_dialog_base_PS[args['pos']]=$args['new.ID']
+			jump 'pos_old'
+		end
+	end
+	args['i']+=1
+	jump 'for'
+end
+--- dialog.replace.ID ---------------------------------

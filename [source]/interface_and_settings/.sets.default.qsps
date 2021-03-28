@@ -1,0 +1,131 @@
+# dialog.sets.default
+! данная функция возвращает дефолтную настройку
+$args[0]=$args[0]											&	!	Какую настройку хотим получить
+args['pit']=arrpos('$id_replic',$DIALOG_VALUE['roof.id'])	&	!	опираясь на айди корневой реплики получаем её позицию в базе!
+! 
+$args['source']=$sets_replic[args['pit']]									&	! все настройки	
+$args['npc']=$TRIM($func('get.tag.num',$args['source'],'npc'))				&	! настройки отображения персонажа
+$args['hero']=$TRIM($func('get.tag.num',$args['source'],'hero'))			&	! настройки отображения героя
+$args['replics']=$TRIM($func('get.tag.num',$args['source'],'replics'))		&	!	настройки последовательности реплик
+! ------------------- настройки отображения фраз NPC ----------------------------------
+	! Имя неписи. Если не указано, не будет отображаться:
+	if $args[0]='npc.name':
+		$args['result']=$func('get.tag.cont',$args['npc'],'name')
+		if $args['result']='': $args['result']=''
+	end
+	! Цвет имени. Если не указан, по-умолчанию, чёрный.
+	if $args[0]='npc.name.color':
+		$args['result']=$func('get.tag.num',$args['npc'],'ncolor\h')
+		if $args['result']='':
+			$args['result']='000000'
+		end
+	end
+	! Настройки имени (аттрибуты) жирный курсив нормальный. По-умолчанию жирный не курсив
+	if $args[0]='npc.name.attrib':
+		$args['new.attrib']=$func('get.tag.num',$args['npc'],'nattrib')
+		$args['result']=$func('dialog.sets.attrib','',$args['new.attrib'],'-b')
+	end
+	! Цвет фразы. Если не указан, по-умолчанию, чёрный.
+	if $args[0]='npc.frase.color':
+		$args['result']=$func('get.tag.num',$args['npc'],'fcolor\h')
+		if $args['result']='':
+			$args['result']='000000'
+		end
+	end
+	! Настройки фразы (аттрибуты) жирный курсив нормальный. По-умолчанию нормальный
+	if $args[0]='npc.frase.attrib':
+		$args['new.attrib']=$func('get.tag.num',$args['npc'],'fattrib')
+		$args['result']=$func('dialog.sets.attrib','',$args['new.attrib'],'-n')
+	end
+	! Тире. Можно указать один знак или группу знаков, которые будут выводится непосредственно перед фразой.
+	! Если не указывать ничего, будет выводиться тире, обрамлённое пробелами.
+	! Чтобы перед фразой ничего не выводилось, указывается nope.
+	if $args[0]='npc.tire':
+		$args['result']=$func('get.tag.num',$args['npc'],'tire')
+		if $args['result']='':
+			$args['result']=' — '
+		elseif $args['result']='nope':
+			$args['result']=''
+		end
+	end
+! ------------------- настройки отображения фраз NPC ----------------------------------
+
+! ------------------- настройки отображения фраз hero ----------------------------------
+	! Имя героя. Если не указано, не будет отображаться:
+	if $args[0]='hero.name':
+		$args['result']=$func('get.tag.cont',$args['hero'],'name')
+	end
+	! Цвет имени. Если не указан, по-умолчанию, серый.
+	if $args[0]='hero.name.color':
+		$args['result']=$func('get.tag.num',$args['hero'],'ncolor\h')
+		if $args['result']='':
+			$args['result']='888888'
+		end
+	end
+	! Настройки имени (аттрибуты) жирный курсив нормальный. По-умолчанию жирный курсив
+	if $args[0]='name.attrib':
+		$args['new.attrib']=$func('get.tag.num',$args['hero'],'nattrib')
+		$args['result']=$func('dialog.sets.attrib','',$args['new.attrib'],'-b-i')
+	end
+	! Цвет фразы. Если не указан, по-умолчанию, серый.
+	if $args[0]='hero.frase.color':
+		$args['result']=$func('get.tag.num',$args['hero'],'fcolor\h')
+		if $args['result']='':
+			$args['result']='888888'
+		end
+	end
+	! Настройки фразы (аттрибуты) жирный курсив нормальный. По-умолчанию курсив
+	if $args[0]='frase.attrib':
+		$args['new.attrib']=$func('get.tag.num',$args['hero'],'fattrib')
+		$args['result']=$func('dialog.sets.attrib','',$args['new.attrib'],'-i')
+	end
+	! Тире. Можно указать один знак или группу знаков, которые будут выводится непосредственно перед фразой.
+	! Если не указывать ничего, будет выводиться тире, обрамлённое пробелами.
+	! Чтобы перед фразой ничего не выводилось, указывается nope.
+	if $args[0]='hero.tire':
+		$args['result']=$func('get.tag.num',$args['hero'],'tire')
+		if $args['result']='':
+			$args['result']=' — '
+		elseif $args['result']='nope':
+			$args['result']=''
+		end
+	end
+	
+	! Цвет действия. Если не указан, по-умолчанию, зелёный.
+	if $args[0]='hero.href.color':
+		$args['result']=$func('get.tag.num',$args['hero'],'hcolor\h')
+		if $args['result']='':
+			$args['result']='008800'
+		end
+	end
+	! Настройки действия (аттрибуты) жирный курсив нормальный. По-умолчанию нормальный
+	if $args[0]='hero.href.attrib':
+		$args['new.attrib']=$func('get.tag.num',$args['hero'],'hattrib')
+		$args['result']=$func('dialog.sets.attrib','',$args['new.attrib'],'-n')
+	end
+	! Угол. Можно указать один знак или группу знаков, которые будут выводится непосредственно перед названием действия.
+	! Если не указывать ничего, будет выводиться &gt; и пробел.
+	! Чтобы перед фразой ничего не выводилось, указывается nope.
+	if $args[0]='hero.corn':
+		$args['result']=$func('get.tag.num',$args['hero'],'corn')
+		if $args['result']='':
+			$args['result']='&gt;'
+		elseif $args['result']='nope':
+			$args['result']=''
+		end
+	end
+! ------------------- настройки отображения фраз hero ----------------------------------
+
+! ------------------------ настройка вывода реплик --------------------------------------
+	! Две следующие настройки применяются к выводу реплик неписи
+	if $args[0]='npc.replics.repeat':
+		$args['result']=$func('get.tag.num',$args['replics'],'repeat')
+		if $args['result']='': $args['result']='cicle'
+	end
+	if $args[0]='npc.replics.shuffle':
+		$args['result']=$func('get.tag.num',$args['replics'],'shuffle')
+		if $args['result']='': $args['result']='straight'
+	end
+! ------------------------ настройка вывода реплик --------------------------------------
+$result=$args['result']
+--- dialog.sets.default ---------------------------------

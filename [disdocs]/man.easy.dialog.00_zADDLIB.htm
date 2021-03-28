@@ -1,0 +1,109 @@
+<html>
+   <head>
+      <html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+      <STYLE TYPE="text/css">
+      <!--
+         @page { size: 21cm 29.7cm; margin: 2cm }
+         p { margin-left: 0.50cm }
+         h1 { color:#000000; text-align:center; }
+         h2 { color:#800000; text-align:center;}
+         h3 { color:#ff8800;}
+         h4 { color:#008800;}
+         h5 { color:#008888;}
+         tt { color:#000000;}
+         div.emTAB {margin-left:3%;}
+         pre.emTEXT {
+            white-space: pre-wrap;
+         }
+         .preinf {
+            text-align:justify;
+            margin-left:50%;
+            font-size:0.75em;
+            text-indent:1em;
+         }
+         .postcont {
+            text-align:center;
+            margin-left:75%;
+            width:25%;
+            font-size:0.75em;
+         }
+         .bodyED {
+            text-align:justify;
+            margin-left:auto;
+            margin-right:auto;
+            width:55%;
+            background-color:#ffffff;
+            padding:0.5em 2em;
+         }
+         .centerED {
+            margin-left:auto;
+            margin-right:auto;
+            padding:0.1em 2em;
+            width:50%;
+         }
+         p.emCODE, pre.emCODE {
+            margin-left:1em;
+         }
+         .emCODE {
+            color:000000;
+            font-family:monospace;
+         }
+         .emREMARK {
+            color:#888888;
+            font-weight:normal;
+            font-style:italic;
+         }
+         .emHREF{text-decoration:none; color:#888888;}
+         .emTOOL{text-decoration:none; color:#006688;}
+         .emFUNC, .emOPRT, .emFOLD, .emTEXT, .emVAR, .emNUM, .emATTRIB, .emCOMMENT, .emMARKER {font-weight:bold; font-family:monospace;}
+         .emFUNC {color:#ff8800;} /*цвет выделения функций*/
+         .emOPRT {color:#008899;} /*цвет выделения операторов*/
+         .emFOLD {color:#000000;background:#F6F6BC;} /*цвет выделения папок*/
+         .emTEXT {color:#008800;} /*цвет выделения текстовых значений*/
+         .emINCL {color:#006600;} /*цвет выделения вложенных текстовых значений*/
+         .emVAR {color:#aa0000;}
+         .emMARKER {color:#ff1111;}
+         .emNUM {color:#880088; font-size:1.15em;}
+         .emATTRIB {color:#000088;}
+         .emCOMMENT {color:#888888;}
+      -->
+      </STYLE>
+   </head>
+<body bgcolor="F0E68C">
+   <h1>easy.dialog.qsp v 2.0</h1>
+   <div class="bodyED">
+      <a name="easy_dialog_addlib"></a>
+      <h2>Подключение</h2>
+
+      <p>Предполагается, что вы уже пробовали писать игры на QSP, знаете основные команды и, возможно, знаете, что такое функции, переменные и массивы и как формируется html-форматирование. Впрочем, можно обойтись и без последнего.</p>
+      <p>Модуль поставляется в комплекте с библиотекой easy.math.qsp и без неё работать не будет.</p>
+      <p>Чтобы подключить модуль к своей игре, нужно:</p>
+      <ol>
+         <li>
+         Скачать архив и извлечь его содержимое в папку с вашей игрой. В папке с вашей игрой должна появиться папка "<span class="emFOLD">lib</span>".
+            <ul>
+               <li>После знакомства с примерами файл "<span class="emFOLD">game.easy.dialog.qsp</span>" можно удалить.</li>
+            </ul>
+         </li>
+         <li>
+            Проверить в папке "lib" наличие файлов "<span class="emFOLD">easy.dialog.qsp</span>" и "<span class="emFOLD">easy.math.qsp</span>".
+         </li>
+         <li>
+            Открыть файл своей игры (например с помощью QGen) и на самой первой локации ввести две строки:<br>
+            <p class="emCODE">addqst 'lib/easy.dialog.qsp'<br>addqst 'lib/easy.math.qsp'</p>
+            Если вы пишете игру для Quest Navigator, или плеера версии выше 5.7.0:<br>
+            <p class="emCODE">inclib 'lib/easy.dialog.qsp'<br>inclib 'lib/easy.math.qsp'</p>
+         </li>
+         <li>Сохранить свою игру.</li>
+      </ol>
+      <p>Теперь при запуске вашей игры, модуль <span class="emTEXT">"easy.dialog"</span> и библиотека <span class="emTEXT">"easy.math"</span> будут подключаться к игре автоматически.</p>
+      <div class="warningED">
+         Внимание!!! При подключении библиотек к своей игре будьте внимательны. К игре добавляются только те локации, названия которых отсутствуют в вашей игре. Просмотрите список локаций в подключаемых библиотеках, чтобы предупредить совпадения имён.
+      </div>
+      <div class="postcont">
+         <br><br><br>Aleks Versus'easy.libraries'2017<br>Aleks Versus'GAM'RUS'2017
+      </div>
+   </div>
+</body>
+</html>

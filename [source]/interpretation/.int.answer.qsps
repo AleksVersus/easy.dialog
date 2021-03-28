@@ -1,0 +1,34 @@
+# dialog.int.answer
+$args[0] = $args[0]	&	!	идентификатор реплики
+! генерирует действие для ответной реплики игрока
+$args['source']=$source_replic[arrpos('$id_replic',$args[0])]
+$args['actname']=$func('get.tag.cont',$args['source'],'act-name')
+if $args['actname']='': $args['actname']=$func('dialog.replic.get',$args[0])
+if $args['actname']<>'':
+	$args['next']=$func('dialog.get.jump',$args[0])
+	if $DIALOG_VALUE['answer.view']<>'answer.href':
+	! если выводиться должны действия
+		if instr($args['source'],'selectact.delete')<>0: $args['delact']="delact $selact"
+		$args['act']="
+		act '<<$args['actname']>><answe<<$args[0]>>r>':
+			"+$args['delact']+"
+			gosub 'dialog.replic.int','<<$args[0]>>'
+			"+$args['next']+"
+		end
+		"
+		dynamic $args['act']
+	else
+		$args['res.ult']+='<a href="exec:'
+		if instr($args['source'],'selectact.delete')<>0:
+			!	команда удаления текущего действия до возвращения по уровням вверх
+			$args['res.ult']+="gosub 'dialog.act.del','<<$args[0]>>' & "
+		end
+		$args['res.ult']+="gosub 'dialog.replic.int','<<$args[0]>>' & "
+		$args['res.ult']+=$replace($args['next'],"
+"," & ")	&	!	форма такая же gosub 'dialog.replic.int','идентификатор'
+		$args['res.ult']+=' !comm" class="plain">'+$args['actname']+'</a>'
+		$result=$args['res.ult']
+		exit
+	end
+end
+--- dialog.int.answer ---------------------------------

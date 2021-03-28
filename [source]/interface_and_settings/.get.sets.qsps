@@ -1,0 +1,147 @@
+# dialog.get.sets
+! извлекает настройки диалога/реплики в виде текстов
+$args[0] = $args[0]	&	!	идентификатор реплики
+$args[1] = $args[1]	&	!	управление. 'generate' - работает в режиме генерации диалога
+if $args[1]='generate':
+! генерируем диалог
+	$args['source']=$easy_dialog_base_SC[arrpos('$easy_dialog_base_ID',$args[0])]	&	!	желаемые настройки
+	$args['sets']=$easy_dialog_base_ST[arrpos('$easy_dialog_base_ID',$args[0])]		&	!	настройки, унаследованные от родителя
+else
+! интерпретируем диалог
+	$args['source']=$source_replic[arrpos('$id_replic',$args[0])]					&	!	желаемые настройки
+	$args['sets']=$sets_replic[arrpos('$id_replic',$args[0])]						&	!	настройки, унаследованные от родителя
+end
+
+$args['npc']=$TRIM($func('get.tag.num',$args['source'],'npc'))						&	!	настройки отображения персонажа
+$args['hero']=$TRIM($func('get.tag.num',$args['source'],'hero'))					&	!	настройки отображения героя
+$args['replics']=$TRIM($func('get.tag.num',$args['source'],'replics'))				&	!	настройки последовательности реплик
+
+$args['sets.npc']=$TRIM($func('get.tag.num',$args['sets'],'npc'))					&	!	настройки отображения персонажа
+$args['sets.hero']=$TRIM($func('get.tag.num',$args['sets'],'hero'))					&	!	настройки отображения героя
+$args['sets.replics']=$TRIM($func('get.tag.num',$args['sets'],'replics'))			&	!	настройки последовательности реплик
+! --- извлекаем настройки неписи --------------
+! Сначала получаем желаемую настройку
+$args['npc.name']=$func('get.tag.cont',$args['npc'],'name')
+! Если желаемая настройка не указана, получаем родительскую
+if $args['npc.name']='' and $strfind($args['npc'],'name:[\s\S]*:name')='':
+	$args['npc.name']=$func('get.tag.cont',$args['sets.npc'],'name')
+end
+! Если родительская отсутствует, получаем из дефолтного значения
+if ($args['npc.name']='' and $strfind($args['sets.npc'],'name:[\s\S]*:name')='' and  _
+$strfind($args['npc'],'name:[\s\S]*:name')='') or $args['npc.name']='default' or $args['npc']='default':
+	$args['npc.name']=$func('dialog.sets.default','npc.name')
+end
+$args['npc.name']='(name:'+$args['npc.name']+':name)'
+	! получаем желаемую настройку
+	$args['npc.ncolor']=$func('get.tag.num',$args['npc'],'ncolor')
+	! если желаемая отсутствует, получаем родительскую
+	if $args['npc.ncolor']='': $args['npc.ncolor']=$func('get.tag.num',$args['sets.npc'],'ncolor')
+	! если родительская так же отсутствует, или сбрасывается в дефолт
+	if $args['npc.ncolor']='' or $args['npc.ncolor']='default' or $args['npc']='default': $args['npc.ncolor']=$func('dialog.sets.default','npc.name.color')
+	! перепаковываем настройку
+	$args['npc.ncolor']='(ncolor:'+$args['npc.ncolor']+')'
+$args['npc.nattrib']=$func('get.tag.num',$args['npc'],'nattrib')
+if $args['npc.nattrib']='': $args['npc.nattrib']=$func('get.tag.num',$args['sets.npc'],'nattrib')
+if $args['npc.nattrib']='' or $args['npc.nattrib']='default' or $args['npc']='default': $args['npc.nattrib']=$func('dialog.sets.default','npc.name.attrib')
+$args['npc.nattrib']='(nattrib:'+$args['npc.nattrib']+')'
+	$args['npc.fcolor']=$func('get.tag.num',$args['npc'],'fcolor')
+	if $args['npc.fcolor']='': $args['npc.fcolor']=$func('get.tag.num',$args['sets.npc'],'fcolor')
+	if $args['npc.fcolor']='' or $args['npc.fcolor']='default' or $args['npc']='default': $args['npc.fcolor']=$func('dialog.sets.default','npc.frase.color')
+	$args['npc.fcolor']='(fcolor:'+$args['npc.fcolor']+')'
+$args['npc.fattrib']=$func('get.tag.num',$args['npc'],'fattrib')
+if $args['npc.fattrib']='': $args['npc.fattrib']=$func('get.tag.num',$args['sets.npc'],'fattrib')
+if $args['npc.fattrib']='' or $args['npc.fattrib']='default' or $args['npc']='default': $args['npc.fattrib']=$func('dialog.sets.default','npc.frase.attrib')
+$args['npc.fattrib']='(fattrib:'+$args['npc.fattrib']+')'
+	$args['npc.tire']=$func('get.tag.num',$args['npc'],'tire')
+	if $args['npc.tire']='': $args['npc.tire']=$func('get.tag.num',$args['sets.npc'],'tire')
+	if $args['npc.tire']='' or $args['npc.tire']='default' or $args['npc']='default': $args['npc.tire']=$func('dialog.sets.default','npc.tire')
+	$args['npc.tire']='(tire:'+$args['npc.tire']+')'
+! --- извлекаем настройки героя ----------------
+! Сначала получаем желаемую настройку
+$args['hero.name']=$func('get.tag.cont',$args['hero'],'name')
+! Если желаемая настройка не указана, получаем родительскую
+if $args['hero.name']='' and $strfind($args['hero'],'name:[\s\S]*:name')='':
+	$args['hero.name']=$func('get.tag.cont',$args['sets.hero'],'name')
+end
+! Если родительская отсутствует, получаем из дефолтного значения
+if ($args['hero.name']='' and $strfind($args['sets.hero'],'name:[\s\S]*:name')=''and  _
+$strfind($args['hero'],'name:[\s\S]*:name')='') or $args['hero.name']='default' or $args['hero']='default':
+	$args['hero.name']=$func('dialog.sets.default','hero.name')
+end
+$args['hero.name']='(name:'+$args['hero.name']+':name)'
+! ---- настройки имени ----
+	! получаем желаемую настройку
+	$args['hero.ncolor']=$func('get.tag.num',$args['hero'],'ncolor')
+	! если желаемая отсутствует, получаем родительскую
+	if $args['hero.ncolor']='': $args['hero.ncolor']=$func('get.tag.num',$args['sets.hero'],'ncolor')
+	! если родительская так же отсутствует, или сбрасывается в дефолт
+	if $args['hero.ncolor']='' or $args['hero.ncolor']='default' or $args['hero']='default': $args['hero.ncolor']=$func('dialog.sets.default','hero.name.color')
+	$args['hero.ncolor']='(ncolor:'+$args['hero.ncolor']+')'
+$args['hero.nattrib']=$func('get.tag.num',$args['hero'],'nattrib')
+if $args['hero.nattrib']='': $args['hero.nattrib']=$func('get.tag.num',$args['sets.hero'],'nattrib')
+if $args['hero.nattrib']='' or $args['hero.nattrib']='default' or $args['hero']='default': $args['hero.nattrib']=$func('dialog.sets.default','hero.name.attrib')
+$args['hero.nattrib']='(nattrib:'+$args['hero.nattrib']+')'
+! ---- настройки фразы ----
+	$args['hero.fcolor']=$func('get.tag.num',$args['hero'],'fcolor')
+	if $args['hero.fcolor']='': $args['hero.fcolor']=$func('get.tag.num',$args['sets.hero'],'fcolor')
+	! если родительская так же отсутствует, или сбрасывается в дефолт
+	if $args['hero.fcolor']='' or $args['hero.fcolor']='default' or $args['hero']='default': $args['hero.fcolor']=$func('dialog.sets.default','hero.frase.color')
+	$args['hero.fcolor']='(fcolor:'+$args['hero.fcolor']+')'
+$args['hero.fattrib']=$func('get.tag.num',$args['hero'],'fattrib')
+if $args['hero.fattrib']='': $args['hero.fattrib']=$func('get.tag.num',$args['sets.hero'],'fattrib')
+if $args['hero.fattrib']='' or $args['hero.fattrib']='default' or $args['hero']='default': $args['hero.fattrib']=$func('dialog.sets.default','hero.frase.attrib')
+$args['hero.fattrib']='(fattrib:'+$args['hero.fattrib']+')'
+! ---- настройки действия ----
+	! получаем желаемую настройку
+	$args['hero.hcolor']=$func('get.tag.num',$args['hero'],'hcolor')
+	! если желаемая отсутствует, получаем родительскую
+	if $args['hero.hcolor']='': $args['hero.hcolor']=$func('get.tag.num',$args['sets.hero'],'hcolor')
+	! если родительская так же отсутствует, или сбрасывается в дефолт
+	if $args['hero.hcolor']='' or $args['hero.hcolor']='default' or $args['hero']='default': $args['hero.hcolor']=$func('dialog.sets.default','hero.href.color')
+	$args['hero.hcolor']='(hcolor:'+$args['hero.hcolor']+')'
+$args['hero.hattrib']=$func('get.tag.num',$args['hero'],'hattrib')
+if $args['hero.hattrib']='': $args['hero.hattrib']=$func('get.tag.num',$args['sets.hero'],'hattrib')
+if $args['hero.hattrib']='' or $args['hero.hattrib']='default' or $args['hero']='default': $args['hero.hattrib']=$func('dialog.sets.default','hero.href.attrib')
+$args['hero.hattrib']='(hattrib:'+$args['hero.hattrib']+')'
+! ---- тире ----
+	$args['hero.tire']=$func('get.tag.num',$args['hero'],'tire')
+	if $args['hero.tire']='': $args['hero.tire']=$func('get.tag.num',$args['sets.hero'],'tire')
+	if $args['hero.tire']='' or $args['hero.tire']='default' or $args['hero']='default': $args['hero.tire']=$func('dialog.sets.default','hero.tire')
+	$args['hero.tire']='(tire:'+$args['hero.tire']+')'
+! ---- уголок ----
+	$args['hero.corn']=$func('get.tag.num',$args['hero'],'corn')
+	if $args['hero.corn']='': $args['hero.corn']=$func('get.tag.num',$args['sets.hero'],'corn')
+	if $args['hero.corn']='' or $args['hero.corn']='default' or $args['hero']='default': $args['hero.corn']=$func('dialog.sets.default','hero.corn')
+	$args['hero.corn']='(corn:'+$args['hero.corn']+')'
+! --- извлекаем настройки реплик ---------------
+$args['replics.repeat']=$func('get.tag.num',$args['replics'],'repeat')
+if $args['replics.repeat']='': $args['replics.repeat']=$func('get.tag.num',$args['sets.replics'],'repeat')
+if $args['replics.repeat']='' or $args['replics.repeat']='default' or $args['replics']='default': $args['replics.repeat']=$func('dialog.sets.default','npc.replics.repeat')
+$args['replics.repeat']='(repeat:'+$args['replics.repeat']+')'
+$args['replics.shuffle']=$func('get.tag.num',$args['replics'],'shuffle')
+if $args['replics.shuffle']='': $args['replics.shuffle']=$func('get.tag.num',$args['sets.replics'],'shuffle')
+if $args['replics.shuffle']='' or $args['replics.shuffle']='default' or $args['replics']='default': $args['replics.shuffle']=$func('dialog.sets.default','npc.replics.shuffle')
+$args['replics.shuffle']='(shuffle:'+$args['replics.shuffle']+')'
+! собираем настройки
+$args['res']+='npc="'+$args['npc.name']+'
+'+$args['npc.ncolor'] +'
+'+$args['npc.nattrib']+'
+'+$args['npc.fcolor']+'
+'+$args['npc.fattrib']+'
+'+$args['npc.tire']+'"
+'
+$args['res']+='hero="'+$args['hero.name']+'
+'+$args['hero.ncolor'] +'
+'+$args['hero.nattrib']+'
+'+$args['hero.fcolor']+'
+'+$args['hero.fattrib']+'
+'+$args['hero.corn']+'
+'+$args['hero.hcolor']+'
+'+$args['hero.hattrib']+'
+'+$args['hero.tire']+'"
+'
+$args['res']+='replics="'+$args['replics.repeat']+'
+'+$args['replics.shuffle']+'"
+'
+$result=$args['res']
+--- dialog.get.sets ---------------------------------

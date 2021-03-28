@@ -1,0 +1,9 @@
+# dialog.int.quest
+$args[0] = $args[0]	&	!	идентификатор реплики
+! раз мы пришли сюда, значит реплика будет выведена !
+! помечаем выводимую реплику
+kolvo_replic[arrpos('$id_replic',$args[0])]+=1
+gosub 'dialog.replic.int',$args[0]
+$args['next']=$func('dialog.get.jump',$args[0])
+dynamic $args['next']
+--- dialog.int.quest ---------------------------------
