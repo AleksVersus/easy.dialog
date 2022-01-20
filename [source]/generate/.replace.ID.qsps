@@ -15,7 +15,7 @@ if args['i']<arrsize('$easy_dialog_base_ID'):
 	end
 	if $args['old.ID']<>$args[0]:
 		! генерируем уникальный идентификатор реплики
-		$args['new.ID']=$args[0]+'.'+$func('#rndstr#',8,'буквы и цифры')
+		$args['new.ID']=$args[0]+'.'+$func('#rndstr#',8,'[inc][\d][\w]')
 		! записываем новый вместо старого
 		$easy_dialog_base_ID[args['i']]=$args['new.ID']
 		! ищем старый в easy_dialog_base_PS

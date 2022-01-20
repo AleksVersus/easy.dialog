@@ -61,4 +61,5 @@ $result=$args[0]+'
 <!--[count-tag:'+str(args['i'])+']-->'
 killvar '$easy_dialog_temp_var2'
 killvar 'easy_dialog_temp_var1'
+
 --- dialog.inTag ---------------------------------

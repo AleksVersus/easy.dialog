@@ -1,7 +1,7 @@
 # dialog.replic.get
 $args[0] = $args[0]			&	!	идентификатор реплики
 !$args[1] = UCASE($args[1])	&	!	управляющая конструкция
-$args['trim']='[TRIM]'		&	!	if instr($args[1],'[NO TRIM]')=0: else $args['trim']=''
+$args['strip']='[strip]'	&	!	if instr($args[1],'[NO TRIM]')=0: else $args['trim']=''
 $args['source']=$source_replic[arrpos('$id_replic',$args[0])]
 ! списко настроек
 :for_i
@@ -29,6 +29,6 @@ if args['i']<13:
 	args['i']+=1
 	jump 'for_i'	&	!	убрано if instr($args[1],'[DELCOMM]')=0: 
 end
-$args['source']=$func('#widetrim#',$args['source'],$args['trim'])
+$args['source']=$func('#widetrim#',$args['source'],$args['strip'])
 $result=$args['source']
 --- dialog.replic.get ---------------------------------
