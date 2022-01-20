@@ -2,15 +2,19 @@
 	"project":
 	[
 		{
-			"build":"D:\\my\\GameDev\\QuestSoftPlayer\\games\\+releases+\\+lib+\\easy.dialog.2.qsp",
-			"folders":[{"path":"."}]
+			"build":"D:\\my\\GameDev\\QuestSoftPlayer\\games\\+releases+\\+lib+\\launcher.ed\\easy.dialog.2.qsp",
+			"folders":[{"path":".\\[source]"}]
 		},
 		{
-			"build":"D:\\my\\GameDev\\QuestSoftPlayer\\games\\+releases+\\+lib+\\game.easy.dialog.qsp",
-			"folders":[{"path":"..\\[source.game]"}]
+			"build":"D:\\my\\GameDev\\QuestSoftPlayer\\games\\+releases+\\+lib+\\launcher.ed\\game.easy.dialog.qsp",
+			"folders":[{"path":".\\[source.game]"}]
+		},
+		{
+			"build":"D:\\my\\GameDev\\QuestSoftPlayer\\games\\+releases+\\+lib+\\launcher.ed\\easy.math.qsp",
+			"folders":[{"path":"D:\\my\\GameDev\\QuestSoftPlayer\\games\\+lib+\\easy.math\\[source]"}]
 		}
 	],
-	"start":"D:\\my\\GameDev\\QuestSoftPlayer\\games\\+releases+\\+lib+\\game.easy.dialog.qsp",
+	"start":"D:\\my\\GameDev\\QuestSoftPlayer\\games\\+releases+\\+lib+\\launcher.ed\\game.easy.dialog.qsp",
 	"converter":"D:\\my\\GameDev\\QuestSoftPlayer\\QSP 570 QG 400b\\txt2gam.exe",
 	"player":"D:\\my\\GameDev\\QuestSoftPlayer\\QSP 570 QG 400b\\qspgui.exe",
 	"save_txt2gam":"False"
