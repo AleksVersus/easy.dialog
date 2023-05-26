@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <meta content="initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+  <!-- TODO: favicon -->
+  <link href="../../res/css/easy.library.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="avs-page-wrapper">
+   <div class="easy-lib-page">
+    <article class="e-block">
+     <div class="avs-pages-button__left-combine">
+      <a class="avs-pages-button__link" href="../../easy.dialog/manual.html">
+       <div class="avs-pages-button">
+        Назад
+       </div>
+      </a>
+      <a class="avs-pages-button__link" href="../../easy.dialog/short_desc/0-44.html">
+       <div class="avs-pages-button">
+        ⇦ Терминология
+       </div>
+      </a>
+     </div>
+     <h1 class="avs-article-h1">
+      easy.dialog
+     </h1>
+     <p class="avs-articles-underhead">
+      Краткое описание модуля. Страница вторая
+     </p>
+     <a id="dialog-construct" name="dialog-construct">
+     </a>
+     <h2 class="avs-article-h2">
+      Краткое описание
+     </h2>
+     <a id="replics-construct" name="replics-construct">
+     </a>
+     <h3 class="avs-article-h3">
+      Конструирование диалога
+     </h3>
+     <h4 class="avs-article-h4">
+      Конструирование реплик
+     </h4>
+     <p class="avs-article-p">
+      Каждая реплика, за исключением корневой, должна быть помещена в теги реплики:
+     </p>
+     <ul>
+      <li>
+       <code class="em-string">
+        {:
+       </code>
+       <code>
+        [$текст]
+       </code>
+       <code class="em-string">
+        :}
+       </code>
+       - для реплик актёра.
+      </li>
+      <li>
+       <code class="em-string">
+        [:
+       </code>
+       <code>
+        [$текст]
+       </code>
+       <code class="em-string">
+        :]
+       </code>
+       - для реплик героя.
+      </li>
+     </ul>
+     <p class="avs-article-p">
+      Реплики могут включать в себя следующие элементы:
+     </p>
+     <ul>
+      <li>
+       текст реплики
+      </li>
+      <li>
+       конструкции настроек (
+       <code>
+        <code class="em-string">
+         npc="
+        </code>
+        [$настройки]
+        <code class="em-string">
+         "
+        </code>
+       </code>
+       ,
+       <code>
+        <code class="em-string">
+         hero="
+        </code>
+        [$настройки]
+        <code class="em-string">
+         "
+        </code>
+       </code>
+       ,
+       <code>
+        <code class="em-string">
+         replics="
+        </code>
+        [$настройки]
+        <code class="em-string">
+         "
+        </code>
+       </code>
+       )
+      </li>
+      <li>
+       конструкцию условия вывода реплики (
+       <code>
+        <code class="em-string">
+         iffing:
+        </code>
+        [$условия]
+        <code class="em-string">
+         :iffing
+        </code>
+       </code>
+       )
+      </li>
+      <li>
+       конструкцию динамического кода, выполняемого при интерпретации реплики (
+       <code>
+        <code class="em-string">
+         dynamic-code:
+        </code>
+        [$текст]
+        <code class="em-string">
+         :dynamic-code
+        </code>
+       </code>
+       )
+      </li>
+      <li>
+       конструкцию блока фраз (
+       <code>
+        <code class="em-string">
+         frase-block:
+        </code>
+        [$текст]
+        <code class="em-string">
+         :frase-block
+        </code>
+       </code>
+       )
+      </li>
+      <li>
+       конструкцию для замены имени действия (
+       <code>
+        <code class="em-string">
+         act-name:
+        </code>
+        [$текст]
+        <code class="em-string">
+         :act-name
+        </code>
+       </code>
+       )
+      </li>
+      <li>
+       команды
+       <code>
+        <code class="em-string">
+         levelup:
+        </code>
+        [#число]
+       </code>
+       ,
+       <code>
+        <code class="em-string">
+         leveljump:
+        </code>
+        [$метка]
+       </code>
+       ,
+       <code>
+        <code class="em-obj-id">
+         closeup
+        </code>
+       </code>
+       ,
+       <code>
+        <code class="em-obj-id">
+         selectact.delete
+        </code>
+       </code>
+      </li>
+      <li>
+       тег метки
+       <code>
+        <code class="em-string">
+         marker:
+        </code>
+        [$метка]
+       </code>
+      </li>
+      <li>
+       комментарий - один или несколько
+      </li>
+     </ul>
+     <p class="avs-article-p">
+      При этом, всё, кроме текста реплики и комментариев, можно помещать внутри комментариев. Можно и не помещать.
+     </p>
+     <p class="avs-article-p">
+      Вышеперечисленные элементы могут отсутствовать в реплике. Если в реплике нет ни одного из вышеперечисленных элементов, механизмы модуля всё равно будут воспринимать её, как обычную реплику, т.е. пытаться интерпретировать.
+     </p>
+     <p class="avs-article-p">
+      Реплики могут включать другие реплики, помещённые в теги реплик. На этом построен механизм интерпретации последовательности вложенных реплик.
+      <a name="comments">
+      </a>
+     </p>
+     <h4 class="avs-article-h4">
+      Комментирование
+     </h4>
+     <p class="avs-article-p">
+      Для того, чтобы писать комментарии в теле диалога и в его заголовке, была введена конструкция комментариев из html. Комментарии представляют собой запись между открывающим тегом "
+      <code>
+       <code class="em-comment">
+        &lt;!--
+       </code>
+      </code>
+      " и закрывающим "
+      <code>
+       <code class="em-comment">
+        --&gt;
+       </code>
+      </code>
+      ". Эти теги так и называются: теги комментария. Название "тег комментария", если не уточняется открывающий или закрывающий, означает тоже самое.
+     </p>
+     <p class="avs-article-p">
+      Комментарии могут быть как однострочными, так и многострочными.
+     </p>
+     <p class="avs-article-p">
+      Отделять содержимое комментария от его тегов следует хотя бы одним пробельным символом или переводом строки.
+     </p>
+     <p class="avs-article-p">
+      Нельзя размещать комментарии внтури комментариев. Запись
+     </p>
+     <pre class="Monokai-Code">
+            <span class="Monokai-Comment">&lt;!-- текст комментария &lt;!-- текст вложенного комментария --&gt;<span class="Monokai-Invalid"> текст комментария --&gt;</span></span>
+          </pre>
+     <p>
+      недопустима.
+     </p>
+     <p class="avs-article-p">
+      Недопустимо также использовать комментарии между тегами
+      <code class="em-string">
+       dynamic-code: :dynamic-code
+      </code>
+      и
+      <code class="em-string">
+       iffing: :iffing
+      </code>
+      , поскольку между ними помещается чистый код QSP.
+     </p>
+     <p class="avs-article-p">
+      В тегах
+      <code class="em-string">
+       act-name: :act-name
+      </code>
+      , в конструкциях блоков фраз, а также в самих фразах комментарии допустимы, поскольку игнорируются html-рендерером QSP-плеера как нормальные html-комментарии.
+     </p>
+     <p class="avs-article-p">
+      Все команды и конструкции реплики, кроме фразы, допустимо и желательно помещать в комментарии. Лучше всего - в один. В таких комментариях будет игнорироваться весь текст, помимо текста самих конструкций и настроек.
+     </p>
+     <p class="avs-article-p">
+      Внутри конструкций настроек (
+      <code>
+       <code class="em-string">
+        npc="
+       </code>
+       [$настройки]
+       <code class="em-string">
+        "
+       </code>
+      </code>
+      ,
+      <code>
+       <code class="em-string">
+        hero="
+       </code>
+       [$настройки]
+       <code class="em-string">
+        "
+       </code>
+      </code>
+      ,
+      <code>
+       <code class="em-string">
+        replics="
+       </code>
+       [$настройки]
+       <code class="em-string">
+        "
+       </code>
+      </code>
+      ) допустимо произвольное комментирование без использования тегов комментария. Весь текст, помимо тегов настроек и их значений, будет проигнорирован механизмом извлечения настроек. Необходимо лишь отделять значение тегов от произвольного текста хотя бы одним пробелом, символом перевода строки или табуляции.
+     </p>
+     <p class="avs-article-p">
+      Если вы включаете в комментарий команду или одиночный тег, озаботьтесь отделить команду, одиночный тег или его значение от тегов комментария хотя бы одним пробелом (табуляцией или переводом строки).
+      <a name="settings">
+      </a>
+     </p>
+     <h4 class="avs-article-h4">
+      Конструирование настроек
+     </h4>
+     <p class="avs-article-p">
+      В настоящей версии модуля для настроек предусмотрены три конструкции. Конструкции
+      <code>
+       <code class="em-string">
+        npc="
+       </code>
+       [$настройки]
+       <code class="em-string">
+        "
+       </code>
+      </code>
+      и
+      <code>
+       <code class="em-string">
+        hero="
+       </code>
+       [$настройки]
+       <code class="em-string">
+        "
+       </code>
+      </code>
+      сходны по своему содержанию и используют одинаковые команды и теги. Конструкция
+      <code>
+       <code class="em-string">
+        replics="
+       </code>
+       [$настройки]
+       <code class="em-string">
+        "
+       </code>
+      </code>
+      предполагает другой набор команд и тегов. Однако правила записи всех треёх конструкций одинаковы.
+     </p>
+     <p class="avs-article-p">
+      Вместо двойного аппострофа для записи конструкций можно использовать одиночный апостроф:
+     </p>
+     <pre class="Monokai-Code">
+            <span class="Monokai-String">npc='</span>[$настройки]<span class="Monokai-String">'</span>
+          <br/>
+        <span class="Monokai-String">hero='</span>[$настройки]<span class="Monokai-String">'</span><br/>
+        <span class="Monokai-String">replics='</span>[$настройки]<span class="Monokai-String">'</span>
+          </pre>
+     <p class="avs-article-p">
+      Между апострофами можно размещать любой текст и количество строк. Весь текст, кроме команд, тегов и их содержимого, будет игнорироваться при извлечении настроек.
+     </p>
+     <p class="avs-article-p">
+      Каждую команду, тег и его содержимое нужно отделять от прочего текста хотя бы одним пробелом или переводом строки.
+     </p>
+     <p class="avs-article-p">
+      Теги и команды можно располагать в произвольном порядке, это никак не скажется на чтении их содержимого.
+     </p>
+     <p class="avs-article-p">
+      Если в тексте настроек два и более раз написан один и тот же тег, используется значение тега, расположенного ближе к началу текста настроек.
+     </p>
+     <p class="avs-article-p">
+      Если в тексте настроек не указан какой-либо из тегов, его значением будет считаться значение, полученное от родительской реплики или дефолтное значение. Если это заголовок диалога, значением тега будет принято значение по умолчанию.
+     </p>
+     <p class="avs-article-p">
+      Теги настроек и их значения желательно помещать в круглые скобки. Можно в квадратные, угловые и фигурные, но предпочтительней круглые.
+      <a name="tags-u">
+      </a>
+     </p>
+     <h4 class="avs-article-h4">
+      Теги и их значения
+     </h4>
+     <p class="avs-article-p">
+      Значением сдвоенного тега считается весь текст с самого первого символа сразу после открывающего тега, до последнего символа включительно перед закрывающим тегом. В зависимости от назначения тега, пробельные символы и переводы строки в начале значения, будут игнорироваться или напротив - включаться в значение.
+     </p>
+     Игнорируются все переводы строк и пробельные символы непосредственно после открывающего тега и непосредственно перед закрывающим для:
+     <ul>
+      <li>
+       тегов реплик
+       <code class="em-string">
+        {: :}
+       </code>
+       и
+       <code class="em-string">
+        [: :]
+       </code>
+      </li>
+      <li>
+       тегов
+       <code class="em-string">
+        iffing: :iffing
+       </code>
+      </li>
+      <li>
+       тегов
+       <code class="em-string">
+        dynamic-code: :dynamic-code
+       </code>
+      </li>
+      <li>
+       тегов
+       <code class="em-string">
+        frase-block: :frase-block
+       </code>
+      </li>
+     </ul>
+     <p class="avs-article-p">
+      Все переводы строк и пробельные символы сохраняются при получении и обработке значений для:
+     </p>
+     <ul>
+      <li>
+       тегов
+       <code>
+        <code class="em-obj-type">
+         name: :name
+        </code>
+       </code>
+      </li>
+      <li>
+       тегов
+       <code class="em-string">
+        act-name: :act-name
+       </code>
+      </li>
+      <li>
+       тегов
+       <code>
+        <code class="em-comment">
+         &lt;!-- --&gt;
+        </code>
+       </code>
+      </li>
+     </ul>
+     <p class="avs-article-p">
+      Это связано всего лишь с методами распознавания содержимого.
+     </p>
+     <p class="avs-article-p">
+      Таким образом в качестве значения сдвоенного тега может использоваться абсолютно любой набор символов. Можно включать в значение тега (в зависимости от нужд) переводы строк, пробелы и символы табуляции.
+     </p>
+     <p class="avs-article-p">
+      Ни в коем случае нельзя включать одинаковые сдвоенные теги друг в друга. Запись типа
+     </p>
+     <pre class="Monokai-Code"><span class="Monokai-String">
+        frase-block:<br/>
+           Фраза<br/>
+           <span class="Monokai-Obj-Type">frase-block:<br/>
+              фраза фраза фраза<br/>
+           :frase-block</span><br/>
+           Ещё одна фраза<br/>
+        :frase-block<br/>
+         </span></pre>
+     <p class="avs-article-p">
+      недопустима.
+     </p>
+     <p class="avs-article-p">
+      Значением одиночного тега считается весь текст, начиная с первого символа непосредственно сразу после тега и заканчивая включительно символом, стоящим перед первым встреченным пробельным символом или переводом строки.
+     </p>
+     <p class="avs-article-p">
+      Таким образом в одиночные теги можно помещать только непробельные символы.
+     </p>
+     <p class="avs-article-p">
+      Однако, если одиночный тег и его содержимое заключены в скобки, причём между открывающей скобкой и тегом нет пробелов и переводов строки, в значении тега можно использовать и пробелы и переводы строки.
+     </p>
+     <p class="avs-article-p">
+      Если же одиночный тег и его значение записываются без скобок, они должны отделяться от остального текста хотя бы одним пробелом или переводом строки.
+     </p>
+     <p class="avs-article-p">
+      Если одиночный тег помещается в сдвоенный тег и не заключается в скобки, он должен отделяться от тегов сдвоенного тега хотя бы одним пробелом. Запись типа
+     </p>
+     <pre class="Monokai-Code"><span class="Monokai-Comment">
+        &lt;!-<span class="Monokai-Invalid">-n</span>color:88888<span class="Monokai-Invalid">8-</span>-&gt;
+        </span></pre>
+     <p class="avs-article-p">
+      недопустима.
+     </p>
+     <p class="avs-article-p">
+      Можно использовать запись
+     </p>
+     <pre class="Monokai-Code"><span class="Monokai-Comment">
+        &lt;!-- ncolor:888888 --&gt;
+         </span></pre>
+     <p class="avs-article-p">
+      или
+     </p>
+     <pre class="Monokai-Code"><span class="Monokai-Comment">
+        &lt;!--(nolor:888888)--&gt;<a name="dialog-const"></a></span>
+         </pre>
+     <h4 class="avs-article-h4">
+      Составление диалогов
+     </h4>
+     <p class="avs-article-p">
+      Диалоги составляются из реплик актёров и/или героя.
+     </p>
+     <p class="avs-article-p">
+      Для чередования реплик - одни реплики вкладываются в другие. Сначала интерпретируется родительская реплика, а потом - все реплики-ответвления, являющиеся её дочерними репликами. При этом реплики актёра интерпретируются полностью, и фразы выводятся автоматически, а реплики героя интерпретируются частично и выводятся в виде действий. Когда игрок выбирает действие, реплика, на которой основано это действие, интерпретируется полностью.
+     </p>
+     <p class="avs-article-p">
+      Реплики, которые не содержат фразы, не выводятся на экран, однако их содержимое интерпретируется, как и содержимое реплик, которые содержат фразы.
+     </p>
+     <p class="avs-article-p">
+      Список действий при интерпретации реплики обновляется только в том случае, если реплики героя вложены в одну актёрскую реплику.
+     </p>
+     <p class="avs-article-p">
+      Если интерпретируется реплика героя, в которую вложена реплика героя, то последняя выводится в виде действия, добавляемого в список без обновления списка действий. Пример:
+     </p>
+     <pre class="Monokai-Code"><span class="Monokai-String">
+        [:<br/>
+           А если я захочу выбрать вариант вопроса, который исчез?<br/>
+           <span class="Monokai-Comment">&lt;!-- действие которое должно удаляться после выбора selectact.delete --&gt;</span><br/>
+           {:<br/>
+              Весь наш разговор происходит в цикле, как только мы закончим обсуждать текущий вопрос,<br/>
+              мы вернёмся к общему списку вопросов. Если хочешь, ты можешь сделать это прямо сейчас.<br/>
+           :}<br/>
+           [:<br/>
+              <span class="Monokai-Comment">&lt;!-- действие, которое должно появиться без очистки списка действий --&gt;</span><br/>
+              То есть, я могу спросить что-то другое?<br/>
+              {:<br/>
+                 Да, конечно, спрашивай, что хочешь.<br/>
+                 <span class="Monokai-Comment">&lt;!-- leveljump:other_question --&gt;</span><br/>
+              :}<br/>
+           :]<br/>
+        :]
+         </span></pre>
+     <p class="avs-article-p">
+      Как отмечено выше, если не указана фраза реплики, реплика интерпретируется, но на экран ничего не выводится. Эта особенность позволяет создавать скрытые ветки. Для этого ветка размещается в пустой реплике героя. Пустые реплики героя не выводятся в виде действий.
+     </p>
+     <p class="avs-article-p">
+      Чтобы пустая реплика героя всё же выводилась на экран в виде действия, название действия следует поместить между тегами
+      <code class="em-string">
+       act-name: :act-name
+      </code>
+      .
+     </p>
+     <p class="avs-article-p">
+      Все фразы выводятся на экран с сохранением перевода строк. Следует учитывать это при организации диалога.
+      <a name="zna4enia-po-umol4aniu">
+      </a>
+     </p>
+     <h3 class="avs-article-h3">
+      Значения по умолчанию
+     </h3>
+     <p class="avs-article-p">
+      Значения по умолчанию - это различные значения переменных настроек оформления и прочего, принимаемые тогда, когда явно заданные значения отсутствуют или ошибочны. Значения по умолчанию вшиты в механизм получения настроек.
+     </p>
+     <p class="avs-article-p">
+      Ниже перечислены настройки и значения по умолчанию.
+     </p>
+     <p class="avs-article-p-termin">
+      <span class="avs-article-p-termin-first-word">
+       Имя
+      </span>
+      <br/>
+      Указывается между тегами
+      <code class="em-obj-type">
+       name: :name
+      </code>
+      <br/>
+      по умолчанию, и для актёра и для героя: пустое значение, отсутствует,
+      <code class="em-obj-type">
+       name::name
+      </code>
+      .
+     </p>
+     <p class="avs-article-p-termin">
+      <span class="avs-article-p-termin-first-word">
+       Цвет имени
+      </span>
+      <br/>
+      Указывается после тега
+      <code class="em-obj-type">
+       ncolor:
+      </code>
+      <br/>
+      по умолчанию, для актёра: чёрный,
+      <code>
+       <code class="em-obj-type">
+        ncolor:
+       </code>
+       000000
+      </code>
+      <br/>
+      по умолчанию, для героя: серый,
+      <code>
+       <code class="em-obj-type">
+        ncolor:
+       </code>
+       888888
+      </code>
+      .
+     </p>
+     <p class="avs-article-p-termin">
+      <span class="avs-article-p-termin-first-word">
+       Аттрибуты имени
+      </span>
+      <br/>
+      Указывается после тега
+      <code class="em-obj-type">
+       nattrib:
+      </code>
+      <br/>
+      по умолчанию, для актёра: жирный,
+      <code>
+       <code class="em-obj-type">
+        nattrib:
+       </code>
+       -b
+      </code>
+      <br/>
+      по умолчанию, для героя: жирный курсив,
+      <code>
+       <code class="em-obj-type">
+        nattrib:
+       </code>
+       -b-i
+      </code>
+      .
+     </p>
+     <p class="avs-article-p-termin">
+      <span class="avs-article-p-termin-first-word">
+       Цвет фразы
+      </span>
+      <br/>
+      Указывается после тега
+      <code class="em-obj-type">
+       fcolor:
+      </code>
+      <br/>
+      по умолчанию, для актёра: чёрный,
+      <code>
+       <code class="em-obj-type">
+        fcolor:
+       </code>
+       000000
+      </code>
+      <br/>
+      по умолчанию, для героя: серый,
+      <code>
+       <code class="em-obj-type">
+        fcolor:
+       </code>
+       888888
+      </code>
+      .
+     </p>
+     <p class="avs-article-p-termin">
+      <span class="avs-article-p-termin-first-word">
+       Аттрибуты фразы
+      </span>
+      <br/>
+      Указывается после тега
+      <code class="em-obj-type">
+       fattrib:
+      </code>
+      <br/>
+      по умолчанию, для актёра: нормальный,
+      <code class="em-obj-type">
+       fattrib:
+      </code>
+      <br/>
+      по умолчанию, для героя: курсив,
+      <code>
+       <code class="em-obj-type">
+        fattrib:
+       </code>
+       -i
+      </code>
+      .
+     </p>
+     <p class="avs-article-p-termin">
+      <span class="avs-article-p-termin-first-word">
+       Знак мыслеотделительный. Знак перед прямой речью
+      </span>
+      <br/>
+      Указывается после тега
+      <code class="em-obj-type">
+       tire:
+      </code>
+      <br/>
+      по умолчанию, для актёра и героя: тире отбитое пробелами,
+      <code>
+       <code class="em-obj-type">
+        tire:
+       </code>
+       —
+      </code>
+      .
+     </p>
+     <p class="avs-article-p-termin">
+      <span class="avs-article-p-termin-first-word">
+       Режим повтора ответвлений
+      </span>
+      <br/>
+      Указывается после тега
+      <code class="em-obj-type">
+       repeat:
+      </code>
+      <br/>
+      по умолчанию (только для актёрских реплик): по-кругу, непрерывное,
+      <code>
+       <code class="em-obj-type">
+        repeat:
+       </code>
+       cicle
+      </code>
+      .
+     </p>
+     <p class="avs-article-p-termin">
+      <span class="avs-article-p-termin-first-word">
+       Режим выбора следующего ответвления
+      </span>
+      <br/>
+      Указывается после тега
+      <code class="em-obj-type">
+       shuffle:
+      </code>
+      <br/>
+      по умолчанию (только для актёрских реплик): случайным образом,
+      <code>
+       <code class="em-obj-type">
+        shuffle:
+       </code>
+       random
+      </code>
+      .
+      <a name="podkl-i-i">
+      </a>
+     </p>
+     <h3 class="avs-article-h3">
+      Подключение и использование
+     </h3>
+     <p class="avs-article-p">
+      Файл модуля
+      <code>
+       <code class="em-folder">
+        easy.dialog.qsp
+       </code>
+      </code>
+      поставляется вместе с файлом библиотеки
+      <code>
+       <code class="em-folder">
+        easy.math.qsp
+       </code>
+      </code>
+      и работает только при наличии оного. Для использования модуля и библиотеки, оба файла подключаются к основному файлу игры:
+     </p>
+     <pre class="Monokai-Code"><span class="Monokai-Operator">addqst</span> <span class="Monokai-String">'lib/easy.math.qsp'</span><br/><span class="Monokai-Operator">addqst</span> <span class="Monokai-String">'lib/easy.dialog.qsp'</span> </pre>
+     <p class="avs-article-p">
+      (в архиве оба файла помещены в папку "
+      <code>
+       lib
+      </code>
+      ". При подключении к игре вместо "
+      <code>
+       lib/
+      </code>
+      " следует использовать настоящий относительный путь до файлов модуля и библиотеки.)
+     </p>
+     <p class="avs-article-p">
+      Желательно включение режима распознавания html-тегов (
+      <code class="em-system">
+       usehtml
+      </code>
+      =
+      <code class="em-number">
+       1
+      </code>
+      ).
+     </p>
+     <p class="avs-article-p">
+      Диалоги для модуля пишутся в виде текстовых констант, или значений текстовых переменных. После чего константа или значение переменной передаются в качестве нулевого аргумента локации
+      <code>
+       <code class="em-string">
+        dialog.int
+       </code>
+      </code>
+      . Вызывать локацию следует через команду
+      <code>
+       <code class="em-operator">
+        gosub
+       </code>
+      </code>
+      :
+     </p>
+     <pre class="Monokai-Code"><span class="Monokai-Operator">gosub</span> <span class="Monokai-String">'dialog.int'</span>, <span class="Monokai-SysVar">$переменная_диалог</span><br/><span class="Monokai-Operator">gosub</span> <span class="Monokai-String">'dialog.int'</span>, <span class="Monokai-String" style="color:#c4b633">'<br/>   {:Короткий диалог<br/>      [:Короткое действие:]<br/>   :}'</span> </pre>
+     <p class="avs-article-p">
+      При вызове
+      <code>
+       dialog.int
+      </code>
+      будет очищено основное описание, список действий и дополнительное описание. После того как диалог будет закрыт, и описания и список действий восстановятся.
+     </p>
+     <p class="avs-article-p">
+      При интерпретации реплики игнорируется преформатирование (символы пробелов и табуляций перед строками; строки не содержащие непробельных символов до первыой строки, содержащей непробельные символы, и после последней строки, содержащей непробельные символы).
+     </p>
+     <div class="avs-pages-button__left-combine">
+      <a class="avs-pages-button__link" href="../../easy.dialog/manual.html">
+       <div class="avs-pages-button">
+        Назад
+       </div>
+      </a>
+      <a class="avs-pages-button__link" href="../../easy.dialog/short_desc/0-44.html">
+       <div class="avs-pages-button">
+        ⇦ Терминология
+       </div>
+      </a>
+     </div>
+    </article>
+    <aside class="e-block">
+     <div class="avs-page-stamp">
+      <p>
+       Aleks Versus'Easy Libraries'2013-$YEAR$
+      </p>
+      <p>
+       Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-$YEAR$
+      </p>
+     </div>
+    </aside>
+   </div>
+  </div>
+ </body>
+</html>
