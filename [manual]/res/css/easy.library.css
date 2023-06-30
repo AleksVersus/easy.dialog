@@ -590,6 +590,15 @@ html {
   text-indent: 0;
   display: inline-block;
 }
+.easy-lib-page .em-btn {
+  position: sticky;
+  bottom: -1em;
+}
+.easy-lib-page .avs-article-blockquote {
+  border-left: 4px solid rgba(0, 196, 255, 0.43);
+  padding: 0.25em 0.25em 0.25em 1em;
+  background: rgba(255, 255, 255, 0.28);
+}
 
 /* прилипчивый блок внизу */
 .em-stick-upper {
