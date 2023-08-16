@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
- <head>
-  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
-  <meta content="initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
-  <!-- TODO: favicon -->
-  <link href="../../res/css/easy.library.css" rel="stylesheet"/>
- </head>
- <body>
-  <div class="avs-page-wrapper">
-   <div class="easy-lib-page">
-    <article class="e-block">
-     <style>
-      .temp-biruz {
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+<!-- TODO: favicon -->
+<link href="../../res/css/easy.library.css" rel="stylesheet"/></head>
+<body>
+<div class="avs-page-wrapper">
+<div class="easy-lib-page">
+<article class="e-block">
+<style>
+        .temp-biruz {
           color: #15c3c3;
         }
 
@@ -34,47 +33,22 @@
         .temp-blue {
           color: #6da5ff;
         }
-     </style>
-     <div class="avs-pages-button__wrapper">
-      <div class="avs-pages-button__left-combine">
-       <a class="avs-pages-button__link" href="../../easy.dialog/manual.html">
-        <div class="avs-pages-button">
-         Назад
-        </div>
-       </a>
-       <a class="avs-pages-button__link" href="../../easy.dialog/manual/0-42.html">
-        <div class="avs-pages-button">
-         ⇦ Чуть менее сложные диалоги
-        </div>
-       </a>
-      </div>
-     </div>
-     <h1 class="avs-article-h1">
-      easy.dialog
-     </h1>
-     <p class="avs-articles-underhead">
-      Подробное руководство по использованию модуля, с примерами. Страница пятая
-     </p>
-     <h2 class="avs-article-h2">
-      Чуть более сложные диалоги
-     </h2>
-     <a id="act-name" name="act-name">
-     </a>
-     <h3 class="avs-article-h3">
-      Названия действий
-     </h3>
-     <p class="avs-article-p">
-      по умолчанию, в качестве названия действия выступает полный текст реплики. Это не всегда удобно. Иногда нужно вывести
-      <em>
-       очень
-      </em>
-      длинную реплику, полный текст которой будет смотреться неуместно в названии действия. На такой случай в модуле предусмотрена конструкция
-      <code class="em-operator">
-       act-name: :act-name
-      </code>
-      . Текст, помещённый между этими двумя тегами, будет использоваться в качестве названия действия. Пример:
-     </p>
-     <pre class="Monokai-Code"><span class="Monokai-String">
+        </style>
+<div class="avs-pages-button__wrapper">
+<div class="avs-pages-button__left-combine">
+<a class="avs-pages-button__link" href="../../easy.dialog/manual.html">
+<div class="avs-pages-button">Назад</div>
+</a>
+<a class="avs-pages-button__link" href="../../easy.dialog/manual/0-42.html"><div class="avs-pages-button">⇦ Чуть менее сложные диалоги</div></a>
+</div>
+</div>
+<h1 class="avs-article-h1">easy.dialog</h1>
+<p class="avs-articles-underhead">Подробное руководство по использованию модуля, с примерами. Страница пятая</p>
+<h2 class="avs-article-h2">Чуть более сложные диалоги</h2>
+<a id="act-name" name="act-name"></a>
+<h3 class="avs-article-h3">Названия действий</h3>
+<p class="avs-article-p">по умолчанию, в качестве названия действия выступает полный текст реплики. Это не всегда удобно. Иногда нужно вывести <em>очень</em> длинную реплику, полный текст которой будет смотреться неуместно в названии действия. На такой случай в модуле предусмотрена конструкция <code class="em-operator">act-name: :act-name</code>. Текст, помещённый между этими двумя тегами, будет использоваться в качестве названия действия. Пример:</p>
+<pre class="Monokai-Code"><span class="Monokai-String">
         {:<br/>
            Как вас зовут?<br/>
            [:<br/>
@@ -83,24 +57,10 @@
            :]<br/>
         :}
         </span></pre>
-     <p class="avs-article-p">
-      В этом диалоге на экран сначала выведется реплика "Как вас зовут?" и действие с названием "Вася". При щелчке по действию, на экране появится реплика "Вообще моё имя - Василий. Но друзья зовут меня - Вася...".
-     </p>
-     <p class="avs-article-p">
-      Всё довольно просто. Когда нам нужно вывести название действия, отличное от произносимой реплики, используем эту конструкцию.
-     </p>
-     <p class="avs-article-p">
-      Эту же конструкцию следует использовать, если в узле действия Вы использовали конструкцию вывода блока фраз
-      <code class="em-operator">
-       frase-block: :frase-block
-      </code>
-      . Однако здесь можно написать и обыкновенную реплику без тегов
-      <code class="em-operator">
-       act-name: :act-name
-      </code>
-      , и она выведется в названии действия. Чтобы было понятнее, пример, когда в качестве названия действия выводится реплика:
-     </p>
-     <pre class="Monokai-Code"><span class="Monokai-String">
+<p class="avs-article-p">В этом диалоге на экран сначала выведется реплика "Как вас зовут?" и действие с названием "Вася". При щелчке по действию, на экране появится реплика "Вообще моё имя - Василий. Но друзья зовут меня - Вася...".</p>
+<p class="avs-article-p">Всё довольно просто. Когда нам нужно вывести название действия, отличное от произносимой реплики, используем эту конструкцию.</p>
+<p class="avs-article-p">Эту же конструкцию следует использовать, если в узле действия Вы использовали конструкцию вывода блока фраз <code class="em-operator">frase-block: :frase-block</code>. Однако здесь можно написать и обыкновенную реплику без тегов <code class="em-operator">act-name: :act-name</code>, и она выведется в названии действия. Чтобы было понятнее, пример, когда в качестве названия действия выводится реплика:</p>
+<pre class="Monokai-Code"><span class="Monokai-String">
         {:<br/>
            Как вас зовут?<br/>
            [:<br/>
@@ -119,14 +79,8 @@
            :]<br/>
         :}
         </span></pre>
-     <p class="avs-article-p">
-      Пример, когда в качестве названия действия, будет выведен текст, помещённый между
-      <code class="em-operator">
-       act-name: :act-name
-      </code>
-      :
-     </p>
-     <pre class="Monokai-Code"><span class="Monokai-String">
+<p class="avs-article-p">Пример, когда в качестве названия действия, будет выведен текст, помещённый между <code class="em-operator">act-name: :act-name</code>:</p>
+<pre class="Monokai-Code"><span class="Monokai-String">
         {:<br/>
            Как вас зовут?<br/>
            [:<br/>
@@ -147,10 +101,8 @@
            :]<br/>
         :}
         </span></pre>
-     <p class="avs-article-p">
-      Пример, когда название у действия будет, но реплику герой не произнесёт:
-     </p>
-     <pre class="Monokai-Code"><span class="Monokai-String">
+<p class="avs-article-p">Пример, когда название у действия будет, но реплику герой не произнесёт:</p>
+<pre class="Monokai-Code"><span class="Monokai-String">
         {:<br/>
            Как вас зовут?<br/>
            [:<br/>
@@ -163,10 +115,8 @@
            :]<br/>
         :}
         </span></pre>
-     <p class="avs-article-p">
-      И напоследок. Блок фраз, который не появится в виде действия, потому что неоткуда извлечь название действия:
-     </p>
-     <pre class="Monokai-Code"><span class="Monokai-String">
+<p class="avs-article-p">И напоследок. Блок фраз, который не появится в виде действия, потому что неоткуда извлечь название действия:</p>
+<pre class="Monokai-Code"><span class="Monokai-String">
         {:<br/>
            Как вас зовут?<br/>
            [:<br/>
@@ -181,44 +131,11 @@
            :]<br/>
         :}
         </span></pre>
-     <a id="comments" name="comments">
-     </a>
-     <h3 class="avs-article-h3">
-      Комментирование реплик
-     </h3>
-     <p class="avs-article-p">
-      Все реплики можно комментировать. Комментарии записываются так же, как записываются в обычном html-документе, т.е. внутри конструкции
-      <code>
-       <span class="Monokai-Comment">
-        &lt;!-- --&gt;
-       </span>
-      </code>
-      . Перед выводом реплик все подобные конструкции будут удалены. Комментарии главным образом предназначены для помещения в них настроек и прочих текстов, которые не должны входить в реплику. Конечно, настройки можно указывать и не в комментариях, но если разместить их внутри комментария, обработка каждой реплики сократится на несколько миллисекунд. При больших уровнях вложенности это может существенно сократить время вывода всех реплик на экран. Все конструкции, расширяющие реплику, такие как
-      <code class="em-operator">
-       frase-block: :frase-block
-      </code>
-      ,
-      <code class="em-operator">
-       act-name: :act-name
-      </code>
-      ,
-      <code class="em-operator">
-       iffing: :iffing
-      </code>
-      , и др., можно и нужно размещать в комментариях. Лучше всего всё это уместить в одном комментарии.
-     </p>
-     <p class="avs-article-p">
-      Запрещено вкладывать комментарии в конструкции
-      <code class="em-operator">
-       iffing: :iffing
-      </code>
-      и
-      <code class="em-operator">
-       dynamic-code: :dynamic-code
-      </code>
-      , а так же вкладывать комментарии в комментарии. Вот пример неправильного размещения комментариев (подсвечены красным цветом):
-     </p>
-     <pre class="Monokai-Code"><span class="Monokai-String">
+<a id="comments" name="comments"></a>
+<h3 class="avs-article-h3">Комментирование реплик</h3>
+<p class="avs-article-p">Все реплики можно комментировать. Комментарии записываются так же, как записываются в обычном html-документе, т.е. внутри конструкции <code><span class="Monokai-Comment">&lt;!-- --&gt;</span></code>. Перед выводом реплик все подобные конструкции будут удалены. Комментарии главным образом предназначены для помещения в них настроек и прочих текстов, которые не должны входить в реплику. Конечно, настройки можно указывать и не в комментариях, но если разместить их внутри комментария, обработка каждой реплики сократится на несколько миллисекунд. При больших уровнях вложенности это может существенно сократить время вывода всех реплик на экран. Все конструкции, расширяющие реплику, такие как <code class="em-operator">frase-block: :frase-block</code>, <code class="em-operator">act-name: :act-name</code>, <code class="em-operator">iffing: :iffing</code>, и др., можно и нужно размещать в комментариях. Лучше всего всё это уместить в одном комментарии.</p>
+<p class="avs-article-p">Запрещено вкладывать комментарии в конструкции <code class="em-operator">iffing: :iffing</code> и <code class="em-operator">dynamic-code: :dynamic-code</code>, а так же вкладывать комментарии в комментарии. Вот пример неправильного размещения комментариев (подсвечены красным цветом):</p>
+<pre class="Monokai-Code"><span class="Monokai-String">
         <span class="Monokai-Comment">&lt;!-- npc="<br/>
         name:Ведущий:name<br/>
         ncolor:008888<span class="temp-red">&lt;!-- цвет имени неписи --&gt;</span><br/>
@@ -259,106 +176,28 @@
            :]<br/>
         :}
         </span></pre>
-     <p class="avs-article-p">
-      Сами реплики в комментарии не помещаются.
-     </p>
-     <p class="avs-article-p">
-      Если комментарий разместить, например, в блоке фраз, то он будет проигнорирован html-рендерером, поскольку написан по правилам комментариев в html.
-     </p>
-     <a id="ending" name="ending">
-     </a>
-     <h2 class="avs-article-h2">
-      Заключение
-     </h2>
-     <p class="avs-article-p">
-      Если Вы прочитали данное руководство залпом и составление диалогов для интерпретации модулем
-      <code class="em-folder">
-       easy.dialog
-      </code>
-      показалось Вам слишком сложным, ознакомьтесь с другими возможностями составления диалогов в QSP. Чуть ниже даны ссылки на примеры от
-      <code class="em-string">
-       WladySpb
-      </code>
-      и
-      <code class="em-string">
-       y4ndexx
-      </code>
-      , а так же на пример реализации сложного диалога с помощью движка от
-      <code class="em-string">
-       Olegus.t.Gl
-      </code>
-      . Может быть Вам подойдёт что-нибудь из этого. Или перечитайте руководство ещё раз, и ознакомьтесь с примерами диалогов, составленных для модуля, в файле
-      <code class="em-folder">
-       game.easy.dialog.qsp
-      </code>
-      , чтобы лучше усвоить как и что работает. Так же вы можете обратиться к составленному для
-      <code class="em-folder">
-       easy.dialog
-      </code>
-      краткому описанию, где в общих чертах раскрываются термины, понятия, структуры и принципы конструирования диалогов.
-     </p>
-     <p class="avs-article-p">
-      В тексте руководства использованы реплики из киносценариев и пьес разных авторов.
-     </p>
-     <p class="avs-article-p">
-      Огромное спасибо
-      <code class="em-string">
-       WladySpb
-      </code>
-      и
-      <code class="em-string">
-       y4ndexx
-      </code>
-      , подготовившим
-      <a class="avs-page-external-link" href="http://qsp.org/index.php?option=com_content&amp;view=article&amp;id=72:-11&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" target="_blank" title="перейти на qsp.org">
-       примеры диалогов для QSP
-      </a>
-      , добавленные в официальные материалы для разработчиков. Они мне очень помогли, когда я только познакомился с QSP. А так же -
-      <code class="em-string">
-       Olegus t.Gl
-      </code>
-      за реализацию "
-      <a class="avs-page-external-link" href="http://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=457&amp;Itemid=57" target="_blank" title="перейти на qsp.org">
-       диалога Чешира
-      </a>
-      ", откуда я почерпнул немало идей и решений. Диалоги, реализованные в примерах, а так же "диалог Чешира", я постарался воспроизвести в примере использования модуля. Смотри файл "
-      <code class="em-folder">
-       game.easy.dialog.qsp
-      </code>
-      " в архиве.
-     </p>
-     <div class="avs-pages-button__wrapper">
-      <div class="avs-pages-button__left-combine">
-       <a class="avs-pages-button__link" href="../../easy.dialog/manual.html">
-        <div class="avs-pages-button">
-         Назад
-        </div>
-       </a>
-       <a class="avs-pages-button__link" href="../../easy.dialog/manual/0-42.html">
-        <div class="avs-pages-button">
-         ⇦ Чуть менее сложные диалоги
-        </div>
-       </a>
-      </div>
-     </div>
-    </article>
-    <aside class="e-block">
-     <div class="avs-page-stamp">
-      <p class="avs-empty">
-       Aleks Versus'Easy Libraries'2013-
-       <span class="subscribe-year">
-        2023
-       </span>
-      </p>
-      <p class="avs-empty">
-       Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-
-       <span class="subscribe-year">
-        2023
-       </span>
-      </p>
-     </div>
-    </aside>
-   </div>
-  </div>
- </body>
+<p class="avs-article-p">Сами реплики в комментарии не помещаются.</p>
+<p class="avs-article-p">Если комментарий разместить, например, в блоке фраз, то он будет проигнорирован html-рендерером, поскольку написан по правилам комментариев в html.</p>
+<a id="ending" name="ending"></a>
+<h2 class="avs-article-h2">Заключение</h2>
+<p class="avs-article-p">     Если Вы прочитали данное руководство залпом и составление диалогов для интерпретации модулем <code class="em-folder">easy.dialog</code> показалось Вам слишком сложным, ознакомьтесь с другими возможностями составления диалогов в QSP. Чуть ниже даны ссылки на примеры от <code class="em-string">WladySpb</code> и <code class="em-string">y4ndexx</code>, а так же на пример реализации сложного диалога с помощью движка от <code class="em-string">Olegus.t.Gl</code>. Может быть Вам подойдёт что-нибудь из этого. Или перечитайте руководство ещё раз, и ознакомьтесь с примерами диалогов, составленных для модуля, в файле <code class="em-folder">game.easy.dialog.qsp</code>, чтобы лучше усвоить как и что работает. Так же вы можете обратиться к составленному для <code class="em-folder">easy.dialog</code> краткому описанию, где в общих чертах раскрываются термины, понятия, структуры и принципы конструирования диалогов.</p>
+<p class="avs-article-p">     В тексте руководства использованы реплики из киносценариев и пьес разных авторов.</p>
+<p class="avs-article-p">     Огромное спасибо <code class="em-string">WladySpb</code> и <code class="em-string">y4ndexx</code>, подготовившим <a class="avs-page-external-link" href="http://qsp.org/index.php?option=com_content&amp;view=article&amp;id=72:-11&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" target="_blank" title="перейти на qsp.org">примеры диалогов для QSP</a>, добавленные в официальные материалы для разработчиков. Они мне очень помогли, когда я только познакомился с QSP. А так же - <code class="em-string">Olegus t.Gl</code> за реализацию "<a class="avs-page-external-link" href="http://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=457&amp;Itemid=57" target="_blank" title="перейти на qsp.org">диалога Чешира</a>", откуда я почерпнул немало идей и решений. Диалоги, реализованные в примерах, а так же "диалог Чешира", я постарался воспроизвести в примере использования модуля. Смотри файл "<code class="em-folder">game.easy.dialog.qsp</code>" в архиве.</p>
+<div class="avs-pages-button__wrapper">
+<div class="avs-pages-button__left-combine">
+<a class="avs-pages-button__link" href="../../easy.dialog/manual.html">
+<div class="avs-pages-button">Назад</div>
+</a>
+<a class="avs-pages-button__link" href="../../easy.dialog/manual/0-42.html"><div class="avs-pages-button">⇦ Чуть менее сложные диалоги</div></a>
+</div>
+</div>
+</article>
+<aside class="e-block">
+<div class="avs-page-stamp">
+<p class="avs-empty">Aleks Versus'Easy Libraries'2013-<span class="subscribe-year">2023</span></p>
+<p class="avs-empty">Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span class="subscribe-year">2023</span></p>
+</div>
+</aside>
+</div>
+</div></body>
 </html>

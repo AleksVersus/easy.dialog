@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
- <head>
-  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
-  <meta content="initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
-  <!-- TODO: favicon -->
-  <link href="../../res/css/easy.library.css" rel="stylesheet"/>
- </head>
- <body>
-  <div class="avs-page-wrapper">
-   <div class="easy-lib-page">
-    <article class="e-block">
-     <style>
-      .temp-biruz {
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+<!-- TODO: favicon -->
+<link href="../../res/css/easy.library.css" rel="stylesheet"/></head>
+<body>
+<div class="avs-page-wrapper">
+<div class="easy-lib-page">
+<article class="e-block">
+<style>
+        .temp-biruz {
           color: #15c3c3;
         }
 
@@ -34,44 +33,25 @@
         .temp-blue {
           color: #6da5ff;
         }
-     </style>
-     <div class="avs-pages-button__wrapper">
-      <div class="avs-pages-button__left-combine">
-       <a class="avs-pages-button__link" href="../../easy.dialog/manual.html">
-        <div class="avs-pages-button">
-         Назад
-        </div>
-       </a>
-       <a class="avs-pages-button__link" href="../../easy.dialog/manual/0-41.html">
-        <div class="avs-pages-button">
-         ⇦ Чуть менее сложные диалоги
-        </div>
-       </a>
-      </div>
-      <a class="avs-pages-button__link" href="../../easy.dialog/manual/0-43.html">
-       <div class="avs-pages-button">
-        Ещё чуть более сложные диалоги ⇨
-       </div>
-      </a>
-     </div>
-     <h1 class="avs-article-h1">
-      easy.dialog
-     </h1>
-     <p class="avs-articles-underhead">
-      Подробное руководство по использованию модуля, с примерами. Страница четвёртая
-     </p>
-     <h2 class="avs-article-h2">
-      Чуть более сложные диалоги
-     </h2>
-     <a name="head-kak_izbezhat_o4istki_spiska_deystviy">
-     </a>
-     <h3 class="avs-article-h3">
-      Как избежать очистки списка действий
-     </h3>
-     <p class="avs-article-p">
-      Особенность поведения модуля такова, что если узлом была реплика актёра, а ветвями являются реплики героя, производится очистка списка действий и вывод новых. Чтобы вывести новое действие при щелчке на одном из действий списка, но не удалять старые, помещать реплику героя следует непосредственно в предыдущую реплику героя. Так сделано в предпоследнем примере в реплике "Да, меня зовут Вася.":
-     </p>
-     <pre class="Monokai-Code"><span class="Monokai-String">
+        </style>
+<div class="avs-pages-button__wrapper">
+<div class="avs-pages-button__left-combine">
+<a class="avs-pages-button__link" href="../../easy.dialog/manual.html">
+<div class="avs-pages-button">Назад</div>
+</a>
+<a class="avs-pages-button__link" href="../../easy.dialog/manual/0-41.html"><div class="avs-pages-button">⇦ Чуть менее сложные диалоги</div></a>
+</div>
+<a class="avs-pages-button__link" href="../../easy.dialog/manual/0-43.html">
+<div class="avs-pages-button">Ещё чуть более сложные диалоги ⇨</div>
+</a>
+</div>
+<h1 class="avs-article-h1">easy.dialog</h1>
+<p class="avs-articles-underhead">Подробное руководство по использованию модуля, с примерами. Страница четвёртая</p>
+<h2 class="avs-article-h2">Чуть более сложные диалоги</h2>
+<a name="head-kak_izbezhat_o4istki_spiska_deystviy"></a>
+<h3 class="avs-article-h3">Как избежать очистки списка действий</h3>
+<p class="avs-article-p">Особенность поведения модуля такова, что если узлом была реплика актёра, а ветвями являются реплики героя, производится очистка списка действий и вывод новых. Чтобы вывести новое действие при щелчке на одном из действий списка, но не удалять старые, помещать реплику героя следует непосредственно в предыдущую реплику героя. Так сделано в предпоследнем примере в реплике "Да, меня зовут Вася.":</p>
+<pre class="Monokai-Code"><span class="Monokai-String">
           [:<br/>
              npc="fcolor:880000"<br/>
              Да, меня зовут Вася.<br/>
@@ -80,92 +60,35 @@
              [:нет. чистая правда:]<br/>
           :]
         </span></pre>
-     <a name="delete-acts-from-list">
-     </a>
-     <h4 class="avs-article-h4">
-      Удаление действия из списка
-     </h4>
-     <p class="avs-article-p">
-      Иногда необходимо не добавлять действия, не удаляя прочие, а удалить одно действие из списка не обновляя список. Для этого была введена команда
-      <code class="em-operator">
-       selectact.delete
-      </code>
-      . Прописывать её можно только для реплик героя.
-     </p>
-     <a name="replics-block">
-     </a>
-     <h3 class="avs-article-h3">
-      Блок последовательных реплик
-     </h3>
-     <p class="avs-article-p">
-      Иногда нужно вывести сразу не одну, не две, а несколько реплик поочерёдно от героя и персонажа
-     </p>
-     <p class="avs-article-p">
-      Для примера возьмём вот такой отрывок:
-     </p>
-     <div class="em-on-screen">
-      <font color="008888">
-       <b>
-        Мишель
-       </b>
-       (громко)
-       <b>
-        :
-       </b>
-      </font>
-      <font color="000000">
-       Яичница с ветчиной, это сколько?
-      </font>
-      <br/>
-      <font color="888888">
-       <b>
-        Женский голос
-       </b>
-       (громко)
-       <b>
-        :
-       </b>
-      </font>
-      <font color="000000">
-       Сто восемьдесят.
-      </font>
-      <br/>
-      <i>
-       Мишель поворачивается лицом к стойке.
-      </i>
-      <br/>
-      <font color="008888">
-       <b>
-        Мишель:
-       </b>
-      </font>
-      <font color="000000">
-       Ладно. Делайте.
-      </font>
-      <br/>
-      <font color="888888">
-       <b>
-        Женщина:
-       </b>
-      </font>
-      <font color="000000">
-       Хорошо.
-      </font>
-     </div>
-     <p class="avs-article-p">
-      У нас два собеседника: Женщина и Мишель. Пусть неписью побудет Мишель, а героем - Женщина.
-     </p>
-     <p class="avs-article-p">
-      Как обычно, для реплики мы задаём настройки:
-     </p>
-     <pre class="Monokai-Code"><span class="Monokai-String">
+<a name="delete-acts-from-list"></a>
+<h4 class="avs-article-h4">Удаление действия из списка</h4>
+<p class="avs-article-p">Иногда необходимо не добавлять действия, не удаляя прочие, а удалить одно действие из списка не обновляя список. Для этого была введена команда <code class="em-operator">selectact.delete</code>. Прописывать её можно только для реплик героя.</p>
+<a name="replics-block"></a>
+<h3 class="avs-article-h3">Блок последовательных реплик</h3>
+<p class="avs-article-p">Иногда нужно вывести сразу не одну, не две, а несколько реплик поочерёдно от героя и персонажа</p>
+<p class="avs-article-p">Для примера возьмём вот такой отрывок:</p>
+<div class="em-on-screen">
+<font color="008888"><b>Мишель</b> (громко)<b>:</b></font>
+<font color="000000">Яичница с ветчиной, это сколько?</font>
+<br/>
+<font color="888888"><b>Женский голос</b> (громко)<b>:</b></font>
+<font color="000000">Сто восемьдесят.</font>
+<br/><i>Мишель поворачивается лицом к стойке.</i>
+<br/>
+<font color="008888"><b>Мишель:</b></font>
+<font color="000000">Ладно. Делайте.</font>
+<br/>
+<font color="888888"><b>Женщина:</b></font>
+<font color="000000">Хорошо.</font>
+</div>
+<p class="avs-article-p">У нас два собеседника: Женщина и Мишель. Пусть неписью побудет Мишель, а героем - Женщина.</p>
+<p class="avs-article-p">Как обычно, для реплики мы задаём настройки:</p>
+<pre class="Monokai-Code"><span class="Monokai-String">
         npc="name:Мишель:name ncolor:008888 nattrib:-b-n fcolor:000000 fattrib:-n tire:nope"<br/>
         hero="name:Женщина:name ncolor:888888 nattrib:-b-n fcolor:000000 fattrib:-n tire:nope"
         </span></pre>
-     <p class="avs-article-p">
-      Если бы мы использовали только возможность вкладывать одну реплику в другую, мы могли бы написать этот диалог так:
-     </p>
-     <pre class="Monokai-Code"><span class="Monokai-String">
+<p class="avs-article-p">Если бы мы использовали только возможность вкладывать одну реплику в другую, мы могли бы написать этот диалог так:</p>
+<pre class="Monokai-Code"><span class="Monokai-String">
         npc="name:Мишель:name ncolor:008888 nattrib:-b-n fcolor:000000 fattrib:-n tire:nope"<br/>
         hero="name:Женщина:name ncolor:888888 nattrib:-b-n fcolor:000000 fattrib:-n tire:nope"<br/>
         {:npc="name::name"<br/>
@@ -184,22 +107,8 @@
            :}<br/>
         :}
         </span></pre>
-     <p class="avs-article-p">
-      Но это не только громоздко, но ещё и неудобно, и даёт дополнительную нагрузку на плеер. Специально для таких случаев была придумана конструкция блоков реплик (блок фраз). Делается она очень просто. Между тегами
-      <code class="em-string">
-       frase-block: :frase-block
-      </code>
-      помещаются строки нашего диалога. Каждая строка считается отдельной фразой/репликой. Если в начале строки вписать
-      <code class="em-obj-type">
-       &lt;npc-name&gt;
-      </code>
-      , то к строке будет применено форматирование согласно настройкам неписи. Если в начале строки указать
-      <code class="em-obj-type">
-       &lt;hero-name&gt;
-      </code>
-      , то к ней будет применено форматирование согласно настройками героя. Если ни той ни другой метки в строке не обнаружено, дополнительное форматирование к строке не применяется. Таким образом наш диалог можно записать в одну "реплику":
-     </p>
-     <pre class="Monokai-Code"><span class="Monokai-String">
+<p class="avs-article-p">Но это не только громоздко, но ещё и неудобно, и даёт дополнительную нагрузку на плеер. Специально для таких случаев была придумана конструкция блоков реплик (блок фраз). Делается она очень просто. Между тегами <code class="em-string">frase-block: :frase-block</code> помещаются строки нашего диалога. Каждая строка считается отдельной фразой/репликой. Если в начале строки вписать <code class="em-obj-type">&lt;npc-name&gt;</code>, то к строке будет применено форматирование согласно настройкам неписи. Если в начале строки указать <code class="em-obj-type">&lt;hero-name&gt;</code>, то к ней будет применено форматирование согласно настройками героя. Если ни той ни другой метки в строке не обнаружено, дополнительное форматирование к строке не применяется. Таким образом наш диалог можно записать в одну "реплику":</p>
+<pre class="Monokai-Code"><span class="Monokai-String">
         npc="name:Мишель:name ncolor:008888 nattrib:-b-n fcolor:000000 fattrib:-n tire:nope"<br/>
         hero="name:Женщина:name ncolor:888888 nattrib:-b-n fcolor:000000 fattrib:-n tire:nope"<br/>
         {:<br/>
@@ -212,72 +121,34 @@
            :frase-block<br/>
         :}
         </span></pre>
-     <p class="avs-article-p">
-      Фразы, указанные в блоке, будут выводиться одна за другой с небольшой задержкой. Блок фраз имеет приоритет перед простым текстом реплики.
-     </p>
-     <a name="if-replics">
-     </a>
-     <h3 class="avs-article-h3">
-      Реплики по условию
-     </h3>
-     <p class="avs-article-p">
-      Иногда нам необходимо намеренно скрыть реплику до тех пор, пока не будет выполнено определённое условие. Например, реплика должна появляться только в тех случаях, когда в рюкзаке героя есть "Странный синий камушек", а до той поры быть скрыта. Чтобы написать такую скрытую реплику, используем специальные теги
-      <code class="em-string">
-       iffing: :iffing
-      </code>
-      . Если Вы не первый день пользуетесь QSP, Вы знаете, что такое оператор условия и уже видели конструкции типа:
-     </p>
-     <pre class="Monokai-Code">
+<p class="avs-article-p">Фразы, указанные в блоке, будут выводиться одна за другой с небольшой задержкой. Блок фраз имеет приоритет перед простым текстом реплики.</p>
+<a name="if-replics"></a>
+<h3 class="avs-article-h3">Реплики по условию</h3>
+<p class="avs-article-p">Иногда нам необходимо намеренно скрыть реплику до тех пор, пока не будет выполнено определённое условие. Например, реплика должна появляться только в тех случаях, когда в рюкзаке героя есть "Странный синий камушек", а до той поры быть скрыта. Чтобы написать такую скрытую реплику, используем специальные теги <code class="em-string">iffing: :iffing</code>. Если Вы не первый день пользуетесь QSP, Вы знаете, что такое оператор условия и уже видели конструкции типа:</p>
+<pre class="Monokai-Code">
         <span class="Monokai-Operator">if</span> <span class="Monokai-Func">obj</span><span class="Monokai-Operator">(<span class="Monokai-String">'Странный синий камушек'</span>):</span><br/>
            <span class="Monokai-Comment">! ---- какой-то код .... ---------</span><br/>
         <span class="Monokai-Operator">end</span>
         </pre>
-     <p class="avs-article-p">
-      Так вот. Между тегами
-      <code class="em-string">
-       iffing: :iffing
-      </code>
-      нужно поместить всё, что находилось бы в этой конструкции между "
-      <code class="em-operator">
-       if
-      </code>
-      " и "
-      <code class="em-operator">
-       :
-      </code>
-      ". То есть реплика по условию выглядела бы так:
-     </p>
-     <pre class="Monokai-Code"><span class="Monokai-String">
+<p class="avs-article-p">Так вот. Между тегами <code class="em-string">iffing: :iffing</code> нужно поместить всё, что находилось бы в этой конструкции между "<code class="em-operator">if</code>" и "<code class="em-operator">:</code>". То есть реплика по условию выглядела бы так:</p>
+<pre class="Monokai-Code"><span class="Monokai-String">
         {:<br/>
            iffing:<span class="Monokai-Func">obj</span><span class="Monokai-Operator">(<span class="temp-biruz">'Странный синий камушек'</span>)</span>:iffing<br/>
            О, я вижу ты нашёл странный синий камушек!<br/>
         :}
         </span></pre>
-     <p class="avs-article-p">
-      Или так:
-     </p>
-     <pre class="Monokai-Code"><span class="Monokai-String">
+<p class="avs-article-p">Или так:</p>
+<pre class="Monokai-Code"><span class="Monokai-String">
         [:<br/>
            iffing:<span class="Monokai-Func">obj</span><span class="Monokai-Operator">(<span class="temp-biruz">'Странный синий камушек'</span>)</span>:iffing<br/>
            Не знаешь, что это за странный синий камушек?<br/>
         :]
         </span></pre>
-     <p class="avs-article-p">
-      Используя подобную возможность, следует помнить, что все реплики, "вложенные" в реплику, выводимую по условию, окажутся недоступны до выполнения условия.
-     </p>
-     <a name="replics-code">
-     </a>
-     <h3 class="avs-article-h3">
-      Выполнение кода при выводе реплики
-     </h3>
-     <p class="avs-article-p">
-      Иногда при выводе реплики нужно выполнить какой-нибудь код. Особенно часто это бывает необходимо при выборе действия (выводится реплика героя). На такой случай предусмотрены специальные теги
-      <code class="em-string">
-       dynamic-code: :dynamic-code
-      </code>
-      . Между ними можно разместить любой код QSP, который будет выполнен только при выводе реплики на экран. Если текст реплики не задан, на экран, конечно, ничего не выведется, но код всё равно будет выполнен. Код выполняется непосредственно перед выводом реплики на экран, поэтому если Вы пропишете вывод строки из кода, строка появится на экране до выводимой реплики. Вот пример вывода ремарки до реплики, используя код в реплике.
-     </p>
-     <pre class="Monokai-Code"><span class="Monokai-String">
+<p class="avs-article-p">Используя подобную возможность, следует помнить, что все реплики, "вложенные" в реплику, выводимую по условию, окажутся недоступны до выполнения условия.</p>
+<a name="replics-code"></a>
+<h3 class="avs-article-h3">Выполнение кода при выводе реплики</h3>
+<p class="avs-article-p">Иногда при выводе реплики нужно выполнить какой-нибудь код. Особенно часто это бывает необходимо при выборе действия (выводится реплика героя). На такой случай предусмотрены специальные теги <code class="em-string">dynamic-code: :dynamic-code</code>. Между ними можно разместить любой код QSP, который будет выполнен только при выводе реплики на экран. Если текст реплики не задан, на экран, конечно, ничего не выведется, но код всё равно будет выполнен. Код выполняется непосредственно перед выводом реплики на экран, поэтому если Вы пропишете вывод строки из кода, строка появится на экране до выводимой реплики. Вот пример вывода ремарки до реплики, используя код в реплике.</p>
+<pre class="Monokai-Code"><span class="Monokai-String">
         {:<br/>
            dynamic-code:<br/>
            *pl '&lt;i&gt;&lt;font color="888888"&gt;Мишель поворачивается лицом к стойке.&lt;/font&gt;&lt;/i&gt;'<br/>
@@ -285,37 +156,14 @@
            Ладно. Делайте.<br/>
         :}
         </span></pre>
-     <a name="prinuditelny_perehod">
-     </a>
-     <h3 class="avs-article-h3">
-      Принудительные переходы по репликам. Закрытие диалога
-     </h3>
-     <p class="avs-article-p">
-      Принудительные переходы по репликам можно вставлять на любой реплике. Такие переходы не зависят от выполнения условий вывода реплики, можно перейти даже на
-      <a class="avs-page-external-link" href="../../easy.dialog/manual/0-41.html#head-hide-replics" title="заголовок: Скрытый узел">
-       скрытые реплики
-      </a>
-      . Однако не рекомендуется злоупотреблять переходами, иначе можно создать непрямое зацикливание. Принудительные переходы необходимы, если Вам нужно переключиться на другую ветку диалога, или вернуться на пару узлов обратно. Можно выполнить переходы сразу на несколько реплик одновременно, однако не стоит забывать об
-      <a class="avs-page-external-link" href="../../easy.dialog/manual/0-42.html#head-kak_izbezhat_o4istki_spiska_deystviy" title="заголовок: Как избежать очистки списка действий">
-       очистке списка действий и порядке его осуществления
-      </a>
-      .
-     </p>
-     <p class="avs-article-p">
-      Для переходов по репликам используются следующие команды:
-     </p>
-     <ul>
-      <li>
-       <p class="em-empty">
-        <code>
-         <code class="em-operator">
-          levelup:
-         </code>
-         ##
-        </code>
-        — переход по узлам "назад". Вместо "решёток" указывается на сколько узлов нужно вернуться по репликам. Тип реплик при этом не учитывается. К примеру:
-       </p>
-       <pre class="Monokai-Code"><span class="Monokai-String">
+<a name="prinuditelny_perehod"></a>
+<h3 class="avs-article-h3">Принудительные переходы по репликам. Закрытие диалога</h3>
+<p class="avs-article-p">Принудительные переходы по репликам можно вставлять на любой реплике. Такие переходы не зависят от выполнения условий вывода реплики, можно перейти даже на <a class="avs-page-external-link" href="../../easy.dialog/manual/0-41.html#head-hide-replics" title="заголовок: Скрытый узел">скрытые реплики</a>. Однако не рекомендуется злоупотреблять переходами, иначе можно создать непрямое зацикливание. Принудительные переходы необходимы, если Вам нужно переключиться на другую ветку диалога, или вернуться на пару узлов обратно. Можно выполнить переходы сразу на несколько реплик одновременно, однако не стоит забывать об <a class="avs-page-external-link" href="../../easy.dialog/manual/0-42.html#head-kak_izbezhat_o4istki_spiska_deystviy" title="заголовок: Как избежать очистки списка действий">очистке списка действий и порядке его осуществления</a>.</p>
+<p class="avs-article-p">Для переходов по репликам используются следующие команды:</p>
+<ul>
+<li>
+<p class="em-empty"><code><code class="em-operator">levelup:</code>##</code> — переход по узлам "назад". Вместо "решёток" указывается на сколько узлов нужно вернуться по репликам. Тип реплик при этом не учитывается. К примеру:</p>
+<pre class="Monokai-Code"><span class="Monokai-String">
             replics="repeat:cicle<br/>
             shuffle:random" <br/>
             npc="name:Ведущий:name<br/>
@@ -363,57 +211,17 @@
                :]<br/>
             :}
             </span></pre>
-       <p class="avs-article-p">
-        Здесь можно видеть несколько переходов по узлам, они выделены тёмно-голубым цветом. Сначала рассмотрим два из них.
-       </p>
-       <p class="avs-article-p">
-        Реплика "Неправда" (подсвечена красным цветом) должна осуществлять переход на три узла назад. Она вложена в реплику "Это правда, что вас зовут Васей?", которую произнёс актёр. То есть это один уровень назад. Реплика "Это правда, что вас зовут Васей?" вложена в реплику "Меня зовут Вася", которую произнёс герой. Это два уровня назад. Эта реплика, в свою очередь, вложена в реплику неписи "Как вас зовут?". Она и будет репликой, на которую осуществится принудительный переход - три узла назад.
-       </p>
-       <p class="avs-article-p">
-        Реплика "Нет, никто меня так не зовёт" (подсвечена синим цветом) должна осуществлять переход на пять узлов назад. Однако это невозможно, поскольку ей предшествовало всего четыре реплики, включая корневую. Переместиться на корневую реплику нельзя, поэтому будет осуществлено перемещение на реплику первого уровня "Как вас Зовут?".
-       </p>
-      </li>
-      <li>
-       <p class="avs-empty">
-        <code>
-         <code class="em-operator">
-          leveljump:
-         </code>
-         MARKER
-        </code>
-        — переход минуя все условия и промежуточные узлы на реплику с указанной меткой.
-       </p>
-       <p class="avs-article-p">
-        Вместо "
-        <code>
-         MARKER
-        </code>
-        " указывается метка. Чтобы поставить метку на реплике, нужно использовать одиночный тег
-        <code class="em-operator">
-         marker:
-        </code>
-        , после которого следует прописать без пробелов любое сочетание символов (можно использовать только буквы и цифры и символ подчёркивания). Эти символы и будут меткой. Пример реплики, осуществляющей переход на метку, выделен фиолетовым цветом в предыдущем примере. Сама метка выделена жёлтым цветом.
-       </p>
-       <p class="avs-article-p">
-        Если указанная в
-        <code class="em-operator">
-         leveljump:
-        </code>
-        метка отсутствует, переход не осуществится.
-       </p>
-       <p class="avs-article-p">
-        Чтобы осуществить переход сразу на несколько реплик, нужно указать для каждой из этих реплик одинаковые метки, а потом для реплики, с которой нужно перейти, указать команду
-        <code class="em-operator">
-         leveljump:
-        </code>
-        и эту метку. Либо выставить для каждой реплики свою собственную метку, а потом прописать в реплике, с которой нужно перейти, команду
-        <code class="em-operator">
-         leveljump:
-        </code>
-        столько раз на сколько реплик нужно перейти, с указанием каждой выставленной метки. Разница между двумя этими способами в том, что во втором случае Вы можете контролировать порядок вызова реплик. Вот оба варианта для сравнения:
-       </p>
-       <div class="avs-articles-columned">
-        <pre class="Monokai-Code avs-articles-columned__column">
+<p class="avs-article-p">Здесь можно видеть несколько переходов по узлам, они выделены тёмно-голубым цветом. Сначала рассмотрим два из них.</p>
+<p class="avs-article-p">Реплика "Неправда" (подсвечена красным цветом) должна осуществлять переход на три узла назад. Она вложена в реплику "Это правда, что вас зовут Васей?", которую произнёс актёр. То есть это один уровень назад. Реплика "Это правда, что вас зовут Васей?" вложена в реплику "Меня зовут Вася", которую произнёс герой. Это два уровня назад. Эта реплика, в свою очередь, вложена в реплику неписи "Как вас зовут?". Она и будет репликой, на которую осуществится принудительный переход - три узла назад.</p>
+<p class="avs-article-p">Реплика "Нет, никто меня так не зовёт" (подсвечена синим цветом) должна осуществлять переход на пять узлов назад. Однако это невозможно, поскольку ей предшествовало всего четыре реплики, включая корневую. Переместиться на корневую реплику нельзя, поэтому будет осуществлено перемещение на реплику первого уровня "Как вас Зовут?".</p>
+</li>
+<li>
+<p class="avs-empty"><code><code class="em-operator">leveljump:</code>MARKER</code> — переход минуя все условия и промежуточные узлы на реплику с указанной меткой.</p>
+<p class="avs-article-p">Вместо "<code>MARKER</code>" указывается метка. Чтобы поставить метку на реплике, нужно использовать одиночный тег <code class="em-operator">marker:</code>, после которого следует прописать без пробелов любое сочетание символов (можно использовать только буквы и цифры и символ подчёркивания). Эти символы и будут меткой. Пример реплики, осуществляющей переход на метку, выделен фиолетовым цветом в предыдущем примере. Сама метка выделена жёлтым цветом.</p>
+<p class="avs-article-p">Если указанная в <code class="em-operator">leveljump:</code> метка отсутствует, переход не осуществится.</p>
+<p class="avs-article-p">Чтобы осуществить переход сразу на несколько реплик, нужно указать для каждой из этих реплик одинаковые метки, а потом для реплики, с которой нужно перейти, указать команду <code class="em-operator">leveljump:</code> и эту метку. Либо выставить для каждой реплики свою собственную метку, а потом прописать в реплике, с которой нужно перейти, команду <code class="em-operator">leveljump:</code> столько раз на сколько реплик нужно перейти, с указанием каждой выставленной метки. Разница между двумя этими способами в том, что во втором случае Вы можете контролировать порядок вызова реплик. Вот оба варианта для сравнения:</p>
+<div class="avs-articles-columned">
+<pre class="Monokai-Code avs-articles-columned__column">
                 <span class="Monokai-String">
                 replics="repeat:cicle<br/>
                 shuffle:random" <br/>
@@ -456,7 +264,7 @@
                 :}
                 </span>
               </pre>
-        <pre class="Monokai-Code avs-articles-columned__column">
+<pre class="Monokai-Code avs-articles-columned__column">
                 <span class="Monokai-String">
                 replics="repeat:cicle<br/>
                 shuffle:random" <br/>
@@ -500,68 +308,29 @@
                 :}
                 </span>
               </pre>
-       </div>
-      </li>
-     </ul>
-     <p class="avs-article-p">
-      В первом случае модуль сам отыщет первую реплику, которую выведет. Скорей всего это будет реплика с наивысшим уровнем. Во втором случае сначала будет осуществлён переход на реплику с меткой
-      <code class="em-marker">
-       firstqst
-      </code>
-      , а затем на реплику с меткой
-      <code class="em-marker">
-       hidereplics
-      </code>
-      . Т.е. именно в том порядке, в котором записаны команды
-      <code class="em-operator">
-       leveljump:
-      </code>
-      в реплике "Неправда", выделенной фиолетовым цветом.
-     </p>
-     <p class="avs-article-p">
-      Чтобы принудительно закрыть диалог из реплики, нужно ввести команду
-      <code class="em-operator">
-       closeup
-      </code>
-      . В последних примерах реплика "В самом деле" будет закрывать диалог. При закрытии диалога восстановится описание и действия локации, с которой диалог был вызван.
-     </p>
-     <div class="avs-pages-button__wrapper">
-      <div class="avs-pages-button__left-combine">
-       <a class="avs-pages-button__link" href="../../easy.dialog/manual.html">
-        <div class="avs-pages-button">
-         Назад
-        </div>
-       </a>
-       <a class="avs-pages-button__link" href="../../easy.dialog/manual/0-41.html">
-        <div class="avs-pages-button">
-         ⇦ Чуть менее сложные диалоги
-        </div>
-       </a>
-      </div>
-      <a class="avs-pages-button__link" href="../../easy.dialog/manual/0-43.html">
-       <div class="avs-pages-button">
-        Ещё чуть более сложные диалоги ⇨
-       </div>
-      </a>
-     </div>
-    </article>
-    <aside class="e-block">
-     <div class="avs-page-stamp">
-      <p class="avs-empty">
-       Aleks Versus'Easy Libraries'2013-
-       <span class="subscribe-year">
-        2023
-       </span>
-      </p>
-      <p class="avs-empty">
-       Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-
-       <span class="subscribe-year">
-        2023
-       </span>
-      </p>
-     </div>
-    </aside>
-   </div>
-  </div>
- </body>
+</div>
+</li>
+</ul>
+<p class="avs-article-p">В первом случае модуль сам отыщет первую реплику, которую выведет. Скорей всего это будет реплика с наивысшим уровнем. Во втором случае сначала будет осуществлён переход на реплику с меткой <code class="em-marker">firstqst</code>, а затем на реплику с меткой <code class="em-marker">hidereplics</code>. Т.е. именно в том порядке, в котором записаны команды <code class="em-operator">leveljump:</code> в реплике "Неправда", выделенной фиолетовым цветом.</p>
+<p class="avs-article-p">Чтобы принудительно закрыть диалог из реплики, нужно ввести команду <code class="em-operator">closeup</code>. В последних примерах реплика "В самом деле" будет закрывать диалог. При закрытии диалога восстановится описание и действия локации, с которой диалог был вызван.</p>
+<div class="avs-pages-button__wrapper">
+<div class="avs-pages-button__left-combine">
+<a class="avs-pages-button__link" href="../../easy.dialog/manual.html">
+<div class="avs-pages-button">Назад</div>
+</a>
+<a class="avs-pages-button__link" href="../../easy.dialog/manual/0-41.html"><div class="avs-pages-button">⇦ Чуть менее сложные диалоги</div></a>
+</div>
+<a class="avs-pages-button__link" href="../../easy.dialog/manual/0-43.html">
+<div class="avs-pages-button">Ещё чуть более сложные диалоги ⇨</div>
+</a>
+</div>
+</article>
+<aside class="e-block">
+<div class="avs-page-stamp">
+<p class="avs-empty">Aleks Versus'Easy Libraries'2013-<span class="subscribe-year">2023</span></p>
+<p class="avs-empty">Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span class="subscribe-year">2023</span></p>
+</div>
+</aside>
+</div>
+</div></body>
 </html>
