@@ -1,28 +1,50 @@
-# !easy.dialog!
+QSP-Game стартовая локация Easy Dialog
+
+# dialog.start
 if $args[0]="":
-usehtml=1
-"<font size=7><font face=Arial>easy.dialog v 2.0.0</font> для QSP 5.7.0</font>"
+	!@ подключение библиотеки easy.database
+	inclib 'easy.database.qsp'
+	!@ подключение библиотеки easy.math:
+	inclib 'easy.math.qsp'
+	!@ включаем обработчик строки ввода
+	$usercom[] = 'dialog.uc'
+	!@ включаем распознавание html
+	usehtml=1
+	!@ моноширинный шрифт
+	$fname = 'Consolas'
+
+"Easy Dialog"
+"Интерпретатор диалогов для QSP"
 "
+Репозиторий с исходниками библиотеки:
+
+*	https://github.com/AleksVersus/easy.dialog
+
 По всем вопросам и предложениям обращаться:
 
-*	e-mail: aleksversus@mail.ru
-*	tg: aleks_versus
-*	http: aleksversus.narod.ru
+*	aleksversus@mail.ru
 *	https://vk.com/id40090736
+
+Заходите на мой сайт:
+
+*	aleksversus.narod.ru
+
+Поддержите проект, подписавшись на мой бусти:
+
+* https://boosty.to/aleksversus
 
 Обучающие видео по программированию на QSP:
 
 *	https://www.youtube.com/channel/UCwX8RW2B9yTUFdlivtCGAgA
 
-Переменные:
+Вы можете тестировать различные части модуля, вводя команды в строку ввода.
 
-$id_replic[] — уникальный идентификатор реплики
-$source_replic[] — исходник реплики
-$sets_replic[] — настройки текущей реплики
-kolvo_replic[] — подсчёт числа вызовов текущей реплики
-$position_replic[] — расположение реплики в дереве других реплик
-"
+Для получения списка команд, введите `dialog help` в строку ввода"
 elseif $args[0]='version':
-	result=2000
+	result=3000
 end
---- !easy.dialog! ---------------------------------
+--- dialog.start ---------------------------------
+
+# dialog.uc
+
+--- dialog.uc ---------------------------------
