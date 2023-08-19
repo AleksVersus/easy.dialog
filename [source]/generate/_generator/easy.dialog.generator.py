@@ -4,6 +4,8 @@ import os
 import re
 import json
 
+import pandas
+
 class EasyDialog:
 	"""
 		Easy Dialog Generator. Generate the QSP-code of dialogs
@@ -103,8 +105,10 @@ class EasyDialog:
 					break
 				bb -= 1
 		if save_temp_file:
-			with open('microbase.json', 'w', encoding='utf-8') as fp:
-				json.dump(self.microbase, fp, indent=4, ensure_ascii=False)
+			db = pandas.DataFrame(self.microbase)
+			db.to_excel('.\\microbase.xlsx')
+			# with open('microbase.json', 'w', encoding='utf-8') as fp:
+			# 	json.dump(self.microbase, fp, indent=4, ensure_ascii=False)
 
 
 	def mb_replic_append(self, number:int, source:str, rid:str, position:str, marker='', rtype=''):
