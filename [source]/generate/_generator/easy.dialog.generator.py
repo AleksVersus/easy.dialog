@@ -21,11 +21,15 @@ class EasyDialog:
 			'replic-id': {},
 			'replic-postion': {},
 			'replic-marker': {},
-			'replic-type': {}
+			'replic-type': {},
+			'replic-settings': {}
 		}
-		self.queue = None
-		self.get_tags_source(save_temp_file=True)
+		# конвертируем диалог в тегированный вид
+		self.get_tags_source()
+		# помещаем диалог в микробазу
 		self.to_microbase(save_temp_file=True)
+		# сообщаем настройки дочерним объектам
+		self.sets_transport(save_temp_file=True)
 
 	def get_tags_source(self, save_temp_file=False):
 		""" Realisation of 'dialog.inTag' fucntion """
@@ -83,11 +87,12 @@ class EasyDialog:
 		""" convert dialog from tag_source to microbase """
 		body = self.tags_source['dialog-body']
 		i = self.tags_source['tags-counter']
-		self.queue = []
+		queue = []
 		# добавляем корневую реплику
 		self.mb_replic_append(i, body, self.uid, '', self.uid, 'root')
-		while len(self.queue) > 0:
-			i = self.queue.pop()
+		queue.append(i)
+		while len(queue) > 0:
+			i = queue.pop()
 			bb = i - 1
 			while True:
 				betta = re.search(rf'<answer{bb}>[\s\S]*<\/answer{bb}>|<quest{bb}>[\s\S]*<\/quest{bb}>', self.microbase['replic-source'][str(i)])
@@ -101,6 +106,7 @@ class EasyDialog:
 					self.microbase['replic-source'][str(i)] = self.microbase['replic-source'][str(i)].replace(betta.group(0), '')
 					pos = self.microbase['replic-id'][str(i)]
 					self.mb_replic_append(bb, source, f'{rtype}{bb}', pos, '', rtype)
+					queue.append(bb)
 				elif re.search(rf'<answer(\d+)>[\s\S]*<\/answer\1>|<quest(\d+)>[\s\S]*<\/quest\2>', self.microbase['replic-source'][str(i)]) is None:
 					break
 				bb -= 1
@@ -110,15 +116,16 @@ class EasyDialog:
 			# with open('microbase.json', 'w', encoding='utf-8') as fp:
 			# 	json.dump(self.microbase, fp, indent=4, ensure_ascii=False)
 
-
 	def mb_replic_append(self, number:int, source:str, rid:str, position:str, marker='', rtype=''):
 		self.microbase['replic-source'][str(number)] = source
 		self.microbase['replic-id'][str(number)] = rid
 		self.microbase['replic-postion'][str(number)] = position
 		self.microbase['replic-marker'][str(number)] = marker
 		self.microbase['replic-type'][str(number)] = rtype
-		self.queue.append(number)
+		self.microbase['replic-settings'][str(number)] = ''
 
+	def sets_transport(self, save_temp_file=False):
+		...
 
 def main():
 	with open('dialog.txt', 'r', encoding='utf-8') as fp:
