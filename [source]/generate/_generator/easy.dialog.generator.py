@@ -1,10 +1,13 @@
 import sys
 import os
 
+import random
 import re
 import json
 
 import pandas
+
+import em
 
 class EasyDialog:
 	"""
@@ -19,7 +22,7 @@ class EasyDialog:
 		self.microbase = {
 			'replic-source': {},
 			'replic-id': {},
-			'replic-postion': {},
+			'replic-position': {},
 			'replic-marker': {},
 			'replic-type': {},
 			'replic-settings': {}
@@ -27,9 +30,26 @@ class EasyDialog:
 		# конвертируем диалог в тегированный вид
 		self.get_tags_source()
 		# помещаем диалог в микробазу
-		self.to_microbase(save_temp_file=True)
+		self.to_microbase()
 		# сообщаем настройки дочерним объектам
-		self.sets_transport(save_temp_file=True)
+		# self.sets_transport(save_temp_file=True)
+		# заменяем айдишники реплик
+		self.ids_replace()
+
+	def to_qsps(self, qsps_file_path:str):
+		output_lines = []
+		output_lines.append(f"QSP-Game Диалог {self.uid}\n")
+		output_lines.append(f'# dialog_{self.uid}\n')
+		for key, value in self.microbase['replic-id'].items():
+			output_lines.append(f'!@ REPLIC_{key}\n')
+			output_lines.append(f"$replics_id['{value}'] = '{value}'\n")
+			output_lines.append(f"$replics_source['{value}'] = '{em.widetrim(self.microbase['replic-source'][key], strip=True)}'\n")
+			output_lines.append(f"$replics_sets['{value}'] = '{self.microbase['replic-settings'][key]}'\n")
+			output_lines.append(f"replics_count['{value}'] = 0\n")
+			output_lines.append(f"$replics_position['{value}'] = '{self.microbase['replic-position'][key]}'\n")
+		output_lines.append(f'- dialog_{self.uid}\n')
+		with open(qsps_file_path, 'w', encoding='utf-8') as fp:
+			fp.writelines(output_lines)
 
 	def get_tags_source(self, save_temp_file=False):
 		""" Realisation of 'dialog.inTag' fucntion """
@@ -116,22 +136,57 @@ class EasyDialog:
 			# with open('microbase.json', 'w', encoding='utf-8') as fp:
 			# 	json.dump(self.microbase, fp, indent=4, ensure_ascii=False)
 
-	def mb_replic_append(self, number:int, source:str, rid:str, position:str, marker='', rtype=''):
+	def mb_replic_append(self, number:int, source:str, rid:str, position:str, marker='', rtype='') -> None:
 		self.microbase['replic-source'][str(number)] = source
 		self.microbase['replic-id'][str(number)] = rid
-		self.microbase['replic-postion'][str(number)] = position
+		self.microbase['replic-position'][str(number)] = position
 		self.microbase['replic-marker'][str(number)] = marker
 		self.microbase['replic-type'][str(number)] = rtype
 		self.microbase['replic-settings'][str(number)] = ''
 
+	def mb_change_prop(self, prop:str, key:str, value:str):
+		self.microbase[prop][key] = value
+
 	def sets_transport(self, save_temp_file=False):
 		...
+
+	def ids_replace(self, save_temp_file=False):
+		ids = []
+		for key, value in self.microbase['replic-id'].items():
+			old_id = value
+			while True:
+				# генерируем уникальный идентификатор реплики
+				new_id = self.em_str_rnd(16)
+				if not new_id in ids:
+					ids.append(new_id)
+					# записываем новый вместо старого
+					self.mb_change_prop('replic-id', key, new_id)
+					break
+			# ищем старый в position
+			for key, value in self.microbase['replic-position'].items():
+				if value == old_id:
+					self.mb_change_prop('replic-position', key, new_id)
+		if save_temp_file:
+			db = pandas.DataFrame(self.microbase)
+			db.to_excel('.\\microbase_rids.xlsx')
+
+
+	@staticmethod
+	def em_str_rnd(num:int):
+		l = 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890ЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮйцукенгшщзхъфывапролджэячсмитьбюё'
+		result = ''
+		for i in range(num):
+			result += str(l[random.randint(0, len(l)-1)])
+		return result
+
 
 def main():
 	with open('dialog.txt', 'r', encoding='utf-8') as fp:
 		text = fp.read()
-
+	# инициализируем микробазу и настравиаем иерархию
 	dialog = EasyDialog(text, 'test')
+	# конвертируем диалог в формат qsps
+	dialog.to_qsps('dialogs.qsps')
 
 if __name__ == '__main__':
 	main()
