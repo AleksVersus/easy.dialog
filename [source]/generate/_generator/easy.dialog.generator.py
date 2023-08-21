@@ -43,7 +43,7 @@ class EasyDialog:
 		for key, value in self.microbase['replic-id'].items():
 			output_lines.append(f'!@ REPLIC_{key}\n')
 			output_lines.append(f"$replics_id['{value}'] = '{value}'\n")
-			output_lines.append(f"$replics_source['{value}'] = '{em.widetrim(self.microbase['replic-source'][key], strip=True)}'\n")
+			output_lines.append(f"$replics_source['{value}'] = '{em.Str.widetrim(self.microbase['replic-source'][key], strip=True)}'\n")
 			output_lines.append(f"$replics_sets['{value}'] = '{self.microbase['replic-settings'][key]}'\n")
 			output_lines.append(f"replics_count['{value}'] = 0\n")
 			output_lines.append(f"$replics_position['{value}'] = '{self.microbase['replic-position'][key]}'\n")
@@ -156,7 +156,7 @@ class EasyDialog:
 			old_id = value
 			while True:
 				# генерируем уникальный идентификатор реплики
-				new_id = self.em_str_rnd(16)
+				new_id = em.Str.random(16, modes={r'\all': True}, exclude='\t ')
 				if not new_id in ids:
 					ids.append(new_id)
 					# записываем новый вместо старого
@@ -169,16 +169,6 @@ class EasyDialog:
 		if save_temp_file:
 			db = pandas.DataFrame(self.microbase)
 			db.to_excel('.\\microbase_rids.xlsx')
-
-
-	@staticmethod
-	def em_str_rnd(num:int):
-		l = 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890ЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮйцукенгшщзхъфывапролджэячсмитьбюё'
-		result = ''
-		for i in range(num):
-			result += str(l[random.randint(0, len(l)-1)])
-		return result
-
 
 def main():
 	with open('dialog.txt', 'r', encoding='utf-8') as fp:

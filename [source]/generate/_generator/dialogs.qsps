@@ -1,0 +1,587 @@
+QSP-Game Диалог test
+# dialog_test
+!@ REPLIC_67
+$replics_id['я40vеjАHhЁGОMыGm'] = 'я40vеjАHhЁGОMыGm'
+$replics_source['я40vеjАHhЁGОMыGm'] = '<!--
+npc="
+name:Грабитель:name
+ncolor:c0c0c0
+nattrib:-b
+fcolor:aaaaaa
+"
+hero="
+name:Я:name
+ncolor:ffffff
+nattrib:-b-n
+fattrib:-n
+fcolor:dddddd
+"
+-->
+frase-block:
+<npc-name>У тебя одна минута на то, чтобы объяснить мне, как добраться до хранилища.
+<hero-name>Что?
+<i>Бац! В глазах сверкнуло и боль такая сильная, что кажется, будто она — единственное, что я сейчас чувствую. Даже сильнее страха.</i>
+<npc-name>Одна минута, — <i><font color=#888888>говорит он и прижимает холодный кружок дула к моему лбу.</font></i>
+:frase-block'
+$replics_sets['я40vеjАHhЁGОMыGm'] = ''
+replics_count['я40vеjАHhЁGОMыGm'] = 0
+$replics_position['я40vеjАHhЁGОMыGm'] = ''
+!@ REPLIC_66
+$replics_id['Ю6юAЭЧsxuё4УkщKх'] = 'Ю6юAЭЧsxuё4УkщKх'
+$replics_source['Ю6юAЭЧsxuё4УkщKх'] = 'marker:storagecellar
+act-name:Хранилище в подвале...:act-name
+Хранилище находится в подвале...'
+$replics_sets['Ю6юAЭЧsxuё4УkщKх'] = ''
+replics_count['Ю6юAЭЧsxuё4УkщKх'] = 0
+$replics_position['Ю6юAЭЧsxuё4УkщKх'] = 'я40vеjАHhЁGОMыGm'
+!@ REPLIC_19
+$replics_id['ИнКEБрНЧЛ7рUqАZo'] = 'ИнКEБрНЧЛ7рUqАZo'
+$replics_source['ИнКEБрНЧЛ7рUqАZo'] = 'act-name:Но я здесь не работаю...:act-name
+Но я здесь не работаю, я вообще не знаю, где тут что!'
+$replics_sets['ИнКEБрНЧЛ7рUqАZo'] = ''
+replics_count['ИнКEБрНЧЛ7рUqАZo'] = 0
+$replics_position['ИнКEБрНЧЛ7рUqАZo'] = 'я40vеjАHhЁGОMыGm'
+!@ REPLIC_4
+$replics_id['IтБзQОБЦuYЪяJDЫC'] = 'IтБзQОБЦuYЪяJDЫC'
+$replics_source['IтБзQОБЦuYЪяJDЫC'] = 'Что?'
+$replics_sets['IтБзQОБЦuYЪяJDЫC'] = ''
+replics_count['IтБзQОБЦuYЪяJDЫC'] = 0
+$replics_position['IтБзQОБЦuYЪяJDЫC'] = 'я40vеjАHhЁGОMыGm'
+!@ REPLIC_3
+$replics_id['эрБ5YЫXqFЧwvилAя'] = 'эрБ5YЫXqFЧwvилAя'
+$replics_source['эрБ5YЫXqFЧwvилAя'] = 'marker:thirddead
+iffing:DIALOG_VALUE["что.в"]=1:iffing
+npc="name::name tire:nope fattrib:-i"
+Он стискивает зубы и стреля...
+dynamic-code:cla:dynamic-code'
+$replics_sets['эрБ5YЫXqFЧwvилAя'] = ''
+replics_count['эрБ5YЫXqFЧwvилAя'] = 0
+$replics_position['эрБ5YЫXqFЧwvилAя'] = 'IтБзQОБЦuYЪяJDЫC'
+!@ REPLIC_1
+$replics_id['цzsвZoиzТАгКrеdG'] = 'цzsвZoиzТАгКrеdG'
+$replics_source['цzsвZoиzТАгКrеdG'] = 'iffing:DIALOG_VALUE["что.в"]=0:iffing
+dynamic-code:DIALOG_VALUE["что.в"]=1:dynamic-code
+frase-block:
+<i>Бац! Оказывается, может быть ещё больнее, чем в первый раз.</i>
+<npc-name>Ещё раз скажешь «что», выстрелю.
+:frase-block'
+$replics_sets['цzsвZoиzТАгКrеdG'] = ''
+replics_count['цzsвZoиzТАгКrеdG'] = 0
+$replics_position['цzsвZoиzТАгКrеdG'] = 'IтБзQОБЦuYЪяJDЫC'
+!@ REPLIC_2
+$replics_id['kx_8dSШaтCШщ1ЯXр'] = 'kx_8dSШaтCШщ1ЯXр'
+$replics_source['kx_8dSШaтCШщ1ЯXр'] = '[Закрыть]closeup'
+$replics_sets['kx_8dSШaтCШщ1ЯXр'] = ''
+replics_count['kx_8dSШaтCШщ1ЯXр'] = 0
+$replics_position['kx_8dSШaтCШщ1ЯXр'] = 'эрБ5YЫXqFЧwvилAя'
+!@ REPLIC_18
+$replics_id['н0фuiWЫRWy2йСбTu'] = 'н0фuiWЫRWy2йСбTu'
+$replics_source['н0фuiWЫRWy2йСбTu'] = 'Какого чёрта тогда ты делаешь в кабинке оператора?'
+$replics_sets['н0фuiWЫRWy2йСбTu'] = ''
+replics_count['н0фuiWЫRWy2йСбTu'] = 0
+$replics_position['н0фuiWЫRWy2йСбTu'] = 'ИнКEБрНЧЛ7рUqАZo'
+!@ REPLIC_17
+$replics_id['uЖ4vEБkТLеIWGЙЧg'] = 'uЖ4vEБkТLеIWGЙЧg'
+$replics_source['uЖ4vEБkТLеIWGЙЧg'] = 'act-name:Тоже решил денег взять.:act-name
+Да я вот решил тоже денег взять. Под шумок, так сказать. Хе-хе.'
+$replics_sets['uЖ4vEБkТLеIWGЙЧg'] = ''
+replics_count['uЖ4vEБkТLеIWGЙЧg'] = 0
+$replics_position['uЖ4vEБkТLеIWGЙЧg'] = 'н0фuiWЫRWy2йСбTu'
+!@ REPLIC_14
+$replics_id['WqлФДrкГovпXбNpщ'] = 'WqлФДrкГovпXбNpщ'
+$replics_source['WqлФДrкГovпXбNpщ'] = 'От вас прячусь.
+frase-block:
+<hero-name>Я тут от вас прячусь...
+<npc-name>А, ты один из посетителей?
+<hero-name>Да.
+<npc-name>Я вот не видел, как ты сюда пробегал, ты сюда зашёл ещё до того, как я вошёл в здание?
+<hero-name>Да!
+<npc-name>А как же ты через турникет прошёл?
+:frase-block'
+$replics_sets['WqлФДrкГovпXбNpщ'] = ''
+replics_count['WqлФДrкГovпXбNpщ'] = 0
+$replics_position['WqлФДrкГovпXбNpщ'] = 'н0фuiWЫRWy2йСбTu'
+!@ REPLIC_10
+$replics_id['aнагФZuWXЩЬvljие'] = 'aнагФZuWXЩЬvljие'
+$replics_source['aнагФZuWXЩЬvljие'] = 'act-name:Я техник.:act-name
+Я просто техник, мне позвонили и попросили починить компьютер. Они иногда вызывают меня сюда, но я не знаю, где тут сейф, честное слово!'
+$replics_sets['aнагФZuWXЩЬvljие'] = ''
+replics_count['aнагФZuWXЩЬvljие'] = 0
+$replics_position['aнагФZuWXЩЬvljие'] = 'н0фuiWЫRWy2йСбTu'
+!@ REPLIC_9
+$replics_id['гlПШжсK_ШСPZёусg'] = 'гlПШжсK_ШСPZёусg'
+$replics_source['гlПШжсK_ШСPZёусg'] = 'Занятно. Тогда почему на твоём бейдже написано «Старший кассир»?'
+$replics_sets['гlПШжсK_ШСPZёусg'] = ''
+replics_count['гlПШжсK_ШСPZёусg'] = 0
+$replics_position['гlПШжсK_ШСPZёусg'] = 'aнагФZuWXЩЬvljие'
+!@ REPLIC_8
+$replics_id['ПдЗkЮMкisMgЪяЖхZ'] = 'ПдЗkЮMкisMgЪяЖхZ'
+$replics_source['ПдЗkЮMкisMgЪяЖхZ'] = 'act-name:Хранилище в подвале...:act-name
+leveljump:storagecellar'
+$replics_sets['ПдЗkЮMкisMgЪяЖхZ'] = ''
+replics_count['ПдЗkЮMкisMgЪяЖхZ'] = 0
+$replics_position['ПдЗkЮMкisMgЪяЖхZ'] = 'гlПШжсK_ШСPZёусg'
+!@ REPLIC_7
+$replics_id['nSVyXл8wгYjiН6аЦ'] = 'nSVyXл8wгYjiН6аЦ'
+$replics_source['nSVyXл8wгYjiН6аЦ'] = 'hero="nattrib:-i"
+act-name:Я его одолжил, чтобы через турникет пройти.:act-name
+Я его одолжил, чтобы пройти через турникет, я часто так делаю, а то они никак мне собственный не сделают...'
+$replics_sets['nSVyXл8wгYjiН6аЦ'] = ''
+replics_count['nSVyXл8wгYjiН6аЦ'] = 0
+$replics_position['nSVyXл8wгYjiН6аЦ'] = 'гlПШжсK_ШСPZёусg'
+!@ REPLIC_6
+$replics_id['UШЮGжЕyNфRs0Чxлl'] = 'UШЮGжЕyNфRs0Чxлl'
+$replics_source['UШЮGжЕyNфRs0Чxлl'] = 'frase-block:
+<npc-name>У кого одолжил?
+<i>Пальцем в толстого очкарика на полу, тут же затрясшего головой.</i>
+<npc-name>Окей, спасибо, техник, — <i>и спускает куро...<i>
+:frase-block
+dynamic-code:cla:dynamic-code'
+$replics_sets['UШЮGжЕyNфRs0Чxлl'] = ''
+replics_count['UШЮGжЕyNфRs0Чxлl'] = 0
+$replics_position['UШЮGжЕyNфRs0Чxлl'] = 'nSVyXл8wгYjiН6аЦ'
+!@ REPLIC_5
+$replics_id['йЛЬРYЧThПce1WМЯk'] = 'йЛЬРYЧThПce1WМЯk'
+$replics_source['йЛЬРYЧThПce1WМЯk'] = '[Закрыть]closeup'
+$replics_sets['йЛЬРYЧThПce1WМЯk'] = ''
+replics_count['йЛЬРYЧThПce1WМЯk'] = 0
+$replics_position['йЛЬРYЧThПce1WМЯk'] = 'UШЮGжЕyNфRs0Чxлl'
+!@ REPLIC_13
+$replics_id['ь3NКщчИДъY0FJэЗЙ'] = 'ь3NКщчИДъY0FJэЗЙ'
+$replics_source['ь3NКщчИДъY0FJэЗЙ'] = ''
+$replics_sets['ь3NКщчИДъY0FJэЗЙ'] = ''
+replics_count['ь3NКщчИДъY0FJэЗЙ'] = 0
+$replics_position['ь3NКщчИДъY0FJэЗЙ'] = 'WqлФДrкГovпXбNpщ'
+!@ REPLIC_12
+$replics_id['RЦЁчщwНшPЗjHДжmц'] = 'RЦЁчщwНшPЗjHДжmц'
+$replics_source['RЦЁчщwНшPЗjHДжmц'] = 'act-name:Хранилище в подвале...:act-name
+leveljump:storagecellar'
+$replics_sets['RЦЁчщwНшPЗjHДжmц'] = ''
+replics_count['RЦЁчщwНшPЗjHДжmц'] = 0
+$replics_position['RЦЁчщwНшPЗjHДжmц'] = 'ь3NКщчИДъY0FJэЗЙ'
+!@ REPLIC_11
+$replics_id['ЬIЧOF64hPЩRТщpк_'] = 'ЬIЧOF64hPЩRТщpк_'
+$replics_source['ЬIЧOF64hPЩRТщpк_'] = 'Что?
+leveljump:thirddead'
+$replics_sets['ЬIЧOF64hPЩRТщpк_'] = ''
+replics_count['ЬIЧOF64hPЩRТщpк_'] = 0
+$replics_position['ЬIЧOF64hPЩRТщpк_'] = 'ь3NКщчИДъY0FJэЗЙ'
+!@ REPLIC_16
+$replics_id['шa4_ЛvЕhрn53ШF6H'] = 'шa4_ЛvЕhрn53ШF6H'
+$replics_source['шa4_ЛvЕhрn53ШF6H'] = 'А, вон оно что. Но на тебе форма сотрудника банка. То есть, ты не только лжец, но ещё и вор? Двадцать секунд. Хе-хе.'
+$replics_sets['шa4_ЛvЕhрn53ШF6H'] = ''
+replics_count['шa4_ЛvЕhрn53ШF6H'] = 0
+$replics_position['шa4_ЛvЕhрn53ШF6H'] = 'uЖ4vEБkТLеIWGЙЧg'
+!@ REPLIC_15
+$replics_id['ПАзУOУqцыdО7FЧeШ'] = 'ПАзУOУqцыdО7FЧeШ'
+$replics_source['ПАзУOУqцыdО7FЧeШ'] = 'act-name:Хранилище в подвале!:act-name
+leveljump:storagecellar'
+$replics_sets['ПАзУOУqцыdО7FЧeШ'] = ''
+replics_count['ПАзУOУqцыdО7FЧeШ'] = 0
+$replics_position['ПАзУOУqцыdО7FЧeШ'] = 'шa4_ЛvЕhрn53ШF6H'
+!@ REPLIC_65
+$replics_id['hЯЖnpFQЦklyнхлча'] = 'hЯЖnpFQЦklyнхлча'
+$replics_source['hЯЖnpFQЦklyнхлча'] = 'Уже лучше. А теперь, как туда добраться?'
+$replics_sets['hЯЖnpFQЦklyнхлча'] = ''
+replics_count['hЯЖnpFQЦklyнхлча'] = 0
+$replics_position['hЯЖnpFQЦklyнхлча'] = 'Ю6юAЭЧsxuё4УkщKх'
+!@ REPLIC_64
+$replics_id['ВУfФ72З1ЦТlсуъ6Я'] = 'ВУfФ72З1ЦТlсуъ6Я'
+$replics_source['ВУfФ72З1ЦТlсуъ6Я'] = ''
+$replics_sets['ВУfФ72З1ЦТlсуъ6Я'] = ''
+replics_count['ВУfФ72З1ЦТlсуъ6Я'] = 0
+$replics_position['ВУfФ72З1ЦТlсуъ6Я'] = 'hЯЖnpFQЦklyнхлча'
+!@ REPLIC_63
+$replics_id['ЧГcVВаСVhЫzKТ0gй'] = 'ЧГcVВаСVhЫzKТ0gй'
+$replics_source['ЧГcVВаСVhЫzKТ0gй'] = 'act-name:Нет:act-name
+iffing:$DIALOG_VALUE["по лестнице"]="поговорили" and $DIALOG_VALUE["по лифту"]="поговорили":iffing
+К сожалению, больше путей нет.'
+$replics_sets['ЧГcVВаСVhЫzKТ0gй'] = ''
+replics_count['ЧГcVВаСVhЫzKТ0gй'] = 0
+$replics_position['ЧГcVВаСVhЫzKТ0gй'] = 'ВУfФ72З1ЦТlсуъ6Я'
+!@ REPLIC_58
+$replics_id['rPЪeш0ижwЫХЁсигk'] = 'rPЪeш0ижwЫХЁсигk'
+$replics_source['rPЪeш0ижwЫХЁсигk'] = 'act-name:На лифте...:act-name
+iffing:$DIALOG_VALUE["по лифту"]!"поговорили":iffing
+В кабинете управляющего есть лифт, спускающийся прямо в хранилище. Только вряд ли вы до него доберётесь.'
+$replics_sets['rPЪeш0ижwЫХЁсигk'] = ''
+replics_count['rPЪeш0ижwЫХЁсигk'] = 0
+$replics_position['rPЪeш0ижwЫХЁсигk'] = 'ВУfФ72З1ЦТlсуъ6Я'
+!@ REPLIC_39
+$replics_id['яMчЁtсмЩюl8vLСb8'] = 'яMчЁtсмЩюl8vLСb8'
+$replics_source['яMчЁtсмЩюl8vLСb8'] = 'act-name:По лестнице...:act-name
+iffing:$DIALOG_VALUE["по лестнице"]!"поговорили":iffing
+Вон за той дверью в подвал ведёт лестница, по ней можно спуститься до главного коридора, из него в архив, а уже через архив к двери хранилища.'
+$replics_sets['яMчЁtсмЩюl8vLСb8'] = ''
+replics_count['яMчЁtсмЩюl8vLСb8'] = 0
+$replics_position['яMчЁtсмЩюl8vLСb8'] = 'ВУfФ72З1ЦТlсуъ6Я'
+!@ REPLIC_38
+$replics_id['C66jЬNEИMDоdСЪsв'] = 'C66jЬNEИMDоdСЪsв'
+$replics_source['C66jЬNEИMDоdСЪsв'] = 'Ещё что-нибудь, о чём мне как грабителю полезно было бы узнать?'
+$replics_sets['C66jЬNEИMDоdСЪsв'] = ''
+replics_count['C66jЬNEИMDоdСЪsв'] = 0
+$replics_position['C66jЬNEИMDоdСЪsв'] = 'яMчЁtсмЩюl8vLСb8'
+!@ REPLIC_37
+$replics_id['7MKЙepo1зу4Ын4ЛB'] = '7MKЙepo1зу4Ын4ЛB'
+$replics_source['7MKЙepo1зу4Ын4ЛB'] = ''
+$replics_sets['7MKЙepo1зу4Ын4ЛB'] = ''
+replics_count['7MKЙepo1зу4Ын4ЛB'] = 0
+$replics_position['7MKЙepo1зу4Ын4ЛB'] = 'C66jЬNEИMDоdСЪsв'
+!@ REPLIC_36
+$replics_id['НкIеЖПтfBДоOь1RГ'] = 'НкIеЖПтfBДоOь1RГ'
+$replics_source['НкIеЖПтfBДоOь1RГ'] = 'iffing:$DIALOG_VALUE["хранилище"]="поговорили" and $DIALOG_VALUE["архив"]="поговорили" and $DIALOG_VALUE["коридор"]="поговорили" and $DIALOG_VALUE["лестница"]="поговорили":iffing
+dynamic-code:$DIALOG_VALUE["по лестнице"]="поговорили":dynamic-code
+frase-block:
+<hero-name>На этом всё.
+<npc-name>А другой путь есть?
+:frase-block
+levelup:4'
+$replics_sets['НкIеЖПтfBДоOь1RГ'] = ''
+replics_count['НкIеЖПтfBДоOь1RГ'] = 0
+$replics_position['НкIеЖПтfBДоOь1RГ'] = '7MKЙepo1зу4Ын4ЛB'
+!@ REPLIC_35
+$replics_id['TOРГYIDxn2UооaDQ'] = 'TOРГYIDxn2UооaDQ'
+$replics_source['TOРГYIDxn2UооaDQ'] = 'act-name:О двери в хранилище...:act-name
+Толщина двери в хранилище полтора метра.
+iffing:$DIALOG_VALUE["хранилище"]!"поговорили":iffing'
+$replics_sets['TOРГYIDxn2UооaDQ'] = ''
+replics_count['TOРГYIDxn2UооaDQ'] = 0
+$replics_position['TOРГYIDxn2UооaDQ'] = '7MKЙepo1зу4Ын4ЛB'
+!@ REPLIC_33
+$replics_id['кМТlню_LkxЬИVюЬH'] = 'кМТlню_LkxЬИVюЬH'
+$replics_source['кМТlню_LkxЬИVюЬH'] = 'act-name:Об архиве...:act-name
+iffing:$DIALOG_VALUE["архив"]!"поговорили":iffing
+В архиве люди пропадают...'
+$replics_sets['кМТlню_LkxЬИVюЬH'] = ''
+replics_count['кМТlню_LkxЬИVюЬH'] = 0
+$replics_position['кМТlню_LkxЬИVюЬH'] = '7MKЙepo1зу4Ын4ЛB'
+!@ REPLIC_31
+$replics_id['ytbqБсv2ЛЖйВуhdo'] = 'ytbqБсv2ЛЖйВуhdo'
+$replics_source['ytbqБсv2ЛЖйВуhdo'] = 'act-name:О коридоре...:act-name
+iffing:$DIALOG_VALUE["коридор"]!"поговорили":iffing
+Поперёк коридора идут лазерные лучи.'
+$replics_sets['ytbqБсv2ЛЖйВуhdo'] = ''
+replics_count['ytbqБсv2ЛЖйВуhdo'] = 0
+$replics_position['ytbqБсv2ЛЖйВуhdo'] = '7MKЙepo1зу4Ын4ЛB'
+!@ REPLIC_25
+$replics_id['LрbъХоCOgcмЗоц2ю'] = 'LрbъХоCOgcмЗоц2ю'
+$replics_source['LрbъХоCOgcмЗоц2ю'] = 'act-name:О лестинце...:act-name
+iffing:$DIALOG_VALUE["лестница"]!"поговорили":iffing
+На лестнице сторожит охранник с оружием.'
+$replics_sets['LрbъХоCOgcмЗоц2ю'] = ''
+replics_count['LрbъХоCOgcмЗоц2ю'] = 0
+$replics_position['LрbъХоCOgcмЗоц2ю'] = '7MKЙepo1зу4Ын4ЛB'
+!@ REPLIC_24
+$replics_id['shШДFEgёСMОуvФТf'] = 'shШДFEgёСMОуvФТf'
+$replics_source['shШДFEgёСMОуvФТf'] = 'Каким оружием?'
+$replics_sets['shШДFEgёСMОуvФТf'] = ''
+replics_count['shШДFEgёСMОуvФТf'] = 0
+$replics_position['shШДFEgёСMОуvФТf'] = 'LрbъХоCOgcмЗоц2ю'
+!@ REPLIC_23
+$replics_id['NЩruKZ2ЬлuЦДШТqц'] = 'NЩruKZ2ЬлuЦДШТqц'
+$replics_source['NЩruKZ2ЬлuЦДШТqц'] = 'act-name:Benelli M4...:act-name
+Benelli M4 Super 90, шестизарядный, с телескопическим прикладом, пистолетной рукояткой, планкой Пикатинни...'
+$replics_sets['NЩruKZ2ЬлuЦДШТqц'] = ''
+replics_count['NЩruKZ2ЬлuЦДШТqц'] = 0
+$replics_position['NЩruKZ2ЬлuЦДШТqц'] = 'shШДFEgёСMОуvФТf'
+!@ REPLIC_21
+$replics_id['XR6БkмуRкЪгпфFфъ'] = 'XR6БkмуRкЪгпфFфъ'
+$replics_source['XR6БkмуRкЪгпфFфъ'] = 'act-name:Ружьё какое-то...:act-name
+Не знаю, я не разбираюсь.'
+$replics_sets['XR6БkмуRкЪгпфFфъ'] = ''
+replics_count['XR6БkмуRкЪгпфFфъ'] = 0
+$replics_position['XR6БkмуRкЪгпфFфъ'] = 'shШДFEgёСMОуvФТf'
+!@ REPLIC_20
+$replics_id['UzRМьcmЁщШXУiгнП'] = 'UzRМьcmЁщШXУiгнП'
+$replics_source['UzRМьcmЁщШXУiгнП'] = 'Дальше.
+dynamic-code:$DIALOG_VALUE["лестница"]="поговорили":dynamic-code
+levelup:4'
+$replics_sets['UzRМьcmЁщШXУiгнП'] = ''
+replics_count['UzRМьcmЁщШXУiгнП'] = 0
+$replics_position['UzRМьcmЁщШXУiгнП'] = 'XR6БkмуRкЪгпфFфъ'
+!@ REPLIC_22
+$replics_id['УoлbгыШъЖвpяgъV4'] = 'УoлbгыШъЖвpяgъV4'
+$replics_source['УoлbгыШъЖвpяgъV4'] = 'Всё, заткнись, давай дальше.
+dynamic-code:$DIALOG_VALUE["лестница"]="поговорили":dynamic-code
+levelup:4'
+$replics_sets['УoлbгыШъЖвpяgъV4'] = ''
+replics_count['УoлbгыШъЖвpяgъV4'] = 0
+$replics_position['УoлbгыШъЖвpяgъV4'] = 'NЩruKZ2ЬлuЦДШТqц'
+!@ REPLIC_30
+$replics_id['ЕАрн1yБЦЮBvGjМjm'] = 'ЕАрн1yБЦЮBvGjМjm'
+$replics_source['ЕАрн1yБЦЮBvGjМjm'] = 'Красные или зелёные?'
+$replics_sets['ЕАрн1yБЦЮBvGjМjm'] = ''
+replics_count['ЕАрн1yБЦЮBvGjМjm'] = 0
+$replics_position['ЕАрн1yБЦЮBvGjМjm'] = 'ytbqБсv2ЛЖйВуhdo'
+!@ REPLIC_29
+$replics_id['zДBqМyEVoAЗбъSюж'] = 'zДBqМyEVoAЗбъSюж'
+$replics_source['zДBqМyEVoAЗбъSюж'] = 'act-name:Зелёные.:act-name
+dynamic-code:cla:dynamic-code
+frase-block:
+<hero-name>Зелёные, кажется, а что?
+<npc-name>Проклятье, у меня дейтеранопия.
+<hero-name>Зелёный цвет не различаете?
+<npc-name>Да.
+<hero-name>Сочувствую.
+<npc-name>Спасибо. Дальше.
+:frase-block'
+$replics_sets['zДBqМyEVoAЗбъSюж'] = ''
+replics_count['zДBqМyEVoAЗбъSюж'] = 0
+$replics_position['zДBqМyEVoAЗбъSюж'] = 'ЕАрн1yБЦЮBvGjМjm'
+!@ REPLIC_27
+$replics_id['чOGЯFfмЩLзЛшочLJ'] = 'чOGЯFfмЩLзЛшочLJ'
+$replics_source['чOGЯFfмЩLзЛшочLJ'] = 'act-name:Красные.:act-name
+Красные, кажется. А что есть какая-то разница?'
+$replics_sets['чOGЯFfмЩLзЛшочLJ'] = ''
+replics_count['чOGЯFfмЩLзЛшочLJ'] = 0
+$replics_position['чOGЯFfмЩLзЛшочLJ'] = 'ЕАрн1yБЦЮBvGjМjm'
+!@ REPLIC_26
+$replics_id['хVИЗnЕк9н3эhюЪVу'] = 'хVИЗnЕк9н3эhюЪVу'
+$replics_source['хVИЗnЕк9н3эhюЪVу'] = 'Не твоего ума дело, дальше давай.
+dynamic-code:$DIALOG_VALUE["коридор"]="поговорили":dynamic-code
+levelup:4'
+$replics_sets['хVИЗnЕк9н3эhюЪVу'] = ''
+replics_count['хVИЗnЕк9н3эhюЪVу'] = 0
+$replics_position['хVИЗnЕк9н3эhюЪVу'] = 'чOGЯFfмЩLзЛшочLJ'
+!@ REPLIC_28
+$replics_id['MДl7ХUЭЗnЬXaаблж'] = 'MДl7ХUЭЗnЬXaаблж'
+$replics_source['MДl7ХUЭЗnЬXaаблж'] = 'dynamic-code:$DIALOG_VALUE["коридор"]="поговорили":dynamic-code
+levelup:4'
+$replics_sets['MДl7ХUЭЗnЬXaаблж'] = ''
+replics_count['MДl7ХUЭЗnЬXaаблж'] = 0
+$replics_position['MДl7ХUЭЗnЬXaаблж'] = 'zДBqМyEVoAЗбъSюж'
+!@ REPLIC_32
+$replics_id['1ЁMаaЛwrmЁпхqЦКУ'] = '1ЁMаaЛwrmЁпхqЦКУ'
+$replics_source['1ЁMаaЛwrmЁпхqЦКУ'] = 'frase-block:
+<npc-name>Что?!
+<hero-name>Люди, говорю, в архиве пропадают.
+<npc-name>Да это я понял! Почему пропадают?
+<hero-name>Не знаю, но, поговаривают, что нужно быть поосторожнее со шкафами "Ф".
+<npc-name>Почему?
+<hero-name>Пропали сотрудники Фриманн, Фрекель, Фаркопс и Фонг. У вас какая фамилия?
+<npc-name>Фицжеральд.
+<hero-name>О...
+<npc-name>Дальше.
+:frase-block
+dynamic-code:$DIALOG_VALUE["архив"]="поговорили":dynamic-code
+levelup:2'
+$replics_sets['1ЁMаaЛwrmЁпхqЦКУ'] = ''
+replics_count['1ЁMаaЛwrmЁпхqЦКУ'] = 0
+$replics_position['1ЁMаaЛwrmЁпхqЦКУ'] = 'кМТlню_LkxЬИVюЬH'
+!@ REPLIC_34
+$replics_id['SUfц5uцХYS4UЙu7L'] = 'SUfц5uцХYS4UЙu7L'
+$replics_source['SUfц5uцХYS4UЙu7L'] = 'frase-block:
+<npc-name>Ого...
+<hero-name>И замок «Sargent & Greenleaf».
+<npc-name>Ой...
+<hero-name>Пол внутри под напряжением десять тысяч вольт.
+<npc-name>Ох...
+<hero-name>А снаружи камеры.
+<npc-name>Понятно. Дальше.
+:frase-block
+dynamic-code:$DIALOG_VALUE["хранилище"]="поговорили":dynamic-code
+levelup:2'
+$replics_sets['SUfц5uцХYS4UЙu7L'] = ''
+replics_count['SUfц5uцХYS4UЙu7L'] = 0
+$replics_position['SUfц5uцХYS4UЙu7L'] = 'TOРГYIDxn2UооaDQ'
+!@ REPLIC_57
+$replics_id['ЩVtJКgr4SnOЯNfOl'] = 'ЩVtJКgr4SnOЯNfOl'
+$replics_source['ЩVtJКgr4SnOЯNfOl'] = 'Почему это?'
+$replics_sets['ЩVtJКgr4SnOЯNfOl'] = ''
+replics_count['ЩVtJКgr4SnOЯNfOl'] = 0
+$replics_position['ЩVtJКgr4SnOЯNfOl'] = 'rPЪeш0ижwЫХЁсигk'
+!@ REPLIC_56
+$replics_id['тИГЗииbЕ1CЙRЗЦЧз'] = 'тИГЗииbЕ1CЙRЗЦЧз'
+$replics_source['тИГЗииbЕ1CЙRЗЦЧз'] = '<!-- блок действий -->
+
+
+
+
+<!-- блок действий -->'
+$replics_sets['тИГЗииbЕ1CЙRЗЦЧз'] = ''
+replics_count['тИГЗииbЕ1CЙRЗЦЧз'] = 0
+$replics_position['тИГЗииbЕ1CЙRЗЦЧз'] = 'ЩVtJКgr4SnOЯNfOl'
+!@ REPLIC_55
+$replics_id['ёднюоhjхЪШzъb0hо'] = 'ёднюоhjхЪШzъb0hо'
+$replics_source['ёднюоhjхЪШzъb0hо'] = 'iffing:$DIALOG_VALUE["системы идентификации"]="поговорили" and $DIALOG_VALUE["собаки"]="поговорили" and $DIALOG_VALUE["управляющий"]="поговорили":iffing
+dynamic-code:$DIALOG_VALUE["по лифту"]="поговорили":dynamic-code
+frase-block:
+<hero-name>Это всё.
+<npc-name>А другой путь есть?
+:frase-block
+levelup:4'
+$replics_sets['ёднюоhjхЪШzъb0hо'] = ''
+replics_count['ёднюоhjхЪШzъb0hо'] = 0
+$replics_position['ёднюоhjхЪШzъb0hо'] = 'тИГЗииbЕ1CЙRЗЦЧз'
+!@ REPLIC_54
+$replics_id['u4NN1ЮsиqИчиЁШх4'] = 'u4NN1ЮsиqИчиЁШх4'
+$replics_source['u4NN1ЮsиqИчиЁШх4'] = 'act-name:Системы идентификации.:act-name
+iffing:$DIALOG_VALUE["системы идентификации"]!"поговорили":iffing
+В лифте стоят системы идентификации, которые пропускают только управляющего.'
+$replics_sets['u4NN1ЮsиqИчиЁШх4'] = ''
+replics_count['u4NN1ЮsиqИчиЁШх4'] = 0
+$replics_position['u4NN1ЮsиqИчиЁШх4'] = 'тИГЗииbЕ1CЙRЗЦЧз'
+!@ REPLIC_43
+$replics_id['hьЫЙxecFLМaж1ibP'] = 'hьЫЙxecFLМaж1ibP'
+$replics_source['hьЫЙxecFLМaж1ibP'] = 'Собаки.
+iffing:$DIALOG_VALUE["собаки"]!"поговорили":iffing'
+$replics_sets['hьЫЙxecFLМaж1ibP'] = ''
+replics_count['hьЫЙxecFLМaж1ibP'] = 0
+$replics_position['hьЫЙxecFLМaж1ibP'] = 'тИГЗииbЕ1CЙRЗЦЧз'
+!@ REPLIC_41
+$replics_id['bл1ьзeмHdiиЫUfкh'] = 'bл1ьзeмHdiиЫUfкh'
+$replics_source['bл1ьзeмHdiиЫUfкh'] = 'act-name:Управляющий.:act-name
+iffing:$DIALOG_VALUE["управляющий"]!"поговорили":iffing
+В кабинете скорее всего сидит сам управляющий.'
+$replics_sets['bл1ьзeмHdiиЫUfкh'] = ''
+replics_count['bл1ьзeмHdiиЫUfкh'] = 0
+$replics_position['bл1ьзeмHdiиЫUfкh'] = 'тИГЗииbЕ1CЙRЗЦЧз'
+!@ REPLIC_40
+$replics_id['1йкмрwЬrьОщJиf34'] = '1йкмрwЬrьОщJиf34'
+$replics_source['1йкмрwЬrьОщJиf34'] = 'frase-block:<npc-name>И чего?
+<hero-name>Он чемпион города по гарлемскому боксу.
+<npc-name>Впервые слышу про такой бокс.
+<hero-name>Основная особенность его в том, что во время боя разрешено использовать кастеты, биты и автоматическое оружие.
+<npc-name>Хмм, ну ладно, допустим, я с ним разберусь, что ещё?
+:frase-block
+dynamic-code:$DIALOG_VALUE["управляющий"]="поговорили":dynamic-code
+levelup:2'
+$replics_sets['1йкмрwЬrьОщJиf34'] = ''
+replics_count['1йкмрwЬrьОщJиf34'] = 0
+$replics_position['1йкмрwЬrьОщJиf34'] = 'bл1ьзeмHdiиЫUfкh'
+!@ REPLIC_42
+$replics_id['knЗЛЕХЭCАЬрдЮБЁW'] = 'knЗЛЕХЭCАЬрдЮБЁW'
+$replics_source['knЗЛЕХЭCАЬрдЮБЁW'] = 'frase-block:
+<npc-name>Собаки?
+<hero-name>Да.
+<npc-name>Большие?
+<hero-name>Очень.
+<npc-name>Много?
+<hero-name>Четыре.
+<npc-name>Ох... Ну допустим, с собаками я как-нибудь управлюсь. Что-то ещё?
+:frase-block
+dynamic-code:$DIALOG_VALUE["собаки"]="поговорили":dynamic-code
+levelup:2'
+$replics_sets['knЗЛЕХЭCАЬрдЮБЁW'] = ''
+replics_count['knЗЛЕХЭCАЬрдЮБЁW'] = 0
+$replics_position['knЗЛЕХЭCАЬрдЮБЁW'] = 'hьЫЙxecFLМaж1ibP'
+!@ REPLIC_53
+$replics_id['ApЙэкJOтЭcCrCВШQ'] = 'ApЙэкJOтЭcCrCВШQ'
+$replics_source['ApЙэкJOтЭcCrCВШQ'] = 'Какие системы?'
+$replics_sets['ApЙэкJOтЭcCrCВШQ'] = ''
+replics_count['ApЙэкJOтЭcCrCВШQ'] = 0
+$replics_position['ApЙэкJOтЭcCrCВШQ'] = 'u4NN1ЮsиqИчиЁШх4'
+!@ REPLIC_52
+$replics_id['рrНURЖТАJЗГЩВцмо'] = 'рrНURЖТАJЗГЩВцмо'
+$replics_source['рrНURЖТАJЗГЩВцмо'] = '<!-- системы идентификации -->
+
+
+
+
+<!-- системы идентификации -->'
+$replics_sets['рrНURЖТАJЗГЩВцмо'] = ''
+replics_count['рrНURЖТАJЗГЩВцмо'] = 0
+$replics_position['рrНURЖТАJЗГЩВцмо'] = 'ApЙэкJOтЭcCrCВШQ'
+!@ REPLIC_51
+$replics_id['ыЧтрOBЖBPЬUмёДЬя'] = 'ыЧтрOBЖBPЬUмёДЬя'
+$replics_source['ыЧтрOBЖBPЬUмёДЬя'] = 'act-name:По системам всё:act-name
+По системам идентификации всё.
+iffing:$DIALOG_VALUE["вес"]="поговорили" and $DIALOG_VALUE["сетчатка"]="поговорили" and $DIALOG_VALUE["отпечатки"]="поговорили":iffing'
+$replics_sets['ыЧтрOBЖBPЬUмёДЬя'] = ''
+replics_count['ыЧтрOBЖBPЬUмёДЬя'] = 0
+$replics_position['ыЧтрOBЖBPЬUмёДЬя'] = 'рrНURЖТАJЗГЩВцмо'
+!@ REPLIC_49
+$replics_id['4кck1яиыIHаXLйёХ'] = '4кck1яиыIHаXLйёХ'
+$replics_source['4кck1яиыIHаXLйёХ'] = 'act-name:Вес:act-name
+Датчик веса.
+iffing:$DIALOG_VALUE["вес"]!"поговорили":iffing'
+$replics_sets['4кck1яиыIHаXLйёХ'] = ''
+replics_count['4кck1яиыIHаXLйёХ'] = 0
+$replics_position['4кck1яиыIHаXLйёХ'] = 'рrНURЖТАJЗГЩВцмо'
+!@ REPLIC_47
+$replics_id['БеUхМ5c2UнШХьxыy'] = 'БеUхМ5c2UнШХьxыy'
+$replics_source['БеUхМ5c2UнШХьxыy'] = 'act-name:Сетчатка глаза.:act-name
+Сканер сетчатки глаза.
+iffing:$DIALOG_VALUE["сетчатка"]!"поговорили":iffing'
+$replics_sets['БеUхМ5c2UнШХьxыy'] = ''
+replics_count['БеUхМ5c2UнШХьxыy'] = 0
+$replics_position['БеUхМ5c2UнШХьxыy'] = 'рrНURЖТАJЗГЩВцмо'
+!@ REPLIC_45
+$replics_id['xгРRfЗ_О8ЙhДПь8и'] = 'xгРRfЗ_О8ЙhДПь8и'
+$replics_source['xгРRfЗ_О8ЙhДПь8и'] = 'act-name:Отпечатки.:act-name
+Сканер отпечатка правой ладони.
+iffing:$DIALOG_VALUE["отпечатки"]!"поговорили":iffing'
+$replics_sets['xгРRfЗ_О8ЙhДПь8и'] = ''
+replics_count['xгРRfЗ_О8ЙhДПь8и'] = 0
+$replics_position['xгРRfЗ_О8ЙhДПь8и'] = 'рrНURЖТАJЗГЩВцмо'
+!@ REPLIC_44
+$replics_id['qDBvьъаПJО6CCДxи'] = 'qDBvьъаПJО6CCДxи'
+$replics_source['qDBvьъаПJО6CCДxи'] = 'Это, теоретически, можно обойти. Дальше.
+dynamic-code:$DIALOG_VALUE["отпечатки"]="поговорили":dynamic-code
+levelup:2'
+$replics_sets['qDBvьъаПJО6CCДxи'] = ''
+replics_count['qDBvьъаПJО6CCДxи'] = 0
+$replics_position['qDBvьъаПJО6CCДxи'] = 'xгРRfЗ_О8ЙhДПь8и'
+!@ REPLIC_46
+$replics_id['еЖЛrEквшДящzэL0I'] = 'еЖЛrEквшДящzэL0I'
+$replics_source['еЖЛrEквшДящzэL0I'] = 'Для этого у меня есть инструменты и необходимые навыки, — <i>он зловеще ухмыляется.</i> — Дальше.
+dynamic-code:$DIALOG_VALUE["сетчатка"]="поговорили":dynamic-code
+levelup:2'
+$replics_sets['еЖЛrEквшДящzэL0I'] = ''
+replics_count['еЖЛrEквшДящzэL0I'] = 0
+$replics_position['еЖЛrEквшДящzэL0I'] = 'БеUхМ5c2UнШХьxыy'
+!@ REPLIC_48
+$replics_id['pBQГOёКwЛMaудKНщ'] = 'pBQГOёКwЛMaудKНщ'
+$replics_source['pBQГOёКwЛMaудKНщ'] = 'frase-block:
+<npc-name>Хм. Сколько весит местный управляющий?
+<hero-name>124 килограмма. А вы сколько весите?
+<npc-name>61. Мда. Тут даже клонирующая машина бы не помогла. Ладно, дальше.
+:frase-block
+dynamic-code:$DIALOG_VALUE["вес"]="поговорили":dynamic-code
+levelup:2'
+$replics_sets['pBQГOёКwЛMaудKНщ'] = ''
+replics_count['pBQГOёКwЛMaудKНщ'] = 0
+$replics_position['pBQГOёКwЛMaудKНщ'] = '4кck1яиыIHаXLйёХ'
+!@ REPLIC_50
+$replics_id['LPсСfёъ3vFпъIEik'] = 'LPсСfёъ3vFпъIEik'
+$replics_source['LPсСfёъ3vFпъIEik'] = 'Ещё что-нибудь по лифту?
+dynamic-code:$DIALOG_VALUE["системы идентификации"]="поговорили":dynamic-code
+levelup:5'
+$replics_sets['LPсСfёъ3vFпъIEik'] = ''
+replics_count['LPсСfёъ3vFпъIEik'] = 0
+$replics_position['LPсСfёъ3vFпъIEik'] = 'ыЧтрOBЖBPЬUмёДЬя'
+!@ REPLIC_62
+$replics_id['w6ХЩАYкЬсgКиTИ5y'] = 'w6ХЩАYкЬсgКиTИ5y'
+$replics_source['w6ХЩАYкЬсgКиTИ5y'] = 'Вот же задачка. Монетку бросить что ли... Это всё? Может ещё что-нибудь знаешь?'
+$replics_sets['w6ХЩАYкЬсgКиTИ5y'] = ''
+replics_count['w6ХЩАYкЬсgКиTИ5y'] = 0
+$replics_position['w6ХЩАYкЬсgКиTИ5y'] = 'ЧГcVВаСVhЫzKТ0gй'
+!@ REPLIC_61
+$replics_id['0RKmЕsедл1ИтПъвн'] = '0RKmЕsедл1ИтПъвн'
+$replics_source['0RKmЕsедл1ИтПъвн'] = 'act-name:Про деньги.:act-name
+Знаю про деньги в хранилище.'
+$replics_sets['0RKmЕsедл1ИтПъвн'] = ''
+replics_count['0RKmЕsедл1ИтПъвн'] = 0
+$replics_position['0RKmЕsедл1ИтПъвн'] = 'w6ХЩАYкЬсgКиTИ5y'
+!@ REPLIC_60
+$replics_id['Ёbo6еёGKA_ЧъЦЖ2d'] = 'Ёbo6еёGKA_ЧъЦЖ2d'
+$replics_source['Ёbo6еёGKA_ЧъЦЖ2d'] = 'frase-block:
+<npc-name>Так, и что с ними?
+<hero-name>Их там нет.
+<npc-name>Как нет?!
+<hero-name>Ну мы переезжаем в другой район города и все деньги и ценности уже перевезли сегодня ночью.
+<npc-name>Так почему ты сразу не сказал?!
+<hero-name>Ну про это вы как раз не спрашивали.
+<npc-name>Проклятье!
+<i>И с этими словами он выбегает из отделения банка, где его ловит экипаж инкассаторской машины, приехавшей, чтобы как раз перевезти содержимое хранилища в другой район города. Хе-хе.</i>
+:frase-block'
+$replics_sets['Ёbo6еёGKA_ЧъЦЖ2d'] = ''
+replics_count['Ёbo6еёGKA_ЧъЦЖ2d'] = 0
+$replics_position['Ёbo6еёGKA_ЧъЦЖ2d'] = '0RKmЕsедл1ИтПъвн'
+!@ REPLIC_59
+$replics_id['tьOРaIZqЬ5IяH8Xя'] = 'tьOРaIZqЬ5IяH8Xя'
+$replics_source['tьOРaIZqЬ5IяH8Xя'] = '[Закрыть]closeup'
+$replics_sets['tьOРaIZqЬ5IяH8Xя'] = ''
+replics_count['tьOРaIZqЬ5IяH8Xя'] = 0
+$replics_position['tьOРaIZqЬ5IяH8Xя'] = 'Ёbo6еёGKA_ЧъЦЖ2d'
+- dialog_test
