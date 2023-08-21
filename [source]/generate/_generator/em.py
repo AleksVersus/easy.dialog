@@ -45,10 +45,10 @@ class Str:
 			'ucase': False,
 			'only-this': False # only symbols from include-arg
 		}
-		key_choose = False
-		symbols, new_symbols = '', ''
 		if modes is not None:
 			mode.update(modes)
+		key_choose = False
+		symbols, new_symbols = '', ''
 		if mode['only-this']:
 			symbols = include
 		else:
@@ -88,6 +88,42 @@ class Str:
 			result += str(symbols[random.randint(0, len(symbols)-1)])
 		return result
 
+	@staticmethod
+	def thin(string:str, sparcity=1, separator=' ', modes=None):
+		mode = {
+			'up': False,
+			'left': False,
+			'right': False
+		}
+		if modes is not None:
+			mode.update(modes)
+		result = []
+		if mode['up']:
+			while len(string)>0:
+				t = string[len(string)-(sparcity):]
+				string = string[0:len(string)-(sparcity)]
+				result.append(t)
+			result.reverse()
+		else:
+			while len(string)>0:
+				t = string[0:sparcity]
+				string = string[sparcity:]
+				result.append(t)
+		rr = separator.join(result)
+		if mode['left']: rr = separator + rr
+		if mode['right']: rr += separator
+		return rr
+
+def gen_uuid():
+	symbols = '0123456789abcdef'
+	result = ''
+	for i in range(36):
+		if i in (8, 13, 18, 23):
+			result += '-'
+		else:
+			result += symbols[random.randint(1, len(symbols)-1)]
+	return result
+
 if __name__ == "__main__":
 	# t = "    \n   \n	   первая строка 1    \nвторая строка 2\n   \n  третья строка\n   \n       "
 	# print([Str.widetrim(t, strip=True)])
@@ -96,4 +132,14 @@ if __name__ == "__main__":
 	# print(Str.random(16))	# '"i!TОж5wПЬрYхв#а'
 	# print(Str.random(16, modes={r'\d':True, r'\z':True, r'\я':True}, include='$ @ !'))	# 'cл4фYЛ7@EnoiЪm А'
 	# print(Str.random(16, include='24680', exclude='  ©'))	# 'f!с/ Xsэu\ZlcХ"u'
+	# print(Str.thin('профессура'))
+	# print(Str.thin('профессура', 1, separator='|'))
+	# print(Str.thin('профессура', 1, separator='|', modes={'right':True}))
+	# print(Str.thin('профессура', 1, separator='|', modes={'left':True}))
+	# print(Str.thin('профессура', 1, separator='|', modes={'left':True, 'right':True}))
+	# print(Str.thin('профессура', 3, separator='|'))
+	# print(Str.thin('профессура', 3, separator='|', modes={'up':True}))
+	# print(Str.thin('профессура', 3, separator='|', modes={'left':True}))
+	# print(Str.thin('профессура', 2, separator='|', modes={'right':True}))
+	# print(Str.thin('профессура', 1, separator='||', modes={'right':True, 'left':True}))
 	...
