@@ -14,7 +14,7 @@ class EasyDialog:
 		Easy Dialog Generator. Generate the QSP-code of dialogs
 		by Source Code of dialog.
 	"""
-	def __init__(self, dialog_body:str, unique_user_id:str):
+	def __init__(self, dialog_body:str, unique_user_id:str) -> None:
 		""" Constructor of Dialog's Object """
 		self.body = dialog_body
 		self.uid = unique_user_id
@@ -30,13 +30,13 @@ class EasyDialog:
 		# конвертируем диалог в тегированный вид
 		self.get_tags_source()
 		# помещаем диалог в микробазу
-		self.to_microbase()
+		self.to_microbase(save_temp_file=True)
 		# сообщаем настройки дочерним объектам
 		# self.sets_transport(save_temp_file=True)
 		# заменяем айдишники реплик
 		self.ids_replace()
 
-	def to_qsps(self, qsps_file_path:str):
+	def to_qsps(self, qsps_file_path:str) -> None:
 		output_lines = []
 		output_lines.append(f"QSP-Game Диалог {self.uid}\n")
 		output_lines.append(f'# dialog_{self.uid}\n')
@@ -51,12 +51,12 @@ class EasyDialog:
 		with open(qsps_file_path, 'w', encoding='utf-8') as fp:
 			fp.writelines(output_lines)
 
-	def get_tags_source(self, save_temp_file=False):
+	def get_tags_source(self, save_temp_file=False) -> None:
 		""" Realisation of 'dialog.inTag' fucntion """
-		answer_open = '[:'
-		answer_close = ':]'
-		quest_open = '{:'
-		quest_close = ':}'
+		answer_open = '[:' # activated replic
+		answer_close = ':]' # activated replic
+		quest_open = '{:' # passived replic
+		quest_close = ':}' # passived replic
 		tag_regexp = re.compile(r'\[:|:\]|\{:|:\}')
 
 		body = self.body
@@ -103,7 +103,7 @@ class EasyDialog:
 			with open('dialog.html', 'w', encoding='utf-8') as fp:
 				fp.write(self.tags_source['dialog-body']+f'\n{self.tags_source["tags-counter"]}')
 
-	def to_microbase(self, save_temp_file=False):
+	def to_microbase(self, save_temp_file=False) -> None:
 		""" convert dialog from tag_source to microbase """
 		body = self.tags_source['dialog-body']
 		i = self.tags_source['tags-counter']
@@ -144,13 +144,13 @@ class EasyDialog:
 		self.microbase['replic-type'][str(number)] = rtype
 		self.microbase['replic-settings'][str(number)] = ''
 
-	def mb_change_prop(self, prop:str, key:str, value:str):
+	def mb_change_prop(self, prop:str, key:str, value:str) -> None:
 		self.microbase[prop][key] = value
 
 	def sets_transport(self, save_temp_file=False):
 		...
 
-	def ids_replace(self, save_temp_file=False):
+	def ids_replace(self, save_temp_file=False) -> None:
 		ids = []
 		for key, value in self.microbase['replic-id'].items():
 			old_id = value
@@ -170,7 +170,7 @@ class EasyDialog:
 			db = pandas.DataFrame(self.microbase)
 			db.to_excel('.\\microbase_rids.xlsx')
 
-def main():
+def main() -> None:
 	with open('dialog.txt', 'r', encoding='utf-8') as fp:
 		text = fp.read()
 	# инициализируем микробазу и настравиаем иерархию
