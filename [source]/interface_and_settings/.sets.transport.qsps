@@ -1,6 +1,6 @@
 # dialog.sets.transport
-$args[0]=$args[0]	&	!	уникальный айди корневой реплики
-$args[1]=$args[1]	&	!	generate - режим генерации диалога
+$args[0]=$args[0]	&	!@	уникальный айди корневой реплики
+$args[1]=$args[1]	&	!@	generate - режим генерации диалога
 if $args[1]='generate':
 	$args['id.array']='$easy_dialog_base_ID'
 	$args['sets.array']='$easy_dialog_base_ST'
@@ -8,16 +8,16 @@ else
 	$args['id.array']='$id_replic'
 	$args['sets.array']='$sets_replic'
 end
-! локация предварительной передачи настроек всем дочерним элементам
+!@ локация предварительной передачи настроек всем дочерним элементам
 $args['level']=$args[0]
 :new_level
 args['level.pos']=arrpos($args['id.array'],$args['level'])
 $args['sets']=$func('dialog.get.sets',$args['level'],$args[1])
-! передача настроек текущему элементу
+!@ передача настроек текущему элементу
 if $args['sets']<>'':
 	dynamic "<<$args['sets.array']>>[<<args['level.pos']>>]='<<$args['sets']>>'"
 end
-! получение дочерних элементов
+!@ получение дочерних элементов
 $args['daught']=$func('dialog.get.daughter',$args['level'],'','$rbTEMP_ID','',$args[1])
 :get_daughter
 if arrsize('$rbTEMP_ID')>0:
@@ -28,7 +28,7 @@ if arrsize('$rbTEMP_ID')>0:
 		end
 		$easy_dialog_temp_var2[]=<<$args['id.array']>>[<<args['temp.pos']>>]
 	"
-	killvar '$rbTEMP_ID',0
+	killvar '$rbTEMP_ID', 0
 	jump 'get_daughter'
 end
 if arrsize('$easy_dialog_temp_var2')>0:

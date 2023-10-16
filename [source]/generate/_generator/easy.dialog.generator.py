@@ -20,21 +20,26 @@ class EasyDialog:
 		self.uid = unique_user_id
 		self.tags_source = None
 		self.microbase = {
-			'replic-source': {},
+			'replic-source': {}, # to dialog_body
 			'replic-id': {},
 			'replic-position': {},
 			'replic-marker': {},
 			'replic-type': {},
-			'replic-settings': {}
+			'replic-settings': {},
+			'replic-includes': {},
+			'replic-run': {},
 		}
+		self.mb_lines_count = 0
 		# конвертируем диалог в тегированный вид
 		self.get_tags_source()
 		# помещаем диалог в микробазу
 		self.to_microbase(save_temp_file=True)
-		# сообщаем настройки дочерним объектам
-		# self.sets_transport(save_temp_file=True)
+		# генерируем списки дочерних
+		self.set_includes()
+		# регенерируем настройки
+		self.sets_transport(save_temp_file=True)
 		# заменяем айдишники реплик
-		self.ids_replace()
+		self.ids_replace(save_temp_file=True)
 
 	def to_qsps(self, qsps_file_path:str) -> None:
 		output_lines = []
@@ -42,11 +47,12 @@ class EasyDialog:
 		output_lines.append(f'# dialog_{self.uid}\n')
 		for key, value in self.microbase['replic-id'].items():
 			output_lines.append(f'!@ REPLIC_{key}\n')
-			output_lines.append(f"$replics_id['{value}'] = '{value}'\n")
-			output_lines.append(f"$replics_source['{value}'] = '{em.Str.widetrim(self.microbase['replic-source'][key], strip=True)}'\n")
-			output_lines.append(f"$replics_sets['{value}'] = '{self.microbase['replic-settings'][key]}'\n")
-			output_lines.append(f"replics_count['{value}'] = 0\n")
-			output_lines.append(f"$replics_position['{value}'] = '{self.microbase['replic-position'][key]}'\n")
+			output_lines.append(f"$dialogs_id['{value}'] = '{value}'\n")
+			output_lines.append(f"$dialogs_body['{value}'] = '{em.Str.widetrim(self.microbase['replic-source'][key], strip=True)}'\n")
+			output_lines.append(f"$dialogs_sets['{value}'] = '{self.microbase['replic-settings'][key]}'\n")
+			output_lines.append(f"dialogs_count['{value}'] = 0\n")
+			output_lines.append(f"$dialogs_position['{value}'] = '{self.microbase['replic-position'][key]}'\n")
+			output_lines.append(f"$dialogs_includes['{value}'] = '{'|'.join(self.microbase['replic-includes'][key])}'\n")
 		output_lines.append(f'- dialog_{self.uid}\n')
 		with open(qsps_file_path, 'w', encoding='utf-8') as fp:
 			fp.writelines(output_lines)
@@ -143,12 +149,74 @@ class EasyDialog:
 		self.microbase['replic-marker'][str(number)] = marker
 		self.microbase['replic-type'][str(number)] = rtype
 		self.microbase['replic-settings'][str(number)] = ''
+		self.microbase['replic-includes'][str(number)] = []
+		self.microbase['replic-run'][str(number)] = ''
+		if number > self.mb_lines_count:
+			self.mb_lines_count = number
 
 	def mb_change_prop(self, prop:str, key:str, value:str) -> None:
 		self.microbase[prop][key] = value
 
 	def sets_transport(self, save_temp_file=False):
-		...
+		for key, value in self.microbase['replic-id'].items():
+			if self.microbase['replic-type'][key] == 'root':
+				# имеем дело с настройками диалога. Перерабатываем
+				self.dialog_sets_transport(key)
+
+
+
+				
+	def dialog_sets_transport(self, key:str) -> None:
+		# Извлекаем роли
+		actors_ids = em.Tag.get_num(self.microbase['replic-source'][key], 'actors').split(';')
+		actors_ids = list(map(lambda x: x.strip(), actors_ids))
+		# удаляем из исходника список ролей
+		self.microbase['replic-source'][key] = re.sub(r'actors\s*=\s*("|\')([\s\S]*?)\1', '', self.microbase['replic-source'][key])
+		# составляем словарик ролей
+		actors = {}
+		# список ролей в настройках
+		dialog_actors = ''
+		for actor in actors_ids:
+			if actor != '':
+				actors[actor] = em.Tag.get_cont(self.microbase['replic-source'][key], f'actor.{actor}')
+				# TODO self.gen_actor(actor, actors[actor])
+				self.microbase['replic-source'][key] = re.sub(f'<(actor.{actor})>'+r'[\s\S]+?<\/\1>', '', self.microbase['replic-source'][key])
+				dialog_actors += f'{actor}|'
+				if '<default_active>' in actors[actor]:
+					self.microbase['replic-settings'][key] += f'[default_active:{actor}]\n'
+				if '<default_passive>' in actors[actor]:
+					self.microbase['replic-settings'][key] += f'[default_passive:{actor}]\n' 
+		self.microbase['replic-settings'][key] += '[actors:' + dialog_actors[:-1] + ':actors]\n'
+		strings_count = em.Tag.get_num(self.microbase['replic-source'][key], 'strings')
+		self.microbase['replic-source'][key] = re.sub(r'strings:\S+', '', self.microbase['replic-source'][key])
+		self.microbase['replic-settings'][key] += f'[strings:{strings_count}]\n'
+		self.microbase['replic-source'][key] = re.sub(r'<!--[\s\S]*?-->', '', self.microbase['replic-source'][key])
+
+
+	def gen_actor(self, actor_id:str, actor_src:str) -> None:
+		"""
+			generate of actors rows in dialogs data table
+		"""
+		role_id = f'{self.uid}.{actor_id}'
+		wrap_act = em.Tag.get_cont(actor_src, r'wrap\.act')
+		actor_src = em.Tag.del_cont(actor_src, r'wrap\.act')
+		wrap_frase = em.Tag.get_cont(actor_src, r'wrap\.frase')
+		actor_src = em.Tag.del_cont(actor_src, r'wrap\.frase')
+		actor_src.replace('<default_active', '')
+		actor_src.replace('<default_passive>', '')
+		number = self.mb_lines_count + 1
+		self.mb_replic_append(number, wrap_frase, role_id, self.uid, '', 'role')
+		self.mb_change_prop('replic-run', str(number), wrap_act)
+		self.mb_change_prop('replic-settings', str(number), actor_src)
+
+	def set_includes(self) -> None:
+		for parent_key, parent_value in self.microbase['replic-id'].items():
+			# перебираем идентификаторы реплик
+			# key - microbase id, value - replic id
+			for daughter_key, daughter_value in self.microbase['replic-position'].items():
+				if daughter_value == parent_value:
+					# если значение в position и id совпадает
+					self.microbase['replic-includes'][parent_key].append(self.microbase['replic-id'][daughter_key])
 
 	def ids_replace(self, save_temp_file=False) -> None:
 		ids = []
@@ -163,9 +231,13 @@ class EasyDialog:
 					self.mb_change_prop('replic-id', key, new_id)
 					break
 			# ищем старый в position
-			for key, value in self.microbase['replic-position'].items():
-				if value == old_id:
-					self.mb_change_prop('replic-position', key, new_id)
+			for key_, value_ in self.microbase['replic-position'].items():
+				if value_ == old_id:
+					self.mb_change_prop('replic-position', key_, new_id)
+			# перебираем includes
+			for value_ in self.microbase['replic-includes'].values():
+				if old_id in value_:
+					value_[value_.index(old_id)] = new_id
 		if save_temp_file:
 			db = pandas.DataFrame(self.microbase)
 			db.to_excel('.\\microbase_rids.xlsx')

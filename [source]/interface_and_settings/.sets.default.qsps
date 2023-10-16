@@ -129,3 +129,9 @@ $args['replics']=$TRIM($func('get.tag.num',$args['source'],'replics'))		&	!	на
 ! ------------------------ настройка вывода реплик --------------------------------------
 $result=$args['result']
 --- dialog.sets.default ---------------------------------
+
+
+# dialog.actors.default
+
+--- dialog.actors.default ---------------------------------
+
