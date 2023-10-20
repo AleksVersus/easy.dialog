@@ -37,12 +37,12 @@ class EasyDialog:
 		self.to_microbase(save_temp_file=True)
 		# извлекаем роли
 		self.roles_extract(save_temp_file=True)
+		# заменяем айдишники реплик
+		self.ids_replace(save_temp_file=True)
 		# генерируем списки дочерних
 		self.set_includes(save_temp_file=True)
 		# регенерируем настройки
 		self.sets_transport(save_temp_file=True)
-		# # заменяем айдишники реплик
-		# self.ids_replace(save_temp_file=True)
 
 	def to_qsps(self, qsps_file_path:str) -> None:
 		output_lines = []
@@ -204,7 +204,7 @@ class EasyDialog:
 	def sets_transport(self, save_temp_file=False) -> None:
 		for key in self.microbase['replic-id'].keys():
 			self.extract_sets(key)
-		self.save_temp_file('.\\04_sets_transport.xlsx', save_temp_file)
+		self.save_temp_file('.\\05_sets_transport.xlsx', save_temp_file)
 
 
 	def extract_sets(self, key:str) -> None:
@@ -299,25 +299,29 @@ class EasyDialog:
 
 	def ids_replace(self, save_temp_file=False) -> None:
 		ids = []
-		for key, value in self.microbase['replic-id'].items():
-			old_id = value
-			while True:
-				# генерируем уникальный идентификатор реплики
-				new_id = em.Str.random(16, modes={r'\all': True}, exclude='\t ')
-				if not new_id in ids:
-					ids.append(new_id)
-					# записываем новый вместо старого
-					self.mb_change_prop('replic-id', key, new_id)
-					break
-			# ищем старый в position
-			for key_, value_ in self.microbase['replic-position'].items():
-				if value_ == old_id:
-					self.mb_change_prop('replic-position', key_, new_id)
-			# перебираем includes
-			for value_ in self.microbase['replic-includes'].values():
-				if old_id in value_:
-					value_[value_.index(old_id)] = new_id
-		self.save_temp_file('.\\05_microbase_rids.xlsx', save_temp_file)
+		for key in self.microbase['replic-id'].keys():
+			if self.microbase['replic-id'][key] != self.uid:
+				self.microbase['replic-id'][key] = f'{self.uid}.' + self.microbase['replic-id'][key]
+			if self.microbase['replic-position'][key] != self.uid:
+				self.microbase['replic-position'][key] = f'{self.uid}.' + self.microbase['replic-position'][key]
+			# old_id = value
+			# while True:
+			# 	# генерируем уникальный идентификатор реплики
+			# 	new_id = em.Str.random(16, modes={r'\all': True}, exclude='\t ')
+			# 	if not new_id in ids:
+			# 		ids.append(new_id)
+			# 		# записываем новый вместо старого
+			# 		self.mb_change_prop('replic-id', key, new_id)
+			# 		break
+			# # ищем старый в position
+			# for key_, value_ in self.microbase['replic-position'].items():
+			# 	if value_ == old_id:
+			# 		self.mb_change_prop('replic-position', key_, new_id)
+			# # перебираем includes
+			# for value_ in self.microbase['replic-includes'].values():
+			# 	if old_id in value_:
+			# 		value_[value_.index(old_id)] = new_id
+		self.save_temp_file('.\\04_ids_replace.xlsx', save_temp_file)
 
 	def mb_replic_append(self, number:int, source:str, rid:str, position:str, marker=None, rtype='') -> None:
 		self.microbase['replic-source'][str(number)] = source
