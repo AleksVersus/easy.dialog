@@ -56,8 +56,7 @@ $dialogs_id['quest3'] = 'quest3'
 $dialogs_body['quest3'] = 'Он стискивает зубы и стреля...'
 $dialogs_sets['quest3'] = '[actor_this:test.remarka]
 [marker:test.thirddead]
-<if>
-DIALOG_VALUE["что.в"]=1</if>'
+<if>DIALOG_VALUE["что.в"]=1</if>'
 dialogs_count['quest3'] = 0
 $dialogs_position['quest3'] = 'answer4'
 $dialogs_includes['quest3'] = 'answer2'
@@ -68,8 +67,7 @@ $dialogs_body['quest1'] = '<frase_block>
 <em>Бац! Оказывается, может быть ещё больнее, чем в первый раз.</em>
 <actor:npc>Ещё раз скажешь «что», выстрелю.
 </frase_block>'
-$dialogs_sets['quest1'] = '<if>
-DIALOG_VALUE["что.в"]=0</if>'
+$dialogs_sets['quest1'] = '<if>DIALOG_VALUE["что.в"]=0</if>'
 dialogs_count['quest1'] = 0
 $dialogs_position['quest1'] = 'answer4'
 $dialogs_includes['quest1'] = ''
@@ -231,8 +229,7 @@ $dialogs_run['quest64'] = {}
 $dialogs_id['answer63'] = 'answer63'
 $dialogs_body['answer63'] = 'К сожалению, больше путей нет.'
 $dialogs_sets['answer63'] = '[act_name:Нет:act_name]
-<if>
-$DIALOG_VALUE["по лестнице"]="поговорили" and $DIALOG_VALUE["по лифту"]="поговорили"</if>'
+<if>$DIALOG_VALUE["по лестнице"]="поговорили" and $DIALOG_VALUE["по лифту"]="поговорили"</if>'
 dialogs_count['answer63'] = 0
 $dialogs_position['answer63'] = 'quest64'
 $dialogs_includes['answer63'] = 'quest62'
@@ -241,8 +238,7 @@ $dialogs_run['answer63'] = {}
 $dialogs_id['answer58'] = 'answer58'
 $dialogs_body['answer58'] = 'В кабинете управляющего есть лифт, спускающийся прямо в хранилище. Только вряд ли вы до него доберётесь.'
 $dialogs_sets['answer58'] = '[act_name:На лифте...:act_name]
-<if>
-$DIALOG_VALUE["по лифту"]!"поговорили"</if>'
+<if>$DIALOG_VALUE["по лифту"]!"поговорили"</if>'
 dialogs_count['answer58'] = 0
 $dialogs_position['answer58'] = 'quest64'
 $dialogs_includes['answer58'] = 'quest57'
@@ -251,8 +247,7 @@ $dialogs_run['answer58'] = {}
 $dialogs_id['answer39'] = 'answer39'
 $dialogs_body['answer39'] = 'Вон за той дверью в подвал ведёт лестница, по ней можно спуститься до главного коридора, из него в архив, а уже через архив к двери хранилища.'
 $dialogs_sets['answer39'] = '[act_name:По лестнице...:act_name]
-<if>
-$DIALOG_VALUE["по лестнице"]!"поговорили"</if>'
+<if>$DIALOG_VALUE["по лестнице"]!"поговорили"</if>'
 dialogs_count['answer39'] = 0
 $dialogs_position['answer39'] = 'quest64'
 $dialogs_includes['answer39'] = 'quest38'
@@ -280,8 +275,7 @@ $dialogs_body['quest36'] = '<frase_block>
 <actor:npc>А другой путь есть?
 </frase_block>'
 $dialogs_sets['quest36'] = '[levelup:4]
-<if>
-$DIALOG_VALUE["хранилище"]="поговорили" and $DIALOG_VALUE["архив"]="поговорили" and $DIALOG_VALUE["коридор"]="поговорили" and $DIALOG_VALUE["лестница"]="поговорили"</if>'
+<if>$DIALOG_VALUE["хранилище"]="поговорили" and $DIALOG_VALUE["архив"]="поговорили" and $DIALOG_VALUE["коридор"]="поговорили" and $DIALOG_VALUE["лестница"]="поговорили"</if>'
 dialogs_count['quest36'] = 0
 $dialogs_position['quest36'] = 'quest37'
 $dialogs_includes['quest36'] = ''
@@ -290,8 +284,7 @@ $dialogs_run['quest36'] = {$DIALOG_VALUE["по лестнице"]="погово�
 $dialogs_id['answer35'] = 'answer35'
 $dialogs_body['answer35'] = 'Толщина двери в хранилище полтора метра.'
 $dialogs_sets['answer35'] = '[act_name:О двери в хранилище...:act_name]
-<if>
-$DIALOG_VALUE["хранилище"]!"поговорили"</if>'
+<if>$DIALOG_VALUE["хранилище"]!"поговорили"</if>'
 dialogs_count['answer35'] = 0
 $dialogs_position['answer35'] = 'quest37'
 $dialogs_includes['answer35'] = 'quest34'
@@ -300,8 +293,7 @@ $dialogs_run['answer35'] = {}
 $dialogs_id['answer33'] = 'answer33'
 $dialogs_body['answer33'] = 'В архиве люди пропадают...'
 $dialogs_sets['answer33'] = '[act_name:Об архиве...:act_name]
-<if>
-$DIALOG_VALUE["архив"]!"поговорили"</if>'
+<if>$DIALOG_VALUE["архив"]!"поговорили"</if>'
 dialogs_count['answer33'] = 0
 $dialogs_position['answer33'] = 'quest37'
 $dialogs_includes['answer33'] = 'quest32'
@@ -310,8 +302,7 @@ $dialogs_run['answer33'] = {}
 $dialogs_id['answer31'] = 'answer31'
 $dialogs_body['answer31'] = 'Поперёк коридора идут лазерные лучи.'
 $dialogs_sets['answer31'] = '[act_name:О коридоре...:act_name]
-<if>
-$DIALOG_VALUE["коридор"]!"поговорили"</if>'
+<if>$DIALOG_VALUE["коридор"]!"поговорили"</if>'
 dialogs_count['answer31'] = 0
 $dialogs_position['answer31'] = 'quest37'
 $dialogs_includes['answer31'] = 'quest30'
@@ -320,8 +311,7 @@ $dialogs_run['answer31'] = {}
 $dialogs_id['answer25'] = 'answer25'
 $dialogs_body['answer25'] = 'На лестнице сторожит охранник с оружием.'
 $dialogs_sets['answer25'] = '[act_name:О лестинце...:act_name]
-<if>
-$DIALOG_VALUE["лестница"]!"поговорили"</if>'
+<if>$DIALOG_VALUE["лестница"]!"поговорили"</if>'
 dialogs_count['answer25'] = 0
 $dialogs_position['answer25'] = 'quest37'
 $dialogs_includes['answer25'] = 'quest24'
@@ -470,8 +460,7 @@ $dialogs_body['quest55'] = '<frase_block>
 <actor:npc>А другой путь есть?
 </frase_block>'
 $dialogs_sets['quest55'] = '[levelup:4]
-<if>
-$DIALOG_VALUE["системы идентификации"]="поговорили" and $DIALOG_VALUE["собаки"]="поговорили" and $DIALOG_VALUE["управляющий"]="поговорили"</if>'
+<if>$DIALOG_VALUE["системы идентификации"]="поговорили" and $DIALOG_VALUE["собаки"]="поговорили" and $DIALOG_VALUE["управляющий"]="поговорили"</if>'
 dialogs_count['quest55'] = 0
 $dialogs_position['quest55'] = 'quest56'
 $dialogs_includes['quest55'] = ''
@@ -480,8 +469,7 @@ $dialogs_run['quest55'] = {$DIALOG_VALUE["по лифту"]="поговорил�
 $dialogs_id['answer54'] = 'answer54'
 $dialogs_body['answer54'] = 'В лифте стоят системы идентификации, которые пропускают только управляющего.'
 $dialogs_sets['answer54'] = '[act_name:Системы идентификации.:act_name]
-<if>
-$DIALOG_VALUE["системы идентификации"]!"поговорили"</if>'
+<if>$DIALOG_VALUE["системы идентификации"]!"поговорили"</if>'
 dialogs_count['answer54'] = 0
 $dialogs_position['answer54'] = 'quest56'
 $dialogs_includes['answer54'] = 'quest53'
@@ -489,8 +477,7 @@ $dialogs_run['answer54'] = {}
 !@ REPLIC_43
 $dialogs_id['answer43'] = 'answer43'
 $dialogs_body['answer43'] = 'Собаки.'
-$dialogs_sets['answer43'] = '<if>
-$DIALOG_VALUE["собаки"]!"поговорили"</if>'
+$dialogs_sets['answer43'] = '<if>$DIALOG_VALUE["собаки"]!"поговорили"</if>'
 dialogs_count['answer43'] = 0
 $dialogs_position['answer43'] = 'quest56'
 $dialogs_includes['answer43'] = 'quest42'
@@ -499,8 +486,7 @@ $dialogs_run['answer43'] = {}
 $dialogs_id['answer41'] = 'answer41'
 $dialogs_body['answer41'] = 'В кабинете скорее всего сидит сам управляющий.'
 $dialogs_sets['answer41'] = '[act_name:Управляющий.:act_name]
-<if>
-$DIALOG_VALUE["управляющий"]!"поговорили"</if>'
+<if>$DIALOG_VALUE["управляющий"]!"поговорили"</if>'
 dialogs_count['answer41'] = 0
 $dialogs_position['answer41'] = 'quest56'
 $dialogs_includes['answer41'] = 'quest40'
@@ -554,8 +540,7 @@ $dialogs_run['quest52'] = {}
 $dialogs_id['answer51'] = 'answer51'
 $dialogs_body['answer51'] = 'По системам идентификации всё.'
 $dialogs_sets['answer51'] = '[act_name:По системам всё:act_name]
-<if>
-$DIALOG_VALUE["вес"]="поговорили" and $DIALOG_VALUE["сетчатка"]="поговорили" and $DIALOG_VALUE["отпечатки"]="поговорили"</if>'
+<if>$DIALOG_VALUE["вес"]="поговорили" and $DIALOG_VALUE["сетчатка"]="поговорили" and $DIALOG_VALUE["отпечатки"]="поговорили"</if>'
 dialogs_count['answer51'] = 0
 $dialogs_position['answer51'] = 'quest52'
 $dialogs_includes['answer51'] = 'quest50'
@@ -564,8 +549,7 @@ $dialogs_run['answer51'] = {}
 $dialogs_id['answer49'] = 'answer49'
 $dialogs_body['answer49'] = 'Датчик веса.'
 $dialogs_sets['answer49'] = '[act_name:Вес:act_name]
-<if>
-$DIALOG_VALUE["вес"]!"поговорили"</if>'
+<if>$DIALOG_VALUE["вес"]!"поговорили"</if>'
 dialogs_count['answer49'] = 0
 $dialogs_position['answer49'] = 'quest52'
 $dialogs_includes['answer49'] = 'quest48'
@@ -574,8 +558,7 @@ $dialogs_run['answer49'] = {}
 $dialogs_id['answer47'] = 'answer47'
 $dialogs_body['answer47'] = 'Сканер сетчатки глаза.'
 $dialogs_sets['answer47'] = '[act_name:Сетчатка глаза.:act_name]
-<if>
-$DIALOG_VALUE["сетчатка"]!"поговорили"</if>'
+<if>$DIALOG_VALUE["сетчатка"]!"поговорили"</if>'
 dialogs_count['answer47'] = 0
 $dialogs_position['answer47'] = 'quest52'
 $dialogs_includes['answer47'] = 'quest46'
@@ -584,8 +567,7 @@ $dialogs_run['answer47'] = {}
 $dialogs_id['answer45'] = 'answer45'
 $dialogs_body['answer45'] = 'Сканер отпечатка правой ладони.'
 $dialogs_sets['answer45'] = '[act_name:Отпечатки.:act_name]
-<if>
-$DIALOG_VALUE["отпечатки"]!"поговорили"</if>'
+<if>$DIALOG_VALUE["отпечатки"]!"поговорили"</if>'
 dialogs_count['answer45'] = 0
 $dialogs_position['answer45'] = 'quest52'
 $dialogs_includes['answer45'] = 'quest44'

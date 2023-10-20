@@ -144,9 +144,7 @@ class EasyDialog:
 				elif re.search(rf'<answer(\d+)>[\s\S]*<\/answer\1>|<quest(\d+)>[\s\S]*<\/quest\2>', self.microbase['replic-source'][str(i)]) is None:
 					break
 				bb -= 1
-		if save_temp_file:
-			db = pandas.DataFrame(self.microbase)
-			db.to_excel('.\\01_microbase.xlsx')
+		self.save_temp_file('.\\01_microbase.xlsx', save_temp_file)
 
 	def set_includes(self, save_temp_file=False) -> None:
 		for parent_key, parent_value in self.microbase['replic-id'].items():
@@ -157,9 +155,7 @@ class EasyDialog:
 					# если значение в position и id совпадает
 					daughter_id = self.microbase['replic-id'][daughter_key]
 					self.mb_prop_append('replic-includes', parent_key, daughter_id)
-		if save_temp_file:
-			db = pandas.DataFrame(self.microbase)
-			db.to_excel('.\\02_set_includes.xlsx')
+		self.save_temp_file('.\\02_set_includes.xlsx', save_temp_file)
 				
 	def roles_extract(self, save_temp_file=False) -> None:
 		key = self.root
@@ -187,9 +183,7 @@ class EasyDialog:
 		self.microbase['replic-source'][key] = re.sub(r'strings:\S+', '', self.microbase['replic-source'][key])
 		self.microbase['replic-settings'][key] += f'[strings:{strings_count}]\n'
 		self.microbase['replic-source'][key] = re.sub(r'<!--[\s\S]*?-->', '', self.microbase['replic-source'][key])
-		if save_temp_file:
-			db = pandas.DataFrame(self.microbase)
-			db.to_excel('.\\03_role_extract.xlsx')
+		self.save_temp_file('.\\03_role_extract.xlsx', save_temp_file)
 
 	def gen_actor(self, actor_id:str, actor_src:str) -> None:
 		"""
@@ -210,6 +204,8 @@ class EasyDialog:
 	def sets_transport(self, save_temp_file=False) -> None:
 		for key in self.microbase['replic-id'].keys():
 			self.extract_sets(key)
+		self.save_temp_file('.\\04_sets_transport.xlsx', save_temp_file)
+
 
 	def extract_sets(self, key:str) -> None:
 		repeat = em.Tag.get_num(self.microbase['replic-source'][key], 'repeat')
@@ -265,7 +261,7 @@ class EasyDialog:
 			self.microbase['replic-settings'][key] += f'[marker:{self.uid}.{marker}]\n'
 			self.microbase['replic-source'][key] = em.Tag.del_num(self.microbase['replic-source'][key], 'marker')
 			if not f'{self.uid}.{marker}' in list(self.microbase['replic-marker'].values()):
-				self.mb_change_prop('replic-marker', key, marker)
+				self.mb_change_prop('replic-marker', key, f'{self.uid}.{marker}')
 			else:
 				raise ValueError(f'The label "{marker}" already exists! Метка "{marker}" уже существует!')
 
@@ -276,7 +272,7 @@ class EasyDialog:
 
 		if_ = em.Tag.get_cont(self.microbase['replic-source'][key], 'if')
 		if if_ != '':
-			self.microbase['replic-settings'][key] += f'<if>\n{if_}</if>\n'
+			self.microbase['replic-settings'][key] += f'<if>{if_}</if>\n'
 			self.microbase['replic-source'][key] = em.Tag.del_cont(self.microbase['replic-source'][key], 'if')
 
 		dynamic_code = em.Tag.get_cont(self.microbase['replic-source'][key], 'dynamic_code')
@@ -321,9 +317,7 @@ class EasyDialog:
 			for value_ in self.microbase['replic-includes'].values():
 				if old_id in value_:
 					value_[value_.index(old_id)] = new_id
-		if save_temp_file:
-			db = pandas.DataFrame(self.microbase)
-			db.to_excel('.\\04_microbase_rids.xlsx')
+		self.save_temp_file('.\\05_microbase_rids.xlsx', save_temp_file)
 
 	def mb_replic_append(self, number:int, source:str, rid:str, position:str, marker=None, rtype='') -> None:
 		self.microbase['replic-source'][str(number)] = source
@@ -349,6 +343,12 @@ class EasyDialog:
 			if value_ == value:
 				return key
 		return None
+
+	def save_temp_file(self, file_path, save_temp_file):
+		if save_temp_file:
+			db = pandas.DataFrame(self.microbase)
+			db.to_excel(file_path)
+
 
 
 def main() -> None:
