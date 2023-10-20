@@ -153,8 +153,31 @@ class Tag:
 			return res_num
 
 	@staticmethod
+	def del_num(string_line:str, tag_name:str, rpl='') -> str:
+		""" delete single-tag's content """
+		square_brack_match = re.search(r'\['+tag_name+r':([^][]*?)\]', string_line) # [tag:any symbols]
+		angle_brack_match = re.search(r'<'+tag_name+r':([^><]*?)>', string_line) # <tag:any symbols>
+		figure_brack_match = re.search(r'\{'+tag_name+r':([^}{}]*?)\}', string_line) # {tag:any symbols}
+		round_brack_match = re.search(r'<'+tag_name+r':([^><]*?)>', string_line) # (tag:any symbols)
+		quotes_match = re.search(tag_name + r'\s*=\s*("|\')([\s\S]*?)\1', string_line) # tag="any symbols" # tag='any symbols'
+		nonspace_match = re.search(tag_name + r'(:|=#)([\S]+)', string_line) # tag:non_space_symbols # tag=#non_space_symbols
+		if square_brack_match is not None:
+			return string_line.replace(square_brack_match.group(0), rpl)
+		elif angle_brack_match is not None:
+			return string_line.replace(angle_brack_match.group(0), rpl)
+		elif figure_brack_match is not None:
+			return string_line.replace(figure_brack_match.group(0), rpl)
+		elif round_brack_match is not None:
+			return string_line.replace(round_brack_match.group(0), rpl)
+		elif quotes_match is not None:			
+			return string_line.replace(quotes_match.group(0), rpl)
+		elif nonspace_match is not None:
+			return string_line.replace(nonspace_match.group(0), rpl)
+		else:
+			return string_line
+
+	@staticmethod
 	def get_cont(string_line:str, tag_name:str) -> str:
-		print([string_line, tag_name])
 		comment_match = re.search(r'<!--([\s\S]+?)-->', string_line) # содержимое комментария
 		sqdd_match = re.search(r'\['+tag_name+r':([\s\S]+?):'+tag_name+r'\]', string_line) # [tag:any symbols:tag]
 		rqdd_match = re.search(r'\('+tag_name+r':([\s\S]+?):'+tag_name+r'\)', string_line) # (tag:any symbols:tag)
@@ -189,19 +212,19 @@ class Tag:
 		html_match = re.search('<'+tag_name+r'>([\s\S]+?)<\/'+tag_name+'>', string_line) # <tag>any symbols</tag>
 		dd_match = re.search(tag_name+r':([\s\S]+?):'+tag_name, string_line) # tag:any symbols:tag
 		if tag_name in ('<!--!>', '<!>') and comment_match is not None:
-			return string_line.replace(comment_match.group(1), rpl)
+			return string_line.replace(comment_match.group(0), rpl)
 		elif sqdd_match is not None:
-			return string_line.replace(sqdd_match.group(1), rpl)
+			return string_line.replace(sqdd_match.group(0), rpl)
 		elif rqdd_match is not None:
-			return string_line.replace(rqdd_match.group(1), rpl)
+			return string_line.replace(rqdd_match.group(0), rpl)
 		elif sq_match is not None:
-			return string_line.replace(sq_match.group(1), rpl)
+			return string_line.replace(sq_match.group(0), rpl)
 		elif add_match is not None:
-			return string_line.replace(add_match.group(1), rpl)
+			return string_line.replace(add_match.group(0), rpl)
 		elif html_match is not None:
-			return string_line.replace(html_match.group(1), rpl)
+			return string_line.replace(html_match.group(0), rpl)
 		elif dd_match is not None:
-			return string_line.replace(dd_match.group(1), rpl)
+			return string_line.replace(dd_match.group(0), rpl)
 		else:
 			return string_line
 
