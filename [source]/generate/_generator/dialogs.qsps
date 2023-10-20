@@ -1,104 +1,104 @@
-QSP-Game Диалог test
-# dialog_test
+QSP-Game Диалог D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt
+# dialog_D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt
 !@ REPLIC_68
-$dialogs_id['test'] = 'test'
-$dialogs_body['test'] = ''
-$dialogs_sets['test'] = '[default_active:hero]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt'] = ''
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt'] = '[default_active:hero]
 [default_passive:npc]
 [actors:hero|npc|remarka:actors]
 [strings:10]'
-dialogs_count['test'] = 0
-$dialogs_position['test'] = 'test.'
-$dialogs_includes['test'] = 'test.quest67|test.test.hero|test.test.npc|test.test.remarka'
-$dialogs_run['test'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest67|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.hero|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.npc|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.remarka'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt'] = {}
 !@ REPLIC_67
-$dialogs_id['test.quest67'] = 'test.quest67'
-$dialogs_body['test.quest67'] = '<frase_block>
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest67'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest67'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest67'] = '<frase_block>
 <actor:npc>У тебя одна минута на то, чтобы объяснить мне, как добраться до хранилища.
 <actor:hero>Что?
 <em>Бац! В глазах сверкнуло и боль такая сильная, что кажется, будто она — единственное, что я сейчас чувствую. Даже сильнее страха.</em>
 <actor:npc>Одна минута, — <em style="color:#888888;">говорит он и прижимает холодный кружок дула к моему лбу.</em>
 </frase_block>'
-$dialogs_sets['test.quest67'] = '[repeat:cicle]
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest67'] = '[repeat:cicle]
 [shuffle:straight]
 [act_length:25]'
-dialogs_count['test.quest67'] = 0
-$dialogs_position['test.quest67'] = 'test'
-$dialogs_includes['test.quest67'] = 'test.answer66|test.answer19|test.answer4'
-$dialogs_run['test.quest67'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest67'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest67'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest67'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer66|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer19|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer4'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest67'] = {}
 !@ REPLIC_66
-$dialogs_id['test.answer66'] = 'test.answer66'
-$dialogs_body['test.answer66'] = 'Хранилище находится в подвале...'
-$dialogs_sets['test.answer66'] = '[marker:test.storagecellar]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer66'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer66'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer66'] = 'Хранилище находится в подвале...'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer66'] = '[marker:D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.storagecellar]
 [act_name:Хранилище в подвале...:act_name]'
-dialogs_count['test.answer66'] = 0
-$dialogs_position['test.answer66'] = 'test.quest67'
-$dialogs_includes['test.answer66'] = 'test.quest65'
-$dialogs_run['test.answer66'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer66'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer66'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest67'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer66'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest65'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer66'] = {}
 !@ REPLIC_19
-$dialogs_id['test.answer19'] = 'test.answer19'
-$dialogs_body['test.answer19'] = 'Но я здесь не работаю, я вообще не знаю, где тут что!'
-$dialogs_sets['test.answer19'] = '[act_name:Но я здесь не работаю...:act_name]'
-dialogs_count['test.answer19'] = 0
-$dialogs_position['test.answer19'] = 'test.quest67'
-$dialogs_includes['test.answer19'] = 'test.quest18'
-$dialogs_run['test.answer19'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer19'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer19'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer19'] = 'Но я здесь не работаю, я вообще не знаю, где тут что!'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer19'] = '[act_name:Но я здесь не работаю...:act_name]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer19'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer19'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest67'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer19'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest18'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer19'] = {}
 !@ REPLIC_4
-$dialogs_id['test.answer4'] = 'test.answer4'
-$dialogs_body['test.answer4'] = 'Что?'
-$dialogs_sets['test.answer4'] = ''
-dialogs_count['test.answer4'] = 0
-$dialogs_position['test.answer4'] = 'test.quest67'
-$dialogs_includes['test.answer4'] = 'test.quest3|test.quest1'
-$dialogs_run['test.answer4'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer4'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer4'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer4'] = 'Что?'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer4'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer4'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer4'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest67'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer4'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest3|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest1'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer4'] = {}
 !@ REPLIC_3
-$dialogs_id['test.quest3'] = 'test.quest3'
-$dialogs_body['test.quest3'] = 'Он стискивает зубы и стреля...'
-$dialogs_sets['test.quest3'] = '[actor_this:test.remarka]
-[marker:test.thirddead]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest3'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest3'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest3'] = 'Он стискивает зубы и стреля...'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest3'] = '[actor_this:D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.remarka]
+[marker:D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.thirddead]
 <if>DIALOG_VALUE["что.в"]=1</if>'
-dialogs_count['test.quest3'] = 0
-$dialogs_position['test.quest3'] = 'test.answer4'
-$dialogs_includes['test.quest3'] = 'test.answer2'
-$dialogs_run['test.quest3'] = {cla}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest3'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest3'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer4'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest3'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer2'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest3'] = {cla}
 !@ REPLIC_1
-$dialogs_id['test.quest1'] = 'test.quest1'
-$dialogs_body['test.quest1'] = '<frase_block>
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest1'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest1'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest1'] = '<frase_block>
 <em>Бац! Оказывается, может быть ещё больнее, чем в первый раз.</em>
 <actor:npc>Ещё раз скажешь «что», выстрелю.
 </frase_block>'
-$dialogs_sets['test.quest1'] = '<if>DIALOG_VALUE["что.в"]=0</if>'
-dialogs_count['test.quest1'] = 0
-$dialogs_position['test.quest1'] = 'test.answer4'
-$dialogs_includes['test.quest1'] = ''
-$dialogs_run['test.quest1'] = {DIALOG_VALUE["что.в"]=1}
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest1'] = '<if>DIALOG_VALUE["что.в"]=0</if>'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest1'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest1'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer4'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest1'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest1'] = {DIALOG_VALUE["что.в"]=1}
 !@ REPLIC_2
-$dialogs_id['test.answer2'] = 'test.answer2'
-$dialogs_body['test.answer2'] = '[Закрыть]'
-$dialogs_sets['test.answer2'] = '[closeup]'
-dialogs_count['test.answer2'] = 0
-$dialogs_position['test.answer2'] = 'test.quest3'
-$dialogs_includes['test.answer2'] = ''
-$dialogs_run['test.answer2'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer2'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer2'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer2'] = '[Закрыть]'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer2'] = '[closeup]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer2'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer2'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest3'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer2'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer2'] = {}
 !@ REPLIC_18
-$dialogs_id['test.quest18'] = 'test.quest18'
-$dialogs_body['test.quest18'] = 'Какого чёрта тогда ты делаешь в кабинке оператора?'
-$dialogs_sets['test.quest18'] = ''
-dialogs_count['test.quest18'] = 0
-$dialogs_position['test.quest18'] = 'test.answer19'
-$dialogs_includes['test.quest18'] = 'test.answer17|test.answer14|test.answer10'
-$dialogs_run['test.quest18'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest18'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest18'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest18'] = 'Какого чёрта тогда ты делаешь в кабинке оператора?'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest18'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest18'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest18'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer19'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest18'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer17|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer14|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer10'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest18'] = {}
 !@ REPLIC_17
-$dialogs_id['test.answer17'] = 'test.answer17'
-$dialogs_body['test.answer17'] = 'Да я вот решил тоже денег взять. Под шумок, так сказать. Хе-хе.'
-$dialogs_sets['test.answer17'] = '[act_name:Тоже решил денег взять.:act_name]'
-dialogs_count['test.answer17'] = 0
-$dialogs_position['test.answer17'] = 'test.quest18'
-$dialogs_includes['test.answer17'] = 'test.quest16'
-$dialogs_run['test.answer17'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer17'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer17'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer17'] = 'Да я вот решил тоже денег взять. Под шумок, так сказать. Хе-хе.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer17'] = '[act_name:Тоже решил денег взять.:act_name]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer17'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer17'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest18'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer17'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest16'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer17'] = {}
 !@ REPLIC_14
-$dialogs_id['test.answer14'] = 'test.answer14'
-$dialogs_body['test.answer14'] = 'От вас прячусь.
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer14'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer14'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer14'] = 'От вас прячусь.
 <frase_block>
 <actor:hero>Я тут от вас прячусь...
 <actor:npc>А, ты один из посетителей?
@@ -107,266 +107,266 @@ $dialogs_body['test.answer14'] = 'От вас прячусь.
 <actor:hero>Да!
 <actor:npc>А как же ты через турникет прошёл?
 </frase_block>'
-$dialogs_sets['test.answer14'] = ''
-dialogs_count['test.answer14'] = 0
-$dialogs_position['test.answer14'] = 'test.quest18'
-$dialogs_includes['test.answer14'] = 'test.quest13'
-$dialogs_run['test.answer14'] = {}
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer14'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer14'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer14'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest18'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer14'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest13'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer14'] = {}
 !@ REPLIC_10
-$dialogs_id['test.answer10'] = 'test.answer10'
-$dialogs_body['test.answer10'] = 'Я просто техник, мне позвонили и попросили починить компьютер. Они иногда вызывают меня сюда, но я не знаю, где тут сейф, честное слово!'
-$dialogs_sets['test.answer10'] = '[act_name:Я техник.:act_name]'
-dialogs_count['test.answer10'] = 0
-$dialogs_position['test.answer10'] = 'test.quest18'
-$dialogs_includes['test.answer10'] = 'test.quest9'
-$dialogs_run['test.answer10'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer10'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer10'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer10'] = 'Я просто техник, мне позвонили и попросили починить компьютер. Они иногда вызывают меня сюда, но я не знаю, где тут сейф, честное слово!'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer10'] = '[act_name:Я техник.:act_name]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer10'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer10'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest18'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer10'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest9'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer10'] = {}
 !@ REPLIC_9
-$dialogs_id['test.quest9'] = 'test.quest9'
-$dialogs_body['test.quest9'] = 'Занятно. Тогда почему на твоём бейдже написано «Старший кассир»?'
-$dialogs_sets['test.quest9'] = ''
-dialogs_count['test.quest9'] = 0
-$dialogs_position['test.quest9'] = 'test.answer10'
-$dialogs_includes['test.quest9'] = 'test.answer8|test.answer7'
-$dialogs_run['test.quest9'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest9'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest9'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest9'] = 'Занятно. Тогда почему на твоём бейдже написано «Старший кассир»?'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest9'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest9'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest9'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer10'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest9'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer8|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer7'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest9'] = {}
 !@ REPLIC_8
-$dialogs_id['test.answer8'] = 'test.answer8'
-$dialogs_body['test.answer8'] = ''
-$dialogs_sets['test.answer8'] = '[leveljump:storagecellar]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer8'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer8'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer8'] = ''
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer8'] = '[leveljump:storagecellar]
 [act_name:Хранилище в подвале...:act_name]'
-dialogs_count['test.answer8'] = 0
-$dialogs_position['test.answer8'] = 'test.quest9'
-$dialogs_includes['test.answer8'] = ''
-$dialogs_run['test.answer8'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer8'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer8'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest9'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer8'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer8'] = {}
 !@ REPLIC_7
-$dialogs_id['test.answer7'] = 'test.answer7'
-$dialogs_body['test.answer7'] = 'hero="nattrib:-i"
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer7'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer7'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer7'] = 'hero="nattrib:-i"
 
 Я его одолжил, чтобы пройти через турникет, я часто так делаю, а то они никак мне собственный не сделают...'
-$dialogs_sets['test.answer7'] = '[act_name:Я его одолжил, чтобы через турникет пройти.:act_name]'
-dialogs_count['test.answer7'] = 0
-$dialogs_position['test.answer7'] = 'test.quest9'
-$dialogs_includes['test.answer7'] = 'test.quest6'
-$dialogs_run['test.answer7'] = {}
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer7'] = '[act_name:Я его одолжил, чтобы через турникет пройти.:act_name]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer7'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer7'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest9'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer7'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest6'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer7'] = {}
 !@ REPLIC_6
-$dialogs_id['test.quest6'] = 'test.quest6'
-$dialogs_body['test.quest6'] = '<frase_block>
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest6'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest6'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest6'] = '<frase_block>
 <actor:npc>У кого одолжил?
 <em>Пальцем в толстого очкарика на полу, тут же затрясшего головой.</em>
 <actor:npc>Окей, спасибо, техник, — <i>и спускает куро...<i>
 </frase_block>'
-$dialogs_sets['test.quest6'] = ''
-dialogs_count['test.quest6'] = 0
-$dialogs_position['test.quest6'] = 'test.answer7'
-$dialogs_includes['test.quest6'] = 'test.answer5'
-$dialogs_run['test.quest6'] = {cla}
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest6'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest6'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest6'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer7'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest6'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer5'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest6'] = {cla}
 !@ REPLIC_5
-$dialogs_id['test.answer5'] = 'test.answer5'
-$dialogs_body['test.answer5'] = '[Закрыть]'
-$dialogs_sets['test.answer5'] = '[closeup]'
-dialogs_count['test.answer5'] = 0
-$dialogs_position['test.answer5'] = 'test.quest6'
-$dialogs_includes['test.answer5'] = ''
-$dialogs_run['test.answer5'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer5'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer5'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer5'] = '[Закрыть]'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer5'] = '[closeup]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer5'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer5'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest6'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer5'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer5'] = {}
 !@ REPLIC_13
-$dialogs_id['test.quest13'] = 'test.quest13'
-$dialogs_body['test.quest13'] = ''
-$dialogs_sets['test.quest13'] = ''
-dialogs_count['test.quest13'] = 0
-$dialogs_position['test.quest13'] = 'test.answer14'
-$dialogs_includes['test.quest13'] = 'test.answer12|test.answer11'
-$dialogs_run['test.quest13'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest13'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest13'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest13'] = ''
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest13'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest13'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest13'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer14'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest13'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer12|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer11'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest13'] = {}
 !@ REPLIC_12
-$dialogs_id['test.answer12'] = 'test.answer12'
-$dialogs_body['test.answer12'] = ''
-$dialogs_sets['test.answer12'] = '[leveljump:storagecellar]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer12'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer12'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer12'] = ''
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer12'] = '[leveljump:storagecellar]
 [act_name:Хранилище в подвале...:act_name]'
-dialogs_count['test.answer12'] = 0
-$dialogs_position['test.answer12'] = 'test.quest13'
-$dialogs_includes['test.answer12'] = ''
-$dialogs_run['test.answer12'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer12'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer12'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest13'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer12'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer12'] = {}
 !@ REPLIC_11
-$dialogs_id['test.answer11'] = 'test.answer11'
-$dialogs_body['test.answer11'] = 'Что?'
-$dialogs_sets['test.answer11'] = '[leveljump:thirddead]'
-dialogs_count['test.answer11'] = 0
-$dialogs_position['test.answer11'] = 'test.quest13'
-$dialogs_includes['test.answer11'] = ''
-$dialogs_run['test.answer11'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer11'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer11'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer11'] = 'Что?'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer11'] = '[leveljump:thirddead]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer11'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer11'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest13'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer11'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer11'] = {}
 !@ REPLIC_16
-$dialogs_id['test.quest16'] = 'test.quest16'
-$dialogs_body['test.quest16'] = 'А, вон оно что. Но на тебе форма сотрудника банка. То есть, ты не только лжец, но ещё и вор? Двадцать секунд. Хе-хе.'
-$dialogs_sets['test.quest16'] = ''
-dialogs_count['test.quest16'] = 0
-$dialogs_position['test.quest16'] = 'test.answer17'
-$dialogs_includes['test.quest16'] = 'test.answer15'
-$dialogs_run['test.quest16'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest16'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest16'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest16'] = 'А, вон оно что. Но на тебе форма сотрудника банка. То есть, ты не только лжец, но ещё и вор? Двадцать секунд. Хе-хе.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest16'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest16'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest16'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer17'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest16'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer15'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest16'] = {}
 !@ REPLIC_15
-$dialogs_id['test.answer15'] = 'test.answer15'
-$dialogs_body['test.answer15'] = ''
-$dialogs_sets['test.answer15'] = '[leveljump:storagecellar]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer15'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer15'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer15'] = ''
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer15'] = '[leveljump:storagecellar]
 [act_name:Хранилище в подвале!:act_name]'
-dialogs_count['test.answer15'] = 0
-$dialogs_position['test.answer15'] = 'test.quest16'
-$dialogs_includes['test.answer15'] = ''
-$dialogs_run['test.answer15'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer15'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer15'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest16'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer15'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer15'] = {}
 !@ REPLIC_65
-$dialogs_id['test.quest65'] = 'test.quest65'
-$dialogs_body['test.quest65'] = 'Уже лучше. А теперь, как туда добраться?'
-$dialogs_sets['test.quest65'] = ''
-dialogs_count['test.quest65'] = 0
-$dialogs_position['test.quest65'] = 'test.answer66'
-$dialogs_includes['test.quest65'] = 'test.quest64'
-$dialogs_run['test.quest65'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest65'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest65'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest65'] = 'Уже лучше. А теперь, как туда добраться?'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest65'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest65'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest65'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer66'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest65'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest64'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest65'] = {}
 !@ REPLIC_64
-$dialogs_id['test.quest64'] = 'test.quest64'
-$dialogs_body['test.quest64'] = ''
-$dialogs_sets['test.quest64'] = ''
-dialogs_count['test.quest64'] = 0
-$dialogs_position['test.quest64'] = 'test.quest65'
-$dialogs_includes['test.quest64'] = 'test.answer63|test.answer58|test.answer39'
-$dialogs_run['test.quest64'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest64'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest64'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest64'] = ''
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest64'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest64'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest64'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest65'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest64'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer63|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer58|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer39'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest64'] = {}
 !@ REPLIC_63
-$dialogs_id['test.answer63'] = 'test.answer63'
-$dialogs_body['test.answer63'] = 'К сожалению, больше путей нет.'
-$dialogs_sets['test.answer63'] = '[act_name:Нет:act_name]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer63'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer63'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer63'] = 'К сожалению, больше путей нет.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer63'] = '[act_name:Нет:act_name]
 <if>$DIALOG_VALUE["по лестнице"]="поговорили" and $DIALOG_VALUE["по лифту"]="поговорили"</if>'
-dialogs_count['test.answer63'] = 0
-$dialogs_position['test.answer63'] = 'test.quest64'
-$dialogs_includes['test.answer63'] = 'test.quest62'
-$dialogs_run['test.answer63'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer63'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer63'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest64'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer63'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest62'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer63'] = {}
 !@ REPLIC_58
-$dialogs_id['test.answer58'] = 'test.answer58'
-$dialogs_body['test.answer58'] = 'В кабинете управляющего есть лифт, спускающийся прямо в хранилище. Только вряд ли вы до него доберётесь.'
-$dialogs_sets['test.answer58'] = '[act_name:На лифте...:act_name]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer58'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer58'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer58'] = 'В кабинете управляющего есть лифт, спускающийся прямо в хранилище. Только вряд ли вы до него доберётесь.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer58'] = '[act_name:На лифте...:act_name]
 <if>$DIALOG_VALUE["по лифту"]!"поговорили"</if>'
-dialogs_count['test.answer58'] = 0
-$dialogs_position['test.answer58'] = 'test.quest64'
-$dialogs_includes['test.answer58'] = 'test.quest57'
-$dialogs_run['test.answer58'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer58'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer58'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest64'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer58'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest57'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer58'] = {}
 !@ REPLIC_39
-$dialogs_id['test.answer39'] = 'test.answer39'
-$dialogs_body['test.answer39'] = 'Вон за той дверью в подвал ведёт лестница, по ней можно спуститься до главного коридора, из него в архив, а уже через архив к двери хранилища.'
-$dialogs_sets['test.answer39'] = '[act_name:По лестнице...:act_name]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer39'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer39'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer39'] = 'Вон за той дверью в подвал ведёт лестница, по ней можно спуститься до главного коридора, из него в архив, а уже через архив к двери хранилища.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer39'] = '[act_name:По лестнице...:act_name]
 <if>$DIALOG_VALUE["по лестнице"]!"поговорили"</if>'
-dialogs_count['test.answer39'] = 0
-$dialogs_position['test.answer39'] = 'test.quest64'
-$dialogs_includes['test.answer39'] = 'test.quest38'
-$dialogs_run['test.answer39'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer39'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer39'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest64'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer39'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest38'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer39'] = {}
 !@ REPLIC_38
-$dialogs_id['test.quest38'] = 'test.quest38'
-$dialogs_body['test.quest38'] = 'Ещё что-нибудь, о чём мне как грабителю полезно было бы узнать?'
-$dialogs_sets['test.quest38'] = ''
-dialogs_count['test.quest38'] = 0
-$dialogs_position['test.quest38'] = 'test.answer39'
-$dialogs_includes['test.quest38'] = 'test.quest37'
-$dialogs_run['test.quest38'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest38'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest38'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest38'] = 'Ещё что-нибудь, о чём мне как грабителю полезно было бы узнать?'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest38'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest38'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest38'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer39'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest38'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest37'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest38'] = {}
 !@ REPLIC_37
-$dialogs_id['test.quest37'] = 'test.quest37'
-$dialogs_body['test.quest37'] = ''
-$dialogs_sets['test.quest37'] = ''
-dialogs_count['test.quest37'] = 0
-$dialogs_position['test.quest37'] = 'test.quest38'
-$dialogs_includes['test.quest37'] = 'test.quest36|test.answer35|test.answer33|test.answer31|test.answer25'
-$dialogs_run['test.quest37'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest37'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest37'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest37'] = ''
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest37'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest37'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest37'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest38'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest37'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest36|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer35|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer33|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer31|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer25'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest37'] = {}
 !@ REPLIC_36
-$dialogs_id['test.quest36'] = 'test.quest36'
-$dialogs_body['test.quest36'] = '<frase_block>
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest36'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest36'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest36'] = '<frase_block>
 <actor:hero>На этом всё.
 <actor:npc>А другой путь есть?
 </frase_block>'
-$dialogs_sets['test.quest36'] = '[levelup:4]
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest36'] = '[levelup:4]
 <if>$DIALOG_VALUE["хранилище"]="поговорили" and $DIALOG_VALUE["архив"]="поговорили" and $DIALOG_VALUE["коридор"]="поговорили" and $DIALOG_VALUE["лестница"]="поговорили"</if>'
-dialogs_count['test.quest36'] = 0
-$dialogs_position['test.quest36'] = 'test.quest37'
-$dialogs_includes['test.quest36'] = ''
-$dialogs_run['test.quest36'] = {$DIALOG_VALUE["по лестнице"]="поговорили"}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest36'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest36'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest37'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest36'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest36'] = {$DIALOG_VALUE["по лестнице"]="поговорили"}
 !@ REPLIC_35
-$dialogs_id['test.answer35'] = 'test.answer35'
-$dialogs_body['test.answer35'] = 'Толщина двери в хранилище полтора метра.'
-$dialogs_sets['test.answer35'] = '[act_name:О двери в хранилище...:act_name]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer35'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer35'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer35'] = 'Толщина двери в хранилище полтора метра.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer35'] = '[act_name:О двери в хранилище...:act_name]
 <if>$DIALOG_VALUE["хранилище"]!"поговорили"</if>'
-dialogs_count['test.answer35'] = 0
-$dialogs_position['test.answer35'] = 'test.quest37'
-$dialogs_includes['test.answer35'] = 'test.quest34'
-$dialogs_run['test.answer35'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer35'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer35'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest37'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer35'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest34'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer35'] = {}
 !@ REPLIC_33
-$dialogs_id['test.answer33'] = 'test.answer33'
-$dialogs_body['test.answer33'] = 'В архиве люди пропадают...'
-$dialogs_sets['test.answer33'] = '[act_name:Об архиве...:act_name]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer33'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer33'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer33'] = 'В архиве люди пропадают...'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer33'] = '[act_name:Об архиве...:act_name]
 <if>$DIALOG_VALUE["архив"]!"поговорили"</if>'
-dialogs_count['test.answer33'] = 0
-$dialogs_position['test.answer33'] = 'test.quest37'
-$dialogs_includes['test.answer33'] = 'test.quest32'
-$dialogs_run['test.answer33'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer33'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer33'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest37'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer33'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest32'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer33'] = {}
 !@ REPLIC_31
-$dialogs_id['test.answer31'] = 'test.answer31'
-$dialogs_body['test.answer31'] = 'Поперёк коридора идут лазерные лучи.'
-$dialogs_sets['test.answer31'] = '[act_name:О коридоре...:act_name]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer31'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer31'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer31'] = 'Поперёк коридора идут лазерные лучи.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer31'] = '[act_name:О коридоре...:act_name]
 <if>$DIALOG_VALUE["коридор"]!"поговорили"</if>'
-dialogs_count['test.answer31'] = 0
-$dialogs_position['test.answer31'] = 'test.quest37'
-$dialogs_includes['test.answer31'] = 'test.quest30'
-$dialogs_run['test.answer31'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer31'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer31'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest37'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer31'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest30'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer31'] = {}
 !@ REPLIC_25
-$dialogs_id['test.answer25'] = 'test.answer25'
-$dialogs_body['test.answer25'] = 'На лестнице сторожит охранник с оружием.'
-$dialogs_sets['test.answer25'] = '[act_name:О лестинце...:act_name]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer25'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer25'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer25'] = 'На лестнице сторожит охранник с оружием.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer25'] = '[act_name:О лестинце...:act_name]
 <if>$DIALOG_VALUE["лестница"]!"поговорили"</if>'
-dialogs_count['test.answer25'] = 0
-$dialogs_position['test.answer25'] = 'test.quest37'
-$dialogs_includes['test.answer25'] = 'test.quest24'
-$dialogs_run['test.answer25'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer25'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer25'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest37'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer25'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest24'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer25'] = {}
 !@ REPLIC_24
-$dialogs_id['test.quest24'] = 'test.quest24'
-$dialogs_body['test.quest24'] = 'Каким оружием?'
-$dialogs_sets['test.quest24'] = ''
-dialogs_count['test.quest24'] = 0
-$dialogs_position['test.quest24'] = 'test.answer25'
-$dialogs_includes['test.quest24'] = 'test.answer23|test.answer21'
-$dialogs_run['test.quest24'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest24'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest24'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest24'] = 'Каким оружием?'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest24'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest24'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest24'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer25'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest24'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer23|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer21'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest24'] = {}
 !@ REPLIC_23
-$dialogs_id['test.answer23'] = 'test.answer23'
-$dialogs_body['test.answer23'] = 'Benelli M4 Super 90, шестизарядный, с телескопическим прикладом, пистолетной рукояткой, планкой Пикатинни...'
-$dialogs_sets['test.answer23'] = '[act_name:Benelli M4...:act_name]'
-dialogs_count['test.answer23'] = 0
-$dialogs_position['test.answer23'] = 'test.quest24'
-$dialogs_includes['test.answer23'] = 'test.quest22'
-$dialogs_run['test.answer23'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer23'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer23'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer23'] = 'Benelli M4 Super 90, шестизарядный, с телескопическим прикладом, пистолетной рукояткой, планкой Пикатинни...'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer23'] = '[act_name:Benelli M4...:act_name]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer23'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer23'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest24'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer23'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest22'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer23'] = {}
 !@ REPLIC_21
-$dialogs_id['test.answer21'] = 'test.answer21'
-$dialogs_body['test.answer21'] = 'Не знаю, я не разбираюсь.'
-$dialogs_sets['test.answer21'] = '[act_name:Ружьё какое-то...:act_name]'
-dialogs_count['test.answer21'] = 0
-$dialogs_position['test.answer21'] = 'test.quest24'
-$dialogs_includes['test.answer21'] = 'test.quest20'
-$dialogs_run['test.answer21'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer21'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer21'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer21'] = 'Не знаю, я не разбираюсь.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer21'] = '[act_name:Ружьё какое-то...:act_name]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer21'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer21'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest24'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer21'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest20'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer21'] = {}
 !@ REPLIC_20
-$dialogs_id['test.quest20'] = 'test.quest20'
-$dialogs_body['test.quest20'] = 'Дальше.'
-$dialogs_sets['test.quest20'] = '[levelup:4]'
-dialogs_count['test.quest20'] = 0
-$dialogs_position['test.quest20'] = 'test.answer21'
-$dialogs_includes['test.quest20'] = ''
-$dialogs_run['test.quest20'] = {$DIALOG_VALUE["лестница"]="поговорили"}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest20'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest20'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest20'] = 'Дальше.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest20'] = '[levelup:4]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest20'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest20'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer21'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest20'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest20'] = {$DIALOG_VALUE["лестница"]="поговорили"}
 !@ REPLIC_22
-$dialogs_id['test.quest22'] = 'test.quest22'
-$dialogs_body['test.quest22'] = 'Всё, заткнись, давай дальше.'
-$dialogs_sets['test.quest22'] = '[levelup:4]'
-dialogs_count['test.quest22'] = 0
-$dialogs_position['test.quest22'] = 'test.answer23'
-$dialogs_includes['test.quest22'] = ''
-$dialogs_run['test.quest22'] = {$DIALOG_VALUE["лестница"]="поговорили"}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest22'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest22'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest22'] = 'Всё, заткнись, давай дальше.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest22'] = '[levelup:4]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest22'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest22'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer23'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest22'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest22'] = {$DIALOG_VALUE["лестница"]="поговорили"}
 !@ REPLIC_30
-$dialogs_id['test.quest30'] = 'test.quest30'
-$dialogs_body['test.quest30'] = 'Красные или зелёные?'
-$dialogs_sets['test.quest30'] = ''
-dialogs_count['test.quest30'] = 0
-$dialogs_position['test.quest30'] = 'test.answer31'
-$dialogs_includes['test.quest30'] = 'test.answer29|test.answer27'
-$dialogs_run['test.quest30'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest30'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest30'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest30'] = 'Красные или зелёные?'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest30'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest30'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest30'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer31'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest30'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer29|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer27'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest30'] = {}
 !@ REPLIC_29
-$dialogs_id['test.answer29'] = 'test.answer29'
-$dialogs_body['test.answer29'] = '<frase_block>
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer29'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer29'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer29'] = '<frase_block>
 <actor:hero>Зелёные, кажется, а что?
 <actor:npc>Проклятье, у меня дейтеранопия.
 <actor:hero>Зелёный цвет не различаете?
@@ -374,38 +374,38 @@ $dialogs_body['test.answer29'] = '<frase_block>
 <actor:hero>Сочувствую.
 <actor:npc>Спасибо. Дальше.
 </frase_block>'
-$dialogs_sets['test.answer29'] = '[act_name:Зелёные.:act_name]'
-dialogs_count['test.answer29'] = 0
-$dialogs_position['test.answer29'] = 'test.quest30'
-$dialogs_includes['test.answer29'] = 'test.quest28'
-$dialogs_run['test.answer29'] = {cla}
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer29'] = '[act_name:Зелёные.:act_name]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer29'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer29'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest30'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer29'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest28'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer29'] = {cla}
 !@ REPLIC_27
-$dialogs_id['test.answer27'] = 'test.answer27'
-$dialogs_body['test.answer27'] = 'Красные, кажется. А что есть какая-то разница?'
-$dialogs_sets['test.answer27'] = '[act_name:Красные.:act_name]'
-dialogs_count['test.answer27'] = 0
-$dialogs_position['test.answer27'] = 'test.quest30'
-$dialogs_includes['test.answer27'] = 'test.quest26'
-$dialogs_run['test.answer27'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer27'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer27'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer27'] = 'Красные, кажется. А что есть какая-то разница?'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer27'] = '[act_name:Красные.:act_name]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer27'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer27'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest30'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer27'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest26'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer27'] = {}
 !@ REPLIC_26
-$dialogs_id['test.quest26'] = 'test.quest26'
-$dialogs_body['test.quest26'] = 'Не твоего ума дело, дальше давай.'
-$dialogs_sets['test.quest26'] = '[levelup:4]'
-dialogs_count['test.quest26'] = 0
-$dialogs_position['test.quest26'] = 'test.answer27'
-$dialogs_includes['test.quest26'] = ''
-$dialogs_run['test.quest26'] = {$DIALOG_VALUE["коридор"]="поговорили"}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest26'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest26'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest26'] = 'Не твоего ума дело, дальше давай.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest26'] = '[levelup:4]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest26'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest26'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer27'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest26'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest26'] = {$DIALOG_VALUE["коридор"]="поговорили"}
 !@ REPLIC_28
-$dialogs_id['test.quest28'] = 'test.quest28'
-$dialogs_body['test.quest28'] = ''
-$dialogs_sets['test.quest28'] = '[levelup:4]'
-dialogs_count['test.quest28'] = 0
-$dialogs_position['test.quest28'] = 'test.answer29'
-$dialogs_includes['test.quest28'] = ''
-$dialogs_run['test.quest28'] = {$DIALOG_VALUE["коридор"]="поговорили"}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest28'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest28'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest28'] = ''
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest28'] = '[levelup:4]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest28'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest28'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer29'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest28'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest28'] = {$DIALOG_VALUE["коридор"]="поговорили"}
 !@ REPLIC_32
-$dialogs_id['test.quest32'] = 'test.quest32'
-$dialogs_body['test.quest32'] = '<frase_block>
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest32'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest32'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest32'] = '<frase_block>
 <actor:npc>Что?!
 <actor:hero>Люди, говорю, в архиве пропадают.
 <actor:npc>Да это я понял! Почему пропадают?
@@ -416,14 +416,14 @@ $dialogs_body['test.quest32'] = '<frase_block>
 <actor:hero>О...
 <actor:npc>Дальше.
 </frase_block>'
-$dialogs_sets['test.quest32'] = '[levelup:2]'
-dialogs_count['test.quest32'] = 0
-$dialogs_position['test.quest32'] = 'test.answer33'
-$dialogs_includes['test.quest32'] = ''
-$dialogs_run['test.quest32'] = {$DIALOG_VALUE["архив"]="поговорили"}
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest32'] = '[levelup:2]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest32'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest32'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer33'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest32'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest32'] = {$DIALOG_VALUE["архив"]="поговорили"}
 !@ REPLIC_34
-$dialogs_id['test.quest34'] = 'test.quest34'
-$dialogs_body['test.quest34'] = '<frase_block>
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest34'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest34'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest34'] = '<frase_block>
 <actor:npc>Ого...
 <actor:hero>И замок «Sargent & Greenleaf».
 <actor:npc>Ой...
@@ -432,81 +432,81 @@ $dialogs_body['test.quest34'] = '<frase_block>
 <actor:hero>А снаружи камеры.
 <actor:npc>Понятно. Дальше.
 </frase_block>'
-$dialogs_sets['test.quest34'] = '[levelup:2]'
-dialogs_count['test.quest34'] = 0
-$dialogs_position['test.quest34'] = 'test.answer35'
-$dialogs_includes['test.quest34'] = ''
-$dialogs_run['test.quest34'] = {$DIALOG_VALUE["хранилище"]="поговорили"}
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest34'] = '[levelup:2]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest34'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest34'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer35'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest34'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest34'] = {$DIALOG_VALUE["хранилище"]="поговорили"}
 !@ REPLIC_57
-$dialogs_id['test.quest57'] = 'test.quest57'
-$dialogs_body['test.quest57'] = 'Почему это?'
-$dialogs_sets['test.quest57'] = ''
-dialogs_count['test.quest57'] = 0
-$dialogs_position['test.quest57'] = 'test.answer58'
-$dialogs_includes['test.quest57'] = 'test.quest56'
-$dialogs_run['test.quest57'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest57'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest57'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest57'] = 'Почему это?'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest57'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest57'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest57'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer58'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest57'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest56'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest57'] = {}
 !@ REPLIC_56
-$dialogs_id['test.quest56'] = 'test.quest56'
-$dialogs_body['test.quest56'] = ''
-$dialogs_sets['test.quest56'] = ''
-dialogs_count['test.quest56'] = 0
-$dialogs_position['test.quest56'] = 'test.quest57'
-$dialogs_includes['test.quest56'] = 'test.quest55|test.answer54|test.answer43|test.answer41'
-$dialogs_run['test.quest56'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest56'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest56'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest56'] = ''
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest56'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest56'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest56'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest57'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest56'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest55|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer54|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer43|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer41'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest56'] = {}
 !@ REPLIC_55
-$dialogs_id['test.quest55'] = 'test.quest55'
-$dialogs_body['test.quest55'] = '<frase_block>
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest55'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest55'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest55'] = '<frase_block>
 <actor:hero>Это всё.
 <actor:npc>А другой путь есть?
 </frase_block>'
-$dialogs_sets['test.quest55'] = '[levelup:4]
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest55'] = '[levelup:4]
 <if>$DIALOG_VALUE["системы идентификации"]="поговорили" and $DIALOG_VALUE["собаки"]="поговорили" and $DIALOG_VALUE["управляющий"]="поговорили"</if>'
-dialogs_count['test.quest55'] = 0
-$dialogs_position['test.quest55'] = 'test.quest56'
-$dialogs_includes['test.quest55'] = ''
-$dialogs_run['test.quest55'] = {$DIALOG_VALUE["по лифту"]="поговорили"}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest55'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest55'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest56'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest55'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest55'] = {$DIALOG_VALUE["по лифту"]="поговорили"}
 !@ REPLIC_54
-$dialogs_id['test.answer54'] = 'test.answer54'
-$dialogs_body['test.answer54'] = 'В лифте стоят системы идентификации, которые пропускают только управляющего.'
-$dialogs_sets['test.answer54'] = '[act_name:Системы идентификации.:act_name]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer54'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer54'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer54'] = 'В лифте стоят системы идентификации, которые пропускают только управляющего.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer54'] = '[act_name:Системы идентификации.:act_name]
 <if>$DIALOG_VALUE["системы идентификации"]!"поговорили"</if>'
-dialogs_count['test.answer54'] = 0
-$dialogs_position['test.answer54'] = 'test.quest56'
-$dialogs_includes['test.answer54'] = 'test.quest53'
-$dialogs_run['test.answer54'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer54'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer54'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest56'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer54'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest53'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer54'] = {}
 !@ REPLIC_43
-$dialogs_id['test.answer43'] = 'test.answer43'
-$dialogs_body['test.answer43'] = 'Собаки.'
-$dialogs_sets['test.answer43'] = '<if>$DIALOG_VALUE["собаки"]!"поговорили"</if>'
-dialogs_count['test.answer43'] = 0
-$dialogs_position['test.answer43'] = 'test.quest56'
-$dialogs_includes['test.answer43'] = 'test.quest42'
-$dialogs_run['test.answer43'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer43'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer43'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer43'] = 'Собаки.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer43'] = '<if>$DIALOG_VALUE["собаки"]!"поговорили"</if>'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer43'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer43'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest56'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer43'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest42'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer43'] = {}
 !@ REPLIC_41
-$dialogs_id['test.answer41'] = 'test.answer41'
-$dialogs_body['test.answer41'] = 'В кабинете скорее всего сидит сам управляющий.'
-$dialogs_sets['test.answer41'] = '[act_name:Управляющий.:act_name]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer41'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer41'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer41'] = 'В кабинете скорее всего сидит сам управляющий.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer41'] = '[act_name:Управляющий.:act_name]
 <if>$DIALOG_VALUE["управляющий"]!"поговорили"</if>'
-dialogs_count['test.answer41'] = 0
-$dialogs_position['test.answer41'] = 'test.quest56'
-$dialogs_includes['test.answer41'] = 'test.quest40'
-$dialogs_run['test.answer41'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer41'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer41'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest56'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer41'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest40'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer41'] = {}
 !@ REPLIC_40
-$dialogs_id['test.quest40'] = 'test.quest40'
-$dialogs_body['test.quest40'] = '<actor:frase_block><npc>И чего?
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest40'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest40'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest40'] = '<actor:frase_block><npc>И чего?
 <actor:hero>Он чемпион города по гарлемскому боксу.
 <actor:npc>Впервые слышу про такой бокс.
 <actor:hero>Основная особенность его в том, что во время боя разрешено использовать кастеты, биты и автоматическое оружие.
 <actor:npc>Хмм, ну ладно, допустим, я с ним разберусь, что ещё?
 </frase_block>'
-$dialogs_sets['test.quest40'] = '[levelup:2]'
-dialogs_count['test.quest40'] = 0
-$dialogs_position['test.quest40'] = 'test.answer41'
-$dialogs_includes['test.quest40'] = ''
-$dialogs_run['test.quest40'] = {$DIALOG_VALUE["управляющий"]="поговорили"}
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest40'] = '[levelup:2]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest40'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest40'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer41'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest40'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest40'] = {$DIALOG_VALUE["управляющий"]="поговорили"}
 !@ REPLIC_42
-$dialogs_id['test.quest42'] = 'test.quest42'
-$dialogs_body['test.quest42'] = '<frase_block>
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest42'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest42'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest42'] = '<frase_block>
 <actor:npc>Собаки?
 <actor:hero>Да.
 <actor:npc>Большие?
@@ -515,118 +515,118 @@ $dialogs_body['test.quest42'] = '<frase_block>
 <actor:hero>Четыре.
 <actor:npc>Ох... Ну допустим, с собаками я как-нибудь управлюсь. Что-то ещё?
 </frase_block>'
-$dialogs_sets['test.quest42'] = '[levelup:2]'
-dialogs_count['test.quest42'] = 0
-$dialogs_position['test.quest42'] = 'test.answer43'
-$dialogs_includes['test.quest42'] = ''
-$dialogs_run['test.quest42'] = {$DIALOG_VALUE["собаки"]="поговорили"}
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest42'] = '[levelup:2]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest42'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest42'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer43'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest42'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest42'] = {$DIALOG_VALUE["собаки"]="поговорили"}
 !@ REPLIC_53
-$dialogs_id['test.quest53'] = 'test.quest53'
-$dialogs_body['test.quest53'] = 'Какие системы?'
-$dialogs_sets['test.quest53'] = ''
-dialogs_count['test.quest53'] = 0
-$dialogs_position['test.quest53'] = 'test.answer54'
-$dialogs_includes['test.quest53'] = 'test.quest52'
-$dialogs_run['test.quest53'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest53'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest53'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest53'] = 'Какие системы?'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest53'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest53'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest53'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer54'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest53'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest52'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest53'] = {}
 !@ REPLIC_52
-$dialogs_id['test.quest52'] = 'test.quest52'
-$dialogs_body['test.quest52'] = ''
-$dialogs_sets['test.quest52'] = ''
-dialogs_count['test.quest52'] = 0
-$dialogs_position['test.quest52'] = 'test.quest53'
-$dialogs_includes['test.quest52'] = 'test.answer51|test.answer49|test.answer47|test.answer45'
-$dialogs_run['test.quest52'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest52'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest52'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest52'] = ''
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest52'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest52'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest52'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest53'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest52'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer51|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer49|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer47|D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer45'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest52'] = {}
 !@ REPLIC_51
-$dialogs_id['test.answer51'] = 'test.answer51'
-$dialogs_body['test.answer51'] = 'По системам идентификации всё.'
-$dialogs_sets['test.answer51'] = '[act_name:По системам всё:act_name]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer51'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer51'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer51'] = 'По системам идентификации всё.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer51'] = '[act_name:По системам всё:act_name]
 <if>$DIALOG_VALUE["вес"]="поговорили" and $DIALOG_VALUE["сетчатка"]="поговорили" and $DIALOG_VALUE["отпечатки"]="поговорили"</if>'
-dialogs_count['test.answer51'] = 0
-$dialogs_position['test.answer51'] = 'test.quest52'
-$dialogs_includes['test.answer51'] = 'test.quest50'
-$dialogs_run['test.answer51'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer51'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer51'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest52'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer51'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest50'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer51'] = {}
 !@ REPLIC_49
-$dialogs_id['test.answer49'] = 'test.answer49'
-$dialogs_body['test.answer49'] = 'Датчик веса.'
-$dialogs_sets['test.answer49'] = '[act_name:Вес:act_name]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer49'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer49'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer49'] = 'Датчик веса.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer49'] = '[act_name:Вес:act_name]
 <if>$DIALOG_VALUE["вес"]!"поговорили"</if>'
-dialogs_count['test.answer49'] = 0
-$dialogs_position['test.answer49'] = 'test.quest52'
-$dialogs_includes['test.answer49'] = 'test.quest48'
-$dialogs_run['test.answer49'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer49'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer49'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest52'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer49'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest48'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer49'] = {}
 !@ REPLIC_47
-$dialogs_id['test.answer47'] = 'test.answer47'
-$dialogs_body['test.answer47'] = 'Сканер сетчатки глаза.'
-$dialogs_sets['test.answer47'] = '[act_name:Сетчатка глаза.:act_name]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer47'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer47'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer47'] = 'Сканер сетчатки глаза.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer47'] = '[act_name:Сетчатка глаза.:act_name]
 <if>$DIALOG_VALUE["сетчатка"]!"поговорили"</if>'
-dialogs_count['test.answer47'] = 0
-$dialogs_position['test.answer47'] = 'test.quest52'
-$dialogs_includes['test.answer47'] = 'test.quest46'
-$dialogs_run['test.answer47'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer47'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer47'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest52'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer47'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest46'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer47'] = {}
 !@ REPLIC_45
-$dialogs_id['test.answer45'] = 'test.answer45'
-$dialogs_body['test.answer45'] = 'Сканер отпечатка правой ладони.'
-$dialogs_sets['test.answer45'] = '[act_name:Отпечатки.:act_name]
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer45'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer45'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer45'] = 'Сканер отпечатка правой ладони.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer45'] = '[act_name:Отпечатки.:act_name]
 <if>$DIALOG_VALUE["отпечатки"]!"поговорили"</if>'
-dialogs_count['test.answer45'] = 0
-$dialogs_position['test.answer45'] = 'test.quest52'
-$dialogs_includes['test.answer45'] = 'test.quest44'
-$dialogs_run['test.answer45'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer45'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer45'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest52'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer45'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest44'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer45'] = {}
 !@ REPLIC_44
-$dialogs_id['test.quest44'] = 'test.quest44'
-$dialogs_body['test.quest44'] = 'Это, теоретически, можно обойти. Дальше.'
-$dialogs_sets['test.quest44'] = '[levelup:2]'
-dialogs_count['test.quest44'] = 0
-$dialogs_position['test.quest44'] = 'test.answer45'
-$dialogs_includes['test.quest44'] = ''
-$dialogs_run['test.quest44'] = {$DIALOG_VALUE["отпечатки"]="поговорили"}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest44'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest44'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest44'] = 'Это, теоретически, можно обойти. Дальше.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest44'] = '[levelup:2]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest44'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest44'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer45'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest44'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest44'] = {$DIALOG_VALUE["отпечатки"]="поговорили"}
 !@ REPLIC_46
-$dialogs_id['test.quest46'] = 'test.quest46'
-$dialogs_body['test.quest46'] = 'Для этого у меня есть инструменты и необходимые навыки, — <em>он зловеще ухмыляется.</em> — Дальше.'
-$dialogs_sets['test.quest46'] = '[levelup:2]'
-dialogs_count['test.quest46'] = 0
-$dialogs_position['test.quest46'] = 'test.answer47'
-$dialogs_includes['test.quest46'] = ''
-$dialogs_run['test.quest46'] = {$DIALOG_VALUE["сетчатка"]="поговорили"}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest46'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest46'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest46'] = 'Для этого у меня есть инструменты и необходимые навыки, — <em>он зловеще ухмыляется.</em> — Дальше.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest46'] = '[levelup:2]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest46'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest46'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer47'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest46'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest46'] = {$DIALOG_VALUE["сетчатка"]="поговорили"}
 !@ REPLIC_48
-$dialogs_id['test.quest48'] = 'test.quest48'
-$dialogs_body['test.quest48'] = '<frase_block>
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest48'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest48'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest48'] = '<frase_block>
 <actor:npc>Хм. Сколько весит местный управляющий?
 <actor:hero>124 килограмма. А вы сколько весите?
 <actor:npc>61. Мда. Тут даже клонирующая машина бы не помогла. Ладно, дальше.
 </frase_block>'
-$dialogs_sets['test.quest48'] = '[levelup:2]'
-dialogs_count['test.quest48'] = 0
-$dialogs_position['test.quest48'] = 'test.answer49'
-$dialogs_includes['test.quest48'] = ''
-$dialogs_run['test.quest48'] = {$DIALOG_VALUE["вес"]="поговорили"}
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest48'] = '[levelup:2]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest48'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest48'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer49'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest48'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest48'] = {$DIALOG_VALUE["вес"]="поговорили"}
 !@ REPLIC_50
-$dialogs_id['test.quest50'] = 'test.quest50'
-$dialogs_body['test.quest50'] = 'Ещё что-нибудь по лифту?'
-$dialogs_sets['test.quest50'] = '[levelup:5]'
-dialogs_count['test.quest50'] = 0
-$dialogs_position['test.quest50'] = 'test.answer51'
-$dialogs_includes['test.quest50'] = ''
-$dialogs_run['test.quest50'] = {$DIALOG_VALUE["системы идентификации"]="поговорили"}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest50'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest50'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest50'] = 'Ещё что-нибудь по лифту?'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest50'] = '[levelup:5]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest50'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest50'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer51'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest50'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest50'] = {$DIALOG_VALUE["системы идентификации"]="поговорили"}
 !@ REPLIC_62
-$dialogs_id['test.quest62'] = 'test.quest62'
-$dialogs_body['test.quest62'] = 'Вот же задачка. Монетку бросить что ли... Это всё? Может ещё что-нибудь знаешь?'
-$dialogs_sets['test.quest62'] = ''
-dialogs_count['test.quest62'] = 0
-$dialogs_position['test.quest62'] = 'test.answer63'
-$dialogs_includes['test.quest62'] = 'test.answer61'
-$dialogs_run['test.quest62'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest62'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest62'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest62'] = 'Вот же задачка. Монетку бросить что ли... Это всё? Может ещё что-нибудь знаешь?'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest62'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest62'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest62'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer63'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest62'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer61'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest62'] = {}
 !@ REPLIC_61
-$dialogs_id['test.answer61'] = 'test.answer61'
-$dialogs_body['test.answer61'] = 'Знаю про деньги в хранилище.'
-$dialogs_sets['test.answer61'] = '[act_name:Про деньги.:act_name]'
-dialogs_count['test.answer61'] = 0
-$dialogs_position['test.answer61'] = 'test.quest62'
-$dialogs_includes['test.answer61'] = 'test.quest60'
-$dialogs_run['test.answer61'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer61'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer61'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer61'] = 'Знаю про деньги в хранилище.'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer61'] = '[act_name:Про деньги.:act_name]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer61'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer61'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest62'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer61'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest60'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer61'] = {}
 !@ REPLIC_60
-$dialogs_id['test.quest60'] = 'test.quest60'
-$dialogs_body['test.quest60'] = '<frase_block>
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest60'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest60'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest60'] = '<frase_block>
 <actor:npc>Так, и что с ними?
 <actor:hero>Их там нет.
 <actor:npc>Как нет?!
@@ -636,62 +636,62 @@ $dialogs_body['test.quest60'] = '<frase_block>
 <actor:npc>Проклятье!
 <em>И с этими словами он выбегает из отделения банка, где его ловит экипаж инкассаторской машины, приехавшей, чтобы как раз перевезти содержимое хранилища в другой район города. Хе-хе.</em>
 </frase_block>'
-$dialogs_sets['test.quest60'] = ''
-dialogs_count['test.quest60'] = 0
-$dialogs_position['test.quest60'] = 'test.answer61'
-$dialogs_includes['test.quest60'] = 'test.answer59'
-$dialogs_run['test.quest60'] = {}
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest60'] = ''
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest60'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest60'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer61'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest60'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer59'
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest60'] = {}
 !@ REPLIC_59
-$dialogs_id['test.answer59'] = 'test.answer59'
-$dialogs_body['test.answer59'] = '[Закрыть]'
-$dialogs_sets['test.answer59'] = '[closeup]'
-dialogs_count['test.answer59'] = 0
-$dialogs_position['test.answer59'] = 'test.quest60'
-$dialogs_includes['test.answer59'] = ''
-$dialogs_run['test.answer59'] = {}
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer59'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer59'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer59'] = '[Закрыть]'
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer59'] = '[closeup]'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer59'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer59'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.quest60'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer59'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.answer59'] = {}
 !@ REPLIC_69
-$dialogs_id['test.test.hero'] = 'test.test.hero'
-$dialogs_body['test.test.hero'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.hero'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.hero'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.hero'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
 local $name_ = @em.tag.getNum(@edb.cell.getValue($args[0], 'sets', 'dialogs'), 'name')
 $result += '<div class="avs-hero-replic">'
 $result += '<span style="color:#ffffff;font-weight:bold;"><<$name_>>:</span>'
 $result += '<span style="color:#dddddd;"> — <<$args[2]>>:</span>'
 $result += '</div>'}
-$dialogs_sets['test.test.hero'] = 'name="Я"
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.hero'] = 'name="Я"
 
 		<default_active>'
-dialogs_count['test.test.hero'] = 0
-$dialogs_position['test.test.hero'] = 'test'
-$dialogs_includes['test.test.hero'] = ''
-$dialogs_run['test.test.hero'] = {!@ внешний вид кнопок для ответов.
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.hero'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.hero'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.hero'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.hero'] = {!@ внешний вид кнопок для ответов.
 $result += '<div class="avs-act-button"><<$args[2]>></div>'}
 !@ REPLIC_70
-$dialogs_id['test.test.npc'] = 'test.test.npc'
-$dialogs_body['test.test.npc'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.npc'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.npc'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.npc'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
 local $name_ = @em.tag.getNum(@edb.cell.getValue($args[0], 'sets', 'dialogs'), 'name')
 $result += '<div class="avs-hero-replic">'
 $result += '<span style="color:#c0c0c0;font-weight:bold;"><<$name_>>:</span>'
 $result += '<span style="color:#aaaaaa;"> — <<$args[2]>>:</span>'
 $result += '</div>'}
-$dialogs_sets['test.test.npc'] = 'name="Грабитель"
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.npc'] = 'name="Грабитель"
 
 		Здесь можно писать любой текст, он никак не повлияет на работу интерпретатора.
 		Обёртка для внешнего вида действий отсутствует, потому что данный персонаж общается только через пассивные реплики.
 
 		<default_passive>'
-dialogs_count['test.test.npc'] = 0
-$dialogs_position['test.test.npc'] = 'test'
-$dialogs_includes['test.test.npc'] = ''
-$dialogs_run['test.test.npc'] = {}
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.npc'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.npc'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.npc'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.npc'] = {}
 !@ REPLIC_71
-$dialogs_id['test.test.remarka'] = 'test.test.remarka'
-$dialogs_body['test.test.remarka'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
+$dialogs_id['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.remarka'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.remarka'
+$dialogs_body['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.remarka'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
 $result += '<div class="avs-remarka">'
 $result += '<span style="font-style:italic;"><<$args[2]>>:</span>'
 $result += '</div>'}
-$dialogs_sets['test.test.remarka'] = 'Ремарка'
-dialogs_count['test.test.remarka'] = 0
-$dialogs_position['test.test.remarka'] = 'test'
-$dialogs_includes['test.test.remarka'] = ''
-$dialogs_run['test.test.remarka'] = {}
-- dialog_test
+$dialogs_sets['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.remarka'] = 'Ремарка'
+dialogs_count['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.remarka'] = 0
+$dialogs_position['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.remarka'] = 'D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt'
+$dialogs_includes['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.remarka'] = ''
+$dialogs_run['D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt.remarka'] = {}
+- dialog_D:\my\GameDev\QuestSoftPlayer\games\+lib+\easy.dialog\[source]\generate\_generator\dialog.txt
