@@ -4,7 +4,7 @@ import re
 
 import pandas
 
-from .em import (Str, Tag, gen_uuid) 
+from . import em
 
 class EasyDialog:
 	"""
@@ -50,14 +50,14 @@ class EasyDialog:
 			output_lines.append(f'!@ REPLIC_{key}\n')
 			output_lines.append(f"$dialogs_id['{value}'] = '{value}'\n")
 			if self.microbase['replic-type'][key] == 'role':
-				output_lines.append(f"$dialogs_body['{value}'] = {{{Str.widetrim(self.microbase['replic-source'][key], strip=True)}}}\n")
+				output_lines.append(f"$dialogs_body['{value}'] = {{{em.Str.widetrim(self.microbase['replic-source'][key], strip=True)}}}\n")
 			else:
-				output_lines.append(f"$dialogs_body['{value}'] = '{Str.widetrim(self.microbase['replic-source'][key], strip=True)}'\n")
+				output_lines.append(f"$dialogs_body['{value}'] = '{em.Str.widetrim(self.microbase['replic-source'][key], strip=True)}'\n")
 			output_lines.append(f"$dialogs_sets['{value}'] = '{self.microbase['replic-settings'][key].strip()}'\n")
 			output_lines.append(f"dialogs_count['{value}'] = 0\n")
 			output_lines.append(f"$dialogs_position['{value}'] = '{self.microbase['replic-position'][key]}'\n")
 			output_lines.append(f"$dialogs_includes['{value}'] = '{'|'.join(self.microbase['replic-includes'][key])}'\n")
-			output_lines.append(f"$dialogs_run['{value}'] = {{{Str.widetrim(self.microbase['replic-run'][key], strip=True)}}}\n")
+			output_lines.append(f"$dialogs_run['{value}'] = {{{em.Str.widetrim(self.microbase['replic-run'][key], strip=True)}}}\n")
 		output_lines.append(f'- dialog_{self.uid}\n')
 		with open(qsps_file_path, 'w', encoding='utf-8') as fp:
 			fp.writelines(output_lines)
@@ -158,7 +158,7 @@ class EasyDialog:
 	def roles_extract(self, save_temp_file=False) -> None:
 		key = self.root
 		# Извлекаем роли
-		actors_ids = Tag.get_num(self.microbase['replic-source'][key], 'actors').split(';')
+		actors_ids = em.Tag.get_num(self.microbase['replic-source'][key], 'actors').split(';')
 		actors_ids = list(map(lambda x: x.strip(), actors_ids))
 		# удаляем из исходника список ролей
 		self.microbase['replic-source'][key] = re.sub(r'actors\s*=\s*("|\')([\s\S]*?)\1', '', self.microbase['replic-source'][key])
@@ -168,7 +168,7 @@ class EasyDialog:
 		dialog_actors = ''
 		for actor in actors_ids:
 			if actor != '':
-				actors[actor] = Tag.get_cont(self.microbase['replic-source'][key], f'actor.{actor}')
+				actors[actor] = em.Tag.get_cont(self.microbase['replic-source'][key], f'actor.{actor}')
 				self.gen_actor(actor, actors[actor])
 				self.microbase['replic-source'][key] = re.sub(f'<(actor.{actor})>'+r'[\s\S]+?<\/\1>', '', self.microbase['replic-source'][key])
 				dialog_actors += f'{actor}|'
@@ -177,7 +177,7 @@ class EasyDialog:
 				if '<default_passive>' in actors[actor]:
 					self.microbase['replic-settings'][key] += f'[default_passive:{actor}]\n' 
 		self.microbase['replic-settings'][key] += '[actors:' + dialog_actors[:-1] + ':actors]\n'
-		strings_count = Tag.get_num(self.microbase['replic-source'][key], 'strings')
+		strings_count = em.Tag.get_num(self.microbase['replic-source'][key], 'strings')
 		self.microbase['replic-source'][key] = re.sub(r'strings:\S+', '', self.microbase['replic-source'][key])
 		self.microbase['replic-settings'][key] += f'[strings:{strings_count}]\n'
 		self.microbase['replic-source'][key] = re.sub(r'<!--[\s\S]*?-->', '', self.microbase['replic-source'][key])
@@ -188,10 +188,10 @@ class EasyDialog:
 			generate of actors rows in dialogs data table
 		"""
 		role_id = f'{self.uid}.{actor_id}'
-		wrap_act = Tag.get_cont(actor_src, r'wrap\.act')
-		actor_src = Tag.del_cont(actor_src, r'wrap\.act')
-		wrap_frase = Tag.get_cont(actor_src, r'wrap\.frase')
-		actor_src = Tag.del_cont(actor_src, r'wrap\.frase')
+		wrap_act = em.Tag.get_cont(actor_src, r'wrap\.act')
+		actor_src = em.Tag.del_cont(actor_src, r'wrap\.act')
+		wrap_frase = em.Tag.get_cont(actor_src, r'wrap\.frase')
+		actor_src = em.Tag.del_cont(actor_src, r'wrap\.frase')
 		actor_src.replace('<default_active', '')
 		actor_src.replace('<default_passive>', '')
 		number = self.mb_lines_count + 1
@@ -206,77 +206,77 @@ class EasyDialog:
 
 
 	def extract_sets(self, key:str) -> None:
-		repeat = Tag.get_num(self.microbase['replic-source'][key], 'repeat')
+		repeat = em.Tag.get_num(self.microbase['replic-source'][key], 'repeat')
 		if repeat != '':
 			self.microbase['replic-settings'][key] += f'[repeat:{repeat}]\n'
-			self.microbase['replic-source'][key] = Tag.del_num(self.microbase['replic-source'][key], 'repeat')
+			self.microbase['replic-source'][key] = em.Tag.del_num(self.microbase['replic-source'][key], 'repeat')
 
-		shuffle = Tag.get_num(self.microbase['replic-source'][key], 'shuffle')
+		shuffle = em.Tag.get_num(self.microbase['replic-source'][key], 'shuffle')
 		if shuffle != '':
 			self.microbase['replic-settings'][key] += f'[shuffle:{shuffle}]\n'
-			self.microbase['replic-source'][key] = Tag.del_num(self.microbase['replic-source'][key], 'shuffle')
+			self.microbase['replic-source'][key] = em.Tag.del_num(self.microbase['replic-source'][key], 'shuffle')
 
-		act_length = Tag.get_num(self.microbase['replic-source'][key], 'act_length')
+		act_length = em.Tag.get_num(self.microbase['replic-source'][key], 'act_length')
 		if act_length != '':
 			self.microbase['replic-settings'][key] += f'[act_length:{act_length}]\n'
-			self.microbase['replic-source'][key] = Tag.del_num(self.microbase['replic-source'][key], 'act_length')
+			self.microbase['replic-source'][key] = em.Tag.del_num(self.microbase['replic-source'][key], 'act_length')
 
-		actor_act = Tag.get_num(self.microbase['replic-source'][key], 'actor_act')
+		actor_act = em.Tag.get_num(self.microbase['replic-source'][key], 'actor_act')
 		if actor_act != '':
 			actor_act = (f'{self.uid}.{actor_act}' if not '.' in actor_act else actor_act)
 			self.microbase['replic-settings'][key] += f'[actor_act:{actor_act}]\n'
-			self.microbase['replic-source'][key] = Tag.del_num(self.microbase['replic-source'][key], 'actor_act')
+			self.microbase['replic-source'][key] = em.Tag.del_num(self.microbase['replic-source'][key], 'actor_act')
 
-		actor_pass = Tag.get_num(self.microbase['replic-source'][key], 'actor_pass')
+		actor_pass = em.Tag.get_num(self.microbase['replic-source'][key], 'actor_pass')
 		if actor_pass != '':
 			actor_pass = (f'{self.uid}.{actor_pass}' if not '.' in actor_pass else actor_pass)
 			self.microbase['replic-settings'][key] += f'[actor_pass:{actor_pass}]\n'
-			self.microbase['replic-source'][key] = Tag.del_num(self.microbase['replic-source'][key], 'actor_pass')
+			self.microbase['replic-source'][key] = em.Tag.del_num(self.microbase['replic-source'][key], 'actor_pass')
 
-		actor_this = Tag.get_num(self.microbase['replic-source'][key], 'actor_this')
+		actor_this = em.Tag.get_num(self.microbase['replic-source'][key], 'actor_this')
 		if actor_this != '':
 			actor_this = (f'{self.uid}.{actor_this}' if not '.' in actor_this else actor_this)
 			self.microbase['replic-settings'][key] += f'[actor_this:{actor_this}]\n'
-			self.microbase['replic-source'][key] = Tag.del_num(self.microbase['replic-source'][key], 'actor_this')
+			self.microbase['replic-source'][key] = em.Tag.del_num(self.microbase['replic-source'][key], 'actor_this')
 
-		levelup = Tag.get_num(self.microbase['replic-source'][key], 'levelup')
+		levelup = em.Tag.get_num(self.microbase['replic-source'][key], 'levelup')
 		if levelup != '':
 			self.microbase['replic-settings'][key] += f'[levelup:{levelup}]\n'
-			self.microbase['replic-source'][key] = Tag.del_num(self.microbase['replic-source'][key], 'levelup')
+			self.microbase['replic-source'][key] = em.Tag.del_num(self.microbase['replic-source'][key], 'levelup')
 
-		leveljump = Tag.get_num(self.microbase['replic-source'][key], 'leveljump')
+		leveljump = em.Tag.get_num(self.microbase['replic-source'][key], 'leveljump')
 		if leveljump != '':
 			self.microbase['replic-settings'][key] += f'[leveljump:{leveljump}]\n'
-			self.microbase['replic-source'][key] = Tag.del_num(self.microbase['replic-source'][key], 'leveljump')
+			self.microbase['replic-source'][key] = em.Tag.del_num(self.microbase['replic-source'][key], 'leveljump')
 
-		replic_app = Tag.get_num(self.microbase['replic-source'][key], 'replic_app')
+		replic_app = em.Tag.get_num(self.microbase['replic-source'][key], 'replic_app')
 		if replic_app != '':
 			self.microbase['replic-settings'][key] += f'[replic_app:{replic_app}]\n'
-			self.microbase['replic-source'][key] = Tag.del_num(self.microbase['replic-source'][key], 'replic_app')
+			self.microbase['replic-source'][key] = em.Tag.del_num(self.microbase['replic-source'][key], 'replic_app')
 
-		marker = Tag.get_num(self.microbase['replic-source'][key], 'marker')
+		marker = em.Tag.get_num(self.microbase['replic-source'][key], 'marker')
 		if marker != '':
 			self.microbase['replic-settings'][key] += f'[marker:{self.uid}.{marker}]\n'
-			self.microbase['replic-source'][key] = Tag.del_num(self.microbase['replic-source'][key], 'marker')
+			self.microbase['replic-source'][key] = em.Tag.del_num(self.microbase['replic-source'][key], 'marker')
 			if not f'{self.uid}.{marker}' in list(self.microbase['replic-marker'].values()):
 				self.mb_change_prop('replic-marker', key, f'{self.uid}.{marker}')
 			else:
 				raise ValueError(f'The label "{marker}" already exists! Метка "{marker}" уже существует!')
 
-		act_name = Tag.get_cont(self.microbase['replic-source'][key], 'act_name')
+		act_name = em.Tag.get_cont(self.microbase['replic-source'][key], 'act_name')
 		if act_name != '':
 			self.microbase['replic-settings'][key] += f'[act_name:{act_name}:act_name]\n'
-			self.microbase['replic-source'][key] = Tag.del_cont(self.microbase['replic-source'][key], 'act_name')
+			self.microbase['replic-source'][key] = em.Tag.del_cont(self.microbase['replic-source'][key], 'act_name')
 
-		if_ = Tag.get_cont(self.microbase['replic-source'][key], 'if')
+		if_ = em.Tag.get_cont(self.microbase['replic-source'][key], 'if')
 		if if_ != '':
 			self.microbase['replic-settings'][key] += f'<if>{if_}</if>\n'
-			self.microbase['replic-source'][key] = Tag.del_cont(self.microbase['replic-source'][key], 'if')
+			self.microbase['replic-source'][key] = em.Tag.del_cont(self.microbase['replic-source'][key], 'if')
 
-		dynamic_code = Tag.get_cont(self.microbase['replic-source'][key], 'dynamic_code')
+		dynamic_code = em.Tag.get_cont(self.microbase['replic-source'][key], 'dynamic_code')
 		if dynamic_code != '':
 			self.microbase['replic-run'][key] = dynamic_code
-			self.microbase['replic-source'][key] = Tag.del_cont(self.microbase['replic-source'][key], 'dynamic_code')
+			self.microbase['replic-source'][key] = em.Tag.del_cont(self.microbase['replic-source'][key], 'dynamic_code')
 
 		selectact_delete = re.search(r'\bselectact\.delete\b', self.microbase['replic-source'][key])
 		if selectact_delete is not None:
@@ -293,7 +293,7 @@ class EasyDialog:
 			self.microbase['replic-settings'][key] += f'[closeup]\n'
 			self.microbase['replic-source'][key] = re.sub(r'\bcloseup\b', '', self.microbase['replic-source'][key])
 
-		self.microbase['replic-source'][key] = Tag.del_cont(self.microbase['replic-source'][key], '<!>')
+		self.microbase['replic-source'][key] = em.Tag.del_cont(self.microbase['replic-source'][key], '<!>')
 
 	def ids_replace(self, save_temp_file=False) -> None:
 		ids = []
@@ -305,7 +305,7 @@ class EasyDialog:
 			# old_id = value
 			# while True:
 			# 	# генерируем уникальный идентификатор реплики
-			# 	new_id = Str.random(16, modes={r'\all': True}, exclude='\t ')
+			# 	new_id = em.Str.random(16, modes={r'\all': True}, exclude='\t ')
 			# 	if not new_id in ids:
 			# 		ids.append(new_id)
 			# 		# записываем новый вместо старого
