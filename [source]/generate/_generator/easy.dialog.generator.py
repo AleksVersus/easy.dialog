@@ -1,10 +1,14 @@
-from easy_lib.easy_dialog import EasyDialog
+from easy.microbase import DialogsBase
 
 def main() -> None:
-	# инициализируем микробазу и настравиаем иерархию
-	dialog = EasyDialog('dialog.txt')
-	# # конвертируем диалог в формат qsps
-	# dialog.to_qsps('dialogs.qsps')
+	# составляем список диалогов из которых будем формировать базу
+	dialogs_files = [
+		'dialog.txt'
+	]
+	# формируем объект БазаДиалогов, и генерируем в нём список объектов диалогов
+	eid = DialogsBase(dialogs_files)
+	# теперь конвертируем диалоги из базы в Таблицу Данных для QSP
+	eid.to_qsps()
 
 if __name__ == '__main__':
 	main()

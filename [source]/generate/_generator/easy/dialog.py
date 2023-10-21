@@ -346,6 +346,9 @@ class EasyDialog:
 				return key
 		return None
 
+	def get_microbase(self) -> dict:
+		return self.microbase
+
 	def save_temp_file(self, file_path, save_temp_file):
 		if save_temp_file:
 			db = pandas.DataFrame(self.microbase)
