@@ -3,7 +3,7 @@ from easy.microbase import DialogsBase
 def main() -> None:
 	# составляем список диалогов из которых будем формировать базу
 	dialogs_files = [
-		'dialog.txt'
+		('dialog.txt', 'test')
 	]
 	# формируем объект БазаДиалогов, и генерируем в нём список объектов диалогов
 	eid = DialogsBase(dialogs_files)

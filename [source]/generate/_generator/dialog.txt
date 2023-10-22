@@ -36,6 +36,7 @@
 	</actor.npc>
 	<actor.remarka>
 		Ремарка
+		include_role:hero
 		<wrap.frase>
 			!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
 			$result += '<div class="avs-remarka">'

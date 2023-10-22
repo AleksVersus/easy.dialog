@@ -11,10 +11,11 @@ class EasyDialog:
 		Easy Dialog Object. Generate all dialog's objects,
 		and conclude them to microbase.
 	"""
-	def __init__(self, dialog_file_path:str) -> None:
+	def __init__(self, dialog_file_path:str, dialog_uid:str) -> None:
 		""" Constructor of Dialog's Object """
-		self.uid = os.path.abspath(dialog_file_path)
-		with open(self.uid, 'r', encoding='utf-8') as fp:
+		self.path = os.path.abspath(dialog_file_path)
+		self.uid = dialog_uid
+		with open(self.path, 'r', encoding='utf-8') as fp:
 			self.body = fp.read()
 		self.tags_source = None
 		self.microbase = {
@@ -171,11 +172,11 @@ class EasyDialog:
 				actors[actor] = em.Tag.get_cont(self.microbase['replic-source'][key], f'actor.{actor}')
 				self.gen_actor(actor, actors[actor])
 				self.microbase['replic-source'][key] = re.sub(f'<(actor.{actor})>'+r'[\s\S]+?<\/\1>', '', self.microbase['replic-source'][key])
-				dialog_actors += f'{actor}|'
+				dialog_actors += f'{self.uid}.{actor}|'
 				if '<default_active>' in actors[actor]:
-					self.microbase['replic-settings'][key] += f'[default_active:{actor}]\n'
+					self.microbase['replic-settings'][key] += f'[default_active:{self.uid}.{actor}]\n'
 				if '<default_passive>' in actors[actor]:
-					self.microbase['replic-settings'][key] += f'[default_passive:{actor}]\n' 
+					self.microbase['replic-settings'][key] += f'[default_passive:{self.uid}.{actor}]\n' 
 		self.microbase['replic-settings'][key] += '[actors:' + dialog_actors[:-1] + ':actors]\n'
 		strings_count = em.Tag.get_num(self.microbase['replic-source'][key], 'strings')
 		self.microbase['replic-source'][key] = re.sub(r'strings:\S+', '', self.microbase['replic-source'][key])
@@ -192,6 +193,10 @@ class EasyDialog:
 		actor_src = em.Tag.del_cont(actor_src, r'wrap\.act')
 		wrap_frase = em.Tag.get_cont(actor_src, r'wrap\.frase')
 		actor_src = em.Tag.del_cont(actor_src, r'wrap\.frase')
+		include_role = em.Tag.get_num(actor_src, 'include_role')
+		if include_role != '':
+			include_role = (f'{self.uid}.{include_role}' if not '.' in include_role else include_role)
+			actor_src = em.Tag.del_num(actor_src, 'include_role', rpl=f'[include_role:{include_role}]')
 		actor_src.replace('<default_active', '')
 		actor_src.replace('<default_passive>', '')
 		number = self.mb_lines_count + 1
@@ -206,6 +211,8 @@ class EasyDialog:
 
 
 	def extract_sets(self, key:str) -> None:
+		self.microbase['replic-settings'][key] = self.microbase['replic-settings'][key].strip()
+
 		repeat = em.Tag.get_num(self.microbase['replic-source'][key], 'repeat')
 		if repeat != '':
 			self.microbase['replic-settings'][key] += f'[repeat:{repeat}]\n'
@@ -239,6 +246,12 @@ class EasyDialog:
 			self.microbase['replic-settings'][key] += f'[actor_this:{actor_this}]\n'
 			self.microbase['replic-source'][key] = em.Tag.del_num(self.microbase['replic-source'][key], 'actor_this')
 
+		include_role = em.Tag.get_num(self.microbase['replic-source'][key], 'include_role')
+		if include_role != '':
+			include_role = (f'{self.uid}.{include_role}' if not '.' in include_role else include_role)
+			self.microbase['replic-settings'][key] += f'[include_role:{include_role}]\n'
+			self.microbase['replic-source'][key] = em.Tag.del_num(self.microbase['replic-source'][key], 'include_role')
+
 		levelup = em.Tag.get_num(self.microbase['replic-source'][key], 'levelup')
 		if levelup != '':
 			self.microbase['replic-settings'][key] += f'[levelup:{levelup}]\n'
@@ -246,6 +259,7 @@ class EasyDialog:
 
 		leveljump = em.Tag.get_num(self.microbase['replic-source'][key], 'leveljump')
 		if leveljump != '':
+			leveljump = (f'{self.uid}.{leveljump}' if not '.' in leveljump else leveljump)
 			self.microbase['replic-settings'][key] += f'[leveljump:{leveljump}]\n'
 			self.microbase['replic-source'][key] = em.Tag.del_num(self.microbase['replic-source'][key], 'leveljump')
 
@@ -294,11 +308,12 @@ class EasyDialog:
 			self.microbase['replic-source'][key] = re.sub(r'\bcloseup\b', '', self.microbase['replic-source'][key])
 
 		self.microbase['replic-source'][key] = em.Tag.del_cont(self.microbase['replic-source'][key], '<!>')
+		self.microbase['replic-settings'][key] += f'[type:{self.microbase["replic-type"][key]}]'
 
 	def ids_replace(self, save_temp_file=False) -> None:
 		ids = []
 		for key in self.microbase['replic-id'].keys():
-			if self.microbase['replic-id'][key] != self.uid:
+			if self.microbase['replic-id'][key] != self.uid and self.microbase['replic-type'][key] != 'role':
 				self.microbase['replic-id'][key] = f'{self.uid}.' + self.microbase['replic-id'][key]
 				if self.microbase['replic-position'][key] != self.uid:
 					self.microbase['replic-position'][key] = f'{self.uid}.' + self.microbase['replic-position'][key]
