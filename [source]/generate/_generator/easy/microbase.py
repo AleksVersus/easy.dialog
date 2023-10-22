@@ -21,6 +21,7 @@ class DialogsBase:
 			split_code - if not 0, replics split on `if args[0] = <split_code>` constructions
 				for use in cycled filling of dialog
 		"""
+		self.split_code = split_code
 		# извлекаем диалоги в список для последующего конвертирования
 		self.dialogs = []
 		for d in dialogs:
@@ -48,7 +49,7 @@ class DialogsBase:
 		self.ids_mark['marker'] = ['']
 
 	def to_qsps(self) -> None:
-		self.fill_replics_table(save_temp_file=True) # заполняем общую микробазу реплик
+		self.fill_replics_table() # заполняем общую микробазу реплик
 		self.gen_qsps() # генерируем валидный код QSPS
 
 	def fill_replics_table(self, save_temp_file=False) -> None:
@@ -80,23 +81,38 @@ class DialogsBase:
 		output_lines = []
 		output_lines.append(f"QSP-Game Таблица диалогов\n")
 		output_lines.append(f'# dialogs_table\n')
+		count = 0
+		args_count = 0
 		for i, old_id in enumerate(self.replics['ids']):
+			if self.split_code > 0:
+				if count == 0: output_lines.append(f'if args[0] = {args_count}:\n')
+				count += 1
+			output_lines.append(f'\t!@ REPLIC_{i}\n')
 			new_id = self.get_new_id(old_id)
-			output_lines.append(f'!@ REPLIC_{i}\n')
-			output_lines.append(f"$dialogs_id['{new_id}'] = '{new_id}'\n")
+			output_lines.append(f"\t$dialogs_id['{new_id}'] = '{new_id}'\n")
 			if self.replics['type'][i] == 'role':
-				output_lines.append(f"$dialogs_body['{new_id}'] = {{{em.Str.widetrim(self.replics['source'][i], strip=True)}}}\n")
+				output_lines.append(f"\t$dialogs_body['{new_id}'] = {{{em.Str.widetrim(self.replics['source'][i], strip=True)}}}\n")
 			else:
-				output_lines.append(f"$dialogs_body['{new_id}'] = '{em.Str.widetrim(self.replics['source'][i], strip=True)}'\n")
+				output_lines.append(f"\t$dialogs_body['{new_id}'] = '{em.Str.widetrim(self.replics['source'][i], strip=True)}'\n")
 			settings = self.replic_proced_sets(self.replics['sets'][i].strip())
-			output_lines.append(f"$dialogs_sets['{new_id}'] = '{settings}'\n")
-			output_lines.append(f"dialogs_count['{new_id}'] = 0\n")
+			output_lines.append(f"\t$dialogs_sets['{new_id}'] = '{settings}'\n")
+			output_lines.append(f"\tdialogs_count['{new_id}'] = 0\n")
 			pos = self.get_new_id(self.replics['position'][i])
-			output_lines.append(f"$dialogs_position['{new_id}'] = '{pos}'\n")
+			output_lines.append(f"\t$dialogs_position['{new_id}'] = '{pos}'\n")
 			includes = list(map(lambda x: self.get_new_id(x), self.replics['includes'][i]))
-			output_lines.append(f"$dialogs_includes['{new_id}'] = '{'|'.join(includes)}'\n")
-			output_lines.append(f"$dialogs_run['{new_id}'] = {{{em.Str.widetrim(self.replics['run'][i], strip=True)}}}\n")
-		output_lines.append(f'- dialog_table\n')
+			output_lines.append(f"\t$dialogs_includes['{new_id}'] = '{'|'.join(includes)}'\n")
+			output_lines.append(f"\t$dialogs_run['{new_id}'] = {{{em.Str.widetrim(self.replics['run'][i], strip=True)}}}\n")
+			if self.split_code > 0:
+				if count == self.split_code or i == len(self.replics['ids'])-1:
+					output_lines.append(f'end\n')
+					count = 0
+					args_count += 1
+		output_lines.append(f'- dialogs_table\n')
+		if self.split_code > 0:
+			output_lines.append(f'\nЦикл для последовательной подгрузки реплик группами:\n')
+			output_lines.append(f'# dialogs_load\n')
+			output_lines.append(f'loop local i = 0 while i < {args_count} step i += 1:\n\t@dialogs_table(i)\nend\n')
+			output_lines.append(f'- dialogs_load\n')
 		with open('dialogs_table.qsps', 'w', encoding='utf-8') as fp:
 			fp.writelines(output_lines)
 
