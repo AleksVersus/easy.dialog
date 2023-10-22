@@ -261,7 +261,7 @@ class EasyDialog:
 			if not f'{self.uid}.{marker}' in list(self.microbase['replic-marker'].values()):
 				self.mb_change_prop('replic-marker', key, f'{self.uid}.{marker}')
 			else:
-				raise ValueError(f'The label "{marker}" already exists! Метка "{marker}" уже существует!')
+				raise ValueError(f'[264]: The label "{marker}" already exists! Метка "{marker}" уже существует!')
 
 		act_name = em.Tag.get_cont(self.microbase['replic-source'][key], 'act_name')
 		if act_name != '':
@@ -300,8 +300,8 @@ class EasyDialog:
 		for key in self.microbase['replic-id'].keys():
 			if self.microbase['replic-id'][key] != self.uid:
 				self.microbase['replic-id'][key] = f'{self.uid}.' + self.microbase['replic-id'][key]
-			if self.microbase['replic-position'][key] != self.uid:
-				self.microbase['replic-position'][key] = f'{self.uid}.' + self.microbase['replic-position'][key]
+				if self.microbase['replic-position'][key] != self.uid:
+					self.microbase['replic-position'][key] = f'{self.uid}.' + self.microbase['replic-position'][key]
 			# old_id = value
 			# while True:
 			# 	# генерируем уникальный идентификатор реплики
