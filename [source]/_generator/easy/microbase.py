@@ -76,6 +76,7 @@ class DialogsBase:
 
 	def gen_qsps(self) -> None:
 		output_lines = []
+		unique_ids = []
 		output_lines.append(f"QSP-Game Таблица диалогов\n")
 		output_lines.append(f'# dialogs_table\n')
 		count = 0
@@ -86,6 +87,7 @@ class DialogsBase:
 				count += 1
 			output_lines.append(f'\t!@ REPLIC_{i}\n')
 			new_id = self.get_new_id(old_id)
+			if self.replics['type'][i] == 'root': unique_ids.append((old_id, new_id))
 			output_lines.append(f"\t$dialogs_id['{new_id}'] = '{new_id}'\n")
 			if self.replics['type'][i] == 'role':
 				output_lines.append(f"\t$dialogs_body['{new_id}'] = {{{em.Str.widetrim(self.replics['source'][i], strip=True)}}}\n")
@@ -105,11 +107,31 @@ class DialogsBase:
 					count = 0
 					args_count += 1
 		output_lines.append(f'- dialogs_table\n')
+
+		output_lines.append(f'\nИнициализация таблицы данных диалогов:\n')
+		output_lines.append(f'# dialogs_init\n')
+		output_lines.append(f'!@ @edb.init()\n')
+		output_lines.append(f"@edb.new_table('dialogs', 'Диалоги')\n")
+		output_lines.append(f"@edb.dt.new_col('body', 'str')\n")
+		output_lines.append(f"@edb.dt.new_col('sets', 'dict')\n")
+		output_lines.append(f"@edb.dt.new_col('count', 'num')\n")
+		output_lines.append(f"@edb.dt.new_col('position', 'str')\n")
+		output_lines.append(f"@edb.dt.new_col('includes', 'list')\n")
+		output_lines.append(f"@edb.dt.new_col('run', 'str')\n")
+		output_lines.append(f"$dialogs['primary_keys_type']='[rstr:16]'\n")
+		output_lines.append(f"@edb.new_table('dlgrels', 'Реляции для диалогов')\n")
+		output_lines.append(f"@edb.dt.new_col('uid', 'str')\n")
+		output_lines.append(f"$dlgrels['primary_keys_type']='[rstr:16]'\n")
+		for uid in unique_ids:
+			output_lines.append(f"$dlgrels_id['{uid[0]}'] = '{uid[0]}' & $dlgrels_uid['{uid[0]}'] = '{uid[1]}'\n")
+		output_lines.append(f'- dialogs_init\n')
+
 		if self.split_code > 0:
 			output_lines.append(f'\nЦикл для последовательной подгрузки реплик группами:\n')
 			output_lines.append(f'# dialogs_load\n')
 			output_lines.append(f'loop local i = 0 while i < {args_count} step i += 1:\n\t@dialogs_table(i)\nend\n')
 			output_lines.append(f'- dialogs_load\n')
+
 		with open(self.output_path, 'w', encoding='utf-8') as fp:
 			fp.writelines(output_lines)
 
