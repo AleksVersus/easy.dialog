@@ -6,7 +6,7 @@ def main() -> None:
 		('dialog.txt', 'test')
 	]
 	# формируем объект БазаДиалогов, и генерируем в нём список объектов диалогов
-	eid = DialogsBase(dialogs_files, split_code=10)
+	eid = DialogsBase(dialogs_files, split_code=10, output_path="..\\dialogs_table.qsps")
 	# теперь конвертируем диалоги из базы в Таблицу Данных для QSP
 	eid.to_qsps()
 

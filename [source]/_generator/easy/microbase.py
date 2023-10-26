@@ -14,13 +14,14 @@ class DialogsBase:
 	"""
 		Microbase for all dialogs in Easy Dialog's Generator.
 	"""
-	def __init__(self, dialogs:list, split_code=0) -> None:
+	def __init__(self, dialogs:list, split_code=0, output_path=".\\dialogs_table.qsps") -> None:
 		"""
 			Replics DataTable Columns
 			dialogs - list of the paths to dialogs files (dialogs in edsynt format)
 			split_code - if not 0, replics split on `if args[0] = <split_code>` constructions
 				for use in cycled filling of dialog
 		"""
+		self.output_path = os.path.abspath(output_path)
 		self.split_code = split_code
 		# извлекаем диалоги в список для последующего конвертирования
 		self.dialogs = []
@@ -109,7 +110,7 @@ class DialogsBase:
 			output_lines.append(f'# dialogs_load\n')
 			output_lines.append(f'loop local i = 0 while i < {args_count} step i += 1:\n\t@dialogs_table(i)\nend\n')
 			output_lines.append(f'- dialogs_load\n')
-		with open('dialogs_table.qsps', 'w', encoding='utf-8') as fp:
+		with open(self.output_path, 'w', encoding='utf-8') as fp:
 			fp.writelines(output_lines)
 
 	def replic_proced_sets(self, sets:str) -> str:
