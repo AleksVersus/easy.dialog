@@ -317,23 +317,6 @@ class EasyDialog:
 				self.microbase['replic-id'][key] = f'{self.uid}.' + self.microbase['replic-id'][key]
 				if self.microbase['replic-position'][key] != self.uid:
 					self.microbase['replic-position'][key] = f'{self.uid}.' + self.microbase['replic-position'][key]
-			# old_id = value
-			# while True:
-			# 	# генерируем уникальный идентификатор реплики
-			# 	new_id = em.Str.random(16, modes={r'\all': True}, exclude='\t ')
-			# 	if not new_id in ids:
-			# 		ids.append(new_id)
-			# 		# записываем новый вместо старого
-			# 		self.mb_change_prop('replic-id', key, new_id)
-			# 		break
-			# # ищем старый в position
-			# for key_, value_ in self.microbase['replic-position'].items():
-			# 	if value_ == old_id:
-			# 		self.mb_change_prop('replic-position', key_, new_id)
-			# # перебираем includes
-			# for value_ in self.microbase['replic-includes'].values():
-			# 	if old_id in value_:
-			# 		value_[value_.index(old_id)] = new_id
 		self.save_temp_file('.\\04_ids_replace.xlsx', save_temp_file)
 
 	def mb_replic_append(self, number:int, source:str, rid:str, position:str, marker=None, rtype='') -> None:

@@ -35,10 +35,6 @@ class DialogsBase:
 		self.replics['run'] = []		# динамический код, или обёртка выводимого действия
 		self.replics['type'] = []		# тип реплики
 		self.replics['sets'] = []		# настройки реплики	
-		# self.replic_source = []
-		# self.replic_source = []
-		# self.replic_source = []
-		# self.replic_source = []
 		# табличка сопоставления старых и новых идентификаторов
 		self.ids = {}
 		self.ids['old'] = ['']

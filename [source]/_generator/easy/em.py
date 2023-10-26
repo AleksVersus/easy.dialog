@@ -239,21 +239,4 @@ def gen_uuid():
 	return result
 
 if __name__ == "__main__":
-	# t = "    \n   \n	   первая строка 1    \nвторая строка 2\n   \n  третья строка\n   \n       "
-	# print([Str.widetrim(t, strip=True)])
-	# print(Str.random())	# 'вЗНзГШмf'
-	# print(Str.random(16, modes={'decimal':True, 'latinic':True, 'cyrillic':True}))	# 'у1ЭAXВ6чГVЫДJМxD'
-	# print(Str.random(16))	# '"i!TОж5wПЬрYхв#а'
-	# print(Str.random(16, modes={r'\d':True, r'\z':True, r'\я':True}, include='$ @ !'))	# 'cл4фYЛ7@EnoiЪm А'
-	# print(Str.random(16, include='24680', exclude='  ©'))	# 'f!с/ Xsэu\ZlcХ"u'
-	# print(Str.thin('профессура'))
-	# print(Str.thin('профессура', 1, separator='|'))
-	# print(Str.thin('профессура', 1, separator='|', modes={'right':True}))
-	# print(Str.thin('профессура', 1, separator='|', modes={'left':True}))
-	# print(Str.thin('профессура', 1, separator='|', modes={'left':True, 'right':True}))
-	# print(Str.thin('профессура', 3, separator='|'))
-	# print(Str.thin('профессура', 3, separator='|', modes={'up':True}))
-	# print(Str.thin('профессура', 3, separator='|', modes={'left':True}))
-	# print(Str.thin('профессура', 2, separator='|', modes={'right':True}))
-	# print(Str.thin('профессура', 1, separator='||', modes={'right':True, 'left':True}))
 	...
