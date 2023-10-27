@@ -1,27 +1,25 @@
 # uc
-if $user_text='dialog':
-	$args['t']='<table width=100% border=1>'
-	:for
-	if args['i']<arrsize('$id_replic'):
-		$args['t']+="<tr>"
-			$args['t']+="<td>"+str(args['i'])+"</td>"
-			$args['t']+="<td>"+$replace($replace($id_replic[args['i']],'<','&lt;'),'>','&gt;')+"</td>"
-			$args['t']+="<td>"+$replace($replace($source_replic[args['i']],'<','&lt;'),'>','&gt;')+"</td>"
-			$args['t']+="<td>"+$replace($replace($sets_replic[args['i']],'<','&lt;'),'>','&gt;')+"</td>"
-			$args['t']+="<td>"+$replace($replace($position_replic[args['i']],'<','&lt;'),'>','&gt;')+"</td>"
-			$args['t']+="<td>"+$replace($replace(kolvo_replic[args['i']],'<','&lt;'),'>','&gt;')+"</td>"
-		$args['t']+="</tr>"
-		args['i']+=1
-		jump 'for'
+if $user_text = 'dialog':
+	local $table_ = ''
+	$table_ += '<table width=100% border=1>'
+	loop local i = 0 while i < arrsize('$dialogs_id') step i += 1:
+		$table_ += "<tr>"
+			$table_ += "<td>"+$str(i)+"</td>"
+			$table_ += "<td>"+$replace($replace($dialogs_id[i],'<','&lt;'),'>','&gt;')+"</td>"
+			$table_ += "<td>"+$replace($replace($dialogs_source[i],'<','&lt;'),'>','&gt;')+"</td>"
+			$table_ += "<td>"+$replace($replace($dialogs_sets[i],'<','&lt;'),'>','&gt;')+"</td>"
+			$table_ += "<td>"+$replace($replace($dialogs_position[i],'<','&lt;'),'>','&gt;')+"</td>"
+			$table_ += "<td>"+$replace($replace(dialogs_count[i],'<','&lt;'),'>','&gt;')+"</td>"
+		$table_ += "</tr>"
 	end
-	$args['t']+="</table>"
-	*pl $args['t']
+	$table_ += "</table>"
+	*pl $table_
 end
-if $user_text='log': $func('#array.prnt#','$log')
-if $user_text='666': usehtml=1-usehtml
-if $user_text='777': *clr
-if instr($user_text,'>>> '): dynamic $replace($user_text,'>>> ')
-if $user_text='555':
+if $user_text = 'log': @em.arr.print('$log')
+if $user_text = '666': usehtml = 1 - usehtml
+if $user_text = '777': *clr
+if instr($user_text, '> ') = 1: dynamic $mid($user_text, 3)
+if $user_text = '555':
 	args['sec1']=msecscount
 	:for_i
 	if args['i']<10000:
