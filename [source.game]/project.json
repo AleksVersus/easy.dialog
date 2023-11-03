@@ -19,6 +19,7 @@
 		}
 	],
 	"player":"..\\..\\..\\..\\QSP 580 QG 400b\\qspgui.exe",
+	// "player":"C:\\Program Files\\qSpider\\qspider.exe",
 	"start":"..\\..\\..\\+releases+\\+lib+\\launcher.ed\\eid.game_start.qsp",
 	"save_txt2gam":"False",
 	"preprocessor": "Off"
