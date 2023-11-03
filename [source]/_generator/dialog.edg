@@ -1,0 +1,370 @@
+<!--
+	actors="hero; npc; remarka;"
+
+	<actor.hero>
+		name="Я"
+
+		<default_active>
+		<wrap.act>
+			!@ внешний вид кнопок для ответов.
+			$result += '<div class="avs-act-button"><<$args[2]>></div>'
+		</wrap.act>
+		<wrap.frase>
+			!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
+			local $name_ = @em.tag.getNum(@edb.cell.getValue($args[0], 'sets', 'dialogs'), 'name')
+			$result += '<div class="avs-hero-replic">'
+				$result += '<span style="color:#ffffff;font-weight:bold;"><<$name_>>:</span>'
+				$result += '<span style="color:#dddddd;"> — <<$args[2]>>:</span>'
+			$result += '</div>'
+		</wrap.frase>
+	</actor.hero>
+	<actor.npc>
+		name="Грабитель"
+
+		Здесь можно писать любой текст, он никак не повлияет на работу интерпретатора.
+		Обёртка для внешнего вида действий отсутствует, потому что данный персонаж общается только через пассивные реплики.
+
+		<default_passive>
+		<wrap.frase>
+			!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
+			local $name_ = @em.tag.getNum(@edb.cell.getValue($args[0], 'sets', 'dialogs'), 'name')
+			$result += '<div class="avs-hero-replic">'
+				$result += '<span style="color:#c0c0c0;font-weight:bold;"><<$name_>>:</span>'
+				$result += '<span style="color:#aaaaaa;"> — <<$args[2]>>:</span>'
+			$result += '</div>'
+		</wrap.frase>
+	</actor.npc>
+	<actor.remarka>
+		Ремарка
+		include_role:hero
+		<wrap.frase>
+			!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
+			$result += '<div class="avs-remarka">'
+				$result += '<span style="font-style:italic;"><<$args[2]>>:</span>'
+			$result += '</div>'
+		</wrap.frase>
+	</actor.remarka>
+
+	strings:10
+-->
+{:
+repeat:cicle
+shuffle:straight
+act_length:25
+<frase_block>
+	<actor:npc>У тебя одна минута на то, чтобы объяснить мне, как добраться до хранилища.
+	<actor:hero>Что?
+	<em>Бац! В глазах сверкнуло и боль такая сильная, что кажется, будто она — единственное, что я сейчас чувствую. Даже сильнее страха.</em>
+	<actor:npc>Одна минута, — <em style="color:#888888;">говорит он и прижимает холодный кружок дула к моему лбу.</em>
+</frase_block>
+	[:Что?
+		{:
+			<if>DIALOG_VALUE["что.в"]=0</if>
+			<dynamic_code>DIALOG_VALUE["что.в"]=1</dynamic_code>
+			<frase_block>
+				<em>Бац! Оказывается, может быть ещё больнее, чем в первый раз.</em>
+				<actor:npc>Ещё раз скажешь «что», выстрелю.
+			</frase_block>
+		:}
+		{:
+			marker:thirddead
+			actor_this:remarka
+			<if>DIALOG_VALUE["что.в"]=1</if>
+			Он стискивает зубы и стреля...
+			<dynamic_code>cla</dynamic_code>
+			[:[Закрыть]closeup:]
+		:}
+	:]
+	[:
+		act_name:Но я здесь не работаю...:act_name
+		Но я здесь не работаю, я вообще не знаю, где тут что!
+		{:Какого чёрта тогда ты делаешь в кабинке оператора?
+			[:
+				act_name:Я техник.:act_name
+				Я просто техник, мне позвонили и попросили починить компьютер. Они иногда вызывают меня сюда, но я не знаю, где тут сейф, честное слово!
+				{:
+					Занятно. Тогда почему на твоём бейдже написано «Старший кассир»?
+					[:
+						hero="nattrib:-i"
+						act_name:Я его одолжил, чтобы через турникет пройти.:act_name
+						Я его одолжил, чтобы пройти через турникет, я часто так делаю, а то они никак мне собственный не сделают...
+						{:
+							<frase_block>
+							<actor:npc>У кого одолжил?
+							<em>Пальцем в толстого очкарика на полу, тут же затрясшего головой.</em>
+							<actor:npc>Окей, спасибо, техник, — <i>и спускает куро...<i>
+							</frase_block>
+							<dynamic_code>cla</dynamic_code>
+							[:[Закрыть]closeup:]
+						:}
+					:]
+					[:
+						act_name:Хранилище в подвале...:act_name
+						leveljump:storagecellar
+					:]
+				:}
+			:]
+			[:
+				От вас прячусь.
+				<frase_block>
+					<actor:hero>Я тут от вас прячусь...
+					<actor:npc>А, ты один из посетителей?
+					<actor:hero>Да.
+					<actor:npc>Я вот не видел, как ты сюда пробегал, ты сюда зашёл ещё до того, как я вошёл в здание?
+					<actor:hero>Да!
+					<actor:npc>А как же ты через турникет прошёл?
+				</frase_block>
+				{:
+					[:Что?
+						leveljump:thirddead
+					:]
+					[:
+						act_name:Хранилище в подвале...:act_name
+						leveljump:storagecellar
+					:]
+				:}
+			:]
+			[:
+				act_name:Тоже решил денег взять.:act_name
+				Да я вот решил тоже денег взять. Под шумок, так сказать. Хе-хе.
+				{:А, вон оно что. Но на тебе форма сотрудника банка. То есть, ты не только лжец, но ещё и вор? Двадцать секунд. Хе-хе.
+					[:
+						act_name:Хранилище в подвале!:act_name
+						leveljump:storagecellar
+					:]
+				:}
+				
+			:]
+		:}
+	:]
+	[:
+		marker:storagecellar
+		act_name:Хранилище в подвале...:act_name
+		Хранилище находится в подвале...
+		{:Уже лучше. А теперь, как туда добраться?
+		{:
+			[:act_name:По лестнице...:act_name
+				<if>$DIALOG_VALUE["по лестнице"]!"поговорили"</if>
+				Вон за той дверью в подвал ведёт лестница, по ней можно спуститься до главного коридора, из него в архив, а уже через архив к двери хранилища.
+				{:Ещё что-нибудь, о чём мне как грабителю полезно было бы узнать?
+					{:
+						[:act_name:О лестинце...:act_name
+							<if>$DIALOG_VALUE["лестница"]!"поговорили"</if>
+							На лестнице сторожит охранник с оружием.
+							{:Каким оружием?
+								[:act_name:Ружьё какое-то...:act_name
+									Не знаю, я не разбираюсь.
+									{:Дальше.
+										<dynamic_code>$DIALOG_VALUE["лестница"]="поговорили"</dynamic_code>
+										levelup:4
+									:}
+								:]
+								[:act_name:Benelli M4...:act_name
+									Benelli M4 Super 90, шестизарядный, с телескопическим прикладом, пистолетной рукояткой, планкой Пикатинни...
+									{:Всё, заткнись, давай дальше.
+										<dynamic_code>$DIALOG_VALUE["лестница"]="поговорили"</dynamic_code>
+										levelup:4
+									:}
+								:]
+							:}
+						:]
+						[:act_name:О коридоре...:act_name
+							<if>$DIALOG_VALUE["коридор"]!"поговорили"</if>
+							Поперёк коридора идут лазерные лучи.
+							{:Красные или зелёные?
+								[:act_name:Красные.:act_name
+									Красные, кажется. А что есть какая-то разница?
+									{:Не твоего ума дело, дальше давай.
+										<dynamic_code>$DIALOG_VALUE["коридор"]="поговорили"</dynamic_code>
+										levelup:4
+									:}
+								:]
+								[:act_name:Зелёные.:act_name
+									<dynamic_code>cla</dynamic_code>
+									<frase_block>
+										<actor:hero>Зелёные, кажется, а что?
+										<actor:npc>Проклятье, у меня дейтеранопия.
+										<actor:hero>Зелёный цвет не различаете?
+										<actor:npc>Да.
+										<actor:hero>Сочувствую.
+										<actor:npc>Спасибо. Дальше.
+									</frase_block>
+									{:
+										<dynamic_code>$DIALOG_VALUE["коридор"]="поговорили"</dynamic_code>
+										levelup:4
+									:}
+								:]
+							:}
+						:]
+						[:act_name:Об архиве...:act_name
+							<if>$DIALOG_VALUE["архив"]!"поговорили"</if>
+							В архиве люди пропадают...
+							{:
+							<frase_block>
+								<actor:npc>Что?!
+								<actor:hero>Люди, говорю, в архиве пропадают.
+								<actor:npc>Да это я понял! Почему пропадают?
+								<actor:hero>Не знаю, но, поговаривают, что нужно быть поосторожнее со шкафами "Ф".
+								<actor:npc>Почему?
+								<actor:hero>Пропали сотрудники Фриманн, Фрекель, Фаркопс и Фонг. У вас какая фамилия?
+								<actor:npc>Фицжеральд.
+								<actor:hero>О...
+								<actor:npc>Дальше.
+							</frase_block>
+							<dynamic_code>$DIALOG_VALUE["архив"]="поговорили"</dynamic_code>
+							levelup:2
+							:}
+						:]
+						[:act_name:О двери в хранилище...:act_name
+							Толщина двери в хранилище полтора метра.
+							<if>$DIALOG_VALUE["хранилище"]!"поговорили"</if>
+							{:
+							<frase_block>
+								<actor:npc>Ого...
+								<actor:hero>И замок «Sargent & Greenleaf».
+								<actor:npc>Ой...
+								<actor:hero>Пол внутри под напряжением десять тысяч вольт.
+								<actor:npc>Ох...
+								<actor:hero>А снаружи камеры.
+								<actor:npc>Понятно. Дальше.
+							</frase_block>
+							<dynamic_code>$DIALOG_VALUE["хранилище"]="поговорили"</dynamic_code>
+							levelup:2
+							:}
+						:]
+						{:
+							<if>$DIALOG_VALUE["хранилище"]="поговорили" and $DIALOG_VALUE["архив"]="поговорили" and $DIALOG_VALUE["коридор"]="поговорили" and $DIALOG_VALUE["лестница"]="поговорили"</if>
+							<dynamic_code>$DIALOG_VALUE["по лестнице"]="поговорили"</dynamic_code>
+							<frase_block>
+								<actor:hero>На этом всё.
+								<actor:npc>А другой путь есть?
+							</frase_block>
+							levelup:4
+						:}
+					:}
+				:}
+			:]
+			[:act_name:На лифте...:act_name
+				<if>$DIALOG_VALUE["по лифту"]!"поговорили"</if>
+				В кабинете управляющего есть лифт, спускающийся прямо в хранилище. Только вряд ли вы до него доберётесь.
+				{:
+					Почему это?
+					{:
+					<!-- блок действий -->
+						[:act_name:Управляющий.:act_name
+							<if>$DIALOG_VALUE["управляющий"]!"поговорили"</if>
+							В кабинете скорее всего сидит сам управляющий.
+							{:<frase_block>
+								<actor:npc>И чего?
+								<actor:hero>Он чемпион города по гарлемскому боксу.
+								<actor:npc>Впервые слышу про такой бокс.
+								<actor:hero>Основная особенность его в том, что во время боя разрешено использовать кастеты, биты и автоматическое оружие.
+								<actor:npc>Хмм, ну ладно, допустим, я с ним разберусь, что ещё?
+							</frase_block>
+							<dynamic_code>$DIALOG_VALUE["управляющий"]="поговорили"</dynamic_code>
+							levelup:2
+							:}
+						:]
+						[:Собаки.
+							<if>$DIALOG_VALUE["собаки"]!"поговорили"</if>
+							{:<frase_block>
+								<actor:npc>Собаки?
+								<actor:hero>Да.
+								<actor:npc>Большие?
+								<actor:hero>Очень.
+								<actor:npc>Много?
+								<actor:hero>Четыре.
+								<actor:npc>Ох... Ну допустим, с собаками я как-нибудь управлюсь. Что-то ещё?
+							</frase_block>
+							<dynamic_code>$DIALOG_VALUE["собаки"]="поговорили"</dynamic_code>
+							levelup:2
+							:}
+						:]
+						[:act_name:Системы идентификации.:act_name
+							<if>$DIALOG_VALUE["системы идентификации"]!"поговорили"</if>
+							В лифте стоят системы идентификации, которые пропускают только управляющего.
+							{:Какие системы?
+								{:
+								<!-- системы идентификации -->
+									[:act_name:Отпечатки.:act_name
+										Сканер отпечатка правой ладони.
+										<if>$DIALOG_VALUE["отпечатки"]!"поговорили"</if>
+										{:Это, теоретически, можно обойти. Дальше.
+											<dynamic_code>$DIALOG_VALUE["отпечатки"]="поговорили"</dynamic_code>
+											levelup:2
+										:}
+									:]
+									[:act_name:Сетчатка глаза.:act_name
+										Сканер сетчатки глаза.
+										<if>$DIALOG_VALUE["сетчатка"]!"поговорили"</if>
+										{:Для этого у меня есть инструменты и необходимые навыки, — <em>он зловеще ухмыляется.</em> — Дальше.
+											<dynamic_code>$DIALOG_VALUE["сетчатка"]="поговорили"</dynamic_code>
+											levelup:2
+										:}
+									:]
+									[:act_name:Вес:act_name
+										Датчик веса.
+										<if>$DIALOG_VALUE["вес"]!"поговорили"</if>
+										{:
+										<frase_block>
+											<actor:npc>Хм. Сколько весит местный управляющий?
+											<actor:hero>124 килограмма. А вы сколько весите?
+											<actor:npc>61. Мда. Тут даже клонирующая машина бы не помогла. Ладно, дальше.
+										</frase_block>
+										<dynamic_code>$DIALOG_VALUE["вес"]="поговорили"</dynamic_code>
+										levelup:2
+										:}
+									:]
+									[:act_name:По системам всё:act_name
+										По системам идентификации всё.
+										<if>$DIALOG_VALUE["вес"]="поговорили" and $DIALOG_VALUE["сетчатка"]="поговорили" and $DIALOG_VALUE["отпечатки"]="поговорили"</if>
+										{:Ещё что-нибудь по лифту?
+											<dynamic_code>$DIALOG_VALUE["системы идентификации"]="поговорили"</dynamic_code>
+											levelup:5
+										:}
+									:]
+								<!-- системы идентификации -->
+								:}
+							:}
+						:]
+						{:
+							<if>$DIALOG_VALUE["системы идентификации"]="поговорили" and $DIALOG_VALUE["собаки"]="поговорили" and $DIALOG_VALUE["управляющий"]="поговорили"</if>
+							<dynamic_code>$DIALOG_VALUE["по лифту"]="поговорили"</dynamic_code>
+							<frase_block>
+								<actor:hero>Это всё.
+								<actor:npc>А другой путь есть?
+							</frase_block>
+							levelup:4
+						:}
+					<!-- блок действий -->
+					:}
+				:}
+			:]
+			[:
+				act_name:Нет:act_name
+				<if>$DIALOG_VALUE["по лестнице"]="поговорили" and $DIALOG_VALUE["по лифту"]="поговорили"</if>
+				К сожалению, больше путей нет.
+				{:
+					Вот же задачка. Монетку бросить что ли... Это всё? Может ещё что-нибудь знаешь?
+					[:act_name:Про деньги.:act_name
+						Знаю про деньги в хранилище.
+						{:
+							<frase_block>
+								<actor:npc>Так, и что с ними?
+								<actor:hero>Их там нет.
+								<actor:npc>Как нет?!
+								<actor:hero>Ну мы переезжаем в другой район города и все деньги и ценности уже перевезли сегодня ночью.
+								<actor:npc>Так почему ты сразу не сказал?!
+								<actor:hero>Ну про это вы как раз не спрашивали.
+								<actor:npc>Проклятье!
+								<em>И с этими словами он выбегает из отделения банка, где его ловит экипаж инкассаторской машины, приехавшей, чтобы как раз перевезти содержимое хранилища в другой район города. Хе-хе.</em>
+							</frase_block>
+							[:[Закрыть]closeup:]
+						:}
+					:]
+				:}
+			:]
+		:}
+		:}
+	:]
+:}
