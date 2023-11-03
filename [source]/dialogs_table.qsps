@@ -1403,7 +1403,7 @@ if args[0] = 14:
 local $name_ = @em.tag.getNum(@edb.cell.getValue($args[0], 'sets', 'dialogs'), 'name')
 $result += '<div class="avs-hero-replic">'
 $result += '<span style="color:#ffffff;font-weight:bold;"><<$name_>>:</span>'
-$result += '<span style="color:#dddddd;"> — <<$args[2]>>:</span>'
+$result += '<span style="color:#dddddd;"> — <<$args[2]>></span>'
 $result += '</div>'}
 	$dialogs_sets['ЁкфrУTЙЧЭQPнШZsU'] = 'name="Я"
 
@@ -1419,7 +1419,7 @@ $result += '<div class="avs-act-button"><<$args[2]>></div>'}
 local $name_ = @em.tag.getNum(@edb.cell.getValue($args[0], 'sets', 'dialogs'), 'name')
 $result += '<div class="avs-hero-replic">'
 $result += '<span style="color:#c0c0c0;font-weight:bold;"><<$name_>>:</span>'
-$result += '<span style="color:#aaaaaa;"> — <<$args[2]>>:</span>'
+$result += '<span style="color:#aaaaaa;"> — <<$args[2]>></span>'
 $result += '</div>'}
 	$dialogs_sets['TAdюшFАxЁХEBdPqQ'] = 'name="Грабитель"
 
@@ -1435,7 +1435,7 @@ $result += '</div>'}
 	$dialogs_id['ВчFwоЭkbx3mюrмЬф'] = 'ВчFwоЭkbx3mюrмЬф'
 	$dialogs_body['ВчFwоЭkbx3mюrмЬф'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
 $result += '<div class="avs-remarka">'
-$result += '<span style="font-style:italic;"><<$args[2]>>:</span>'
+$result += '<span style="font-style:italic;"><<$args[2]>></span>'
 $result += '</div>'}
 	$dialogs_sets['ВчFwоЭkbx3mюrмЬф'] = 'Ремарка
 		[include_role:ЁкфrУTЙЧЭQPнШZsU][type:role]'

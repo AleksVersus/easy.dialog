@@ -4,13 +4,13 @@ $args[0] - идентификатор диалога
 # dialog.sets.default
 !@ Получаем настройки диалога
 local $dialog_sets_ = @edb.cell.get_value($args[0], 'sets', 'dialogs')
-showstat 1 & pl $dialog_sets_
+showstat 1
 local $d_active_, $d_passive_, $actors_, strings_
 !@ все настройки:	
-$d_active_ = @em.tag.get_num($dialog_sets_, 'default_active')	&	!@ id роли активируемых реплик
-$d_passive_ = @em.tag.get_num($dialog_sets_, 'default_passive')	&	!@ id роли пассивных реплик
+$d_active_ = @em.tag.getNum($dialog_sets_, 'default_active')	&	!@ id роли активируемых реплик
+$d_passive_ = @em.tag.getNum($dialog_sets_, 'default_passive')	&	!@ id роли пассивных реплик
 !@ $actors_ = @em.tag.get_cont($dialog_sets_, 'actors')			&	!@ список ролей
-strings_ = val(@em.tag.get_num($dialog_sets_, 'strings'))	& !@ число строк диалога, одновременно видимых на экране
+strings_ = val(@em.tag.getNum($dialog_sets_, 'strings'))	& !@ число строк диалога, одновременно видимых на экране
 
 !@ число реплик, одновременно видимых на экране
 DIALOG_VALUE['default_screen_replics_number'] = iif(strings_ = 0, 10, strings_)
@@ -39,5 +39,11 @@ $DIALOG_VALUE['default_replics_repeat'] = 'cicle'
 $DIALOG_VALUE['default_replics_shuffle'] = 'straight'
 DIALOG_VALUE['default_buttons_length'] = 24
 
-
+pl $replace($DIALOG_VALUE['default_screen_active_log'],'<','&lt;')
+pl $replace($DIALOG_VALUE['default_screen_active_button'],'<','&lt;')
+pl $replace($DIALOG_VALUE['default_screen_passive_log'],'<','&lt;')
+pl DIALOG_VALUE['default_screen_replics_number']
+pl $DIALOG_VALUE['default_replics_repeat']
+pl $DIALOG_VALUE['default_replics_shuffle']
+pl DIALOG_VALUE['default_buttons_length']
 --- dialog.sets.default ---------------------------------

@@ -10,7 +10,7 @@ actors="hero; aragorn;"
 	</wrap.act>
 	<wrap.frase>
 		$result += '<div class="avs-hero-replic">'
-			$result += '<span style="color:#0000ff;">Вы: — <<$args[2]>>:</span>'
+			$result += '<span style="color:#0000ff;">Вы: — <<$args[2]>></span>'
 		$result += '</div>'
 	</wrap.frase>
 </actor.hero>
@@ -19,7 +19,7 @@ actors="hero; aragorn;"
 	<default_passive>
 	<wrap.frase>
 		$result += '<div class="avs-aragorn-replic">'
-			$result += '<span style="color:#008800;">Арагорн: — <<$args[2]>>:</span>'
+			$result += '<span style="color:#008800;">Арагорн: — <<$args[2]>></span>'
 		$result += '</div>'
 	</wrap.frase>
 </actor.aragorn>

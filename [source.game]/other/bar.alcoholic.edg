@@ -19,7 +19,7 @@ actors="hero; alcoholic;"
 		local $name_ = @em.tag.getNum(@edb.cell.getValue($args[0], 'sets', 'dialogs'), 'name')
 		$result += '<div class="avs-hero-replic">'
 			$result += '<span style="color:#000000;"><<$name_>>:</span>'
-			$result += '<span style="color:#000000;"> — <<$args[2]>>:</span>'
+			$result += '<span style="color:#000000;"> — <<$args[2]>></span>'
 		$result += '</div>'
 	</wrap.frase>
 </actor.hero>
@@ -33,7 +33,7 @@ actors="hero; alcoholic;"
 		local $name_ = @em.tag.getNum(@edb.cell.getValue($args[0], 'sets', 'dialogs'), 'name')
 		$result += '<div class="avs-barmen-replic">'
 			$result += '<span style="color:#000000;"><<$name_>>:</span>'
-			$result += '<span style="color:#000000;"> — <<$args[2]>>:</span>'
+			$result += '<span style="color:#000000;"> — <<$args[2]>></span>'
 		$result += '</div>'
 	</wrap.frase>
 </actor.alcoholic>

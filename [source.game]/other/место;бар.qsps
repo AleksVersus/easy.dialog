@@ -5,7 +5,7 @@
 В зале почти пусто, только за угловым столиком, в самой тени, сидит Арагорн, да около барной стойки качается местный любитель выпить.'
 
 !@ сюда выводим диалог
-*p '<div class="avs_dialog_div"><.div class="avs_dialog_div">'
+*p '<div class="avs_dialog_div">&nbsp;</div class="avs_dialog_div">'
 
 !@ действия, которые мы скрываем при выводе диалога
 *p '<div class="avs_dialog_hide">'
