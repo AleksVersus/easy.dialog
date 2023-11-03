@@ -1,15 +1,16 @@
 # uc
 if $user_text = 'dialog':
-	local $table_ = ''
+	local $table_, $id_ = '', ''
 	$table_ += '<table width=100% border=1>'
-	loop local i = 0 while i < arrsize('$dialogs_id') step i += 1:
+	loop local i = 1 while i < arrsize('$dialogs_id') step i += 1:
+		$id_ = $dialogs_id[i]
 		$table_ += "<tr>"
 			$table_ += "<td>"+$str(i)+"</td>"
-			$table_ += "<td>"+$replace($replace($dialogs_id[i],'<','&lt;'),'>','&gt;')+"</td>"
-			$table_ += "<td>"+$replace($replace($dialogs_source[i],'<','&lt;'),'>','&gt;')+"</td>"
-			$table_ += "<td>"+$replace($replace($dialogs_sets[i],'<','&lt;'),'>','&gt;')+"</td>"
-			$table_ += "<td>"+$replace($replace($dialogs_position[i],'<','&lt;'),'>','&gt;')+"</td>"
-			$table_ += "<td>"+$replace($replace(dialogs_count[i],'<','&lt;'),'>','&gt;')+"</td>"
+			$table_ += "<td>"+$replace($replace($dialogs_id[$id_],'<','&lt;'),'>','&gt;')+"</td>"
+			$table_ += "<td>"+$replace($replace($dialogs_body[$id_],'<','&lt;'),'>','&gt;')+"</td>"
+			$table_ += "<td>"+$replace($replace($dialogs_sets[$id_],'<','&lt;'),'>','&gt;')+"</td>"
+			$table_ += "<td>"+$replace($replace($dialogs_position[$id_],'<','&lt;'),'>','&gt;')+"</td>"
+			$table_ += "<td>"+$replace($replace(dialogs_count[$id_],'<','&lt;'),'>','&gt;')+"</td>"
 		$table_ += "</tr>"
 	end
 	$table_ += "</table>"
@@ -19,24 +20,24 @@ if $user_text = 'log': @em.arr.print('$log')
 if $user_text = '666': usehtml = 1 - usehtml
 if $user_text = '777': *clr
 if instr($user_text, '> ') = 1: dynamic $mid($user_text, 3)
-if $user_text = '555':
-	args['sec1']=msecscount
-	:for_i
-	if args['i']<10000:
-		gosub 'dialog.get.daughter',$id_replic[30],'','$rbTEMP_ID'
-		killvar '$rbTEMP_ID'
-		args['i']+=1
-		jump 'for_i'
-	end
-	args['sec2']=msecscount
-	time[]=args['sec2']-args['sec1']
-	args['i']=0
-	:for_time
-	if args['i']<arrsize('time'):
-		args['time']+=time[args['i']]
-		args['i']+=1
-		jump 'for_time'
-	end
-	pl "<<time[]>>|<<args['time']/arrsize('time')>>"
-end
+!@ if $user_text = '555':
+!@ 	args['sec1']=msecscount
+!@ 	:for_i
+!@ 	if args['i']<10000:
+!@ 		gosub 'dialog.get.daughter',$id_replic[30],'','$rbTEMP_ID'
+!@ 		killvar '$rbTEMP_ID'
+!@ 		args['i']+=1
+!@ 		jump 'for_i'
+!@ 	end
+!@ 	args['sec2']=msecscount
+!@ 	time[]=args['sec2']-args['sec1']
+!@ 	args['i']=0
+!@ 	:for_time
+!@ 	if args['i']<arrsize('time'):
+!@ 		args['time']+=time[args['i']]
+!@ 		args['i']+=1
+!@ 		jump 'for_time'
+!@ 	end
+!@ 	pl "<<time[]>>|<<args['time']/arrsize('time')>>"
+!@ end
 --- uc ---------------------------------
