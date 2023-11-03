@@ -3,6 +3,8 @@
 usehtml = 1
 bcolor = rgb(1,1,1)
 fcolor = rgb(136,136,136)
+lcolor = rgb(0, 180, 180)
+
 *p '<span class="avs-green">На этой локации Вам представлен диалог от Чешира (взят из реализации Олегуса):
 
 <a href="http://qsp.su/index.php?option=com_agora&task=topic&id=457&Itemid=57" class="avs-plain">Посмотреть можно здесь.</a>

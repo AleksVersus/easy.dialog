@@ -93,7 +93,7 @@ class DialogsBase:
 				output_lines.append(f"\t$dialogs_body['{new_id}'] = {{{em.Str.widetrim(self.replics['source'][i], strip=True)}}}\n")
 			else:
 				output_lines.append(f"\t$dialogs_body['{new_id}'] = '{em.Str.widetrim(self.replics['source'][i], strip=True)}'\n")
-			settings = self.replic_proced_sets(self.replics['sets'][i].strip())
+			settings = self.replic_proced_sets(self.replics['sets'][i].strip()).replace("'", "''")
 			output_lines.append(f"\t$dialogs_sets['{new_id}'] = '{settings}'\n")
 			output_lines.append(f"\tdialogs_count['{new_id}'] = 0\n")
 			pos = self.get_new_id(self.replics['position'][i])

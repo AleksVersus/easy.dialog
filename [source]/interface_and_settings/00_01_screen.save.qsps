@@ -1,0 +1,31 @@
+QSP-Game Сохранение экрана, с которого был вызван диалог.
+
+# dialog.screen.save
+$DIALOG_VALUE['screen.main'] = $maintxt	&	!@	сохраняем содержимое окна основного описания
+!@ $DIALOG_VALUE['screen.acts'] = $curacts	&	!@	сохраняем содержимое окна действий
+!@ $DIALOG_VALUE['screen.stat'] = $stattxt	&	!@	сохраняем содержимое окна дополнительного описания
+
+local $dialog_div_
+!@ блок диалога по умолчанию
+$dialog_div_['now'] = '<div class="avs_dialog_div">'
+	$dialog_div_['now'] += '<div class="avs_dialog_replics">&nbsp;</div class="avs_dialog_replics">'
+	$dialog_div_['now'] += '<div class="avs_dialog_buttons">&nbsp;</div class="avs_dialog_buttons">'
+$dialog_div_['now'] += '</div class="avs_dialog_div">'
+
+if instr($DIALOG_VALUE['screen.main'],'<div class="avs_dialog_div">') <> 0:
+	!@ Блок диалога присутствует на экране. Формируем новый экран из текущего.
+	$dialog_div_['main'] = $strfind($DIALOG_VALUE['screen.main'], '<div class="avs_dialog_div">[\s\S]*?<\/div class="avs_dialog_div">')
+	$DIALOG_VALUE['screen.now'] = $replace($DIALOG_VALUE['screen.main'], $dialog_div_['main'], $dialog_div_['now'])
+	loop while $strfind($DIALOG_VALUE['screen.now'], '<div class="avs_dialog_hide">[\s\S]*?<\/div class="avs_dialog_hide">')<>'':
+		$dialog_div_['hide'] = $strfind($DIALOG_VALUE['screen.now'], '<div class="avs_dialog_hide">[\s\S]*?<\/div class="avs_dialog_hide">')
+		$DIALOG_VALUE['screen.now'] = $replace($DIALOG_VALUE['screen.now'], $dialog_div_['hide'])
+	end
+else:
+	!@ Блок диалога отсутствует на экране. Значит нам нужен дефолтный экран для интерпретации
+	$DIALOG_VALUE['screen.now'] = $dialog_div_['now']
+end
+
+!@ TODO: убрать или перенести в интерпретатор первой реплики:
+*clr 	&	!@	очищаем окно основного описания
+*p $DIALOG_VALUE['screen.now']
+--- dialog.screen.save ---------------------------------
