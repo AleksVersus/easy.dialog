@@ -118,7 +118,7 @@ if args[0] = 1:
 local $name_ = @em.tag.getNum(@edb.cell.getValue($args[0], 'sets', 'dialogs'), 'name')
 $result += '<div class="avs-hero-replic">'
 $result += '<span style="color:#000000;"><<$name_>>:</span>'
-$result += '<span style="color:#000000;"> — <<$args[2]>>:</span>'
+$result += '<span style="color:#000000;"> — <<$args[2]>></span>'
 $result += '</div>'}
 	$dialogs_sets['фЗLбУWю9ВцvИ0wNР'] = 'name="Вы"
 
@@ -134,7 +134,7 @@ $result += '<div class="avs-act-button"><<$args[2]>></div>'}
 local $name_ = @em.tag.getNum(@edb.cell.getValue($args[0], 'sets', 'dialogs'), 'name')
 $result += '<div class="avs-barmen-replic">'
 $result += '<span style="color:#000000;"><<$name_>>:</span>'
-$result += '<span style="color:#000000;"> — <<$args[2]>>:</span>'
+$result += '<span style="color:#000000;"> — <<$args[2]>></span>'
 $result += '</div>'}
 	$dialogs_sets['4qgУиузщ5клДNУpъ'] = 'Заметьте, здесь можно писать любой текст, он никак не повлияет на настройки,
 	если отделён от них пробельным символом или символом перевода строки. Однако, для разгрузки
