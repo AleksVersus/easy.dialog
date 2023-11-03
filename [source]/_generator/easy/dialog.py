@@ -180,7 +180,8 @@ class EasyDialog:
 		self.microbase['replic-settings'][key] += '[actors:' + dialog_actors[:-1] + ':actors]\n'
 		strings_count = em.Tag.get_num(self.microbase['replic-source'][key], 'strings')
 		self.microbase['replic-source'][key] = re.sub(r'strings:\S+', '', self.microbase['replic-source'][key])
-		self.microbase['replic-settings'][key] += f'[strings:{strings_count}]\n'
+		if strings_count != '':
+			self.microbase['replic-settings'][key] += f'[strings:{strings_count}]\n'
 		self.microbase['replic-source'][key] = re.sub(r'<!--[\s\S]*?-->', '', self.microbase['replic-source'][key])
 		self.save_temp_file('.\\03_role_extract.xlsx', save_temp_file)
 
