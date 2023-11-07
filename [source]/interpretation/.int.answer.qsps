@@ -1,35 +1,27 @@
-# dialog.int.answer
+QSP-Game интерпретатор реплики в виде кнопки
+! генерирует кнопку (действие/гиперссылку) для ответной реплики игрока
 $args[0] = $args[0]	&	!	идентификатор реплики
-! генерирует действие для ответной реплики игрока
-$args['source']=$source_replic[arrpos('$id_replic',$args[0])]
-$args['actname']=$func('get.tag.cont',$args['source'],'act-name')
-if $args['actname']='': $args['actname']=$func('dialog.replic.get',$args[0])
-if $args['actname']<>'':
-	$args['next']=$func('dialog.get.jump',$args[0])
-	if $DIALOG_VALUE['answer.view']<>'answer.href':
-	! если выводиться должны действия
-		if instr($args['source'],'selectact.delete')<>0: $args['delact']="delact $selact"
-		$args['act']="
-		act '<<$args['actname']>><answe<<$args[0]>>r>':
-			"+$args['delact']+"
-			gosub 'dialog.replic.int','<<$args[0]>>'
-			"+$args['next']+"
-		end
-		"
-		!@ clr & pl $args['act']
-		dynamic $args['act']
-	else
-		$args['res.ult']+='<a href="exec:'
-		if instr($args['source'],'selectact.delete')<>0:
-			!	команда удаления текущего действия до возвращения по уровням вверх
-			$args['res.ult']+="gosub 'dialog.act.del','<<$args[0]>>' & "
-		end
-		$args['res.ult']+="gosub 'dialog.replic.int','<<$args[0]>>' & "
-		$args['res.ult']+=$replace($args['next'],"
-"," & ")	&	!	форма такая же gosub 'dialog.replic.int','идентификатор'
-		$args['res.ult']+=' !comm" class="plain">'+$args['actname']+'</a>'
-		$result=$args['res.ult']
-		exit
-	end
+$args[1] = $args[1] & ! текущие настройки для всех реплик
+# dialog.int.answer
+!@ здесь решил не использовать edb.cell.get_value, чтобы не перегружать лишними операциями
+
+!@ настройки, тело реплики, родительская
+local $rsets_ = $dialogs_sets[$args[0]]
+local $rbody_ = $dialogs_body[$args[0]]
+local $rparent_ = $dialogs_position[$args[0]]
+
+!@ получаем роль реплики
+local $ractor_ = @em.tag.get($rsets, 'actor_this')
+if $ractor_ = '': $ractor_ = @em.tag.get($args[1], 'actor_act')
+local $wrap_code_ = $dialogs_run[$ractor_]
+
+!@ формируем название реплики
+local $ractname_ = @em.tag.getCont($rsets_, 'act_name')
+if $ractname_ = '':	$ractname_ = @dialog.act.get_name($rbody_, val(@em.tag.getNum($args[1], 'act_length')))
+
+if $ractname_<>'':
+	$ractname_ = $dyneval($wrap_code_, $args[0], $rparent_, $ractname_)
+	$result = '<a href="exec:@dialog.btn.click(''<<$args[0]>>'')" class="avs-plain"><<$ractname_>></a>'
+	exit
 end
 --- dialog.int.answer ---------------------------------

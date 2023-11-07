@@ -11,4 +11,7 @@ killvar '$easy_dialog_base_ID'
 killvar '$easy_dialog_base_PS'
 killvar '$easy_dialog_base_ST'
 killvar '$easy_dialog_base_SC'
+
+killvar 'REPLICS_COUNT'
+killvar '$REPLICS_ID'
 --- dialog.killtemp ---------------------------------

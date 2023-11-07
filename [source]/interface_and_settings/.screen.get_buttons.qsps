@@ -1,0 +1,5 @@
+QSP-Game Извлекает содержимое блока кнопок
+
+# dialog.screen.get_btns
+$result = $strfind($DIALOG_VALUE['screen.now'], '<div class="avs_dialog_buttons">([\s\S]*?)<\/div class="avs_dialog_buttons">', 1)
+- dialog.screen.get_btns

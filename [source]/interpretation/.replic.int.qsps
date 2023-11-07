@@ -1,103 +1,86 @@
+QSP-Game Интерпретатор отдельной реплики
+$args[0] -	идентификатор реплики
 # dialog.replic.int
-! выводит реплику на экран. Внимание!!! На этой локации для хранения данных пользоваться только локальными переменными и переменными настроек
-$args[0]=$args[0]															&	!	идентификатор реплики
-args['rpit']=arrpos('$id_replic',$args[0])
-$args['source']=$source_replic[args['rpit']]								&	!	Тело реплики
-$args['type:source']=$func('get.tag.num',$args['source'],'type-replic')		&	!	Тип реплики
-gosub 'dialog.replic.code',$args[0]											&	!	выполняем код текущей реплики
-gosub 'dialog.replic.print',$args[0]										&	!	выводим текущую реплику на экран
-if instr($DIALOG_VALUE['list.act.fix'],"["+$args[0]+"]")<>0:
-! снимаем фиксацию с реплики
-$DIALOG_VALUE['list.act.fix']=$replace($DIALOG_VALUE['list.act.fix'],"["+$args[0]+"]
-")
-end
-! Рекурсия к вложенным репликам. Получаем список реплик
-$args['daughter']=$func('dialog.get.daughter',$args[0],'','$rbTEMP_ID')		&	!	поиск дочерних реплик
-args['i']=0	&	!	общий счётчик проходов
-args['a']=0	&	!	счётчик ответных реплик
-args['q']=0	&	!	счётчик вопросных реплик
-! добавляем фиксированные ответные реплики в список
-$args['now.replic.fixed']=$DIALOG_VALUE['list.act.fix']
-:fixed_add
-$args['fixedd_']=$strfind($args['now.replic.fixed'],"\[.*?\]")
-if $args['fixedd_']<>'':
-	args['answerPOS.'+str(args['a'])]=arrpos('$id_replic',$replace($replace($args['fixedd_'],'['),']'))
-	args['a']+=1
-	$args['now.replic.fixed']=$replace($args['now.replic.fixed'],$args['fixedd_'])
-	jump 'fixed_add'
-end
-:for
-if args['i']<arrsize('$rbTEMP_ID') and $args['daughter']='true':
-	$args['if.prv']=$func('dialog.replic.prv.if',$rbTEMP_ID[args['i']])			&	!	проверка на соответствие условиям
-	if $args['if.prv']='true':
-	! если реплика прошла проверку на соответствие условиям
-		! определяем тип реплики
-		$args['type:']=$func('get.tag.num',$source_replic[arrpos('$id_replic',$rbTEMP_ID[args['i']])],'type-replic')
-		if $args['type:']='quest':
-		! если это реплика актёра (вопросная)
-			args['quest.pos']=arrpos('$id_replic',$rbTEMP_ID[args['i']])		&	!	позиция реплики в таблице данных
-			args['temp.pos']=arrsize('easy_dialog_temp_var1')					&	!	позиция во временной микробазе
-			easy_dialog_temp_var1[args['temp.pos']]=args['quest.pos']			&	!	запоминаем позицию реплики (в таблице данных) в новой ячейке
-			easy_dialog_temp_var2[args['temp.pos']]=kolvo_replic[args['quest.pos']]	&	!	запоминаем значение ячейки "количество" из таблицы данных, соответствующее данной позиции
-			if args['maximal.kol']<kolvo_replic[args['quest.pos']]:
-			! если максимальное из просмотреннных значений меньше текущего, выбираем его
-				args['maximal.kol']=kolvo_replic[args['quest.pos']]				&	!	запоминаем новое максимальное значение
-				args['maximal.pos']=args['temp.pos']							&	!	запоминаем положение значения в микробазе
+!@ ------------------- многократно используемы локальные переменные ------------------- 
+	local $code_
+!@ ------------------- многократно используемы локальные переменные ------------------- 
+local $rcode_ = $dialogs_run[$args[0]]	&	!@	Динамический код, повешенный на реплику
+
+if $rcode_ <> '': dynamic $rcode_	&	!@	выполняем код текущей реплики
+@dialog.replic.print($args[0])		&	!@	выводим текущую реплику на экран
+
+!@ снимаем фиксацию с реплики
+$DIALOG_VALUE['list.act.fix'] = @edb.list.remove($DIALOG_VALUE['list.act.fix'], $args[0])
+
+!@ Рекурсия к вложенным репликам. Получаем список реплик
+local i=0	&	!@	общий счётчик проходов
+local a=0	&	!@	счётчик ответных реплик
+local q=0	&	!@	счётчик вопросных реплик
+
+!@ добавляем фиксированные ответные реплики в список
+local $answer_pos_ & !@ массив для списка ответных реплик
+$code_ = { $answer_pos_[a] = $args[0] & a += 1 }
+@edb.list.for_each($DIALOG_VALUE['list.act.fix'], $code_)
+
+!@ ---------------------------- перебираем дочерние реплики и составляем два списка ---------------------------- 
+	local $rdaughters_ = $dialogs_includes[$args[0]]&	!@	список дочерних
+	local maximal_, minimal_
+	$code_ = {
+		if @dialog.replic.prv.if($args[0]):
+			!@ если реплика прошла проверку на соответствие условиям
+			!@ определяем тип реплики
+			local $type_ = @em.tag.getNum($dialogs_sets[$args[0]], 'type')
+			if $type_ = 'quest':
+				!@ если это реплика неписи (пассивная)
+				local pos_ = @dialog.mb.add($args[0])
+				if maximal_['count'] < REPLICS_COUNT[pos_]:
+					!@ если максимальное из просмотреннных значений меньше текущего, выбираем его
+					maximal_['count'] = REPLICS_COUNT[pos_] &	!@	запоминаем новое максимальное значение
+					maximal_['pos'] = pos_					&	!@	запоминаем положение значения в микробазе
+				end
+				if minimal_['count'] >= REPLICS_COUNT[pos_]:
+				! если минимальное из просмотреннных значений больше текущего или равно, выбираем его
+					minimal_['count'] = REPLICS_COUNT[pos_]	&	!@	запоминаем новое минимальное значение
+					minimal_['pos'] = pos_					&	!@	запоминаем положение значения в микробазе
+				end
+				!@ если минимальное количество равно нулю, а минимальное значение в микробазе — нет,
+				!@ минимальное количество выставляем по минимальному в микробазе
+				if minimal_['count'] = 0 and min('REPLICS_COUNT')<>0: minimal_['count'] = min('REPLICS_COUNT')
+				q+=1
 			end
-			if args['minimal.kol']>=kolvo_replic[args['quest.pos']]:
-			! если минимальное из просмотреннных значений больше текущего или равно, выбираем его
-				args['minimal.kol']=kolvo_replic[args['quest.pos']]				&	!	запоминаем новое минимальное значение
-				args['minimal.pos']=args['temp.pos']							&	!	запоминаем положение значения в микробазе
-			end
-			! если минимальное количество равно нулю, а минимальное значение в микробазе — нет,
-			! минимальное количество выставляем по минимальному в микробазе
-			if args['minimal.kol']=0 and min('easy_dialog_temp_var2')<>0: args['minimal.kol']=min('easy_dialog_temp_var2')
-			args['q']+=1
+			!@ если это реплика героя (ответная), запоминаем её позицию в базе
+			if $type_ = 'answer': $answer_pos_[a] = $args[0] & a += 1
 		end
-		if $args['type:']='answer':
-		! если это реплика героя (ответная), запоминаем её позицию в базе
-			args['answerPOS.'+str(args['a'])]=arrpos('$id_replic',$rbTEMP_ID[args['i']])
-			args['a']+=1
+	}
+	@edb.list.for_each($rdaughters_, $code_)
+!@ ---------------------------- перебираем дочерние реплики и составляем два списка ---------------------------- 
+
+
+local $rsets_ = $dialogs_sets[$args[0]]		&	!@	настройки реплики
+local $rtype_ = @em.tag.getNum($rsets_, 'type') &	!@	Тип реплики
+
+local $now_sets_ = @dialog.get.sets($args[0])	& !@ текущие настройки, восстановленные до корня ветки
+local $replics_repeat_ = @em.tag.getNum($now_sets_, 'repeat')	& !@ число повторов реплики
+local $replics_shuffle_ = @em.tag.getNum($now_sets_, 'shuffle')	& !@ порядок воспроизведения
+
+!@ когда есть список активируемых реплик. Выгружаются все.
+if a > 0:
+	!@ Если текущая реплика пассивная, очищаем список кнопок на экране; в противном случае — дополняем:
+	local $answer_buttons_ = $iif($rtype_ = 'quest', '', @dialog.screen.get_btns())
+	loop local i = 0 while i<a step i += 1:
+		if $dialogs_id[$answer_pos_[i]]<>'' and no @edb.list.is_el($DIALOG_VALUE['list.act.del'], $answer_pos_[i]):
+			$answer_buttons_ += @dialog.int.answer($answer_pos_[i], $now_sets_)
 		end
-	end
-	args['i']+=1
-	jump 'for'
-end
-killvar '$rbTEMP_ID'
-! когда есть список реплик
-! список реплик героя. Выгружаются все
-if args['a']>0:
-	if $args['type:source']='quest' and  $DIALOG_VALUE['answer.view']<>'answer.href':
-	! если предыдущая реплика - реплика актёра, очищаем окно действий
-		CLA
-	elseif $args['type:source']='quest' and  $DIALOG_VALUE['answer.view']='answer.href':
-	! если предыдущая реплика - реплика актёра, обнуляем содержимое блока действий
-		$args['answers.div']=''
-	elseif $args['type:source']<>'quest' and  $DIALOG_VALUE['answer.view']='answer.href':
-	! если предыдущая реплика — реплика героя, запоминаем содержимое блока действий
-		$args['answers.div']=$func('get.tag.cont',$maintxt,'avs-answer_div')
-	end
-	args['i']=0
-	:hero_replics
-	if args['i']<args['a']:
-		$args['hero.r.id']=$id_replic[args['answerPOS.'+str(args['i'])]]
-		if instr($DIALOG_VALUE['list.act.del'],"["+$args['hero.r.id']+"]")=0 and instr($DIALOG_VALUE['list.replic.del'],"["+$args['hero.r.id']+"]")=0:
-		! если реплики нет в списках удалённых реплик
-			$args['answers.div']+=$func('dialog.int.answer',$args['hero.r.id'])
-		end
-		args['i']+=1
-		jump 'hero_replics'
 	end
 end
-$args['npc.replics.repeat']=$func('get.tag.num',$sets_replic[args['rpit']],'repeat')
-$args['npc.replics.shuffle']=$func('get.tag.num',$sets_replic[args['rpit']],'shuffle')
-! список реплик неписи. Из набора реплик выбирается одна
-if args['q']>0:
-! Если список реплик есть
-	if $args['npc.replics.repeat']='one':
-	! Если фраза выводится всё время одна и та же.
-		if args['maximal.kol']<>args['minimal.kol']:
-		! Если минимальное и максимальное значения не совпадают, значит одна из фраз уже выбрана
+
+
+!@ список реплик неписи. Из набора реплик выбирается одна
+if q > 0:
+	if $replics_repeat_='one':
+		!@ Если фраза выводится всё время одна и та же.
+		if maximal_<>minimal_:
+			!@ Если минимальное и максимальное значения не совпадают, значит одна из фраз уже выбрана
 			args['mem.pos']=easy_dialog_temp_var1[args['maximal.pos']]	&	!	запоминаем позицию реплики (в таблице данных) с максимальным значением в kolvo_replic
 			! удаляем бесполезные массивы:
 			killvar 'easy_dialog_temp_var1'
@@ -107,38 +90,38 @@ if args['q']>0:
 			easy_dialog_temp_var2[]=kolvo_replic[args['mem.pos']]
 		end
 	end
-	if $args['npc.replics.repeat']='once':
+	if $replics_repeat_='once':
 	! Если реплики выводятся один круг и после выводится только последняя
-		if args['maximal.kol']=args['minimal.kol']:
+		if maximal_=minimal_:
 		! если минимум и максимум совпадают, выбираем реплику
 			! снимаем метки со всех реплик
 			:del_kol
-			args['i']=0
+			i=0
 			:for_once_ren
-			if args['i']<arrsize('easy_dialog_temp_var1'):
-				kolvo_replic[easy_dialog_temp_var1[args['i']]]=0
-				args['i']+=1
+			if i<arrsize('easy_dialog_temp_var1'):
+				kolvo_replic[easy_dialog_temp_var1[i]]=0
+				i+=1
 				jump 'for_once_ren'
 			end
 			jump 'choose_frase'
-		elseif args['maximal.kol']<>args['minimal.kol'] and args['minimal.kol']=0:
+		elseif maximal_<>minimal_ and minimal_=0:
 		! Если метки стоят на паре фраз, а на других не стоят, выбираем только неотмеченные реплики
 			! удаляем неотмеченные реплики
 			:del_once_del
-			args['i']=0
+			i=0
 			:for_once_del
-			if args['i']<arrsize('easy_dialog_temp_var1'):
-				if easy_dialog_temp_var2[args['i']]<>0:
-					killvar 'easy_dialog_temp_var2',args['i']
-					killvar 'easy_dialog_temp_var1',args['i']
+			if i<arrsize('easy_dialog_temp_var1'):
+				if easy_dialog_temp_var2[i]<>0:
+					killvar 'easy_dialog_temp_var2',i
+					killvar 'easy_dialog_temp_var1',i
 				else
-					args['i']+=1
+					i+=1
 				end
 				jump 'for_once_del'
 			end
-			if arrsize('easy_dialog_temp_var1')=1 and $args['npc.replics.repeat']='once': kolvo_replic[easy_dialog_temp_var1[0]]+=1
+			if arrsize('easy_dialog_temp_var1')=1 and $replics_repeat_='once': kolvo_replic[easy_dialog_temp_var1[0]]+=1
 			jump 'choose_frase'
-		elseif args['maximal.kol']<>args['minimal.kol'] and args['minimal.kol']>0:
+		elseif maximal_<>minimal_ and minimal_>0:
 		! Если реплики уже выбирались и на одной из них есть метка
 		! выбираем эту реплику
 			killvar 'easy_dialog_temp_var1'
@@ -146,18 +129,18 @@ if args['q']>0:
 			easy_dialog_temp_var1[]=args['maximal.pos']
 		end
 	end
-	if $args['npc.replics.repeat']='cicle':
-		if args['maximal.kol']=args['minimal.kol']:
+	if $replics_repeat_='cicle':
+		if maximal_=minimal_:
 			jump 'del_kol'
 		else
 			jump 'del_once_del'
 		end
 	end
 	:choose_frase
-	if $args['npc.replics.shuffle']='random':
+	if $replics_shuffle_='random':
 		$args['chosing frase']=$id_replic[easy_dialog_temp_var1[rand(0,arrsize('easy_dialog_temp_var1')-1)]]
 	end
-	if $args['npc.replics.shuffle']='straight':
+	if $replics_shuffle_='straight':
 		$args['chosing frase']=$id_replic[easy_dialog_temp_var1[0]]
 	end
 	! удаляем бесполезные массивы:
@@ -167,3 +150,14 @@ if args['q']>0:
 end
 if instr($args['source'],'closeup')<>0: gosub 'dialog.closeup' & exit		&	!	закрытие диалога происходит после выполнения кода и вывода реплики на экран
 --- dialog.replic.int ---------------------------------
+
+# dialog.mb.add
+local pos_ = arrpos('$REPLICS_ID', $args[0])
+if pos_ = -1:
+	pos_ = arrsize('$REPLICS_ID')
+	REPLICS_COUNT[] = 0
+	$REPLICS_ID[] = $args[0]
+end
+result = pos_
+--- dialog.mb.add ---------------------------------
+

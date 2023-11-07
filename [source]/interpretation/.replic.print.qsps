@@ -1,6 +1,8 @@
+QSP-Game Выводит реплику в лог диалога!!!
+
+$args[0] - идентификатор реплики
 # dialog.replic.print
-! Выводим реплику на экран
-$args[0] = $args[0]	&	!	идентификатор реплики
+!@ Выводим реплику на экран
 args['rpit']=arrpos('$id_replic',$args[0])
 $args['type:source']=$func('get.tag.num',$source_replic[args['rpit']],'type-replic')
 $args['block']=$func('#widetrim#',$func('get.tag.cont',$source_replic[args['rpit']],'frase-block'),'[TRIM]')

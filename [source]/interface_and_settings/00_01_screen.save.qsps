@@ -8,8 +8,8 @@ $DIALOG_VALUE['screen.main'] = $maintxt	&	!@	сохраняем содержим
 local $dialog_div_
 !@ блок диалога по умолчанию
 $dialog_div_['now'] = '<div class="avs_dialog_div">'
-	$dialog_div_['now'] += '<div class="avs_dialog_replics">&nbsp;</div class="avs_dialog_replics">'
-	$dialog_div_['now'] += '<div class="avs_dialog_buttons">&nbsp;</div class="avs_dialog_buttons">'
+	$dialog_div_['now'] += '<div class="avs_dialog_replics"></div class="avs_dialog_replics">'
+	$dialog_div_['now'] += '<div class="avs_dialog_buttons"></div class="avs_dialog_buttons">'
 $dialog_div_['now'] += '</div class="avs_dialog_div">'
 
 if instr($DIALOG_VALUE['screen.main'],'<div class="avs_dialog_div">') <> 0:

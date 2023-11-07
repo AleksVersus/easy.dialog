@@ -1,0 +1,8 @@
+QSP-Game Удаление реплики из таблицы диалогов
+
+Может пригодиться для разгрузки памяти
+
+# dialog.replic.kill
+!@ TODO
+msg "This function is not work"
+--- dialog.replic.kill ---------------------------------

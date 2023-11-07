@@ -1,0 +1,12 @@
+QSP-Game Получает название действия
+
+$args[0] - тело реплики
+args[1] - максимальная длина текста в символах
+# dialog.act.get_name
+$args[0] = $trim($args[0])
+if len($args[0]) > args[1]:
+	$result = $mid($args[0], 1, args[1]-3) + '...'
+else:
+	$result = $args[0]
+end
+--- dialog.act.get_name ---------------------------------

@@ -1,6 +1,5 @@
-# dialog.replic.del
-! здесь реплика вносится в список удалённых из диалога на время сеанса
+QSP-Game здесь реплика вносится в список удалённых из диалога на время сеанса
 $args[0] = $args[0]	&	!	идентификатор реплики
-$DIALOG_VALUE['list.replic.del']+='['+$args[0]+"]
-"
+# dialog.replic.del
+$DIALOG_VALUE['list.replic.del'] = @edb.list.append($DIALOG_VALUE['list.replic.del'], $args[0])
 --- dialog.replic.del ---------------------------------
