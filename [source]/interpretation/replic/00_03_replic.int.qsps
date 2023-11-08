@@ -5,9 +5,10 @@ $args[0] -	идентификатор реплики
 	local $code_
 !@ ------------------- многократно используемы локальные переменные ------------------- 
 local $rcode_ = $dialogs_run[$args[0]]	&	!@	Динамический код, повешенный на реплику
+local $now_sets_ = @dialog.get.sets($args[0])	& !@ текущие настройки, восстановленные до корня ветки
 
 if $rcode_ <> '': dynamic $rcode_	&	!@	выполняем код текущей реплики
-@dialog.replic.print($args[0])		&	!@	выводим текущую реплику на экран
+@dialog.replic.print($args[0], $now_sets_) & !@	выводим текущую реплику на экран
 
 !@ снимаем фиксацию с реплики
 $DIALOG_VALUE['list.act.fix'] = @edb.list.remove($DIALOG_VALUE['list.act.fix'], $args[0])
@@ -24,7 +25,7 @@ $code_ = { $answer_pos_[a] = $args[0] & a += 1 }
 
 !@ ---------------------------- перебираем дочерние реплики и составляем два списка ---------------------------- 
 	local $rdaughters_ = $dialogs_includes[$args[0]]&	!@	список дочерних
-	local maximal_, minimal_
+	local maximal_, minimal_, REPLICS_COUNT_, $REPLICS_ID_
 	$code_ = {
 		if @dialog.replic.prv.if($args[0]):
 			!@ если реплика прошла проверку на соответствие условиям
@@ -32,20 +33,20 @@ $code_ = { $answer_pos_[a] = $args[0] & a += 1 }
 			local $type_ = @em.tag.getNum($dialogs_sets[$args[0]], 'type')
 			if $type_ = 'quest':
 				!@ если это реплика неписи (пассивная)
-				local pos_ = @dialog.mb.add($args[0])
-				if maximal_['count'] < REPLICS_COUNT[pos_]:
+				local pos_ = @dialog.mt.add($args[0])
+				if maximal_['count'] < REPLICS_COUNT_[pos_]:
 					!@ если максимальное из просмотреннных значений меньше текущего, выбираем его
-					maximal_['count'] = REPLICS_COUNT[pos_] &	!@	запоминаем новое максимальное значение
-					maximal_['pos'] = pos_					&	!@	запоминаем положение значения в микробазе
+					maximal_['count'] = REPLICS_COUNT_[pos_] &	!@	запоминаем новое максимальное значение
+					maximal_['pos'] = pos_					 &	!@	запоминаем положение значения в микробазе
 				end
-				if minimal_['count'] >= REPLICS_COUNT[pos_]:
+				if minimal_['count'] >= REPLICS_COUNT_[pos_]:
 				! если минимальное из просмотреннных значений больше текущего или равно, выбираем его
-					minimal_['count'] = REPLICS_COUNT[pos_]	&	!@	запоминаем новое минимальное значение
-					minimal_['pos'] = pos_					&	!@	запоминаем положение значения в микробазе
+					minimal_['count'] = REPLICS_COUNT_[pos_] &	!@	запоминаем новое минимальное значение
+					minimal_['pos'] = pos_					 &	!@	запоминаем положение значения в микробазе
 				end
 				!@ если минимальное количество равно нулю, а минимальное значение в микробазе — нет,
 				!@ минимальное количество выставляем по минимальному в микробазе
-				if minimal_['count'] = 0 and min('REPLICS_COUNT')<>0: minimal_['count'] = min('REPLICS_COUNT')
+				if minimal_['count'] = 0 and min('REPLICS_COUNT_')<>0: minimal_['count'] = min('REPLICS_COUNT_')
 				q+=1
 			end
 			!@ если это реплика героя (ответная), запоминаем её позицию в базе
@@ -58,8 +59,6 @@ $code_ = { $answer_pos_[a] = $args[0] & a += 1 }
 
 local $rsets_ = $dialogs_sets[$args[0]]		&	!@	настройки реплики
 local $rtype_ = @em.tag.getNum($rsets_, 'type') &	!@	Тип реплики
-
-local $now_sets_ = @dialog.get.sets($args[0])	& !@ текущие настройки, восстановленные до корня ветки
 local $replics_repeat_ = @em.tag.getNum($now_sets_, 'repeat')	& !@ число повторов реплики
 local $replics_shuffle_ = @em.tag.getNum($now_sets_, 'shuffle')	& !@ порядок воспроизведения
 
@@ -79,85 +78,46 @@ end
 if q > 0:
 	if $replics_repeat_='one':
 		!@ Если фраза выводится всё время одна и та же.
-		if maximal_<>minimal_:
-			!@ Если минимальное и максимальное значения не совпадают, значит одна из фраз уже выбрана
-			args['mem.pos']=easy_dialog_temp_var1[args['maximal.pos']]	&	!	запоминаем позицию реплики (в таблице данных) с максимальным значением в kolvo_replic
-			! удаляем бесполезные массивы:
-			killvar 'easy_dialog_temp_var1'
-			killvar 'easy_dialog_temp_var2'
-			! восстанавливаем позицию и количество в массивы:
-			easy_dialog_temp_var1[]=args['mem.pos']
-			easy_dialog_temp_var2[]=kolvo_replic[args['mem.pos']]
-		end
-	end
-	if $replics_repeat_='once':
-	! Если реплики выводятся один круг и после выводится только последняя
-		if maximal_=minimal_:
-		! если минимум и максимум совпадают, выбираем реплику
-			! снимаем метки со всех реплик
-			:del_kol
-			i=0
-			:for_once_ren
-			if i<arrsize('easy_dialog_temp_var1'):
-				kolvo_replic[easy_dialog_temp_var1[i]]=0
-				i+=1
-				jump 'for_once_ren'
-			end
+		if maximal_['count'] <> minimal_['count']:
+			!@ Если минимальное и максимальное значения не совпадают, значит одна из фраз уже выбрана.
+			!@ Уничтожаем все реплики, кроме выбранной:
+			@dialog.mt.kill_other($REPLICS_ID_[maximal_['pos']])
 			jump 'choose_frase'
-		elseif maximal_<>minimal_ and minimal_=0:
-		! Если метки стоят на паре фраз, а на других не стоят, выбираем только неотмеченные реплики
-			! удаляем неотмеченные реплики
-			:del_once_del
-			i=0
-			:for_once_del
-			if i<arrsize('easy_dialog_temp_var1'):
-				if easy_dialog_temp_var2[i]<>0:
-					killvar 'easy_dialog_temp_var2',i
-					killvar 'easy_dialog_temp_var1',i
-				else
-					i+=1
-				end
-				jump 'for_once_del'
-			end
-			if arrsize('easy_dialog_temp_var1')=1 and $replics_repeat_='once': kolvo_replic[easy_dialog_temp_var1[0]]+=1
-			jump 'choose_frase'
-		elseif maximal_<>minimal_ and minimal_>0:
-		! Если реплики уже выбирались и на одной из них есть метка
-		! выбираем эту реплику
-			killvar 'easy_dialog_temp_var1'
-			killvar 'easy_dialog_temp_var2'
-			easy_dialog_temp_var1[]=args['maximal.pos']
 		end
-	end
-	if $replics_repeat_='cicle':
-		if maximal_=minimal_:
-			jump 'del_kol'
+	elseif $replics_repeat_='once':
+		!@ Если реплики выводятся один круг и после выводится только последняя
+		if maximal_['count'] = minimal_['count'] and minimal_['count'] <> 0:
+			!@ если минимум и максимум совпадают, снимаем метки со всех реплик списка
+			@dialog.mt.del_count()
+			jump 'choose_frase'
+		elseif maximal_['count'] <> minimal_['count'] and minimal_['count'] = 0:
+			!@ Если метки стоят на паре фраз, а на других не стоят, выбираем только неотмеченные реплики
+			@dialog.mt.kill_onced()
+			!@ если остаётся только одна невыбранная реплика, сразу задираем ей количество
+			if arrsize('$REPLICS_ID_') = 1: dialogs_count[$REPLICS_ID_[0]] += 1
+			jump 'choose_frase'
+		elseif maximal_['count'] <> minimal_['count'] and minimal_ > 0['count']:
+			!@ Если реплики уже выбирались и на одной из них есть метка последней, выбираем эту реплику
+			@dialog.mt.kill_other($REPLICS_ID_[maximal_['pos']])
+		end
+	elseif $replics_repeat_='cicle':
+		if maximal_['count'] = minimal_['count']:
+			@dialog.mt.del_count()
 		else
-			jump 'del_once_del'
+			@dialog.mt.kill_onced()
 		end
 	end
 	:choose_frase
-	if $replics_shuffle_='random':
-		$args['chosing frase']=$id_replic[easy_dialog_temp_var1[rand(0,arrsize('easy_dialog_temp_var1')-1)]]
+	local $choosing_frase_ = ''
+	if $replics_shuffle_ = 'random':
+		$choosing_frase_ = $REPLICS_ID_[rand(0,arrsize('$REPLICS_ID_')-1)]
+	elseif $replics_shuffle_='straight':
+		$choosing_frase_ = $REPLICS_ID_[0]
 	end
-	if $replics_shuffle_='straight':
-		$args['chosing frase']=$id_replic[easy_dialog_temp_var1[0]]
-	end
-	! удаляем бесполезные массивы:
-	killvar 'easy_dialog_temp_var1'
-	killvar 'easy_dialog_temp_var2'
-	if $args['chosing frase']<>'': gosub 'dialog.int.quest',$args['chosing frase']
+	if $choosing_frase_<>'': @dialog.int.quest($choosing_frase_)
 end
-if instr($args['source'],'closeup')<>0: gosub 'dialog.closeup' & exit		&	!	закрытие диалога происходит после выполнения кода и вывода реплики на экран
+!@ закрытие диалога происходит после выполнения кода и вывода реплики на экран:
+if instr($rsets_, '[closeup]')<>0: @dialog.closeup() & exit	
 --- dialog.replic.int ---------------------------------
 
-# dialog.mb.add
-local pos_ = arrpos('$REPLICS_ID', $args[0])
-if pos_ = -1:
-	pos_ = arrsize('$REPLICS_ID')
-	REPLICS_COUNT[] = 0
-	$REPLICS_ID[] = $args[0]
-end
-result = pos_
---- dialog.mb.add ---------------------------------
 

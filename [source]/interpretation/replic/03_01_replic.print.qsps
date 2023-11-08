@@ -1,0 +1,77 @@
+QSP-Game Выводит реплику в лог диалога!!!
+
+$args[0] - идентификатор реплики
+$args[1] - текущие настройки ветки
+# dialog.replic.print
+!@ ------------------- многократно используемы локальные переменные ------------------- 
+	local $replic_text_, $wrap_code_, $frase_actor_
+!@ ------------------- многократно используемы локальные переменные ------------------- 
+
+local $rbody_ = $trim($dialogs_body[$args[0]])
+local $rsets_ = $dialogs_sets[$args[0]]
+local $rtype_ = @em.tag.getNum($rsets_, 'type')
+
+!@ получаем роль реплики
+local $ractor_ = @em.tag.getNum($rsets, 'actor_this')
+
+
+!@ блок фраз уже очищен от преформатирования в генераторе, его можно не чистить.
+$frase_block_= @em.tag.getCont($rbody_,'frase_block')
+
+if $frase_block_ = '':
+	if $rtype_='quest':
+		!@ реплика пассивная. Если конкретная роль для реплики не указана, вычисляем
+		!@ пассивную роль, назначенную ветке:
+		if $ractor_ = '': $ractor_ = @em.tag.getNum($args[1], 'actor_pass')
+	elseif $rtype_='answer':
+		!@ реплика активная. Если конкретная роль для реплики не указана, вычисляем
+		!@ активную роль, назначенную ветке:
+		if $ractor_ = '': $ractor_ = @em.tag.getNum($args[1], 'actor_act')
+	end
+	!@ получаем обёртку:
+	$wrap_code_ = $dialogs_body[$ractor_]
+	!@ оборачиваем реплику в обёртку
+	$replic_text_ = $dyneval($wrap_code_, $ractor_, $dialogs_position[$ractor_], $rbody_)
+	!@ закидываем реплику в лог диалога
+	@dialog.replic.to_log($replic_text_)
+else:
+	!@ Если мы имеем дело с блоком фраз,
+	!@ строки разбиваем на массив:
+	local $frase_array_
+	@em.str.inArr($frase_block_,'$frase_array_')
+	!@ в лог добавляем разделитель
+	@dialog.replic.to_log('<avs-hide-replics>')
+	!@ теперь перебираем массив с фразами, закидывая их в лог после разделителя
+	loop while arrsize('$frase_array_') > 0:
+		$frase_actor_ = @em.tag.getNum($frase_array_[0], 'actor')
+		$frase_actor_ = $replace($frase_actor_, '<'+'actor:<<$frase_array_[0]>>'+'>')
+		if $frase_actor_ <> '':
+			$replic_text_ = $dyneval($dialogs_body[$frase_actor_], $frase_actor_, $dialogs_position[$frase_actor_], $frase_array_[0])
+		else:
+			$replic_text_ = $dyneval({$result = '<div class="avs-dialogs-none-role"><<$args[2]>></div>'}, '', '', $frase_array_[0])
+		end
+		@dialog.replic.to_log($replic_text_)
+		killvar '$frase_array_', 0
+	end
+end
+!@ перерисовываем экран:
+@dialog.screen.refresh()
+--- dialog.replic.print ---------------------------------
+
+$args[1]:
+	[actor_act:роль активируемых реплик]
+	[actor_pass:роль пассивных реплик]
+	[act_length:максимальная длина текста активируемой реплики]
+	[repeat:схема повтора вывода реплик]
+	[shuffle:порядок вывода реплик]
+
+!@ if $position_replic[args['rpit']]='':
+!@ 	!	Заголовок диалога
+!@ 	$args['dialog.head']=$func('dialog.replic.get',$args[0])
+!@ 	if $args['dialog.head']<>'' and $DIALOG_VALUE['answer.view']<>'answer.href':
+!@ 		*pl $args['dialog.head']
+!@ 	elseif  $args['dialog.head']<>'' and $DIALOG_VALUE['answer.view']='answer.href':
+!@ 		! if head=fixed -- фиксированный заголовок, всегда вверху диалога
+!@ 		gosub 'dialog.replic.addDIV',$args['dialog.head']
+!@ 	end
+!@ end

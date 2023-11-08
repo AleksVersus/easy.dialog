@@ -3,9 +3,9 @@ $args[0]=$args[0]	&	!@ здесь передаётся уникальный по
 
 !@ если передан уникальный айди диалога
 @dialog.killtemp	&	!@ уничтожаем временные значения 00_00
-$DIALOG_VALUE['roof.id'] = @edb.cell.get_value($args[0], 'uid', 'dlgrels')	&	!@ айди корневой реплики
+$DIALOG_VALUE['roof.id'] = $dlgrels_uid[$args[0]]	&	!@ айди корневой реплики
 !@ pl $DIALOG_VALUE['roof.id']
-@dialog.screen.save	&	!@ сохраняем состояние окон на момент открытия диалога 00_01
+@dialog.screen.save()	&	!@ сохраняем состояние окон на момент открытия диалога 00_01
 @dialog.sets.default($DIALOG_VALUE['roof.id'])	&	!@ выставляем настройки по-умолчанию 00_02
 @dialog.replic.int($DIALOG_VALUE['roof.id'])	&	!@ интерпретируем первую реплику диалога
 --- dialog.int ---------------------------------

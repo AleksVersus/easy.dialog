@@ -1,13 +1,15 @@
+QSP-Game закрывает диалог и восстанавливает последний экран
+
 # dialog.closeup
-! закрывает диалог и восстанавливает описание локации и действия
-*clr
-*pl $DIALOG_VALUE['screen.main']
-cla
-dynamic $DIALOG_VALUE['screen.acts']
-clr
-pl $DIALOG_VALUE['screen.stat']
-usehtml=DIALOG_VALUE['screen.html']
-! -------- массив, в котором  хранятся текущие настройки диалога
-killvar '$DIALOG_VALUE'
-gosub 'dialog.killtemp'
+local $screen_ = $DIALOG_VALUE['screen.main']
+killvar '$DIALOG_VALUE' & !@ массив, в котором  хранятся текущие настройки диалога
+@dialog.killtemp()
+if $GAME_VALUE['dialogs_true_goto'] = '':
+	*clr
+	*p $screen_
+else:
+	dynamic $GAME_VALUE['dialogs_true_goto']
+end
 --- dialog.closeup ---------------------------------
+
+$GAME_VALUE['dialogs_true_goto'] — должен содержать код, который выполнится при закрытии диалога. Если код не прописан, при закрытии диалога просто очищается окно основного описания и восстанавливается тот текст, который был сохранён перед открытием диалога.

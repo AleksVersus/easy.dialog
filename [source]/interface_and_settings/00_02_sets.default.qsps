@@ -3,7 +3,7 @@ QSP-Game Выставляем дефолтные настройки диалог
 $args[0] - идентификатор диалога
 # dialog.sets.default
 !@ Получаем настройки диалога
-local $dialog_sets_ = @edb.cell.get_value($args[0], 'sets', 'dialogs')
+local $dialog_sets_ = $dialogs_sets[$args[0]]
 local $d_active_, $d_passive_, $actors_, strings_
 !@ все настройки:	
 $d_active_ = @em.tag.getNum($dialog_sets_, 'default_active')	&	!@ id роли активируемых реплик
@@ -16,8 +16,8 @@ DIALOG_VALUE['default_screen_replics_number'] = iif(strings_ = 0, 10, strings_)
 
 !@ внешний вид активируемой реплики
 if $d_active_<>'':
-	$DIALOG_VALUE['default_screen_active_log'] = @edb.cell.get_value($d_active_, 'body', 'dialogs')
-	$DIALOG_VALUE['default_screen_active_button'] = @edb.cell.get_value($d_active_, 'run', 'dialogs')
+	$DIALOG_VALUE['default_screen_active_log'] = $dialogs_body[$d_active_]
+	$DIALOG_VALUE['default_screen_active_button'] = $dialogs_run[$d_active_]
 else:
 	$DIALOG_VALUE['default_screen_active_log'] = $trim({
 		$result += '<div class="avs-hero-replic"><span style="font-style:italic;"> — <<$args[2]>></span></div>'
@@ -27,7 +27,7 @@ end
 
 !@ внешний вид пассивной реплики
 if $d_passive_<>'':
-	$DIALOG_VALUE['default_screen_passive_log'] = @edb.cell.get_value($d_passive_, 'body', 'dialogs')
+	$DIALOG_VALUE['default_screen_passive_log'] = $dialogs_body[$d_passive_]
 else:
 	$DIALOG_VALUE['default_screen_passive_log'] = $trim({
 		$result += '<div class="avs-hero-replic"> — <<$args[2]>></div>'

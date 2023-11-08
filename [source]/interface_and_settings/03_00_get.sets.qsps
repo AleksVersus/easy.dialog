@@ -6,7 +6,7 @@ local $rid_ = $args[0]
 local $rtype_, $rsets_
 local $actor_act_, $actor_pass_, $act_length_, $rrepeat_, $rshuffle_
 loop while $rid_ <> '':
-	$rsets_ = @edb.cell.get_value($rid_, 'sets', 'dialogs')
+	$rsets_ = $dialogs_sets[$rid_]
 	$rtype_ = @em.tag.getNum($rsets_, 'type')
 	if $rtype_ = 'root':
 		if $actor_act_ = '': $actor_act_ = ''
@@ -21,7 +21,7 @@ loop while $rid_ <> '':
 		if $rrepeat_ = '': $rrepeat_ = @em.tag.getNum($rsets_, 'repeat')
 		if $rshuffle_ = '': $rshuffle_ = @em.tag.getNum($rsets_, 'shuffle')
 	end
-	$rid_ = @edb.cell.get_value($rid_, 'position', 'dialogs')
+	$rid_ = $dialogs_position[$rid_]
 end
 $result += '[actor_act:<<$actor_act_>>]'
 $result += '[actor_pass:<<$actor_pass_>>]'
