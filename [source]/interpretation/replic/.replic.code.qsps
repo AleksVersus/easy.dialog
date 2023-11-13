@@ -1,8 +1,0 @@
-# dialog.replic.code
-$args[0] = $args[0]
-$args['source']=$source_replic[arrpos('$id_replic',$args[0])]
-$args['code']=$func('get.tag.cont',$args['source'],'dynamic-code')
-if $args['code']<>'':
-	dynamic $args['code']
-end
---- dialog.replic.code ---------------------------------
