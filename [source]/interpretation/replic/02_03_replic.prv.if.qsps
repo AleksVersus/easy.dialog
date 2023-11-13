@@ -1,0 +1,7 @@
+QSP-Game проверка реплики на соответствие условиям
+
+$args[0] = $args[0]	&	!	идентификатор реплики
+# dialog.replic.prv.if
+local $if_ = $strfind($dialogs_sets[$args[0]], '<if>([\s\S]*?)</if>', 1)
+result = iif($if_ = '', 1, dyneval("result = iif(<<$if_>>, 1 , 0"))
+--- dialog.replic.prv.if ---------------------------------

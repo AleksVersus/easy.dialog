@@ -19,7 +19,7 @@ local $wrap_code_ = $dialogs_run[$ractor_]
 local $ractname_ = @em.tag.getCont($rsets_, 'act_name')
 if $ractname_ = '':	$ractname_ = @dialog.act.get_name($rbody_, val(@em.tag.getNum($args[1], 'act_length')))
 
-if $ractname_<>'':
+if $ractname_ <> '':
 	$ractname_ = $dyneval($wrap_code_, $args[0], $rparent_, $ractname_)
 	$result = '<a href="exec:@dialog.btn.click(''<<$args[0]>>'')" class="avs-plain"><<$ractname_>></a>'
 	exit
