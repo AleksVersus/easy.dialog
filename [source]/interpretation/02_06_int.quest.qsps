@@ -3,9 +3,7 @@ QSP-Game Интерпретация пассивной реплики
 ! раз мы пришли сюда, значит реплика будет выведена !
 $args[0] = $args[0]	&	!	идентификатор реплики
 # dialog.int.quest
-!@ помечаем интерпретируемую реплику
 dialogs_count[$args[0]] += 1
 @dialog.replic.int($args[0])
-!@ $args['next']=@dialog.get.jump($args[0]) TODO
-!@ dynamic $args['next']
+dynamic @dialog.get.jump($args[0])
 --- dialog.int.quest ---------------------------------

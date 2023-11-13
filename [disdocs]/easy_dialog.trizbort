@@ -92,7 +92,7 @@
 		</line>
 		<room id="35" name="btn.click" subtitle="" x="672" y="608" w="96" h="64" region="NoRegion" handDrawn="no" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="36" name="" description="" color="#400080" style="dashed" flow="oneWay">
-			<dock index="0" id="22" port="se" />
+			<dock index="0" id="22" port="ese" />
 			<dock index="1" id="35" port="w" />
 		</line>
 		<room id="37" name="frase_block.show" subtitle="" x="864" y="608" w="96" h="64" region="NoRegion" handDrawn="no" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
@@ -117,6 +117,15 @@
 		<line id="44" name="" description="" color="#008000" flow="oneWay">
 			<dock index="0" id="35" port="sw" />
 			<dock index="1" id="4" port="ssw" />
+		</line>
+		<room id="45" name="get.jump" subtitle="" x="480" y="704" w="96" h="64" region="NoRegion" handDrawn="no" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="#80FFFF" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<line id="46" name="" description="" flow="oneWay">
+			<dock index="0" id="22" port="se" />
+			<dock index="1" id="45" port="nw" />
+		</line>
+		<line id="47" name="" description="" flow="oneWay">
+			<dock index="0" id="26" port="e" />
+			<dock index="1" id="45" port="w" />
 		</line>
 	</map>
 	<settings>

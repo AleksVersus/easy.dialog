@@ -8,12 +8,11 @@ $args[0] = $args[0] - идентификатор реплики
 @dialog.screen.refresh()
 !@ получаем настройки
 local $rsets_ = $dialogs_sets[$args[0]]
-!@ $next_replic_ = @dialog.get.jump($args[0]) TODO
 !@ если реплика должна быть удалена из сеанса, удаляем
 if instr($rsets_,'[selectact.delete]')<>0: @dialog.replic.del($args[0])
 !@ если реплика должна быть уничтожена, уничтожаем
 if instr($rsets_,'[selectact.kill]')<>0: @dialog.replic.kill($args[0])
 !@ воспроизводим реплику
 @dialog.replic.int($args[0])
-!@ $next_replic_
+dynamic @dialog.get.jump($args[0])
 --- dialog.btn.click ---------------------------------
