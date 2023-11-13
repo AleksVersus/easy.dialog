@@ -310,6 +310,7 @@ class EasyDialog:
 
 		self.microbase['replic-source'][key] = em.Tag.del_cont(self.microbase['replic-source'][key], '<!>')
 		self.microbase['replic-settings'][key] += f'[type:{self.microbase["replic-type"][key]}]'
+		self.microbase['replic-source'][key] = re.sub(r'<!--[\s\S]*?-->', '', self.microbase['replic-source'][key])
 
 	def ids_replace(self, save_temp_file=False) -> None:
 		ids = []

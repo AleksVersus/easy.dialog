@@ -9,7 +9,7 @@ def main() -> None:
 		('..\\..\\[source.game]\\other\\robbank.edg', 'robbank')
 	]
 	# формируем объект БазаДиалогов, и генерируем в нём список объектов диалогов
-	eid = DialogsBase(dialogs_files, split_code=10, output_path="..\\dialogs_table.qsps")
+	eid = DialogsBase(dialogs_files, split_code=10, output_path="..\\..\\[source.game]\\src\\dialogs_table.qsps")
 	# теперь конвертируем диалоги из базы в Таблицу Данных для QSP
 	eid.to_qsps()
 

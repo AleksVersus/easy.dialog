@@ -2,7 +2,7 @@
 	"project":
 	[
 		{
-			"build":"..\\..\\..\\+releases+\\+lib+\\launcher.eid\\easy.dialog.3.qsp",
+			"build":"..\\..\\..\\+releases+\\+lib+\\launcher.eid\\easy.dialog.qsp",
 			"folders":[{"path":"..\\[source]"}]
 		},
 		{
