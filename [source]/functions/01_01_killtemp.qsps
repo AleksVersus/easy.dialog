@@ -1,17 +1,8 @@
-# dialog.killtemp
-! -------- 
-killvar '$rbTEMP_ID'					&	!	массив, который используется по умолчанию для поиска дочерних объектов
-killvar 'easy_dialog_temp_var1'			&	!	промежуточные значения для хранения результатов разных вычислений
-killvar 'easy_dialog_temp_var2'			&	!	--""
-killvar '$easy_dialog_temp_var1'		&	!	--""
-killvar '$easy_dialog_temp_var2'		&	!	--""
-! -------- массивы минибазы ---------
-killvar 'easy_dialog_base_KOL'
-killvar '$easy_dialog_base_ID'
-killvar '$easy_dialog_base_PS'
-killvar '$easy_dialog_base_ST'
-killvar '$easy_dialog_base_SC'
+QSP-Game Очищаем различные глобальные массивы
 
+# dialog.killtemp
+killvar '$DIALOG_VALUE'
 killvar 'REPLICS_COUNT'
 killvar '$REPLICS_ID'
+killvar '$DIALOG_REPLIC_LOG'
 --- dialog.killtemp ---------------------------------

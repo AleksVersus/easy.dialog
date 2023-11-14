@@ -1,7 +1,7 @@
 # uc
 if $user_text = 'dialog':
 	local $table_, $id_ = '', ''
-	$table_ += '<table width=100% border=1>'
+	$table_ += '<table width=95% border=1>'
 	loop local i = 1 while i < arrsize('$dialogs_id') step i += 1:
 		$id_ = $dialogs_id[i]
 		$table_ += "<tr>"
@@ -14,7 +14,19 @@ if $user_text = 'dialog':
 		$table_ += "</tr>"
 	end
 	$table_ += "</table>"
-	*pl $table_
+	*p $table_
+	$table_, $id_ = '', ''
+	$table_ += '<table border=1 style="background:#ffffee;">'
+	loop local i = 1 while i < arrsize('$dlgrels_id') step i += 1:
+		$id_ = $dlgrels_id[i]
+		$table_ += "<tr>"
+			$table_ += "<td>"+$str(i)+"</td>"
+			$table_ += "<td>"+$replace($replace($dlgrels_id[$id_],'<','&lt;'),'>','&gt;')+"</td>"
+			$table_ += "<td>"+$replace($replace($dlgrels_uid[$id_],'<','&lt;'),'>','&gt;')+"</td>"
+		$table_ += "</tr>"
+	end
+	$table_ += "</table>"
+	*p $table_
 end
 if $user_text = 'log': @em.arr.print('$log')
 if $user_text = '666': usehtml = 1 - usehtml
