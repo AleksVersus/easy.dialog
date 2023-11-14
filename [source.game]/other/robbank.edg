@@ -11,7 +11,7 @@
 		</wrap.act>
 		<wrap.frase>
 			!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
-			local $name_ = @em.tag.getNum(@edb.cell.getValue($args[0], 'sets', 'dialogs'), 'name')
+			local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
 			$result += '<div class="avs-hero-replic">'
 				$result += '<span style="color:#ffffff;font-weight:bold;"><<$name_>>:</span>'
 				$result += '<span style="color:#dddddd;"> — <<$args[2]>>:</span>'
@@ -27,7 +27,7 @@
 		<default_passive>
 		<wrap.frase>
 			!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
-			local $name_ = @em.tag.getNum(@edb.cell.getValue($args[0], 'sets', 'dialogs'), 'name')
+			local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
 			$result += '<div class="avs-hero-replic">'
 				$result += '<span style="color:#c0c0c0;font-weight:bold;"><<$name_>>:</span>'
 				$result += '<span style="color:#aaaaaa;"> — <<$args[2]>>:</span>'

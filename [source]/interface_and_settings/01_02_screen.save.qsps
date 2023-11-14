@@ -1,7 +1,6 @@
 QSP-Game Сохранение экрана, с которого был вызван диалог.
 
 # dialog.screen.save
-pl 'screen.save!'
 $DIALOG_VALUE['screen.main'] = $maintxt	&	!@	сохраняем содержимое окна основного описания
 !@ $DIALOG_VALUE['screen.acts'] = $curacts	&	!@	сохраняем содержимое окна действий
 !@ $DIALOG_VALUE['screen.stat'] = $stattxt	&	!@	сохраняем содержимое окна дополнительного описания

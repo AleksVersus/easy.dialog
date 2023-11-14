@@ -1,7 +1,6 @@
 QSP-Game Обновление на экране списка реплик из лога реплик
 
 # dialog.log.refresh
-pl 'screen.refresh!'
 local log_strings_ = val(@em.tag.getNum($dialogs_sets[$DIALOG_VALUE['dialog_id']], 'strings'))
 local dsrn_ = iif(log_strings_, log_strings_, DIALOG_VALUE['default_screen_replics_number'])
 local separator_ = arrpos('$DIALOG_REPLIC_LOG', '<avs-hide-replics>')
@@ -17,15 +16,14 @@ if separator_ <> -1:
 		$counter[] = 'dialog.timer'
 		settimer 100
 	end
+else:
+	separator_ = arrsize('$DIALOG_REPLIC_LOG')
 end
 local $log_ = ''
-local i = iif(separator_ - dsnr_ <= 0, 0, separator_ - dsnr_)
-loop while i < separator_ step i += 1:
+loop local i = iif(separator_ - dsrn_ <= 0, 0, separator_ - dsrn_) while i < separator_ step i += 1:
 	$log_ += $DIALOG_REPLIC_LOG[i]
 end
 $log_ = '<div class="avs_dialog_replics"><<$log_>></div class="avs_dialog_replics">'
 local $replics_div_ = $strfind($DIALOG_VALUE['screen_now'], '<div class="avs_dialog_replics">[\s\S]*?<\/div class="avs_dialog_replics">')
 $DIALOG_VALUE['screen_now'] = $replace($DIALOG_VALUE['screen_now'], $replics_div_, $log_)
-*clr
-*p $DIALOG_VALUE['screen_now']
 --- dialog.log.refresh ---------------------------------
