@@ -36,7 +36,7 @@ end
 
 $DIALOG_VALUE['default_replics_repeat'] = 'cicle'
 $DIALOG_VALUE['default_replics_shuffle'] = 'straight'
-DIALOG_VALUE['default_buttons_length'] = 24
+DIALOG_VALUE['default_buttons_length'] = 128
 
 !@ pl $replace($DIALOG_VALUE['default_screen_active_log'],'<','&lt;')
 !@ pl $replace($DIALOG_VALUE['default_screen_active_button'],'<','&lt;')

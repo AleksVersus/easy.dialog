@@ -91,6 +91,9 @@ class DialogsBase:
 			output_lines.append(f"\t$dialogs_id['{new_id}'] = '{new_id}'\n")
 			if self.replics['type'][i] == 'role':
 				output_lines.append(f"\t$dialogs_body['{new_id}'] = {{{em.Str.widetrim(self.replics['source'][i], strip=True)}}}\n")
+			elif '<frase_block>' in self.replics['source'][i]:
+				self.replics['source'][i] = self.frase_block_proced(self.replics['source'][i])
+				output_lines.append(f"\t$dialogs_body['{new_id}'] = '{em.Str.widetrim(self.replics['source'][i], strip=True)}'\n")
 			else:
 				output_lines.append(f"\t$dialogs_body['{new_id}'] = '{em.Str.widetrim(self.replics['source'][i], strip=True)}'\n")
 			settings = self.replic_proced_sets(self.replics['sets'][i].strip()).replace("'", "''")
@@ -134,6 +137,18 @@ class DialogsBase:
 
 		with open(self.output_path, 'w', encoding='utf-8') as fp:
 			fp.writelines(output_lines)
+
+	def frase_block_proced(self, source:str) -> str:
+		""" replace ids by really ids in frase block """
+		frase_block = em.Tag.get_cont(source, 'frase_block').split('\n')
+		for i, frase in enumerate(frase_block):
+			actor_id = em.Tag.get_num(frase, 'actor')
+			if actor_id != '':
+				actor_id = self.get_new_id(actor_id)
+				frase_block[i] = em.Tag.del_num(frase, 'actor', rpl=f'<actor:{actor_id}>')
+		fb = "\n".join(frase_block)
+		return em.Tag.del_cont(source, 'frase_block', rpl=f'<frase_block>{fb}</frase_block>')
+
 
 	def replic_proced_sets(self, sets:str) -> str:
 		""" replace temp ids by really ids """

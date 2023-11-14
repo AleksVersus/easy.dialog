@@ -29,6 +29,7 @@ class EasyDialog:
 			'replic-run': {},
 		}
 		self.root = None # id root (dialog id)
+		self.actors = []
 		self.mb_lines_count = 0
 		# конвертируем диалог в тегированный вид
 		self.get_tags_source()
@@ -169,6 +170,7 @@ class EasyDialog:
 		dialog_actors = ''
 		for actor in actors_ids:
 			if actor != '':
+				self.actors.append(actor)
 				actors[actor] = em.Tag.get_cont(self.microbase['replic-source'][key], f'actor.{actor}')
 				self.gen_actor(actor, actors[actor])
 				self.microbase['replic-source'][key] = re.sub(f'<(actor.{actor})>'+r'[\s\S]+?<\/\1>', '', self.microbase['replic-source'][key])
@@ -293,6 +295,11 @@ class EasyDialog:
 			self.microbase['replic-run'][key] = dynamic_code
 			self.microbase['replic-source'][key] = em.Tag.del_cont(self.microbase['replic-source'][key], 'dynamic_code')
 
+		frase_block = em.Tag.get_cont(self.microbase['replic-source'][key], 'frase_block')
+		if frase_block != '':
+			new_frase_block = f'<frase_block>{self.fb_change_actors(frase_block)}</frase_block>'
+			self.microbase['replic-source'][key] = em.Tag.del_cont(self.microbase['replic-source'][key], 'frase_block', rpl=new_frase_block)
+
 		selectact_delete = re.search(r'\bselectact\.delete\b', self.microbase['replic-source'][key])
 		if selectact_delete is not None:
 			self.microbase['replic-settings'][key] += f'[selectact.delete]\n'
@@ -311,6 +318,12 @@ class EasyDialog:
 		self.microbase['replic-source'][key] = em.Tag.del_cont(self.microbase['replic-source'][key], '<!>')
 		self.microbase['replic-settings'][key] += f'[type:{self.microbase["replic-type"][key]}]'
 		self.microbase['replic-source'][key] = re.sub(r'<!--[\s\S]*?-->', '', self.microbase['replic-source'][key])
+
+	def fb_change_actors(self, frase_block:str) -> str:
+		for actor in self.actors:
+			if f'<actor:{actor}>' in frase_block:
+				frase_block = frase_block.replace(f'<actor:{actor}>', f'<actor:{self.uid}.{actor}>')
+		return frase_block
 
 	def ids_replace(self, save_temp_file=False) -> None:
 		ids = []
