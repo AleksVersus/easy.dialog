@@ -11,8 +11,8 @@ local $rbody_ = $dialogs_body[$args[0]]
 local $rparent_ = $dialogs_position[$args[0]]
 
 !@ получаем роль реплики
-local $ractor_ = @em.tag.get($rsets, 'actor_this')
-if $ractor_ = '': $ractor_ = @em.tag.get($args[1], 'actor_act')
+local $ractor_ = @em.tag.getNum($rsets, 'actor_this')
+if $ractor_ = '': $ractor_ = @em.tag.getNum($args[1], 'actor_act')
 local $wrap_code_ = $dialogs_run[$ractor_]
 
 !@ формируем название реплики

@@ -13,5 +13,4 @@
 	*p '<a href="EXEC:@dialog.int(''alcoholic'')">Подойти к Пьянице</a>'
 	*p '<a href="EXEC:@dialog.int(''aragorn'')">Подойти к Арагорну</a>'
 *p '</div class="avs_dialog_hide">'
-
 --- место;бар ---------------------------------
