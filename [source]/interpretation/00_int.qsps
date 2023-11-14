@@ -2,9 +2,11 @@
 $args[0]=$args[0]	&	!@ здесь передаётся уникальный пользовательский айди диалога
 
 !@ если передан уникальный айди диалога
-@dialog.killtemp	&	!@ уничтожаем временные значения 00_00
-$DIALOG_VALUE['roof.id'] = $dlgrels_uid[$args[0]]	&	!@ айди диалога
+@dialog.killtemp()	&	!@ уничтожаем временные значения 00_00
+$DIALOG_VALUE['dialog_id'] = $dlgrels_uid[$args[0]]	&	!@ айди диалога
+$DIALOG_VALUE['roof_id'] = @dialog.get_roof($DIALOG_VALUE['dialog_id'])
+pl 'dialog_id: ' + $DIALOG_VALUE['dialog_id'] + ' roof_id: ' + $DIALOG_VALUE['roof_id']
 @dialog.screen.save()	&	!@ сохраняем состояние окон на момент открытия диалога 00_01
-@dialog.sets.default($DIALOG_VALUE['roof.id'])	&	!@ выставляем настройки по-умолчанию 00_02
-@dialog.replic.int($DIALOG_VALUE['roof.id'])	&	!@ интерпретируем первую реплику диалога
+@dialog.sets.default($DIALOG_VALUE['dialog_id'])	&	!@ выставляем настройки по-умолчанию 00_02
+@dialog.replic.int($DIALOG_VALUE['roof_id'])	&	!@ интерпретируем первую реплику диалога
 --- dialog.int ---------------------------------

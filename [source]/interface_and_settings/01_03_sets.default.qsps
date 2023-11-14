@@ -2,15 +2,16 @@ QSP-Game Выставляем дефолтные настройки диалог
 
 $args[0] - идентификатор диалога
 # dialog.sets.default
+!@ pl 'sets.default: <<$args[0]>>'
 !@ Получаем настройки диалога
 local $dialog_sets_ = $dialogs_sets[$args[0]]
 local $d_active_, $d_passive_, $actors_, strings_
 !@ все настройки:	
-$d_active_ = @em.tag.getNum($dialog_sets_, 'default_active')	&	!@ id роли активируемых реплик
+$d_active_ = @em.tag.getNum($dialog_sets_, 'default_active')	&	!@ id роли активируемых реплик /TODO: избыточно, т.к. выделяется при получении текущих настроек /
 $d_passive_ = @em.tag.getNum($dialog_sets_, 'default_passive')	&	!@ id роли пассивных реплик
 !@ $actors_ = @em.tag.get_cont($dialog_sets_, 'actors')			&	!@ список ролей
 strings_ = val(@em.tag.getNum($dialog_sets_, 'strings'))	& !@ число строк диалога, одновременно видимых на экране
-
+!@ pl '[d_act: <<$d_active_>>] [d_pass: <<$d_passive_>>]'
 !@ число реплик, одновременно видимых на экране
 DIALOG_VALUE['default_screen_replics_number'] = iif(strings_ = 0, 10, strings_)
 

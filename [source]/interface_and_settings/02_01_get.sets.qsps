@@ -1,7 +1,7 @@
 QSP-Game Извлекает настройки от текущей реплики
 $args[0] = $args[0]	&	!	идентификатор реплики
-$args[1] = $args[1]	&	!	управление. 'generate' - работает в режиме генерации диалога
 # dialog.get.sets
+pl 'get.sets: <<$args[0]>>'
 local $rid_ = $args[0]
 local $rtype_, $rsets_
 local $actor_act_, $actor_pass_, $act_length_, $rrepeat_, $rshuffle_
@@ -9,8 +9,8 @@ loop while $rid_ <> '':
 	$rsets_ = $dialogs_sets[$rid_]
 	$rtype_ = @em.tag.getNum($rsets_, 'type')
 	if $rtype_ = 'root':
-		if $actor_act_ = '': $actor_act_ = ''
-		if $actor_pass_ = '': $actor_pass_ = ''
+		if $actor_act_ = '': $actor_act_ = @em.tag.getNum($rsets_, 'default_active')
+		if $actor_pass_ = '': $actor_pass_ = @em.tag.getNum($rsets_, 'default_passive')
 		if $act_length_ = '': $act_length_ = $str(DIALOG_VALUE['default_buttons_length'])
 		if $rrepeat_ = '': $rrepeat_ = $DIALOG_VALUE['default_replics_repeat']
 		if $rshuffle_ = '': $rshuffle_ = $DIALOG_VALUE['default_replics_shuffle']
@@ -28,4 +28,5 @@ $result += '[actor_pass:<<$actor_pass_>>]'
 $result += '[act_length:<<$act_length_>>]'
 $result += '[repeat:<<$rrepeat_>>]'
 $result += '[shuffle:<<$rshuffle_>>]'
+pl $result
 --- dialog.get.sets ---------------------------------

@@ -28,10 +28,12 @@ if $user_text = 'dialog':
 	$table_ += "</table>"
 	*p $table_
 end
-if $user_text = 'log': @em.arr.print('$log')
+if $user_text = 'replics': @em.arr.print('$DIALOG_REPLIC_LOG')
 if $user_text = '666': usehtml = 1 - usehtml
 if $user_text = '777': *clr
 if instr($user_text, '> ') = 1: dynamic $mid($user_text, 3)
+if instr($user_text, 'str ') = 1: pl $replace($DIALOG_VALUE[$mid($user_text, 5)], '<', '&lt;')
+if instr($user_text, 'val ') = 1: pl DIALOG_VALUE[$mid($user_text, 5)]
 !@ if $user_text = '555':
 !@ 	args['sec1']=msecscount
 !@ 	:for_i
