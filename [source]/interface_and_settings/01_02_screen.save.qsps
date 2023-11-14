@@ -16,13 +16,13 @@ $dialog_div_['now'] += '</div class="avs_dialog_div">'
 if instr($DIALOG_VALUE['screen.main'],'<div class="avs_dialog_div">') <> 0:
 	!@ Блок диалога присутствует на экране. Формируем новый экран из текущего.
 	$dialog_div_['main'] = $strfind($DIALOG_VALUE['screen.main'], '<div class="avs_dialog_div">[\s\S]*?<\/div class="avs_dialog_div">')
-	$DIALOG_VALUE['screen.now'] = $replace($DIALOG_VALUE['screen.main'], $dialog_div_['main'], $dialog_div_['now'])
-	loop while $strfind($DIALOG_VALUE['screen.now'], '<div class="avs_dialog_hide">[\s\S]*?<\/div class="avs_dialog_hide">')<>'':
-		$dialog_div_['hide'] = $strfind($DIALOG_VALUE['screen.now'], '<div class="avs_dialog_hide">[\s\S]*?<\/div class="avs_dialog_hide">')
-		$DIALOG_VALUE['screen.now'] = $replace($DIALOG_VALUE['screen.now'], $dialog_div_['hide'])
+	$DIALOG_VALUE['screen_now'] = $replace($DIALOG_VALUE['screen.main'], $dialog_div_['main'], $dialog_div_['now'])
+	loop while $strfind($DIALOG_VALUE['screen_now'], '<div class="avs_dialog_hide">[\s\S]*?<\/div class="avs_dialog_hide">')<>'':
+		$dialog_div_['hide'] = $strfind($DIALOG_VALUE['screen_now'], '<div class="avs_dialog_hide">[\s\S]*?<\/div class="avs_dialog_hide">')
+		$DIALOG_VALUE['screen_now'] = $replace($DIALOG_VALUE['screen_now'], $dialog_div_['hide'])
 	end
 else:
 	!@ Блок диалога отсутствует на экране. Значит нам нужен дефолтный экран для интерпретации
-	$DIALOG_VALUE['screen.now'] = $dialog_div_['now']
+	$DIALOG_VALUE['screen_now'] = $dialog_div_['now']
 end
 --- dialog.screen.save ---------------------------------

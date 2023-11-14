@@ -60,8 +60,10 @@ else:
 		killvar '$frase_array_', 0
 	end
 end
-!@ перерисовываем экран:
+!@ обновляем содержимое лога:
 @dialog.log.refresh()
+!@ перерисовываем кадр
+@dialog.screen.reprint()
 --- dialog.replic.print ---------------------------------
 
 $args[1]:

@@ -1,0 +1,6 @@
+QSP-Game обновляем кадр
+
+# screen.reprint
+*clr
+*p $DIALOG_VALUE['screen_now']
+--- screen.reprint ---------------------------------
