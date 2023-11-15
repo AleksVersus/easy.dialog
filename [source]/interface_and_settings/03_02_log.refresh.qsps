@@ -11,7 +11,7 @@ if separator_ <> -1:
 	if separator_ = arrsize('$DIALOG_REPLIC_LOG') - 1:
 		killvar '$DIALOG_REPLIC_LOG', separator_
 		killvar '$counter', counter_pos_
-		DIALOG_VALUE['timer_start'] = 1
+		DIALOG_VALUE['timer_start'] = 0
 	elseif counter_pos_ = -1:
 		$counter[] = 'dialog.timer'
 		settimer 100

@@ -30,7 +30,7 @@ if $d_passive_<>'':
 	$DIALOG_VALUE['default_screen_passive_log'] = $dialogs_body[$d_passive_]
 else:
 	$DIALOG_VALUE['default_screen_passive_log'] = $trim({
-		$result += '<div class="avs-hero-replic"> — <<$args[2]>></div>'
+		$result += '<div class="avs-none-replic"> — <<$args[2]>></div>'
 	})
 end
 

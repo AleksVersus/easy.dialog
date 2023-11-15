@@ -2,1449 +2,1449 @@ QSP-Game Таблица диалогов
 # dialogs_table
 if args[0] = 0:
 	!@ REPLIC_0
-	$dialogs_id['teЦрС6oрsoёЫт9и3'] = 'teЦрС6oрsoёЫт9и3'
-	$dialogs_body['teЦрС6oрsoёЫт9и3'] = ''
-	$dialogs_sets['teЦрС6oрsoёЫт9и3'] = '[default_active:mkY3арёiBC5ИpМOю]
-[default_passive:ChnBбQjHаfвг5сЕч]
-[actors:mkY3арёiBC5ИpМOю|ChnBбQjHаfвг5сЕч|АСGhSефШpBjJдtСЪ:actors][type:root]'
-	dialogs_count['teЦрС6oрsoёЫт9и3'] = 0
-	$dialogs_position['teЦрС6oрsoёЫт9и3'] = ''
-	$dialogs_includes['teЦрС6oрsoёЫт9и3'] = 'bжЪэЭНQоШчэЪGEЛу|mkY3арёiBC5ИpМOю|ChnBбQjHаfвг5сЕч|АСGhSефШpBjJдtСЪ'
-	$dialogs_run['teЦрС6oрsoёЫт9и3'] = {}
+	$dialogs_id['Iоm2шЗzHЙЁgкCZNй'] = 'Iоm2шЗzHЙЁgкCZNй'
+	$dialogs_body['Iоm2шЗzHЙЁgкCZNй'] = ''
+	$dialogs_sets['Iоm2шЗzHЙЁgкCZNй'] = '[default_active:Эs0генЛЫКУcqzsFv]
+[default_passive:VlHСKкЬтOЦn0ьcn0]
+[actors:Эs0генЛЫКУcqzsFv|VlHСKкЬтOЦn0ьcn0|Ь2яЁPЁmНВаqМжRжW:actors][type:root]'
+	dialogs_count['Iоm2шЗzHЙЁgкCZNй'] = 0
+	$dialogs_position['Iоm2шЗzHЙЁgкCZNй'] = ''
+	$dialogs_includes['Iоm2шЗzHЙЁgкCZNй'] = 'S_эYtO2яЦwKЁWЬшM|Эs0генЛЫКУcqzsFv|VlHСKкЬтOЦn0ьcn0|Ь2яЁPЁmНВаqМжRжW'
+	$dialogs_run['Iоm2шЗzHЙЁgкCZNй'] = {}
 	!@ REPLIC_1
-	$dialogs_id['bжЪэЭНQоШчэЪGEЛу'] = 'bжЪэЭНQоШчэЪGEЛу'
-	$dialogs_body['bжЪэЭНQоШчэЪGEЛу'] = ''
-	$dialogs_sets['bжЪэЭНQоШчэЪGEЛу'] = '[type:quest]'
-	dialogs_count['bжЪэЭНQоШчэЪGEЛу'] = 0
-	$dialogs_position['bжЪэЭНQоШчэЪGEЛу'] = 'teЦрС6oрsoёЫт9и3'
-	$dialogs_includes['bжЪэЭНQоШчэЪGEЛу'] = 'VFОгьдsЪpKЭW9Гtj'
-	$dialogs_run['bжЪэЭНQоШчэЪGEЛу'] = {}
+	$dialogs_id['S_эYtO2яЦwKЁWЬшM'] = 'S_эYtO2яЦwKЁWЬшM'
+	$dialogs_body['S_эYtO2яЦwKЁWЬшM'] = ''
+	$dialogs_sets['S_эYtO2яЦwKЁWЬшM'] = '[type:quest]'
+	dialogs_count['S_эYtO2яЦwKЁWЬшM'] = 0
+	$dialogs_position['S_эYtO2яЦwKЁWЬшM'] = 'Iоm2шЗzHЙЁgкCZNй'
+	$dialogs_includes['S_эYtO2яЦwKЁWЬшM'] = 'РыbоЭЭQKUOIлрLvB'
+	$dialogs_run['S_эYtO2яЦwKЁWЬшM'] = {}
 	!@ REPLIC_2
-	$dialogs_id['VFОгьдsЪpKЭW9Гtj'] = 'VFОгьдsЪpKЭW9Гtj'
-	$dialogs_body['VFОгьдsЪpKЭW9Гtj'] = 'Привет, диалоги небось изучаете?'
-	$dialogs_sets['VFОгьдsЪpKЭW9Гtj'] = '[type:quest]'
-	dialogs_count['VFОгьдsЪpKЭW9Гtj'] = 0
-	$dialogs_position['VFОгьдsЪpKЭW9Гtj'] = 'bжЪэЭНQоШчэЪGEЛу'
-	$dialogs_includes['VFОгьдsЪpKЭW9Гtj'] = 'QМлoКfIпFRмCсмЭЙ'
-	$dialogs_run['VFОгьдsЪpKЭW9Гtj'] = {}
+	$dialogs_id['РыbоЭЭQKUOIлрLvB'] = 'РыbоЭЭQKUOIлрLvB'
+	$dialogs_body['РыbоЭЭQKUOIлрLvB'] = 'Привет, диалоги небось изучаете?'
+	$dialogs_sets['РыbоЭЭQKUOIлрLvB'] = '[type:quest]'
+	dialogs_count['РыbоЭЭQKUOIлрLvB'] = 0
+	$dialogs_position['РыbоЭЭQKUOIлрLvB'] = 'S_эYtO2яЦwKЁWЬшM'
+	$dialogs_includes['РыbоЭЭQKUOIлрLvB'] = 'NЕpкНvпшEшS7юЖцl'
+	$dialogs_run['РыbоЭЭQKUOIлрLvB'] = {}
 	!@ REPLIC_3
-	$dialogs_id['QМлoКfIпFRмCсмЭЙ'] = 'QМлoКfIпFRмCсмЭЙ'
-	$dialogs_body['QМлoКfIпFRмCсмЭЙ'] = 'Да, изучаю!'
-	$dialogs_sets['QМлoКfIпFRмCсмЭЙ'] = '[type:answer]'
-	dialogs_count['QМлoКfIпFRмCсмЭЙ'] = 0
-	$dialogs_position['QМлoКfIпFRмCсмЭЙ'] = 'VFОгьдsЪpKЭW9Гtj'
-	$dialogs_includes['QМлoКfIпFRмCсмЭЙ'] = '7S8ыЛ_Щш0eXgбЗu0'
-	$dialogs_run['QМлoКfIпFRмCсмЭЙ'] = {}
+	$dialogs_id['NЕpкНvпшEшS7юЖцl'] = 'NЕpкНvпшEшS7юЖцl'
+	$dialogs_body['NЕpкНvпшEшS7юЖцl'] = 'Да, изучаю!'
+	$dialogs_sets['NЕpкНvпшEшS7юЖцl'] = '[type:answer]'
+	dialogs_count['NЕpкНvпшEшS7юЖцl'] = 0
+	$dialogs_position['NЕpкНvпшEшS7юЖцl'] = 'РыbоЭЭQKUOIлрLvB'
+	$dialogs_includes['NЕpкНvпшEшS7юЖцl'] = 'лL0lPМwuЩЩLsЖt6Д'
+	$dialogs_run['NЕpкНvпшEшS7юЖцl'] = {}
 	!@ REPLIC_4
-	$dialogs_id['7S8ыЛ_Щш0eXgбЗu0'] = '7S8ыЛ_Щш0eXgбЗu0'
-	$dialogs_body['7S8ыЛ_Щш0eXgбЗu0'] = 'А я тут один из трёх примеров, как вы, наверное, заметили.'
-	$dialogs_sets['7S8ыЛ_Щш0eXgбЗu0'] = '[type:quest]'
-	dialogs_count['7S8ыЛ_Щш0eXgбЗu0'] = 0
-	$dialogs_position['7S8ыЛ_Щш0eXgбЗu0'] = 'QМлoКfIпFRмCсмЭЙ'
-	$dialogs_includes['7S8ыЛ_Щш0eXgбЗu0'] = 'nOШUКTxRяДА5Ыa0я'
-	$dialogs_run['7S8ыЛ_Щш0eXgбЗu0'] = {}
+	$dialogs_id['лL0lPМwuЩЩLsЖt6Д'] = 'лL0lPМwuЩЩLsЖt6Д'
+	$dialogs_body['лL0lPМwuЩЩLsЖt6Д'] = 'А я тут один из трёх примеров, как вы, наверное, заметили.'
+	$dialogs_sets['лL0lPМwuЩЩLsЖt6Д'] = '[type:quest]'
+	dialogs_count['лL0lPМwuЩЩLsЖt6Д'] = 0
+	$dialogs_position['лL0lPМwuЩЩLsЖt6Д'] = 'NЕpкНvпшEшS7юЖцl'
+	$dialogs_includes['лL0lPМwuЩЩLsЖt6Д'] = 'hxiмbTamи4ЖZНjФG'
+	$dialogs_run['лL0lPМwuЩЩLsЖt6Д'] = {}
 	!@ REPLIC_5
-	$dialogs_id['nOШUКTxRяДА5Ыa0я'] = 'nOШUКTxRяДА5Ыa0я'
-	$dialogs_body['nOШUКTxRяДА5Ыa0я'] = 'А что демонстрируешь?'
-	$dialogs_sets['nOШUКTxRяДА5Ыa0я'] = '[type:answer]'
-	dialogs_count['nOШUКTxRяДА5Ыa0я'] = 0
-	$dialogs_position['nOШUКTxRяДА5Ыa0я'] = '7S8ыЛ_Щш0eXgбЗu0'
-	$dialogs_includes['nOШUКTxRяДА5Ыa0я'] = 'Щ9WОГZzWMрыBZм2z'
-	$dialogs_run['nOШUКTxRяДА5Ыa0я'] = {}
+	$dialogs_id['hxiмbTamи4ЖZНjФG'] = 'hxiмbTamи4ЖZНjФG'
+	$dialogs_body['hxiмbTamи4ЖZНjФG'] = 'А что демонстрируешь?'
+	$dialogs_sets['hxiмbTamи4ЖZНjФG'] = '[type:answer]'
+	dialogs_count['hxiмbTamи4ЖZНjФG'] = 0
+	$dialogs_position['hxiмbTamи4ЖZНjФG'] = 'лL0lPМwuЩЩLsЖt6Д'
+	$dialogs_includes['hxiмbTamи4ЖZНjФG'] = 'ЦбЫ9мCюЪ4rPС2дДЁ'
+	$dialogs_run['hxiмbTamи4ЖZНjФG'] = {}
 	!@ REPLIC_6
-	$dialogs_id['Щ9WОГZzWMрыBZм2z'] = 'Щ9WОГZzWMрыBZм2z'
-	$dialogs_body['Щ9WОГZzWMрыBZм2z'] = 'Я демонстрирую простейший линейный диалог. Если вы посмотрите код, вы увидите, что все мои фразы являются вложенными друг в друга действиями.'
-	$dialogs_sets['Щ9WОГZzWMрыBZм2z'] = '[type:quest]'
-	dialogs_count['Щ9WОГZzWMрыBZм2z'] = 0
-	$dialogs_position['Щ9WОГZzWMрыBZм2z'] = 'nOШUКTxRяДА5Ыa0я'
-	$dialogs_includes['Щ9WОГZzWMрыBZм2z'] = 'мjЙha1Эо5HnйъМmA'
-	$dialogs_run['Щ9WОГZzWMрыBZм2z'] = {}
+	$dialogs_id['ЦбЫ9мCюЪ4rPС2дДЁ'] = 'ЦбЫ9мCюЪ4rPС2дДЁ'
+	$dialogs_body['ЦбЫ9мCюЪ4rPС2дДЁ'] = 'Я демонстрирую простейший линейный диалог. Если вы посмотрите код, вы увидите, что все мои фразы являются вложенными друг в друга действиями.'
+	$dialogs_sets['ЦбЫ9мCюЪ4rPС2дДЁ'] = '[type:quest]'
+	dialogs_count['ЦбЫ9мCюЪ4rPС2дДЁ'] = 0
+	$dialogs_position['ЦбЫ9мCюЪ4rPС2дДЁ'] = 'hxiмbTamи4ЖZНjФG'
+	$dialogs_includes['ЦбЫ9мCюЪ4rPС2дДЁ'] = '9s2UЩБBпRtPОyL_Ц'
+	$dialogs_run['ЦбЫ9мCюЪ4rPС2дДЁ'] = {}
 	!@ REPLIC_7
-	$dialogs_id['мjЙha1Эо5HnйъМmA'] = 'мjЙha1Эо5HnйъМmA'
-	$dialogs_body['мjЙha1Эо5HnйъМmA'] = 'А Арагорн что делает?'
-	$dialogs_sets['мjЙha1Эо5HnйъМmA'] = '[type:answer]'
-	dialogs_count['мjЙha1Эо5HnйъМmA'] = 0
-	$dialogs_position['мjЙha1Эо5HnйъМmA'] = 'Щ9WОГZzWMрыBZм2z'
-	$dialogs_includes['мjЙha1Эо5HnйъМmA'] = 'xhТЫ5КТЧеbЭуКYеK'
-	$dialogs_run['мjЙha1Эо5HnйъМmA'] = {}
+	$dialogs_id['9s2UЩБBпRtPОyL_Ц'] = '9s2UЩБBпRtPОyL_Ц'
+	$dialogs_body['9s2UЩБBпRtPОyL_Ц'] = 'А Арагорн что делает?'
+	$dialogs_sets['9s2UЩБBпRtPОyL_Ц'] = '[type:answer]'
+	dialogs_count['9s2UЩБBпRtPОyL_Ц'] = 0
+	$dialogs_position['9s2UЩБBпRtPОyL_Ц'] = 'ЦбЫ9мCюЪ4rPС2дДЁ'
+	$dialogs_includes['9s2UЩБBпRtPОyL_Ц'] = 'рЕз0I4злгGHВд4v3'
+	$dialogs_run['9s2UЩБBпRtPОyL_Ц'] = {}
 	!@ REPLIC_8
-	$dialogs_id['xhТЫ5КТЧеbЭуКYеK'] = 'xhТЫ5КТЧеbЭуКYеK'
-	$dialogs_body['xhТЫ5КТЧеbЭуКYеK'] = 'А Арагорн у нас показывает многовариантный диалог с использованием переменных.'
-	$dialogs_sets['xhТЫ5КТЧеbЭуКYеK'] = '[type:quest]'
-	dialogs_count['xhТЫ5КТЧеbЭуКYеK'] = 0
-	$dialogs_position['xhТЫ5КТЧеbЭуКYеK'] = 'мjЙha1Эо5HnйъМmA'
-	$dialogs_includes['xhТЫ5КТЧеbЭуКYеK'] = 'бzWМчqЮштNфpfCdЕ'
-	$dialogs_run['xhТЫ5КТЧеbЭуКYеK'] = {}
+	$dialogs_id['рЕз0I4злгGHВд4v3'] = 'рЕз0I4злгGHВд4v3'
+	$dialogs_body['рЕз0I4злгGHВд4v3'] = 'А Арагорн у нас показывает многовариантный диалог с использованием переменных.'
+	$dialogs_sets['рЕз0I4злгGHВд4v3'] = '[type:quest]'
+	dialogs_count['рЕз0I4злгGHВд4v3'] = 0
+	$dialogs_position['рЕз0I4злгGHВд4v3'] = '9s2UЩБBпRtPОyL_Ц'
+	$dialogs_includes['рЕз0I4злгGHВд4v3'] = 'аKъEFОмКЕoЭоMЦCC'
+	$dialogs_run['рЕз0I4злгGHВд4v3'] = {}
 	!@ REPLIC_9
-	$dialogs_id['бzWМчqЮштNфpfCdЕ'] = 'бzWМчqЮштNфpfCdЕ'
-	$dialogs_body['бzWМчqЮштNфpfCdЕ'] = 'А где я могу посмотреть код?'
-	$dialogs_sets['бzWМчqЮштNфpfCdЕ'] = '[type:answer]'
-	dialogs_count['бzWМчqЮштNфpfCdЕ'] = 0
-	$dialogs_position['бzWМчqЮштNфpfCdЕ'] = 'xhТЫ5КТЧеbЭуКYеK'
-	$dialogs_includes['бzWМчqЮштNфpfCdЕ'] = 'CВадVаЧЭфWHJъсjм'
-	$dialogs_run['бzWМчqЮштNфpfCdЕ'] = {}
+	$dialogs_id['аKъEFОмКЕoЭоMЦCC'] = 'аKъEFОмКЕoЭоMЦCC'
+	$dialogs_body['аKъEFОмКЕoЭоMЦCC'] = 'А где я могу посмотреть код?'
+	$dialogs_sets['аKъEFОмКЕoЭоMЦCC'] = '[type:answer]'
+	dialogs_count['аKъEFОмКЕoЭоMЦCC'] = 0
+	$dialogs_position['аKъEFОмКЕoЭоMЦCC'] = 'рЕз0I4злгGHВд4v3'
+	$dialogs_includes['аKъEFОмКЕoЭоMЦCC'] = 'ЗГусъЁQГVHXHхФво'
+	$dialogs_run['аKъEFОмКЕoЭоMЦCC'] = {}
 end
 if args[0] = 1:
 	!@ REPLIC_10
-	$dialogs_id['CВадVаЧЭфWHJъсjм'] = 'CВадVаЧЭфWHJъсjм'
-	$dialogs_body['CВадVаЧЭфWHJъсjм'] = 'Ну, это просто! Как выйдешь из бара, у тебя появится несколько действий. Там ты сможешь рассмотреть код каждой локации. Или просто открой этот файл в QGen и посмотри, как всё сделано.'
-	$dialogs_sets['CВадVаЧЭфWHJъсjм'] = '[type:quest]'
-	dialogs_count['CВадVаЧЭфWHJъсjм'] = 0
-	$dialogs_position['CВадVаЧЭфWHJъсjм'] = 'бzWМчqЮштNфpfCdЕ'
-	$dialogs_includes['CВадVаЧЭфWHJъсjм'] = 'фБ7ФezЕь7RgJрСNВ|ПDsP1qQ9egVSPЩ4x'
-	$dialogs_run['CВадVаЧЭфWHJъсjм'] = {}
+	$dialogs_id['ЗГусъЁQГVHXHхФво'] = 'ЗГусъЁQГVHXHхФво'
+	$dialogs_body['ЗГусъЁQГVHXHхФво'] = 'Ну, это просто! Как выйдешь из бара, у тебя появится несколько действий. Там ты сможешь рассмотреть код каждой локации. Или просто открой этот файл в QGen и посмотри, как всё сделано.'
+	$dialogs_sets['ЗГусъЁQГVHXHхФво'] = '[type:quest]'
+	dialogs_count['ЗГусъЁQГVHXHхФво'] = 0
+	$dialogs_position['ЗГусъЁQГVHXHхФво'] = 'аKъEFОмКЕoЭоMЦCC'
+	$dialogs_includes['ЗГусъЁQГVHXHхФво'] = 'Tjх8ЬwrмXпыЯсЙФо|wJнФяclГциHуWхVN'
+	$dialogs_run['ЗГусъЁQГVHXHхФво'] = {}
 	!@ REPLIC_11
-	$dialogs_id['фБ7ФezЕь7RgJрСNВ'] = 'фБ7ФezЕь7RgJрСNВ'
-	$dialogs_body['фБ7ФezЕь7RgJрСNВ'] = 'Спасибо за помощь, я пойду посмотрю!'
-	$dialogs_sets['фБ7ФezЕь7RgJрСNВ'] = '[closeup]
+	$dialogs_id['Tjх8ЬwrмXпыЯсЙФо'] = 'Tjх8ЬwrмXпыЯсЙФо'
+	$dialogs_body['Tjх8ЬwrмXпыЯсЙФо'] = 'Спасибо за помощь, я пойду посмотрю!'
+	$dialogs_sets['Tjх8ЬwrмXпыЯсЙФо'] = '[closeup]
 [type:answer]'
-	dialogs_count['фБ7ФezЕь7RgJрСNВ'] = 0
-	$dialogs_position['фБ7ФezЕь7RgJрСNВ'] = 'CВадVаЧЭфWHJъсjм'
-	$dialogs_includes['фБ7ФezЕь7RgJрСNВ'] = ''
-	$dialogs_run['фБ7ФezЕь7RgJрСNВ'] = {}
+	dialogs_count['Tjх8ЬwrмXпыЯсЙФо'] = 0
+	$dialogs_position['Tjх8ЬwrмXпыЯсЙФо'] = 'ЗГусъЁQГVHXHхФво'
+	$dialogs_includes['Tjх8ЬwrмXпыЯсЙФо'] = ''
+	$dialogs_run['Tjх8ЬwrмXпыЯсЙФо'] = {}
 	!@ REPLIC_12
-	$dialogs_id['ПDsP1qQ9egVSPЩ4x'] = 'ПDsP1qQ9egVSPЩ4x'
-	$dialogs_body['ПDsP1qQ9egVSPЩ4x'] = 'Как уже было объявлено, сами примеры кода были опущены. Вы всегда можете посмотреть, как реализован тот или иной диалог, открыв исходники в репозитории.'
-	$dialogs_sets['ПDsP1qQ9egVSPЩ4x'] = '[actor_this:АСGhSефШpBjJдtСЪ]
+	$dialogs_id['wJнФяclГциHуWхVN'] = 'wJнФяclГциHуWхVN'
+	$dialogs_body['wJнФяclГциHуWхVN'] = 'Как уже было объявлено, сами примеры кода были опущены. Вы всегда можете посмотреть, как реализован тот или иной диалог, открыв исходники в репозитории.'
+	$dialogs_sets['wJнФяclГциHуWхVN'] = '[actor_this:Ь2яЁPЁmНВаqМжRжW]
 [type:quest]'
-	dialogs_count['ПDsP1qQ9egVSPЩ4x'] = 0
-	$dialogs_position['ПDsP1qQ9egVSPЩ4x'] = 'CВадVаЧЭфWHJъсjм'
-	$dialogs_includes['ПDsP1qQ9egVSPЩ4x'] = ''
-	$dialogs_run['ПDsP1qQ9egVSPЩ4x'] = {}
+	dialogs_count['wJнФяclГциHуWхVN'] = 0
+	$dialogs_position['wJнФяclГциHуWхVN'] = 'ЗГусъЁQГVHXHхФво'
+	$dialogs_includes['wJнФяclГциHуWхVN'] = ''
+	$dialogs_run['wJнФяclГциHуWхVN'] = {}
 	!@ REPLIC_13
-	$dialogs_id['mkY3арёiBC5ИpМOю'] = 'mkY3арёiBC5ИpМOю'
-	$dialogs_body['mkY3арёiBC5ИpМOю'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
+	$dialogs_id['Эs0генЛЫКУcqzsFv'] = 'Эs0генЛЫКУcqzsFv'
+	$dialogs_body['Эs0генЛЫКУcqzsFv'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
 local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
 $result += '<div class="avs-hero-replic">'
 $result += '<span style="color:#000000;"><<$name_>>:</span>'
 $result += '<span style="color:#000000;"> — <<$args[2]>></span>'
 $result += '</div>'}
-	$dialogs_sets['mkY3арёiBC5ИpМOю'] = 'name="Вы"
+	$dialogs_sets['Эs0генЛЫКУcqzsFv'] = 'name="Вы"
 
 	<default_active>[type:role]'
-	dialogs_count['mkY3арёiBC5ИpМOю'] = 0
-	$dialogs_position['mkY3арёiBC5ИpМOю'] = 'teЦрС6oрsoёЫт9и3'
-	$dialogs_includes['mkY3арёiBC5ИpМOю'] = ''
-	$dialogs_run['mkY3арёiBC5ИpМOю'] = {!@ внешний вид кнопок для ответов.
+	dialogs_count['Эs0генЛЫКУcqzsFv'] = 0
+	$dialogs_position['Эs0генЛЫКУcqzsFv'] = 'Iоm2шЗzHЙЁgкCZNй'
+	$dialogs_includes['Эs0генЛЫКУcqzsFv'] = ''
+	$dialogs_run['Эs0генЛЫКУcqzsFv'] = {!@ внешний вид кнопок для ответов.
 $result += '<div class="avs-act-button"><<$args[2]>></div>'}
 	!@ REPLIC_14
-	$dialogs_id['ChnBбQjHаfвг5сЕч'] = 'ChnBбQjHаfвг5сЕч'
-	$dialogs_body['ChnBбQjHаfвг5сЕч'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
+	$dialogs_id['VlHСKкЬтOЦn0ьcn0'] = 'VlHСKкЬтOЦn0ьcn0'
+	$dialogs_body['VlHСKкЬтOЦn0ьcn0'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
 local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
 $result += '<div class="avs-barmen-replic">'
 $result += '<span style="color:#000000;"><<$name_>>:</span>'
 $result += '<span style="color:#000000;"> — <<$args[2]>></span>'
 $result += '</div>'}
-	$dialogs_sets['ChnBбQjHаfвг5сЕч'] = 'Заметьте, здесь можно писать любой текст, он никак не повлияет на настройки,
+	$dialogs_sets['VlHСKкЬтOЦn0ьcn0'] = 'Заметьте, здесь можно писать любой текст, он никак не повлияет на настройки,
 	если отделён от них пробельным символом или символом перевода строки. Однако, для разгрузки
 	памяти в релизной версии игры, рекомендую удалять весь лишний текст из настроек.
 	name="Бармен" ! Настройка имени npc
 
 	<default_passive>[type:role]'
-	dialogs_count['ChnBбQjHаfвг5сЕч'] = 0
-	$dialogs_position['ChnBбQjHаfвг5сЕч'] = 'teЦрС6oрsoёЫт9и3'
-	$dialogs_includes['ChnBбQjHаfвг5сЕч'] = ''
-	$dialogs_run['ChnBбQjHаfвг5сЕч'] = {}
+	dialogs_count['VlHСKкЬтOЦn0ьcn0'] = 0
+	$dialogs_position['VlHСKкЬтOЦn0ьcn0'] = 'Iоm2шЗzHЙЁgкCZNй'
+	$dialogs_includes['VlHСKкЬтOЦn0ьcn0'] = ''
+	$dialogs_run['VlHСKкЬтOЦn0ьcn0'] = {}
 	!@ REPLIC_15
-	$dialogs_id['АСGhSефШpBjJдtСЪ'] = 'АСGhSефШpBjJдtСЪ'
-	$dialogs_body['АСGhSефШpBjJдtСЪ'] = {$result += '<div class="avs-remarka-replic">'
+	$dialogs_id['Ь2яЁPЁmНВаqМжRжW'] = 'Ь2яЁPЁmНВаqМжRжW'
+	$dialogs_body['Ь2яЁPЁmНВаqМжRжW'] = {$result += '<div class="avs-remarka-replic">'
 $result += '<span style="color:#888888;font-style:italic;"><strong>Ремарка от Aleks Versus:</strong>	<<$args[2]>>:</span>'
 $result += '</div>'}
-	$dialogs_sets['АСGhSефШpBjJдtСЪ'] = '[type:role]'
-	dialogs_count['АСGhSефШpBjJдtСЪ'] = 0
-	$dialogs_position['АСGhSефШpBjJдtСЪ'] = 'teЦрС6oрsoёЫт9и3'
-	$dialogs_includes['АСGhSефШpBjJдtСЪ'] = ''
-	$dialogs_run['АСGhSефШpBjJдtСЪ'] = {}
+	$dialogs_sets['Ь2яЁPЁmНВаqМжRжW'] = '[type:role]'
+	dialogs_count['Ь2яЁPЁmНВаqМжRжW'] = 0
+	$dialogs_position['Ь2яЁPЁmНВаqМжRжW'] = 'Iоm2шЗzHЙЁgкCZNй'
+	$dialogs_includes['Ь2яЁPЁmНВаqМжRжW'] = ''
+	$dialogs_run['Ь2яЁPЁmНВаqМжRжW'] = {}
 	!@ REPLIC_16
-	$dialogs_id['Р4WдMМЦя7нAu0Еwе'] = 'Р4WдMМЦя7нAu0Еwе'
-	$dialogs_body['Р4WдMМЦя7нAu0Еwе'] = ''
-	$dialogs_sets['Р4WдMМЦя7нAu0Еwе'] = '[default_active:yжЖВGHяатGЬПЭХD8]
-[default_passive:ъьeэRTнUzNQгсУЭХ]
-[actors:yжЖВGHяатGЬПЭХD8|ъьeэRTнUzNQгсУЭХ:actors][type:root]'
-	dialogs_count['Р4WдMМЦя7нAu0Еwе'] = 0
-	$dialogs_position['Р4WдMМЦя7нAu0Еwе'] = ''
-	$dialogs_includes['Р4WдMМЦя7нAu0Еwе'] = 'кWФg3cлиНйkПLдёЫ|yжЖВGHяатGЬПЭХD8|ъьeэRTнUzNQгсУЭХ'
-	$dialogs_run['Р4WдMМЦя7нAu0Еwе'] = {}
+	$dialogs_id['ШtпАЙПGЙрЁнбЛЪРA'] = 'ШtпАЙПGЙрЁнбЛЪРA'
+	$dialogs_body['ШtпАЙПGЙрЁнбЛЪРA'] = ''
+	$dialogs_sets['ШtпАЙПGЙрЁнбЛЪРA'] = '[default_active:YЬEXMФWPЦdXFbоЙt]
+[default_passive:УCLPПЕЫутХэ9тюQz]
+[actors:YЬEXMФWPЦdXFbоЙt|УCLPПЕЫутХэ9тюQz:actors][type:root]'
+	dialogs_count['ШtпАЙПGЙрЁнбЛЪРA'] = 0
+	$dialogs_position['ШtпАЙПGЙрЁнбЛЪРA'] = ''
+	$dialogs_includes['ШtпАЙПGЙрЁнбЛЪРA'] = 'zЧЪашЫдтoФыЛmJ7r|YЬEXMФWPЦdXFbоЙt|УCLPПЕЫутХэ9тюQz'
+	$dialogs_run['ШtпАЙПGЙрЁнбЛЪРA'] = {}
 	!@ REPLIC_17
-	$dialogs_id['кWФg3cлиНйkПLдёЫ'] = 'кWФg3cлиНйkПLдёЫ'
-	$dialogs_body['кWФg3cлиНйkПLдёЫ'] = ''
-	$dialogs_sets['кWФg3cлиНйkПLдёЫ'] = '[type:quest]'
-	dialogs_count['кWФg3cлиНйkПLдёЫ'] = 0
-	$dialogs_position['кWФg3cлиНйkПLдёЫ'] = 'Р4WдMМЦя7нAu0Еwе'
-	$dialogs_includes['кWФg3cлиНйkПLдёЫ'] = 'БкTVЛблэаалФoГVg|МJгЫПJUФqЙНbSЭaК|ZаОфкPЛIЫBVёчПзЦ'
-	$dialogs_run['кWФg3cлиНйkПLдёЫ'] = {}
+	$dialogs_id['zЧЪашЫдтoФыЛmJ7r'] = 'zЧЪашЫдтoФыЛmJ7r'
+	$dialogs_body['zЧЪашЫдтoФыЛmJ7r'] = ''
+	$dialogs_sets['zЧЪашЫдтoФыЛmJ7r'] = '[type:quest]'
+	dialogs_count['zЧЪашЫдтoФыЛmJ7r'] = 0
+	$dialogs_position['zЧЪашЫдтoФыЛmJ7r'] = 'ШtпАЙПGЙрЁнбЛЪРA'
+	$dialogs_includes['zЧЪашЫдтoФыЛmJ7r'] = '0яФКщДjk_ОхwхЦ9ч|гuёАЫnF_йvлsjPvL|ьСЙvСaWBйЖюзQвФС'
+	$dialogs_run['zЧЪашЫдтoФыЛmJ7r'] = {}
 	!@ REPLIC_18
-	$dialogs_id['БкTVЛблэаалФoГVg'] = 'БкTVЛблэаалФoГVg'
-	$dialogs_body['БкTVЛблэаалФoГVg'] = 'Ну хватит уже подходить! Варианты не бесконечны!'
-	$dialogs_sets['БкTVЛблэаалФoГVg'] = '<if>$GAME_VALUE[''диалог.пьяница.выбор ветки'']=''third''</if>
+	$dialogs_id['0яФКщДjk_ОхwхЦ9ч'] = '0яФКщДjk_ОхwхЦ9ч'
+	$dialogs_body['0яФКщДjk_ОхwхЦ9ч'] = 'Ну хватит уже подходить! Варианты не бесконечны!'
+	$dialogs_sets['0яФКщДjk_ОхwхЦ9ч'] = '<if>$GAME_VALUE[''диалог.пьяница.выбор ветки'']=''third''</if>
 [type:quest]'
-	dialogs_count['БкTVЛблэаалФoГVg'] = 0
-	$dialogs_position['БкTVЛблэаалФoГVg'] = 'кWФg3cлиНйkПLдёЫ'
-	$dialogs_includes['БкTVЛблэаалФoГVg'] = 'хSюЧNшPя7tEFWfts'
-	$dialogs_run['БкTVЛблэаалФoГVg'] = {}
+	dialogs_count['0яФКщДjk_ОхwхЦ9ч'] = 0
+	$dialogs_position['0яФКщДjk_ОхwхЦ9ч'] = 'zЧЪашЫдтoФыЛmJ7r'
+	$dialogs_includes['0яФКщДjk_ОхwхЦ9ч'] = 'ZеgКщыiйМФiсoyЖf'
+	$dialogs_run['0яФКщДjk_ОхwхЦ9ч'] = {}
 	!@ REPLIC_19
-	$dialogs_id['МJгЫПJUФqЙНbSЭaК'] = 'МJгЫПJUФqЙНbSЭaК'
-	$dialogs_body['МJгЫПJUФqЙНbSЭaК'] = 'Ну что, убедился?'
-	$dialogs_sets['МJгЫПJUФqЙНbSЭaК'] = '<if>$GAME_VALUE[''диалог.пьяница.выбор ветки'']=''second''</if>
+	$dialogs_id['гuёАЫnF_йvлsjPvL'] = 'гuёАЫnF_йvлsjPvL'
+	$dialogs_body['гuёАЫnF_йvлsjPvL'] = 'Ну что, убедился?'
+	$dialogs_sets['гuёАЫnF_йvлsjPvL'] = '<if>$GAME_VALUE[''диалог.пьяница.выбор ветки'']=''second''</if>
 [type:quest]'
-	dialogs_count['МJгЫПJUФqЙНbSЭaК'] = 0
-	$dialogs_position['МJгЫПJUФqЙНbSЭaК'] = 'кWФg3cлиНйkПLдёЫ'
-	$dialogs_includes['МJгЫПJUФqЙНbSЭaК'] = 'Рnшж2jгMнcРТНNPБ'
-	$dialogs_run['МJгЫПJUФqЙНbSЭaК'] = {}
+	dialogs_count['гuёАЫnF_йvлsjPvL'] = 0
+	$dialogs_position['гuёАЫnF_йvлsjPvL'] = 'zЧЪашЫдтoФыЛmJ7r'
+	$dialogs_includes['гuёАЫnF_йvлsjPvL'] = 'GroчwъBЮcEаЛцЪrа'
+	$dialogs_run['гuёАЫnF_йvлsjPvL'] = {}
 end
 if args[0] = 2:
 	!@ REPLIC_20
-	$dialogs_id['ZаОфкPЛIЫBVёчПзЦ'] = 'ZаОфкPЛIЫBVёчПзЦ'
-	$dialogs_body['ZаОфкPЛIЫBVёчПзЦ'] = 'Ик... Привет!'
-	$dialogs_sets['ZаОфкPЛIЫBVёчПзЦ'] = '<if>$GAME_VALUE[''диалог.пьяница.выбор ветки'']=''''</if>
+	$dialogs_id['ьСЙvСaWBйЖюзQвФС'] = 'ьСЙvСaWBйЖюзQвФС'
+	$dialogs_body['ьСЙvСaWBйЖюзQвФС'] = 'Ик... Привет!'
+	$dialogs_sets['ьСЙvСaWBйЖюзQвФС'] = '<if>$GAME_VALUE[''диалог.пьяница.выбор ветки'']=''''</if>
 [type:quest]'
-	dialogs_count['ZаОфкPЛIЫBVёчПзЦ'] = 0
-	$dialogs_position['ZаОфкPЛIЫBVёчПзЦ'] = 'кWФg3cлиНйkПLдёЫ'
-	$dialogs_includes['ZаОфкPЛIЫBVёчПзЦ'] = 'ЫКооWфЪЪюУAcявЛn'
-	$dialogs_run['ZаОфкPЛIЫBVёчПзЦ'] = {}
+	dialogs_count['ьСЙvСaWBйЖюзQвФС'] = 0
+	$dialogs_position['ьСЙvСaWBйЖюзQвФС'] = 'zЧЪашЫдтoФыЛmJ7r'
+	$dialogs_includes['ьСЙvСaWBйЖюзQвФС'] = 'oч8ГЯY5ЧZr8РПюvЮ'
+	$dialogs_run['ьСЙvСaWBйЖюзQвФС'] = {}
 	!@ REPLIC_21
-	$dialogs_id['ЫКооWфЪЪюУAcявЛn'] = 'ЫКооWфЪЪюУAcявЛn'
-	$dialogs_body['ЫКооWфЪЪюУAcявЛn'] = 'А ты что тут показываешь?'
-	$dialogs_sets['ЫКооWфЪЪюУAcявЛn'] = '[type:answer]'
-	dialogs_count['ЫКооWфЪЪюУAcявЛn'] = 0
-	$dialogs_position['ЫКооWфЪЪюУAcявЛn'] = 'ZаОфкPЛIЫBVёчПзЦ'
-	$dialogs_includes['ЫКооWфЪЪюУAcявЛn'] = 'Vh69яTМБРяУПеГРШ'
-	$dialogs_run['ЫКооWфЪЪюУAcявЛn'] = {}
+	$dialogs_id['oч8ГЯY5ЧZr8РПюvЮ'] = 'oч8ГЯY5ЧZr8РПюvЮ'
+	$dialogs_body['oч8ГЯY5ЧZr8РПюvЮ'] = 'А ты что тут показываешь?'
+	$dialogs_sets['oч8ГЯY5ЧZr8РПюvЮ'] = '[type:answer]'
+	dialogs_count['oч8ГЯY5ЧZr8РПюvЮ'] = 0
+	$dialogs_position['oч8ГЯY5ЧZr8РПюvЮ'] = 'ьСЙvСaWBйЖюзQвФС'
+	$dialogs_includes['oч8ГЯY5ЧZr8РПюvЮ'] = 'ЙЬKPЧЙпВЬeмM9ФчL'
+	$dialogs_run['oч8ГЯY5ЧZr8РПюvЮ'] = {}
 	!@ REPLIC_22
-	$dialogs_id['Vh69яTМБРяУПеГРШ'] = 'Vh69яTМБРяУПеГРШ'
-	$dialogs_body['Vh69яTМБРяУПеГРШ'] = 'А я тут демонстрирую как сделать так, чтобы персонаж при последующем визите говорил что-то новое! Ик!'
-	$dialogs_sets['Vh69яTМБРяУПеГРШ'] = '[type:quest]'
-	dialogs_count['Vh69яTМБРяУПеГРШ'] = 0
-	$dialogs_position['Vh69яTМБРяУПеГРШ'] = 'ЫКооWфЪЪюУAcявЛn'
-	$dialogs_includes['Vh69яTМБРяУПеГРШ'] = 'щоExjлUвзиGWЦАyЭ'
-	$dialogs_run['Vh69яTМБРяУПеГРШ'] = {}
+	$dialogs_id['ЙЬKPЧЙпВЬeмM9ФчL'] = 'ЙЬKPЧЙпВЬeмM9ФчL'
+	$dialogs_body['ЙЬKPЧЙпВЬeмM9ФчL'] = 'А я тут демонстрирую как сделать так, чтобы персонаж при последующем визите говорил что-то новое! Ик!'
+	$dialogs_sets['ЙЬKPЧЙпВЬeмM9ФчL'] = '[type:quest]'
+	dialogs_count['ЙЬKPЧЙпВЬeмM9ФчL'] = 0
+	$dialogs_position['ЙЬKPЧЙпВЬeмM9ФчL'] = 'oч8ГЯY5ЧZr8РПюvЮ'
+	$dialogs_includes['ЙЬKPЧЙпВЬeмM9ФчL'] = 'oКTE1JмvуqjБЧБ5u'
+	$dialogs_run['ЙЬKPЧЙпВЬeмM9ФчL'] = {}
 	!@ REPLIC_23
-	$dialogs_id['щоExjлUвзиGWЦАyЭ'] = 'щоExjлUвзиGWЦАyЭ'
-	$dialogs_body['щоExjлUвзиGWЦАyЭ'] = 'И как это проверить?'
-	$dialogs_sets['щоExjлUвзиGWЦАyЭ'] = '[type:answer]'
-	dialogs_count['щоExjлUвзиGWЦАyЭ'] = 0
-	$dialogs_position['щоExjлUвзиGWЦАyЭ'] = 'Vh69яTМБРяУПеГРШ'
-	$dialogs_includes['щоExjлUвзиGWЦАyЭ'] = 'ГmUЙCESЙиO04дJVц'
-	$dialogs_run['щоExjлUвзиGWЦАyЭ'] = {}
+	$dialogs_id['oКTE1JмvуqjБЧБ5u'] = 'oКTE1JмvуqjБЧБ5u'
+	$dialogs_body['oКTE1JмvуqjБЧБ5u'] = 'И как это проверить?'
+	$dialogs_sets['oКTE1JмvуqjБЧБ5u'] = '[type:answer]'
+	dialogs_count['oКTE1JмvуqjБЧБ5u'] = 0
+	$dialogs_position['oКTE1JмvуqjБЧБ5u'] = 'ЙЬKPЧЙпВЬeмM9ФчL'
+	$dialogs_includes['oКTE1JмvуqjБЧБ5u'] = 'ь9фДХМOрGuСu63эз'
+	$dialogs_run['oКTE1JмvуqjБЧБ5u'] = {}
 	!@ REPLIC_24
-	$dialogs_id['ГmUЙCESЙиO04дJVц'] = 'ГmUЙCESЙиO04дJVц'
-	$dialogs_body['ГmUЙCESЙиO04дJVц'] = 'Да очень просто! Попробуй заговорить со мной ещё раз!'
-	$dialogs_sets['ГmUЙCESЙиO04дJVц'] = '[type:quest]'
-	dialogs_count['ГmUЙCESЙиO04дJVц'] = 0
-	$dialogs_position['ГmUЙCESЙиO04дJVц'] = 'щоExjлUвзиGWЦАyЭ'
-	$dialogs_includes['ГmUЙCESЙиO04дJVц'] = 'IЫnн77ХГлvюиyЦмМ'
-	$dialogs_run['ГmUЙCESЙиO04дJVц'] = {}
+	$dialogs_id['ь9фДХМOрGuСu63эз'] = 'ь9фДХМOрGuСu63эз'
+	$dialogs_body['ь9фДХМOрGuСu63эз'] = 'Да очень просто! Попробуй заговорить со мной ещё раз!'
+	$dialogs_sets['ь9фДХМOрGuСu63эз'] = '[type:quest]'
+	dialogs_count['ь9фДХМOрGuСu63эз'] = 0
+	$dialogs_position['ь9фДХМOрGuСu63эз'] = 'oКTE1JмvуqjБЧБ5u'
+	$dialogs_includes['ь9фДХМOрGuСu63эз'] = 'иi7ЖЪyгэДRзвЗсмШ'
+	$dialogs_run['ь9фДХМOрGuСu63эз'] = {}
 	!@ REPLIC_25
-	$dialogs_id['IЫnн77ХГлvюиyЦмМ'] = 'IЫnн77ХГлvюиyЦмМ'
-	$dialogs_body['IЫnн77ХГлvюиyЦмМ'] = ''
-	$dialogs_sets['IЫnн77ХГлvюиyЦмМ'] = '[act_name:Отойти от него:act_name]
+	$dialogs_id['иi7ЖЪyгэДRзвЗсмШ'] = 'иi7ЖЪyгэДRзвЗсмШ'
+	$dialogs_body['иi7ЖЪyгэДRзвЗсмШ'] = ''
+	$dialogs_sets['иi7ЖЪyгэДRзвЗсмШ'] = '[act_name:Отойти от него:act_name]
 [closeup]
 [type:answer]'
-	dialogs_count['IЫnн77ХГлvюиyЦмМ'] = 0
-	$dialogs_position['IЫnн77ХГлvюиyЦмМ'] = 'ГmUЙCESЙиO04дJVц'
-	$dialogs_includes['IЫnн77ХГлvюиyЦмМ'] = ''
-	$dialogs_run['IЫnн77ХГлvюиyЦмМ'] = {$GAME_VALUE['диалог.пьяница.выбор ветки']='second'}
+	dialogs_count['иi7ЖЪyгэДRзвЗсмШ'] = 0
+	$dialogs_position['иi7ЖЪyгэДRзвЗсмШ'] = 'ь9фДХМOрGuСu63эз'
+	$dialogs_includes['иi7ЖЪyгэДRзвЗсмШ'] = ''
+	$dialogs_run['иi7ЖЪyгэДRзвЗсмШ'] = {$GAME_VALUE['диалог.пьяница.выбор ветки']='second'}
 	!@ REPLIC_26
-	$dialogs_id['Рnшж2jгMнcРТНNPБ'] = 'Рnшж2jгMнcРТНNPБ'
-	$dialogs_body['Рnшж2jгMнcРТНNPБ'] = 'Да, убедился.'
-	$dialogs_sets['Рnшж2jгMнcРТНNPБ'] = '[type:answer]'
-	dialogs_count['Рnшж2jгMнcРТНNPБ'] = 0
-	$dialogs_position['Рnшж2jгMнcРТНNPБ'] = 'МJгЫПJUФqЙНbSЭaК'
-	$dialogs_includes['Рnшж2jгMнcРТНNPБ'] = 'tFСcЭОаМОуWб_9у0'
-	$dialogs_run['Рnшж2jгMнcРТНNPБ'] = {}
+	$dialogs_id['GroчwъBЮcEаЛцЪrа'] = 'GroчwъBЮcEаЛцЪrа'
+	$dialogs_body['GroчwъBЮcEаЛцЪrа'] = 'Да, убедился.'
+	$dialogs_sets['GroчwъBЮcEаЛцЪrа'] = '[type:answer]'
+	dialogs_count['GroчwъBЮcEаЛцЪrа'] = 0
+	$dialogs_position['GroчwъBЮcEаЛцЪrа'] = 'гuёАЫnF_йvлsjPvL'
+	$dialogs_includes['GroчwъBЮcEаЛцЪrа'] = 'uШРёbЩеNBLФЗбккЪ'
+	$dialogs_run['GroчwъBЮcEаЛцЪrа'] = {}
 	!@ REPLIC_27
-	$dialogs_id['tFСcЭОаМОуWб_9у0'] = 'tFСcЭОаМОуWб_9у0'
-	$dialogs_body['tFСcЭОаМОуWб_9у0'] = 'Вот, то-то же!'
-	$dialogs_sets['tFСcЭОаМОуWб_9у0'] = '[type:quest]'
-	dialogs_count['tFСcЭОаМОуWб_9у0'] = 0
-	$dialogs_position['tFСcЭОаМОуWб_9у0'] = 'Рnшж2jгMнcРТНNPБ'
-	$dialogs_includes['tFСcЭОаМОуWб_9у0'] = '9сэчЧЦCЧTzдИFvуF'
-	$dialogs_run['tFСcЭОаМОуWб_9у0'] = {}
+	$dialogs_id['uШРёbЩеNBLФЗбккЪ'] = 'uШРёbЩеNBLФЗбккЪ'
+	$dialogs_body['uШРёbЩеNBLФЗбккЪ'] = 'Вот, то-то же!'
+	$dialogs_sets['uШРёbЩеNBLФЗбккЪ'] = '[type:quest]'
+	dialogs_count['uШРёbЩеNBLФЗбккЪ'] = 0
+	$dialogs_position['uШРёbЩеNBLФЗбккЪ'] = 'GroчwъBЮcEаЛцЪrа'
+	$dialogs_includes['uШРёbЩеNBLФЗбккЪ'] = 'хHkФhuЩliAаrъSТx'
+	$dialogs_run['uШРёbЩеNBLФЗбккЪ'] = {}
 	!@ REPLIC_28
-	$dialogs_id['9сэчЧЦCЧTzдИFvуF'] = '9сэчЧЦCЧTzдИFvуF'
-	$dialogs_body['9сэчЧЦCЧTzдИFvуF'] = ''
-	$dialogs_sets['9сэчЧЦCЧTzдИFvуF'] = '[act_name:Отойти от него:act_name]
+	$dialogs_id['хHkФhuЩliAаrъSТx'] = 'хHkФhuЩliAаrъSТx'
+	$dialogs_body['хHkФhuЩliAаrъSТx'] = ''
+	$dialogs_sets['хHkФhuЩliAаrъSТx'] = '[act_name:Отойти от него:act_name]
 [closeup]
 [type:answer]'
-	dialogs_count['9сэчЧЦCЧTzдИFvуF'] = 0
-	$dialogs_position['9сэчЧЦCЧTzдИFvуF'] = 'tFСcЭОаМОуWб_9у0'
-	$dialogs_includes['9сэчЧЦCЧTzдИFvуF'] = ''
-	$dialogs_run['9сэчЧЦCЧTzдИFvуF'] = {$GAME_VALUE['диалог.пьяница.выбор ветки']='third'}
+	dialogs_count['хHkФhuЩliAаrъSТx'] = 0
+	$dialogs_position['хHkФhuЩliAаrъSТx'] = 'uШРёbЩеNBLФЗбккЪ'
+	$dialogs_includes['хHkФhuЩliAаrъSТx'] = ''
+	$dialogs_run['хHkФhuЩliAаrъSТx'] = {$GAME_VALUE['диалог.пьяница.выбор ветки']='third'}
 	!@ REPLIC_29
-	$dialogs_id['хSюЧNшPя7tEFWfts'] = 'хSюЧNшPя7tEFWfts'
-	$dialogs_body['хSюЧNшPя7tEFWfts'] = 'А сколько вариантов?'
-	$dialogs_sets['хSюЧNшPя7tEFWfts'] = '[type:answer]'
-	dialogs_count['хSюЧNшPя7tEFWfts'] = 0
-	$dialogs_position['хSюЧNшPя7tEFWfts'] = 'БкTVЛблэаалФoГVg'
-	$dialogs_includes['хSюЧNшPя7tEFWfts'] = 'ЗkЬь5т5ЫыRЭЙДuЦQ'
-	$dialogs_run['хSюЧNшPя7tEFWfts'] = {}
+	$dialogs_id['ZеgКщыiйМФiсoyЖf'] = 'ZеgКщыiйМФiсoyЖf'
+	$dialogs_body['ZеgКщыiйМФiсoyЖf'] = 'А сколько вариантов?'
+	$dialogs_sets['ZеgКщыiйМФiсoyЖf'] = '[type:answer]'
+	dialogs_count['ZеgКщыiйМФiсoyЖf'] = 0
+	$dialogs_position['ZеgКщыiйМФiсoyЖf'] = '0яФКщДjk_ОхwхЦ9ч'
+	$dialogs_includes['ZеgКщыiйМФiсoyЖf'] = 'йьппооТrtTZЩGёdY'
+	$dialogs_run['ZеgКщыiйМФiсoyЖf'] = {}
 end
 if args[0] = 3:
 	!@ REPLIC_30
-	$dialogs_id['ЗkЬь5т5ЫыRЭЙДuЦQ'] = 'ЗkЬь5т5ЫыRЭЙДuЦQ'
-	$dialogs_body['ЗkЬь5т5ЫыRЭЙДuЦQ'] = 'Конкретно в этом диалоге — три. Можно сделать и больше, но для примера, думаю, хватит!'
-	$dialogs_sets['ЗkЬь5т5ЫыRЭЙДuЦQ'] = '[type:quest]'
-	dialogs_count['ЗkЬь5т5ЫыRЭЙДuЦQ'] = 0
-	$dialogs_position['ЗkЬь5т5ЫыRЭЙДuЦQ'] = 'хSюЧNшPя7tEFWfts'
-	$dialogs_includes['ЗkЬь5т5ЫыRЭЙДuЦQ'] = 'NэЫTlxэCяЕМvУЛcл'
-	$dialogs_run['ЗkЬь5т5ЫыRЭЙДuЦQ'] = {}
+	$dialogs_id['йьппооТrtTZЩGёdY'] = 'йьппооТrtTZЩGёdY'
+	$dialogs_body['йьппооТrtTZЩGёdY'] = 'Конкретно в этом диалоге — три. Можно сделать и больше, но для примера, думаю, хватит!'
+	$dialogs_sets['йьппооТrtTZЩGёdY'] = '[type:quest]'
+	dialogs_count['йьппооТrtTZЩGёdY'] = 0
+	$dialogs_position['йьппооТrtTZЩGёdY'] = 'ZеgКщыiйМФiсoyЖf'
+	$dialogs_includes['йьппооТrtTZЩGёdY'] = 'КщCьAШЭ7kйтвvtтL'
+	$dialogs_run['йьппооТrtTZЩGёdY'] = {}
 	!@ REPLIC_31
-	$dialogs_id['NэЫTlxэCяЕМvУЛcл'] = 'NэЫTlxэCяЕМvУЛcл'
-	$dialogs_body['NэЫTlxэCяЕМvУЛcл'] = ''
-	$dialogs_sets['NэЫTlxэCяЕМvУЛcл'] = '[act_name:Отойти от него:act_name]
+	$dialogs_id['КщCьAШЭ7kйтвvtтL'] = 'КщCьAШЭ7kйтвvtтL'
+	$dialogs_body['КщCьAШЭ7kйтвvtтL'] = ''
+	$dialogs_sets['КщCьAШЭ7kйтвvtтL'] = '[act_name:Отойти от него:act_name]
 [closeup]
 [type:answer]'
-	dialogs_count['NэЫTlxэCяЕМvУЛcл'] = 0
-	$dialogs_position['NэЫTlxэCяЕМvУЛcл'] = 'ЗkЬь5т5ЫыRЭЙДuЦQ'
-	$dialogs_includes['NэЫTlxэCяЕМvУЛcл'] = ''
-	$dialogs_run['NэЫTlxэCяЕМvУЛcл'] = {}
+	dialogs_count['КщCьAШЭ7kйтвvtтL'] = 0
+	$dialogs_position['КщCьAШЭ7kйтвvtтL'] = 'йьппооТrtTZЩGёdY'
+	$dialogs_includes['КщCьAШЭ7kйтвvtтL'] = ''
+	$dialogs_run['КщCьAШЭ7kйтвvtтL'] = {}
 	!@ REPLIC_32
-	$dialogs_id['yжЖВGHяатGЬПЭХD8'] = 'yжЖВGHяатGЬПЭХD8'
-	$dialogs_body['yжЖВGHяатGЬПЭХD8'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
+	$dialogs_id['YЬEXMФWPЦdXFbоЙt'] = 'YЬEXMФWPЦdXFbоЙt'
+	$dialogs_body['YЬEXMФWPЦdXFbоЙt'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
 local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
 $result += '<div class="avs-hero-replic">'
 $result += '<span style="color:#000000;"><<$name_>>:</span>'
 $result += '<span style="color:#000000;"> — <<$args[2]>></span>'
 $result += '</div>'}
-	$dialogs_sets['yжЖВGHяатGЬПЭХD8'] = 'name="Вы"
+	$dialogs_sets['YЬEXMФWPЦdXFbоЙt'] = 'name="Вы"
 
 	<default_active>[type:role]'
-	dialogs_count['yжЖВGHяатGЬПЭХD8'] = 0
-	$dialogs_position['yжЖВGHяатGЬПЭХD8'] = 'Р4WдMМЦя7нAu0Еwе'
-	$dialogs_includes['yжЖВGHяатGЬПЭХD8'] = ''
-	$dialogs_run['yжЖВGHяатGЬПЭХD8'] = {!@ внешний вид кнопок для ответов.
+	dialogs_count['YЬEXMФWPЦdXFbоЙt'] = 0
+	$dialogs_position['YЬEXMФWPЦdXFbоЙt'] = 'ШtпАЙПGЙрЁнбЛЪРA'
+	$dialogs_includes['YЬEXMФWPЦdXFbоЙt'] = ''
+	$dialogs_run['YЬEXMФWPЦdXFbоЙt'] = {!@ внешний вид кнопок для ответов.
 $result += '<div class="avs-act-button"><<$args[2]>></div>'}
 	!@ REPLIC_33
-	$dialogs_id['ъьeэRTнUzNQгсУЭХ'] = 'ъьeэRTнUzNQгсУЭХ'
-	$dialogs_body['ъьeэRTнUzNQгсУЭХ'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
+	$dialogs_id['УCLPПЕЫутХэ9тюQz'] = 'УCLPПЕЫутХэ9тюQz'
+	$dialogs_body['УCLPПЕЫутХэ9тюQz'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
 local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
 $result += '<div class="avs-barmen-replic">'
 $result += '<span style="color:#000000;"><<$name_>>:</span>'
 $result += '<span style="color:#000000;"> — <<$args[2]>></span>'
 $result += '</div>'}
-	$dialogs_sets['ъьeэRTнUzNQгсУЭХ'] = 'name="Пьяница"
+	$dialogs_sets['УCLPПЕЫутХэ9тюQz'] = 'name="Пьяница"
 
 	<default_passive>[type:role]'
-	dialogs_count['ъьeэRTнUzNQгсУЭХ'] = 0
-	$dialogs_position['ъьeэRTнUzNQгсУЭХ'] = 'Р4WдMМЦя7нAu0Еwе'
-	$dialogs_includes['ъьeэRTнUzNQгсУЭХ'] = ''
-	$dialogs_run['ъьeэRTнUzNQгсУЭХ'] = {}
+	dialogs_count['УCLPПЕЫутХэ9тюQz'] = 0
+	$dialogs_position['УCLPПЕЫутХэ9тюQz'] = 'ШtпАЙПGЙрЁнбЛЪРA'
+	$dialogs_includes['УCLPПЕЫутХэ9тюQz'] = ''
+	$dialogs_run['УCLPПЕЫутХэ9тюQz'] = {}
 	!@ REPLIC_34
-	$dialogs_id['jJлРь_JВуAченiс_'] = 'jJлРь_JВуAченiс_'
-	$dialogs_body['jJлРь_JВуAченiс_'] = ''
-	$dialogs_sets['jJлРь_JВуAченiс_'] = '[default_active:УKAцJиTшjU5JХebG]
-[default_passive:__эжXЧЧеUхCCn_Нv]
-[actors:УKAцJиTшjU5JХebG|__эжXЧЧеUхCCn_Нv:actors][type:root]'
-	dialogs_count['jJлРь_JВуAченiс_'] = 0
-	$dialogs_position['jJлРь_JВуAченiс_'] = ''
-	$dialogs_includes['jJлРь_JВуAченiс_'] = 'Т_1янкСЁЯцшаШъEа|УKAцJиTшjU5JХebG|__эжXЧЧеUхCCn_Нv'
-	$dialogs_run['jJлРь_JВуAченiс_'] = {}
+	$dialogs_id['fVРAсХjЙЖаШDДВб1'] = 'fVРAсХjЙЖаШDДВб1'
+	$dialogs_body['fVРAсХjЙЖаШDДВб1'] = ''
+	$dialogs_sets['fVРAсХjЙЖаШDДВб1'] = '[default_active:ЦцNBдъgUёЦкфjBсс]
+[default_passive:aSKСYjmЩщЫabыНR3]
+[actors:ЦцNBдъgUёЦкфjBсс|aSKСYjmЩщЫabыНR3:actors][type:root]'
+	dialogs_count['fVРAсХjЙЖаШDДВб1'] = 0
+	$dialogs_position['fVРAсХjЙЖаШDДВб1'] = ''
+	$dialogs_includes['fVРAсХjЙЖаШDДВб1'] = 'ЫкъMоeпкGВmЩЪнс3|ЦцNBдъgUёЦкфjBсс|aSKСYjmЩщЫabыНR3'
+	$dialogs_run['fVРAсХjЙЖаШDДВб1'] = {}
 	!@ REPLIC_35
-	$dialogs_id['Т_1янкСЁЯцшаШъEа'] = 'Т_1янкСЁЯцшаШъEа'
-	$dialogs_body['Т_1янкСЁЯцшаШъEа'] = ''
-	$dialogs_sets['Т_1янкСЁЯцшаШъEа'] = '[type:quest]'
-	dialogs_count['Т_1янкСЁЯцшаШъEа'] = 0
-	$dialogs_position['Т_1янкСЁЯцшаШъEа'] = 'jJлРь_JВуAченiс_'
-	$dialogs_includes['Т_1янкСЁЯцшаШъEа'] = 'ВсCiДЖVрuоЩ7v_ЮД|DBвУKнsэыUхCБnUb|mРпЦтуplнЛз9тkБк'
-	$dialogs_run['Т_1янкСЁЯцшаШъEа'] = {}
+	$dialogs_id['ЫкъMоeпкGВmЩЪнс3'] = 'ЫкъMоeпкGВmЩЪнс3'
+	$dialogs_body['ЫкъMоeпкGВmЩЪнс3'] = ''
+	$dialogs_sets['ЫкъMоeпкGВmЩЪнс3'] = '[type:quest]'
+	dialogs_count['ЫкъMоeпкGВmЩЪнс3'] = 0
+	$dialogs_position['ЫкъMоeпкGВmЩЪнс3'] = 'fVРAсХjЙЖаШDДВб1'
+	$dialogs_includes['ЫкъMоeпкGВmЩЪнс3'] = 'ЁТ9mЫВFb5ЬNкLЫзЛ|0д1вЩpЭОoыЗрХЙzb|R8ЧЫNБХЭKаDЭ_лРЕ'
+	$dialogs_run['ЫкъMоeпкGВmЩЪнс3'] = {}
 	!@ REPLIC_36
-	$dialogs_id['ВсCiДЖVрuоЩ7v_ЮД'] = 'ВсCiДЖVрuоЩ7v_ЮД'
-	$dialogs_body['ВсCiДЖVрuоЩ7v_ЮД'] = ''
-	$dialogs_sets['ВсCiДЖVрuоЩ7v_ЮД'] = '[type:answer]'
-	dialogs_count['ВсCiДЖVрuоЩ7v_ЮД'] = 0
-	$dialogs_position['ВсCiДЖVрuоЩ7v_ЮД'] = 'Т_1янкСЁЯцшаШъEа'
-	$dialogs_includes['ВсCiДЖVрuоЩ7v_ЮД'] = 'Ьtы89cщцV5tЪzMМб|щФП6aКM_hкГмqsэМ'
-	$dialogs_run['ВсCiДЖVрuоЩ7v_ЮД'] = {}
+	$dialogs_id['ЁТ9mЫВFb5ЬNкLЫзЛ'] = 'ЁТ9mЫВFb5ЬNкLЫзЛ'
+	$dialogs_body['ЁТ9mЫВFb5ЬNкLЫзЛ'] = ''
+	$dialogs_sets['ЁТ9mЫВFb5ЬNкLЫзЛ'] = '[type:answer]'
+	dialogs_count['ЁТ9mЫВFb5ЬNкLЫзЛ'] = 0
+	$dialogs_position['ЁТ9mЫВFb5ЬNкLЫзЛ'] = 'ЫкъMоeпкGВmЩЪнс3'
+	$dialogs_includes['ЁТ9mЫВFb5ЬNкLЫзЛ'] = 'YUЗkrоuвГZ_ВйфеO|nлАfbnf6UQщVsЕcM'
+	$dialogs_run['ЁТ9mЫВFb5ЬNкLЫзЛ'] = {}
 	!@ REPLIC_37
-	$dialogs_id['DBвУKнsэыUхCБnUb'] = 'DBвУKнsэыUхCБnUb'
-	$dialogs_body['DBвУKнsэыUхCБnUb'] = 'Ну что, ещё что-то спросить желаешь?'
-	$dialogs_sets['DBвУKнsэыUхCБnUb'] = '<if>$GAME_VALUE["диалог.арагорн.выбор ветки"]="second"</if>
+	$dialogs_id['0д1вЩpЭОoыЗрХЙzb'] = '0д1вЩpЭОoыЗрХЙzb'
+	$dialogs_body['0д1вЩpЭОoыЗрХЙzb'] = 'Ну что, ещё что-то спросить желаешь?'
+	$dialogs_sets['0д1вЩpЭОoыЗрХЙzb'] = '<if>$GAME_VALUE["диалог.арагорн.выбор ветки"]="second"</if>
 [type:quest]'
-	dialogs_count['DBвУKнsэыUхCБnUb'] = 0
-	$dialogs_position['DBвУKнsэыUхCБnUb'] = 'Т_1янкСЁЯцшаШъEа'
-	$dialogs_includes['DBвУKнsэыUхCБnUb'] = 'mНxrръЯеtДздSфШh|ХеФмFKюBВюbзoyOA'
-	$dialogs_run['DBвУKнsэыUхCБnUb'] = {}
+	dialogs_count['0д1вЩpЭОoыЗрХЙzb'] = 0
+	$dialogs_position['0д1вЩpЭОoыЗрХЙzb'] = 'ЫкъMоeпкGВmЩЪнс3'
+	$dialogs_includes['0д1вЩpЭОoыЗрХЙzb'] = 'еQ9ЗLнЕэм2ЙKЪбЭЫ|фЬчjвcОvЭwJвёрЪW'
+	$dialogs_run['0д1вЩpЭОoыЗрХЙzb'] = {}
 	!@ REPLIC_38
-	$dialogs_id['mРпЦтуplнЛз9тkБк'] = 'mРпЦтуplнЛз9тkБк'
-	$dialogs_body['mРпЦтуplнЛз9тkБк'] = 'Приветствую, диалоги рассматриваете разные, как я погляжу?'
-	$dialogs_sets['mРпЦтуplнЛз9тkБк'] = '<if>$GAME_VALUE["диалог.арагорн.выбор ветки"]=""</if>
+	$dialogs_id['R8ЧЫNБХЭKаDЭ_лРЕ'] = 'R8ЧЫNБХЭKаDЭ_лРЕ'
+	$dialogs_body['R8ЧЫNБХЭKаDЭ_лРЕ'] = 'Приветствую, диалоги рассматриваете разные, как я погляжу?'
+	$dialogs_sets['R8ЧЫNБХЭKаDЭ_лРЕ'] = '<if>$GAME_VALUE["диалог.арагорн.выбор ветки"]=""</if>
 [type:quest]'
-	dialogs_count['mРпЦтуplнЛз9тkБк'] = 0
-	$dialogs_position['mРпЦтуplнЛз9тkБк'] = 'Т_1янкСЁЯцшаШъEа'
-	$dialogs_includes['mРпЦтуplнЛз9тkБк'] = 'ъ_AMг4жBяожTцкЦЯ'
-	$dialogs_run['mРпЦтуplнЛз9тkБк'] = {$GAME_VALUE["диалог.арагорн.выбор ветки"]="second"}
+	dialogs_count['R8ЧЫNБХЭKаDЭ_лРЕ'] = 0
+	$dialogs_position['R8ЧЫNБХЭKаDЭ_лРЕ'] = 'ЫкъMоeпкGВmЩЪнс3'
+	$dialogs_includes['R8ЧЫNБХЭKаDЭ_лРЕ'] = 'tыЬyЛзMФЦzсЩКШYЗ'
+	$dialogs_run['R8ЧЫNБХЭKаDЭ_лРЕ'] = {$GAME_VALUE["диалог.арагорн.выбор ветки"]="second"}
 	!@ REPLIC_39
-	$dialogs_id['ъ_AMг4жBяожTцкЦЯ'] = 'ъ_AMг4жBяожTцкЦЯ'
-	$dialogs_body['ъ_AMг4жBяожTцкЦЯ'] = 'Да, решил вот, с вами поговорить.'
-	$dialogs_sets['ъ_AMг4жBяожTцкЦЯ'] = '[type:answer]'
-	dialogs_count['ъ_AMг4жBяожTцкЦЯ'] = 0
-	$dialogs_position['ъ_AMг4жBяожTцкЦЯ'] = 'mРпЦтуplнЛз9тkБк'
-	$dialogs_includes['ъ_AMг4жBяожTцкЦЯ'] = 'c8дТiRwOМqPglbtr'
-	$dialogs_run['ъ_AMг4жBяожTцкЦЯ'] = {}
+	$dialogs_id['tыЬyЛзMФЦzсЩКШYЗ'] = 'tыЬyЛзMФЦzсЩКШYЗ'
+	$dialogs_body['tыЬyЛзMФЦzсЩКШYЗ'] = 'Да, решил вот, с вами поговорить.'
+	$dialogs_sets['tыЬyЛзMФЦzсЩКШYЗ'] = '[type:answer]'
+	dialogs_count['tыЬyЛзMФЦzсЩКШYЗ'] = 0
+	$dialogs_position['tыЬyЛзMФЦzсЩКШYЗ'] = 'R8ЧЫNБХЭKаDЭ_лРЕ'
+	$dialogs_includes['tыЬyЛзMФЦzсЩКШYЗ'] = '_ОtЁыUтCНъJf9XТь'
+	$dialogs_run['tыЬyЛзMФЦzсЩКШYЗ'] = {}
 end
 if args[0] = 4:
 	!@ REPLIC_40
-	$dialogs_id['c8дТiRwOМqPglbtr'] = 'c8дТiRwOМqPglbtr'
-	$dialogs_body['c8дТiRwOМqPglbtr'] = 'Спрашивай, не стесняйся, у меня самый продвинутый диалог!'
-	$dialogs_sets['c8дТiRwOМqPglbtr'] = '[type:quest]'
-	dialogs_count['c8дТiRwOМqPglbtr'] = 0
-	$dialogs_position['c8дТiRwOМqPglbtr'] = 'ъ_AMг4жBяожTцкЦЯ'
-	$dialogs_includes['c8дТiRwOМqPglbtr'] = 'яДЕeIS2SэHффКуЮD'
-	$dialogs_run['c8дТiRwOМqPglbtr'] = {}
+	$dialogs_id['_ОtЁыUтCНъJf9XТь'] = '_ОtЁыUтCНъJf9XТь'
+	$dialogs_body['_ОtЁыUтCНъJf9XТь'] = 'Спрашивай, не стесняйся, у меня самый продвинутый диалог!'
+	$dialogs_sets['_ОtЁыUтCНъJf9XТь'] = '[type:quest]'
+	dialogs_count['_ОtЁыUтCНъJf9XТь'] = 0
+	$dialogs_position['_ОtЁыUтCНъJf9XТь'] = 'tыЬyЛзMФЦzсЩКШYЗ'
+	$dialogs_includes['_ОtЁыUтCНъJf9XТь'] = 'ЖУчцyТrбечSуV1tB'
+	$dialogs_run['_ОtЁыUтCНъJf9XТь'] = {}
 	!@ REPLIC_41
-	$dialogs_id['яДЕeIS2SэHффКуЮD'] = 'яДЕeIS2SэHффКуЮD'
-	$dialogs_body['яДЕeIS2SэHффКуЮD'] = ''
-	$dialogs_sets['яДЕeIS2SэHффКуЮD'] = '[marker:яДЕeIS2SэHффКуЮD]
+	$dialogs_id['ЖУчцyТrбечSуV1tB'] = 'ЖУчцyТrбечSуV1tB'
+	$dialogs_body['ЖУчцyТrбечSуV1tB'] = ''
+	$dialogs_sets['ЖУчцyТrбечSуV1tB'] = '[marker:ЖУчцyТrбечSуV1tB]
 [type:quest]'
-	dialogs_count['яДЕeIS2SэHффКуЮD'] = 0
-	$dialogs_position['яДЕeIS2SэHффКуЮD'] = 'c8дТiRwOМqPglbtr'
-	$dialogs_includes['яДЕeIS2SэHффКуЮD'] = 'DdмёЫЖВжДЭЫёvНLс|жXПАФрipgГхgЮлVа|yyrЁЙiРYДЁLxYЖЮл'
-	$dialogs_run['яДЕeIS2SэHффКуЮD'] = {}
+	dialogs_count['ЖУчцyТrбечSуV1tB'] = 0
+	$dialogs_position['ЖУчцyТrбечSуV1tB'] = '_ОtЁыUтCНъJf9XТь'
+	$dialogs_includes['ЖУчцyТrбечSуV1tB'] = 'РEZрhз93ЯFуЯЕiЩп|vюр_rжXы75jpИel0|1снсfмжГюпJёeтYз'
+	$dialogs_run['ЖУчцyТrбечSуV1tB'] = {}
 	!@ REPLIC_42
-	$dialogs_id['DdмёЫЖВжДЭЫёvНLс'] = 'DdмёЫЖВжДЭЫёvНLс'
-	$dialogs_body['DdмёЫЖВжДЭЫёvНLс'] = 'Ладно, пойду я, пожалуй.'
-	$dialogs_sets['DdмёЫЖВжДЭЫёvНLс'] = '[type:answer]'
-	dialogs_count['DdмёЫЖВжДЭЫёvНLс'] = 0
-	$dialogs_position['DdмёЫЖВжДЭЫёvНLс'] = 'яДЕeIS2SэHффКуЮD'
-	$dialogs_includes['DdмёЫЖВжДЭЫёvНLс'] = 'DzXРVHЕЬюУEНэTGО'
-	$dialogs_run['DdмёЫЖВжДЭЫёvНLс'] = {cla}
+	$dialogs_id['РEZрhз93ЯFуЯЕiЩп'] = 'РEZрhз93ЯFуЯЕiЩп'
+	$dialogs_body['РEZрhз93ЯFуЯЕiЩп'] = 'Ладно, пойду я, пожалуй.'
+	$dialogs_sets['РEZрhз93ЯFуЯЕiЩп'] = '[type:answer]'
+	dialogs_count['РEZрhз93ЯFуЯЕiЩп'] = 0
+	$dialogs_position['РEZрhз93ЯFуЯЕiЩп'] = 'ЖУчцyТrбечSуV1tB'
+	$dialogs_includes['РEZрhз93ЯFуЯЕiЩп'] = 'NфpйK6sФMмnyLВ1b'
+	$dialogs_run['РEZрhз93ЯFуЯЕiЩп'] = {cla}
 	!@ REPLIC_43
-	$dialogs_id['жXПАФрipgГхgЮлVа'] = 'жXПАФрipgГхgЮлVа'
-	$dialogs_body['жXПАФрipgГхgЮлVа'] = 'А чем бармен с тем алкоголиком заведуют?'
-	$dialogs_sets['жXПАФрipgГхgЮлVа'] = '[type:answer]'
-	dialogs_count['жXПАФрipgГхgЮлVа'] = 0
-	$dialogs_position['жXПАФрipgГхgЮлVа'] = 'яДЕeIS2SэHффКуЮD'
-	$dialogs_includes['жXПАФрipgГхgЮлVа'] = 'мЗ6ЗqqЖгnцУpЧXЭA'
-	$dialogs_run['жXПАФрipgГхgЮлVа'] = {}
+	$dialogs_id['vюр_rжXы75jpИel0'] = 'vюр_rжXы75jpИel0'
+	$dialogs_body['vюр_rжXы75jpИel0'] = 'А чем бармен с тем алкоголиком заведуют?'
+	$dialogs_sets['vюр_rжXы75jpИel0'] = '[type:answer]'
+	dialogs_count['vюр_rжXы75jpИel0'] = 0
+	$dialogs_position['vюр_rжXы75jpИel0'] = 'ЖУчцyТrбечSуV1tB'
+	$dialogs_includes['vюр_rжXы75jpИel0'] = 'QБCяуРвXs3utсhРU'
+	$dialogs_run['vюр_rжXы75jpИel0'] = {}
 	!@ REPLIC_44
-	$dialogs_id['yyrЁЙiРYДЁLxYЖЮл'] = 'yyrЁЙiРYДЁLxYЖЮл'
-	$dialogs_body['yyrЁЙiРYДЁLxYЖЮл'] = 'Как реализован твой диалог?'
-	$dialogs_sets['yyrЁЙiРYДЁLxYЖЮл'] = '[type:answer]'
-	dialogs_count['yyrЁЙiРYДЁLxYЖЮл'] = 0
-	$dialogs_position['yyrЁЙiРYДЁLxYЖЮл'] = 'яДЕeIS2SэHффКуЮD'
-	$dialogs_includes['yyrЁЙiРYДЁLxYЖЮл'] = 'ЖЯцГЮВe8nWжн8lКЮ'
-	$dialogs_run['yyrЁЙiРYДЁLxYЖЮл'] = {}
+	$dialogs_id['1снсfмжГюпJёeтYз'] = '1снсfмжГюпJёeтYз'
+	$dialogs_body['1снсfмжГюпJёeтYз'] = 'Как реализован твой диалог?'
+	$dialogs_sets['1снсfмжГюпJёeтYз'] = '[type:answer]'
+	dialogs_count['1снсfмжГюпJёeтYз'] = 0
+	$dialogs_position['1снсfмжГюпJёeтYз'] = 'ЖУчцyТrбечSуV1tB'
+	$dialogs_includes['1снсfмжГюпJёeтYз'] = 'ДgFлгQGЪcЩИшЕлйF'
+	$dialogs_run['1снсfмжГюпJёeтYз'] = {}
 	!@ REPLIC_45
-	$dialogs_id['ЖЯцГЮВe8nWжн8lКЮ'] = 'ЖЯцГЮВe8nWжн8lКЮ'
-	$dialogs_body['ЖЯцГЮВe8nWжн8lКЮ'] = 'Ну, это довольно просто. Диалог состоит из нескольких блоков — после того как ты выберешь один из вариантов, он удаляется из списка действий. Иногда удаляются все действия, а вместо них добавляются новые. Как сейчас, например.'
-	$dialogs_sets['ЖЯцГЮВe8nWжн8lКЮ'] = '[leveljump:щФП6aКM_hкГмqsэМ]
+	$dialogs_id['ДgFлгQGЪcЩИшЕлйF'] = 'ДgFлгQGЪcЩИшЕлйF'
+	$dialogs_body['ДgFлгQGЪcЩИшЕлйF'] = 'Ну, это довольно просто. Диалог состоит из нескольких блоков — после того как ты выберешь один из вариантов, он удаляется из списка действий. Иногда удаляются все действия, а вместо них добавляются новые. Как сейчас, например.'
+	$dialogs_sets['ДgFлгQGЪcЩИшЕлйF'] = '[leveljump:nлАfbnf6UQщVsЕcM]
 [type:quest]'
-	dialogs_count['ЖЯцГЮВe8nWжн8lКЮ'] = 0
-	$dialogs_position['ЖЯцГЮВe8nWжн8lКЮ'] = 'yyrЁЙiРYДЁLxYЖЮл'
-	$dialogs_includes['ЖЯцГЮВe8nWжн8lКЮ'] = ''
-	$dialogs_run['ЖЯцГЮВe8nWжн8lКЮ'] = {}
+	dialogs_count['ДgFлгQGЪcЩИшЕлйF'] = 0
+	$dialogs_position['ДgFлгQGЪcЩИшЕлйF'] = '1снсfмжГюпJёeтYз'
+	$dialogs_includes['ДgFлгQGЪcЩИшЕлйF'] = ''
+	$dialogs_run['ДgFлгQGЪcЩИшЕлйF'] = {}
 	!@ REPLIC_46
-	$dialogs_id['мЗ6ЗqqЖгnцУpЧXЭA'] = 'мЗ6ЗqqЖгnцУpЧXЭA'
-	$dialogs_body['мЗ6ЗqqЖгnцУpЧXЭA'] = 'Бармен показывает пример самого простого линейного диалога, пьяница — немногим лучше, показывает как в сущности легко сделать чтобы при каждом следующем разговоре были другие фразы. У них даже цветами фразы героя и NPC не разделены, да и локация одна на двоих. Если хочешь знать моё мнение — у меня самый грамотно образованный диалог. Но и самый сложный.'
-	$dialogs_sets['мЗ6ЗqqЖгnцУpЧXЭA'] = '[leveljump:Ьtы89cщцV5tЪzMМб]
+	$dialogs_id['QБCяуРвXs3utсhРU'] = 'QБCяуРвXs3utсhРU'
+	$dialogs_body['QБCяуРвXs3utсhРU'] = 'Бармен показывает пример самого простого линейного диалога, пьяница — немногим лучше, показывает как в сущности легко сделать чтобы при каждом следующем разговоре были другие фразы. У них даже цветами фразы героя и NPC не разделены, да и локация одна на двоих. Если хочешь знать моё мнение — у меня самый грамотно образованный диалог. Но и самый сложный.'
+	$dialogs_sets['QБCяуРвXs3utсhРU'] = '[leveljump:YUЗkrоuвГZ_ВйфеO]
 [type:quest]'
-	dialogs_count['мЗ6ЗqqЖгnцУpЧXЭA'] = 0
-	$dialogs_position['мЗ6ЗqqЖгnцУpЧXЭA'] = 'жXПАФрipgГхgЮлVа'
-	$dialogs_includes['мЗ6ЗqqЖгnцУpЧXЭA'] = ''
-	$dialogs_run['мЗ6ЗqqЖгnцУpЧXЭA'] = {}
+	dialogs_count['QБCяуРвXs3utсhРU'] = 0
+	$dialogs_position['QБCяуРвXs3utсhРU'] = 'vюр_rжXы75jpИel0'
+	$dialogs_includes['QБCяуРвXs3utсhРU'] = ''
+	$dialogs_run['QБCяуРвXs3utсhРU'] = {}
 	!@ REPLIC_47
-	$dialogs_id['DzXРVHЕЬюУEНэTGО'] = 'DzXРVHЕЬюУEНэTGО'
-	$dialogs_body['DzXРVHЕЬюУEНэTGО'] = 'Ну, прощай тогда!'
-	$dialogs_sets['DzXРVHЕЬюУEНэTGО'] = '[type:quest]'
-	dialogs_count['DzXРVHЕЬюУEНэTGО'] = 0
-	$dialogs_position['DzXРVHЕЬюУEНэTGО'] = 'DdмёЫЖВжДЭЫёvНLс'
-	$dialogs_includes['DzXРVHЕЬюУEНэTGО'] = 'ФЙуVоРУыщYyrrbvc'
-	$dialogs_run['DzXРVHЕЬюУEНэTGО'] = {wait 500}
+	$dialogs_id['NфpйK6sФMмnyLВ1b'] = 'NфpйK6sФMмnyLВ1b'
+	$dialogs_body['NфpйK6sФMмnyLВ1b'] = 'Ну, прощай тогда!'
+	$dialogs_sets['NфpйK6sФMмnyLВ1b'] = '[type:quest]'
+	dialogs_count['NфpйK6sФMмnyLВ1b'] = 0
+	$dialogs_position['NфpйK6sФMмnyLВ1b'] = 'РEZрhз93ЯFуЯЕiЩп'
+	$dialogs_includes['NфpйK6sФMмnyLВ1b'] = 'ьvФЬЖЁiщэДNСНРqО'
+	$dialogs_run['NфpйK6sФMмnyLВ1b'] = {wait 500}
 	!@ REPLIC_48
-	$dialogs_id['ФЙуVоРУыщYyrrbvc'] = 'ФЙуVоРУыщYyrrbvc'
-	$dialogs_body['ФЙуVоРУыщYyrrbvc'] = ''
-	$dialogs_sets['ФЙуVоРУыщYyrrbvc'] = '[closeup]
+	$dialogs_id['ьvФЬЖЁiщэДNСНРqО'] = 'ьvФЬЖЁiщэДNСНРqО'
+	$dialogs_body['ьvФЬЖЁiщэДNСНРqО'] = ''
+	$dialogs_sets['ьvФЬЖЁiщэДNСНРqО'] = '[closeup]
 [type:quest]'
-	dialogs_count['ФЙуVоРУыщYyrrbvc'] = 0
-	$dialogs_position['ФЙуVоРУыщYyrrbvc'] = 'DzXРVHЕЬюУEНэTGО'
-	$dialogs_includes['ФЙуVоРУыщYyrrbvc'] = ''
-	$dialogs_run['ФЙуVоРУыщYyrrbvc'] = {wait 2000}
+	dialogs_count['ьvФЬЖЁiщэДNСНРqО'] = 0
+	$dialogs_position['ьvФЬЖЁiщэДNСНРqО'] = 'NфpйK6sФMмnyLВ1b'
+	$dialogs_includes['ьvФЬЖЁiщэДNСНРqО'] = ''
+	$dialogs_run['ьvФЬЖЁiщэДNСНРqО'] = {wait 2000}
 	!@ REPLIC_49
-	$dialogs_id['mНxrръЯеtДздSфШh'] = 'mНxrръЯеtДздSфШh'
-	$dialogs_body['mНxrръЯеtДздSфШh'] = 'Нет, я всё понял уже.'
-	$dialogs_sets['mНxrръЯеtДздSфШh'] = '[type:answer]'
-	dialogs_count['mНxrръЯеtДздSфШh'] = 0
-	$dialogs_position['mНxrръЯеtДздSфШh'] = 'DBвУKнsэыUхCБnUb'
-	$dialogs_includes['mНxrръЯеtДздSфШh'] = 'GоXюДйvрMJцVrвж6'
-	$dialogs_run['mНxrръЯеtДздSфШh'] = {}
+	$dialogs_id['еQ9ЗLнЕэм2ЙKЪбЭЫ'] = 'еQ9ЗLнЕэм2ЙKЪбЭЫ'
+	$dialogs_body['еQ9ЗLнЕэм2ЙKЪбЭЫ'] = 'Нет, я всё понял уже.'
+	$dialogs_sets['еQ9ЗLнЕэм2ЙKЪбЭЫ'] = '[type:answer]'
+	dialogs_count['еQ9ЗLнЕэм2ЙKЪбЭЫ'] = 0
+	$dialogs_position['еQ9ЗLнЕэм2ЙKЪбЭЫ'] = '0д1вЩpЭОoыЗрХЙzb'
+	$dialogs_includes['еQ9ЗLнЕэм2ЙKЪбЭЫ'] = 'ЁubY9чTТkёАpюЯфП'
+	$dialogs_run['еQ9ЗLнЕэм2ЙKЪбЭЫ'] = {}
 end
 if args[0] = 5:
 	!@ REPLIC_50
-	$dialogs_id['ХеФмFKюBВюbзoyOA'] = 'ХеФмFKюBВюbзoyOA'
-	$dialogs_body['ХеФмFKюBВюbзoyOA'] = 'Да, хотел поподробнее разузнать кое-что.'
-	$dialogs_sets['ХеФмFKюBВюbзoyOA'] = '[type:answer]'
-	dialogs_count['ХеФмFKюBВюbзoyOA'] = 0
-	$dialogs_position['ХеФмFKюBВюbзoyOA'] = 'DBвУKнsэыUхCБnUb'
-	$dialogs_includes['ХеФмFKюBВюbзoyOA'] = 'ЧUКOЖhЖмыЧшQxJГC'
-	$dialogs_run['ХеФмFKюBВюbзoyOA'] = {}
+	$dialogs_id['фЬчjвcОvЭwJвёрЪW'] = 'фЬчjвcОvЭwJвёрЪW'
+	$dialogs_body['фЬчjвcОvЭwJвёрЪW'] = 'Да, хотел поподробнее разузнать кое-что.'
+	$dialogs_sets['фЬчjвcОvЭwJвёрЪW'] = '[type:answer]'
+	dialogs_count['фЬчjвcОvЭwJвёрЪW'] = 0
+	$dialogs_position['фЬчjвcОvЭwJвёрЪW'] = '0д1вЩpЭОoыЗрХЙzb'
+	$dialogs_includes['фЬчjвcОvЭwJвёрЪW'] = 'qьMун6dЙbМF3J5жv'
+	$dialogs_run['фЬчjвcОvЭwJвёрЪW'] = {}
 	!@ REPLIC_51
-	$dialogs_id['ЧUКOЖhЖмыЧшQxJГC'] = 'ЧUКOЖhЖмыЧшQxJГC'
-	$dialogs_body['ЧUКOЖhЖмыЧшQxJГC'] = 'Ладно уж, по такому случаю повторю...'
-	$dialogs_sets['ЧUКOЖhЖмыЧшQxJГC'] = '[leveljump:яДЕeIS2SэHффКуЮD]
+	$dialogs_id['qьMун6dЙbМF3J5жv'] = 'qьMун6dЙbМF3J5жv'
+	$dialogs_body['qьMун6dЙbМF3J5жv'] = 'Ладно уж, по такому случаю повторю...'
+	$dialogs_sets['qьMун6dЙbМF3J5жv'] = '[leveljump:ЖУчцyТrбечSуV1tB]
 [type:quest]'
-	dialogs_count['ЧUКOЖhЖмыЧшQxJГC'] = 0
-	$dialogs_position['ЧUКOЖhЖмыЧшQxJГC'] = 'ХеФмFKюBВюbзoyOA'
-	$dialogs_includes['ЧUКOЖhЖмыЧшQxJГC'] = ''
-	$dialogs_run['ЧUКOЖhЖмыЧшQxJГC'] = {}
+	dialogs_count['qьMун6dЙbМF3J5жv'] = 0
+	$dialogs_position['qьMун6dЙbМF3J5жv'] = 'фЬчjвcОvЭwJвёрЪW'
+	$dialogs_includes['qьMун6dЙbМF3J5жv'] = ''
+	$dialogs_run['qьMун6dЙbМF3J5жv'] = {}
 	!@ REPLIC_52
-	$dialogs_id['GоXюДйvрMJцVrвж6'] = 'GоXюДйvрMJцVrвж6'
-	$dialogs_body['GоXюДйvрMJцVrвж6'] = 'Ну, раз понял, так и не стой тут!'
-	$dialogs_sets['GоXюДйvрMJцVrвж6'] = '[type:quest]'
-	dialogs_count['GоXюДйvрMJцVrвж6'] = 0
-	$dialogs_position['GоXюДйvрMJцVrвж6'] = 'mНxrръЯеtДздSфШh'
-	$dialogs_includes['GоXюДйvрMJцVrвж6'] = 'юyТТюuхtЩББJ1зВа'
-	$dialogs_run['GоXюДйvрMJцVrвж6'] = {wait 500}
+	$dialogs_id['ЁubY9чTТkёАpюЯфП'] = 'ЁubY9чTТkёАpюЯфП'
+	$dialogs_body['ЁubY9чTТkёАpюЯфП'] = 'Ну, раз понял, так и не стой тут!'
+	$dialogs_sets['ЁubY9чTТkёАpюЯфП'] = '[type:quest]'
+	dialogs_count['ЁubY9чTТkёАpюЯфП'] = 0
+	$dialogs_position['ЁubY9чTТkёАpюЯфП'] = 'еQ9ЗLнЕэм2ЙKЪбЭЫ'
+	$dialogs_includes['ЁubY9чTТkёАpюЯфП'] = 'тпАЮЭ9TРшхМMQЙЧс'
+	$dialogs_run['ЁubY9чTТkёАpюЯфП'] = {wait 500}
 	!@ REPLIC_53
-	$dialogs_id['юyТТюuхtЩББJ1зВа'] = 'юyТТюuхtЩББJ1зВа'
-	$dialogs_body['юyТТюuхtЩББJ1зВа'] = ''
-	$dialogs_sets['юyТТюuхtЩББJ1зВа'] = '[closeup]
+	$dialogs_id['тпАЮЭ9TРшхМMQЙЧс'] = 'тпАЮЭ9TРшхМMQЙЧс'
+	$dialogs_body['тпАЮЭ9TРшхМMQЙЧс'] = ''
+	$dialogs_sets['тпАЮЭ9TРшхМMQЙЧс'] = '[closeup]
 [type:quest]'
-	dialogs_count['юyТТюuхtЩББJ1зВа'] = 0
-	$dialogs_position['юyТТюuхtЩББJ1зВа'] = 'GоXюДйvрMJцVrвж6'
-	$dialogs_includes['юyТТюuхtЩББJ1зВа'] = ''
-	$dialogs_run['юyТТюuхtЩББJ1зВа'] = {wait 2000}
+	dialogs_count['тпАЮЭ9TРшхМMQЙЧс'] = 0
+	$dialogs_position['тпАЮЭ9TРшхМMQЙЧс'] = 'ЁubY9чTТkёАpюЯфП'
+	$dialogs_includes['тпАЮЭ9TРшхМMQЙЧс'] = ''
+	$dialogs_run['тпАЮЭ9TРшхМMQЙЧс'] = {wait 2000}
 	!@ REPLIC_54
-	$dialogs_id['Ьtы89cщцV5tЪzMМб'] = 'Ьtы89cщцV5tЪzMМб'
-	$dialogs_body['Ьtы89cщцV5tЪzMМб'] = ''
-	$dialogs_sets['Ьtы89cщцV5tЪzMМб'] = '[marker:Ьtы89cщцV5tЪzMМб]
+	$dialogs_id['YUЗkrоuвГZ_ВйфеO'] = 'YUЗkrоuвГZ_ВйфеO'
+	$dialogs_body['YUЗkrоuвГZ_ВйфеO'] = ''
+	$dialogs_sets['YUЗkrоuвГZ_ВйфеO'] = '[marker:YUЗkrоuвГZ_ВйфеO]
 [type:quest]'
-	dialogs_count['Ьtы89cщцV5tЪzMМб'] = 0
-	$dialogs_position['Ьtы89cщцV5tЪzMМб'] = 'ВсCiДЖVрuоЩ7v_ЮД'
-	$dialogs_includes['Ьtы89cщцV5tЪzMМб'] = 'UухЦrIЮzyмyA1яy2|lОУJЧMhxт6ьювмLГ|LшrtTFъхЁЧЫXmnУн|ё4гШЕеЮЮYJyрИqbZ'
-	$dialogs_run['Ьtы89cщцV5tЪzMМб'] = {}
+	dialogs_count['YUЗkrоuвГZ_ВйфеO'] = 0
+	$dialogs_position['YUЗkrоuвГZ_ВйфеO'] = 'ЁТ9mЫВFb5ЬNкLЫзЛ'
+	$dialogs_includes['YUЗkrоuвГZ_ВйфеO'] = 'цNФдзЩjДоsМЗEРSi|БсДgRJЩ4А__нTХ6П|ЩХщДдKЪ9LЯPРЩyХИ|aгbNFLНQ9ьЖJfЯоy'
+	$dialogs_run['YUЗkrоuвГZ_ВйфеO'] = {}
 	!@ REPLIC_55
-	$dialogs_id['щФП6aКM_hкГмqsэМ'] = 'щФП6aКM_hкГмqsэМ'
-	$dialogs_body['щФП6aКM_hкГмqsэМ'] = ''
-	$dialogs_sets['щФП6aКM_hкГмqsэМ'] = '[marker:щФП6aКM_hкГмqsэМ]
+	$dialogs_id['nлАfbnf6UQщVsЕcM'] = 'nлАfbnf6UQщVsЕcM'
+	$dialogs_body['nлАfbnf6UQщVsЕcM'] = ''
+	$dialogs_sets['nлАfbnf6UQщVsЕcM'] = '[marker:nлАfbnf6UQщVsЕcM]
 [type:quest]'
-	dialogs_count['щФП6aКM_hкГмqsэМ'] = 0
-	$dialogs_position['щФП6aКM_hкГмqsэМ'] = 'ВсCiДЖVрuоЩ7v_ЮД'
-	$dialogs_includes['щФП6aКM_hкГмqsэМ'] = 'жdv9ALXЪьУOСКИYн|bЫbПДЩ8ндSdВqЯp6|СНоMtшЫиPaВИэxЯь'
-	$dialogs_run['щФП6aКM_hкГмqsэМ'] = {}
+	dialogs_count['nлАfbnf6UQщVsЕcM'] = 0
+	$dialogs_position['nлАfbnf6UQщVsЕcM'] = 'ЁТ9mЫВFb5ЬNкLЫзЛ'
+	$dialogs_includes['nлАfbnf6UQщVsЕcM'] = 'ЦяиgH9kдХyMЬеllh|qДA3xтБyЭФГfЯPnЪ|jЧuxлШЛYОiъУЕixl'
+	$dialogs_run['nлАfbnf6UQщVsЕcM'] = {}
 	!@ REPLIC_56
-	$dialogs_id['жdv9ALXЪьУOСКИYн'] = 'жdv9ALXЪьУOСКИYн'
-	$dialogs_body['жdv9ALXЪьУOСКИYн'] = 'А как формируется список действий?'
-	$dialogs_sets['жdv9ALXЪьУOСКИYн'] = '[selectact.delete]
+	$dialogs_id['ЦяиgH9kдХyMЬеllh'] = 'ЦяиgH9kдХyMЬеllh'
+	$dialogs_body['ЦяиgH9kдХyMЬеllh'] = 'А как формируется список действий?'
+	$dialogs_sets['ЦяиgH9kдХyMЬеllh'] = '[selectact.delete]
 [type:answer]'
-	dialogs_count['жdv9ALXЪьУOСКИYн'] = 0
-	$dialogs_position['жdv9ALXЪьУOСКИYн'] = 'щФП6aКM_hкГмqsэМ'
-	$dialogs_includes['жdv9ALXЪьУOСКИYн'] = 'mЩЙQЬWI1wЭjсv0VЪ'
-	$dialogs_run['жdv9ALXЪьУOСКИYн'] = {}
+	dialogs_count['ЦяиgH9kдХyMЬеllh'] = 0
+	$dialogs_position['ЦяиgH9kдХyMЬеllh'] = 'nлАfbnf6UQщVsЕcM'
+	$dialogs_includes['ЦяиgH9kдХyMЬеllh'] = 'ОьpзAУЖBРГйФvfЫe'
+	$dialogs_run['ЦяиgH9kдХyMЬеllh'] = {}
 	!@ REPLIC_57
-	$dialogs_id['bЫbПДЩ8ндSdВqЯp6'] = 'bЫbПДЩ8ндSdВqЯp6'
-	$dialogs_body['bЫbПДЩ8ндSdВqЯp6'] = 'И сколько всего этих "блоков"? И какие они?'
-	$dialogs_sets['bЫbПДЩ8ндSdВqЯp6'] = '[selectact.delete]
+	$dialogs_id['qДA3xтБyЭФГfЯPnЪ'] = 'qДA3xтБyЭФГfЯPnЪ'
+	$dialogs_body['qДA3xтБyЭФГfЯPnЪ'] = 'И сколько всего этих "блоков"? И какие они?'
+	$dialogs_sets['qДA3xтБyЭФГfЯPnЪ'] = '[selectact.delete]
 [type:answer]'
-	dialogs_count['bЫbПДЩ8ндSdВqЯp6'] = 0
-	$dialogs_position['bЫbПДЩ8ндSdВqЯp6'] = 'щФП6aКM_hкГмqsэМ'
-	$dialogs_includes['bЫbПДЩ8ндSdВqЯp6'] = 'тSчVиX2TэsфY4мJм'
-	$dialogs_run['bЫbПДЩ8ндSdВqЯp6'] = {}
+	dialogs_count['qДA3xтБyЭФГfЯPnЪ'] = 0
+	$dialogs_position['qДA3xтБyЭФГfЯPnЪ'] = 'nлАfbnf6UQщVsЕcM'
+	$dialogs_includes['qДA3xтБyЭФГfЯPnЪ'] = 'ЛцИЕYпPИьНLКBНYM'
+	$dialogs_run['qДA3xтБyЭФГfЯPnЪ'] = {}
 	!@ REPLIC_58
-	$dialogs_id['СНоMtшЫиPaВИэxЯь'] = 'СНоMtшЫиPaВИэxЯь'
-	$dialogs_body['СНоMtшЫиPaВИэxЯь'] = 'А если я захочу выбрать вариант вопроса, который исчез?'
-	$dialogs_sets['СНоMtшЫиPaВИэxЯь'] = '[selectact.delete]
+	$dialogs_id['jЧuxлШЛYОiъУЕixl'] = 'jЧuxлШЛYОiъУЕixl'
+	$dialogs_body['jЧuxлШЛYОiъУЕixl'] = 'А если я захочу выбрать вариант вопроса, который исчез?'
+	$dialogs_sets['jЧuxлШЛYОiъУЕixl'] = '[selectact.delete]
 [type:answer]'
-	dialogs_count['СНоMtшЫиPaВИэxЯь'] = 0
-	$dialogs_position['СНоMtшЫиPaВИэxЯь'] = 'щФП6aКM_hкГмqsэМ'
-	$dialogs_includes['СНоMtшЫиPaВИэxЯь'] = 'zцХoZWОк9цb8шУEЯ|VВцzLNUдZХPehбуе'
-	$dialogs_run['СНоMtшЫиPaВИэxЯь'] = {}
+	dialogs_count['jЧuxлШЛYОiъУЕixl'] = 0
+	$dialogs_position['jЧuxлШЛYОiъУЕixl'] = 'nлАfbnf6UQщVsЕcM'
+	$dialogs_includes['jЧuxлШЛYОiъУЕixl'] = 'мЖДч31GDхHУrЬhшS|FФcУЯСdХSeЭxBтЁс'
+	$dialogs_run['jЧuxлШЛYОiъУЕixl'] = {}
 	!@ REPLIC_59
-	$dialogs_id['zцХoZWОк9цb8шУEЯ'] = 'zцХoZWОк9цb8шУEЯ'
-	$dialogs_body['zцХoZWОк9цb8шУEЯ'] = 'То есть, я могу спросить что-то другое?'
-	$dialogs_sets['zцХoZWОк9цb8шУEЯ'] = '[type:answer]'
-	dialogs_count['zцХoZWОк9цb8шУEЯ'] = 0
-	$dialogs_position['zцХoZWОк9цb8шУEЯ'] = 'СНоMtшЫиPaВИэxЯь'
-	$dialogs_includes['zцХoZWОк9цb8шУEЯ'] = 'ПъMУBк6ГнzyqNЛqф'
-	$dialogs_run['zцХoZWОк9цb8шУEЯ'] = {}
+	$dialogs_id['мЖДч31GDхHУrЬhшS'] = 'мЖДч31GDхHУrЬhшS'
+	$dialogs_body['мЖДч31GDхHУrЬhшS'] = 'То есть, я могу спросить что-то другое?'
+	$dialogs_sets['мЖДч31GDхHУrЬhшS'] = '[type:answer]'
+	dialogs_count['мЖДч31GDхHУrЬhшS'] = 0
+	$dialogs_position['мЖДч31GDхHУrЬhшS'] = 'jЧuxлШЛYОiъУЕixl'
+	$dialogs_includes['мЖДч31GDхHУrЬhшS'] = 'ъФPОнVkFпфU7шGНа'
+	$dialogs_run['мЖДч31GDхHУrЬhшS'] = {}
 end
 if args[0] = 6:
 	!@ REPLIC_60
-	$dialogs_id['VВцzLNUдZХPehбуе'] = 'VВцzLNUдZХPehбуе'
-	$dialogs_body['VВцzLNUдZХPehбуе'] = 'Весь наш разговор происходит в цикле, как только мы закончим обсуждать текущий вопрос, мы вернёмся к общему списку вопросов. Если хочешь, ты можешь сделать это прямо сейчас.'
-	$dialogs_sets['VВцzLNUдZХPehбуе'] = '[type:quest]'
-	dialogs_count['VВцzLNUдZХPehбуе'] = 0
-	$dialogs_position['VВцzLNUдZХPehбуе'] = 'СНоMtшЫиPaВИэxЯь'
-	$dialogs_includes['VВцzLNUдZХPehбуе'] = ''
-	$dialogs_run['VВцzLNUдZХPehбуе'] = {}
+	$dialogs_id['FФcУЯСdХSeЭxBтЁс'] = 'FФcУЯСdХSeЭxBтЁс'
+	$dialogs_body['FФcУЯСdХSeЭxBтЁс'] = 'Весь наш разговор происходит в цикле, как только мы закончим обсуждать текущий вопрос, мы вернёмся к общему списку вопросов. Если хочешь, ты можешь сделать это прямо сейчас.'
+	$dialogs_sets['FФcУЯСdХSeЭxBтЁс'] = '[type:quest]'
+	dialogs_count['FФcУЯСdХSeЭxBтЁс'] = 0
+	$dialogs_position['FФcУЯСdХSeЭxBтЁс'] = 'jЧuxлШЛYОiъУЕixl'
+	$dialogs_includes['FФcУЯСdХSeЭxBтЁс'] = ''
+	$dialogs_run['FФcУЯСdХSeЭxBтЁс'] = {}
 	!@ REPLIC_61
-	$dialogs_id['ПъMУBк6ГнzyqNЛqф'] = 'ПъMУBк6ГнzyqNЛqф'
-	$dialogs_body['ПъMУBк6ГнzyqNЛqф'] = 'Да, конечно, спрашивай, что хочешь.'
-	$dialogs_sets['ПъMУBк6ГнzyqNЛqф'] = '[leveljump:яДЕeIS2SэHффКуЮD]
+	$dialogs_id['ъФPОнVkFпфU7шGНа'] = 'ъФPОнVkFпфU7шGНа'
+	$dialogs_body['ъФPОнVkFпфU7шGНа'] = 'Да, конечно, спрашивай, что хочешь.'
+	$dialogs_sets['ъФPОнVkFпфU7шGНа'] = '[leveljump:ЖУчцyТrбечSуV1tB]
 [type:quest]'
-	dialogs_count['ПъMУBк6ГнzyqNЛqф'] = 0
-	$dialogs_position['ПъMУBк6ГнzyqNЛqф'] = 'zцХoZWОк9цb8шУEЯ'
-	$dialogs_includes['ПъMУBк6ГнzyqNЛqф'] = ''
-	$dialogs_run['ПъMУBк6ГнzyqNЛqф'] = {}
+	dialogs_count['ъФPОнVkFпфU7шGНа'] = 0
+	$dialogs_position['ъФPОнVkFпфU7шGНа'] = 'мЖДч31GDхHУrЬhшS'
+	$dialogs_includes['ъФPОнVkFпфU7шGНа'] = ''
+	$dialogs_run['ъФPОнVkFпфU7шGНа'] = {}
 	!@ REPLIC_62
-	$dialogs_id['тSчVиX2TэsфY4мJм'] = 'тSчVиX2TэsфY4мJм'
-	$dialogs_body['тSчVиX2TэsфY4мJм'] = 'Ну, первый блок, это блок приветствия. В него ты попадаешь в самом начале. Оттуда тебя "перекидывает" в основной блок вопросов, второй по счёту, а за ним идут блоки вопросов, для каждого вопроса — свой блок.'
-	$dialogs_sets['тSчVиX2TэsфY4мJм'] = '[type:quest]'
-	dialogs_count['тSчVиX2TэsфY4мJм'] = 0
-	$dialogs_position['тSчVиX2TэsфY4мJм'] = 'bЫbПДЩ8ндSdВqЯp6'
-	$dialogs_includes['тSчVиX2TэsфY4мJм'] = ''
-	$dialogs_run['тSчVиX2TэsфY4мJм'] = {}
+	$dialogs_id['ЛцИЕYпPИьНLКBНYM'] = 'ЛцИЕYпPИьНLКBНYM'
+	$dialogs_body['ЛцИЕYпPИьНLКBНYM'] = 'Ну, первый блок, это блок приветствия. В него ты попадаешь в самом начале. Оттуда тебя "перекидывает" в основной блок вопросов, второй по счёту, а за ним идут блоки вопросов, для каждого вопроса — свой блок.'
+	$dialogs_sets['ЛцИЕYпPИьНLКBНYM'] = '[type:quest]'
+	dialogs_count['ЛцИЕYпPИьНLКBНYM'] = 0
+	$dialogs_position['ЛцИЕYпPИьНLКBНYM'] = 'qДA3xтБyЭФГfЯPnЪ'
+	$dialogs_includes['ЛцИЕYпPИьНLКBНYM'] = ''
+	$dialogs_run['ЛцИЕYпPИьНLКBНYM'] = {}
 	!@ REPLIC_63
-	$dialogs_id['mЩЙQЬWI1wЭjсv0VЪ'] = 'mЩЙQЬWI1wЭjсv0VЪ'
-	$dialogs_body['mЩЙQЬWI1wЭjсv0VЪ'] = 'Когда локация, на которой расположен этот диалог, обновляется, происходит проверка аргументов. При первом запуске (начало диалога) аргумент 0, поэтому из всего кода обрабатывается только один блок, блок приветствия. При выборе действий запускается обновление локации (точнее — переход на неё без очистки окна), на этот раз — с аргументом 1. Теперь из всей локации обрабатыается код только в блоке 1 (второй по счёту). В этом блоке перечень вопросов. Задавая какой-либо из них, вы обновляете локацию с каким-либо аргументом, в списке действий появляются варианты, содержащиеся в соответствующем блоке.'
-	$dialogs_sets['mЩЙQЬWI1wЭjсv0VЪ'] = '[type:quest]'
-	dialogs_count['mЩЙQЬWI1wЭjсv0VЪ'] = 0
-	$dialogs_position['mЩЙQЬWI1wЭjсv0VЪ'] = 'жdv9ALXЪьУOСКИYн'
-	$dialogs_includes['mЩЙQЬWI1wЭjсv0VЪ'] = ''
-	$dialogs_run['mЩЙQЬWI1wЭjсv0VЪ'] = {}
+	$dialogs_id['ОьpзAУЖBРГйФvfЫe'] = 'ОьpзAУЖBРГйФvfЫe'
+	$dialogs_body['ОьpзAУЖBРГйФvfЫe'] = 'Когда локация, на которой расположен этот диалог, обновляется, происходит проверка аргументов. При первом запуске (начало диалога) аргумент 0, поэтому из всего кода обрабатывается только один блок, блок приветствия. При выборе действий запускается обновление локации (точнее — переход на неё без очистки окна), на этот раз — с аргументом 1. Теперь из всей локации обрабатыается код только в блоке 1 (второй по счёту). В этом блоке перечень вопросов. Задавая какой-либо из них, вы обновляете локацию с каким-либо аргументом, в списке действий появляются варианты, содержащиеся в соответствующем блоке.'
+	$dialogs_sets['ОьpзAУЖBРГйФvfЫe'] = '[type:quest]'
+	dialogs_count['ОьpзAУЖBРГйФvfЫe'] = 0
+	$dialogs_position['ОьpзAУЖBРГйФvfЫe'] = 'ЦяиgH9kдХyMЬеllh'
+	$dialogs_includes['ОьpзAУЖBРГйФvfЫe'] = ''
+	$dialogs_run['ОьpзAУЖBРГйФvfЫe'] = {}
 	!@ REPLIC_64
-	$dialogs_id['UухЦrIЮzyмyA1яy2'] = 'UухЦrIЮzyмyA1яy2'
-	$dialogs_body['UухЦrIЮzyмyA1яy2'] = 'Давай поговорим о другом.'
-	$dialogs_sets['UухЦrIЮzyмyA1яy2'] = '[type:answer]'
-	dialogs_count['UухЦrIЮzyмyA1яy2'] = 0
-	$dialogs_position['UухЦrIЮzyмyA1яy2'] = 'Ьtы89cщцV5tЪzMМб'
-	$dialogs_includes['UухЦrIЮzyмyA1яy2'] = 'ZОЁAxЦFюбOМAQjпV'
-	$dialogs_run['UухЦrIЮzyмyA1яy2'] = {}
+	$dialogs_id['цNФдзЩjДоsМЗEРSi'] = 'цNФдзЩjДоsМЗEРSi'
+	$dialogs_body['цNФдзЩjДоsМЗEРSi'] = 'Давай поговорим о другом.'
+	$dialogs_sets['цNФдзЩjДоsМЗEРSi'] = '[type:answer]'
+	dialogs_count['цNФдзЩjДоsМЗEРSi'] = 0
+	$dialogs_position['цNФдзЩjДоsМЗEРSi'] = 'YUЗkrоuвГZ_ВйфеO'
+	$dialogs_includes['цNФдзЩjДоsМЗEРSi'] = 'lиагiэqZGоHиfEjч'
+	$dialogs_run['цNФдзЩjДоsМЗEРSi'] = {}
 	!@ REPLIC_65
-	$dialogs_id['lОУJЧMhxт6ьювмLГ'] = 'lОУJЧMhxт6ьювмLГ'
-	$dialogs_body['lОУJЧMhxт6ьювмLГ'] = 'А как организован твой диалог?'
-	$dialogs_sets['lОУJЧMhxт6ьювмLГ'] = '[type:answer]'
-	dialogs_count['lОУJЧMhxт6ьювмLГ'] = 0
-	$dialogs_position['lОУJЧMhxт6ьювмLГ'] = 'Ьtы89cщцV5tЪzMМб'
-	$dialogs_includes['lОУJЧMhxт6ьювмLГ'] = 'wzпэkюMuunё4БМВЬ'
-	$dialogs_run['lОУJЧMhxт6ьювмLГ'] = {}
+	$dialogs_id['БсДgRJЩ4А__нTХ6П'] = 'БсДgRJЩ4А__нTХ6П'
+	$dialogs_body['БсДgRJЩ4А__нTХ6П'] = 'А как организован твой диалог?'
+	$dialogs_sets['БсДgRJЩ4А__нTХ6П'] = '[type:answer]'
+	dialogs_count['БсДgRJЩ4А__нTХ6П'] = 0
+	$dialogs_position['БсДgRJЩ4А__нTХ6П'] = 'YUЗkrоuвГZ_ВйфеO'
+	$dialogs_includes['БсДgRJЩ4А__нTХ6П'] = '1ёCKуё0NNpЫ3q6зА'
+	$dialogs_run['БсДgRJЩ4А__нTХ6П'] = {}
 	!@ REPLIC_66
-	$dialogs_id['LшrtTFъхЁЧЫXmnУн'] = 'LшrtTFъхЁЧЫXmnУн'
-	$dialogs_body['LшrtTFъхЁЧЫXmnУн'] = 'А как устроен диалог алкоголика?'
-	$dialogs_sets['LшrtTFъхЁЧЫXmnУн'] = '[selectact.delete]
+	$dialogs_id['ЩХщДдKЪ9LЯPРЩyХИ'] = 'ЩХщДдKЪ9LЯPРЩyХИ'
+	$dialogs_body['ЩХщДдKЪ9LЯPРЩyХИ'] = 'А как устроен диалог алкоголика?'
+	$dialogs_sets['ЩХщДдKЪ9LЯPРЩyХИ'] = '[selectact.delete]
 [type:answer]'
-	dialogs_count['LшrtTFъхЁЧЫXmnУн'] = 0
-	$dialogs_position['LшrtTFъхЁЧЫXmnУн'] = 'Ьtы89cщцV5tЪzMМб'
-	$dialogs_includes['LшrtTFъхЁЧЫXmnУн'] = 'RFBNКРгюDЖр6сюOk'
-	$dialogs_run['LшrtTFъхЁЧЫXmnУн'] = {}
+	dialogs_count['ЩХщДдKЪ9LЯPРЩyХИ'] = 0
+	$dialogs_position['ЩХщДдKЪ9LЯPРЩyХИ'] = 'YUЗkrоuвГZ_ВйфеO'
+	$dialogs_includes['ЩХщДдKЪ9LЯPРЩyХИ'] = 'ЖпdЁjwЫхеL0dъbОN'
+	$dialogs_run['ЩХщДдKЪ9LЯPРЩyХИ'] = {}
 	!@ REPLIC_67
-	$dialogs_id['ё4гШЕеЮЮYJyрИqbZ'] = 'ё4гШЕеЮЮYJyрИqbZ'
-	$dialogs_body['ё4гШЕеЮЮYJyрИqbZ'] = 'А как устроен диалог бармена?'
-	$dialogs_sets['ё4гШЕеЮЮYJyрИqbZ'] = '[selectact.delete]
+	$dialogs_id['aгbNFLНQ9ьЖJfЯоy'] = 'aгbNFLНQ9ьЖJfЯоy'
+	$dialogs_body['aгbNFLНQ9ьЖJfЯоy'] = 'А как устроен диалог бармена?'
+	$dialogs_sets['aгbNFLНQ9ьЖJfЯоy'] = '[selectact.delete]
 [type:answer]'
-	dialogs_count['ё4гШЕеЮЮYJyрИqbZ'] = 0
-	$dialogs_position['ё4гШЕеЮЮYJyрИqbZ'] = 'Ьtы89cщцV5tЪzMМб'
-	$dialogs_includes['ё4гШЕеЮЮYJyрИqbZ'] = 'фSслЧ4ЫcJДчмчцэC'
-	$dialogs_run['ё4гШЕеЮЮYJyрИqbZ'] = {}
+	dialogs_count['aгbNFLНQ9ьЖJfЯоy'] = 0
+	$dialogs_position['aгbNFLНQ9ьЖJfЯоy'] = 'YUЗkrоuвГZ_ВйфеO'
+	$dialogs_includes['aгbNFLНQ9ьЖJfЯоy'] = 'пядЦА1аХAжщlзХSN'
+	$dialogs_run['aгbNFLНQ9ьЖJfЯоy'] = {}
 	!@ REPLIC_68
-	$dialogs_id['фSслЧ4ЫcJДчмчцэC'] = 'фSслЧ4ЫcJДчмчцэC'
-	$dialogs_body['фSслЧ4ЫcJДчмчцэC'] = 'О, у него просто несколько вложенных действий. Ничего особенного, качественной РПГ не сделать, но для новеллы в самый раз.'
-	$dialogs_sets['фSслЧ4ЫcJДчмчцэC'] = '[type:quest]'
-	dialogs_count['фSслЧ4ЫcJДчмчцэC'] = 0
-	$dialogs_position['фSслЧ4ЫcJДчмчцэC'] = 'ё4гШЕеЮЮYJyрИqbZ'
-	$dialogs_includes['фSслЧ4ЫcJДчмчцэC'] = ''
-	$dialogs_run['фSслЧ4ЫcJДчмчцэC'] = {}
+	$dialogs_id['пядЦА1аХAжщlзХSN'] = 'пядЦА1аХAжщlзХSN'
+	$dialogs_body['пядЦА1аХAжщlзХSN'] = 'О, у него просто несколько вложенных действий. Ничего особенного, качественной РПГ не сделать, но для новеллы в самый раз.'
+	$dialogs_sets['пядЦА1аХAжщlзХSN'] = '[type:quest]'
+	dialogs_count['пядЦА1аХAжщlзХSN'] = 0
+	$dialogs_position['пядЦА1аХAжщlзХSN'] = 'aгbNFLНQ9ьЖJfЯоy'
+	$dialogs_includes['пядЦА1аХAжщlзХSN'] = ''
+	$dialogs_run['пядЦА1аХAжщlзХSN'] = {}
 	!@ REPLIC_69
-	$dialogs_id['RFBNКРгюDЖр6сюOk'] = 'RFBNКРгюDЖр6сюOk'
-	$dialogs_body['RFBNКРгюDЖр6сюOk'] = 'Там несколько вложенных локаций и проверка переменной. Первый раз подходишь — переменная равна нулю, он тебе говорит одно, переменной присваивается значение 1. Второй раз подходишь — у переменной другое значение, он тебе говорит другое... И так далее. Неплохой вариант для многих игр, в особенности для квестов, но не самый интерактивный.'
-	$dialogs_sets['RFBNКРгюDЖр6сюOk'] = '[type:quest]'
-	dialogs_count['RFBNКРгюDЖр6сюOk'] = 0
-	$dialogs_position['RFBNКРгюDЖр6сюOk'] = 'LшrtTFъхЁЧЫXmnУн'
-	$dialogs_includes['RFBNКРгюDЖр6сюOk'] = ''
-	$dialogs_run['RFBNКРгюDЖр6сюOk'] = {}
+	$dialogs_id['ЖпdЁjwЫхеL0dъbОN'] = 'ЖпdЁjwЫхеL0dъbОN'
+	$dialogs_body['ЖпdЁjwЫхеL0dъbОN'] = 'Там несколько вложенных локаций и проверка переменной. Первый раз подходишь — переменная равна нулю, он тебе говорит одно, переменной присваивается значение 1. Второй раз подходишь — у переменной другое значение, он тебе говорит другое... И так далее. Неплохой вариант для многих игр, в особенности для квестов, но не самый интерактивный.'
+	$dialogs_sets['ЖпdЁjwЫхеL0dъbОN'] = '[type:quest]'
+	dialogs_count['ЖпdЁjwЫхеL0dъbОN'] = 0
+	$dialogs_position['ЖпdЁjwЫхеL0dъbОN'] = 'ЩХщДдKЪ9LЯPРЩyХИ'
+	$dialogs_includes['ЖпdЁjwЫхеL0dъbОN'] = ''
+	$dialogs_run['ЖпdЁjwЫхеL0dъbОN'] = {}
 end
 if args[0] = 7:
 	!@ REPLIC_70
-	$dialogs_id['wzпэkюMuunё4БМВЬ'] = 'wzпэkюMuunё4БМВЬ'
-	$dialogs_body['wzпэkюMuunё4БМВЬ'] = 'Ну, это довольно просто. Диалог состоит из нескольких блоков, после того как ты выберешь один из вариантов, он удаляется из списка действий. Иногда удаляются все действия, а вместо них добавляются новые. Как сейчас, например.'
-	$dialogs_sets['wzпэkюMuunё4БМВЬ'] = '[leveljump:щФП6aКM_hкГмqsэМ]
+	$dialogs_id['1ёCKуё0NNpЫ3q6зА'] = '1ёCKуё0NNpЫ3q6зА'
+	$dialogs_body['1ёCKуё0NNpЫ3q6зА'] = 'Ну, это довольно просто. Диалог состоит из нескольких блоков, после того как ты выберешь один из вариантов, он удаляется из списка действий. Иногда удаляются все действия, а вместо них добавляются новые. Как сейчас, например.'
+	$dialogs_sets['1ёCKуё0NNpЫ3q6зА'] = '[leveljump:nлАfbnf6UQщVsЕcM]
 [type:quest]'
-	dialogs_count['wzпэkюMuunё4БМВЬ'] = 0
-	$dialogs_position['wzпэkюMuunё4БМВЬ'] = 'lОУJЧMhxт6ьювмLГ'
-	$dialogs_includes['wzпэkюMuunё4БМВЬ'] = ''
-	$dialogs_run['wzпэkюMuunё4БМВЬ'] = {}
+	dialogs_count['1ёCKуё0NNpЫ3q6зА'] = 0
+	$dialogs_position['1ёCKуё0NNpЫ3q6зА'] = 'БсДgRJЩ4А__нTХ6П'
+	$dialogs_includes['1ёCKуё0NNpЫ3q6зА'] = ''
+	$dialogs_run['1ёCKуё0NNpЫ3q6зА'] = {}
 	!@ REPLIC_71
-	$dialogs_id['ZОЁAxЦFюбOМAQjпV'] = 'ZОЁAxЦFюбOМAQjпV'
-	$dialogs_body['ZОЁAxЦFюбOМAQjпV'] = 'Конечно, о чём ты хочешь поговорить?'
-	$dialogs_sets['ZОЁAxЦFюбOМAQjпV'] = '[leveljump:яДЕeIS2SэHффКуЮD]
+	$dialogs_id['lиагiэqZGоHиfEjч'] = 'lиагiэqZGоHиfEjч'
+	$dialogs_body['lиагiэqZGоHиfEjч'] = 'Конечно, о чём ты хочешь поговорить?'
+	$dialogs_sets['lиагiэqZGоHиfEjч'] = '[leveljump:ЖУчцyТrбечSуV1tB]
 [type:quest]'
-	dialogs_count['ZОЁAxЦFюбOМAQjпV'] = 0
-	$dialogs_position['ZОЁAxЦFюбOМAQjпV'] = 'UухЦrIЮzyмyA1яy2'
-	$dialogs_includes['ZОЁAxЦFюбOМAQjпV'] = ''
-	$dialogs_run['ZОЁAxЦFюбOМAQjпV'] = {}
+	dialogs_count['lиагiэqZGоHиfEjч'] = 0
+	$dialogs_position['lиагiэqZGоHиfEjч'] = 'цNФдзЩjДоsМЗEРSi'
+	$dialogs_includes['lиагiэqZGоHиfEjч'] = ''
+	$dialogs_run['lиагiэqZGоHиfEjч'] = {}
 	!@ REPLIC_72
-	$dialogs_id['УKAцJиTшjU5JХebG'] = 'УKAцJиTшjU5JХebG'
-	$dialogs_body['УKAцJиTшjU5JХebG'] = {$result += '<div class="avs-hero-replic">'
+	$dialogs_id['ЦцNBдъgUёЦкфjBсс'] = 'ЦцNBдъgUёЦкфjBсс'
+	$dialogs_body['ЦцNBдъgUёЦкфjBсс'] = {$result += '<div class="avs-hero-replic">'
 $result += '<span style="color:#0000ff;">Вы: — <<$args[2]>></span>'
 $result += '</div>'}
-	$dialogs_sets['УKAцJиTшjU5JХebG'] = '<default_active>[type:role]'
-	dialogs_count['УKAцJиTшjU5JХebG'] = 0
-	$dialogs_position['УKAцJиTшjU5JХebG'] = 'jJлРь_JВуAченiс_'
-	$dialogs_includes['УKAцJиTшjU5JХebG'] = ''
-	$dialogs_run['УKAцJиTшjU5JХebG'] = {$result += '<div class="avs-act-button"><<$args[2]>></div>'}
+	$dialogs_sets['ЦцNBдъgUёЦкфjBсс'] = '<default_active>[type:role]'
+	dialogs_count['ЦцNBдъgUёЦкфjBсс'] = 0
+	$dialogs_position['ЦцNBдъgUёЦкфjBсс'] = 'fVРAсХjЙЖаШDДВб1'
+	$dialogs_includes['ЦцNBдъgUёЦкфjBсс'] = ''
+	$dialogs_run['ЦцNBдъgUёЦкфjBсс'] = {$result += '<div class="avs-act-button"><<$args[2]>></div>'}
 	!@ REPLIC_73
-	$dialogs_id['__эжXЧЧеUхCCn_Нv'] = '__эжXЧЧеUхCCn_Нv'
-	$dialogs_body['__эжXЧЧеUхCCn_Нv'] = {$result += '<div class="avs-aragorn-replic">'
+	$dialogs_id['aSKСYjmЩщЫabыНR3'] = 'aSKСYjmЩщЫabыНR3'
+	$dialogs_body['aSKСYjmЩщЫabыНR3'] = {$result += '<div class="avs-aragorn-replic">'
 $result += '<span style="color:#008800;">Арагорн: — <<$args[2]>></span>'
 $result += '</div>'}
-	$dialogs_sets['__эжXЧЧеUхCCn_Нv'] = '<default_passive>[type:role]'
-	dialogs_count['__эжXЧЧеUхCCn_Нv'] = 0
-	$dialogs_position['__эжXЧЧеUхCCn_Нv'] = 'jJлРь_JВуAченiс_'
-	$dialogs_includes['__эжXЧЧеUхCCn_Нv'] = ''
-	$dialogs_run['__эжXЧЧеUхCCn_Нv'] = {}
+	$dialogs_sets['aSKСYjmЩщЫabыНR3'] = '<default_passive>[type:role]'
+	dialogs_count['aSKСYjmЩщЫabыНR3'] = 0
+	$dialogs_position['aSKСYjmЩщЫabыНR3'] = 'fVРAсХjЙЖаШDДВб1'
+	$dialogs_includes['aSKСYjmЩщЫabыНR3'] = ''
+	$dialogs_run['aSKСYjmЩщЫabыНR3'] = {}
 	!@ REPLIC_74
-	$dialogs_id['Nхc4ХСТТP_pкяPвA'] = 'Nхc4ХСТТP_pкяPвA'
-	$dialogs_body['Nхc4ХСТТP_pкяPвA'] = ''
-	$dialogs_sets['Nхc4ХСТТP_pкяPвA'] = '[default_active:СxCгПш6ежНЁlKчЫL]
-[default_passive:ЬЪ8АzaКCbюKLяцщЯ]
-[actors:СxCгПш6ежНЁlKчЫL|ЬЪ8АzaКCbюKLяцщЯ|ЫяфjЩИ7БИякiHWнП:actors]
+	$dialogs_id['yeзОaеРЩчДoХ3ДбМ'] = 'yeзОaеРЩчДoХ3ДбМ'
+	$dialogs_body['yeзОaеРЩчДoХ3ДбМ'] = ''
+	$dialogs_sets['yeзОaеРЩчДoХ3ДбМ'] = '[default_active:эHFл0Юi_сerGCтJю]
+[default_passive:F05Уgu1Да54Ч6FВт]
+[actors:эHFл0Юi_сerGCтJю|F05Уgu1Да54Ч6FВт|7сьЮ77ф2qПлBзеКц:actors]
 [strings:10][type:root]'
-	dialogs_count['Nхc4ХСТТP_pкяPвA'] = 0
-	$dialogs_position['Nхc4ХСТТP_pкяPвA'] = ''
-	$dialogs_includes['Nхc4ХСТТP_pкяPвA'] = 'DvсBбшxlRоEsяRТx|СxCгПш6ежНЁlKчЫL|ЬЪ8АzaКCbюKLяцщЯ|ЫяфjЩИ7БИякiHWнП'
-	$dialogs_run['Nхc4ХСТТP_pкяPвA'] = {}
+	dialogs_count['yeзОaеРЩчДoХ3ДбМ'] = 0
+	$dialogs_position['yeзОaеРЩчДoХ3ДбМ'] = ''
+	$dialogs_includes['yeзОaеРЩчДoХ3ДбМ'] = 'hzgRdЙЕФИOёЯ1ЭШA|эHFл0Юi_сerGCтJю|F05Уgu1Да54Ч6FВт|7сьЮ77ф2qПлBзеКц'
+	$dialogs_run['yeзОaеРЩчДoХ3ДбМ'] = {}
 	!@ REPLIC_75
-	$dialogs_id['DvсBбшxlRоEsяRТx'] = 'DvсBбшxlRоEsяRТx'
-	$dialogs_body['DvсBбшxlRоEsяRТx'] = ''
-	$dialogs_sets['DvсBбшxlRоEsяRТx'] = '[type:quest]'
-	dialogs_count['DvсBбшxlRоEsяRТx'] = 0
-	$dialogs_position['DvсBбшxlRоEsяRТx'] = 'Nхc4ХСТТP_pкяPвA'
-	$dialogs_includes['DvсBбшxlRоEsяRТx'] = 'нjй6Q_bщЧьkРФлВV'
-	$dialogs_run['DvсBбшxlRоEsяRТx'] = {}
+	$dialogs_id['hzgRdЙЕФИOёЯ1ЭШA'] = 'hzgRdЙЕФИOёЯ1ЭШA'
+	$dialogs_body['hzgRdЙЕФИOёЯ1ЭШA'] = ''
+	$dialogs_sets['hzgRdЙЕФИOёЯ1ЭШA'] = '[type:quest]'
+	dialogs_count['hzgRdЙЕФИOёЯ1ЭШA'] = 0
+	$dialogs_position['hzgRdЙЕФИOёЯ1ЭШA'] = 'yeзОaеРЩчДoХ3ДбМ'
+	$dialogs_includes['hzgRdЙЕФИOёЯ1ЭШA'] = 'qtпФXOкIБvЖэЬЮEK'
+	$dialogs_run['hzgRdЙЕФИOёЯ1ЭШA'] = {}
 	!@ REPLIC_76
-	$dialogs_id['нjй6Q_bщЧьkРФлВV'] = 'нjй6Q_bщЧьkРФлВV'
-	$dialogs_body['нjй6Q_bщЧьkРФлВV'] = '<frase_block>
-<actor:ЬЪ8АzaКCbюKLяцщЯ>У тебя одна минута на то, чтобы объяснить мне, как добраться до хранилища.
-<actor:СxCгПш6ежНЁlKчЫL>Что?
-<actor:ЫяфjЩИ7БИякiHWнП>Бац! В глазах сверкнуло и боль такая сильная, что кажется, будто она — единственное, что я сейчас чувствую. Даже сильнее страха.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Одна минута, — <em style="color:#888888;">говорит он и прижимает холодный кружок дула к моему лбу.</em>
+	$dialogs_id['qtпФXOкIБvЖэЬЮEK'] = 'qtпФXOкIБvЖэЬЮEK'
+	$dialogs_body['qtпФXOкIБvЖэЬЮEK'] = '<frase_block>
+<actor:F05Уgu1Да54Ч6FВт>У тебя одна минута на то, чтобы объяснить мне, как добраться до хранилища.
+<actor:эHFл0Юi_сerGCтJю>Что?
+<actor:7сьЮ77ф2qПлBзеКц>Бац! В глазах сверкнуло и боль такая сильная, что кажется, будто она — единственное, что я сейчас чувствую. Даже сильнее страха.
+<actor:F05Уgu1Да54Ч6FВт>Одна минута, — <em style="color:#888888;">говорит он и прижимает холодный кружок дула к моему лбу.</em>
 </frase_block>'
-	$dialogs_sets['нjй6Q_bщЧьkРФлВV'] = '[repeat:cicle]
+	$dialogs_sets['qtпФXOкIБvЖэЬЮEK'] = '[repeat:cicle]
 [shuffle:straight]
 [act_length:25]
 [type:quest]'
-	dialogs_count['нjй6Q_bщЧьkРФлВV'] = 0
-	$dialogs_position['нjй6Q_bщЧьkРФлВV'] = 'DvсBбшxlRоEsяRТx'
-	$dialogs_includes['нjй6Q_bщЧьkРФлВV'] = 'E56Я7qGbhцjWчLnh|ЪзGЗЁбрюЗ5mhЕНхщ|qЪаТzLэь5uЫьшByl'
-	$dialogs_run['нjй6Q_bщЧьkРФлВV'] = {}
+	dialogs_count['qtпФXOкIБvЖэЬЮEK'] = 0
+	$dialogs_position['qtпФXOкIБvЖэЬЮEK'] = 'hzgRdЙЕФИOёЯ1ЭШA'
+	$dialogs_includes['qtпФXOкIБvЖэЬЮEK'] = 'rЭZZл_UРDGвK3PN9|HПUюvbгUЁhG5Елла|ЁeОнYSvЩЛEЗFmСуI'
+	$dialogs_run['qtпФXOкIБvЖэЬЮEK'] = {}
 	!@ REPLIC_77
-	$dialogs_id['E56Я7qGbhцjWчLnh'] = 'E56Я7qGbhцjWчLnh'
-	$dialogs_body['E56Я7qGbhцjWчLnh'] = 'Хранилище находится в подвале...'
-	$dialogs_sets['E56Я7qGbhцjWчLnh'] = '[marker:E56Я7qGbhцjWчLnh]
+	$dialogs_id['rЭZZл_UРDGвK3PN9'] = 'rЭZZл_UРDGвK3PN9'
+	$dialogs_body['rЭZZл_UРDGвK3PN9'] = 'Хранилище находится в подвале...'
+	$dialogs_sets['rЭZZл_UРDGвK3PN9'] = '[marker:rЭZZл_UРDGвK3PN9]
 [act_name:Хранилище в подвале...:act_name]
 [type:answer]'
-	dialogs_count['E56Я7qGbhцjWчLnh'] = 0
-	$dialogs_position['E56Я7qGbhцjWчLnh'] = 'нjй6Q_bщЧьkРФлВV'
-	$dialogs_includes['E56Я7qGbhцjWчLnh'] = '1zZЖ4iBъБSЬsз1оE'
-	$dialogs_run['E56Я7qGbhцjWчLnh'] = {}
+	dialogs_count['rЭZZл_UРDGвK3PN9'] = 0
+	$dialogs_position['rЭZZл_UРDGвK3PN9'] = 'qtпФXOкIБvЖэЬЮEK'
+	$dialogs_includes['rЭZZл_UРDGвK3PN9'] = '9Qъы5sЮZ8йгKчwлu'
+	$dialogs_run['rЭZZл_UРDGвK3PN9'] = {}
 	!@ REPLIC_78
-	$dialogs_id['ЪзGЗЁбрюЗ5mhЕНхщ'] = 'ЪзGЗЁбрюЗ5mhЕНхщ'
-	$dialogs_body['ЪзGЗЁбрюЗ5mhЕНхщ'] = 'Но я здесь не работаю, я вообще не знаю, где тут что!'
-	$dialogs_sets['ЪзGЗЁбрюЗ5mhЕНхщ'] = '[act_name:Но я здесь не работаю...:act_name]
+	$dialogs_id['HПUюvbгUЁhG5Елла'] = 'HПUюvbгUЁhG5Елла'
+	$dialogs_body['HПUюvbгUЁhG5Елла'] = 'Но я здесь не работаю, я вообще не знаю, где тут что!'
+	$dialogs_sets['HПUюvbгUЁhG5Елла'] = '[act_name:Но я здесь не работаю...:act_name]
 [type:answer]'
-	dialogs_count['ЪзGЗЁбрюЗ5mhЕНхщ'] = 0
-	$dialogs_position['ЪзGЗЁбрюЗ5mhЕНхщ'] = 'нjй6Q_bщЧьkРФлВV'
-	$dialogs_includes['ЪзGЗЁбрюЗ5mhЕНхщ'] = 'qРпИхyёьпд9Фдz6B'
-	$dialogs_run['ЪзGЗЁбрюЗ5mhЕНхщ'] = {}
+	dialogs_count['HПUюvbгUЁhG5Елла'] = 0
+	$dialogs_position['HПUюvbгUЁhG5Елла'] = 'qtпФXOкIБvЖэЬЮEK'
+	$dialogs_includes['HПUюvbгUЁhG5Елла'] = 'фРГгвmhAAгYs_аUЕ'
+	$dialogs_run['HПUюvbгUЁhG5Елла'] = {}
 	!@ REPLIC_79
-	$dialogs_id['qЪаТzLэь5uЫьшByl'] = 'qЪаТzLэь5uЫьшByl'
-	$dialogs_body['qЪаТzLэь5uЫьшByl'] = 'Что?'
-	$dialogs_sets['qЪаТzLэь5uЫьшByl'] = '[type:answer]'
-	dialogs_count['qЪаТzLэь5uЫьшByl'] = 0
-	$dialogs_position['qЪаТzLэь5uЫьшByl'] = 'нjй6Q_bщЧьkРФлВV'
-	$dialogs_includes['qЪаТzLэь5uЫьшByl'] = '3gЗеSуйаПuлTвщ9h|ЪIДМo7аЁЮvцwДАЧp'
-	$dialogs_run['qЪаТzLэь5uЫьшByl'] = {}
+	$dialogs_id['ЁeОнYSvЩЛEЗFmСуI'] = 'ЁeОнYSvЩЛEЗFmСуI'
+	$dialogs_body['ЁeОнYSvЩЛEЗFmСуI'] = 'Что?'
+	$dialogs_sets['ЁeОнYSvЩЛEЗFmСуI'] = '[type:answer]'
+	dialogs_count['ЁeОнYSvЩЛEЗFmСуI'] = 0
+	$dialogs_position['ЁeОнYSvЩЛEЗFmСуI'] = 'qtпФXOкIБvЖэЬЮEK'
+	$dialogs_includes['ЁeОнYSvЩЛEЗFmСуI'] = 'wZPСAЕеП3Жкплgо7|OЖЧСEнIE4ыюMz7f8'
+	$dialogs_run['ЁeОнYSvЩЛEЗFmСуI'] = {}
 end
 if args[0] = 8:
 	!@ REPLIC_80
-	$dialogs_id['3gЗеSуйаПuлTвщ9h'] = '3gЗеSуйаПuлTвщ9h'
-	$dialogs_body['3gЗеSуйаПuлTвщ9h'] = 'npc="name::name tire:nope fattrib:-i"
-Он стискивает зубы и стреля...'
-	$dialogs_sets['3gЗеSуйаПuлTвщ9h'] = '[marker:3gЗеSуйаПuлTвщ9h]
+	$dialogs_id['wZPСAЕеП3Жкплgо7'] = 'wZPСAЕеП3Жкплgо7'
+	$dialogs_body['wZPСAЕеП3Жкплgо7'] = 'Он стискивает зубы и стреля...'
+	$dialogs_sets['wZPСAЕеП3Жкплgо7'] = '[actor_this:7сьЮ77ф2qПлBзеКц]
+[marker:wZPСAЕеП3Жкплgо7]
 <if>DIALOG_VALUE["что.в"]=1</if>
 [type:quest]'
-	dialogs_count['3gЗеSуйаПuлTвщ9h'] = 0
-	$dialogs_position['3gЗеSуйаПuлTвщ9h'] = 'qЪаТzLэь5uЫьшByl'
-	$dialogs_includes['3gЗеSуйаПuлTвщ9h'] = 'U8P33zwOфшГVyНЬЫ'
-	$dialogs_run['3gЗеSуйаПuлTвщ9h'] = {cla}
+	dialogs_count['wZPСAЕеП3Жкплgо7'] = 0
+	$dialogs_position['wZPСAЕеП3Жкплgо7'] = 'ЁeОнYSvЩЛEЗFmСуI'
+	$dialogs_includes['wZPСAЕеП3Жкплgо7'] = '_rРJыПЮМ1ВзЪCyiy'
+	$dialogs_run['wZPСAЕеП3Жкплgо7'] = {}
 	!@ REPLIC_81
-	$dialogs_id['ЪIДМo7аЁЮvцwДАЧp'] = 'ЪIДМo7аЁЮvцwДАЧp'
-	$dialogs_body['ЪIДМo7аЁЮvцwДАЧp'] = '<frase_block>
-<actor:ЫяфjЩИ7БИякiHWнП>Бац! Оказывается, может быть ещё больнее, чем в первый раз.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Ещё раз скажешь «что», выстрелю.
+	$dialogs_id['OЖЧСEнIE4ыюMz7f8'] = 'OЖЧСEнIE4ыюMz7f8'
+	$dialogs_body['OЖЧСEнIE4ыюMz7f8'] = '<frase_block>
+<actor:7сьЮ77ф2qПлBзеКц>Бац! Оказывается, может быть ещё больнее, чем в первый раз.
+<actor:F05Уgu1Да54Ч6FВт>Ещё раз скажешь «что», выстрелю.
 </frase_block>'
-	$dialogs_sets['ЪIДМo7аЁЮvцwДАЧp'] = '<if>DIALOG_VALUE["что.в"]=0</if>
+	$dialogs_sets['OЖЧСEнIE4ыюMz7f8'] = '<if>DIALOG_VALUE["что.в"]=0</if>
 [type:quest]'
-	dialogs_count['ЪIДМo7аЁЮvцwДАЧp'] = 0
-	$dialogs_position['ЪIДМo7аЁЮvцwДАЧp'] = 'qЪаТzLэь5uЫьшByl'
-	$dialogs_includes['ЪIДМo7аЁЮvцwДАЧp'] = ''
-	$dialogs_run['ЪIДМo7аЁЮvцwДАЧp'] = {DIALOG_VALUE["что.в"]=1}
+	dialogs_count['OЖЧСEнIE4ыюMz7f8'] = 0
+	$dialogs_position['OЖЧСEнIE4ыюMz7f8'] = 'ЁeОнYSvЩЛEЗFmСуI'
+	$dialogs_includes['OЖЧСEнIE4ыюMz7f8'] = ''
+	$dialogs_run['OЖЧСEнIE4ыюMz7f8'] = {DIALOG_VALUE["что.в"]=1}
 	!@ REPLIC_82
-	$dialogs_id['U8P33zwOфшГVyНЬЫ'] = 'U8P33zwOфшГVyНЬЫ'
-	$dialogs_body['U8P33zwOфшГVyНЬЫ'] = '[Закрыть]'
-	$dialogs_sets['U8P33zwOфшГVyНЬЫ'] = '[closeup]
+	$dialogs_id['_rРJыПЮМ1ВзЪCyiy'] = '_rРJыПЮМ1ВзЪCyiy'
+	$dialogs_body['_rРJыПЮМ1ВзЪCyiy'] = '[Закрыть]'
+	$dialogs_sets['_rРJыПЮМ1ВзЪCyiy'] = '[closeup]
 [type:answer]'
-	dialogs_count['U8P33zwOфшГVyНЬЫ'] = 0
-	$dialogs_position['U8P33zwOфшГVyНЬЫ'] = '3gЗеSуйаПuлTвщ9h'
-	$dialogs_includes['U8P33zwOфшГVyНЬЫ'] = ''
-	$dialogs_run['U8P33zwOфшГVyНЬЫ'] = {}
+	dialogs_count['_rРJыПЮМ1ВзЪCyiy'] = 0
+	$dialogs_position['_rРJыПЮМ1ВзЪCyiy'] = 'wZPСAЕеП3Жкплgо7'
+	$dialogs_includes['_rРJыПЮМ1ВзЪCyiy'] = ''
+	$dialogs_run['_rРJыПЮМ1ВзЪCyiy'] = {}
 	!@ REPLIC_83
-	$dialogs_id['qРпИхyёьпд9Фдz6B'] = 'qРпИхyёьпд9Фдz6B'
-	$dialogs_body['qРпИхyёьпд9Фдz6B'] = 'Какого чёрта тогда ты делаешь в кабинке оператора?'
-	$dialogs_sets['qРпИхyёьпд9Фдz6B'] = '[type:quest]'
-	dialogs_count['qРпИхyёьпд9Фдz6B'] = 0
-	$dialogs_position['qРпИхyёьпд9Фдz6B'] = 'ЪзGЗЁбрюЗ5mhЕНхщ'
-	$dialogs_includes['qРпИхyёьпд9Фдz6B'] = 'nэУЫБжЕPуWЭh31Kp|EеxDQdъаЗрРбЁЬqВ|бLТОU3cЕuuЙчpjЁL'
-	$dialogs_run['qРпИхyёьпд9Фдz6B'] = {}
+	$dialogs_id['фРГгвmhAAгYs_аUЕ'] = 'фРГгвmhAAгYs_аUЕ'
+	$dialogs_body['фРГгвmhAAгYs_аUЕ'] = 'Какого чёрта тогда ты делаешь в кабинке оператора?'
+	$dialogs_sets['фРГгвmhAAгYs_аUЕ'] = '[type:quest]'
+	dialogs_count['фРГгвmhAAгYs_аUЕ'] = 0
+	$dialogs_position['фРГгвmhAAгYs_аUЕ'] = 'HПUюvbгUЁhG5Елла'
+	$dialogs_includes['фРГгвmhAAгYs_аUЕ'] = 'рГКт9_gAeO0йOФuё|SRбВZоlЗМубTWхNу|6SNok_NsчigжяUкм'
+	$dialogs_run['фРГгвmhAAгYs_аUЕ'] = {}
 	!@ REPLIC_84
-	$dialogs_id['nэУЫБжЕPуWЭh31Kp'] = 'nэУЫБжЕPуWЭh31Kp'
-	$dialogs_body['nэУЫБжЕPуWЭh31Kp'] = 'Да я вот решил тоже денег взять. Под шумок, так сказать. Хе-хе.'
-	$dialogs_sets['nэУЫБжЕPуWЭh31Kp'] = '[act_name:Тоже решил денег взять.:act_name]
+	$dialogs_id['рГКт9_gAeO0йOФuё'] = 'рГКт9_gAeO0йOФuё'
+	$dialogs_body['рГКт9_gAeO0йOФuё'] = 'Да я вот решил тоже денег взять. Под шумок, так сказать. Хе-хе.'
+	$dialogs_sets['рГКт9_gAeO0йOФuё'] = '[act_name:Тоже решил денег взять.:act_name]
 [type:answer]'
-	dialogs_count['nэУЫБжЕPуWЭh31Kp'] = 0
-	$dialogs_position['nэУЫБжЕPуWЭh31Kp'] = 'qРпИхyёьпд9Фдz6B'
-	$dialogs_includes['nэУЫБжЕPуWЭh31Kp'] = 'FEыXWO9wОфT5лнWС'
-	$dialogs_run['nэУЫБжЕPуWЭh31Kp'] = {}
+	dialogs_count['рГКт9_gAeO0йOФuё'] = 0
+	$dialogs_position['рГКт9_gAeO0йOФuё'] = 'фРГгвmhAAгYs_аUЕ'
+	$dialogs_includes['рГКт9_gAeO0йOФuё'] = 'юvэКХ9йДYqБWэБJт'
+	$dialogs_run['рГКт9_gAeO0йOФuё'] = {}
 	!@ REPLIC_85
-	$dialogs_id['EеxDQdъаЗрРбЁЬqВ'] = 'EеxDQdъаЗрРбЁЬqВ'
-	$dialogs_body['EеxDQdъаЗрРбЁЬqВ'] = 'От вас прячусь.
+	$dialogs_id['SRбВZоlЗМубTWхNу'] = 'SRбВZоlЗМубTWхNу'
+	$dialogs_body['SRбВZоlЗМубTWхNу'] = 'От вас прячусь.
 <frase_block>
-<actor:СxCгПш6ежНЁlKчЫL>Я тут от вас прячусь...
-<actor:ЬЪ8АzaКCbюKLяцщЯ>А, ты один из посетителей?
-<actor:СxCгПш6ежНЁlKчЫL>Да.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Я вот не видел, как ты сюда пробегал, ты сюда зашёл ещё до того, как я вошёл в здание?
-<actor:СxCгПш6ежНЁlKчЫL>Да!
-<actor:ЬЪ8АzaКCbюKLяцщЯ>А как же ты через турникет прошёл?
+<actor:эHFл0Юi_сerGCтJю>Я тут от вас прячусь...
+<actor:F05Уgu1Да54Ч6FВт>А, ты один из посетителей?
+<actor:эHFл0Юi_сerGCтJю>Да.
+<actor:F05Уgu1Да54Ч6FВт>Я вот не видел, как ты сюда пробегал, ты сюда зашёл ещё до того, как я вошёл в здание?
+<actor:эHFл0Юi_сerGCтJю>Да!
+<actor:F05Уgu1Да54Ч6FВт>А как же ты через турникет прошёл?
 </frase_block>'
-	$dialogs_sets['EеxDQdъаЗрРбЁЬqВ'] = '[type:answer]'
-	dialogs_count['EеxDQdъаЗрРбЁЬqВ'] = 0
-	$dialogs_position['EеxDQdъаЗрРбЁЬqВ'] = 'qРпИхyёьпд9Фдz6B'
-	$dialogs_includes['EеxDQdъаЗрРбЁЬqВ'] = 'HяЛ4пздИОХi7ЫфаИ'
-	$dialogs_run['EеxDQdъаЗрРбЁЬqВ'] = {}
+	$dialogs_sets['SRбВZоlЗМубTWхNу'] = '[type:answer]'
+	dialogs_count['SRбВZоlЗМубTWхNу'] = 0
+	$dialogs_position['SRбВZоlЗМубTWхNу'] = 'фРГгвmhAAгYs_аUЕ'
+	$dialogs_includes['SRбВZоlЗМубTWхNу'] = 'KRБxHUА0IОМьфJгл'
+	$dialogs_run['SRбВZоlЗМубTWхNу'] = {}
 	!@ REPLIC_86
-	$dialogs_id['бLТОU3cЕuuЙчpjЁL'] = 'бLТОU3cЕuuЙчpjЁL'
-	$dialogs_body['бLТОU3cЕuuЙчpjЁL'] = 'Я просто техник, мне позвонили и попросили починить компьютер. Они иногда вызывают меня сюда, но я не знаю, где тут сейф, честное слово!'
-	$dialogs_sets['бLТОU3cЕuuЙчpjЁL'] = '[act_name:Я техник.:act_name]
+	$dialogs_id['6SNok_NsчigжяUкм'] = '6SNok_NsчigжяUкм'
+	$dialogs_body['6SNok_NsчigжяUкм'] = 'Я просто техник, мне позвонили и попросили починить компьютер. Они иногда вызывают меня сюда, но я не знаю, где тут сейф, честное слово!'
+	$dialogs_sets['6SNok_NsчigжяUкм'] = '[act_name:Я техник.:act_name]
 [type:answer]'
-	dialogs_count['бLТОU3cЕuuЙчpjЁL'] = 0
-	$dialogs_position['бLТОU3cЕuuЙчpjЁL'] = 'qРпИхyёьпд9Фдz6B'
-	$dialogs_includes['бLТОU3cЕuuЙчpjЁL'] = 'КXуKтЭюсГхОъYfс1'
-	$dialogs_run['бLТОU3cЕuuЙчpjЁL'] = {}
+	dialogs_count['6SNok_NsчigжяUкм'] = 0
+	$dialogs_position['6SNok_NsчigжяUкм'] = 'фРГгвmhAAгYs_аUЕ'
+	$dialogs_includes['6SNok_NsчigжяUкм'] = 'гбвsв6рv_иQ5lеLб'
+	$dialogs_run['6SNok_NsчigжяUкм'] = {}
 	!@ REPLIC_87
-	$dialogs_id['КXуKтЭюсГхОъYfс1'] = 'КXуKтЭюсГхОъYfс1'
-	$dialogs_body['КXуKтЭюсГхОъYfс1'] = 'Занятно. Тогда почему на твоём бейдже написано «Старший кассир»?'
-	$dialogs_sets['КXуKтЭюсГхОъYfс1'] = '[type:quest]'
-	dialogs_count['КXуKтЭюсГхОъYfс1'] = 0
-	$dialogs_position['КXуKтЭюсГхОъYfс1'] = 'бLТОU3cЕuuЙчpjЁL'
-	$dialogs_includes['КXуKтЭюсГхОъYfс1'] = 'МEXОlБdtЪOCjol9Ь|a3кXВSРtПШNГb1rD'
-	$dialogs_run['КXуKтЭюсГхОъYfс1'] = {}
+	$dialogs_id['гбвsв6рv_иQ5lеLб'] = 'гбвsв6рv_иQ5lеLб'
+	$dialogs_body['гбвsв6рv_иQ5lеLб'] = 'Занятно. Тогда почему на твоём бейдже написано «Старший кассир»?'
+	$dialogs_sets['гбвsв6рv_иQ5lеLб'] = '[type:quest]'
+	dialogs_count['гбвsв6рv_иQ5lеLб'] = 0
+	$dialogs_position['гбвsв6рv_иQ5lеLб'] = '6SNok_NsчigжяUкм'
+	$dialogs_includes['гбвsв6рv_иQ5lеLб'] = 'шДфв_PmоSZмюмS2ь|ЦУЪpЙЯАоЪSкaЯjБe'
+	$dialogs_run['гбвsв6рv_иQ5lеLб'] = {}
 	!@ REPLIC_88
-	$dialogs_id['МEXОlБdtЪOCjol9Ь'] = 'МEXОlБdtЪOCjol9Ь'
-	$dialogs_body['МEXОlБdtЪOCjol9Ь'] = ''
-	$dialogs_sets['МEXОlБdtЪOCjol9Ь'] = '[leveljump:E56Я7qGbhцjWчLnh]
+	$dialogs_id['шДфв_PmоSZмюмS2ь'] = 'шДфв_PmоSZмюмS2ь'
+	$dialogs_body['шДфв_PmоSZмюмS2ь'] = ''
+	$dialogs_sets['шДфв_PmоSZмюмS2ь'] = '[leveljump:rЭZZл_UРDGвK3PN9]
 [act_name:Хранилище в подвале...:act_name]
 [type:answer]'
-	dialogs_count['МEXОlБdtЪOCjol9Ь'] = 0
-	$dialogs_position['МEXОlБdtЪOCjol9Ь'] = 'КXуKтЭюсГхОъYfс1'
-	$dialogs_includes['МEXОlБdtЪOCjol9Ь'] = ''
-	$dialogs_run['МEXОlБdtЪOCjol9Ь'] = {}
+	dialogs_count['шДфв_PmоSZмюмS2ь'] = 0
+	$dialogs_position['шДфв_PmоSZмюмS2ь'] = 'гбвsв6рv_иQ5lеLб'
+	$dialogs_includes['шДфв_PmоSZмюмS2ь'] = ''
+	$dialogs_run['шДфв_PmоSZмюмS2ь'] = {}
 	!@ REPLIC_89
-	$dialogs_id['a3кXВSРtПШNГb1rD'] = 'a3кXВSРtПШNГb1rD'
-	$dialogs_body['a3кXВSРtПШNГb1rD'] = 'Я его одолжил, чтобы пройти через турникет, я часто так делаю, а то они никак мне собственный не сделают...'
-	$dialogs_sets['a3кXВSРtПШNГb1rD'] = '[act_name:Я его одолжил, чтобы через турникет пройти.:act_name]
+	$dialogs_id['ЦУЪpЙЯАоЪSкaЯjБe'] = 'ЦУЪpЙЯАоЪSкaЯjБe'
+	$dialogs_body['ЦУЪpЙЯАоЪSкaЯjБe'] = 'Я его одолжил, чтобы пройти через турникет, я часто так делаю, а то они никак мне собственный не сделают...'
+	$dialogs_sets['ЦУЪpЙЯАоЪSкaЯjБe'] = '[act_name:Я его одолжил, чтобы через турникет пройти.:act_name]
 [type:answer]'
-	dialogs_count['a3кXВSРtПШNГb1rD'] = 0
-	$dialogs_position['a3кXВSРtПШNГb1rD'] = 'КXуKтЭюсГхОъYfс1'
-	$dialogs_includes['a3кXВSРtПШNГb1rD'] = 'кйfЬеwффЁ_uzhщзk'
-	$dialogs_run['a3кXВSРtПШNГb1rD'] = {}
+	dialogs_count['ЦУЪpЙЯАоЪSкaЯjБe'] = 0
+	$dialogs_position['ЦУЪpЙЯАоЪSкaЯjБe'] = 'гбвsв6рv_иQ5lеLб'
+	$dialogs_includes['ЦУЪpЙЯАоЪSкaЯjБe'] = 'шкйpсXсxшWpЧмЛУЦ'
+	$dialogs_run['ЦУЪpЙЯАоЪSкaЯjБe'] = {}
 end
 if args[0] = 9:
 	!@ REPLIC_90
-	$dialogs_id['кйfЬеwффЁ_uzhщзk'] = 'кйfЬеwффЁ_uzhщзk'
-	$dialogs_body['кйfЬеwффЁ_uzhщзk'] = '<frase_block>
-<actor:ЬЪ8АzaКCbюKLяцщЯ>У кого одолжил?
-<actor:ЫяфjЩИ7БИякiHWнП>Пальцем в толстого очкарика на полу, тут же затрясшего головой.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Окей, спасибо, техник, — <em>и спускает куро...</em>
+	$dialogs_id['шкйpсXсxшWpЧмЛУЦ'] = 'шкйpсXсxшWpЧмЛУЦ'
+	$dialogs_body['шкйpсXсxшWpЧмЛУЦ'] = '<frase_block>
+<actor:F05Уgu1Да54Ч6FВт>У кого одолжил?
+<actor:7сьЮ77ф2qПлBзеКц>Пальцем в толстого очкарика на полу, тут же затрясшего головой.
+<actor:F05Уgu1Да54Ч6FВт>Окей, спасибо, техник, — <em>и спускает куро...</em>
 </frase_block>'
-	$dialogs_sets['кйfЬеwффЁ_uzhщзk'] = '[type:quest]'
-	dialogs_count['кйfЬеwффЁ_uzhщзk'] = 0
-	$dialogs_position['кйfЬеwффЁ_uzhщзk'] = 'a3кXВSРtПШNГb1rD'
-	$dialogs_includes['кйfЬеwффЁ_uzhщзk'] = 'ПноYЮЫVhghяоZ3КМ'
-	$dialogs_run['кйfЬеwффЁ_uzhщзk'] = {cla}
+	$dialogs_sets['шкйpсXсxшWpЧмЛУЦ'] = '[type:quest]'
+	dialogs_count['шкйpсXсxшWpЧмЛУЦ'] = 0
+	$dialogs_position['шкйpсXсxшWpЧмЛУЦ'] = 'ЦУЪpЙЯАоЪSкaЯjБe'
+	$dialogs_includes['шкйpсXсxшWpЧмЛУЦ'] = 'lvёЦъ_lРqсFtДыЖF'
+	$dialogs_run['шкйpсXсxшWpЧмЛУЦ'] = {cla}
 	!@ REPLIC_91
-	$dialogs_id['ПноYЮЫVhghяоZ3КМ'] = 'ПноYЮЫVhghяоZ3КМ'
-	$dialogs_body['ПноYЮЫVhghяоZ3КМ'] = '[Закрыть]'
-	$dialogs_sets['ПноYЮЫVhghяоZ3КМ'] = '[closeup]
+	$dialogs_id['lvёЦъ_lРqсFtДыЖF'] = 'lvёЦъ_lРqсFtДыЖF'
+	$dialogs_body['lvёЦъ_lРqсFtДыЖF'] = '[Закрыть]'
+	$dialogs_sets['lvёЦъ_lРqсFtДыЖF'] = '[closeup]
 [type:answer]'
-	dialogs_count['ПноYЮЫVhghяоZ3КМ'] = 0
-	$dialogs_position['ПноYЮЫVhghяоZ3КМ'] = 'кйfЬеwффЁ_uzhщзk'
-	$dialogs_includes['ПноYЮЫVhghяоZ3КМ'] = ''
-	$dialogs_run['ПноYЮЫVhghяоZ3КМ'] = {}
+	dialogs_count['lvёЦъ_lРqсFtДыЖF'] = 0
+	$dialogs_position['lvёЦъ_lРqсFtДыЖF'] = 'шкйpсXсxшWpЧмЛУЦ'
+	$dialogs_includes['lvёЦъ_lРqсFtДыЖF'] = ''
+	$dialogs_run['lvёЦъ_lРqсFtДыЖF'] = {}
 	!@ REPLIC_92
-	$dialogs_id['HяЛ4пздИОХi7ЫфаИ'] = 'HяЛ4пздИОХi7ЫфаИ'
-	$dialogs_body['HяЛ4пздИОХi7ЫфаИ'] = ''
-	$dialogs_sets['HяЛ4пздИОХi7ЫфаИ'] = '[type:quest]'
-	dialogs_count['HяЛ4пздИОХi7ЫфаИ'] = 0
-	$dialogs_position['HяЛ4пздИОХi7ЫфаИ'] = 'EеxDQdъаЗрРбЁЬqВ'
-	$dialogs_includes['HяЛ4пздИОХi7ЫфаИ'] = 'QЮиЁеnp8RХIЬьwИХ|уtHЁЕAядДoWwlпьХ'
-	$dialogs_run['HяЛ4пздИОХi7ЫфаИ'] = {}
+	$dialogs_id['KRБxHUА0IОМьфJгл'] = 'KRБxHUА0IОМьфJгл'
+	$dialogs_body['KRБxHUА0IОМьфJгл'] = ''
+	$dialogs_sets['KRБxHUА0IОМьфJгл'] = '[type:quest]'
+	dialogs_count['KRБxHUА0IОМьфJгл'] = 0
+	$dialogs_position['KRБxHUА0IОМьфJгл'] = 'SRбВZоlЗМубTWхNу'
+	$dialogs_includes['KRБxHUА0IОМьфJгл'] = 'зЙЦрдёLEъU1yлДщЭ|YглxтвШETKаmhБdй'
+	$dialogs_run['KRБxHUА0IОМьфJгл'] = {}
 	!@ REPLIC_93
-	$dialogs_id['QЮиЁеnp8RХIЬьwИХ'] = 'QЮиЁеnp8RХIЬьwИХ'
-	$dialogs_body['QЮиЁеnp8RХIЬьwИХ'] = ''
-	$dialogs_sets['QЮиЁеnp8RХIЬьwИХ'] = '[leveljump:E56Я7qGbhцjWчLnh]
+	$dialogs_id['зЙЦрдёLEъU1yлДщЭ'] = 'зЙЦрдёLEъU1yлДщЭ'
+	$dialogs_body['зЙЦрдёLEъU1yлДщЭ'] = ''
+	$dialogs_sets['зЙЦрдёLEъU1yлДщЭ'] = '[leveljump:rЭZZл_UРDGвK3PN9]
 [act_name:Хранилище в подвале...:act_name]
 [type:answer]'
-	dialogs_count['QЮиЁеnp8RХIЬьwИХ'] = 0
-	$dialogs_position['QЮиЁеnp8RХIЬьwИХ'] = 'HяЛ4пздИОХi7ЫфаИ'
-	$dialogs_includes['QЮиЁеnp8RХIЬьwИХ'] = ''
-	$dialogs_run['QЮиЁеnp8RХIЬьwИХ'] = {}
+	dialogs_count['зЙЦрдёLEъU1yлДщЭ'] = 0
+	$dialogs_position['зЙЦрдёLEъU1yлДщЭ'] = 'KRБxHUА0IОМьфJгл'
+	$dialogs_includes['зЙЦрдёLEъU1yлДщЭ'] = ''
+	$dialogs_run['зЙЦрдёLEъU1yлДщЭ'] = {}
 	!@ REPLIC_94
-	$dialogs_id['уtHЁЕAядДoWwlпьХ'] = 'уtHЁЕAядДoWwlпьХ'
-	$dialogs_body['уtHЁЕAядДoWwlпьХ'] = 'Что?'
-	$dialogs_sets['уtHЁЕAядДoWwlпьХ'] = '[leveljump:3gЗеSуйаПuлTвщ9h]
+	$dialogs_id['YглxтвШETKаmhБdй'] = 'YглxтвШETKаmhБdй'
+	$dialogs_body['YглxтвШETKаmhБdй'] = 'Что?'
+	$dialogs_sets['YглxтвШETKаmhБdй'] = '[leveljump:wZPСAЕеП3Жкплgо7]
 [type:answer]'
-	dialogs_count['уtHЁЕAядДoWwlпьХ'] = 0
-	$dialogs_position['уtHЁЕAядДoWwlпьХ'] = 'HяЛ4пздИОХi7ЫфаИ'
-	$dialogs_includes['уtHЁЕAядДoWwlпьХ'] = ''
-	$dialogs_run['уtHЁЕAядДoWwlпьХ'] = {}
+	dialogs_count['YглxтвШETKаmhБdй'] = 0
+	$dialogs_position['YглxтвШETKаmhБdй'] = 'KRБxHUА0IОМьфJгл'
+	$dialogs_includes['YглxтвШETKаmhБdй'] = ''
+	$dialogs_run['YглxтвШETKаmhБdй'] = {}
 	!@ REPLIC_95
-	$dialogs_id['FEыXWO9wОфT5лнWС'] = 'FEыXWO9wОфT5лнWС'
-	$dialogs_body['FEыXWO9wОфT5лнWС'] = 'А, вон оно что. Но на тебе форма сотрудника банка. То есть, ты не только лжец, но ещё и вор? Двадцать секунд. Хе-хе.'
-	$dialogs_sets['FEыXWO9wОфT5лнWС'] = '[type:quest]'
-	dialogs_count['FEыXWO9wОфT5лнWС'] = 0
-	$dialogs_position['FEыXWO9wОфT5лнWС'] = 'nэУЫБжЕPуWЭh31Kp'
-	$dialogs_includes['FEыXWO9wОфT5лнWС'] = 'ZKЁТсrPЫB_pЗjШTn'
-	$dialogs_run['FEыXWO9wОфT5лнWС'] = {}
+	$dialogs_id['юvэКХ9йДYqБWэБJт'] = 'юvэКХ9йДYqБWэБJт'
+	$dialogs_body['юvэКХ9йДYqБWэБJт'] = 'А, вон оно что. Но на тебе форма сотрудника банка. То есть, ты не только лжец, но ещё и вор? Двадцать секунд. Хе-хе.'
+	$dialogs_sets['юvэКХ9йДYqБWэБJт'] = '[type:quest]'
+	dialogs_count['юvэКХ9йДYqБWэБJт'] = 0
+	$dialogs_position['юvэКХ9йДYqБWэБJт'] = 'рГКт9_gAeO0йOФuё'
+	$dialogs_includes['юvэКХ9йДYqБWэБJт'] = 'ЫlьtWАъDBehдtjUб'
+	$dialogs_run['юvэКХ9йДYqБWэБJт'] = {}
 	!@ REPLIC_96
-	$dialogs_id['ZKЁТсrPЫB_pЗjШTn'] = 'ZKЁТсrPЫB_pЗjШTn'
-	$dialogs_body['ZKЁТсrPЫB_pЗjШTn'] = ''
-	$dialogs_sets['ZKЁТсrPЫB_pЗjШTn'] = '[leveljump:E56Я7qGbhцjWчLnh]
+	$dialogs_id['ЫlьtWАъDBehдtjUб'] = 'ЫlьtWАъDBehдtjUб'
+	$dialogs_body['ЫlьtWАъDBehдtjUб'] = ''
+	$dialogs_sets['ЫlьtWАъDBehдtjUб'] = '[leveljump:rЭZZл_UРDGвK3PN9]
 [act_name:Хранилище в подвале!:act_name]
 [type:answer]'
-	dialogs_count['ZKЁТсrPЫB_pЗjШTn'] = 0
-	$dialogs_position['ZKЁТсrPЫB_pЗjШTn'] = 'FEыXWO9wОфT5лнWС'
-	$dialogs_includes['ZKЁТсrPЫB_pЗjШTn'] = ''
-	$dialogs_run['ZKЁТсrPЫB_pЗjШTn'] = {}
+	dialogs_count['ЫlьtWАъDBehдtjUб'] = 0
+	$dialogs_position['ЫlьtWАъDBehдtjUб'] = 'юvэКХ9йДYqБWэБJт'
+	$dialogs_includes['ЫlьtWАъDBehдtjUб'] = ''
+	$dialogs_run['ЫlьtWАъDBehдtjUб'] = {}
 	!@ REPLIC_97
-	$dialogs_id['1zZЖ4iBъБSЬsз1оE'] = '1zZЖ4iBъБSЬsз1оE'
-	$dialogs_body['1zZЖ4iBъБSЬsз1оE'] = 'Уже лучше. А теперь, как туда добраться?'
-	$dialogs_sets['1zZЖ4iBъБSЬsз1оE'] = '[type:quest]'
-	dialogs_count['1zZЖ4iBъБSЬsз1оE'] = 0
-	$dialogs_position['1zZЖ4iBъБSЬsз1оE'] = 'E56Я7qGbhцjWчLnh'
-	$dialogs_includes['1zZЖ4iBъБSЬsз1оE'] = 'ДНUйyиъсуДeБы_4б'
-	$dialogs_run['1zZЖ4iBъБSЬsз1оE'] = {}
+	$dialogs_id['9Qъы5sЮZ8йгKчwлu'] = '9Qъы5sЮZ8йгKчwлu'
+	$dialogs_body['9Qъы5sЮZ8йгKчwлu'] = 'Уже лучше. А теперь, как туда добраться?'
+	$dialogs_sets['9Qъы5sЮZ8йгKчwлu'] = '[type:quest]'
+	dialogs_count['9Qъы5sЮZ8йгKчwлu'] = 0
+	$dialogs_position['9Qъы5sЮZ8йгKчwлu'] = 'rЭZZл_UРDGвK3PN9'
+	$dialogs_includes['9Qъы5sЮZ8йгKчwлu'] = 'Р7JпЛк2Иfё8Лuя8щ'
+	$dialogs_run['9Qъы5sЮZ8йгKчwлu'] = {}
 	!@ REPLIC_98
-	$dialogs_id['ДНUйyиъсуДeБы_4б'] = 'ДНUйyиъсуДeБы_4б'
-	$dialogs_body['ДНUйyиъсуДeБы_4б'] = ''
-	$dialogs_sets['ДНUйyиъсуДeБы_4б'] = '[type:quest]'
-	dialogs_count['ДНUйyиъсуДeБы_4б'] = 0
-	$dialogs_position['ДНUйyиъсуДeБы_4б'] = '1zZЖ4iBъБSЬsз1оE'
-	$dialogs_includes['ДНUйyиъсуДeБы_4б'] = 'хwxpфЦBЦРAxдоRъQ|АьWtWlPOLХt_РВDа|MXсжjНpНIYТGhйIE'
-	$dialogs_run['ДНUйyиъсуДeБы_4б'] = {}
+	$dialogs_id['Р7JпЛк2Иfё8Лuя8щ'] = 'Р7JпЛк2Иfё8Лuя8щ'
+	$dialogs_body['Р7JпЛк2Иfё8Лuя8щ'] = ''
+	$dialogs_sets['Р7JпЛк2Иfё8Лuя8щ'] = '[type:quest]'
+	dialogs_count['Р7JпЛк2Иfё8Лuя8щ'] = 0
+	$dialogs_position['Р7JпЛк2Иfё8Лuя8щ'] = '9Qъы5sЮZ8йгKчwлu'
+	$dialogs_includes['Р7JпЛк2Иfё8Лuя8щ'] = 'ЙwсNЙPуФЩTPqGОчЭ|ънчаМтopMYоX6cФэ|CYkaKчщiсYЕдLПНЭ'
+	$dialogs_run['Р7JпЛк2Иfё8Лuя8щ'] = {}
 	!@ REPLIC_99
-	$dialogs_id['хwxpфЦBЦРAxдоRъQ'] = 'хwxpфЦBЦРAxдоRъQ'
-	$dialogs_body['хwxpфЦBЦРAxдоRъQ'] = 'К сожалению, больше путей нет.'
-	$dialogs_sets['хwxpфЦBЦРAxдоRъQ'] = '[act_name:Нет:act_name]
+	$dialogs_id['ЙwсNЙPуФЩTPqGОчЭ'] = 'ЙwсNЙPуФЩTPqGОчЭ'
+	$dialogs_body['ЙwсNЙPуФЩTPqGОчЭ'] = 'К сожалению, больше путей нет.'
+	$dialogs_sets['ЙwсNЙPуФЩTPqGОчЭ'] = '[act_name:Нет:act_name]
 <if>$DIALOG_VALUE["по лестнице"]="поговорили" and $DIALOG_VALUE["по лифту"]="поговорили"</if>
 [type:answer]'
-	dialogs_count['хwxpфЦBЦРAxдоRъQ'] = 0
-	$dialogs_position['хwxpфЦBЦРAxдоRъQ'] = 'ДНUйyиъсуДeБы_4б'
-	$dialogs_includes['хwxpфЦBЦРAxдоRъQ'] = 'tЗBNJbpJН0kпnИsG'
-	$dialogs_run['хwxpфЦBЦРAxдоRъQ'] = {}
+	dialogs_count['ЙwсNЙPуФЩTPqGОчЭ'] = 0
+	$dialogs_position['ЙwсNЙPуФЩTPqGОчЭ'] = 'Р7JпЛк2Иfё8Лuя8щ'
+	$dialogs_includes['ЙwсNЙPуФЩTPqGОчЭ'] = 'мФFXPEЗЦсюЩФKжЛo'
+	$dialogs_run['ЙwсNЙPуФЩTPqGОчЭ'] = {}
 end
 if args[0] = 10:
 	!@ REPLIC_100
-	$dialogs_id['АьWtWlPOLХt_РВDа'] = 'АьWtWlPOLХt_РВDа'
-	$dialogs_body['АьWtWlPOLХt_РВDа'] = 'В кабинете управляющего есть лифт, спускающийся прямо в хранилище. Только вряд ли вы до него доберётесь.'
-	$dialogs_sets['АьWtWlPOLХt_РВDа'] = '[act_name:На лифте...:act_name]
+	$dialogs_id['ънчаМтopMYоX6cФэ'] = 'ънчаМтopMYоX6cФэ'
+	$dialogs_body['ънчаМтopMYоX6cФэ'] = 'В кабинете управляющего есть лифт, спускающийся прямо в хранилище. Только вряд ли вы до него доберётесь.'
+	$dialogs_sets['ънчаМтopMYоX6cФэ'] = '[act_name:На лифте...:act_name]
 <if>$DIALOG_VALUE["по лифту"]!"поговорили"</if>
 [type:answer]'
-	dialogs_count['АьWtWlPOLХt_РВDа'] = 0
-	$dialogs_position['АьWtWlPOLХt_РВDа'] = 'ДНUйyиъсуДeБы_4б'
-	$dialogs_includes['АьWtWlPOLХt_РВDа'] = 'bC1czЕKуYJmчАeло'
-	$dialogs_run['АьWtWlPOLХt_РВDа'] = {}
+	dialogs_count['ънчаМтopMYоX6cФэ'] = 0
+	$dialogs_position['ънчаМтopMYоX6cФэ'] = 'Р7JпЛк2Иfё8Лuя8щ'
+	$dialogs_includes['ънчаМтopMYоX6cФэ'] = 'РqjФвЩIiйeЕеoЫbя'
+	$dialogs_run['ънчаМтopMYоX6cФэ'] = {}
 	!@ REPLIC_101
-	$dialogs_id['MXсжjНpНIYТGhйIE'] = 'MXсжjНpНIYТGhйIE'
-	$dialogs_body['MXсжjНpНIYТGhйIE'] = 'Вон за той дверью в подвал ведёт лестница, по ней можно спуститься до главного коридора, из него в архив, а уже через архив к двери хранилища.'
-	$dialogs_sets['MXсжjНpНIYТGhйIE'] = '[act_name:По лестнице...:act_name]
+	$dialogs_id['CYkaKчщiсYЕдLПНЭ'] = 'CYkaKчщiсYЕдLПНЭ'
+	$dialogs_body['CYkaKчщiсYЕдLПНЭ'] = 'Вон за той дверью в подвал ведёт лестница, по ней можно спуститься до главного коридора, из него в архив, а уже через архив к двери хранилища.'
+	$dialogs_sets['CYkaKчщiсYЕдLПНЭ'] = '[act_name:По лестнице...:act_name]
 <if>$DIALOG_VALUE["по лестнице"]!"поговорили"</if>
 [type:answer]'
-	dialogs_count['MXсжjНpНIYТGhйIE'] = 0
-	$dialogs_position['MXсжjНpНIYТGhйIE'] = 'ДНUйyиъсуДeБы_4б'
-	$dialogs_includes['MXсжjНpНIYТGhйIE'] = 'ВбсoЫgёЪУЙbmMlУч'
-	$dialogs_run['MXсжjНpНIYТGhйIE'] = {}
+	dialogs_count['CYkaKчщiсYЕдLПНЭ'] = 0
+	$dialogs_position['CYkaKчщiсYЕдLПНЭ'] = 'Р7JпЛк2Иfё8Лuя8щ'
+	$dialogs_includes['CYkaKчщiсYЕдLПНЭ'] = 'гU6ыKЬbЦЛ_ьbmн1_'
+	$dialogs_run['CYkaKчщiсYЕдLПНЭ'] = {}
 	!@ REPLIC_102
-	$dialogs_id['ВбсoЫgёЪУЙbmMlУч'] = 'ВбсoЫgёЪУЙbmMlУч'
-	$dialogs_body['ВбсoЫgёЪУЙbmMlУч'] = 'Ещё что-нибудь, о чём мне как грабителю полезно было бы узнать?'
-	$dialogs_sets['ВбсoЫgёЪУЙbmMlУч'] = '[type:quest]'
-	dialogs_count['ВбсoЫgёЪУЙbmMlУч'] = 0
-	$dialogs_position['ВбсoЫgёЪУЙbmMlУч'] = 'MXсжjНpНIYТGhйIE'
-	$dialogs_includes['ВбсoЫgёЪУЙbmMlУч'] = 'w18_L41вэкрBHПтШ'
-	$dialogs_run['ВбсoЫgёЪУЙbmMlУч'] = {}
+	$dialogs_id['гU6ыKЬbЦЛ_ьbmн1_'] = 'гU6ыKЬbЦЛ_ьbmн1_'
+	$dialogs_body['гU6ыKЬbЦЛ_ьbmн1_'] = 'Ещё что-нибудь, о чём мне как грабителю полезно было бы узнать?'
+	$dialogs_sets['гU6ыKЬbЦЛ_ьbmн1_'] = '[type:quest]'
+	dialogs_count['гU6ыKЬbЦЛ_ьbmн1_'] = 0
+	$dialogs_position['гU6ыKЬbЦЛ_ьbmн1_'] = 'CYkaKчщiсYЕдLПНЭ'
+	$dialogs_includes['гU6ыKЬbЦЛ_ьbmн1_'] = 'O3V9cХо2IQтфвvO8'
+	$dialogs_run['гU6ыKЬbЦЛ_ьbmн1_'] = {}
 	!@ REPLIC_103
-	$dialogs_id['w18_L41вэкрBHПтШ'] = 'w18_L41вэкрBHПтШ'
-	$dialogs_body['w18_L41вэкрBHПтШ'] = ''
-	$dialogs_sets['w18_L41вэкрBHПтШ'] = '[type:quest]'
-	dialogs_count['w18_L41вэкрBHПтШ'] = 0
-	$dialogs_position['w18_L41вэкрBHПтШ'] = 'ВбсoЫgёЪУЙbmMlУч'
-	$dialogs_includes['w18_L41вэкрBHПтШ'] = 'gWn0JуАХq6tХЫБпC|cыKИvsTОzьj8VЮЖЙ|pMЕгб4ЯУUРЛЗDTB0|g9Mq11UгщYFtEЦQM|ЙваЁшыУфцРZcюjУЩ'
-	$dialogs_run['w18_L41вэкрBHПтШ'] = {}
+	$dialogs_id['O3V9cХо2IQтфвvO8'] = 'O3V9cХо2IQтфвvO8'
+	$dialogs_body['O3V9cХо2IQтфвvO8'] = ''
+	$dialogs_sets['O3V9cХо2IQтфвvO8'] = '[type:quest]'
+	dialogs_count['O3V9cХо2IQтфвvO8'] = 0
+	$dialogs_position['O3V9cХо2IQтфвvO8'] = 'гU6ыKЬbЦЛ_ьbmн1_'
+	$dialogs_includes['O3V9cХо2IQтфвvO8'] = 'QЕТбзOЫъxС_оCъcд|juЯpЧbЕЭuтяBo1БЬ|jiIkэиЮ_EеЗgevПi|мфiNшЦCoTOЪPиcёA|OяPШЕtЗZBЯйДг0Гb'
+	$dialogs_run['O3V9cХо2IQтфвvO8'] = {}
 	!@ REPLIC_104
-	$dialogs_id['gWn0JуАХq6tХЫБпC'] = 'gWn0JуАХq6tХЫБпC'
-	$dialogs_body['gWn0JуАХq6tХЫБпC'] = '<frase_block>
-<actor:СxCгПш6ежНЁlKчЫL>На этом всё.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>А другой путь есть?
+	$dialogs_id['QЕТбзOЫъxС_оCъcд'] = 'QЕТбзOЫъxС_оCъcд'
+	$dialogs_body['QЕТбзOЫъxС_оCъcд'] = '<frase_block>
+<actor:эHFл0Юi_сerGCтJю>На этом всё.
+<actor:F05Уgu1Да54Ч6FВт>А другой путь есть?
 </frase_block>'
-	$dialogs_sets['gWn0JуАХq6tХЫБпC'] = '[levelup:4]
+	$dialogs_sets['QЕТбзOЫъxС_оCъcд'] = '[levelup:4]
 <if>$DIALOG_VALUE["хранилище"]="поговорили" and $DIALOG_VALUE["архив"]="поговорили" and $DIALOG_VALUE["коридор"]="поговорили" and $DIALOG_VALUE["лестница"]="поговорили"</if>
 [type:quest]'
-	dialogs_count['gWn0JуАХq6tХЫБпC'] = 0
-	$dialogs_position['gWn0JуАХq6tХЫБпC'] = 'w18_L41вэкрBHПтШ'
-	$dialogs_includes['gWn0JуАХq6tХЫБпC'] = ''
-	$dialogs_run['gWn0JуАХq6tХЫБпC'] = {$DIALOG_VALUE["по лестнице"]="поговорили"}
+	dialogs_count['QЕТбзOЫъxС_оCъcд'] = 0
+	$dialogs_position['QЕТбзOЫъxС_оCъcд'] = 'O3V9cХо2IQтфвvO8'
+	$dialogs_includes['QЕТбзOЫъxС_оCъcд'] = ''
+	$dialogs_run['QЕТбзOЫъxС_оCъcд'] = {$DIALOG_VALUE["по лестнице"]="поговорили"}
 	!@ REPLIC_105
-	$dialogs_id['cыKИvsTОzьj8VЮЖЙ'] = 'cыKИvsTОzьj8VЮЖЙ'
-	$dialogs_body['cыKИvsTОzьj8VЮЖЙ'] = 'Толщина двери в хранилище полтора метра.'
-	$dialogs_sets['cыKИvsTОzьj8VЮЖЙ'] = '[act_name:О двери в хранилище...:act_name]
+	$dialogs_id['juЯpЧbЕЭuтяBo1БЬ'] = 'juЯpЧbЕЭuтяBo1БЬ'
+	$dialogs_body['juЯpЧbЕЭuтяBo1БЬ'] = 'Толщина двери в хранилище полтора метра.'
+	$dialogs_sets['juЯpЧbЕЭuтяBo1БЬ'] = '[act_name:О двери в хранилище...:act_name]
 <if>$DIALOG_VALUE["хранилище"]!"поговорили"</if>
 [type:answer]'
-	dialogs_count['cыKИvsTОzьj8VЮЖЙ'] = 0
-	$dialogs_position['cыKИvsTОzьj8VЮЖЙ'] = 'w18_L41вэкрBHПтШ'
-	$dialogs_includes['cыKИvsTОzьj8VЮЖЙ'] = 'sYtО_КRxoЕНЪ_Ещч'
-	$dialogs_run['cыKИvsTОzьj8VЮЖЙ'] = {}
+	dialogs_count['juЯpЧbЕЭuтяBo1БЬ'] = 0
+	$dialogs_position['juЯpЧbЕЭuтяBo1БЬ'] = 'O3V9cХо2IQтфвvO8'
+	$dialogs_includes['juЯpЧbЕЭuтяBo1БЬ'] = 'п4uкx_гQIН0FНьчя'
+	$dialogs_run['juЯpЧbЕЭuтяBo1БЬ'] = {}
 	!@ REPLIC_106
-	$dialogs_id['pMЕгб4ЯУUРЛЗDTB0'] = 'pMЕгб4ЯУUРЛЗDTB0'
-	$dialogs_body['pMЕгб4ЯУUРЛЗDTB0'] = 'В архиве люди пропадают...'
-	$dialogs_sets['pMЕгб4ЯУUРЛЗDTB0'] = '[act_name:Об архиве...:act_name]
+	$dialogs_id['jiIkэиЮ_EеЗgevПi'] = 'jiIkэиЮ_EеЗgevПi'
+	$dialogs_body['jiIkэиЮ_EеЗgevПi'] = 'В архиве люди пропадают...'
+	$dialogs_sets['jiIkэиЮ_EеЗgevПi'] = '[act_name:Об архиве...:act_name]
 <if>$DIALOG_VALUE["архив"]!"поговорили"</if>
 [type:answer]'
-	dialogs_count['pMЕгб4ЯУUРЛЗDTB0'] = 0
-	$dialogs_position['pMЕгб4ЯУUРЛЗDTB0'] = 'w18_L41вэкрBHПтШ'
-	$dialogs_includes['pMЕгб4ЯУUРЛЗDTB0'] = '_ОYi6O1кКJGUвюРO'
-	$dialogs_run['pMЕгб4ЯУUРЛЗDTB0'] = {}
+	dialogs_count['jiIkэиЮ_EеЗgevПi'] = 0
+	$dialogs_position['jiIkэиЮ_EеЗgevПi'] = 'O3V9cХо2IQтфвvO8'
+	$dialogs_includes['jiIkэиЮ_EеЗgevПi'] = 'mMgHгнюoн6с9НгGм'
+	$dialogs_run['jiIkэиЮ_EеЗgevПi'] = {}
 	!@ REPLIC_107
-	$dialogs_id['g9Mq11UгщYFtEЦQM'] = 'g9Mq11UгщYFtEЦQM'
-	$dialogs_body['g9Mq11UгщYFtEЦQM'] = 'Поперёк коридора идут лазерные лучи.'
-	$dialogs_sets['g9Mq11UгщYFtEЦQM'] = '[act_name:О коридоре...:act_name]
+	$dialogs_id['мфiNшЦCoTOЪPиcёA'] = 'мфiNшЦCoTOЪPиcёA'
+	$dialogs_body['мфiNшЦCoTOЪPиcёA'] = 'Поперёк коридора идут лазерные лучи.'
+	$dialogs_sets['мфiNшЦCoTOЪPиcёA'] = '[act_name:О коридоре...:act_name]
 <if>$DIALOG_VALUE["коридор"]!"поговорили"</if>
 [type:answer]'
-	dialogs_count['g9Mq11UгщYFtEЦQM'] = 0
-	$dialogs_position['g9Mq11UгщYFtEЦQM'] = 'w18_L41вэкрBHПтШ'
-	$dialogs_includes['g9Mq11UгщYFtEЦQM'] = 'БsЕЮmРcvШГСНКдSх'
-	$dialogs_run['g9Mq11UгщYFtEЦQM'] = {}
+	dialogs_count['мфiNшЦCoTOЪPиcёA'] = 0
+	$dialogs_position['мфiNшЦCoTOЪPиcёA'] = 'O3V9cХо2IQтфвvO8'
+	$dialogs_includes['мфiNшЦCoTOЪPиcёA'] = 'lААGRFнSoбижEАtц'
+	$dialogs_run['мфiNшЦCoTOЪPиcёA'] = {}
 	!@ REPLIC_108
-	$dialogs_id['ЙваЁшыУфцРZcюjУЩ'] = 'ЙваЁшыУфцРZcюjУЩ'
-	$dialogs_body['ЙваЁшыУфцРZcюjУЩ'] = 'На лестнице сторожит охранник с оружием.'
-	$dialogs_sets['ЙваЁшыУфцРZcюjУЩ'] = '[act_name:О лестинце...:act_name]
+	$dialogs_id['OяPШЕtЗZBЯйДг0Гb'] = 'OяPШЕtЗZBЯйДг0Гb'
+	$dialogs_body['OяPШЕtЗZBЯйДг0Гb'] = 'На лестнице сторожит охранник с оружием.'
+	$dialogs_sets['OяPШЕtЗZBЯйДг0Гb'] = '[act_name:О лестинце...:act_name]
 <if>$DIALOG_VALUE["лестница"]!"поговорили"</if>
 [type:answer]'
-	dialogs_count['ЙваЁшыУфцРZcюjУЩ'] = 0
-	$dialogs_position['ЙваЁшыУфцРZcюjУЩ'] = 'w18_L41вэкрBHПтШ'
-	$dialogs_includes['ЙваЁшыУфцРZcюjУЩ'] = 'эM1щWЮTБЮЯЭxсоЯМ'
-	$dialogs_run['ЙваЁшыУфцРZcюjУЩ'] = {}
+	dialogs_count['OяPШЕtЗZBЯйДг0Гb'] = 0
+	$dialogs_position['OяPШЕtЗZBЯйДг0Гb'] = 'O3V9cХо2IQтфвvO8'
+	$dialogs_includes['OяPШЕtЗZBЯйДг0Гb'] = '6яf9VЦTМVsdsёйnч'
+	$dialogs_run['OяPШЕtЗZBЯйДг0Гb'] = {}
 	!@ REPLIC_109
-	$dialogs_id['эM1щWЮTБЮЯЭxсоЯМ'] = 'эM1щWЮTБЮЯЭxсоЯМ'
-	$dialogs_body['эM1щWЮTБЮЯЭxсоЯМ'] = 'Каким оружием?'
-	$dialogs_sets['эM1щWЮTБЮЯЭxсоЯМ'] = '[type:quest]'
-	dialogs_count['эM1щWЮTБЮЯЭxсоЯМ'] = 0
-	$dialogs_position['эM1щWЮTБЮЯЭxсоЯМ'] = 'ЙваЁшыУфцРZcюjУЩ'
-	$dialogs_includes['эM1щWЮTБЮЯЭxсоЯМ'] = 'ЖHsGЛчЦDтз1SQх2O|W6ыDTGlPtЪFsтЦдN'
-	$dialogs_run['эM1щWЮTБЮЯЭxсоЯМ'] = {}
+	$dialogs_id['6яf9VЦTМVsdsёйnч'] = '6яf9VЦTМVsdsёйnч'
+	$dialogs_body['6яf9VЦTМVsdsёйnч'] = 'Каким оружием?'
+	$dialogs_sets['6яf9VЦTМVsdsёйnч'] = '[type:quest]'
+	dialogs_count['6яf9VЦTМVsdsёйnч'] = 0
+	$dialogs_position['6яf9VЦTМVsdsёйnч'] = 'OяPШЕtЗZBЯйДг0Гb'
+	$dialogs_includes['6яf9VЦTМVsdsёйnч'] = 'jЛЭИAЁwG_пЫДЮCяЕ|HZСCuаьфЛьpНАВЩw'
+	$dialogs_run['6яf9VЦTМVsdsёйnч'] = {}
 end
 if args[0] = 11:
 	!@ REPLIC_110
-	$dialogs_id['ЖHsGЛчЦDтз1SQх2O'] = 'ЖHsGЛчЦDтз1SQх2O'
-	$dialogs_body['ЖHsGЛчЦDтз1SQх2O'] = 'Benelli M4 Super 90, шестизарядный, с телескопическим прикладом, пистолетной рукояткой, планкой Пикатинни...'
-	$dialogs_sets['ЖHsGЛчЦDтз1SQх2O'] = '[act_name:Benelli M4...:act_name]
+	$dialogs_id['jЛЭИAЁwG_пЫДЮCяЕ'] = 'jЛЭИAЁwG_пЫДЮCяЕ'
+	$dialogs_body['jЛЭИAЁwG_пЫДЮCяЕ'] = 'Benelli M4 Super 90, шестизарядный, с телескопическим прикладом, пистолетной рукояткой, планкой Пикатинни...'
+	$dialogs_sets['jЛЭИAЁwG_пЫДЮCяЕ'] = '[act_name:Benelli M4...:act_name]
 [type:answer]'
-	dialogs_count['ЖHsGЛчЦDтз1SQх2O'] = 0
-	$dialogs_position['ЖHsGЛчЦDтз1SQх2O'] = 'эM1щWЮTБЮЯЭxсоЯМ'
-	$dialogs_includes['ЖHsGЛчЦDтз1SQх2O'] = 'Yтлцf2AJ6ВlзjшQu'
-	$dialogs_run['ЖHsGЛчЦDтз1SQх2O'] = {}
+	dialogs_count['jЛЭИAЁwG_пЫДЮCяЕ'] = 0
+	$dialogs_position['jЛЭИAЁwG_пЫДЮCяЕ'] = '6яf9VЦTМVsdsёйnч'
+	$dialogs_includes['jЛЭИAЁwG_пЫДЮCяЕ'] = '67ыЁqКЭЫшnосЯOр8'
+	$dialogs_run['jЛЭИAЁwG_пЫДЮCяЕ'] = {}
 	!@ REPLIC_111
-	$dialogs_id['W6ыDTGlPtЪFsтЦдN'] = 'W6ыDTGlPtЪFsтЦдN'
-	$dialogs_body['W6ыDTGlPtЪFsтЦдN'] = 'Не знаю, я не разбираюсь.'
-	$dialogs_sets['W6ыDTGlPtЪFsтЦдN'] = '[act_name:Ружьё какое-то...:act_name]
+	$dialogs_id['HZСCuаьфЛьpНАВЩw'] = 'HZСCuаьфЛьpНАВЩw'
+	$dialogs_body['HZСCuаьфЛьpНАВЩw'] = 'Не знаю, я не разбираюсь.'
+	$dialogs_sets['HZСCuаьфЛьpНАВЩw'] = '[act_name:Ружьё какое-то...:act_name]
 [type:answer]'
-	dialogs_count['W6ыDTGlPtЪFsтЦдN'] = 0
-	$dialogs_position['W6ыDTGlPtЪFsтЦдN'] = 'эM1щWЮTБЮЯЭxсоЯМ'
-	$dialogs_includes['W6ыDTGlPtЪFsтЦдN'] = 'с9еЭhgLФIЁфElgSа'
-	$dialogs_run['W6ыDTGlPtЪFsтЦдN'] = {}
+	dialogs_count['HZСCuаьфЛьpНАВЩw'] = 0
+	$dialogs_position['HZСCuаьфЛьpНАВЩw'] = '6яf9VЦTМVsdsёйnч'
+	$dialogs_includes['HZСCuаьфЛьpНАВЩw'] = 'R5оjfkньqФКDWFыц'
+	$dialogs_run['HZСCuаьфЛьpНАВЩw'] = {}
 	!@ REPLIC_112
-	$dialogs_id['с9еЭhgLФIЁфElgSа'] = 'с9еЭhgLФIЁфElgSа'
-	$dialogs_body['с9еЭhgLФIЁфElgSа'] = 'Дальше.'
-	$dialogs_sets['с9еЭhgLФIЁфElgSа'] = '[levelup:4]
+	$dialogs_id['R5оjfkньqФКDWFыц'] = 'R5оjfkньqФКDWFыц'
+	$dialogs_body['R5оjfkньqФКDWFыц'] = 'Дальше.'
+	$dialogs_sets['R5оjfkньqФКDWFыц'] = '[levelup:4]
 [type:quest]'
-	dialogs_count['с9еЭhgLФIЁфElgSа'] = 0
-	$dialogs_position['с9еЭhgLФIЁфElgSа'] = 'W6ыDTGlPtЪFsтЦдN'
-	$dialogs_includes['с9еЭhgLФIЁфElgSа'] = ''
-	$dialogs_run['с9еЭhgLФIЁфElgSа'] = {$DIALOG_VALUE["лестница"]="поговорили"}
+	dialogs_count['R5оjfkньqФКDWFыц'] = 0
+	$dialogs_position['R5оjfkньqФКDWFыц'] = 'HZСCuаьфЛьpНАВЩw'
+	$dialogs_includes['R5оjfkньqФКDWFыц'] = ''
+	$dialogs_run['R5оjfkньqФКDWFыц'] = {$DIALOG_VALUE["лестница"]="поговорили"}
 	!@ REPLIC_113
-	$dialogs_id['Yтлцf2AJ6ВlзjшQu'] = 'Yтлцf2AJ6ВlзjшQu'
-	$dialogs_body['Yтлцf2AJ6ВlзjшQu'] = 'Всё, заткнись, давай дальше.'
-	$dialogs_sets['Yтлцf2AJ6ВlзjшQu'] = '[levelup:4]
+	$dialogs_id['67ыЁqКЭЫшnосЯOр8'] = '67ыЁqКЭЫшnосЯOр8'
+	$dialogs_body['67ыЁqКЭЫшnосЯOр8'] = 'Всё, заткнись, давай дальше.'
+	$dialogs_sets['67ыЁqКЭЫшnосЯOр8'] = '[levelup:4]
 [type:quest]'
-	dialogs_count['Yтлцf2AJ6ВlзjшQu'] = 0
-	$dialogs_position['Yтлцf2AJ6ВlзjшQu'] = 'ЖHsGЛчЦDтз1SQх2O'
-	$dialogs_includes['Yтлцf2AJ6ВlзjшQu'] = ''
-	$dialogs_run['Yтлцf2AJ6ВlзjшQu'] = {$DIALOG_VALUE["лестница"]="поговорили"}
+	dialogs_count['67ыЁqКЭЫшnосЯOр8'] = 0
+	$dialogs_position['67ыЁqКЭЫшnосЯOр8'] = 'jЛЭИAЁwG_пЫДЮCяЕ'
+	$dialogs_includes['67ыЁqКЭЫшnосЯOр8'] = ''
+	$dialogs_run['67ыЁqКЭЫшnосЯOр8'] = {$DIALOG_VALUE["лестница"]="поговорили"}
 	!@ REPLIC_114
-	$dialogs_id['БsЕЮmРcvШГСНКдSх'] = 'БsЕЮmРcvШГСНКдSх'
-	$dialogs_body['БsЕЮmРcvШГСНКдSх'] = 'Красные или зелёные?'
-	$dialogs_sets['БsЕЮmРcvШГСНКдSх'] = '[type:quest]'
-	dialogs_count['БsЕЮmРcvШГСНКдSх'] = 0
-	$dialogs_position['БsЕЮmРcvШГСНКдSх'] = 'g9Mq11UгщYFtEЦQM'
-	$dialogs_includes['БsЕЮmРcvШГСНКдSх'] = 'тЬпkOсГКaHШMщcHЁ|7P5rn76xA3uIС17U'
-	$dialogs_run['БsЕЮmРcvШГСНКдSх'] = {}
+	$dialogs_id['lААGRFнSoбижEАtц'] = 'lААGRFнSoбижEАtц'
+	$dialogs_body['lААGRFнSoбижEАtц'] = 'Красные или зелёные?'
+	$dialogs_sets['lААGRFнSoбижEАtц'] = '[type:quest]'
+	dialogs_count['lААGRFнSoбижEАtц'] = 0
+	$dialogs_position['lААGRFнSoбижEАtц'] = 'мфiNшЦCoTOЪPиcёA'
+	$dialogs_includes['lААGRFнSoбижEАtц'] = 'ньМфTЦaaёмAььщАи|ХЕAЗaxqбfiЭъьCHы'
+	$dialogs_run['lААGRFнSoбижEАtц'] = {}
 	!@ REPLIC_115
-	$dialogs_id['тЬпkOсГКaHШMщcHЁ'] = 'тЬпkOсГКaHШMщcHЁ'
-	$dialogs_body['тЬпkOсГКaHШMщcHЁ'] = '<frase_block>
-<actor:СxCгПш6ежНЁlKчЫL>Зелёные, кажется, а что?
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Проклятье, у меня дейтеранопия.
-<actor:СxCгПш6ежНЁlKчЫL>Зелёный цвет не различаете?
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Да.
-<actor:СxCгПш6ежНЁlKчЫL>Сочувствую.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Спасибо. Дальше.
+	$dialogs_id['ньМфTЦaaёмAььщАи'] = 'ньМфTЦaaёмAььщАи'
+	$dialogs_body['ньМфTЦaaёмAььщАи'] = '<frase_block>
+<actor:эHFл0Юi_сerGCтJю>Зелёные, кажется, а что?
+<actor:F05Уgu1Да54Ч6FВт>Проклятье, у меня дейтеранопия.
+<actor:эHFл0Юi_сerGCтJю>Зелёный цвет не различаете?
+<actor:F05Уgu1Да54Ч6FВт>Да.
+<actor:эHFл0Юi_сerGCтJю>Сочувствую.
+<actor:F05Уgu1Да54Ч6FВт>Спасибо. Дальше.
 </frase_block>'
-	$dialogs_sets['тЬпkOсГКaHШMщcHЁ'] = '[act_name:Зелёные.:act_name]
+	$dialogs_sets['ньМфTЦaaёмAььщАи'] = '[act_name:Зелёные.:act_name]
 [type:answer]'
-	dialogs_count['тЬпkOсГКaHШMщcHЁ'] = 0
-	$dialogs_position['тЬпkOсГКaHШMщcHЁ'] = 'БsЕЮmРcvШГСНКдSх'
-	$dialogs_includes['тЬпkOсГКaHШMщcHЁ'] = 'vс6BлГ0йURЯ4Мs90'
-	$dialogs_run['тЬпkOсГКaHШMщcHЁ'] = {cla}
+	dialogs_count['ньМфTЦaaёмAььщАи'] = 0
+	$dialogs_position['ньМфTЦaaёмAььщАи'] = 'lААGRFнSoбижEАtц'
+	$dialogs_includes['ньМфTЦaaёмAььщАи'] = 'ПZbiЖбxЫCё7NРпhW'
+	$dialogs_run['ньМфTЦaaёмAььщАи'] = {cla}
 	!@ REPLIC_116
-	$dialogs_id['7P5rn76xA3uIС17U'] = '7P5rn76xA3uIС17U'
-	$dialogs_body['7P5rn76xA3uIС17U'] = 'Красные, кажется. А что есть какая-то разница?'
-	$dialogs_sets['7P5rn76xA3uIС17U'] = '[act_name:Красные.:act_name]
+	$dialogs_id['ХЕAЗaxqбfiЭъьCHы'] = 'ХЕAЗaxqбfiЭъьCHы'
+	$dialogs_body['ХЕAЗaxqбfiЭъьCHы'] = 'Красные, кажется. А что есть какая-то разница?'
+	$dialogs_sets['ХЕAЗaxqбfiЭъьCHы'] = '[act_name:Красные.:act_name]
 [type:answer]'
-	dialogs_count['7P5rn76xA3uIС17U'] = 0
-	$dialogs_position['7P5rn76xA3uIС17U'] = 'БsЕЮmРcvШГСНКдSх'
-	$dialogs_includes['7P5rn76xA3uIС17U'] = 'уыPщv1yЫЙИWh6ЁОм'
-	$dialogs_run['7P5rn76xA3uIС17U'] = {}
+	dialogs_count['ХЕAЗaxqбfiЭъьCHы'] = 0
+	$dialogs_position['ХЕAЗaxqбfiЭъьCHы'] = 'lААGRFнSoбижEАtц'
+	$dialogs_includes['ХЕAЗaxqбfiЭъьCHы'] = 'й8OхчбМlЩxiXIOVь'
+	$dialogs_run['ХЕAЗaxqбfiЭъьCHы'] = {}
 	!@ REPLIC_117
-	$dialogs_id['уыPщv1yЫЙИWh6ЁОм'] = 'уыPщv1yЫЙИWh6ЁОм'
-	$dialogs_body['уыPщv1yЫЙИWh6ЁОм'] = 'Не твоего ума дело, дальше давай.'
-	$dialogs_sets['уыPщv1yЫЙИWh6ЁОм'] = '[levelup:4]
+	$dialogs_id['й8OхчбМlЩxiXIOVь'] = 'й8OхчбМlЩxiXIOVь'
+	$dialogs_body['й8OхчбМlЩxiXIOVь'] = 'Не твоего ума дело, дальше давай.'
+	$dialogs_sets['й8OхчбМlЩxiXIOVь'] = '[levelup:4]
 [type:quest]'
-	dialogs_count['уыPщv1yЫЙИWh6ЁОм'] = 0
-	$dialogs_position['уыPщv1yЫЙИWh6ЁОм'] = '7P5rn76xA3uIС17U'
-	$dialogs_includes['уыPщv1yЫЙИWh6ЁОм'] = ''
-	$dialogs_run['уыPщv1yЫЙИWh6ЁОм'] = {$DIALOG_VALUE["коридор"]="поговорили"}
+	dialogs_count['й8OхчбМlЩxiXIOVь'] = 0
+	$dialogs_position['й8OхчбМlЩxiXIOVь'] = 'ХЕAЗaxqбfiЭъьCHы'
+	$dialogs_includes['й8OхчбМlЩxiXIOVь'] = ''
+	$dialogs_run['й8OхчбМlЩxiXIOVь'] = {$DIALOG_VALUE["коридор"]="поговорили"}
 	!@ REPLIC_118
-	$dialogs_id['vс6BлГ0йURЯ4Мs90'] = 'vс6BлГ0йURЯ4Мs90'
-	$dialogs_body['vс6BлГ0йURЯ4Мs90'] = ''
-	$dialogs_sets['vс6BлГ0йURЯ4Мs90'] = '[levelup:4]
+	$dialogs_id['ПZbiЖбxЫCё7NРпhW'] = 'ПZbiЖбxЫCё7NРпhW'
+	$dialogs_body['ПZbiЖбxЫCё7NРпhW'] = ''
+	$dialogs_sets['ПZbiЖбxЫCё7NРпhW'] = '[levelup:4]
 [type:quest]'
-	dialogs_count['vс6BлГ0йURЯ4Мs90'] = 0
-	$dialogs_position['vс6BлГ0йURЯ4Мs90'] = 'тЬпkOсГКaHШMщcHЁ'
-	$dialogs_includes['vс6BлГ0йURЯ4Мs90'] = ''
-	$dialogs_run['vс6BлГ0йURЯ4Мs90'] = {$DIALOG_VALUE["коридор"]="поговорили"}
+	dialogs_count['ПZbiЖбxЫCё7NРпhW'] = 0
+	$dialogs_position['ПZbiЖбxЫCё7NРпhW'] = 'ньМфTЦaaёмAььщАи'
+	$dialogs_includes['ПZbiЖбxЫCё7NРпhW'] = ''
+	$dialogs_run['ПZbiЖбxЫCё7NРпhW'] = {$DIALOG_VALUE["коридор"]="поговорили"}
 	!@ REPLIC_119
-	$dialogs_id['_ОYi6O1кКJGUвюРO'] = '_ОYi6O1кКJGUвюРO'
-	$dialogs_body['_ОYi6O1кКJGUвюРO'] = '<frase_block>
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Что?!
-<actor:СxCгПш6ежНЁlKчЫL>Люди, говорю, в архиве пропадают.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Да это я понял! Почему пропадают?
-<actor:СxCгПш6ежНЁlKчЫL>Не знаю, но, поговаривают, что нужно быть поосторожнее со шкафами "Ф".
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Почему?
-<actor:СxCгПш6ежНЁlKчЫL>Пропали сотрудники Фриманн, Фрекель, Фаркопс и Фонг. У вас какая фамилия?
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Фицжеральд.
-<actor:СxCгПш6ежНЁlKчЫL>О...
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Дальше.
+	$dialogs_id['mMgHгнюoн6с9НгGм'] = 'mMgHгнюoн6с9НгGм'
+	$dialogs_body['mMgHгнюoн6с9НгGм'] = '<frase_block>
+<actor:F05Уgu1Да54Ч6FВт>Что?!
+<actor:эHFл0Юi_сerGCтJю>Люди, говорю, в архиве пропадают.
+<actor:F05Уgu1Да54Ч6FВт>Да это я понял! Почему пропадают?
+<actor:эHFл0Юi_сerGCтJю>Не знаю, но, поговаривают, что нужно быть поосторожнее со шкафами "Ф".
+<actor:F05Уgu1Да54Ч6FВт>Почему?
+<actor:эHFл0Юi_сerGCтJю>Пропали сотрудники Фриманн, Фрекель, Фаркопс и Фонг. У вас какая фамилия?
+<actor:F05Уgu1Да54Ч6FВт>Фицжеральд.
+<actor:эHFл0Юi_сerGCтJю>О...
+<actor:F05Уgu1Да54Ч6FВт>Дальше.
 </frase_block>'
-	$dialogs_sets['_ОYi6O1кКJGUвюРO'] = '[levelup:2]
+	$dialogs_sets['mMgHгнюoн6с9НгGм'] = '[levelup:2]
 [type:quest]'
-	dialogs_count['_ОYi6O1кКJGUвюРO'] = 0
-	$dialogs_position['_ОYi6O1кКJGUвюРO'] = 'pMЕгб4ЯУUРЛЗDTB0'
-	$dialogs_includes['_ОYi6O1кКJGUвюРO'] = ''
-	$dialogs_run['_ОYi6O1кКJGUвюРO'] = {$DIALOG_VALUE["архив"]="поговорили"}
+	dialogs_count['mMgHгнюoн6с9НгGм'] = 0
+	$dialogs_position['mMgHгнюoн6с9НгGм'] = 'jiIkэиЮ_EеЗgevПi'
+	$dialogs_includes['mMgHгнюoн6с9НгGм'] = ''
+	$dialogs_run['mMgHгнюoн6с9НгGм'] = {$DIALOG_VALUE["архив"]="поговорили"}
 end
 if args[0] = 12:
 	!@ REPLIC_120
-	$dialogs_id['sYtО_КRxoЕНЪ_Ещч'] = 'sYtО_КRxoЕНЪ_Ещч'
-	$dialogs_body['sYtО_КRxoЕНЪ_Ещч'] = '<frase_block>
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Ого...
-<actor:СxCгПш6ежНЁlKчЫL>И замок «Sargent & Greenleaf».
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Ой...
-<actor:СxCгПш6ежНЁlKчЫL>Пол внутри под напряжением десять тысяч вольт.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Ох...
-<actor:СxCгПш6ежНЁlKчЫL>А снаружи камеры.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Понятно. Дальше.
+	$dialogs_id['п4uкx_гQIН0FНьчя'] = 'п4uкx_гQIН0FНьчя'
+	$dialogs_body['п4uкx_гQIН0FНьчя'] = '<frase_block>
+<actor:F05Уgu1Да54Ч6FВт>Ого...
+<actor:эHFл0Юi_сerGCтJю>И замок «Sargent & Greenleaf».
+<actor:F05Уgu1Да54Ч6FВт>Ой...
+<actor:эHFл0Юi_сerGCтJю>Пол внутри под напряжением десять тысяч вольт.
+<actor:F05Уgu1Да54Ч6FВт>Ох...
+<actor:эHFл0Юi_сerGCтJю>А снаружи камеры.
+<actor:F05Уgu1Да54Ч6FВт>Понятно. Дальше.
 </frase_block>'
-	$dialogs_sets['sYtО_КRxoЕНЪ_Ещч'] = '[levelup:2]
+	$dialogs_sets['п4uкx_гQIН0FНьчя'] = '[levelup:2]
 [type:quest]'
-	dialogs_count['sYtО_КRxoЕНЪ_Ещч'] = 0
-	$dialogs_position['sYtО_КRxoЕНЪ_Ещч'] = 'cыKИvsTОzьj8VЮЖЙ'
-	$dialogs_includes['sYtО_КRxoЕНЪ_Ещч'] = ''
-	$dialogs_run['sYtО_КRxoЕНЪ_Ещч'] = {$DIALOG_VALUE["хранилище"]="поговорили"}
+	dialogs_count['п4uкx_гQIН0FНьчя'] = 0
+	$dialogs_position['п4uкx_гQIН0FНьчя'] = 'juЯpЧbЕЭuтяBo1БЬ'
+	$dialogs_includes['п4uкx_гQIН0FНьчя'] = ''
+	$dialogs_run['п4uкx_гQIН0FНьчя'] = {$DIALOG_VALUE["хранилище"]="поговорили"}
 	!@ REPLIC_121
-	$dialogs_id['bC1czЕKуYJmчАeло'] = 'bC1czЕKуYJmчАeло'
-	$dialogs_body['bC1czЕKуYJmчАeло'] = 'Почему это?'
-	$dialogs_sets['bC1czЕKуYJmчАeло'] = '[type:quest]'
-	dialogs_count['bC1czЕKуYJmчАeло'] = 0
-	$dialogs_position['bC1czЕKуYJmчАeло'] = 'АьWtWlPOLХt_РВDа'
-	$dialogs_includes['bC1czЕKуYJmчАeло'] = 'dкorvMхвЭ6рl9eФ9'
-	$dialogs_run['bC1czЕKуYJmчАeло'] = {}
+	$dialogs_id['РqjФвЩIiйeЕеoЫbя'] = 'РqjФвЩIiйeЕеoЫbя'
+	$dialogs_body['РqjФвЩIiйeЕеoЫbя'] = 'Почему это?'
+	$dialogs_sets['РqjФвЩIiйeЕеoЫbя'] = '[type:quest]'
+	dialogs_count['РqjФвЩIiйeЕеoЫbя'] = 0
+	$dialogs_position['РqjФвЩIiйeЕеoЫbя'] = 'ънчаМтopMYоX6cФэ'
+	$dialogs_includes['РqjФвЩIiйeЕеoЫbя'] = 'IQыдIУьЬфp4UЯЁМy'
+	$dialogs_run['РqjФвЩIiйeЕеoЫbя'] = {}
 	!@ REPLIC_122
-	$dialogs_id['dкorvMхвЭ6рl9eФ9'] = 'dкorvMхвЭ6рl9eФ9'
-	$dialogs_body['dкorvMхвЭ6рl9eФ9'] = ''
-	$dialogs_sets['dкorvMхвЭ6рl9eФ9'] = '[type:quest]'
-	dialogs_count['dкorvMхвЭ6рl9eФ9'] = 0
-	$dialogs_position['dкorvMхвЭ6рl9eФ9'] = 'bC1czЕKуYJmчАeло'
-	$dialogs_includes['dкorvMхвЭ6рl9eФ9'] = 'JенЁoЩX_БМxисЭzН|0ЦFРDТ5KРЮa0rJрW|pvДxНДвMтеEСУсeX|H0xмИОНУ9тАшёрlt'
-	$dialogs_run['dкorvMхвЭ6рl9eФ9'] = {}
+	$dialogs_id['IQыдIУьЬфp4UЯЁМy'] = 'IQыдIУьЬфp4UЯЁМy'
+	$dialogs_body['IQыдIУьЬфp4UЯЁМy'] = ''
+	$dialogs_sets['IQыдIУьЬфp4UЯЁМy'] = '[type:quest]'
+	dialogs_count['IQыдIУьЬфp4UЯЁМy'] = 0
+	$dialogs_position['IQыдIУьЬфp4UЯЁМy'] = 'РqjФвЩIiйeЕеoЫbя'
+	$dialogs_includes['IQыдIУьЬфp4UЯЁМy'] = 'ШP2ъфнтQЗvЫЬЬcvЮ|yыИhujtMpШtYЖgxк|ХKwВтиdЧf9ЧгZзO_|ЯEuёЦГXх6шзoщIdн'
+	$dialogs_run['IQыдIУьЬфp4UЯЁМy'] = {}
 	!@ REPLIC_123
-	$dialogs_id['JенЁoЩX_БМxисЭzН'] = 'JенЁoЩX_БМxисЭzН'
-	$dialogs_body['JенЁoЩX_БМxисЭzН'] = '<frase_block>
-<actor:СxCгПш6ежНЁlKчЫL>Это всё.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>А другой путь есть?
+	$dialogs_id['ШP2ъфнтQЗvЫЬЬcvЮ'] = 'ШP2ъфнтQЗvЫЬЬcvЮ'
+	$dialogs_body['ШP2ъфнтQЗvЫЬЬcvЮ'] = '<frase_block>
+<actor:эHFл0Юi_сerGCтJю>Это всё.
+<actor:F05Уgu1Да54Ч6FВт>А другой путь есть?
 </frase_block>'
-	$dialogs_sets['JенЁoЩX_БМxисЭzН'] = '[levelup:4]
+	$dialogs_sets['ШP2ъфнтQЗvЫЬЬcvЮ'] = '[levelup:4]
 <if>$DIALOG_VALUE["системы идентификации"]="поговорили" and $DIALOG_VALUE["собаки"]="поговорили" and $DIALOG_VALUE["управляющий"]="поговорили"</if>
 [type:quest]'
-	dialogs_count['JенЁoЩX_БМxисЭzН'] = 0
-	$dialogs_position['JенЁoЩX_БМxисЭzН'] = 'dкorvMхвЭ6рl9eФ9'
-	$dialogs_includes['JенЁoЩX_БМxисЭzН'] = ''
-	$dialogs_run['JенЁoЩX_БМxисЭzН'] = {$DIALOG_VALUE["по лифту"]="поговорили"}
+	dialogs_count['ШP2ъфнтQЗvЫЬЬcvЮ'] = 0
+	$dialogs_position['ШP2ъфнтQЗvЫЬЬcvЮ'] = 'IQыдIУьЬфp4UЯЁМy'
+	$dialogs_includes['ШP2ъфнтQЗvЫЬЬcvЮ'] = ''
+	$dialogs_run['ШP2ъфнтQЗvЫЬЬcvЮ'] = {$DIALOG_VALUE["по лифту"]="поговорили"}
 	!@ REPLIC_124
-	$dialogs_id['0ЦFРDТ5KРЮa0rJрW'] = '0ЦFРDТ5KРЮa0rJрW'
-	$dialogs_body['0ЦFРDТ5KРЮa0rJрW'] = 'В лифте стоят системы идентификации, которые пропускают только управляющего.'
-	$dialogs_sets['0ЦFРDТ5KРЮa0rJрW'] = '[act_name:Системы идентификации.:act_name]
+	$dialogs_id['yыИhujtMpШtYЖgxк'] = 'yыИhujtMpШtYЖgxк'
+	$dialogs_body['yыИhujtMpШtYЖgxк'] = 'В лифте стоят системы идентификации, которые пропускают только управляющего.'
+	$dialogs_sets['yыИhujtMpШtYЖgxк'] = '[act_name:Системы идентификации.:act_name]
 <if>$DIALOG_VALUE["системы идентификации"]!"поговорили"</if>
 [type:answer]'
-	dialogs_count['0ЦFРDТ5KРЮa0rJрW'] = 0
-	$dialogs_position['0ЦFРDТ5KРЮa0rJрW'] = 'dкorvMхвЭ6рl9eФ9'
-	$dialogs_includes['0ЦFРDТ5KРЮa0rJрW'] = 'uuгф1Э9VеВCZTЪ42'
-	$dialogs_run['0ЦFРDТ5KРЮa0rJрW'] = {}
+	dialogs_count['yыИhujtMpШtYЖgxк'] = 0
+	$dialogs_position['yыИhujtMpШtYЖgxк'] = 'IQыдIУьЬфp4UЯЁМy'
+	$dialogs_includes['yыИhujtMpШtYЖgxк'] = 'xMз9пыцVяhйАрж35'
+	$dialogs_run['yыИhujtMpШtYЖgxк'] = {}
 	!@ REPLIC_125
-	$dialogs_id['pvДxНДвMтеEСУсeX'] = 'pvДxНДвMтеEСУсeX'
-	$dialogs_body['pvДxНДвMтеEСУсeX'] = 'Собаки.'
-	$dialogs_sets['pvДxНДвMтеEСУсeX'] = '<if>$DIALOG_VALUE["собаки"]!"поговорили"</if>
+	$dialogs_id['ХKwВтиdЧf9ЧгZзO_'] = 'ХKwВтиdЧf9ЧгZзO_'
+	$dialogs_body['ХKwВтиdЧf9ЧгZзO_'] = 'Собаки.'
+	$dialogs_sets['ХKwВтиdЧf9ЧгZзO_'] = '<if>$DIALOG_VALUE["собаки"]!"поговорили"</if>
 [type:answer]'
-	dialogs_count['pvДxНДвMтеEСУсeX'] = 0
-	$dialogs_position['pvДxНДвMтеEСУсeX'] = 'dкorvMхвЭ6рl9eФ9'
-	$dialogs_includes['pvДxНДвMтеEСУсeX'] = 'tюojd9оSМаГИIсmi'
-	$dialogs_run['pvДxНДвMтеEСУсeX'] = {}
+	dialogs_count['ХKwВтиdЧf9ЧгZзO_'] = 0
+	$dialogs_position['ХKwВтиdЧf9ЧгZзO_'] = 'IQыдIУьЬфp4UЯЁМy'
+	$dialogs_includes['ХKwВтиdЧf9ЧгZзO_'] = 'IJоkАзAf7ыF9OdDZ'
+	$dialogs_run['ХKwВтиdЧf9ЧгZзO_'] = {}
 	!@ REPLIC_126
-	$dialogs_id['H0xмИОНУ9тАшёрlt'] = 'H0xмИОНУ9тАшёрlt'
-	$dialogs_body['H0xмИОНУ9тАшёрlt'] = 'В кабинете скорее всего сидит сам управляющий.'
-	$dialogs_sets['H0xмИОНУ9тАшёрlt'] = '[act_name:Управляющий.:act_name]
+	$dialogs_id['ЯEuёЦГXх6шзoщIdн'] = 'ЯEuёЦГXх6шзoщIdн'
+	$dialogs_body['ЯEuёЦГXх6шзoщIdн'] = 'В кабинете скорее всего сидит сам управляющий.'
+	$dialogs_sets['ЯEuёЦГXх6шзoщIdн'] = '[act_name:Управляющий.:act_name]
 <if>$DIALOG_VALUE["управляющий"]!"поговорили"</if>
 [type:answer]'
-	dialogs_count['H0xмИОНУ9тАшёрlt'] = 0
-	$dialogs_position['H0xмИОНУ9тАшёрlt'] = 'dкorvMхвЭ6рl9eФ9'
-	$dialogs_includes['H0xмИОНУ9тАшёрlt'] = 'ЧcuqBДНЛеЯgОч1AД'
-	$dialogs_run['H0xмИОНУ9тАшёрlt'] = {}
+	dialogs_count['ЯEuёЦГXх6шзoщIdн'] = 0
+	$dialogs_position['ЯEuёЦГXх6шзoщIdн'] = 'IQыдIУьЬфp4UЯЁМy'
+	$dialogs_includes['ЯEuёЦГXх6шзoщIdн'] = 'тPYЧКгЦVчыYxTСBБ'
+	$dialogs_run['ЯEuёЦГXх6шзoщIdн'] = {}
 	!@ REPLIC_127
-	$dialogs_id['ЧcuqBДНЛеЯgОч1AД'] = 'ЧcuqBДНЛеЯgОч1AД'
-	$dialogs_body['ЧcuqBДНЛеЯgОч1AД'] = '<frase_block>
-<actor:ЬЪ8АzaКCbюKLяцщЯ>И чего?
-<actor:СxCгПш6ежНЁlKчЫL>Он чемпион города по гарлемскому боксу.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Впервые слышу про такой бокс.
-<actor:СxCгПш6ежНЁlKчЫL>Основная особенность его в том, что во время боя разрешено использовать кастеты, биты и автоматическое оружие.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Хмм, ну ладно, допустим, я с ним разберусь, что ещё?
+	$dialogs_id['тPYЧКгЦVчыYxTСBБ'] = 'тPYЧКгЦVчыYxTСBБ'
+	$dialogs_body['тPYЧКгЦVчыYxTСBБ'] = '<frase_block>
+<actor:F05Уgu1Да54Ч6FВт>И чего?
+<actor:эHFл0Юi_сerGCтJю>Он чемпион города по гарлемскому боксу.
+<actor:F05Уgu1Да54Ч6FВт>Впервые слышу про такой бокс.
+<actor:эHFл0Юi_сerGCтJю>Основная особенность его в том, что во время боя разрешено использовать кастеты, биты и автоматическое оружие.
+<actor:F05Уgu1Да54Ч6FВт>Хмм, ну ладно, допустим, я с ним разберусь, что ещё?
 </frase_block>'
-	$dialogs_sets['ЧcuqBДНЛеЯgОч1AД'] = '[levelup:2]
+	$dialogs_sets['тPYЧКгЦVчыYxTСBБ'] = '[levelup:2]
 [type:quest]'
-	dialogs_count['ЧcuqBДНЛеЯgОч1AД'] = 0
-	$dialogs_position['ЧcuqBДНЛеЯgОч1AД'] = 'H0xмИОНУ9тАшёрlt'
-	$dialogs_includes['ЧcuqBДНЛеЯgОч1AД'] = ''
-	$dialogs_run['ЧcuqBДНЛеЯgОч1AД'] = {$DIALOG_VALUE["управляющий"]="поговорили"}
+	dialogs_count['тPYЧКгЦVчыYxTСBБ'] = 0
+	$dialogs_position['тPYЧКгЦVчыYxTСBБ'] = 'ЯEuёЦГXх6шзoщIdн'
+	$dialogs_includes['тPYЧКгЦVчыYxTСBБ'] = ''
+	$dialogs_run['тPYЧКгЦVчыYxTСBБ'] = {$DIALOG_VALUE["управляющий"]="поговорили"}
 	!@ REPLIC_128
-	$dialogs_id['tюojd9оSМаГИIсmi'] = 'tюojd9оSМаГИIсmi'
-	$dialogs_body['tюojd9оSМаГИIсmi'] = '<frase_block>
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Собаки?
-<actor:СxCгПш6ежНЁlKчЫL>Да.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Большие?
-<actor:СxCгПш6ежНЁlKчЫL>Очень.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Много?
-<actor:СxCгПш6ежНЁlKчЫL>Четыре.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Ох... Ну допустим, с собаками я как-нибудь управлюсь. Что-то ещё?
+	$dialogs_id['IJоkАзAf7ыF9OdDZ'] = 'IJоkАзAf7ыF9OdDZ'
+	$dialogs_body['IJоkАзAf7ыF9OdDZ'] = '<frase_block>
+<actor:F05Уgu1Да54Ч6FВт>Собаки?
+<actor:эHFл0Юi_сerGCтJю>Да.
+<actor:F05Уgu1Да54Ч6FВт>Большие?
+<actor:эHFл0Юi_сerGCтJю>Очень.
+<actor:F05Уgu1Да54Ч6FВт>Много?
+<actor:эHFл0Юi_сerGCтJю>Четыре.
+<actor:F05Уgu1Да54Ч6FВт>Ох... Ну допустим, с собаками я как-нибудь управлюсь. Что-то ещё?
 </frase_block>'
-	$dialogs_sets['tюojd9оSМаГИIсmi'] = '[levelup:2]
+	$dialogs_sets['IJоkАзAf7ыF9OdDZ'] = '[levelup:2]
 [type:quest]'
-	dialogs_count['tюojd9оSМаГИIсmi'] = 0
-	$dialogs_position['tюojd9оSМаГИIсmi'] = 'pvДxНДвMтеEСУсeX'
-	$dialogs_includes['tюojd9оSМаГИIсmi'] = ''
-	$dialogs_run['tюojd9оSМаГИIсmi'] = {$DIALOG_VALUE["собаки"]="поговорили"}
+	dialogs_count['IJоkАзAf7ыF9OdDZ'] = 0
+	$dialogs_position['IJоkАзAf7ыF9OdDZ'] = 'ХKwВтиdЧf9ЧгZзO_'
+	$dialogs_includes['IJоkАзAf7ыF9OdDZ'] = ''
+	$dialogs_run['IJоkАзAf7ыF9OdDZ'] = {$DIALOG_VALUE["собаки"]="поговорили"}
 	!@ REPLIC_129
-	$dialogs_id['uuгф1Э9VеВCZTЪ42'] = 'uuгф1Э9VеВCZTЪ42'
-	$dialogs_body['uuгф1Э9VеВCZTЪ42'] = 'Какие системы?'
-	$dialogs_sets['uuгф1Э9VеВCZTЪ42'] = '[type:quest]'
-	dialogs_count['uuгф1Э9VеВCZTЪ42'] = 0
-	$dialogs_position['uuгф1Э9VеВCZTЪ42'] = '0ЦFРDТ5KРЮa0rJрW'
-	$dialogs_includes['uuгф1Э9VеВCZTЪ42'] = 'ЩZКПШжКeрК4jPцуO'
-	$dialogs_run['uuгф1Э9VеВCZTЪ42'] = {}
+	$dialogs_id['xMз9пыцVяhйАрж35'] = 'xMз9пыцVяhйАрж35'
+	$dialogs_body['xMз9пыцVяhйАрж35'] = 'Какие системы?'
+	$dialogs_sets['xMз9пыцVяhйАрж35'] = '[type:quest]'
+	dialogs_count['xMз9пыцVяhйАрж35'] = 0
+	$dialogs_position['xMз9пыцVяhйАрж35'] = 'yыИhujtMpШtYЖgxк'
+	$dialogs_includes['xMз9пыцVяhйАрж35'] = 'АзЦЧQTЧrETЖ5uJmй'
+	$dialogs_run['xMз9пыцVяhйАрж35'] = {}
 end
 if args[0] = 13:
 	!@ REPLIC_130
-	$dialogs_id['ЩZКПШжКeрК4jPцуO'] = 'ЩZКПШжКeрК4jPцуO'
-	$dialogs_body['ЩZКПШжКeрК4jPцуO'] = ''
-	$dialogs_sets['ЩZКПШжКeрК4jPцуO'] = '[type:quest]'
-	dialogs_count['ЩZКПШжКeрК4jPцуO'] = 0
-	$dialogs_position['ЩZКПШжКeрК4jPцуO'] = 'uuгф1Э9VеВCZTЪ42'
-	$dialogs_includes['ЩZКПШжКeрК4jPцуO'] = 'аYWНсЧрыNFQgrdLб|HАфшЦСЦ_7LяueLЪN|Иг2ЪтRK_уMDашЕIА|ЮZЮН4яeRxgхeщмbВ'
-	$dialogs_run['ЩZКПШжКeрК4jPцуO'] = {}
+	$dialogs_id['АзЦЧQTЧrETЖ5uJmй'] = 'АзЦЧQTЧrETЖ5uJmй'
+	$dialogs_body['АзЦЧQTЧrETЖ5uJmй'] = ''
+	$dialogs_sets['АзЦЧQTЧrETЖ5uJmй'] = '[type:quest]'
+	dialogs_count['АзЦЧQTЧrETЖ5uJmй'] = 0
+	$dialogs_position['АзЦЧQTЧrETЖ5uJmй'] = 'xMз9пыцVяhйАрж35'
+	$dialogs_includes['АзЦЧQTЧrETЖ5uJmй'] = 'R8mаьщЖvxCмеНyРн|ОosdF8nёYWkGR3Im|юkRPsлofQЯщБюosB|АwФLПQьuВJyвxТуа'
+	$dialogs_run['АзЦЧQTЧrETЖ5uJmй'] = {}
 	!@ REPLIC_131
-	$dialogs_id['аYWНсЧрыNFQgrdLб'] = 'аYWНсЧрыNFQgrdLб'
-	$dialogs_body['аYWНсЧрыNFQgrdLб'] = 'По системам идентификации всё.'
-	$dialogs_sets['аYWНсЧрыNFQgrdLб'] = '[act_name:По системам всё:act_name]
+	$dialogs_id['R8mаьщЖvxCмеНyРн'] = 'R8mаьщЖvxCмеНyРн'
+	$dialogs_body['R8mаьщЖvxCмеНyРн'] = 'По системам идентификации всё.'
+	$dialogs_sets['R8mаьщЖvxCмеНyРн'] = '[act_name:По системам всё:act_name]
 <if>$DIALOG_VALUE["вес"]="поговорили" and $DIALOG_VALUE["сетчатка"]="поговорили" and $DIALOG_VALUE["отпечатки"]="поговорили"</if>
 [type:answer]'
-	dialogs_count['аYWНсЧрыNFQgrdLб'] = 0
-	$dialogs_position['аYWНсЧрыNFQgrdLб'] = 'ЩZКПШжКeрК4jPцуO'
-	$dialogs_includes['аYWНсЧрыNFQgrdLб'] = 'ОшHbnDjZLАUЛаDьR'
-	$dialogs_run['аYWНсЧрыNFQgrdLб'] = {}
+	dialogs_count['R8mаьщЖvxCмеНyРн'] = 0
+	$dialogs_position['R8mаьщЖvxCмеНyРн'] = 'АзЦЧQTЧrETЖ5uJmй'
+	$dialogs_includes['R8mаьщЖvxCмеНyРн'] = 'ТU5РддоYЗZчУЮXhЖ'
+	$dialogs_run['R8mаьщЖvxCмеНyРн'] = {}
 	!@ REPLIC_132
-	$dialogs_id['HАфшЦСЦ_7LяueLЪN'] = 'HАфшЦСЦ_7LяueLЪN'
-	$dialogs_body['HАфшЦСЦ_7LяueLЪN'] = 'Датчик веса.'
-	$dialogs_sets['HАфшЦСЦ_7LяueLЪN'] = '[act_name:Вес:act_name]
+	$dialogs_id['ОosdF8nёYWkGR3Im'] = 'ОosdF8nёYWkGR3Im'
+	$dialogs_body['ОosdF8nёYWkGR3Im'] = 'Датчик веса.'
+	$dialogs_sets['ОosdF8nёYWkGR3Im'] = '[act_name:Вес:act_name]
 <if>$DIALOG_VALUE["вес"]!"поговорили"</if>
 [type:answer]'
-	dialogs_count['HАфшЦСЦ_7LяueLЪN'] = 0
-	$dialogs_position['HАфшЦСЦ_7LяueLЪN'] = 'ЩZКПШжКeрК4jPцуO'
-	$dialogs_includes['HАфшЦСЦ_7LяueLЪN'] = 'tOЯsmдШ1МjЮnoLцu'
-	$dialogs_run['HАфшЦСЦ_7LяueLЪN'] = {}
+	dialogs_count['ОosdF8nёYWkGR3Im'] = 0
+	$dialogs_position['ОosdF8nёYWkGR3Im'] = 'АзЦЧQTЧrETЖ5uJmй'
+	$dialogs_includes['ОosdF8nёYWkGR3Im'] = 'Р6гцрvёАgtНУчЁv6'
+	$dialogs_run['ОosdF8nёYWkGR3Im'] = {}
 	!@ REPLIC_133
-	$dialogs_id['Иг2ЪтRK_уMDашЕIА'] = 'Иг2ЪтRK_уMDашЕIА'
-	$dialogs_body['Иг2ЪтRK_уMDашЕIА'] = 'Сканер сетчатки глаза.'
-	$dialogs_sets['Иг2ЪтRK_уMDашЕIА'] = '[act_name:Сетчатка глаза.:act_name]
+	$dialogs_id['юkRPsлofQЯщБюosB'] = 'юkRPsлofQЯщБюosB'
+	$dialogs_body['юkRPsлofQЯщБюosB'] = 'Сканер сетчатки глаза.'
+	$dialogs_sets['юkRPsлofQЯщБюosB'] = '[act_name:Сетчатка глаза.:act_name]
 <if>$DIALOG_VALUE["сетчатка"]!"поговорили"</if>
 [type:answer]'
-	dialogs_count['Иг2ЪтRK_уMDашЕIА'] = 0
-	$dialogs_position['Иг2ЪтRK_уMDашЕIА'] = 'ЩZКПШжКeрК4jPцуO'
-	$dialogs_includes['Иг2ЪтRK_уMDашЕIА'] = 'ЦэПЛ_ж9ЙшbгdHёФь'
-	$dialogs_run['Иг2ЪтRK_уMDашЕIА'] = {}
+	dialogs_count['юkRPsлofQЯщБюosB'] = 0
+	$dialogs_position['юkRPsлofQЯщБюosB'] = 'АзЦЧQTЧrETЖ5uJmй'
+	$dialogs_includes['юkRPsлofQЯщБюosB'] = 'ТШYйёэtГ6кОmuюUs'
+	$dialogs_run['юkRPsлofQЯщБюosB'] = {}
 	!@ REPLIC_134
-	$dialogs_id['ЮZЮН4яeRxgхeщмbВ'] = 'ЮZЮН4яeRxgхeщмbВ'
-	$dialogs_body['ЮZЮН4яeRxgхeщмbВ'] = 'Сканер отпечатка правой ладони.'
-	$dialogs_sets['ЮZЮН4яeRxgхeщмbВ'] = '[act_name:Отпечатки.:act_name]
+	$dialogs_id['АwФLПQьuВJyвxТуа'] = 'АwФLПQьuВJyвxТуа'
+	$dialogs_body['АwФLПQьuВJyвxТуа'] = 'Сканер отпечатка правой ладони.'
+	$dialogs_sets['АwФLПQьuВJyвxТуа'] = '[act_name:Отпечатки.:act_name]
 <if>$DIALOG_VALUE["отпечатки"]!"поговорили"</if>
 [type:answer]'
-	dialogs_count['ЮZЮН4яeRxgхeщмbВ'] = 0
-	$dialogs_position['ЮZЮН4яeRxgхeщмbВ'] = 'ЩZКПШжКeрК4jPцуO'
-	$dialogs_includes['ЮZЮН4яeRxgхeщмbВ'] = 'YхМThNЕоНtыоuYМл'
-	$dialogs_run['ЮZЮН4яeRxgхeщмbВ'] = {}
+	dialogs_count['АwФLПQьuВJyвxТуа'] = 0
+	$dialogs_position['АwФLПQьuВJyвxТуа'] = 'АзЦЧQTЧrETЖ5uJmй'
+	$dialogs_includes['АwФLПQьuВJyвxТуа'] = '7yУ6ЁфАЫNдкФCjwщ'
+	$dialogs_run['АwФLПQьuВJyвxТуа'] = {}
 	!@ REPLIC_135
-	$dialogs_id['YхМThNЕоНtыоuYМл'] = 'YхМThNЕоНtыоuYМл'
-	$dialogs_body['YхМThNЕоНtыоuYМл'] = 'Это, теоретически, можно обойти. Дальше.'
-	$dialogs_sets['YхМThNЕоНtыоuYМл'] = '[levelup:2]
+	$dialogs_id['7yУ6ЁфАЫNдкФCjwщ'] = '7yУ6ЁфАЫNдкФCjwщ'
+	$dialogs_body['7yУ6ЁфАЫNдкФCjwщ'] = 'Это, теоретически, можно обойти. Дальше.'
+	$dialogs_sets['7yУ6ЁфАЫNдкФCjwщ'] = '[levelup:2]
 [type:quest]'
-	dialogs_count['YхМThNЕоНtыоuYМл'] = 0
-	$dialogs_position['YхМThNЕоНtыоuYМл'] = 'ЮZЮН4яeRxgхeщмbВ'
-	$dialogs_includes['YхМThNЕоНtыоuYМл'] = ''
-	$dialogs_run['YхМThNЕоНtыоuYМл'] = {$DIALOG_VALUE["отпечатки"]="поговорили"}
+	dialogs_count['7yУ6ЁфАЫNдкФCjwщ'] = 0
+	$dialogs_position['7yУ6ЁфАЫNдкФCjwщ'] = 'АwФLПQьuВJyвxТуа'
+	$dialogs_includes['7yУ6ЁфАЫNдкФCjwщ'] = ''
+	$dialogs_run['7yУ6ЁфАЫNдкФCjwщ'] = {$DIALOG_VALUE["отпечатки"]="поговорили"}
 	!@ REPLIC_136
-	$dialogs_id['ЦэПЛ_ж9ЙшbгdHёФь'] = 'ЦэПЛ_ж9ЙшbгdHёФь'
-	$dialogs_body['ЦэПЛ_ж9ЙшbгdHёФь'] = 'Для этого у меня есть инструменты и необходимые навыки, — <i>он зловеще ухмыляется.</i> — Дальше.'
-	$dialogs_sets['ЦэПЛ_ж9ЙшbгdHёФь'] = '[levelup:2]
+	$dialogs_id['ТШYйёэtГ6кОmuюUs'] = 'ТШYйёэtГ6кОmuюUs'
+	$dialogs_body['ТШYйёэtГ6кОmuюUs'] = 'Для этого у меня есть инструменты и необходимые навыки, — <i>он зловеще ухмыляется.</i> — Дальше.'
+	$dialogs_sets['ТШYйёэtГ6кОmuюUs'] = '[levelup:2]
 [type:quest]'
-	dialogs_count['ЦэПЛ_ж9ЙшbгdHёФь'] = 0
-	$dialogs_position['ЦэПЛ_ж9ЙшbгdHёФь'] = 'Иг2ЪтRK_уMDашЕIА'
-	$dialogs_includes['ЦэПЛ_ж9ЙшbгdHёФь'] = ''
-	$dialogs_run['ЦэПЛ_ж9ЙшbгdHёФь'] = {$DIALOG_VALUE["сетчатка"]="поговорили"}
+	dialogs_count['ТШYйёэtГ6кОmuюUs'] = 0
+	$dialogs_position['ТШYйёэtГ6кОmuюUs'] = 'юkRPsлofQЯщБюosB'
+	$dialogs_includes['ТШYйёэtГ6кОmuюUs'] = ''
+	$dialogs_run['ТШYйёэtГ6кОmuюUs'] = {$DIALOG_VALUE["сетчатка"]="поговорили"}
 	!@ REPLIC_137
-	$dialogs_id['tOЯsmдШ1МjЮnoLцu'] = 'tOЯsmдШ1МjЮnoLцu'
-	$dialogs_body['tOЯsmдШ1МjЮnoLцu'] = '<frase_block>
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Хм. Сколько весит местный управляющий?
-<actor:СxCгПш6ежНЁlKчЫL>124 килограмма. А вы сколько весите?
-<actor:ЬЪ8АzaКCbюKLяцщЯ>61. Мда. Тут даже клонирующая машина бы не помогла. Ладно, дальше.
+	$dialogs_id['Р6гцрvёАgtНУчЁv6'] = 'Р6гцрvёАgtНУчЁv6'
+	$dialogs_body['Р6гцрvёАgtНУчЁv6'] = '<frase_block>
+<actor:F05Уgu1Да54Ч6FВт>Хм. Сколько весит местный управляющий?
+<actor:эHFл0Юi_сerGCтJю>124 килограмма. А вы сколько весите?
+<actor:F05Уgu1Да54Ч6FВт>61. Мда. Тут даже клонирующая машина бы не помогла. Ладно, дальше.
 </frase_block>'
-	$dialogs_sets['tOЯsmдШ1МjЮnoLцu'] = '[levelup:2]
+	$dialogs_sets['Р6гцрvёАgtНУчЁv6'] = '[levelup:2]
 [type:quest]'
-	dialogs_count['tOЯsmдШ1МjЮnoLцu'] = 0
-	$dialogs_position['tOЯsmдШ1МjЮnoLцu'] = 'HАфшЦСЦ_7LяueLЪN'
-	$dialogs_includes['tOЯsmдШ1МjЮnoLцu'] = ''
-	$dialogs_run['tOЯsmдШ1МjЮnoLцu'] = {$DIALOG_VALUE["вес"]="поговорили"}
+	dialogs_count['Р6гцрvёАgtНУчЁv6'] = 0
+	$dialogs_position['Р6гцрvёАgtНУчЁv6'] = 'ОosdF8nёYWkGR3Im'
+	$dialogs_includes['Р6гцрvёАgtНУчЁv6'] = ''
+	$dialogs_run['Р6гцрvёАgtНУчЁv6'] = {$DIALOG_VALUE["вес"]="поговорили"}
 	!@ REPLIC_138
-	$dialogs_id['ОшHbnDjZLАUЛаDьR'] = 'ОшHbnDjZLАUЛаDьR'
-	$dialogs_body['ОшHbnDjZLАUЛаDьR'] = 'Ещё что-нибудь по лифту?'
-	$dialogs_sets['ОшHbnDjZLАUЛаDьR'] = '[levelup:5]
+	$dialogs_id['ТU5РддоYЗZчУЮXhЖ'] = 'ТU5РддоYЗZчУЮXhЖ'
+	$dialogs_body['ТU5РддоYЗZчУЮXhЖ'] = 'Ещё что-нибудь по лифту?'
+	$dialogs_sets['ТU5РддоYЗZчУЮXhЖ'] = '[levelup:5]
 [type:quest]'
-	dialogs_count['ОшHbnDjZLАUЛаDьR'] = 0
-	$dialogs_position['ОшHbnDjZLАUЛаDьR'] = 'аYWНсЧрыNFQgrdLб'
-	$dialogs_includes['ОшHbnDjZLАUЛаDьR'] = ''
-	$dialogs_run['ОшHbnDjZLАUЛаDьR'] = {$DIALOG_VALUE["системы идентификации"]="поговорили"}
+	dialogs_count['ТU5РддоYЗZчУЮXhЖ'] = 0
+	$dialogs_position['ТU5РддоYЗZчУЮXhЖ'] = 'R8mаьщЖvxCмеНyРн'
+	$dialogs_includes['ТU5РддоYЗZчУЮXhЖ'] = ''
+	$dialogs_run['ТU5РддоYЗZчУЮXhЖ'] = {$DIALOG_VALUE["системы идентификации"]="поговорили"}
 	!@ REPLIC_139
-	$dialogs_id['tЗBNJbpJН0kпnИsG'] = 'tЗBNJbpJН0kпnИsG'
-	$dialogs_body['tЗBNJbpJН0kпnИsG'] = 'Вот же задачка. Монетку бросить что ли... Это всё? Может ещё что-нибудь знаешь?'
-	$dialogs_sets['tЗBNJbpJН0kпnИsG'] = '[type:quest]'
-	dialogs_count['tЗBNJbpJН0kпnИsG'] = 0
-	$dialogs_position['tЗBNJbpJН0kпnИsG'] = 'хwxpфЦBЦРAxдоRъQ'
-	$dialogs_includes['tЗBNJbpJН0kпnИsG'] = 'ЙещЯкoбcрОnхMхЪK'
-	$dialogs_run['tЗBNJbpJН0kпnИsG'] = {}
+	$dialogs_id['мФFXPEЗЦсюЩФKжЛo'] = 'мФFXPEЗЦсюЩФKжЛo'
+	$dialogs_body['мФFXPEЗЦсюЩФKжЛo'] = 'Вот же задачка. Монетку бросить что ли... Это всё? Может ещё что-нибудь знаешь?'
+	$dialogs_sets['мФFXPEЗЦсюЩФKжЛo'] = '[type:quest]'
+	dialogs_count['мФFXPEЗЦсюЩФKжЛo'] = 0
+	$dialogs_position['мФFXPEЗЦсюЩФKжЛo'] = 'ЙwсNЙPуФЩTPqGОчЭ'
+	$dialogs_includes['мФFXPEЗЦсюЩФKжЛo'] = 'рKвВcРmDiыьмgлgл'
+	$dialogs_run['мФFXPEЗЦсюЩФKжЛo'] = {}
 end
 if args[0] = 14:
 	!@ REPLIC_140
-	$dialogs_id['ЙещЯкoбcрОnхMхЪK'] = 'ЙещЯкoбcрОnхMхЪK'
-	$dialogs_body['ЙещЯкoбcрОnхMхЪK'] = 'Знаю про деньги в хранилище.'
-	$dialogs_sets['ЙещЯкoбcрОnхMхЪK'] = '[act_name:Про деньги.:act_name]
+	$dialogs_id['рKвВcРmDiыьмgлgл'] = 'рKвВcРmDiыьмgлgл'
+	$dialogs_body['рKвВcРmDiыьмgлgл'] = 'Знаю про деньги в хранилище.'
+	$dialogs_sets['рKвВcРmDiыьмgлgл'] = '[act_name:Про деньги.:act_name]
 [type:answer]'
-	dialogs_count['ЙещЯкoбcрОnхMхЪK'] = 0
-	$dialogs_position['ЙещЯкoбcрОnхMхЪK'] = 'tЗBNJbpJН0kпnИsG'
-	$dialogs_includes['ЙещЯкoбcрОnхMхЪK'] = 'ЫlФLЙуедВZmЮHх2y'
-	$dialogs_run['ЙещЯкoбcрОnхMхЪK'] = {}
+	dialogs_count['рKвВcРmDiыьмgлgл'] = 0
+	$dialogs_position['рKвВcРmDiыьмgлgл'] = 'мФFXPEЗЦсюЩФKжЛo'
+	$dialogs_includes['рKвВcРmDiыьмgлgл'] = 'bцРGсжhotоР4рмЛ_'
+	$dialogs_run['рKвВcРmDiыьмgлgл'] = {}
 	!@ REPLIC_141
-	$dialogs_id['ЫlФLЙуедВZmЮHх2y'] = 'ЫlФLЙуедВZmЮHх2y'
-	$dialogs_body['ЫlФLЙуедВZmЮHх2y'] = '<frase_block>
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Так, и что с ними?
-<actor:СxCгПш6ежНЁlKчЫL>Их там нет.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Как нет?!
-<actor:СxCгПш6ежНЁlKчЫL>Ну мы переезжаем в другой район города и все деньги и ценности уже перевезли сегодня ночью.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Так почему ты сразу не сказал?!
-<actor:СxCгПш6ежНЁlKчЫL>Ну про это вы как раз не спрашивали.
-<actor:ЬЪ8АzaКCbюKLяцщЯ>Проклятье!
-<actor:ЫяфjЩИ7БИякiHWнП>И с этими словами он выбегает из отделения банка, где его ловит экипаж инкассаторской машины, приехавшей, чтобы как раз перевезти содержимое хранилища в другой район города. Хе-хе.
+	$dialogs_id['bцРGсжhotоР4рмЛ_'] = 'bцРGсжhotоР4рмЛ_'
+	$dialogs_body['bцРGсжhotоР4рмЛ_'] = '<frase_block>
+<actor:F05Уgu1Да54Ч6FВт>Так, и что с ними?
+<actor:эHFл0Юi_сerGCтJю>Их там нет.
+<actor:F05Уgu1Да54Ч6FВт>Как нет?!
+<actor:эHFл0Юi_сerGCтJю>Ну мы переезжаем в другой район города и все деньги и ценности уже перевезли сегодня ночью.
+<actor:F05Уgu1Да54Ч6FВт>Так почему ты сразу не сказал?!
+<actor:эHFл0Юi_сerGCтJю>Ну про это вы как раз не спрашивали.
+<actor:F05Уgu1Да54Ч6FВт>Проклятье!
+<actor:7сьЮ77ф2qПлBзеКц>И с этими словами он выбегает из отделения банка, где его ловит экипаж инкассаторской машины, приехавшей, чтобы как раз перевезти содержимое хранилища в другой район города. Хе-хе.
 </frase_block>'
-	$dialogs_sets['ЫlФLЙуедВZmЮHх2y'] = '[type:quest]'
-	dialogs_count['ЫlФLЙуедВZmЮHх2y'] = 0
-	$dialogs_position['ЫlФLЙуедВZmЮHх2y'] = 'ЙещЯкoбcрОnхMхЪK'
-	$dialogs_includes['ЫlФLЙуедВZmЮHх2y'] = 'fzZыЁOВdд2ЦкЦsТU'
-	$dialogs_run['ЫlФLЙуедВZmЮHх2y'] = {}
+	$dialogs_sets['bцРGсжhotоР4рмЛ_'] = '[type:quest]'
+	dialogs_count['bцРGсжhotоР4рмЛ_'] = 0
+	$dialogs_position['bцРGсжhotоР4рмЛ_'] = 'рKвВcРmDiыьмgлgл'
+	$dialogs_includes['bцРGсжhotоР4рмЛ_'] = 'ЕэCJБЬKбПдIl0PIр'
+	$dialogs_run['bцРGсжhotоР4рмЛ_'] = {}
 	!@ REPLIC_142
-	$dialogs_id['fzZыЁOВdд2ЦкЦsТU'] = 'fzZыЁOВdд2ЦкЦsТU'
-	$dialogs_body['fzZыЁOВdд2ЦкЦsТU'] = '[Закрыть]'
-	$dialogs_sets['fzZыЁOВdд2ЦкЦsТU'] = '[closeup]
+	$dialogs_id['ЕэCJБЬKбПдIl0PIр'] = 'ЕэCJБЬKбПдIl0PIр'
+	$dialogs_body['ЕэCJБЬKбПдIl0PIр'] = '[Закрыть]'
+	$dialogs_sets['ЕэCJБЬKбПдIl0PIр'] = '[closeup]
 [type:answer]'
-	dialogs_count['fzZыЁOВdд2ЦкЦsТU'] = 0
-	$dialogs_position['fzZыЁOВdд2ЦкЦsТU'] = 'ЫlФLЙуедВZmЮHх2y'
-	$dialogs_includes['fzZыЁOВdд2ЦкЦsТU'] = ''
-	$dialogs_run['fzZыЁOВdд2ЦкЦsТU'] = {}
+	dialogs_count['ЕэCJБЬKбПдIl0PIр'] = 0
+	$dialogs_position['ЕэCJБЬKбПдIl0PIр'] = 'bцРGсжhotоР4рмЛ_'
+	$dialogs_includes['ЕэCJБЬKбПдIl0PIр'] = ''
+	$dialogs_run['ЕэCJБЬKбПдIl0PIр'] = {}
 	!@ REPLIC_143
-	$dialogs_id['СxCгПш6ежНЁlKчЫL'] = 'СxCгПш6ежНЁlKчЫL'
-	$dialogs_body['СxCгПш6ежНЁlKчЫL'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
+	$dialogs_id['эHFл0Юi_сerGCтJю'] = 'эHFл0Юi_сerGCтJю'
+	$dialogs_body['эHFл0Юi_сerGCтJю'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
 local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
 $result += '<div class="avs-hero-replic">'
 $result += '<span style="color:#ffffff;font-weight:bold;"><<$name_>>:</span>'
 $result += '<span style="color:#dddddd;"> — <<$args[2]>>:</span>'
 $result += '</div>'}
-	$dialogs_sets['СxCгПш6ежНЁlKчЫL'] = 'name="Я"
+	$dialogs_sets['эHFл0Юi_сerGCтJю'] = 'name="Я"
 
 		<default_active>[type:role]'
-	dialogs_count['СxCгПш6ежНЁlKчЫL'] = 0
-	$dialogs_position['СxCгПш6ежНЁlKчЫL'] = 'Nхc4ХСТТP_pкяPвA'
-	$dialogs_includes['СxCгПш6ежНЁlKчЫL'] = ''
-	$dialogs_run['СxCгПш6ежНЁlKчЫL'] = {!@ внешний вид кнопок для ответов.
+	dialogs_count['эHFл0Юi_сerGCтJю'] = 0
+	$dialogs_position['эHFл0Юi_сerGCтJю'] = 'yeзОaеРЩчДoХ3ДбМ'
+	$dialogs_includes['эHFл0Юi_сerGCтJю'] = ''
+	$dialogs_run['эHFл0Юi_сerGCтJю'] = {!@ внешний вид кнопок для ответов.
 $result += '<div class="avs-act-button"><<$args[2]>></div>'}
 	!@ REPLIC_144
-	$dialogs_id['ЬЪ8АzaКCbюKLяцщЯ'] = 'ЬЪ8АzaКCbюKLяцщЯ'
-	$dialogs_body['ЬЪ8АzaКCbюKLяцщЯ'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
+	$dialogs_id['F05Уgu1Да54Ч6FВт'] = 'F05Уgu1Да54Ч6FВт'
+	$dialogs_body['F05Уgu1Да54Ч6FВт'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
 local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
 $result += '<div class="avs-hero-replic">'
 $result += '<span style="color:#c0c0c0;font-weight:bold;"><<$name_>>:</span>'
 $result += '<span style="color:#aaaaaa;"> — <<$args[2]>>:</span>'
 $result += '</div>'}
-	$dialogs_sets['ЬЪ8АzaКCbюKLяцщЯ'] = 'name="Грабитель"
+	$dialogs_sets['F05Уgu1Да54Ч6FВт'] = 'name="Грабитель"
 
 		Здесь можно писать любой текст, он никак не повлияет на работу интерпретатора.
 		Обёртка для внешнего вида действий отсутствует, потому что данный персонаж общается только через пассивные реплики.
 
 		<default_passive>[type:role]'
-	dialogs_count['ЬЪ8АzaКCbюKLяцщЯ'] = 0
-	$dialogs_position['ЬЪ8АzaКCbюKLяцщЯ'] = 'Nхc4ХСТТP_pкяPвA'
-	$dialogs_includes['ЬЪ8АzaКCbюKLяцщЯ'] = ''
-	$dialogs_run['ЬЪ8АzaКCbюKLяцщЯ'] = {}
+	dialogs_count['F05Уgu1Да54Ч6FВт'] = 0
+	$dialogs_position['F05Уgu1Да54Ч6FВт'] = 'yeзОaеРЩчДoХ3ДбМ'
+	$dialogs_includes['F05Уgu1Да54Ч6FВт'] = ''
+	$dialogs_run['F05Уgu1Да54Ч6FВт'] = {}
 	!@ REPLIC_145
-	$dialogs_id['ЫяфjЩИ7БИякiHWнП'] = 'ЫяфjЩИ7БИякiHWнП'
-	$dialogs_body['ЫяфjЩИ7БИякiHWнП'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
+	$dialogs_id['7сьЮ77ф2qПлBзеКц'] = '7сьЮ77ф2qПлBзеКц'
+	$dialogs_body['7сьЮ77ф2qПлBзеКц'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
 $result += '<div class="avs-remarka">'
 $result += '<span style="font-style:italic;"><<$args[2]>>:</span>'
 $result += '</div>'}
-	$dialogs_sets['ЫяфjЩИ7БИякiHWнП'] = 'Ремарка
-		[include_role:СxCгПш6ежНЁlKчЫL][type:role]'
-	dialogs_count['ЫяфjЩИ7БИякiHWнП'] = 0
-	$dialogs_position['ЫяфjЩИ7БИякiHWнП'] = 'Nхc4ХСТТP_pкяPвA'
-	$dialogs_includes['ЫяфjЩИ7БИякiHWнП'] = ''
-	$dialogs_run['ЫяфjЩИ7БИякiHWнП'] = {}
+	$dialogs_sets['7сьЮ77ф2qПлBзеКц'] = 'Ремарка
+		[include_role:эHFл0Юi_сerGCтJю][type:role]'
+	dialogs_count['7сьЮ77ф2qПлBзеКц'] = 0
+	$dialogs_position['7сьЮ77ф2qПлBзеКц'] = 'yeзОaеРЩчДoХ3ДбМ'
+	$dialogs_includes['7сьЮ77ф2qПлBзеКц'] = ''
+	$dialogs_run['7сьЮ77ф2qПлBзеКц'] = {}
 end
 - dialogs_table
 
@@ -1462,10 +1462,10 @@ $dialogs['primary_keys_type']='[rstr:16]'
 @edb.new_table('dlgrels', 'Реляции для диалогов')
 @edb.dt.new_col('uid', 'str')
 $dlgrels['primary_keys_type']='[rstr:16]'
-$dlgrels_id['barmen'] = 'barmen' & $dlgrels_uid['barmen'] = 'teЦрС6oрsoёЫт9и3'
-$dlgrels_id['alcoholic'] = 'alcoholic' & $dlgrels_uid['alcoholic'] = 'Р4WдMМЦя7нAu0Еwе'
-$dlgrels_id['aragorn'] = 'aragorn' & $dlgrels_uid['aragorn'] = 'jJлРь_JВуAченiс_'
-$dlgrels_id['robbank'] = 'robbank' & $dlgrels_uid['robbank'] = 'Nхc4ХСТТP_pкяPвA'
+$dlgrels_id['barmen'] = 'barmen' & $dlgrels_uid['barmen'] = 'Iоm2шЗzHЙЁgкCZNй'
+$dlgrels_id['alcoholic'] = 'alcoholic' & $dlgrels_uid['alcoholic'] = 'ШtпАЙПGЙрЁнбЛЪРA'
+$dlgrels_id['aragorn'] = 'aragorn' & $dlgrels_uid['aragorn'] = 'fVРAсХjЙЖаШDДВб1'
+$dlgrels_id['robbank'] = 'robbank' & $dlgrels_uid['robbank'] = 'yeзОaеРЩчДoХ3ДбМ'
 - dialogs_init
 
 Цикл для последовательной подгрузки реплик группами:

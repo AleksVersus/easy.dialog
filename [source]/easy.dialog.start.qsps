@@ -1,13 +1,16 @@
 QSP-Game стартовая локация Easy Dialog
 
+
+Эта локация нужна только если модуль запускается, как самостоятельная игра.
+Поэтому здесь ничего не подключается.
 # dialog.start
 if $args[0]="":
-	!@ подключение библиотеки easy.database
-	inclib 'easy.database.qsp'
-	!@ подключение библиотеки easy.math:
-	inclib 'easy.math.qsp'
+	!@ !@ подключение библиотеки easy.database
+	!@ inclib 'easy.database.qsp'
+	!@ !@ подключение библиотеки easy.math:
+	!@ inclib 'easy.math.qsp'
 	!@ включаем обработчик строки ввода
-	$usercom[] = 'dialog.uc'
+	$usercom[] = 'dialog.usercom'
 	!@ включаем распознавание html
 	usehtml=1
 	!@ моноширинный шрифт
@@ -41,20 +44,23 @@ if $args[0]="":
 
 Для получения списка команд, введите `eid help` в строку ввода"
 elseif $args[0]='version':
-	result=3000
+	$result = '3.0.0'
 end
 --- dialog.start ---------------------------------
 
-# dialog.uc
+# dialog.usercom
 if instr($user_text, 'eid') = 1:
 	local $command_line_ = $trim($mid($user_text, 4))
 	if $command_line_ = 'help':
 		*pl 'Все команды для работы с модулем из строки ввода должны начинаться с ключевого слова `eid`'
 		*pl 'Основные команды для работы с модулем (ключевое слово `eid` опущено):'
 		*pl '* help - вывод справки по модулю `easy.dialog`.'
-		*pl '* run - выполнить следующий после `run` текст, как строку кода QSP.' 
+		*pl '* run - выполнить следующий после `run` текст, как строку кода QSP.'
+		*pl '* version - проверить текущую версию модуля. Можно просто `v`.'
+	elseif $command_line_ = 'version' or $command_line_ = 'v':
+		*pl @dialog.start('version')
 	elseif instr($command_line_, 'run ') = 1:
 		dynamic $trim($mid($command_line_, 4))
 	end
 end
---- dialog.uc ---------------------------------
+--- dialog.usercom ---------------------------------

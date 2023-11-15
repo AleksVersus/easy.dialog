@@ -45,13 +45,15 @@ else:
 	!@ теперь перебираем массив с фразами, закидывая их в лог после разделителя
 	loop while arrsize('$frase_array_') > 0:
 		$frase_actor_ = @em.tag.getNum($frase_array_[0], 'actor')
-		$frase_actor_ = $replace($frase_actor_, '<'+'actor:<<$frase_array_[0]>>'+'>')
-		if $frase_actor_ <> '':
-			$replic_text_ = $dyneval($dialogs_body[$frase_actor_], $frase_actor_, $dialogs_position[$frase_actor_], $frase_array_[0])
-		else:
-			$replic_text_ = $dyneval({$result = '<div class="avs-dialogs-none-role"><<$args[2]>></div>'}, '', '', $frase_array_[0])
+		$replic_text_ = $replace($frase_array_[0], '<'+'actor:<<$frase_actor_>>'+'>')
+		if $replic_text_ <> '':
+			if $frase_actor_ <> '':
+				$replic_text_ = $dyneval($dialogs_body[$frase_actor_], $frase_actor_, $dialogs_position[$frase_actor_], $replic_text_)
+			else:
+				$replic_text_ = $dyneval($DIALOG_VALUE['default_screen_passive_log'], '', '', $replic_text_)
+			end
+			@dialog.replic.to_log($replic_text_)
 		end
-		@dialog.replic.to_log($replic_text_)
 		killvar '$frase_array_', 0
 	end
 end

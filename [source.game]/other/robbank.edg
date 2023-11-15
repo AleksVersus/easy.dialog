@@ -14,7 +14,7 @@
 			local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
 			$result += '<div class="avs-hero-replic">'
 				$result += '<span style="color:#ffffff;font-weight:bold;"><<$name_>>:</span>'
-				$result += '<span style="color:#dddddd;"> — <<$args[2]>>:</span>'
+				$result += '<span style="color:#dddddd;"> — <<$args[2]>></span>'
 			$result += '</div>'
 		</wrap.frase>
 	</actor.hero>
@@ -30,7 +30,7 @@
 			local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
 			$result += '<div class="avs-hero-replic">'
 				$result += '<span style="color:#c0c0c0;font-weight:bold;"><<$name_>>:</span>'
-				$result += '<span style="color:#aaaaaa;"> — <<$args[2]>>:</span>'
+				$result += '<span style="color:#aaaaaa;"> — <<$args[2]>></span>'
 			$result += '</div>'
 		</wrap.frase>
 	</actor.npc>
@@ -40,7 +40,7 @@
 		<wrap.frase>
 			!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
 			$result += '<div class="avs-remarka">'
-				$result += '<span style="font-style:italic;"><<$args[2]>>:</span>'
+				$result += '<span style="font-style:italic;"><<$args[2]>></span>'
 			$result += '</div>'
 		</wrap.frase>
 	</actor.remarka>
@@ -69,11 +69,10 @@
 				</frase_block>
 			:}
 			{:
-				marker:thirddead
+				<!-- marker:thirddead
 				<if>DIALOG_VALUE["что.в"]=1</if>
-				npc="name::name tire:nope fattrib:-i"
+				actor_this:remarka -->
 				Он стискивает зубы и стреля...
-				<dynamic_code>cla</dynamic_code>
 				[:[Закрыть]closeup:]
 			:}
 		:]
@@ -95,7 +94,7 @@
 									<actor:remarka>Пальцем в толстого очкарика на полу, тут же затрясшего головой.
 									<actor:npc>Окей, спасибо, техник, — <em>и спускает куро...</em>
 								</frase_block>
-								<dynamic_code>cla</dynamic_code>
+								
 								[:[Закрыть]closeup:]
 							:}
 						:]
@@ -196,7 +195,7 @@
 									:]
 									[:
 										act_name:Зелёные.:act_name
-										<dynamic_code>cla</dynamic_code>
+										
 										<frase_block>
 											<actor:hero>Зелёные, кажется, а что?
 											<actor:npc>Проклятье, у меня дейтеранопия.

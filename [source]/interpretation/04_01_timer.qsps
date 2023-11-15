@@ -8,5 +8,6 @@ if no DIALOG_VALUE['timer_start']:
 elseif msecscount >= DIALOG_VALUE['timer_next_refresh']:
 	DIALOG_VALUE['timer_next_refresh'] = msecscount + interval_
 	@dialog.log.refresh()
+	@dialog.screen.reprint()
 end
 --- dialog.timer ---------------------------------
