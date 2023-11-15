@@ -1,0 +1,91 @@
+QSP-Game Отладчик для модуля диалогов
+
+# dialog.usercom
+if instr($user_text, 'eid') = 1:
+	local $command_line_ = $trim($mid($user_text, 4))
+	if $command_line_ = 'help':
+		*pl '<h3>Help / Помощь</h3>'
+		*pl 'Все команды для работы с модулем из строки ввода должны начинаться с ключевого слова `eid`'
+		*pl 'Основные команды для работы с модулем (ключевое слово `eid` опущено):'
+		*pl '* help - вывод справки по модулю `easy.dialog`.'
+		*pl '* run - выполнить следующий после `run` текст, как строку кода QSP.'
+		*pl '* version - проверить текущую версию модуля..'
+		*pl '* clr - очистить окно доп описания.'
+		*pl '* print — вывести в дополнительное описание всю таблицу данных с диалогами.'
+		*pl '* refs - вывести в дополнительное описание таблицу с короткими именами диалогов.'
+		*pl '* log - вывести в доп.описание сохранённый лог реплик.'
+		*pl '* html - включить/отключить распознавание HTML в плеере.'
+		*pl '* ИНДЕКС_ДЛЯ_DIALOG_VALUE= — если ввести текстовый индекс, а затем поставить знак равенства, в окно дополнительного описания будет выведено значение из массива $DIALOG_VALUE под указанным индексомю'
+	elseif $command_line_ = 'version' or $command_line_ = 'v':
+		*pl @dialog.start('version')
+	elseif $command_line_ = 'clr':
+		clr
+	elseif $command_line_ = 'print' or $command_line_ = 'p':
+		if loc('edb.dt.print'):
+			@edb.dt.print('dialogs', '[instat]')
+		else:
+			local $table_, $id_ = '', ''
+			$table_ = 'Модуль easy.database не подключён, поэтому таблица может быть выведена не полностью.<br>'
+			$table_ += '<table width=95% border=1>'
+			loop local i = 1 while i < arrsize('$dialogs_id') step i += 1:
+				$id_ = $dialogs_id[i]
+				$table_ += "<tr>"
+					$table_ += "<td>"+$str(i)+"</td>"
+					$table_ += "<td>"+$replace($replace($dialogs_id[$id_],'<','&lt;'),'>','&gt;')+"</td>"
+					$table_ += "<td>"+$replace($replace($dialogs_body[$id_],'<','&lt;'),'>','&gt;')+"</td>"
+					$table_ += "<td>"+$replace($replace($dialogs_sets[$id_],'<','&lt;'),'>','&gt;')+"</td>"
+					$table_ += "<td>"+$replace($replace($dialogs_position[$id_],'<','&lt;'),'>','&gt;')+"</td>"
+					$table_ += "<td>"+$replace($replace(dialogs_count[$id_],'<','&lt;'),'>','&gt;')+"</td>"
+				$table_ += "</tr>"
+			end
+			$table_ += "</table>"
+			if $id_ = '':
+				p 'Таблица данных не создана'
+			else:
+				p $table_
+			end
+		end
+	elseif $command_line_ = 'refs':
+		if loc('edb.dt.print'):
+			@edb.dt.print('dlgrels', '[instat]')
+		else:
+			local $table_, $id_ = '', ''
+			$table_ = 'Модуль easy.database не подключён, поэтому таблица может быть выведена не полностью.<br>'
+			$table_ += '<table border=1 style="background:#ffffee;">'
+			loop local i = 1 while i < arrsize('$dlgrels_id') step i += 1:
+				$id_ = $dlgrels_id[i]
+				$table_ += "<tr>"
+					$table_ += "<td>"+$str(i)+"</td>"
+					$table_ += "<td>"+$replace($replace($dlgrels_id[$id_],'<','&lt;'),'>','&gt;')+"</td>"
+					$table_ += "<td>"+$replace($replace($dlgrels_uid[$id_],'<','&lt;'),'>','&gt;')+"</td>"
+				$table_ += "</tr>"
+			end
+			$table_ += "</table>"
+			if $id_ = '':
+				p 'Таблица данных не создана'
+			else:
+				p $table_
+			end
+		end
+	elseif $command_line_ = 'log':
+		if arrsize('$DIALOG_REPLIC_LOG') > 0:
+			loop local i=0 while i<arrsize('$DIALOG_REPLIC_LOG') step i+=1:
+				pl $replace($replace($DIALOG_REPLIC_LOG[i], '<', '&lt;'), '>', '&gt;')
+			end
+		else:
+			pl 'Лог реплик пуст.'
+		end
+	elseif $command_line_ = 'html' or $command_line_ = 'h':
+		usehtml = 1 - usehtml
+	elseif $mid($command_line_, len($command_line_)) = '=':
+		local $index_ = $trim($mid($command_line_, 1, len($command_line_)-1))
+		if $DIALOG_VALUE[$index_] <> '':
+			pl '$DIALOG_VALUE[''<<$index_>>''] = ''<<$DIALOG_VALUE[$index_]>>'''
+		else:
+			pl 'DIALOG_VALUE[''<<$index_>>''] = <<DIALOG_VALUE[$index_]>>'
+		end
+	elseif instr($command_line_, 'run ') = 1:
+		dynamic $trim($mid($command_line_, 4))
+	end
+end
+--- dialog.usercom ---------------------------------

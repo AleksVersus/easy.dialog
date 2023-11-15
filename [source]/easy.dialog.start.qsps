@@ -16,51 +16,36 @@ if $args[0]="":
 	!@ моноширинный шрифт
 	$fname = 'Consolas'
 
-"Easy Dialog"
-"Интерпретатор диалогов для QSP"
-"
+'<h1>Easy Dialog</h1>'
+'Интерпретатор диалогов для QSP'
+'Для плееров QSP версии 5.8.0 и выше. Модуль ориентирован на использование в <strong>qSpider</strong>.
+
 Репозиторий с исходниками библиотеки:
 
-*	https://github.com/AleksVersus/easy.dialog
+*	<a href="https://github.com/AleksVersus/easy.dialog">https://github.com/AleksVersus/easy.dialog</a> 
 
 По всем вопросам и предложениям обращаться:
 
-*	aleksversus@mail.ru
-*	https://vk.com/id40090736
+*	<a href="mailto:aleksversus@mail.ru">aleksversus@mail.ru</a>
+*	<a href="https://vk.com/id40090736">https://vk.com/id40090736</a>
 
 Заходите на мой сайт:
 
-*	aleksversus.narod.ru
+*	<a href="https://aleksversus.narod.ru">https://aleksversus.narod.ru</a>
 
 Поддержите проект, подписавшись на мой бусти:
 
-* https://boosty.to/aleksversus
+* <a href="https://boosty.to/aleksversus">https://boosty.to/aleksversus</a>
 
 Обучающие видео по написанию игр на QSP:
 
-*	https://www.youtube.com/channel/UCwX8RW2B9yTUFdlivtCGAgA
+*	<a href="https://www.youtube.com/channel/UCwX8RW2B9yTUFdlivtCGAgA">https://www.youtube.com/channel/UCwX8RW2B9yTUFdlivtCGAgA</a>
 
 Вы можете тестировать различные части модуля, вводя команды в строку ввода.
 
-Для получения списка команд, введите `eid help` в строку ввода"
+Для получения списка команд, введите `eid help` в строку ввода'
 elseif $args[0]='version':
 	$result = '3.0.0'
 end
 --- dialog.start ---------------------------------
 
-# dialog.usercom
-if instr($user_text, 'eid') = 1:
-	local $command_line_ = $trim($mid($user_text, 4))
-	if $command_line_ = 'help':
-		*pl 'Все команды для работы с модулем из строки ввода должны начинаться с ключевого слова `eid`'
-		*pl 'Основные команды для работы с модулем (ключевое слово `eid` опущено):'
-		*pl '* help - вывод справки по модулю `easy.dialog`.'
-		*pl '* run - выполнить следующий после `run` текст, как строку кода QSP.'
-		*pl '* version - проверить текущую версию модуля. Можно просто `v`.'
-	elseif $command_line_ = 'version' or $command_line_ = 'v':
-		*pl @dialog.start('version')
-	elseif instr($command_line_, 'run ') = 1:
-		dynamic $trim($mid($command_line_, 4))
-	end
-end
---- dialog.usercom ---------------------------------

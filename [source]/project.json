@@ -3,7 +3,7 @@
 	[
 		{
 			"build":"..\\..\\..\\+releases+\\+lib+\\launcher.eid\\easy.dialog.qsp",
-			"folders":[{"path":".\\[source]"}]
+			"folders":[{"path":"."}]
 		},
 		{
 			"build":"..\\..\\..\\+releases+\\+lib+\\launcher.eid\\easy.math.qsp",
