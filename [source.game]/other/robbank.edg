@@ -287,7 +287,7 @@
 							:]
 							[:
 								Собаки.
-								<if>$DIALOG_VALUE["собаки"]!"поговорили"</if>
+								<if>$DIALOG_VALUE["собаки"]<>"поговорили"</if>
 								{:
 									<frase_block>
 										<actor:npc>Собаки?

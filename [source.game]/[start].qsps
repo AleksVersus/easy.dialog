@@ -1,8 +1,8 @@
 # [start]
 !@ начало игры. Первая локация. Подключаем модуль и необходимые библиотеки
-inclib 'easy.dialog.qsp'	& !@ подключаем модуль интерпретатора диалогов
-inclib 'easy.database.qsp'	& !@ подключаем модуль управления базой данных
-inclib 'easy.math.qsp'		& !@ подключаем модуль математических и вспомогательных функций
+!@ inclib 'easy.dialog.qsp'	& !@ подключаем модуль интерпретатора диалогов
+!@ inclib 'easy.database.qsp'	& !@ подключаем модуль управления базой данных
+!@ inclib 'easy.math.qsp'		& !@ подключаем модуль математических и вспомогательных функций
 @edb.init()
 @dialogs_init()
 @dialogs_load()
@@ -11,8 +11,8 @@ $usercom[] = 'dialog.usercom'
 !@ включаем распознавание html
 usehtml = 1
 showstat 1
-showacts 0
-showobjs 0
+showacts 1
+showobjs 1
 !@ описание локации
 '<h1>Примеры диалогов, написанных под модуль easy.dialog v.3.0</h1>'
 ''
