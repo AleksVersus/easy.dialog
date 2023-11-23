@@ -1,6 +1,7 @@
 QSP-Game Обновляем список кнопок
 
 # dialog.btns.refresh
+!@ pl 'btns.refresh' & wait 250
 local $btns_, $buttons_div_ = '', ''
 loop local i = 0 while i < arrsize('$DIALOG_BUTTONS') step i += 1:
 	$btns_ += $DIALOG_BUTTONS[i]

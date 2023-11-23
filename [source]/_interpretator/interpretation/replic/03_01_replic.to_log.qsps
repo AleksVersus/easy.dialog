@@ -2,6 +2,7 @@ QSP-Game Закидывает реплику в лог диалога
 
 $args[0] - сформированный текст реплики с разметкой
 # dialog.replic.to_log
+!@ pl 'replic.to_log' & wait 250
 $DIALOG_REPLIC_LOG[] = $args[0]
 !@ размер лога ограничен сотней реплик по умолчанию, включая скрытые.
 local ls_ = iif(GAME_VALUE['dialogs_log_size'] = 0, 100, GAME_VALUE['dialogs_log_size'])

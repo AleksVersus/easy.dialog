@@ -1,6 +1,7 @@
 QSP-Game Локация-счётчик для воспроизведения блока фраз
 
 # dialog.timer
+!@ pl 'timer'
 local interval_ = iif(GAME_VALUE['dialogs_timer_interval']=0, 500, GAME_VALUE['dialogs_timer_interval'])
 if no DIALOG_VALUE['timer_start']:
 	DIALOG_VALUE['timer_next_refresh'] = msecscount + interval_

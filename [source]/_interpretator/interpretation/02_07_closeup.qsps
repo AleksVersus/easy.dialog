@@ -1,6 +1,7 @@
 QSP-Game закрывает диалог и восстанавливает последний экран
 
 # dialog.closeup
+!@ pl 'closeup' & wait 250
 local $screen_ = $DIALOG_VALUE['screen.main']
 killvar '$DIALOG_VALUE' & !@ массив, в котором  хранятся текущие настройки диалога
 @dialog.killtemp()

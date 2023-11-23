@@ -3,6 +3,7 @@ QSP-Game Выводит реплику в лог диалога!!!
 $args[0] - идентификатор реплики
 $args[1] - текущие настройки ветки
 # dialog.replic.print
+!@ pl 'replic.print' & wait 250
 !@ ------------------- многократно используемы локальные переменные ------------------- 
 	local $replic_text_, $wrap_code_, $frase_actor_
 !@ ------------------- многократно используемы локальные переменные ------------------- 
@@ -40,8 +41,8 @@ else:
 	!@ строки разбиваем на массив:
 	local $frase_array_
 	@em.str.inArr($frase_block_,'$frase_array_')
-	!@ в лог добавляем разделитель
-	@dialog.replic.to_log('<avs-hide-replics>')
+	!@ в лог добавляем разделитель, если он ещё не добавлен
+	if arrpos('$DIALOG_REPLIC_LOG', '<avs-hide-replics>') = -1: @dialog.replic.to_log('<avs-hide-replics>')
 	!@ теперь перебираем массив с фразами, закидывая их в лог после разделителя
 	loop while arrsize('$frase_array_') > 0:
 		$frase_actor_ = @em.tag.getNum($frase_array_[0], 'actor')

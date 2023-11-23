@@ -3,6 +3,7 @@ QSP-Game интерпретатор реплики в виде кнопки
 $args[0] = $args[0]	&	!	идентификатор реплики
 $args[1] = $args[1] & ! текущие настройки для всех реплик
 # dialog.int.answer
+!@ pl 'int.answer' & wait 250
 !@ настройки, тело реплики, родительская
 local $rsets_ = $dialogs_sets[$args[0]]
 local $rbody_ = $dialogs_body[$args[0]]
