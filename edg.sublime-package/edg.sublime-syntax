@@ -1,0 +1,71 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+#
+# Easy dialog syntax-lighting for QSP-games (edsynth)
+name: Easy.Dialog
+file_extensions:
+  - edg
+  - edsynt
+first_line_match: (^<!--\s*easydialog\s*-->$)
+scope: source.text.edg
+variables:
+  a: a
+      
+contexts:
+  main:
+    - include: commentaries
+    - include: qsp_syntax
+    - include: strings 
+    - include: html
+    - include: cmd
+    - include: brack
+
+  commentaries:
+    - match: (<!--|-->)
+      scope: comment
+    
+  strings:
+    - match: (\S+)\s*(=)\s*(('|")[\s\S]*?\4)
+      captures:
+        1: keyword.operator
+        3: string
+    - match: (strings|repeat|shuffle|act_length|marker|include_role|actor_this|actor_act|actor_pass|levelup|leveljump|replic_app)\s*(:)\s*(\S+)
+      captures:
+        1: keyword.operator
+        3: string
+    - match: (act_name)\s*(:)\s*([\s\S]*?)\s*(:)\s*(\1)
+      captures:
+        1: keyword.operator
+        3: string
+        5: keyword.operator
+
+  html:
+    - match: <.*?>
+      scope: message.error
+
+  qsp_syntax:
+    - match: ^\s*<(wrap\.act|wrap\.frase)>\s*$
+      scope: keyword.operator
+      embed: scope:source.locations.QSP
+      embed_scope: markup.raw
+      escape: ^\s*<\/\1>\s*$
+      escape_captures:
+        0: keyword.operator
+    - match: <(dynamic_code|if)>
+      scope: keyword.operator
+      embed: scope:source.locations.QSP
+      embed_scope: markup.raw
+      escape: <\/\1>
+      escape_captures:
+        0: keyword.operator
+
+  cmd:
+    - match: (selectact\.delete|selectact\.kill|closeup)
+      scope: keyword.declaration.function
+
+  brack:
+    - match: (\[:|:\])
+      scope: entity.name.function.js markup.italic
+    - match: (\{:|:\})
+      scope: variable.parameter.function.js
