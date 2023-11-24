@@ -1,8 +1,0 @@
-# counter
-if time1=0:
-	time1=msecscount
-elseif time2=0:
-	time2=msecscount
-	time2-time1
-end
---- counter ---------------------------------

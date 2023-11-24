@@ -4,7 +4,7 @@ QSP-Game стартовая локация Easy Dialog
 Эта локация нужна только если модуль запускается, как самостоятельная игра.
 Поэтому здесь ничего не подключается.
 # dialog.start
-if $args[0]="":
+if $args[0] = "":
 	!@ !@ подключение библиотеки easy.database
 	!@ inclib 'easy.database.qsp'
 	!@ !@ подключение библиотеки easy.math:
@@ -12,9 +12,13 @@ if $args[0]="":
 	!@ включаем обработчик строки ввода
 	$usercom[] = 'dialog.usercom'
 	!@ включаем распознавание html
-	usehtml=1
+	usehtml = 1
 	!@ моноширинный шрифт
 	$fname = 'Consolas'
+	!@ отключаем лишние окна
+	showobjs 0
+	showstat 0
+	showacts 0
 
 '<h1>Easy Dialog</h1>'
 'Интерпретатор диалогов для QSP'
@@ -22,29 +26,29 @@ if $args[0]="":
 
 Репозиторий с исходниками библиотеки:
 
-*	<a href="https://github.com/AleksVersus/easy.dialog">https://github.com/AleksVersus/easy.dialog</a> 
+* <a href="https://github.com/AleksVersus/easy.dialog" target="blanket">https://github.com/AleksVersus/easy.dialog</a> 
 
 По всем вопросам и предложениям обращаться:
 
-*	<a href="mailto:aleksversus@mail.ru">aleksversus@mail.ru</a>
-*	<a href="https://vk.com/id40090736">https://vk.com/id40090736</a>
+* <a href="mailto:aleksversus@mail.ru" target="blanket">aleksversus@mail.ru</a>
+* <a href="https://vk.com/id40090736" target="blanket">https://vk.com/id40090736</a>
 
 Заходите на мой сайт:
 
-*	<a href="https://aleksversus.narod.ru">https://aleksversus.narod.ru</a>
+* <a href="http://aleksversus.narod.ru/index/easy_dialog_qsp/0-37" target="blanket">https://aleksversus.narod.ru</a>
 
 Поддержите проект, подписавшись на мой бусти:
 
-* <a href="https://boosty.to/aleksversus">https://boosty.to/aleksversus</a>
+* <a href="https://boosty.to/aleksversus" target="blanket">https://boosty.to/aleksversus</a>
 
 Обучающие видео по написанию игр на QSP:
 
-*	<a href="https://www.youtube.com/channel/UCwX8RW2B9yTUFdlivtCGAgA">https://www.youtube.com/channel/UCwX8RW2B9yTUFdlivtCGAgA</a>
+* <a href="https://www.youtube.com/channel/UCwX8RW2B9yTUFdlivtCGAgA" target="blanket">https://www.youtube.com/channel/UCwX8RW2B9yTUFdlivtCGAgA</a>
 
 Вы можете тестировать различные части модуля, вводя команды в строку ввода.
 
 Для получения списка команд, введите `eid help` в строку ввода'
-elseif $args[0]='version':
+elseif $args[0] = 'version':
 	$result = '3.0.0'
 end
 --- dialog.start ---------------------------------
