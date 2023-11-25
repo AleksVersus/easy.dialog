@@ -312,10 +312,10 @@ class EasyDialog:
 			self.microbase['replic-settings'][key] += f'[selbtn.del]\n'
 			self.microbase['replic-source'][key] = re.sub(r'\bselbtn\.del\b', '', self.microbase['replic-source'][key])
 
-		selectact_kill = re.search(r'\bselectact\.kill\b', self.microbase['replic-source'][key])
-		if selectact_kill is not None:
-			self.microbase['replic-settings'][key] += f'[selectact.kill]\n'
-			self.microbase['replic-source'][key] = re.sub(r'\bselectact\.kill\b', '', self.microbase['replic-source'][key])
+		selectrepl_kill = re.search(r'\bselrepl\.kill\b', self.microbase['replic-source'][key])
+		if selectrepl_kill is not None:
+			self.microbase['replic-settings'][key] += f'[selrepl.kill]\n'
+			self.microbase['replic-source'][key] = re.sub(r'\bselrepl\.kill\b', '', self.microbase['replic-source'][key])
 
 		closeup = re.search(r'\bcloseup\b', self.microbase['replic-source'][key])
 		if closeup is not None:

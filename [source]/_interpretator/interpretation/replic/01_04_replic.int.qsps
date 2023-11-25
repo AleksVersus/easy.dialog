@@ -125,6 +125,11 @@ if q > 0:
 	end
 	if $choosing_frase_<>'': @dialog.int.quest($choosing_frase_)
 end
+!@ реплика воспроизводится, а потом удаляется.
+!@ Удаляем на текущий сеанс:
+if instr($rsets_,'[selrepl.del]')<>0: @dialog.replic.del($args[0])
+!@ Уничтожаем полностю безвозвратно
+if instr($rsets_,'[selrepl.kill]')<>0: @dialog.replic.kill($args[0])
 !@ закрытие диалога происходит после выполнения кода и вывода реплики на экран:
 if instr($rsets_, '[closeup]')<>0: @dialog.closeup() & exit	
 --- dialog.replic.int ---------------------------------
