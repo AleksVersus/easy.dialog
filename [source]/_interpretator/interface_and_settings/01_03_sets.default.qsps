@@ -19,9 +19,9 @@ if $d_active_<>'':
 	$DIALOG_VALUE['default_screen_active_log'] = $dialogs_body[$d_active_]
 	$DIALOG_VALUE['default_screen_active_button'] = $dialogs_run[$d_active_]
 else:
-	$DIALOG_VALUE['default_screen_active_log'] = $trim({
+	$DIALOG_VALUE['default_screen_active_log'] = {
 		$result += '<div class="avs-hero-replic"><span style="font-style:italic;"> — <<$args[2]>></span></div>'
-	})
+	}
 	$DIALOG_VALUE['default_screen_active_button'] = {$result = '<div class="avs-act-button"><<$args[2]>></div>'}
 end
 
@@ -29,9 +29,9 @@ end
 if $d_passive_<>'':
 	$DIALOG_VALUE['default_screen_passive_log'] = $dialogs_body[$d_passive_]
 else:
-	$DIALOG_VALUE['default_screen_passive_log'] = $trim({
+	$DIALOG_VALUE['default_screen_passive_log'] = {
 		$result += '<div class="avs-none-replic"> — <<$args[2]>></div>'
-	})
+	}
 end
 
 $DIALOG_VALUE['default_replics_repeat'] = 'cicle'
