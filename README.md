@@ -639,65 +639,65 @@ levelup:2
 Ниже представлен пример диалога, где корневая реплика содержит фразу и некоторые настройки вывода реплик:
 
 <html>
-<!--
+<span style="color:grey;">&lt;!--
    dialog_usrid="testgame"
    actors="npc;hero;"
 
-   <actor.npc>
-      <default_passive>
-      <wrap.frase>
-         $result = '<span style="color:#008888"'>Ведущий: — <<$args[2]>></span>'
-      </wrap.frase>
-   </actor.npc>
+   &lt;actor.npc&gt;
+      &lt;default_passive&gt;
+      &lt;wrap.frase&gt;
+         $result = '&lt;span style="color:#008888"'&gt;Ведущий: — &lt;&lt;$args[2]&gt;&gt;&lt;/span&gt;'
+      &lt;/wrap.frase&gt;
+   &lt;/actor.npc&gt;
 
-   <actor.hero>
-      <default_active>
-      <wrap.frase>
-         $result = 'Вася Пупкин: — <<$args[2]>>'
-      </wrap.frase>
-      <wrap.btn>
-         $result = '<div><<$args[2]>></div>'
-      </wrap.btn>
-   </actor.hero>
+   &lt;actor.hero&gt;
+      &lt;default_active&gt;
+      &lt;wrap.frase&gt;
+         $result = 'Вася Пупкин: — &lt;&lt;$args[2]&gt;&gt;'
+      &lt;/wrap.frase&gt;
+      &lt;wrap.btn&gt;
+         $result = '&lt;div&gt;&lt;&lt;$args[2]&gt;&gt;&lt;/div&gt;'
+      &lt;/wrap.btn&gt;
+   &lt;/actor.hero&gt;
 
-   <actor.herogreen>
-      <wrap.frase>
-         $result = '<span style="color:#008800"'>Вася Пупкин:</span> — <<$args[2]>>'
-      </wrap.frase>
-      <wrap.btn>
-         $result = '<div><<$args[2]>></div>'
-      </wrap.btn>
-   </actor.herogreen>
+   &lt;actor.herogreen&gt;
+      &lt;wrap.frase&gt;
+         $result = '&lt;span style="color:#008800"'&gt;Вася Пупкин:&lt;/span&gt; — &lt;&lt;$args[2]&gt;&gt;'
+      &lt;/wrap.frase&gt;
+      &lt;wrap.btn&gt;
+         $result = '&lt;div&gt;&lt;&lt;$args[2]&gt;&gt;&lt;/div&gt;'
+      &lt;/wrap.btn&gt;
+   &lt;/actor.herogreen&gt;
 
-   <actor.herored>
-      <wrap.frase>
-         $result = '<span style="color:#ff0000"'>Вася Пупкин:</span> — <<$args[2]>>'
-      </wrap.frase>
-      <wrap.btn>
-         $result = '<div><<$args[2]>></div>'
-      </wrap.btn>
-   </actor.herored>
+   &lt;actor.herored&gt;
+      &lt;wrap.frase&gt;
+         $result = '&lt;span style="color:#ff0000"'&gt;Вася Пупкин:&lt;/span&gt; — &lt;&lt;$args[2]&gt;&gt;'
+      &lt;/wrap.frase&gt;
+      &lt;wrap.btn&gt;
+         $result = '&lt;div&gt;&lt;&lt;$args[2]&gt;&gt;&lt;/div&gt;'
+      &lt;/wrap.btn&gt;
+   &lt;/actor.herored&gt;
 
-   <actor.npcbluered>
-      <wrap.frase>
-         $result = '<span style="color:#008888"'>Ведущий:</span> <span style="color:#880000"'>— <<$args[2]>></span>'
-      </wrap.frase>
-   </actor.npcbluered>
+   &lt;actor.npcbluered&gt;
+      &lt;wrap.frase&gt;
+         $result = '&lt;span style="color:#008888"'&gt;Ведущий:&lt;/span&gt; &lt;span style="color:#880000"'&gt;— &lt;&lt;$args[2]&gt;&gt;&lt;/span&gt;'
+      &lt;/wrap.frase&gt;
+   &lt;/actor.npcbluered&gt;
 
    string:25
--->
+--&gt;</span>
 
 {:
-   Как вас зовут? <!-- это корень диалога.
+   Как вас зовут? &lt;!-- это корень диалога.
    Здесь есть фраза, и некоторые настройки вывода реплик:
    shuffle:random
-   repeat:once -->
+   repeat:once --&gt;
    [:
-      <!-- actor_act:herogreen <<< Здесь меняем роль для активируемых реплик -->
+      &lt;!-- actor_act:herogreen &lt;&lt;&lt; Здесь меняем роль для активируемых реплик --&gt;
       Меня зовут Вася.
       {:Вас зовут Вася?
          [:
-         <!-- actor_pass:npcnluered <<< Здесь меняем роль для пассивных реплик -->
+         &lt;!-- actor_pass:npcnluered &lt;&lt;&lt; Здесь меняем роль для пассивных реплик --&gt;
          Да, меня зовут Вася.
             {:да ну нафиг:}
             [:
@@ -714,7 +714,7 @@ levelup:2
       :}
    :]
    [:
-      <!-- actor_act:herored <<< Здесь меняем роль для активируемых реплик -->
+      &lt;!-- actor_act:herored &lt;&lt;&lt; Здесь меняем роль для активируемых реплик --&gt;
       Меня зовут Петя.
       {:
          Вас зовут Петя?
