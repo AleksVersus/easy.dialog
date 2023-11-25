@@ -12,10 +12,10 @@ actors="hero; alcoholic;"
 	name="Вы"
 
 	<default_active>
-	<wrap.act>
+	<wrap.btn>
 		!@ внешний вид кнопок для ответов.
 		$result += '<div class="avs-act-button"><<$args[2]>></div>'
-	</wrap.act>
+	</wrap.btn>
 	<wrap.frase>
 		!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
 		local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')

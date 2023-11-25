@@ -8,9 +8,9 @@ actors="hero; aragorn;"
 
 <actor.hero>
 	<default_active>
-	<wrap.act>
+	<wrap.btn>
 		$result += '<div class="avs-act-button"><<$args[2]>></div>'
-	</wrap.act>
+	</wrap.btn>
 	<wrap.frase>
 		$result += '<div class="avs-hero-replic">'
 			$result += '<span style="color:#0000ff;">Вы: — <<$args[2]>></span>'

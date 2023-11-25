@@ -194,8 +194,8 @@ class EasyDialog:
 			generate of actors rows in dialogs data table
 		"""
 		role_id = f'{self.uid}.{actor_id}'
-		wrap_act = em.Tag.get_cont(actor_src, r'wrap\.act')
-		actor_src = em.Tag.del_cont(actor_src, r'wrap\.act')
+		wrap_btn = em.Tag.get_cont(actor_src, r'wrap\.btn')
+		actor_src = em.Tag.del_cont(actor_src, r'wrap\.btn')
 		wrap_frase = em.Tag.get_cont(actor_src, r'wrap\.frase')
 		actor_src = em.Tag.del_cont(actor_src, r'wrap\.frase')
 		include_role = em.Tag.get_num(actor_src, 'include_role')
@@ -206,7 +206,7 @@ class EasyDialog:
 		actor_src.replace('<default_passive>', '')
 		number = self.mb_lines_count + 1
 		self.mb_replic_append(number, wrap_frase, role_id, self.uid, None, 'role')
-		self.mb_change_prop('replic-run', str(number), wrap_act)
+		self.mb_change_prop('replic-run', str(number), wrap_btn)
 		self.mb_change_prop('replic-settings', str(number), actor_src)
 
 	def sets_transport(self, save_temp_file=False) -> None:
