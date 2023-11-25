@@ -302,10 +302,15 @@ class EasyDialog:
 			new_frase_block = f'<frase_block>{self.fb_change_actors(frase_block)}</frase_block>'
 			self.microbase['replic-source'][key] = em.Tag.del_cont(self.microbase['replic-source'][key], 'frase_block', rpl=new_frase_block)
 
-		selectact_delete = re.search(r'\bselectact\.delete\b', self.microbase['replic-source'][key])
-		if selectact_delete is not None:
+		selectrpl_delete = re.search(r'\bselrepl\.del\b', self.microbase['replic-source'][key])
+		if selectrpl_delete is not None:
 			self.microbase['replic-settings'][key] += f'[selrepl.del]\n'
-			self.microbase['replic-source'][key] = re.sub(r'\bselectact\.delete\b', '', self.microbase['replic-source'][key])
+			self.microbase['replic-source'][key] = re.sub(r'\bselrepl\.del\b', '', self.microbase['replic-source'][key])
+
+		selectbtn_delete = re.search(r'\bselbtn\.del\b', self.microbase['replic-source'][key])
+		if selectbtn_delete is not None:
+			self.microbase['replic-settings'][key] += f'[selbtn.del]\n'
+			self.microbase['replic-source'][key] = re.sub(r'\bselbtn\.del\b', '', self.microbase['replic-source'][key])
 
 		selectact_kill = re.search(r'\bselectact\.kill\b', self.microbase['replic-source'][key])
 		if selectact_kill is not None:

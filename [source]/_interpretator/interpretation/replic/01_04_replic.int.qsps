@@ -66,10 +66,13 @@ local $replics_shuffle_ = @em.tag.getNum($now_sets_, 'shuffle')	& !@ поряд�
 !@ когда есть список активируемых реплик. Выгружаются все.
 if a > 0:
 	!@ Если текущая реплика пассивная, очищаем список кнопок на экране; в противном случае — дополняем:
-	if $rtype_ = 'quest': killvar '$DIALOG_BUTTONS'
+	if $rtype_ = 'quest':
+		killvar '$DIALOG_BUTTONS'
+		$DIALOG_VALUE['del_btns_list'] = ''
+	end
 	loop local i = 0 while i<a step i += 1:
-		if $dialogs_id[$answer_pos_[i]]<>'' and no @edb.list.is_el($DIALOG_VALUE['list.act.del'], $answer_pos_[i]):
-			$DIALOG_BUTTONS[] = @dialog.int.answer($answer_pos_[i], $now_sets_)
+		if @dialog.replics.is_del($answer_pos_[i]):
+			$DIALOG_BUTTONS[$answer_pos_[i]] = @dialog.int.answer($answer_pos_[i], $now_sets_)
 		end
 	end
 end

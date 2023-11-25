@@ -1,0 +1,7 @@
+QSP-Game Удаляем реплику из списка кнопок на время воспроизведения текущего списка
+
+$args[0] = $args[0]	&	!	идентификатор реплики
+# dialog.btn.del
+$DIALOG_VALUE['del_btns_list'] = @edb.list.append($DIALOG_VALUE['del_btns_list'], $args[0])
+if $DIALOG_BUTTONS[$args[0]] <> '': killvar '$DIALOG_BUTTONS', $args[0]
+--- dialog.btn.del ---------------------------------

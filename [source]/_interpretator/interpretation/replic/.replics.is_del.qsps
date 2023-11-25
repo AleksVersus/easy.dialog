@@ -1,0 +1,11 @@
+QSP-Game Проверяем, доступна ли данная реплика к воспроизведению.
+
+Реплика должна существовать и должна отсутствовать во всех списках скрытия.
+
+$args[0] - идентификатор реплики
+# dialog.replics.is_del
+local del_replics_list_ = no @edb.list.is_el($DIALOG_VALUE['list.replic.del'], $args[0])
+local del_buttons_list_ = no @edb.list.is_el($DIALOG_VALUE['del_btns_list'], $args[0])
+local kill_replics_ = iif($dialogs_id[$args[0]]='', 0, 1)
+result = (del_replics_list_ and del_buttons_list_ and kill_replics_)
+--- dialog.replics.is_del ---------------------------------
