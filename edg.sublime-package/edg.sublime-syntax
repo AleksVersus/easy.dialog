@@ -45,7 +45,7 @@ contexts:
       scope: message.error
 
   qsp_syntax:
-    - match: ^\s*<(wrap\.act|wrap\.frase)>\s*$
+    - match: ^\s*<(wrap\.btn|wrap\.frase)>\s*$
       scope: keyword.operator
       embed: scope:source.locations.QSP
       embed_scope: markup.raw
