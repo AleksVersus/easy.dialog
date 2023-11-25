@@ -10,7 +10,7 @@ $args[0] = $args[0] - идентификатор реплики
 !@ получаем настройки
 local $rsets_ = $dialogs_sets[$args[0]]
 !@ если реплика должна быть удалена из сеанса, удаляем
-if instr($rsets_,'[selectact.delete]')<>0: @dialog.replic.del($args[0])
+if instr($rsets_,'[selrepl.del]')<>0: @dialog.replic.del($args[0])
 !@ если реплика должна быть уничтожена, уничтожаем
 if instr($rsets_,'[selectact.kill]')<>0: @dialog.replic.kill($args[0])
 !@ воспроизводим реплику

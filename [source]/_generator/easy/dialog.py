@@ -304,7 +304,7 @@ class EasyDialog:
 
 		selectact_delete = re.search(r'\bselectact\.delete\b', self.microbase['replic-source'][key])
 		if selectact_delete is not None:
-			self.microbase['replic-settings'][key] += f'[selectact.delete]\n'
+			self.microbase['replic-settings'][key] += f'[selrepl.del]\n'
 			self.microbase['replic-source'][key] = re.sub(r'\bselectact\.delete\b', '', self.microbase['replic-source'][key])
 
 		selectact_kill = re.search(r'\bselectact\.kill\b', self.microbase['replic-source'][key])

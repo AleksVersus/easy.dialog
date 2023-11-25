@@ -20,7 +20,7 @@ npc="(name:Парень с битой:name)	ncolor:64dddd	nattrib:-b-n	fcolor:00
 					— Ну ничего, сейчас узнаешь! — <font color=#00c800>воскликнув это, парень с битой бросился на Дэнни.</font>
 					[:
 						act-name:— Похоже без драки не обойтись! <font color=#00c800>[сражаться]</font>:act-name
-						<!-- selectact.delete -->
+						<!-- selrepl.del -->
 					:]
 				:}
 			:]
@@ -30,7 +30,7 @@ npc="(name:Парень с битой:name)	ncolor:64dddd	nattrib:-b-n	fcolor:00
 					— Ах ты! — <font color=#00c800>зло воскликнул парень с битой и бросился на Дэнни. Похоже без драки не обойтись!</font>
 					[:— Держись покрепче за свою палку, бабуля! 
 						act-name:— Держись покрепче за свою палку, бабуля! <font color=#00c800>[сражаться]</font>:act-name
-						<!-- selectact.delete -->
+						<!-- selrepl.del -->
 					:]
 				:}
 			:]
