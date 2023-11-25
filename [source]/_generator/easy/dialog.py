@@ -11,12 +11,14 @@ class EasyDialog:
 		Easy Dialog Object. Generate all dialog's objects,
 		and conclude them to microbase.
 	"""
-	def __init__(self, dialog_file_path:str, dialog_uid:str) -> None:
+	def __init__(self, dialog_file_path:str) -> None:
 		""" Constructor of Dialog's Object """
 		self.path = os.path.abspath(dialog_file_path)
-		self.uid = dialog_uid
 		with open(self.path, 'r', encoding='utf-8') as fp:
 			self.body = fp.read()
+		self.uid = em.Tag.get_num(self.body, 'dialog_usrid')
+		if self.uid == '':
+			raise Exception('Ошибка! Не указано уникальное название диалога.' + self.path)
 		self.tags_source = None
 		self.microbase = {
 			'replic-source': {},

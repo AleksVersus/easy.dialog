@@ -26,7 +26,7 @@ class DialogsBase:
 		# извлекаем диалоги в список для последующего конвертирования
 		self.dialogs = []
 		for d in dialogs:
-			self.dialogs.append(EasyDialog(d[0], d[1]))
+			self.dialogs.append(EasyDialog(d))
 		# формируем микробазу для реплик
 		self.replics = {}
 		self.replics['ids'] = []		# уникальный идентификатор реплики

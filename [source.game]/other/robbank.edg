@@ -1,4 +1,6 @@
 <!--
+	dialog_usrid="robbank"
+
 	actors="hero; npc; remarka;"
 
 	<actor.hero>
