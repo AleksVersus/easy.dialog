@@ -1,0 +1,7 @@
+QSP-Game Извлекаем настройку из роли
+
+$args[0] - идентификатор роли
+$args[1] - название тега/настройка/параметр
+# dialog.role.get_set
+$result = @em.tag.getNum($dialogs_sets[$args[0]], $args[1])
+--- dialog.role.get_set ---------------------------------

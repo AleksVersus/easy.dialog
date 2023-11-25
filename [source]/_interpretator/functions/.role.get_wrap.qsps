@@ -1,0 +1,11 @@
+QSP-Game Извлекаем обёртку из роли
+
+$args[0] - идентификатор роли
+$args[1] - button или frase (по умолчанию)
+# dialog.role.get_wrap
+if $args[1] = 'button':
+	$result = $dialogs_run[$args[0]]
+else:
+	$result = $dialogs_body[$args[0]]
+end
+--- dialog.role.get_wrap ---------------------------------
