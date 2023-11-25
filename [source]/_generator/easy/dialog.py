@@ -282,10 +282,10 @@ class EasyDialog:
 			else:
 				raise ValueError(f'[264]: The label "{marker}" already exists! Метка "{marker}" уже существует!')
 
-		act_name = em.Tag.get_cont(self.microbase['replic-source'][key], 'act_name')
-		if act_name != '':
-			self.microbase['replic-settings'][key] += f'[act_name:{act_name}:act_name]\n'
-			self.microbase['replic-source'][key] = em.Tag.del_cont(self.microbase['replic-source'][key], 'act_name')
+		btn_name = em.Tag.get_cont(self.microbase['replic-source'][key], 'btn_name')
+		if btn_name != '':
+			self.microbase['replic-settings'][key] += f'[btn_name:{btn_name}:btn_name]\n'
+			self.microbase['replic-source'][key] = em.Tag.del_cont(self.microbase['replic-source'][key], 'btn_name')
 
 		if_ = em.Tag.get_cont(self.microbase['replic-source'][key], 'if')
 		if if_ != '':

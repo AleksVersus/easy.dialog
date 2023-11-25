@@ -15,7 +15,7 @@ if $ractor_ = '': $ractor_ = @em.tag.getNum($args[1], 'actor_act')
 local $wrap_code_ = $dialogs_run[$ractor_]
 
 !@ формируем название реплики
-local $ractname_ = @em.tag.getCont($rsets_, 'act_name')
+local $ractname_ = @em.tag.getCont($rsets_, 'btn_name')
 if $ractname_ = '':	$ractname_ = @dialog.btn.get_name($rbody_, val(@em.tag.getNum($args[1], 'act_length')))
 
 if $ractname_ <> '':

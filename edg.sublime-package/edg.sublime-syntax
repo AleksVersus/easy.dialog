@@ -34,7 +34,7 @@ contexts:
       captures:
         1: keyword.operator
         3: string
-    - match: (act_name)\s*(:)\s*([\s\S]*?)\s*(:)\s*(\1)
+    - match: (btn_name)\s*(:)\s*([\s\S]*?)\s*(:)\s*(\1)
       captures:
         1: keyword.operator
         3: string
