@@ -50,7 +50,7 @@
 {:
 repeat:cicle
 shuffle:straight
-act_length:25
+btn_length:25
 <frase_block>
 	<actor:npc>У тебя одна минута на то, чтобы объяснить мне, как добраться до хранилища.
 	<actor:hero>Что?

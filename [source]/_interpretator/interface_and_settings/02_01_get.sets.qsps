@@ -16,7 +16,7 @@ loop while $rid_ <> '':
 	else:
 		if $actor_act_ = '': $actor_act_ = @em.tag.getNum($rsets_, 'actor_act')
 		if $actor_pass_ = '': $actor_pass_ = @em.tag.getNum($rsets_, 'actor_pass')
-		if $act_length_ = '': $act_length_ = @em.tag.getNum($rsets_, 'act_length')
+		if $act_length_ = '': $act_length_ = @em.tag.getNum($rsets_, 'btn_length')
 		if $rrepeat_ = '': $rrepeat_ = @em.tag.getNum($rsets_, 'repeat')
 		if $rshuffle_ = '': $rshuffle_ = @em.tag.getNum($rsets_, 'shuffle')
 	end
@@ -24,7 +24,7 @@ loop while $rid_ <> '':
 end
 $result += '[actor_act:<<$actor_act_>>]'
 $result += '[actor_pass:<<$actor_pass_>>]'
-$result += '[act_length:<<$act_length_>>]'
+$result += '[btn_length:<<$act_length_>>]'
 $result += '[repeat:<<$rrepeat_>>]'
 $result += '[shuffle:<<$rshuffle_>>]'
 --- dialog.get.sets ---------------------------------

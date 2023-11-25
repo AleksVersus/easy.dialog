@@ -16,7 +16,7 @@ local $wrap_code_ = $dialogs_run[$ractor_]
 
 !@ формируем название реплики
 local $ractname_ = @em.tag.getCont($rsets_, 'btn_name')
-if $ractname_ = '':	$ractname_ = @dialog.btn.get_name($rbody_, val(@em.tag.getNum($args[1], 'act_length')))
+if $ractname_ = '':	$ractname_ = @dialog.btn.get_name($rbody_, val(@em.tag.getNum($args[1], 'btn_length')))
 
 if $ractname_ <> '':
 	$ractname_ = $dyneval($wrap_code_, $args[0], $rparent_, $ractname_)

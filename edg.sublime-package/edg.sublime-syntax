@@ -30,7 +30,7 @@ contexts:
       captures:
         1: keyword.operator
         3: string
-    - match: (strings|repeat|shuffle|act_length|marker|include_role|actor_this|actor_act|actor_pass|levelup|leveljump|replic_app)\s*(:)\s*(\S+)
+    - match: (strings|repeat|shuffle|btn_length|marker|include_role|actor_this|actor_act|actor_pass|levelup|leveljump|replic_app)\s*(:)\s*(\S+)
       captures:
         1: keyword.operator
         3: string

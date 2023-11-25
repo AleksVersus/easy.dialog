@@ -228,10 +228,10 @@ class EasyDialog:
 			self.microbase['replic-settings'][key] += f'[shuffle:{shuffle}]\n'
 			self.microbase['replic-source'][key] = em.Tag.del_num(self.microbase['replic-source'][key], 'shuffle')
 
-		act_length = em.Tag.get_num(self.microbase['replic-source'][key], 'act_length')
-		if act_length != '':
-			self.microbase['replic-settings'][key] += f'[act_length:{act_length}]\n'
-			self.microbase['replic-source'][key] = em.Tag.del_num(self.microbase['replic-source'][key], 'act_length')
+		btn_length = em.Tag.get_num(self.microbase['replic-source'][key], 'btn_length')
+		if btn_length != '':
+			self.microbase['replic-settings'][key] += f'[btn_length:{btn_length}]\n'
+			self.microbase['replic-source'][key] = em.Tag.del_num(self.microbase['replic-source'][key], 'btn_length')
 
 		actor_act = em.Tag.get_num(self.microbase['replic-source'][key], 'actor_act')
 		if actor_act != '':
