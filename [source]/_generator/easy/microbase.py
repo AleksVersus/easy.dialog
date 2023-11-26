@@ -22,7 +22,7 @@ class DialogsBase:
 				for use in cycled filling of dialog
 		"""
 		self.output_path = os.path.abspath(output_path)
-		self.split_code = split_code
+		self.split_code = (split_code if split_code > 0 else 0)
 		# извлекаем диалоги в список для последующего конвертирования
 		self.dialogs = []
 		for d in dialogs:
