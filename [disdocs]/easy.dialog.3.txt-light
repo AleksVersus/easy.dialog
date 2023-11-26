@@ -15,6 +15,8 @@ link-source:talk_about_church
 link-sets:talk_about_church
 
 ---
+bwaiting:250 - выставляем задержку вывода строк блока.
+---
 
 Прыжок на локальную метку в диалоге. Прыжок на метку в базе реплик.
 
