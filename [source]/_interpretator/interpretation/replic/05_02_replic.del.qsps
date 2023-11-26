@@ -2,7 +2,7 @@ QSP-Game здесь реплика вносится в список удалён
 $args[0] = $args[0]	&	!	идентификатор реплики
 # dialog.replic.del
 !@ pl 'replic.del <<$args[0]>>'
-$DIALOG_VALUE['list.replic.del'] = @edb.list.append($DIALOG_VALUE['list.replic.del'], $args[0])
+$DIALOG_VALUE['del_replics_list'] = @edb.list.append($DIALOG_VALUE['del_replics_list'], $args[0])
 if $DIALOG_BUTTONS[$args[0]] <> '': killvar '$DIALOG_BUTTONS', $args[0]
-!@ pl $DIALOG_VALUE['list.replic.del'] & wait 250
+!@ pl $DIALOG_VALUE['del_replics_list'] & wait 250
 --- dialog.replic.del ---------------------------------
