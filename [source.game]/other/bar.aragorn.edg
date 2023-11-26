@@ -85,6 +85,7 @@ actors="hero; aragorn;"
 		:]
 		[:
 			Нет, я всё понял уже.
+			<!-- очистка списка действий <dynamic_code>killvar '$DIALOG_BUTTONS'</dynamic_code>-->
 			{:
 				Ну, раз понял, так и не стой тут!
 				<!-- <dynamic_code>wait 500</dynamic_code> -->

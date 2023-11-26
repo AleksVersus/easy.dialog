@@ -56,7 +56,7 @@ actors="hero; barmen; remarka;"
 <actor.remarka>
 	<wrap.frase>
 		$result += '<div class="avs-remarka-replic">'
-			$result += '<span style="color:#888888;font-style:italic;"><strong>Ремарка от Aleks Versus:</strong>	<<$args[2]>>:</span>'
+			$result += '<span style="color:#888888;font-style:italic;"><strong>Ремарка от Aleks Versus:</strong>	<<$args[2]>></span>'
 		$result += '</div>'
 	</wrap.frase>
 </actor.remarka>
