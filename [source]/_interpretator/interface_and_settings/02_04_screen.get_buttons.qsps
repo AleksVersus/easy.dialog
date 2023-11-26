@@ -1,5 +1,0 @@
-QSP-Game Извлекает содержимое блока кнопок
-
-# dialog.screen.get_btns
-$result = $DIALOG_VALUE['screen.buttons']
-- dialog.screen.get_btns

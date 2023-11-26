@@ -10,6 +10,7 @@ loop while $rid_ <> '':
 	if $rtype_ = 'root':
 		if $actor_act_ = '': $actor_act_ = @em.tag.getNum($rsets_, 'default_active')
 		if $actor_pass_ = '': $actor_pass_ = @em.tag.getNum($rsets_, 'default_passive')
+		!@ эти значения задаются в корневой реплике, а не в диалоге:
 		if $act_length_ = '': $act_length_ = $str(DIALOG_VALUE['default_buttons_length'])
 		if $rrepeat_ = '': $rrepeat_ = $DIALOG_VALUE['default_replics_repeat']
 		if $rshuffle_ = '': $rshuffle_ = $DIALOG_VALUE['default_replics_shuffle']
