@@ -68,14 +68,3 @@ $args[1]:
 	[btn_length:максимальная длина текста активируемой реплики]
 	[repeat:схема повтора вывода реплик]
 	[shuffle:порядок вывода реплик]
-
-!@ if $position_replic[args['rpit']]='':
-!@ 	!	Заголовок диалога
-!@ 	$args['dialog.head']=$func('dialog.replic.get',$args[0])
-!@ 	if $args['dialog.head']<>'' and $DIALOG_VALUE['answer.view']<>'answer.href':
-!@ 		*pl $args['dialog.head']
-!@ 	elseif  $args['dialog.head']<>'' and $DIALOG_VALUE['answer.view']='answer.href':
-!@ 		! if head=fixed -- фиксированный заголовок, всегда вверху диалога
-!@ 		gosub 'dialog.replic.addDIV',$args['dialog.head']
-!@ 	end
-!@ end

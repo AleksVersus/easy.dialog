@@ -12,7 +12,7 @@ if $rcode_ <> '': dynamic $rcode_	&	!@	выполняем код текущей 
 @dialog.replic.print($args[0], $now_sets_) & !@	обновляем лог реплик
 
 !@ снимаем фиксацию с реплики
-$DIALOG_VALUE['list.act.fix'] = @edb.list.remove($DIALOG_VALUE['list.act.fix'], $args[0])
+$DIALOG_VALUE['fix_btns_list'] = @edb.list.remove($DIALOG_VALUE['fix_btns_list'], $args[0])
 
 !@ Рекурсия к вложенным репликам. Получаем список реплик
 local i=0	&	!@	общий счётчик проходов
@@ -22,7 +22,7 @@ local q=0	&	!@	счётчик вопросных реплик
 !@ добавляем фиксированные ответные реплики в список
 local $answer_pos_ & !@ массив для списка ответных реплик
 $code_ = { $answer_pos_[a] = $args[0] & a += 1 }
-@edb.list.for_each($DIALOG_VALUE['list.act.fix'], $code_)
+@edb.list.for_each($DIALOG_VALUE['fix_btns_list'], $code_)
 
 !@ ---------------------------- перебираем дочерние реплики и составляем два списка ---------------------------- 
 	local $rdaughters_ = $dialogs_includes[$args[0]]&	!@	список дочерних
