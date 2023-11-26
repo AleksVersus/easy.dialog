@@ -1,0 +1,13 @@
+QSP-Game Получение стандартных обёрток.
+
+$args[0] - какая обёртка нам нужна
+# dialog.get_wrap
+$args[0] = $lcase($trim($args[0]))
+if $args[0] = 'pass_frase':
+	$result = {$result += '<div class="avs-none-replic"> — <<$args[2]>></div>'}
+elseif $args[0] = 'pass_btn':
+	$result = {$result = '<div class="avs-act-button"><<$args[2]>></div>'}
+elseif $args[0] = 'act_frase':
+	$result = {$result += '<div class="avs-hero-replic"><span style="font-style:italic;"> — <<$args[2]>></span></div>'}
+end
+--- dialog.get_wrap ---------------------------------

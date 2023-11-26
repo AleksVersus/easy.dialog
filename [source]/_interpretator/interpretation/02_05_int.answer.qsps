@@ -12,7 +12,7 @@ local $rparent_ = $dialogs_position[$args[0]]
 !@ получаем роль реплики
 local $ractor_ = @em.tag.getNum($rsets, 'actor_this')
 if $ractor_ = '': $ractor_ = @em.tag.getNum($args[1], 'actor_act')
-local $wrap_code_ = $dialogs_run[$ractor_]
+local $wrap_code_ = $iif($ractor_ = '', @dialog.get_wrap('act_btn'), $dialogs_run[$ractor_])
 
 !@ формируем название реплики
 local $ractname_ = @em.tag.getCont($rsets_, 'btn_name')

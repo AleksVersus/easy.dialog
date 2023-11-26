@@ -24,13 +24,13 @@ if $frase_block_ = '':
 		!@ пассивную роль, назначенную ветке:
 		if $ractor_ = '': $ractor_ = @em.tag.getNum($args[1], 'actor_pass')
 		!@ получаем обёртку:
-		$wrap_code_ = $iif($ractor_ = '', $DIALOG_VALUE['default_screen_passive_log'], $dialogs_body[$ractor_])
+		$wrap_code_ = $iif($ractor_ = '', @dialog.get_wrap('pass_frase'), $dialogs_body[$ractor_])
 	elseif $rtype_='answer':
 		!@ реплика активная. Если конкретная роль для реплики не указана, вычисляем
 		!@ активную роль, назначенную ветке:
 		if $ractor_ = '': $ractor_ = @em.tag.getNum($args[1], 'actor_act')
 		!@ получаем обёртку:
-		$wrap_code_ = $iif($ractor_ = '', $DIALOG_VALUE['default_screen_active_log'], $dialogs_body[$ractor_])
+		$wrap_code_ = $iif($ractor_ = '', @dialog.get_wrap('act_frase'), $dialogs_body[$ractor_])
 	end
 	!@ оборачиваем реплику в обёртку
 	$replic_text_ = $dyneval($wrap_code_, $ractor_, $dialogs_position[$ractor_], $rbody_)
@@ -51,7 +51,7 @@ else:
 			if $frase_actor_ <> '':
 				$replic_text_ = $dyneval($dialogs_body[$frase_actor_], $frase_actor_, $dialogs_position[$frase_actor_], $replic_text_)
 			else:
-				$replic_text_ = $dyneval($DIALOG_VALUE['default_screen_passive_log'], '', '', $replic_text_)
+				$replic_text_ = $dyneval(@dialog.get_wrap('pass_frase'), '', '', $replic_text_)
 			end
 			@dialog.replic.to_log($replic_text_)
 		end

@@ -2,54 +2,19 @@ QSP-Game Выставляем дефолтные настройки диалог
 
 $args[0] - идентификатор диалога
 # dialog.sets.default
-!@ Получаем настройки диалога
-local $dialog_sets_ = $dialogs_sets[$args[0]]
-local $d_active_, $d_passive_, $actors_, strings_
-!@ все настройки:	
-$d_active_ = @em.tag.getNum($dialog_sets_, 'default_active')	&	!@ id роли активируемых реплик /TODO: избыточно, т.к. выделяется при получении текущих настроек /
-$d_passive_ = @em.tag.getNum($dialog_sets_, 'default_passive')	&	!@ id роли пассивных реплик
-!@ $actors_ = @em.tag.get_cont($dialog_sets_, 'actors')			&	!@ список ролей
-strings_ = val(@em.tag.getNum($dialog_sets_, 'strings'))	& !@ число строк диалога, одновременно видимых на экране
-!@ pl '[d_act: <<$d_active_>>] [d_pass: <<$d_passive_>>]'
-!@ число реплик, одновременно видимых на экране
-DIALOG_VALUE['default_screen_replics_number'] = iif(strings_, strings_, 10)
+!@ число строк диалога, одновременно видимых на экране:
+local strings_ = val(@em.tag.getNum($dialogs_sets[$args[0]], 'strings'))
+DIALOG_VALUE['default_screen_replics_number'] = iif(strings_ > 0, strings_, 10)
 
-!@ внешний вид активируемой реплики
-if $d_active_<>'':
-	$DIALOG_VALUE['default_screen_active_log'] = $dialogs_body[$d_active_]
-	$DIALOG_VALUE['default_screen_active_button'] = $dialogs_run[$d_active_]
-else:
-	$DIALOG_VALUE['default_screen_active_log'] = {
-		$result += '<div class="avs-hero-replic"><span style="font-style:italic;"> — <<$args[2]>></span></div>'
-	}
-	$DIALOG_VALUE['default_screen_active_button'] = {$result = '<div class="avs-act-button"><<$args[2]>></div>'}
-end
-
-!@ внешний вид пассивной реплики
-if $d_passive_<>'':
-	$DIALOG_VALUE['default_screen_passive_log'] = $dialogs_body[$d_passive_]
-else:
-	$DIALOG_VALUE['default_screen_passive_log'] = {
-		$result += '<div class="avs-none-replic"> — <<$args[2]>></div>'
-	}
-end
-
+!@ Данные настройки целесообразнее хранить в переменных
 $DIALOG_VALUE['default_replics_repeat'] = 'cicle'
 $DIALOG_VALUE['default_replics_shuffle'] = 'straight'
 DIALOG_VALUE['default_buttons_length'] = 128
 
-!@ Выставление внешних переменных, распространяющееся на все диалоги
-!@ размер лога ограничен сотней реплик по умолчанию, включая скрытые.
-GAME_VALUE['dialogs_log_size'] = iif(GAME_VALUE['dialogs_log_size'] > 0, GAME_VALUE['dialogs_log_size'], 100)
-!@ задержка между выводом реплик в блоке фраз, 500 мс по умолчанию.
-GAME_VALUE['dialogs_timer_interval'] = iif(GAME_VALUE['dialogs_timer_interval'] > 0, GAME_VALUE['dialogs_timer_interval'], 500)
-
-
-!@ pl $replace($DIALOG_VALUE['default_screen_active_log'],'<','&lt;')
-!@ pl $replace($DIALOG_VALUE['default_screen_active_button'],'<','&lt;')
-!@ pl $replace($DIALOG_VALUE['default_screen_passive_log'],'<','&lt;')
-!@ pl DIALOG_VALUE['default_screen_replics_number']
-!@ pl $DIALOG_VALUE['default_replics_repeat']
-!@ pl $DIALOG_VALUE['default_replics_shuffle']
-!@ pl DIALOG_VALUE['default_buttons_length']
+!@ -------------------- Выставление внешних переменных, распространяющееся на все диалоги -----------------------
+	!@ размер лога ограничен сотней реплик по умолчанию, включая скрытые.
+	GAME_VALUE['dialogs_log_size'] = iif(GAME_VALUE['dialogs_log_size'] > 0, GAME_VALUE['dialogs_log_size'], 100)
+	!@ задержка между выводом реплик в блоке фраз, 500 мс по умолчанию.
+	GAME_VALUE['dialogs_timer_interval'] = iif(GAME_VALUE['dialogs_timer_interval'] > 0, GAME_VALUE['dialogs_timer_interval'], 500)
+!@ -------------------- Выставление внешних переменных, распространяющееся на все диалоги -----------------------
 --- dialog.sets.default ---------------------------------

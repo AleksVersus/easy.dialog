@@ -4,7 +4,7 @@ $args[0] = $args[0]	&	!	идентификатор реплики
 local $rid_ = $args[0]
 local $rtype_, $rsets_
 local $actor_act_, $actor_pass_, $act_length_, $rrepeat_, $rshuffle_
-loop while $rid_ <> '':
+loop local run_ = 1 while $rid_ <> '':
 	$rsets_ = $dialogs_sets[$rid_]
 	$rtype_ = @em.tag.getNum($rsets_, 'type')
 	if $rtype_ = 'root':
