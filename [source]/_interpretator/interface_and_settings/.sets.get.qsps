@@ -1,10 +1,10 @@
 QSP-Game Извлекает настройки от текущей реплики
 $args[0] = $args[0]	&	!	идентификатор реплики
-# dialog.get.sets
+# dialog.sets.get
 local $rid_ = $args[0]
 local $rtype_, $rsets_
 local $actor_act_, $actor_pass_, $act_length_, $rrepeat_, $rshuffle_
-loop local run_ = 1 while $rid_ <> '':
+loop while $rid_ <> '':
 	$rsets_ = $dialogs_sets[$rid_]
 	$rtype_ = @em.tag.getNum($rsets_, 'type')
 	if $rtype_ = 'root':
@@ -20,11 +20,17 @@ loop local run_ = 1 while $rid_ <> '':
 		if $rrepeat_ = '': $rrepeat_ = @em.tag.getNum($rsets_, 'repeat')
 		if $rshuffle_ = '': $rshuffle_ = @em.tag.getNum($rsets_, 'shuffle')
 	end
-	$rid_ = $dialogs_position[$rid_]
+	if $actor_act_ = '' or $actor_pass_ = '' or $act_length_ = '' or $rrepeat_ = '' or $rshuffle_ = '':
+		!@ если хотя бы одна настройка не найдна, пытаемся продолжать поиск
+		$rid_ = $dialogs_position[$rid_]
+	else:
+		!@ если найдены все настройки, можно поиск прервать
+		$rid_ = ''
+	end
 end
 $result += '[actor_act:<<$actor_act_>>]'
 $result += '[actor_pass:<<$actor_pass_>>]'
 $result += '[btn_length:<<$act_length_>>]'
 $result += '[repeat:<<$rrepeat_>>]'
 $result += '[shuffle:<<$rshuffle_>>]'
---- dialog.get.sets ---------------------------------
+--- dialog.sets.get ---------------------------------
