@@ -4,7 +4,7 @@ QSP-Game закрывает диалог и восстанавливает по�
 !@ pl 'closeup' & wait 250
 if $GAME_VALUE['dialogs_true_goto'] = '':
 	*clr
-	*p $DIALOG_VALUE['screen.main']
+	*p $DIALOG_VALUE['screen_main']
 else:
 	dynamic $GAME_VALUE['dialogs_true_goto']
 end

@@ -1,9 +1,7 @@
 QSP-Game Сохранение экрана, с которого был вызван диалог.
 
 # dialog.screen.save
-$DIALOG_VALUE['screen.main'] = $maintxt	&	!@	сохраняем содержимое окна основного описания
-!@ $DIALOG_VALUE['screen.acts'] = $curacts	&	!@	сохраняем содержимое окна действий
-!@ $DIALOG_VALUE['screen.stat'] = $stattxt	&	!@	сохраняем содержимое окна дополнительного описания
+$DIALOG_VALUE['screen_main'] = $maintxt	&	!@	сохраняем содержимое окна основного описания
 
 local $dialog_div_
 !@ блок диалога по умолчанию
@@ -12,13 +10,17 @@ $dialog_div_['now'] = '<div class="avs_dialog_div">'
 	$dialog_div_['now'] += '<div class="avs_dialog_buttons"></div class="avs_dialog_buttons">'
 $dialog_div_['now'] += '</div class="avs_dialog_div">'
 
-if instr($DIALOG_VALUE['screen.main'],'<div class="avs_dialog_div">') <> 0:
+if instr($DIALOG_VALUE['screen_main'],'<div class="avs_dialog_div">') <> 0:
 	!@ Блок диалога присутствует на экране. Формируем новый экран из текущего.
-	$dialog_div_['main'] = $strfind($DIALOG_VALUE['screen.main'], '<div class="avs_dialog_div">[\s\S]*?<\/div class="avs_dialog_div">')
-	$DIALOG_VALUE['screen_now'] = $replace($DIALOG_VALUE['screen.main'], $dialog_div_['main'], $dialog_div_['now'])
-	loop while $strfind($DIALOG_VALUE['screen_now'], '<div class="avs_dialog_hide">[\s\S]*?<\/div class="avs_dialog_hide">')<>'':
+	$dialog_div_['main'] = $strfind($DIALOG_VALUE['screen_main'], '<div class="avs_dialog_div">[\s\S]*?<\/div class="avs_dialog_div">')
+	$DIALOG_VALUE['screen_now'] = $replace($DIALOG_VALUE['screen_main'], $dialog_div_['main'], $dialog_div_['now'])
+	loop local run_ = 1 while run_:
 		$dialog_div_['hide'] = $strfind($DIALOG_VALUE['screen_now'], '<div class="avs_dialog_hide">[\s\S]*?<\/div class="avs_dialog_hide">')
-		$DIALOG_VALUE['screen_now'] = $replace($DIALOG_VALUE['screen_now'], $dialog_div_['hide'])
+		if $dialog_div_['hide'] <> '':
+			$DIALOG_VALUE['screen_now'] = $replace($DIALOG_VALUE['screen_now'], $dialog_div_['hide'])
+		else:
+			run_ = 0
+		end
 	end
 else:
 	!@ Блок диалога отсутствует на экране. Значит нам нужен дефолтный экран для интерпретации
