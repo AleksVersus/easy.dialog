@@ -31,8 +31,9 @@ local run_, maximal_ = 1, 0
 loop while run_:
 	maximal_ = max('REPLICS_COUNT_')
 	if maximal_ <> 0:
-		maximal_ = arrpos('REPLICS_COUNT_', maximal_)
-		killvar 'REPLICS_COUNT_', maximal_
+		killvar 'REPLICS_COUNT_', arrpos('REPLICS_COUNT_', maximal_)
+	else:
+		run_ = 0
 	end
 end
 --- dialog.mt.kill_onced ---------------------------------
