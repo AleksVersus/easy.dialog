@@ -4,7 +4,5 @@ $args[0] - сформированный текст реплики с разме�
 # dialog.replic.to_log
 !@ pl 'replic.to_log' & wait 250
 $DIALOG_REPLIC_LOG[] = $args[0]
-!@ размер лога ограничен сотней реплик по умолчанию, включая скрытые.
-local ls_ = iif(GAME_VALUE['dialogs_log_size'] = 0, 100, GAME_VALUE['dialogs_log_size'])
-if arrsize('$DIALOG_REPLIC_LOG') > ls_: killvar '$DIALOG_REPLIC_LOG', 0
+if arrsize('$DIALOG_REPLIC_LOG') > GAME_VALUE['dialogs_log_size']: killvar '$DIALOG_REPLIC_LOG', 0
 --- dialog.replic.to_log ---------------------------------

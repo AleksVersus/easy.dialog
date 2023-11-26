@@ -1,0 +1,6 @@
+QSP-Game Устанавливаем размер лога диалога
+
+args[0] - число реплик, сохраняющихся в логе во время сеанса
+# dialog.log.set_size
+if args[0] > 0: GAME_VALUE['dialogs_log_size'] = args[0]
+--- dialog.log.set_size ---------------------------------

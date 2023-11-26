@@ -2,8 +2,6 @@ QSP-Game Очищаем различные глобальные массивы
 
 # dialog.killtemp
 killvar '$DIALOG_VALUE'
-killvar 'REPLICS_COUNT'
-killvar '$REPLICS_ID'
 killvar '$DIALOG_REPLIC_LOG'
 killvar '$DIALOG_BUTTONS'
 --- dialog.killtemp ---------------------------------
