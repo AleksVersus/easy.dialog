@@ -2,11 +2,14 @@ QSP-Game Локация-счётчик для воспроизведения б�
 
 # dialog.timer
 !@ pl 'timer'
+local now_time_ = msecscount & !@ данная переменная фиксирует время, пока выполняется код локации
 if no DIALOG_VALUE['timer_start']:
-	DIALOG_VALUE['timer_next_refresh'] = msecscount + GAME_VALUE['dialogs_timer_interval']
+	!@ первичное выставление порога и запуск отсчёта
+	DIALOG_VALUE['timer_next_refresh'] = now_time_ + GAME_VALUE['dialogs_timer_interval']
 	DIALOG_VALUE['timer_start'] = 1
-elseif msecscount >= DIALOG_VALUE['timer_next_refresh']:
-	DIALOG_VALUE['timer_next_refresh'] = msecscount + GAME_VALUE['dialogs_timer_interval']
+elseif now_time_ >= DIALOG_VALUE['timer_next_refresh']:
+	!@ последующее выставление порога и обновление реплик на экране
+	DIALOG_VALUE['timer_next_refresh'] = now_time_ + GAME_VALUE['dialogs_timer_interval']
 	@dialog.log.refresh()
 	@dialog.screen.reprint()
 end
