@@ -2,12 +2,11 @@ QSP-Game Локация-счётчик для воспроизведения б�
 
 # dialog.timer
 !@ pl 'timer'
-local interval_ = iif(GAME_VALUE['dialogs_timer_interval']=0, 500, GAME_VALUE['dialogs_timer_interval'])
 if no DIALOG_VALUE['timer_start']:
-	DIALOG_VALUE['timer_next_refresh'] = msecscount + interval_
+	DIALOG_VALUE['timer_next_refresh'] = msecscount + GAME_VALUE['dialogs_timer_interval']
 	DIALOG_VALUE['timer_start'] = 1
 elseif msecscount >= DIALOG_VALUE['timer_next_refresh']:
-	DIALOG_VALUE['timer_next_refresh'] = msecscount + interval_
+	DIALOG_VALUE['timer_next_refresh'] = msecscount + GAME_VALUE['dialogs_timer_interval']
 	@dialog.log.refresh()
 	@dialog.screen.reprint()
 end

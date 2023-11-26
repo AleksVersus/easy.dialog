@@ -37,8 +37,13 @@ end
 $DIALOG_VALUE['default_replics_repeat'] = 'cicle'
 $DIALOG_VALUE['default_replics_shuffle'] = 'straight'
 DIALOG_VALUE['default_buttons_length'] = 128
+
+!@ Выставление внешних переменных, распространяющееся на все диалоги
 !@ размер лога ограничен сотней реплик по умолчанию, включая скрытые.
 GAME_VALUE['dialogs_log_size'] = iif(GAME_VALUE['dialogs_log_size'] > 0, GAME_VALUE['dialogs_log_size'], 100)
+!@ задержка между выводом реплик в блоке фраз, 500 мс по умолчанию.
+GAME_VALUE['dialogs_timer_interval'] = iif(GAME_VALUE['dialogs_timer_interval'] > 0, GAME_VALUE['dialogs_timer_interval'], 500)
+
 
 !@ pl $replace($DIALOG_VALUE['default_screen_active_log'],'<','&lt;')
 !@ pl $replace($DIALOG_VALUE['default_screen_active_button'],'<','&lt;')
