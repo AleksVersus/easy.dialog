@@ -4,8 +4,6 @@ QSP-Game Обновление на экране списка реплик из �
 !@ pl 'log.refresh: [log_size:<<arrsize("$DIALOG_REPLIC_LOG")>>]' & wait 250
 local strings_ = DIALOG_VALUE['default_screen_replics_number']
 local separator_ = arrpos('$DIALOG_REPLIC_LOG', '<avs-hide-replics>')
-local counter_pos_ = arrpos('$counter', 'dialog.timer')
-!@ pl '[strings_on_screen:<<strings_>>] [separator: <<separator_>>] [counter_pos: <<counter_pos_>>]' & wait 250
 if separator_ <> -1:
 	$DIALOG_REPLIC_LOG[separator_], $DIALOG_REPLIC_LOG[separator_+1] = $DIALOG_REPLIC_LOG[separator_+1], $DIALOG_REPLIC_LOG[separator_]
 	separator_ += 1
@@ -13,11 +11,11 @@ if separator_ <> -1:
 	if separator_ = arrsize('$DIALOG_REPLIC_LOG') - 1:
 		!@ pl 'del separator, counter, stop timer'
 		killvar '$DIALOG_REPLIC_LOG', separator_
-		killvar '$counter', counter_pos_
+		killvar '$counter', 'dialog.timer'
 		DIALOG_VALUE['timer_start'] = 0
-	elseif counter_pos_ = -1:
+	elseif $counter['dialog.timer'] = '':
 		!@ pl 'add counter' & wait 250
-		$counter[] = 'dialog.timer'
+		$counter['dialog.timer'] = 'dialog.timer'
 		settimer 100
 	end
 else:

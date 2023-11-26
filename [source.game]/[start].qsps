@@ -7,7 +7,7 @@ inclib 'lib/easy.math.qsp'		& !@ подключаем модуль матема�
 @dialogs_init()
 @dialogs_load()
 !@ подключаем обработчик строки ввода
-$usercom[] = 'dialog.usercom'
+@dialog.usercom('on')
 !@ включаем распознавание html
 usehtml = 1
 showstat 0
