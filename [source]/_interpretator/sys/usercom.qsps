@@ -2,13 +2,13 @@ QSP-Game Отладчик для модуля диалогов
 
 # dialog.usercom
 if $args[0] = '':
-	if instr($user_text, 'eid') = 1:
+	if instr($lcase($user_text), 'eid') = 1:
 		local $command_line_ = $trim($mid($user_text, 4))
 		if $command_line_ = 'help':
 			*pl '<h3>Help / Помощь</h3>'
 			*pl 'Все команды для работы с модулем из строки ввода должны начинаться с ключевого слова `eid`'
 			*pl 'Основные команды для работы с модулем (ключевое слово `eid` опущено):'
-			*pl '* help - вывод справки по модулю `easy.dialog`.'
+			*pl '* help - вывод справки по отладчику модуля `easy.dialog`.'
 			*pl '* run - выполнить следующий после `run` текст, как строку кода QSP.'
 			*pl '* version - проверить текущую версию модуля..'
 			*pl '* clr - очистить окно доп описания.'
