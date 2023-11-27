@@ -58,8 +58,6 @@ else:
 		killvar '$frase_array_', 0
 	end
 end
-!@ обновляем содержимое лога:
-@dialog.log.refresh()
 --- dialog.replic.print ---------------------------------
 
 $args[1]:
