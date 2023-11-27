@@ -126,7 +126,7 @@ if q > 0:
 	elseif $replics_shuffle_='straight':
 		$choosing_frase_ = $REPLICS_ID_[0]
 	end
-	if $choosing_frase_<>'': @dialog.int.quest($choosing_frase_)
+	if $choosing_frase_<>'': @dialog.replic.int_pass($choosing_frase_)
 end
 !@ реплика воспроизводится, а потом удаляется.
 !@ Удаляем на текущий сеанс:

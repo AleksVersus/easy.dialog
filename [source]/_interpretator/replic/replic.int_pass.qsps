@@ -1,0 +1,8 @@
+QSP-Game Интерпретация пассивной реплики
+
+$args[0]	—	идентификатор реплики
+# dialog.replic.int_pass
+dialogs_count[$args[0]] += 1
+@dialog.replic.int($args[0])
+dynamic @dialog.replic.get_jumps($args[0])
+--- dialog.replic.int_pass ---------------------------------
