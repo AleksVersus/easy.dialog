@@ -1,0 +1,13 @@
+QSP-Game Генерирует код для интерпретации реплик, на которые осуществляется прыжок
+
+$args[0] — идентификатор реплики
+# dialog.replic.get_jumps
+local $rsets_ = $dialogs_sets[$args[0]]
+local levelup_ = val(@em.tag.getNum($rsets_, 'levelup'))
+local $lup_ = $args[0]
+loop while levelup_ > 0 step levelup_ -= 1: $lup_ = $dialogs_position[$lup_]
+if $lup_<>$args[0] and $lup_ <> '': $result += '@dialog.replic.int("<<$lup_>>")
+'
+local $ljump_ = @em.tag.getNum($rsets_, 'leveljump')
+if $ljump_ <> '': $result += '@dialog.replic.int("<<$ljump_>>")'
+--- dialog.replic.get_jumps ---------------------------------
