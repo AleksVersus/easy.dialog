@@ -1,7 +1,7 @@
 QSP-Game Вычисляет позицию реплики, на которую осуществляется прыжок
 
 $args[0] = $args[0]													&	!	идентификатор реплики
-# dialog.get.jump
+# dialog.replic.get_jumps
 !@ pl 'get.jump: <<$args[0]>>' & wait 250
 local $rsets_ = $dialogs_sets[$args[0]]
 local levelup_ = val(@em.tag.getNum($rsets_, 'levelup'))
@@ -17,4 +17,4 @@ if $ljump_ <> '': $result += '@dialog.replic.int("<<$ljump_>>")'
 !@ pl $result + '<br><<OVERLOAD>>' & wait 250
 !@ OVERLOAD += 1
 !@ if OVERLOAD = 1000: $result = '' & OVERLOAD = 0
---- dialog.get.jump ---------------------------------
+--- dialog.replic.get_jumps ---------------------------------

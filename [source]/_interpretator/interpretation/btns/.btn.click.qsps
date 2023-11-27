@@ -3,7 +3,6 @@ QSP-Game Локация, осуществляющая нажатие на кно
 
 $args[0] = $args[0] - идентификатор реплики
 # dialog.btn.click
-!@ pl 'btn.click' & wait 250
 !@ вскрываем скрытые реплики
 @dialog.frase_block.show()
 @dialog.frDiv.refresh()
@@ -13,5 +12,5 @@ local $rsets_ = $dialogs_sets[$args[0]]
 if instr($rsets_,'[selbtn.del]')<>0: @dialog.btn.del($args[0])
 !@ воспроизводим реплику
 @dialog.replic.int($args[0])
-dynamic @dialog.get.jump($args[0])
+dynamic @dialog.replic.get_jumps($args[0])
 --- dialog.btn.click ---------------------------------
