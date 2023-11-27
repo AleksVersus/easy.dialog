@@ -1,4 +1,4 @@
-QSP-Game Обновляем список кнопок
+QSP-Game Обновляем список кнопок в кадре
 
 # dialog.btns.refresh
 !@ pl 'btns.refresh' & wait 250

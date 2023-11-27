@@ -1,7 +1,6 @@
 QSP-Game Интерпретатор отдельной реплики
 $args[0] -	идентификатор реплики
 # dialog.replic.int
-!@ pl 'replic.int: <<$args[0]>>' & wait 250
 !@ ------------------- многократно используемы локальные переменные ------------------- 
 	local $code_
 !@ ------------------- многократно используемы локальные переменные ------------------- 
@@ -72,7 +71,7 @@ if a > 0:
 	end
 	loop local i = 0 while i<a step i += 1:
 		if @dialog.replics.is_del($answer_pos_[i]):
-			$DIALOG_BUTTONS[$answer_pos_[i]] = @dialog.int.answer($answer_pos_[i], $now_sets_)
+			$DIALOG_BUTTONS[$answer_pos_[i]] = @dialog.replic.get_btn($answer_pos_[i], $now_sets_)
 		end
 	end
 end

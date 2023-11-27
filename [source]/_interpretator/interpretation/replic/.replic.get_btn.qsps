@@ -1,9 +1,8 @@
-QSP-Game интерпретатор реплики в виде кнопки
-! генерирует кнопку (действие/гиперссылку) для ответной реплики игрока
+QSP-Game Воспроизводит реплику в виде кнопки
+
 $args[0] = $args[0]	&	!	идентификатор реплики
 $args[1] = $args[1] & ! текущие настройки для всех реплик
-# dialog.int.answer
-!@ pl 'int.answer' & wait 250
+# dialog.replic.get_btn
 !@ настройки, тело реплики, родительская
 local $rsets_ = $dialogs_sets[$args[0]]
 local $rbody_ = $dialogs_body[$args[0]]
@@ -23,4 +22,4 @@ if $ractname_ <> '':
 	$result = '<a href="exec:@dialog.btn.click(''<<$args[0]>>'')" class="avs-plain"><<$ractname_>></a>'
 	exit
 end
---- dialog.int.answer ---------------------------------
+--- dialog.replic.get_btn ---------------------------------
