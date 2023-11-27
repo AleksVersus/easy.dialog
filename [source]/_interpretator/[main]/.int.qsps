@@ -3,10 +3,10 @@ QSP-Game Воспроизведение диалога
 $args[0] — уникльное название диалога (пользовательский идентификатор)
 # dialog.int
 !@ если передан уникальный айди диалога
-@dialog.killtemp()	&	!@ уничтожаем временные значения 00_00
+@dialog.killtemp()	&	!@ уничтожаем временные значения
 $DIALOG_VALUE['dialog_id'] = $dlgrels_uid[$args[0]]	&	!@ айди диалога
 $DIALOG_VALUE['root_id'] = @dialog.get_root($DIALOG_VALUE['dialog_id'])
-@dialog.screen.save()	&	!@ сохраняем состояние окон на момент открытия диалога 00_01
-@dialog.sets.default($DIALOG_VALUE['dialog_id'])	&	!@ выставляем настройки по-умолчанию 00_02
+@dialog.screen.save()	&	!@ сохраняем состояние окон на момент открытия диалога
+@dialog.sets.default($DIALOG_VALUE['dialog_id'])	&	!@ выставляем настройки по-умолчанию
 @dialog.replic.int($DIALOG_VALUE['root_id'])	&	!@ интерпретируем первую реплику диалога
 --- dialog.int ---------------------------------

@@ -2,7 +2,7 @@ QSP-Game Выводит реплику в лог диалога!!!
 
 $args[0] - идентификатор реплики
 $args[1] - текущие настройки ветки
-# dialog.replic.print
+# dialog.replic.to_log
 !@ pl 'replic.print' & wait 250
 !@ ------------------- многократно используемы локальные переменные ------------------- 
 	local $replic_text_, $wrap_code_, $frase_actor_
@@ -35,14 +35,14 @@ if $frase_block_ = '':
 	!@ оборачиваем реплику в обёртку
 	$replic_text_ = $dyneval($wrap_code_, $ractor_, $dialogs_position[$ractor_], $rbody_)
 	!@ закидываем реплику в лог диалога
-	@dialog.replic.to_log($replic_text_)
+	@dialog.log.add_frase($replic_text_)
 else:
 	!@ Если мы имеем дело с блоком фраз,
 	!@ строки разбиваем на массив:
 	local $frase_array_
 	@em.str.inArr($frase_block_,'$frase_array_')
 	!@ в лог добавляем разделитель, если он ещё не добавлен
-	if arrpos('$DIALOG_REPLIC_LOG', '<avs-hide-replics>') = -1: @dialog.replic.to_log('<avs-hide-replics>')
+	if arrpos('$DIALOG_REPLIC_LOG', '<avs-hide-replics>') = -1: @dialog.log.add_frase('<avs-hide-replics>')
 	!@ теперь перебираем массив с фразами, закидывая их в лог после разделителя
 	loop while arrsize('$frase_array_') > 0:
 		$frase_actor_ = @em.tag.getNum($frase_array_[0], 'actor')
@@ -53,12 +53,12 @@ else:
 			else:
 				$replic_text_ = $dyneval(@dialog.get_wrap('pass_frase'), '', '', $replic_text_)
 			end
-			@dialog.replic.to_log($replic_text_)
+			@dialog.log.add_frase($replic_text_)
 		end
 		killvar '$frase_array_', 0
 	end
 end
---- dialog.replic.print ---------------------------------
+--- dialog.replic.to_log ---------------------------------
 
 $args[1]:
 	[actor_act:роль активируемых реплик]

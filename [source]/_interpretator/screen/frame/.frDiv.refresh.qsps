@@ -1,29 +1,23 @@
 QSP-Game Обрабатываем кадр, обновляя в нём воспроизведённые фразы
 
 # dialog.frDiv.refresh
-!@ pl 'log.refresh: [log_size:<<arrsize("$DIALOG_REPLIC_LOG")>>]' & wait 250
 local strings_ = DIALOG_VALUE['default_screen_replics_number']
 local separator_ = arrpos('$DIALOG_REPLIC_LOG', '<avs-hide-replics>')
 if separator_ <> -1:
 	$DIALOG_REPLIC_LOG[separator_], $DIALOG_REPLIC_LOG[separator_+1] = $DIALOG_REPLIC_LOG[separator_+1], $DIALOG_REPLIC_LOG[separator_]
 	separator_ += 1
-	!@ pl 'replaces line and separator: [separator: <<separator_>>]' & wait 250
 	if separator_ = arrsize('$DIALOG_REPLIC_LOG') - 1:
-		!@ pl 'del separator, counter, stop timer'
 		killvar '$DIALOG_REPLIC_LOG', separator_
 		@dialog.timer('off')
 	elseif $counter['dialog.timer'] = '':
-		!@ pl 'add counter' & wait 250
 		@dialog.timer('on')
 	end
 else:
 	separator_ = arrsize('$DIALOG_REPLIC_LOG')
-	!@ pl 'range [separator: <<separator_>>]' & wait 250
 end
 local $log_ = '' & killobj
 loop local i = iif(separator_ - strings_ <= 0, 0, separator_ - strings_) while i < separator_ step i += 1:
 	$log_ += $DIALOG_REPLIC_LOG[i]
-	!@ addobj '[<<i>>]'+@em.html.to_mnemonics($DIALOG_REPLIC_LOG[i])
 end
 $log_ = '<div class="avs_dialog_replics"><<$log_>></div class="avs_dialog_replics">'
 local $replics_div_ = $strfind($DIALOG_VALUE['screen_now'], '<div class="avs_dialog_replics">[\s\S]*?<\/div class="avs_dialog_replics">')

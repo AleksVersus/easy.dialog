@@ -1,8 +1,8 @@
 QSP-Game Закидывает реплику в лог диалога
 
 $args[0] - сформированный текст реплики с разметкой
-# dialog.replic.to_log
+# dialog.log.add_frase
 !@ pl 'replic.to_log' & wait 250
 $DIALOG_REPLIC_LOG[] = $args[0]
 if arrsize('$DIALOG_REPLIC_LOG') > GAME_VALUE['dialogs_log_size']: killvar '$DIALOG_REPLIC_LOG', 0
---- dialog.replic.to_log ---------------------------------
+--- dialog.log.add_frase ---------------------------------

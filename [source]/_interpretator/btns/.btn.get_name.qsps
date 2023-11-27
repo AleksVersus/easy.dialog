@@ -3,7 +3,6 @@ QSP-Game Получает название кнопки
 $args[0] - тело реплики
 args[1] - максимальная длина текста в символах
 # dialog.btn.get_name
-!@ pl 'btn.get_name' & wait 250
 $args[0] = $trim($args[0])
 local $frase_block_ = $strfind($args[0], '<frase_block>[\s\S]*?</frase_block>')
 if $frase_block_ <> '': $args[0] = $replace($args[0], $frase_block_)

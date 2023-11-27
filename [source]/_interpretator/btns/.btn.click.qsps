@@ -4,7 +4,7 @@ QSP-Game Локация, осуществляющая нажатие на кно
 $args[0] = $args[0] - идентификатор реплики
 # dialog.btn.click
 !@ вскрываем скрытые реплики
-@dialog.frase_block.show()
+@dialog.log.show_frase_block()
 @dialog.frDiv.refresh()
 !@ получаем настройки
 local $rsets_ = $dialogs_sets[$args[0]]
