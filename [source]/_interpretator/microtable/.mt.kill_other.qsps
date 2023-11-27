@@ -1,0 +1,8 @@
+QSP-Game Уничтожает микротаблицу и создаёт новую из одной реплики
+
+$args[0] - идентификатор реплики
+# dialog.mt.kill_other
+killvar '$REPLICS_ID_'
+killvar 'REPLICS_COUNT_'
+@dialogs.mt.add($args[0])
+--- dialog.mt.kill_other ---------------------------------

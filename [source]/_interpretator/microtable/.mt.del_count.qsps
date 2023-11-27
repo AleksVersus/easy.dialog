@@ -1,0 +1,7 @@
+QSP-Game Обнуляет число воспроизведения реплик
+
+# dialog.mt.del_count
+loop local i = 0 while i < arrsize('$REPLICS_ID_') step i += 1:
+	dialogs_count[$REPLICS_ID_[i]] = 0
+end
+--- dialog.mt.del_count ---------------------------------

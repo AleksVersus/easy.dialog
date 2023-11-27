@@ -1,0 +1,13 @@
+QSP-Game Очистка микротаблицы от реплики, которая должна выводиться однажды
+
+# dialog.mt.kill_onced
+local run_, maximal_ = 1, 0
+loop while run_:
+	maximal_ = max('REPLICS_COUNT_')
+	if maximal_ <> 0:
+		killvar 'REPLICS_COUNT_', arrpos('REPLICS_COUNT_', maximal_)
+	else:
+		run_ = 0
+	end
+end
+--- dialog.mt.kill_onced ---------------------------------

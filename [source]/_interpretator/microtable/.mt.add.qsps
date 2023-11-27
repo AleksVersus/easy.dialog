@@ -1,0 +1,12 @@
+QSP-Game Добавляет идентификатор реплики в микротаблицу
+
+$args[0] - идентификатор реплики
+# dialog.mt.add
+local pos_ = arrpos('$REPLICS_ID_', $args[0])
+if pos_ = -1:
+	pos_ = arrsize('$REPLICS_ID_')
+	REPLICS_COUNT_[] = dialogs_count[$args[0]]
+	$REPLICS_ID_[] = $args[0]
+end
+result = pos_
+--- dialog.mt.add ---------------------------------
