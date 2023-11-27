@@ -12,8 +12,7 @@ local $now_sets_ = @dialog.sets.get($args[0])	& !@ текущие настрой
 
 if $rcode_ <> '': dynamic $rcode_	&	!@	выполняем код текущей реплики
 @dialog.replic.print($args[0], $now_sets_) & !@	обновляем лог реплик
-!@ обновляем содержимое лога:
-@dialog.log.refresh()
+@dialog.frDiv.refresh() & !@ обновляем в кадре список реплик
 
 !@ снимаем фиксацию с реплики
 $DIALOG_VALUE['fix_btns_list'] = @edb.list.remove($DIALOG_VALUE['fix_btns_list'], $args[0])

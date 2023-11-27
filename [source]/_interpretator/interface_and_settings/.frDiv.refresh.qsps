@@ -1,6 +1,6 @@
-QSP-Game Обновление на экране списка реплик из лога реплик
+QSP-Game Обрабатываем кадр, обновляя в нём воспроизведённые фразы
 
-# dialog.log.refresh
+# dialog.frDiv.refresh
 !@ pl 'log.refresh: [log_size:<<arrsize("$DIALOG_REPLIC_LOG")>>]' & wait 250
 local strings_ = DIALOG_VALUE['default_screen_replics_number']
 local separator_ = arrpos('$DIALOG_REPLIC_LOG', '<avs-hide-replics>')
@@ -28,4 +28,4 @@ end
 $log_ = '<div class="avs_dialog_replics"><<$log_>></div class="avs_dialog_replics">'
 local $replics_div_ = $strfind($DIALOG_VALUE['screen_now'], '<div class="avs_dialog_replics">[\s\S]*?<\/div class="avs_dialog_replics">')
 $DIALOG_VALUE['screen_now'] = $replace($DIALOG_VALUE['screen_now'], $replics_div_, $log_)
---- dialog.log.refresh ---------------------------------
+--- dialog.frDiv.refresh ---------------------------------

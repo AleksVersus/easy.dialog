@@ -6,7 +6,7 @@ $args[0] = $args[0] - идентификатор реплики
 !@ pl 'btn.click' & wait 250
 !@ вскрываем скрытые реплики
 @dialog.frase_block.show()
-@dialog.log.refresh()
+@dialog.frDiv.refresh()
 !@ получаем настройки
 local $rsets_ = $dialogs_sets[$args[0]]
 !@ если реплика должна быть удалена из сеанса, удаляем
