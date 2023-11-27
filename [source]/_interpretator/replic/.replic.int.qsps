@@ -31,7 +31,7 @@ $code_ = { $answer_pos_[a] = $args[0] & a += 1 }
 	local $rdaughters_ = $dialogs_includes[$args[0]]&	!@	список дочерних
 	local maximal_, minimal_, REPLICS_COUNT_, $REPLICS_ID_
 	$code_ = {
-		if @dialog.replic.prv.if($args[0]):
+		if @dialog.replic.chk_cond($args[0]):
 			!@ если реплика прошла проверку на соответствие условиям
 			!@ определяем тип реплики
 			local $type_ = @em.tag.getNum($dialogs_sets[$args[0]], 'type')
