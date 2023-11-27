@@ -1,6 +1,6 @@
 QSP-Game Обновляем список кнопок в кадре
 
-# dialog.btns.refresh
+# dialog.btnDiv.refresh
 !@ pl 'btns.refresh' & wait 250
 local $btns_, $buttons_div_ = '', ''
 loop local i = 0 while i < arrsize('$DIALOG_BUTTONS') step i += 1:
@@ -9,4 +9,4 @@ end
 $btns_ = '<div class="avs_dialog_buttons"><<$btns_>></div class="avs_dialog_buttons">'
 $buttons_div_ = $strfind($DIALOG_VALUE['screen_now'], '<div class="avs_dialog_buttons">[\s\S]*?<\/div class="avs_dialog_buttons">')
 $DIALOG_VALUE['screen_now'] = $replace($DIALOG_VALUE['screen_now'], $buttons_div_, $btns_)
---- dialog.btns.refresh ---------------------------------
+--- dialog.btnDiv.refresh ---------------------------------

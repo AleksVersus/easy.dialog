@@ -81,7 +81,7 @@ if a > 0:
 end
 
 !@ обновляем список кнопок
-@dialog.btns.refresh()
+@dialog.btnDiv.refresh()
 
 !@ перерисовываем кадр
 @dialog.screen.reprint()
