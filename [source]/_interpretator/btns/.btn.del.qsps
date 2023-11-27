@@ -1,6 +1,6 @@
 QSP-Game Добавляем реплику к списку удалённых из воспроизведения кнопок, а так же кнопку из массива кнопок
 
-$args[0] = $args[0]	&	!	идентификатор реплики
+$args[0] —	идентификатор реплики
 # dialog.btn.del
 $DIALOG_VALUE['del_btns_list'] = @edb.list.append($DIALOG_VALUE['del_btns_list'], $args[0])
 if $DIALOG_BUTTONS[$args[0]] <> '': killvar '$DIALOG_BUTTONS', $args[0]
