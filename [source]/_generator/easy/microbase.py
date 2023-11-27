@@ -87,7 +87,7 @@ class DialogsBase:
 				count += 1
 			output_lines.append(f'\t!@ REPLIC_{i}\n')
 			new_id = self.get_new_id(old_id)
-			if self.replics['type'][i] == 'root': unique_ids.append((old_id, new_id))
+			if self.replics['type'][i] == 'dialog': unique_ids.append((old_id, new_id))
 			output_lines.append(f"\t$dialogs_id['{new_id}'] = '{new_id}'\n")
 			if self.replics['type'][i] == 'role':
 				output_lines.append(f"\t$dialogs_body['{new_id}'] = {{{em.Str.widetrim(self.replics['source'][i], strip=True)}}}\n")

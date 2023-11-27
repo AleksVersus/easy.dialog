@@ -30,7 +30,7 @@ class EasyDialog:
 			'replic-includes': {},
 			'replic-run': {},
 		}
-		self.root = None # id root (dialog id)
+		self.dialog_pk = None # id root (dialog primary key)
 		self.actors = []
 		self.mb_lines_count = 0
 		# конвертируем диалог в тегированный вид
@@ -124,8 +124,8 @@ class EasyDialog:
 		i = self.tags_source['tags-counter']
 		queue = []
 		# добавляем корневую реплику
-		self.mb_replic_append(i, body, self.uid, '', self.uid, 'root')
-		self.root = str(i)
+		self.mb_replic_append(i, body, self.uid, '', self.uid, 'dialog')
+		self.dialog_pk = str(i)
 		queue.append(i)
 		while len(queue) > 0:
 			i = queue.pop()
@@ -160,7 +160,7 @@ class EasyDialog:
 		self.save_temp_file('.\\02_set_includes.xlsx', save_temp_file)
 				
 	def roles_extract(self, save_temp_file=False) -> None:
-		key = self.root
+		key = self.dialog_pk
 		# Извлекаем роли
 		actors_ids = em.Tag.get_num(self.microbase['replic-source'][key], 'actors').split(';')
 		actors_ids = list(map(lambda x: x.strip(), actors_ids))

@@ -2,4 +2,5 @@ QSP-Game убираем разделитель, скрывающий репли�
 
 # dialog.frase_block.show
 killvar '$DIALOG_REPLIC_LOG', arrpos('$DIALOG_REPLIC_LOG', '<avs-hide-replics>')
+@dialog.timer('off')
 --- dialog.frase_block.show ---------------------------------

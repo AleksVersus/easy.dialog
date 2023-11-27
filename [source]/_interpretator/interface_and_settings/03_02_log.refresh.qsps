@@ -11,12 +11,10 @@ if separator_ <> -1:
 	if separator_ = arrsize('$DIALOG_REPLIC_LOG') - 1:
 		!@ pl 'del separator, counter, stop timer'
 		killvar '$DIALOG_REPLIC_LOG', separator_
-		killvar '$counter', 'dialog.timer'
-		DIALOG_VALUE['timer_start'] = 0
+		@dialog.timer('off')
 	elseif $counter['dialog.timer'] = '':
 		!@ pl 'add counter' & wait 250
-		$counter['dialog.timer'] = 'dialog.timer'
-		settimer 100
+		@dialog.timer('on')
 	end
 else:
 	separator_ = arrsize('$DIALOG_REPLIC_LOG')

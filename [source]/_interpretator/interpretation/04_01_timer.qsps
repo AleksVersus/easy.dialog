@@ -2,15 +2,23 @@ QSP-Game Локация-счётчик для воспроизведения б�
 
 # dialog.timer
 !@ pl 'timer'
-local now_time_ = msecscount & !@ данная переменная фиксирует время, пока выполняется код локации
-if no DIALOG_VALUE['timer_start']:
-	!@ первичное выставление порога и запуск отсчёта
-	DIALOG_VALUE['timer_next_refresh'] = now_time_ + GAME_VALUE['dialogs_timer_interval']
-	DIALOG_VALUE['timer_start'] = 1
-elseif now_time_ >= DIALOG_VALUE['timer_next_refresh']:
-	!@ последующее выставление порога и обновление реплик на экране
-	DIALOG_VALUE['timer_next_refresh'] = now_time_ + GAME_VALUE['dialogs_timer_interval']
-	@dialog.log.refresh()
-	@dialog.screen.reprint()
+if $args[0] = '':
+	local now_time_ = msecscount & !@ данная переменная фиксирует время, пока выполняется код локации
+	if no DIALOG_VALUE['timer_start']:
+		!@ первичное выставление порога и запуск отсчёта
+		DIALOG_VALUE['timer_next_refresh'] = now_time_ + GAME_VALUE['dialogs_timer_interval']
+		DIALOG_VALUE['timer_start'] = 1
+	elseif now_time_ >= DIALOG_VALUE['timer_next_refresh']:
+		!@ последующее выставление порога и обновление реплик на экране
+		DIALOG_VALUE['timer_next_refresh'] = now_time_ + GAME_VALUE['dialogs_timer_interval']
+		@dialog.frase_div.refresh()
+		@dialog.screen.reprint()
+	end
+elseif $lcase($trim(($args[0]))) = 'off':
+	killvar '$counter', 'dialog.timer'
+	DIALOG_VALUE['timer_start'] = 0
+elseif  $lcase($trim(($args[0]))) = 'on':
+	$counter['dialog.timer'] = 'dialog.timer'
+	settimer 100
 end
 --- dialog.timer ---------------------------------

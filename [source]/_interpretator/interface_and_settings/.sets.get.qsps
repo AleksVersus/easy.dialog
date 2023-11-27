@@ -1,4 +1,5 @@
-QSP-Game Извлекает настройки от текущей реплики
+QSP-Game Извлекает настройки от текущей реплики до Диалога, пока не будут получены все необходимые настройки
+
 $args[0] = $args[0]	&	!	идентификатор реплики
 # dialog.sets.get
 local $rid_ = $args[0]
@@ -7,7 +8,7 @@ local $actor_act_, $actor_pass_, $act_length_, $rrepeat_, $rshuffle_
 loop while $rid_ <> '':
 	$rsets_ = $dialogs_sets[$rid_]
 	$rtype_ = @em.tag.getNum($rsets_, 'type')
-	if $rtype_ = 'root':
+	if $rtype_ = 'dialog':
 		if $actor_act_ = '': $actor_act_ = @em.tag.getNum($rsets_, 'default_active')
 		if $actor_pass_ = '': $actor_pass_ = @em.tag.getNum($rsets_, 'default_passive')
 		!@ эти значения задаются в корневой реплике, а не в диалоге:
