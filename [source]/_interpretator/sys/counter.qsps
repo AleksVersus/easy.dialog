@@ -11,13 +11,13 @@ if $args[0] = '':
 	elseif now_time_ >= DIALOG_VALUE['timer_next_refresh']:
 		!@ последующее выставление порога и обновление реплик на экране
 		DIALOG_VALUE['timer_next_refresh'] = now_time_ + GAME_VALUE['dialogs_timer_interval']
-		dialog.frDiv.refresh()
+		@dialog.frDiv.refresh()
 		@dialog.screen.reprint()
 	end
 elseif $lcase($trim(($args[0]))) = 'off':
 	killvar '$counter', 'dialog.timer'
 	DIALOG_VALUE['timer_start'] = 0
-elseif  $lcase($trim(($args[0]))) = 'on':
+elseif $lcase($trim(($args[0]))) = 'on':
 	$counter['dialog.timer'] = 'dialog.timer'
 	settimer 100
 end
