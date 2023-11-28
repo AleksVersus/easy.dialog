@@ -1209,7 +1209,29 @@ inclib 'lib/easy.math.qsp'
 
 * `{:[$текст]:}` — теги, между которыми записываются реплики неиграбельных персонажей (далее: актёры, неписи, NPC, персонажи). Текст реплики выводится на экран автоматически. Теги пассивных реплик.
 * `[:[$текст]:]` — теги, между которыми записываются реплики персонажа, которым управляет игрок. Выводятся на экран в виде доступных игроку действий. При выборе действия, на экран выводится текст реплики. Теги активируемых реплик.
-
+* `actors="[$список ролей]"` — идентификаторы ролей текущего диалога, перечисленные через точку с запятой. [Подробнее.](https://github.com/AleksVersus/easy.dialog#%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%80%D0%BE%D0%BB%D0%B5%D0%B9-%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA)
+* `dialog_usrid="[$уникальное_название_дилога]"` — пользовательский идентификатор диалога. [Подробнее.](https://github.com/AleksVersus/easy.dialog#dialog_usrid-пользовательский-идентификатор-диалога)
+* `strings:[#число]` — число фраз из лога диалога, одновременно видимых на экране. [Подробнее.](https://github.com/AleksVersus/easy.dialog#strings-число-фраз-в-логе)
+* `btn_name:[$название кнопки]:btn_name` — название кнопки, которое будет отображаться при интерпретации реплики. [Подробнее.](https://github.com/AleksVersus/easy.dialog#btn_name)
+* `actor_this:[$роль]` — роль, применяемая к конкретной реплике, и не наследуемая вложенными репликами. [Подробнее.](https://github.com/AleksVersus/easy.dialog#actor_this)
+* `actor_act:[$роль]` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#actor_act)
+* `actor_pass:[$роль]` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#actor_pass)
+* `btn_length:[#число]` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#btn_length)
+* `repeat:[one|onced|cycle]` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#repeat)
+* `shuffle:[random|straight]` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#shuffle)
+* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#selrepldel)
+* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#selreplkill)
+* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#selbtndel)
+* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#btnfix)
+* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#frase_block)
+* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#if)
+* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#dynamic_code)
+* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#marker)
+* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#levelup)
+* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#leveljump)
+* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#closeup)
+* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#replic_app)
+* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#комментирование-реплик)
 
 ## Заключение
 
@@ -1220,3 +1242,5 @@ inclib 'lib/easy.math.qsp'
 Огромное спасибо **WladySpb** и **y4ndexx**, подготовившим примеры диалогов для QSP, добавленные в официальные материалы для разработчиков. Они мне очень помогли, когда я только познакомился с QSP. А так же - **Olegus t.Gl** за реализацию "диалога Чешира", откуда я почерпнул немало идей и решений. Диалоги, реализованные в примерах, а так же "диалог Чешира", я постарался воспроизвести в примере использования модуля. Смотри файл `eid.game_start.qsp` в архиве.
 
 Также выражаю отдельную благодарность **Oliver**'у за неугасимый интерес и тёплые слова, которые поддерживают во мне желание работать над этим и другими проектами для ***Quest Soft Player***.
+
+Если вы хотите поддержать проект, подпишитесь на [мой бусти](https://boosty.to/aleksversus) (это можно сделать бесплатно), а также на канал ["Пишем игры на QSP"](https://www.youtube.com/channel/UCwX8RW2B9yTUFdlivtCGAgA) на Ютубе.
