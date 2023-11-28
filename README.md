@@ -1214,24 +1214,87 @@ inclib 'lib/easy.math.qsp'
 * `strings:[#число]` — число фраз из лога диалога, одновременно видимых на экране. [Подробнее.](https://github.com/AleksVersus/easy.dialog#strings-число-фраз-в-логе)
 * `btn_name:[$название кнопки]:btn_name` — название кнопки, которое будет отображаться при интерпретации реплики. [Подробнее.](https://github.com/AleksVersus/easy.dialog#btn_name)
 * `actor_this:[$роль]` — роль, применяемая к конкретной реплике, и не наследуемая вложенными репликами. [Подробнее.](https://github.com/AleksVersus/easy.dialog#actor_this)
-* `actor_act:[$роль]` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#actor_act)
-* `actor_pass:[$роль]` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#actor_pass)
-* `btn_length:[#число]` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#btn_length)
-* `repeat:[one|onced|cycle]` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#repeat)
-* `shuffle:[random|straight]` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#shuffle)
-* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#selrepldel)
-* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#selreplkill)
-* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#selbtndel)
-* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#btnfix)
-* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#frase_block)
-* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#if)
-* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#dynamic_code)
-* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#marker)
-* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#levelup)
-* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#leveljump)
-* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#closeup)
-* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#replic_app)
-* `` — [Подробнее.](https://github.com/AleksVersus/easy.dialog#комментирование-реплик)
+* `actor_act:[$роль]` — роль для активируемых реплик, наследуемая всеми вложенными репликами. [Подробнее.](https://github.com/AleksVersus/easy.dialog#actor_act)
+* `actor_pass:[$роль]` — роль для пассивных реплик, наследуемая всеми вложенными репликами. [Подробнее.](https://github.com/AleksVersus/easy.dialog#actor_pass)
+* `btn_length:[#число]` — длина надписи на кнопке, если фраза оказывается слишком длинной. [Подробнее.](https://github.com/AleksVersus/easy.dialog#btn_length)
+* `repeat:[one|onced|cycle]` — схема воспроизведения пассивных реплик. [Подробнее.](https://github.com/AleksVersus/easy.dialog#repeat)
+* `shuffle:[random|straight]` — порядок воспроизведения пассивных реплик. [Подробнее.](https://github.com/AleksVersus/easy.dialog#shuffle)
+* `selrepl.del` — удаление выбранной реплики на время интерпретации диалога. [Подробнее.](https://github.com/AleksVersus/easy.dialog#selrepldel)
+* `selrepl.kill` — безвозвратное уничтоение реплики. [Подробнее.](https://github.com/AleksVersus/easy.dialog#selreplkill)
+* `selbtn.del` — удаление кнопки из списка кнопок, до последующего воспроизведения. [Подробнее.](https://github.com/AleksVersus/easy.dialog#selbtndel)
+* `btn.fix` — фиксирование кнопки вверху списка. [Подробнее.](https://github.com/AleksVersus/easy.dialog#btnfix)
+* `<frase_block>[$блок фраз]</frase_block>` — блок фраз, которые выводятся на экран последовательной серией. [Подробнее.](https://github.com/AleksVersus/easy.dialog#frase_block)
+* `<if>[$условие]</if>` — условие для воспроизведения реплики. [Подробнее.](https://github.com/AleksVersus/easy.dialog#if)
+* `<dynamic_code>[$валидный код QSP]</dynamic_code>` — динамический код, выполняемый при воспроизведении реплики. [Подробнее.](https://github.com/AleksVersus/easy.dialog#dynamic_code)
+* `marker:[$метка]` — уникальная пользовательская метка реплики. [Подробнее.](https://github.com/AleksVersus/easy.dialog#marker)
+* `levelup:[#число]` — воспроизвести реплику на указанное число уровней вверх. [Подробнее.](https://github.com/AleksVersus/easy.dialog#levelup)
+* `leveljump:[$метка]` — воспроизвести реплику с указанной пользовательской репликой. [Подробнее.](https://github.com/AleksVersus/easy.dialog#leveljump)
+* `closeup` — закрыть диалог. [Подробнее.](https://github.com/AleksVersus/easy.dialog#closeup)
+* `replic_app:[$метка]` — подключение к диалогу реплики с указанной меткой. [Подробнее.](https://github.com/AleksVersus/easy.dialog#replic_app)
+* `<!--[$ текст комментария]-->` — комментарий внутри реплики. [Подробнее.](https://github.com/AleksVersus/easy.dialog#комментирование-реплик)
+
+### Теги и их значения
+
+Значением сдвоенного тега считается весь текст с самого первого символа сразу после открывающего тега, до последнего символа включительно перед закрывающим тегом.
+
+В зависимости от назначения тега, пробельные символы и переводы строки в начале значения, будут игнорироваться или напротив - включаться в значение.
+
+Игнорируются все переводы строк и пробельные символы непосредственно после открывающего тега и непосредственно перед закрывающим для:
+* тегов реплик `{: :}` и `[: :]`
+* тегов `<if></if>`
+* тегов `<dynamic_code></dynamic_code>`
+* тегов `<frase_block></frase_block>`
+
+Все переводы строк и пробельные символы сохраняются при получении и обработке значений для:
+
+* тегов `btn_name: :btn_name`
+* тегов `<!-- -->`
+
+Это связано всего лишь с методами распознавания содержимого.
+
+Таким образом в качестве значения сдвоенного тега может использоваться абсолютно любой набор символов. Можно включать в значение тега (в зависимости от нужд) переводы строк, пробелы и символы табуляции.
+
+Ни в коем случае нельзя включать одинаковые сдвоенные теги друг в друга. Запись типа
+
+```html
+<frase_block>
+   Фраза
+   <frase_block>
+      фраза фраза фраза
+   </frase_block>
+   Ещё одна фраза
+</frase_block>
+```
+
+недопустима.
+
+Значением одиночного тега считается весь текст, начиная с первого символа непосредственно сразу после тега и заканчивая включительно символом, стоящим перед первым встреченным пробельным символом или переводом строки.
+
+Таким образом в одиночные теги можно помещать только непробельные символы.
+
+Однако, если одиночный тег и его содержимое заключены в скобки, причём между открывающей скобкой и тегом нет пробелов и переводов строки, в значении тега можно использовать и пробелы и переводы строки.
+
+Если же одиночный тег и его значение записываются без скобок, они должны отделяться от остального текста хотя бы одним пробелом или переводом строки.
+
+Если одиночный тег помещается в сдвоенный тег и не заключается в скобки, он должен отделяться от тегов сдвоенного тега хотя бы одним пробелом. Запись типа
+
+```html
+<!--ncolor:888888-->
+```
+
+недопустима.
+
+Можно использовать запись
+
+```html
+<!-- ncolor:888888 -->
+```
+
+или
+
+```html
+<!--(nolor:888888)-->
+```
 
 ## Заключение
 
@@ -1239,7 +1302,7 @@ inclib 'lib/easy.math.qsp'
 
 В тексте руководства использованы реплики из киносценариев и пьес разных авторов.
 
-Огромное спасибо **WladySpb** и **y4ndexx**, подготовившим примеры диалогов для QSP, добавленные в официальные материалы для разработчиков. Они мне очень помогли, когда я только познакомился с QSP. А так же - **Olegus t.Gl** за реализацию "диалога Чешира", откуда я почерпнул немало идей и решений. Диалоги, реализованные в примерах, а так же "диалог Чешира", я постарался воспроизвести в примере использования модуля. Смотри файл `eid.game_start.qsp` в архиве.
+Огромное спасибо **WladySpb** и **y4ndexx**, подготовившим [примеры диалогов для QSP](https://qsp.org/index.php?option=com_content&view=article&id=72:-11&catid=36:2009-02-19-06-11-21&Itemid=76), добавленные в официальные материалы для разработчиков. Они мне очень помогли, когда я только познакомился с QSP. А так же - **Olegus t.Gl** за реализацию "диалога Чешира", откуда я почерпнул немало идей и решений. Диалоги, реализованные в примерах, а так же ["диалог Чешира"](http://qsp.org/index.php?option=com_agora&task=topic&id=457&Itemid=57), я постарался воспроизвести в примере использования модуля. Смотри файл `eid.game_start.qsp` в архиве.
 
 Также выражаю отдельную благодарность **Oliver**'у за неугасимый интерес и тёплые слова, которые поддерживают во мне желание работать над этим и другими проектами для ***Quest Soft Player***.
 
