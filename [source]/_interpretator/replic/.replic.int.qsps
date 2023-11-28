@@ -10,7 +10,7 @@ $args[0] -	идентификатор реплики
 local $rcode_ = $dialogs_run[$args[0]]	&	!@	Динамический код, повешенный на реплику
 local $now_sets_ = @dialog.sets.get($args[0])	& !@ текущие настройки, восстановленные до корня
 
-if $rcode_ <> '': dynamic $rcode_	&	!@	выполняем код текущей реплики
+if $rcode_ <> '': dynamic $rcode_, $args[0]	&	!@	выполняем код текущей реплики
 @dialog.replic.to_log($args[0], $now_sets_) & !@	обновляем лог реплик
 @dialog.frDiv.refresh() & !@ обновляем в кадре список реплик
 
