@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Easy.Dialog v.3.0.0</title>
+</head>
+<body>
+	<article class="markdown-body entry-content container-lg" itemprop="text"><h1 tabindex="-1" dir="auto"><a id="user-content-easydialog" class="anchor" aria-hidden="true" tabindex="-1" href="#easydialog"></a>Easy.Dialog</h1>
+<p dir="auto">Версия 3.x.x</p>
+<p dir="auto">Концептуально серьёзно отличается от версии 1, поэтому если вы пользовались первой версией, внимательно прочитайте инструкцию, прежде, чем переходить к использованию третьей версии.</p>
+<p dir="auto">Вторая версия так и не была написана, поэтому не ищите промежуточный вариант.</p>
+<p dir="auto">В этой версии easy.dialog было решено отделить самую ресурсоёмкую часть, и вынести её за пределы QSP. А именно: генератор диалогов был переписан на язык python. Теперь процесс написания и воспроизведения диалогов в модуле состоит из трёх этапов:</p>
+<ol dir="auto">
+<li>Пишем диалоги, используя специальный синтаксис "edsynt".</li>
+<li>Используем генератор, чтобы сконвертировать диалоги, написанные в "edsynt", в рабочий код QSP и добавляем их к своей игре.</li>
+<li>С помощью интерпретатора диалогов, написанного на QSP, воспроизводим диалоги в игре.</li>
+</ol>
+<p dir="auto">Общие правила написания исходников для диалогов не изменились. Изменились названия некоторых настроек и команд, а также вместо отдельных настроек различных элементов для оформления реплики появились "роли" — объекты, в которых автор по своему желанию может прописывать любое оформление репликам.</p>
+<p dir="auto"><strong>TODO: ниже по тексту будут попадаться вот такие вставочки. Это записи для меня. Я не стал их комментировать, т.к. в исходниках всё равно видно. Ориентируясь на эти вставочки, вдальнейшем я буду модернизровать модуль</strong></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-требования" class="anchor" aria-hidden="true" tabindex="-1" href="#требования"></a>Требования</h2>
+<p dir="auto">Для написания диалогов требуется, чтобы у вас на компьютере был установлен интерпретатор python версии 3.11 или выше, так как именно под эту версию писался генератор диалогов.</p>
+<p dir="auto"><strong>TODO: Пока что требуется редактировать непосредственно файл <code>easy.dialog.generator.py</code> для того, чтобы генератор работал с вашими файлами диалогов. В будущем можно будет разместить рядом с генератором файл json и список диалогов будет подхватываться из него. (При добавлении не забыть поправить инструкцию в разделе Работа с генератором)</strong></p>
+<p dir="auto">Интерпретатор "easy.dialog" в большей степени предназначен для использования в qSpider, хотя вы можете применять его и в классическом QSP, с учётом урезанного HTML.</p>
+<p dir="auto">Интерпретатор больше не работает с окнами дополнительного описания, предметов и действий и соответственно не "запоминает" и не "восстанавливает" содержимое этих окон.</p>
+<p dir="auto">Предполагается, что вы уже пробовали писать игры на QSP, знаете основные команды и, возможно, знаете, что такое функции, переменные и массивы, и как формируется html-форматирование. Впрочем, можно обойтись и без последнего.</p>
+<p dir="auto">Модуль поставляется в комплекте с библиотеками "easy.math" и "easy.database" и без них работать не будет.</p>
+<p dir="auto">Также с модулем поставляется пример игры с реализацией нескольких стандартных QSP-шных диалогов, на который в данном руководстве будут делаться отсылки.</p>
+<p dir="auto"><strong>Внимание!!! Если в вашей игре небольшие диалоги, или вы пишете только один диалог на всю игру, сравните объёмы текста и объём модуля диалогов (в сумме с модулями, которые идут в комплекте). Возможно целесообразнее написать вашу игру без использования easy.dialog.</strong></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-установка-и-подключение" class="anchor" aria-hidden="true" tabindex="-1" href="#установка-и-подключение"></a>Установка и подключение</h2>
+<ol dir="auto">
+<li>Скачайте и распакуйте в папку с вашей игрой архив из <a href="https://github.com/AleksVersus/easy.dialog/releases">последнего релиза</a>. В ней должны появиться три папки и два файла:
+<ul dir="auto">
+<li>папка <code>tools</code> — генератор, примеры edsynt, и пакет с подсветкой синтаксиса для Sublime Text.</li>
+<li>папка <code>lib</code> — модуль "easy.dialog" и вспомогательные быблиотеки.</li>
+<li>папка <code>res</code> — ресурсы (ассеты) игры для qSpider.</li>
+<li>файл <code>eid.start_game.</code> — пример игры, в которой используется модуль "easy.dialog".</li>
+<li>файл <code>game.cfg</code> — конфигурационный файл для qSpider.</li>
+</ul>
+</li>
+<li>Напишите диалоги в формате edsynt (см. <a href="#">Создание диалогов</a>) и сгенерируйте на их основе общий файл qsps (см. <a href="#">Работа с генератором</a>).</li>
+<li>Скопируйте из общего файла qsps локации в свою игру, или сконвертируйте в файл QSP и подключите, как модуль.</li>
+<li>В своей игре подключите "easy.dialog" и вспомогательные библиотеки, прописав, например, на самой первой локации:</li>
+</ol>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre lang="qsp" class="notranslate"><code>inclib 'lib/easy.dialog.qsp'
+inclib 'lib/easy.database.qsp'
+inclib 'lib/easy.math.qsp'
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="inclib 'lib/easy.dialog.qsp'
+inclib 'lib/easy.database.qsp'
+inclib 'lib/easy.math.qsp'" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<ol start="5" dir="auto">
+<li>Чтобы вызвать диалог используйте команду: <code>@dialog.int('UNIQUENAME')</code>, — где <code>UNIQUENAME</code> — уникальное название диалога. Подробнее о воспроизведении диалогов в своей игре читайте в разделе <a href="#">Работа с интерпретатором</a>.</li>
+</ol>
+<h2 tabindex="-1" dir="auto"><a id="user-content-обратная-связь-и-поддержка" class="anchor" aria-hidden="true" tabindex="-1" href="#обратная-связь-и-поддержка"></a>Обратная связь и поддержка</h2>
+<p dir="auto">Если ваш диалог после генерации работает неправильно, либо вообще не генерируется, пришлите мне файл edsynt вашего диалога, чтобы я мог установить причину. Это поможет улучшению и исправлению ошибок в модуле.</p>
+<p dir="auto">Написать мне можно на <a href="mailto:aleksversus@mail.ru">aleksversus@mail.ru</a>, или найти меня в дискорде на <a href="https://discord.gg/bbbdxhE9M2" rel="nofollow">сервере интерактивной литературы</a>.</p>
+<p dir="auto">Вы очень поддержите меня, если подпишетесь на <a href="https://boosty.to/aleksversus" rel="nofollow"><strong>мой бусти</strong></a> (это можно сделать бесплатно), или на канал <a href="https://www.youtube.com/channel/UCwX8RW2B9yTUFdlivtCGAgA" rel="nofollow">"Пишем игры на QSP"</a> на YouTube.</p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-создание-диалогов" class="anchor" aria-hidden="true" tabindex="-1" href="#создание-диалогов"></a>Создание диалогов</h2>
+<p dir="auto">Для написания диалогов, как уже было сказано выше, используется синтаксис edsynt. В этом разделе вы научитесь писать диалоги, используя данный синтаксис.</p>
+<p dir="auto">Разделы расположены в порядке усложнения правил написания, а не в порядке рассмотрения структуры диалога. Поэтому вкратце опишу, как сгенерированный диалог будет представлен в QSP.</p>
+<p dir="auto">Диалоги, написанные для модуля "easy.dialog", в QSP выглядят как записи в большой таблице данных, где каждая строчка таблицы является отдельной сущностью (объектом):</p>
+<ul dir="auto">
+<li>Диалогом;</li>
+<li>Ролью;</li>
+<li>Репликой.</li>
+</ul>
+<p dir="auto">Если абстрагироваться от структуры таблицы данных, можно представить, что в ней лежат только диалоги, а уже в диалогах лежат наборы ролей и реплики. Одни реплики вкладываются в другие реплики, и так далее.</p>
+<p dir="auto">Если вам это не понятно, то нет смысла вникать, пока не возникнет такая необходимость. Для написания простых диалогов, понимание этой структуры не требуется. Просто пишите каждый диалог в отдельном файле, конвертируйте их в формат QSP и вызывайте в игре.</p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-edsynt" class="anchor" aria-hidden="true" tabindex="-1" href="#edsynt"></a>edsynt</h3>
+<p dir="auto">"edsynt" (дальше это слово будет без кавычек) — это самописный синтаксис, который должен облегчить написание диалогов, даже больших и сложных. Этот синтаксис используется только для работы модуля easy.dialog, так что скорее всего вы не услышите о нём за пределами данного руководства.</p>
+<p dir="auto">Подсветка edsynt для sublime-text так же поставляется вместе с релизной версией модуля, вы можете найти её в папке <code>tools</code> в виде готового пакета <code>edg.sublime-package</code>. Просто скопируйте пакет в папку <code>Packages</code> в место установки Sublime Text, и вам станет доступна подсветка edsynt для текстовых файлов с расширениями <code>.edg</code> и <code>.edsynt</code>.</p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-простые-диалоги" class="anchor" aria-hidden="true" tabindex="-1" href="#простые-диалоги"></a>Простые диалоги</h3>
+<p dir="auto">Чтобы использовать модуль, нужно знать, как написать диалог, чтобы модуль вас понял.</p>
+<p dir="auto">Диалоги пишутся предельно просто и не требуют специальных знаний, кроме тех, которые вы получите сейчас.</p>
+<p dir="auto">Диалог - это разговор, как правило, двух персонажей. В игре один персонаж - это герой, которым управляет игрок, другой персонаж - неиграбельный, т.е. игрок условно не может им управлять. Персонаж игрока мы будем называть героем, а персонаж, с которым герой вступает в диалог, просто персонажем, актёром, или неписью (от англ. NPC - non-playable character).</p>
+<p dir="auto">Фразы, доступные игроку (и соответственно герою), должны выводиться в виде списка действий, доступных для выбора и выполнения. А фразы актёра должны выводиться непосредственно на экран автоматически. Собственно это все различия между одним типом фраз и другим.</p>
+<p dir="auto">Итак, у нас есть фразы NPC, которые выводятся автоматически, и фразы героя, которые появляются в виде действий и не используются в диалоге, пока игрок не выберет одну из них. Оба типа фраз помещаются между специальными метками. Я называю их тегами.</p>
+<p dir="auto"><code>{: Фраза, которую будет произносить неиграбельный персонаж :}</code> — фигурная скобка, двоеточие, потом идёт фраза персонажа, потом двоеточие и снова фигурная скобка. "{:" - открывающий тег. ":}" - закрывающий тег. Всё, что произносит актёр, помещаем между такими тегами. Каждая отдельная фраза должна помещаться между тегами. Например:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>{: Сегодня прекрасная погода. :}
+{: Не думал я, что будет дождь! :}
+{: На город набегают тучи, осенний сплин кого-то мучит... :}</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="{: Сегодня прекрасная погода. :}
+{: Не думал я, что будет дождь! :}
+{: На город набегают тучи, осенний сплин кого-то мучит... :}" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><code>[: Фраза, которая превратится в действие, а когда игрок выберет действие, выведется на экран. :] </code>— квадратная скобка, двоеточие, потом идёт фраза героя, снова двоеточие, квадратная скобка. "[:" - открывающий тег, ":]" - закрывающий тег. Всё, что может сказать герой, помещаем между такими тегами. Опять же, каждая отдельная фраза - в отдельных тегах. И каждая такая фраза будет выведена одним действием.</p>
+<p dir="auto">Фразы, заключённые в те или другие теги, мы будем называть репликами.</p>
+<p dir="auto">Реплики героя и актёра можно располагать одна в другой, или несколько в одной. Мало того, можно располагать реплики одного типа друг в друге.</p>
+<p dir="auto">Зачем это нужно? А вот зачем: диалог собирается и распознаётся по принципу вопрос-ответ. Допустим, реплика актёра - это вопрос, а реплика героя должна быть ответом на вопрос. Но игроку можно предложить несколько вариантов ответов на вопрос. Чтобы написать такой простой диалог: вопрос и несколько ответов, - делаем так:</p>
+<p dir="auto">Первым делом пишем вопрос. Например, непись должна спросить героя "Как тебя зовут?". Пишем:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>{: Как тебя зовут? :}</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+<p dir="auto">А теперь ответы на вопрос "вкладываем" в вопрос:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>{: Как тебя зовут?
+   [:Вася:]
+   [:Петя:]
+   [:Не твоё дело!:]
+   [:Я забыл...:]
+:}</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="{: Как тебя зовут?
+   [:Вася:]
+   [:Петя:]
+   [:Не твоё дело!:]
+   [:Я забыл...:]
+:}" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">На экран выведется фраза актёра "Как тебя зовут?" и четыре действия. При щелчке на любом из действий, герой будет произносить фразу, написанную в этих репликах. Например, если игрок выберет действие "Я забыл...", на экран выведется фраза героя "Я забыл...".</p>
+<p dir="auto">Как сделать так, чтобы по щелчку на действии произносил фразу не только герой, но и актёр? Всё тем же способом. "Вложить" реплику актёра в реплику героя. Разовьём предыдущий пример:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>{: Как тебя зовут?
+   [:Вася:]
+   [:Петя:]
+   [:Не твоё дело!:]
+   [:А тебя как?
+      {:Меня Васькой Пупкиным кличут:}
+   :]
+:}</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="{: Как тебя зовут?
+   [:Вася:]
+   [:Петя:]
+   [:Не твоё дело!:]
+   [:А тебя как?
+      {:Меня Васькой Пупкиным кличут:}
+   :]
+:}" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Таким образом, вкладывая реплики друг в друга, вы можете создавать большие ветвистые диалоги. Для примера, вот небольшой ветвистый диалог, на котором отрабатывались первые сборки модуля:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>{:
+   Как вас зовут?
+   [:
+      Меня зовут Вася.
+      {:Вас зовут Вася?
+         [:Да, меня зовут Вася.
+            {:да ну нафиг:}
+            [:
+            нет. чистая правда
+            :]
+         :]
+         [:Нет, никто меня так не зовёт:]
+      :}
+      {:
+         Это правда, что вас зовут Васей?
+         [:Правда
+         :]
+         [:Неправда:]
+      :}
+   :]
+   [:
+      Меня зовут Петя.
+      {:
+         Вас зовут Петя?
+         [:Да{:Как это удобно!:}:]
+         [:
+            Нет
+            {:Вас зовут не Петя? Как неудобно!:}
+         :]
+      :}
+      {:
+         Это правда, что вас зовут Петей?
+         [:Правда:]
+         [:Неправда:]
+      :}
+      {:Неужели в самом деле Петей Вас зовут?
+         [:В самом деле:]
+         [:Нет, не в самом:]
+      :}
+   :]
+:}</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="{:
+   Как вас зовут?
+   [:
+      Меня зовут Вася.
+      {:Вас зовут Вася?
+         [:Да, меня зовут Вася.
+            {:да ну нафиг:}
+            [:
+            нет. чистая правда
+            :]
+         :]
+         [:Нет, никто меня так не зовёт:]
+      :}
+      {:
+         Это правда, что вас зовут Васей?
+         [:Правда
+         :]
+         [:Неправда:]
+      :}
+   :]
+   [:
+      Меня зовут Петя.
+      {:
+         Вас зовут Петя?
+         [:Да{:Как это удобно!:}:]
+         [:
+            Нет
+            {:Вас зовут не Петя? Как неудобно!:}
+         :]
+      :}
+      {:
+         Это правда, что вас зовут Петей?
+         [:Правда:]
+         [:Неправда:]
+      :}
+      {:Неужели в самом деле Петей Вас зовут?
+         [:В самом деле:]
+         [:Нет, не в самом:]
+      :}
+   :]
+:}" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Обратите внимание на то, как записаны фразы, которые должны выводиться на экран в диалоге. Перед ними есть пустые строки, символы пробелов и табуляций. Модуль сам очистит фразы от мусора и уберёт пустые строки перед фразой и после неё, а так же пробельные символы перед каждой строкой и после неё. То есть даже если вы вставите фразу между тегами вот так:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>{:
+
+
+
+
+
+
+
+                  Как вас зовут?
+
+
+
+
+
+
+:}</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="{:
+
+
+
+
+
+
+
+                  Как вас зовут?
+
+
+
+
+
+
+:}" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">То на экран всё равно будет выведено: "Как вас зовут?" без пробелов перед репликой и пустых строк. Хотя лучше, конечно, избегать избыточного преформатирования.</p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-назначение-ролей-форматирование-реплик" class="anchor" aria-hidden="true" tabindex="-1" href="#назначение-ролей-форматирование-реплик"></a>Назначение ролей. Форматирование реплик</h3>
+<p dir="auto">Итак, мы научились составлять простейшие диалоги, используя два типа Реплик. Реплики героя воспроизводятся сначала в виде действий, и только после нажатия (активации) выводятся на экран в лог диалога, и потому вдальнейшем мы будем называть их <em>активируемыми репликами</em>. Реплики актёра воспроизводятся в логе автоматически, и поэтому мы будем называть их <em>пассивными репликами</em>.</p>
+<p dir="auto">Чтобы реплики относящиеся к разным актёрам и герою не сливались в одно монотонное месиво, нам нужно каким-либо образом обозначить, кто произносит ту или иную фразу. И с этим делом нам помогут Роли.</p>
+<p dir="auto">Роли — это специальные объекты в диалоге, которые необходимы, чтобы настроить внешний вид отображения Реплик.</p>
+<p dir="auto">Если вы не добавите Роли в свой диалог, будут использованы Роли по умолчанию.</p>
+<p dir="auto">Вы можете создать сколь угодно большое число Ролей на каждый диалог, однако, как правило, требуется не более трёх: Роль для героя, Роль для неписи и Роль для ремарок (технически Роль для ремарок это тоже Роль для неписи, поскольку она используется для пассивных реплик).</p>
+<p dir="auto">Описывать Роли следует в самом начале файла с диалогом.</p>
+<p dir="auto">Первым делом перечисляем идентификаторы Ролей в специальной переменной <code>actors</code>.</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>actors="hero; npc; remarka; other; etc"</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+<p dir="auto">Идентификаторы Ролей перечисляются через точку с запятой, можно дополнительно отделять их пробелами.</p>
+<p dir="auto">К идентификаторам ролей предъявляются те же требования, что и к именам переменных в QSP, c дополнительным условием: в них не должны использоваться никакие спецсимволы, включая <code>$</code>.</p>
+<p dir="auto">Далее необходимо сделать описание каждой роли. Для этого нужно создать специальные описательные блоки, границы которых обозначаются невалидными html-тегами. Название каждого такого тега состоит из слова "actor" и идентификатора роли, поставленного через точку. Примеры:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>actors="hero; npc; remark;"
+	
+	<span class="pl-kos">&lt;</span><span class="pl-ent">actor</span><span class="pl-c1">.hero</span><span class="pl-kos">&gt;</span> <span class="pl-kos">&lt;/</span><span class="pl-ent">actor</span>.hero<span class="pl-kos">&gt;</span>
+
+	<span class="pl-kos">&lt;</span><span class="pl-ent">actor</span><span class="pl-c1">.npc</span><span class="pl-kos">&gt;</span> <span class="pl-kos">&lt;/</span><span class="pl-ent">actor</span>.npc<span class="pl-kos">&gt;</span>
+
+	<span class="pl-kos">&lt;</span><span class="pl-ent">actor</span><span class="pl-c1">.remark</span><span class="pl-kos">&gt;</span> <span class="pl-kos">&lt;/</span><span class="pl-ent">actor</span>.remark<span class="pl-kos">&gt;</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="actors=&quot;hero; npc; remark;&quot;
+	
+	<actor.hero> </actor.hero>
+
+	<actor.npc> </actor.npc>
+
+	<actor.remark> </actor.remark>" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Внутри этих описательных блоков необходимо разместить настройки Ролей, а также блоки обёрток.</p>
+<ul dir="auto">
+<li>Для активируемых реплик, это блок, ограниченный html-тегами <code>&lt;wrap.btn&gt;&lt;/wrap.btn&gt;</code>. Он отвечает за внешний вид действий (кнопок).</li>
+<li>Для пассивных и активируемых реплик, это блок, ограниченный html-тегами <code>&lt;wrap.frase&gt;&lt;/wrap.frase&gt;</code>. Он отвечает за внешний вид выводимых на экран (в лог диалога) фраз.</li>
+</ul>
+<p dir="auto">Блоки обёрток должны содержать валидный код QSP, который и будет формировать обёртку реплик для указанной Роли. Роль может не содержать ни одного из этих блоков, тогда будет использоваться обёртка для реплик, вшитая в интерпретатор.</p>
+<p dir="auto">Как написать собственную обёртку для реплик, описано в разделе <a href="#%D0%BE%D0%B1%D1%91%D1%80%D1%82%D0%BA%D0%B8">Обёртки</a>.</p>
+<p dir="auto">Помимо обёрток вы можете использовать для описания каждой Роли наборы собственных параметров (переменных). Пример:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>   actors="hero; npc;"
+   
+      <span class="pl-kos">&lt;</span><span class="pl-ent">actor</span><span class="pl-c1">.hero</span><span class="pl-kos">&gt;</span>
+         name="Балур Светосильный"
+         age="17"
+      <span class="pl-kos">&lt;/</span><span class="pl-ent">actor</span>.hero<span class="pl-kos">&gt;</span>
+
+      <span class="pl-kos">&lt;</span><span class="pl-ent">actor</span><span class="pl-c1">.npc</span><span class="pl-kos">&gt;</span>
+         name="Темнейший Злеус"
+         age="1069"
+      <span class="pl-kos">&lt;/</span><span class="pl-ent">actor</span>.npc<span class="pl-kos">&gt;</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="   actors=&quot;hero; npc;&quot;
+   
+      <actor.hero>
+         name=&quot;Балур Светосильный&quot;
+         age=&quot;17&quot;
+      </actor.hero>
+
+      <actor.npc>
+         name=&quot;Темнейший Злеус&quot;
+         age=&quot;1069&quot;
+      </actor.npc>" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Подобные переменные полностью переносятся в объект Роль, и их можно легко извлекать, что опять же демонстрируется в разделе <a href="#%D0%BE%D0%B1%D1%91%D1%80%D1%82%D0%BA%D0%B8">Обёртки</a>.</p>
+<p dir="auto">Одна из описанных Ролей должна быть помечена, как роль по умолчанию для активируемых реплик (это делается с помощью одиночного тега <code>&lt;default_active&gt;</code>), и одна роль должна быть помечена, как роль по умолчанию для пассивных реплик (это делается с помошью одиночного тега <code>&lt;default_passive&gt;</code>).</p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-подключение-ролей" class="anchor" aria-hidden="true" tabindex="-1" href="#подключение-ролей"></a>Подключение ролей</h3>
+<p dir="auto">При описании Роли можно подключить к ней стороннюю Роль. При этом в исходную Роль копируются все настройки подключаемой Роли, кроме тегов, устанавливающих роль по умолчанию.</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>   actors="hero; npc;"
+   
+      <span class="pl-kos">&lt;</span><span class="pl-ent">actor</span><span class="pl-c1">.hero</span><span class="pl-kos">&gt;</span>
+         name="%$property['heroname']%"
+
+         include_role:DIALOG.ROLE
+      <span class="pl-kos">&lt;/</span><span class="pl-ent">actor</span>.hero<span class="pl-kos">&gt;</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="   actors=&quot;hero; npc;&quot;
+   
+      <actor.hero>
+         name=&quot;%$property['heroname']%&quot;
+
+         include_role:DIALOG.ROLE
+      </actor.hero>" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Здесь DIALOG — <a href="#%D0%BE%D0%B1%D1%89%D0%B8%D0%B5_%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8_%D0%B4%D0%B8%D0%B0%D0%BB%D0%BE%D0%B3%D0%B0">уникальное название диалога</a>, а ROLE — уникальная метка роли в указанном диалоге.</p>
+<p dir="auto"><strong>ВНИМАНИЕ!!! Подключение ролей ещё не реализовано в генераторе! TODO: подключение ролей реализует механизм наследования для ролей, таким образом можно ссылаться на роли из других диалогов и не использовать их повторно. Однако это может быть нерационально, поскольку мы и так можем сослаться на любую роль, используя параметры <code>actor_act</code>, <code>actor_pass</code>, <code>actor_this</code>.</strong></p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-общие-настройки-диалога" class="anchor" aria-hidden="true" tabindex="-1" href="#общие-настройки-диалога"></a>Общие настройки диалога</h3>
+<p dir="auto">Настройки диалога можно прописывать как до описания ролей, так и после, это не имеет значения.</p>
+<h4 tabindex="-1" dir="auto"><a id="user-content-dialog_usrid-пользовательский-идентификатор-диалога" class="anchor" aria-hidden="true" tabindex="-1" href="#dialog_usrid-пользовательский-идентификатор-диалога"></a>dialog_usrid. Пользовательский идентификатор диалога</h4>
+<p dir="auto">Параметр <code>dialog_usrid</code> является обязательным для любого диалога.</p>
+<p dir="auto">С его помощью указывается уникальное название диалога (пользовательский идентификатор). К этому названию применяются те же требования, что и к именам переменных в QSP, и дополнительно такое название не должно содержать никаких спецсимволов и знаков, в том числе <code>$</code> и <code>.</code>.</p>
+<p dir="auto">Если вы не укажете уникальное название, или названия будут совпадать в нескольких диалогах, генератор предупредит вас об этом.</p>
+<p dir="auto">Пример:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>dialog_usrid="barmen"</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+<p dir="auto">По данному уникальному имени вы сможете вызывать диалог у себя в игре:</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre lang="qsp" class="notranslate"><code>@dialog.int('barmen')
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+<h4 tabindex="-1" dir="auto"><a id="user-content-strings-число-фраз-в-логе" class="anchor" aria-hidden="true" tabindex="-1" href="#strings-число-фраз-в-логе"></a>strings. Число фраз в логе</h4>
+<p dir="auto">Настройка <code>strings</code> позволяет указать число фраз из лога диалога, которые игрок будет видеть на экране. По умолчанию — 10.</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>actors="hero; npc;"
+   
+   <span class="pl-kos">&lt;</span><span class="pl-ent">actor</span><span class="pl-c1">.hero</span><span class="pl-kos">&gt;</span>name="%$property['heroname']%"<span class="pl-kos">&lt;/</span><span class="pl-ent">actor</span>.hero<span class="pl-kos">&gt;</span>
+   <span class="pl-kos">&lt;</span><span class="pl-ent">actor</span><span class="pl-c1">.npc</span><span class="pl-kos">&gt;</span>name="%$DIALOG_VALUE['current_npc_name']%"<span class="pl-kos">&lt;/</span><span class="pl-ent">actor</span>.npc<span class="pl-kos">&gt;</span>
+
+strings:10</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="actors=&quot;hero; npc;&quot;
+   
+   <actor.hero>name=&quot;%$property['heroname']%&quot;</actor.hero>
+   <actor.npc>name=&quot;%$DIALOG_VALUE['current_npc_name']%&quot;</actor.npc>
+
+strings:10" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Вместо 10 можно указать своё число. Если в логе будет меньше фраз, выведутся все фразы из лога.</p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-обёртки" class="anchor" aria-hidden="true" tabindex="-1" href="#обёртки"></a>Обёртки</h3>
+<p dir="auto">По сути обёртки представляют собой html-разметку, в которую заворачиваются фразы героя или NPC. Однако, реализованы обёртки, как обычный код QSP, что позволяет нам довольно гибко извлекать данные из Роли, оборачивать фразы в любую разметку, форматируя диалог так, как нам удобно.</p>
+<p dir="auto">Как уже было сказано в разделе <a href="/AleksVersus/easy.dialog/blob/master">Назначение ролей. Форматирование реплик</a>, обёртки прописываются в роль с помощью тегов <code>&lt;wrap.btn&gt;&lt;/wrap.btn&gt;</code> и <code>&lt;wrap.frase&gt;&lt;/wrap.frase&gt;</code>, и представляют собой валидный код QSP. При написании собственной обёртки, её следует рассматривать, как функцию, которой передаются три аргумента:</p>
+<ul dir="auto">
+<li><code>$args[0]</code> - идентификатор текущей роли</li>
+<li><code>$args[1]</code> - идентификатор родительской роли</li>
+<li><code>$args[2]</code> - фраза, которую необходимо вывести в лог диалога, или в виде действия (кнопки).</li>
+</ul>
+<p dir="auto"><strong>TODO: Механизм наследования ролей ещё не сделан. Поэтому в будущем идентификатор родительской роли может не понадобиться</strong></p>
+<p dir="auto">Результатом выполнения кода обёртки должна быть фраза реплики, завёрнутая в HTML-код. Поэтому нужно использовать переменную <code>$result</code> для возвращения результата.</p>
+<p dir="auto">Вот как может выглядеть пример обёртки для выводимых в лог диалога фраз:</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre lang="qsp" class="notranslate"><code>local $name_ = @dialog.role.get_set($args[0], 'name')
+$result = '&lt;span style="color:#880000;"&gt;&lt;&lt;$name_&gt;&gt;&lt;/span&gt;: — &lt;&lt;$args[2]&gt;&gt;'
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="local $name_ = @dialog.role.get_set($args[0], 'name')
+$result = '<span style=&quot;color:#880000;&quot;><<$name_>></span>: — <<$args[2]>>'" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">А вот так может выглядеть обёртка для кнопок:</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre lang="qsp" class="notranslate"><code>$result = '&lt;div class="avs-act-button"&gt;&lt;&lt;$args[2]&gt;&gt;&lt;/div&gt;'
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+<p dir="auto">Для примера, вот так могут выглядеть обёртки в описании Роли:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-kos">&lt;</span><span class="pl-ent">actor</span><span class="pl-c1">.hero</span><span class="pl-kos">&gt;</span>
+   name="Вы"
+
+   <span class="pl-kos">&lt;</span><span class="pl-ent">default</span><span class="pl-c1">_active</span><span class="pl-kos">&gt;</span>
+   <span class="pl-kos">&lt;</span><span class="pl-ent">wrap</span><span class="pl-c1">.btn</span><span class="pl-kos">&gt;</span>
+      !@ внешний вид кнопок для ответов.
+      $result += '<span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">class</span>="<span class="pl-s">avs-act-button</span>"<span class="pl-kos">&gt;</span><span class="pl-kos">&lt;</span><span class="pl-kos">&lt;</span>$args[2]<span class="pl-kos">&gt;</span><span class="pl-kos">&gt;</span><span class="pl-kos">&lt;/</span><span class="pl-ent">div</span><span class="pl-kos">&gt;</span>'
+   <span class="pl-kos">&lt;/</span><span class="pl-ent">wrap</span>.btn<span class="pl-kos">&gt;</span>
+   <span class="pl-kos">&lt;</span><span class="pl-ent">wrap</span><span class="pl-c1">.frase</span><span class="pl-kos">&gt;</span>
+      !@ внешний вид реплик в логе диалога Извлекаем имя из роли:
+      local $name_ = @dialog.role.get_set($args[0], 'name')
+      $result += '<span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">class</span>="<span class="pl-s">avs-hero-replic</span>"<span class="pl-kos">&gt;</span>'
+         $result += '<span class="pl-kos">&lt;</span><span class="pl-ent">span</span> <span class="pl-c1">style</span>="<span class="pl-s">color:#000000;</span>"<span class="pl-kos">&gt;</span><span class="pl-kos">&lt;</span><span class="pl-kos">&lt;</span>$name_<span class="pl-kos">&gt;</span><span class="pl-kos">&gt;</span>:<span class="pl-kos">&lt;/</span><span class="pl-ent">span</span><span class="pl-kos">&gt;</span>'
+         $result += '<span class="pl-kos">&lt;</span><span class="pl-ent">span</span> <span class="pl-c1">style</span>="<span class="pl-s">color:#000000;</span>"<span class="pl-kos">&gt;</span> — <span class="pl-kos">&lt;</span><span class="pl-kos">&lt;</span>$args[2]<span class="pl-kos">&gt;</span><span class="pl-kos">&gt;</span><span class="pl-kos">&lt;/</span><span class="pl-ent">span</span><span class="pl-kos">&gt;</span>'
+      $result += '<span class="pl-kos">&lt;/</span><span class="pl-ent">div</span><span class="pl-kos">&gt;</span>'
+   <span class="pl-kos">&lt;/</span><span class="pl-ent">wrap</span>.frase<span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">actor</span>.hero<span class="pl-kos">&gt;</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+<h3 tabindex="-1" dir="auto"><a id="user-content-настройки-отображения-реплик" class="anchor" aria-hidden="true" tabindex="-1" href="#настройки-отображения-реплик"></a>Настройки отображения реплик</h3>
+<p dir="auto">Настройки отображения влияют на то, как реплики будут выглядет на экране, когда они представлены в виде действий (кнопок), или фраз. Есть настройки, которые влияют на отображение реплик сразу в целой ветке, а есть которые влияют на отображение отдельной реплики (см. раздел <a href="#">Наследование</a>).</p>
+<h4 tabindex="-1" dir="auto"><a id="user-content-настройки-отображения-отдельных-реплик" class="anchor" aria-hidden="true" tabindex="-1" href="#настройки-отображения-отдельных-реплик"></a>Настройки отображения отдельных реплик</h4>
+<h5 tabindex="-1" dir="auto"><a id="user-content-btn_name" class="anchor" aria-hidden="true" tabindex="-1" href="#btn_name"></a>btn_name</h5>
+<p dir="auto"><code>btn_name: :btn_name</code> — для активируемой реплики устанавливается указанное название кнопки. Данная настройка имеет приоритет перед <code>act_lenght</code>. Пример:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>[:
+   Никогда не думай, что ты иная, чем могла бы быть иначе, чем будучи иной в тех случаях, когда иначе нельзя не быть.
+
+   btn_name:Никогда не думай, что ты иная...:btn_name
+:]</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="[:
+   Никогда не думай, что ты иная, чем могла бы быть иначе, чем будучи иной в тех случаях, когда иначе нельзя не быть.
+
+   btn_name:Никогда не думай, что ты иная...:btn_name
+:]" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<h5 tabindex="-1" dir="auto"><a id="user-content-actor_this" class="anchor" aria-hidden="true" tabindex="-1" href="#actor_this"></a>actor_this</h5>
+<p dir="auto"><code>actor_this</code> — ссылка на роль, применяему только к этой реплике, и не наследуемую вложенными репликами. Можно указать в следующем формате: <code>DIALOG.ROLE</code>, — где <code>DIALOG</code> — это уникальное название диалога, а <code>ROLE</code> — идентификатор роли в этом диалоге. Пример:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>{:
+   Как Вас зовут?
+   {:   
+      actor_this:remarka <span class="pl-c">&lt;!-- здесь указан только идентификатор роли --&gt;</span>
+      Что Вы на это ответите?
+   :}
+   [:Петя:]
+   [:Вася <span class="pl-c">&lt;!-- здесь указано уникальное название диалога, </span>
+<span class="pl-c">               а через точку идентификатор роли --&gt;</span>
+      actor_this:barmen.npc
+   :]
+:}</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="{:
+   Как Вас зовут?
+   {:   
+      actor_this:remarka <!-- здесь указан только идентификатор роли -->
+      Что Вы на это ответите?
+   :}
+   [:Петя:]
+   [:Вася <!-- здесь указано уникальное название диалога, 
+               а через точку идентификатор роли -->
+      actor_this:barmen.npc
+   :]
+:}" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<h4 tabindex="-1" dir="auto"><a id="user-content-настройки-отображения-реплик-для-веток" class="anchor" aria-hidden="true" tabindex="-1" href="#настройки-отображения-реплик-для-веток"></a>Настройки отображения реплик для веток</h4>
+<h5 tabindex="-1" dir="auto"><a id="user-content-actor_act" class="anchor" aria-hidden="true" tabindex="-1" href="#actor_act"></a>actor_act</h5>
+<p dir="auto"><code>actor_act</code> — ссылка на роль, которая будет применяться для всех активируемых реплик в этой ветке. Иными словами, это наследуемая настройка для реплик, вложенные реплики унаследуют эту настройку от старших. Можно указать в следующем формате: <code>DIALOG.ROLE</code>, — где <code>DIALOG</code> — это уникальное название диалога, а <code>ROLE</code> — идентификатор роли в этом диалоге. Пример:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>{:
+   actor_act:barmen.hero <span class="pl-c">&lt;!-- Все активируемые реплики в данной ветке диалога</span>
+<span class="pl-c">                             будут выводиться с форматированием для роли hero</span>
+<span class="pl-c">                             из диалога с уникальным названием barmen --&gt;</span>
+   Как Вас зовут?
+   {:   
+      Что Вы на это ответите?
+   :}
+   [:Петя:]
+   [:Вася:]
+:}</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="{:
+   actor_act:barmen.hero <!-- Все активируемые реплики в данной ветке диалога
+                             будут выводиться с форматированием для роли hero
+                             из диалога с уникальным названием barmen -->
+   Как Вас зовут?
+   {:   
+      Что Вы на это ответите?
+   :}
+   [:Петя:]
+   [:Вася:]
+:}" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<h5 tabindex="-1" dir="auto"><a id="user-content-actor_pass" class="anchor" aria-hidden="true" tabindex="-1" href="#actor_pass"></a>actor_pass</h5>
+<p dir="auto"><code>actor_pass</code> — ссылка на роль, которая будет применяться для всех пассивных реплик в этой ветке. Иными словами, это наследуемая настройка для реплик; вложенные реплики унаследуют эту настройку от старших. Можно указать в следующем формате: <code>DIALOG.ROLE</code>, — где <code>DIALOG</code> — это уникальное название диалога, а <code>ROLE</code> — идентификатор роли в этом диалоге. Пример:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>{:
+   Спрашивай, не стесняйся, у меня самый продвинутый диалог!
+   {:
+      actor_pass:aragorn.npc <span class="pl-c">&lt;!-- Все пассивные реплики в данной ветке диалога</span>
+<span class="pl-c">                             будут выводиться с форматированием для роли npc</span>
+<span class="pl-c">                             из диалога с уникальным названием aragorn --&gt;</span>
+      [:
+         Как реализован твой диалог?
+         {:
+            Ну, это довольно просто...
+         :}
+      :]
+      [:
+         А чем бармен с тем алкоголиком заведуют?
+         {:
+            Бармен показывает пример самого простого линейного диалога...
+         :}
+      :]
+   :}
+:}</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="{:
+   Спрашивай, не стесняйся, у меня самый продвинутый диалог!
+   {:
+      actor_pass:aragorn.npc <!-- Все пассивные реплики в данной ветке диалога
+                             будут выводиться с форматированием для роли npc
+                             из диалога с уникальным названием aragorn -->
+      [:
+         Как реализован твой диалог?
+         {:
+            Ну, это довольно просто...
+         :}
+      :]
+      [:
+         А чем бармен с тем алкоголиком заведуют?
+         {:
+            Бармен показывает пример самого простого линейного диалога...
+         :}
+      :]
+   :}
+:}" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<h5 tabindex="-1" dir="auto"><a id="user-content-btn_length" class="anchor" aria-hidden="true" tabindex="-1" href="#btn_length"></a>btn_length</h5>
+<p dir="auto"><code>btn_length</code> — устанавливает максимальное число символов от длины фразы активируемой реплики для названия кнопки. По умолчанию 64 символа. Иными словами, если фраза активируемой реплики превышает 128 символов в длину, движок автоматически подрежет эту фразу до 64 символов, когда будет генерировать кнопку.</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>[:
+   Никогда не думай, что ты иная, чем могла бы быть иначе, чем будучи иной в тех случаях, когда иначе нельзя не быть.
+
+   btn_length:50 <span class="pl-c">&lt;!-- в данном случае на кнопке будет написано:</span>
+<span class="pl-c">   Никогда не думай, что ты иная, чем могла бы быт...</span>
+<span class="pl-c">   --&gt;</span>
+:]</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="[:
+   Никогда не думай, что ты иная, чем могла бы быть иначе, чем будучи иной в тех случаях, когда иначе нельзя не быть.
+
+   btn_length:50 <!-- в данном случае на кнопке будет написано:
+   Никогда не думай, что ты иная, чем могла бы быт...
+   -->
+:]" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<h3 tabindex="-1" dir="auto"><a id="user-content-настройки-порядка-вывода-реплик" class="anchor" aria-hidden="true" tabindex="-1" href="#настройки-порядка-вывода-реплик"></a>Настройки порядка вывода реплик</h3>
+<p dir="auto">Настройки порядка вывода реплик всегда прописываются для целых веток. Иными словами они являются наследуемыми; вложенные реплики наследуют настройки от старших реплик.</p>
+<p dir="auto"><strong>TODO: Порядок вывода реплик должен сбрасываться при повторном посещении диалога, но пока это не сделано. Выглядит довольно ресурсоёмко.</strong></p>
+<h5 tabindex="-1" dir="auto"><a id="user-content-repeat" class="anchor" aria-hidden="true" tabindex="-1" href="#repeat"></a>repeat</h5>
+<p dir="auto"><code>repeat</code> — данная настройка регулирует количество повторов вывода пассивных реплик. Можно указать три значения:</p>
+<ul dir="auto">
+<li><code>one</code> — выводится одна реплика. Например, выбранная случайно.</li>
+<li><code>once</code> — все реплики выводятся по одному разу, после чего выводится только последняя выведенная реплика.</li>
+<li><code>cicle</code> — реплики выводятся по кругу, т.е. имеют свойство повторяться (режим по умолчанию).</li>
+</ul>
+<p dir="auto">Пример:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>[:
+   Вы не знаете, как попасть в город?
+
+   repeat:one
+
+   {:Отвали!:}
+   {:Я занят!:}
+   {:Позвоните попозже...:}
+:]</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="[:
+   Вы не знаете, как попасть в город?
+
+   repeat:one
+
+   {:Отвали!:}
+   {:Я занят!:}
+   {:Позвоните попозже...:}
+:]" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<h5 tabindex="-1" dir="auto"><a id="user-content-shuffle" class="anchor" aria-hidden="true" tabindex="-1" href="#shuffle"></a>shuffle</h5>
+<p dir="auto"><code>shuffle</code> — настройка последовательности вывода пассивных реплик. Можно указать два значения:</p>
+<ul dir="auto">
+<li><code>random</code> — реплики выводятся в случайном порядке.</li>
+<li><code>straight</code> — реплики выводятся от первой к последней, как они прописывались в файлах edsynt</li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-управление-репликами" class="anchor" aria-hidden="true" tabindex="-1" href="#управление-репликами"></a>Управление репликами</h3>
+<p dir="auto">Простых ветвистых диалогов иногда бывает недостаточно. Иногда необходимо задать дополнительное поведение отдельным репликам, или даже воздействовать на диалог целиком. Для таких случаев в синтаксисе edsynt предусмотрены специальные команды и параметры.</p>
+<h5 tabindex="-1" dir="auto"><a id="user-content-selrepldel" class="anchor" aria-hidden="true" tabindex="-1" href="#selrepldel"></a>selrepl.del</h5>
+<p dir="auto"><code>selrepl.del</code> — на время интерпретации диалога "удаляет" реплику из сеанса интерпретации. То есть, если реплика помечена этой меткой, и была один раз воспроизведена, она помечается, как скрытая, и больше не воспроизводится, только если на неё не произведут целенаправленный переход. При повторном посещении диалога реплика снова доступна до первой интерпретации.</p>
+<h5 tabindex="-1" dir="auto"><a id="user-content-selbtndel" class="anchor" aria-hidden="true" tabindex="-1" href="#selbtndel"></a>selbtn.del</h5>
+<p dir="auto"><code>selbtn.del</code> — удаляет кнопку из списка, но лишь пока не произойдёт повторная интерпретация ветки с репликой, помеченной этой меткой (грубо говоря удаляет действие из списка, не удаляя прочие). Используется в примере "Диалог Арагорна":</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>[:
+   И сколько всего этих "блоков"? И какие они?
+   <span class="pl-c">&lt;!-- selbtn.del --&gt;</span>
+   {:
+      Ну, первый блок, это блок приветствия. В него ты попадаешь в самом начале. Оттуда тебя "перекидывает" в основной блок вопросов, второй по счёту, а за ним идут блоки вопросов, для каждого вопроса — свой блок.
+   :}
+:]</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="[:
+   И сколько всего этих &quot;блоков&quot;? И какие они?
+   <!-- selbtn.del -->
+   {:
+      Ну, первый блок, это блок приветствия. В него ты попадаешь в самом начале. Оттуда тебя &quot;перекидывает&quot; в основной блок вопросов, второй по счёту, а за ним идут блоки вопросов, для каждого вопроса — свой блок.
+   :}
+:]" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<h5 tabindex="-1" dir="auto"><a id="user-content-btnfix" class="anchor" aria-hidden="true" tabindex="-1" href="#btnfix"></a>btn.fix</h5>
+<p dir="auto"><strong>TODO: пока не реализовано. Реплика, отмеченная данной меткой, должна фиксироваться в виде действия вверху списка реплик</strong></p>
+<h5 tabindex="-1" dir="auto"><a id="user-content-selreplkill" class="anchor" aria-hidden="true" tabindex="-1" href="#selreplkill"></a>selrepl.kill</h5>
+<p dir="auto"><code>selrepl.kill</code> — реплика, помеченная этой меткой, полностью удаляется из таблицы.</p>
+<p dir="auto"><strong>TODO: Пока что удаляется только одна реплика. Но это может привести к артефактам и ошибкам. По хорошему, нужно удалять реплику, её дочерние реплики, а так же записи о ней из родительских реплик/диалогов.</strong></p>
+<h5 tabindex="-1" dir="auto"><a id="user-content-frase_block" class="anchor" aria-hidden="true" tabindex="-1" href="#frase_block"></a>frase_block</h5>
+<p dir="auto"><code>&lt;frase_block&gt; &lt;/frase_block&gt;</code> — между этими тегами размещается блок фраз. Каждая строчка такого блока считается отдельной фразой. Если нужно разделить строки внутри фразы, можно использовать html-теги вроде <code>&lt;br&gt;</code> и <code>&lt;p&gt;&lt;/p&gt;</code>.</p>
+<p dir="auto">Чтобы к строке применилась необходимая роль, в начале строки нужно использовать тег <code>&lt;actor:HERO&gt;</code>, где вместо HERO нужно указать идентификатор роли в текущем диалоге, или <code>DIALOG.ROLE</code>. Здесь <code>DIALOG</code> — уникальное название диалога, а <code>ROLE</code> — идентификатор роли в указанном диалоге.</p>
+<p dir="auto">Пример из "диалога Чешира":</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-kos">&lt;</span><span class="pl-ent">frase</span><span class="pl-c1">_block</span><span class="pl-kos">&gt;</span>
+   <span class="pl-kos">&lt;</span><span class="pl-ent">actor:npc</span><span class="pl-kos">&gt;</span>У тебя одна минута на то, чтобы объяснить мне, как добраться до хранилища.
+   <span class="pl-kos">&lt;</span><span class="pl-ent">actor:hero</span><span class="pl-kos">&gt;</span>Что?
+   <span class="pl-kos">&lt;</span><span class="pl-ent">actor:remarka</span><span class="pl-kos">&gt;</span>Бац! В глазах сверкнуло и боль такая сильная, что кажется, будто она — единственное, что я сейчас чувствую. Даже сильнее страха.
+   <span class="pl-kos">&lt;</span><span class="pl-ent">actor:npc</span><span class="pl-kos">&gt;</span>Одна минута, — <span class="pl-kos">&lt;</span><span class="pl-ent">em</span> <span class="pl-c1">style</span>="<span class="pl-s">color:#888888;</span>"<span class="pl-kos">&gt;</span>говорит он и прижимает холодный кружок дула к моему лбу.<span class="pl-kos">&lt;/</span><span class="pl-ent">em</span><span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">frase</span>_block<span class="pl-kos">&gt;</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+<h5 tabindex="-1" dir="auto"><a id="user-content-if" class="anchor" aria-hidden="true" tabindex="-1" href="#if"></a>if</h5>
+<p dir="auto"><code>&lt;if&gt; &lt;/if&gt;</code> — если нам нужно, чтобы реплика воспроизводилась только при определённом условии, между этими тегами записывается валидное условие для QSP.</p>
+<p dir="auto">Например, если бы мы использовали обычный код QSP, наше условие могло бы выглядеть так:</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre lang="qsp" class="notranslate"><code>if obj('Синий крокодил'):
+   ! выводим реплику в лог
+   *pl '— Я гляжу, ты везде таскаешь с собой это чудовище! Продай его мне.'
+end
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="if obj('Синий крокодил'):
+   ! выводим реплику в лог
+   *pl '— Я гляжу, ты везде таскаешь с собой это чудовище! Продай его мне.'
+end" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Ну а в edsynt этом может выглядеть так:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>{:
+   <span class="pl-kos">&lt;</span><span class="pl-ent">if</span><span class="pl-kos">&gt;</span>obj('Синий крокодил')<span class="pl-kos">&lt;/</span><span class="pl-ent">if</span><span class="pl-kos">&gt;</span>
+   Я гляжу, ты везде таскаешь с собой это чудовище! Продай его мне.
+:}</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="{:
+   <if>obj('Синий крокодил')</if>
+   Я гляжу, ты везде таскаешь с собой это чудовище! Продай его мне.
+:}" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<h5 tabindex="-1" dir="auto"><a id="user-content-dynamic_code" class="anchor" aria-hidden="true" tabindex="-1" href="#dynamic_code"></a>dynamic_code</h5>
+<p dir="auto"><code>&lt;dynamic_code&gt; &lt;/dynamic_code&gt;</code> — между этими тегами размещается валидный код QSP, который будет выполнен при интерпретации реплики, перед выводом её в лог диалога.</p>
+<p dir="auto">С помощью данных тегов можно фиксировать состояние диалога во внешних переменных, изменять состояния квестов, предметов и т.п. Например, в "диалоге Арагорна" так реализована очистка окна от всех кнопок перед закрытием диалога, а так же задержка перед закрытием диалога.</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>[:
+   Ладно, пойду я, пожалуй.
+   <span class="pl-c">&lt;!-- очистка списка действий &lt;dynamic_code&gt;killvar '$DIALOG_BUTTONS'&lt;/dynamic_code&gt;--&gt;</span>
+   {:
+      <span class="pl-c">&lt;!-- в оригинале перед этой репликой стоит задержка, потом вывод реплики, снова задержка, потом закрытие --&gt;</span>
+      <span class="pl-c">&lt;!-- динамический код в этой реплике осуществит задержку, после чего она появится на экране --&gt;</span>
+      Ну, прощай тогда!
+      <span class="pl-c">&lt;!-- &lt;dynamic_code&gt;wait 500&lt;/dynamic_code&gt; --&gt;</span>
+         {:
+            <span class="pl-c">&lt;!-- Эта реплика не появится на экране, она выполнит задержку и closeup --&gt;</span>
+            <span class="pl-c">&lt;!-- &lt;dynamic_code&gt;wait 2000&lt;/dynamic_code&gt; --&gt;</span>
+         :}
+   :}
+:]</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="[:
+   Ладно, пойду я, пожалуй.
+   <!-- очистка списка действий <dynamic_code>killvar '$DIALOG_BUTTONS'</dynamic_code>-->
+   {:
+      <!-- в оригинале перед этой репликой стоит задержка, потом вывод реплики, снова задержка, потом закрытие -->
+      <!-- динамический код в этой реплике осуществит задержку, после чего она появится на экране -->
+      Ну, прощай тогда!
+      <!-- <dynamic_code>wait 500</dynamic_code> -->
+         {:
+            <!-- Эта реплика не появится на экране, она выполнит задержку и closeup -->
+            <!-- <dynamic_code>wait 2000</dynamic_code> -->
+         :}
+   :}
+:]" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">В выполняемый код нулевым аргументом передаётся айди (первичный ключ) реплики, в которой этот код лежит. Таким образом можно использовать в этом коде данные о реплике, и различными способами управлять ей.</p>
+<h5 tabindex="-1" dir="auto"><a id="user-content-marker" class="anchor" aria-hidden="true" tabindex="-1" href="#marker"></a>marker</h5>
+<p dir="auto"><code>marker</code> — с помщью данного параметра устаналвиваем на реплику уникальную для всего диалога метку. В пределах одного диалога метки не должны повторяться, но между диалогами реплики могут повторяться. Если вы ошиблись и указали две одинаковые метки в диалоге, генератор сообщит вам об этом.</p>
+<p dir="auto">Пример:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>{:
+   marker:dialog_struckture
+:}</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="{:
+   marker:dialog_struckture
+:}" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<h5 tabindex="-1" dir="auto"><a id="user-content-levelup" class="anchor" aria-hidden="true" tabindex="-1" href="#levelup"></a>levelup</h5>
+<p dir="auto"><code>levelup</code> — переход по узлам наверх (назад). Например, от текущей реплики вам нужно вернуться на две реплики вверх (назад), тогда указываете:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>levelup:2</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+<p dir="auto"><strong>TODO. Возможно, если указать большее значение, чем вложено одну в другую реплик, это вызовет ошибку, или неверную работу диалога. Лучше указывать заранее допустимые значения.</strong></p>
+<h5 tabindex="-1" dir="auto"><a id="user-content-leveljump" class="anchor" aria-hidden="true" tabindex="-1" href="#leveljump"></a>leveljump</h5>
+<p dir="auto"><code>leveljump</code> — переход на указанную метку. Можно указать метку в текущем диалоге, или <code>DIALOG.MARKER</code>, где <code>DIALOG</code> — уникальное название диалога, а <code>MARKER</code> название метки в этом диалоге. В последнем случае вас фактически перебросит в другой диалог, поэтому будьте внимательны при указании меток вне текущего диалога.</p>
+<p dir="auto">Пример:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>[:
+   А как организован твой диалог?
+   {:<span class="pl-c">&lt;!-- leveljump:block_stick --&gt;</span>Ну, это довольно просто. Диалог состоит из нескольких блоков, после того как ты выберешь один из вариантов, он удаляется из списка действий. Иногда удаляются все действия, а вместо них добавляются новые. Как сейчас, например.:}
+:]</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="[:
+   А как организован твой диалог?
+   {:<!-- leveljump:block_stick -->Ну, это довольно просто. Диалог состоит из нескольких блоков, после того как ты выберешь один из вариантов, он удаляется из списка действий. Иногда удаляются все действия, а вместо них добавляются новые. Как сейчас, например.:}
+:]" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<h5 tabindex="-1" dir="auto"><a id="user-content-closeup" class="anchor" aria-hidden="true" tabindex="-1" href="#closeup"></a>closeup</h5>
+<p dir="auto"><code>closeup</code> — закрывает текущий диалог, восстанавливая окно основного описания к состоянию до диалога.</p>
+<h5 tabindex="-1" dir="auto"><a id="user-content-replic_app" class="anchor" aria-hidden="true" tabindex="-1" href="#replic_app"></a>replic_app</h5>
+<p dir="auto"><code>replic_app</code> — подключение реплики из другого диалога. Указывается <code>DIALOG.MARKER</code>, где <code>DIALOG</code> — уникальное название диалога, реплику из которого мы хотим подключить, а <code>MARKER</code> — метка реплики в этом диалоге.</p>
+<p dir="auto"><strong>TODO. Данная команда пока ещё не работает. Нет точного представления, как это должно функционировать. Возможно при генерации диалога, реплики из соседнего диалога будут копироваться в текущий, хотя это нерационально</strong></p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-комментирование-реплик" class="anchor" aria-hidden="true" tabindex="-1" href="#комментирование-реплик"></a>Комментирование реплик</h3>
+<p dir="auto">Все реплики можно комментировать. Комментарии записываются так же, как записываются в обычном html-документе, т.е. внутри конструкции <code>&lt;!-- --&gt;</code>. При генерации таблицы диалогов все подобные конструкции будут удалены.</p>
+<p dir="auto">Комментарии главным образом предназначены для помещения в них настроек и прочих текстов, которые не должны входить в реплику.</p>
+<p dir="auto">Конечно, настройки можно указывать и не в комментариях, но если разместить их внутри комментария, это гарантирует, что даже если вы ошибётесь в названии какого-либо параметра или тега, они не попадут в выводимую на экран фразу, или в название кнопки, а значит возникнет меньше вероятности, что qSpider упадёт в молоко, или в классическом плеере поломается разметка.</p>
+<p dir="auto">Запрещено вкладывать комментарии в теги <code>&lt;if&gt; &lt;/if&gt;</code>, <code>&lt;dynamic_code&gt; &lt;/dynamic_code&gt;</code>, <code>&lt;wrap.btn&gt;&lt;/wrap.btn&gt;</code> и <code>&lt;wrap.frase&gt;&lt;/wrap.frase&gt;</code>, а так же вкладывать комментарии в комментарии. Вот пример неправильного размещения комментариев:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-c">&lt;!-- npc="</span>
+<span class="pl-c">name:Ведущий:name</span>
+<span class="pl-c">ncolor:008888&lt;!-- цвет имени неписи --&gt;</span>
+fcolor:008888
+"
+hero="
+name:Вася Пупкин:name
+"
+--<span class="pl-kos">&gt;</span>
+{:
+   Как вас зовут?
+   [:
+      Меня зовут Вася.
+      {:
+      <span class="pl-kos">&lt;</span><span class="pl-ent">if</span><span class="pl-kos">&gt;</span>a=0<span class="pl-c">&lt;!-- реплика выводится, если "a" равно нулю --&gt;</span><span class="pl-kos">&lt;/</span><span class="pl-ent">if</span><span class="pl-kos">&gt;</span>
+      <span class="pl-kos">&lt;</span><span class="pl-ent">dynamic</span><span class="pl-c1">_code</span><span class="pl-kos">&gt;</span>a=1<span class="pl-kos">&lt;/</span><span class="pl-ent">dynamic</span>_code<span class="pl-kos">&gt;</span>
+      Вас зовут Вася?
+         [:
+         Да, меня зовут Вася.
+            {:да ну нафиг:}
+            [:
+            нет. чистая правда
+            :]
+         :]
+         [:Нет, никто меня так не зовёт:]
+      :}
+      {:
+      <span class="pl-kos">&lt;</span><span class="pl-ent">if</span><span class="pl-kos">&gt;</span>a<span class="pl-kos">&gt;</span>0<span class="pl-kos">&lt;/</span><span class="pl-ent">if</span><span class="pl-kos">&gt;</span>
+      <span class="pl-kos">&lt;</span><span class="pl-ent">dynamic</span><span class="pl-c1">_code</span><span class="pl-kos">&gt;</span>if a<span class="pl-kos">&lt;</span><span class="pl-ent">5:</span> <span class="pl-c1">a+</span>=<span class="pl-s">1</span><span class="pl-c">&lt;!-- изменяем значение "a", чтобы реплика больше не выводилась --&gt;</span><span class="pl-kos"></span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">dynamic</span>_code<span class="pl-kos">&gt;</span>
+         Это правда, что вас зовут Васей?
+         [:Правда
+         :]
+         [:Неправда:]
+      :}
+   :]
+:}</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="<!-- npc=&quot;
+name:Ведущий:name
+ncolor:008888<!-- цвет имени неписи -->
+fcolor:008888
+&quot;
+hero=&quot;
+name:Вася Пупкин:name
+&quot;
+-->
+{:
+   Как вас зовут?
+   [:
+      Меня зовут Вася.
+      {:
+      <if>a=0<!-- реплика выводится, если &quot;a&quot; равно нулю --></if>
+      <dynamic_code>a=1</dynamic_code>
+      Вас зовут Вася?
+         [:
+         Да, меня зовут Вася.
+            {:да ну нафиг:}
+            [:
+            нет. чистая правда
+            :]
+         :]
+         [:Нет, никто меня так не зовёт:]
+      :}
+      {:
+      <if>a>0</if>
+      <dynamic_code>if a<5: a+=1<!-- изменяем значение &quot;a&quot;, чтобы реплика больше не выводилась -->
+</dynamic_code>
+         Это правда, что вас зовут Васей?
+         [:Правда
+         :]
+         [:Неправда:]
+      :}
+   :]
+:}" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Фразы, предназначенные для вывода в лог диалога, помещать в комментарии не нужно.</p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-ремарки" class="anchor" aria-hidden="true" tabindex="-1" href="#ремарки"></a>Ремарки</h3>
+<p dir="auto">Ремарка - это авторский текст, который бывает нужно поместить между репликами персонажей. Специальных настроек для ремарок нет, но делать их, тем не менее, просто.</p>
+<p dir="auto">Я рекомендую завести для ремарок отдельную роль с обёрткой, не добавляющей дополнительного форматирования, а форматировать фразу уже непосредственно внутри реплики.</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-c">&lt;!--</span>
+<span class="pl-c">   dialog_usrid="testgame"</span>
+<span class="pl-c">   actors="npc;hero;"</span>
+<span class="pl-c"></span>
+<span class="pl-c">   &lt;actor.npc&gt;</span>
+<span class="pl-c">      &lt;default_passive&gt;</span>
+<span class="pl-c">      &lt;wrap.frase&gt;</span>
+<span class="pl-c">         $result = '&lt;span style="color:#008888"&gt;Ведущий: — &lt;&lt;$args[2]&gt;&gt;&lt;/span&gt;'</span>
+<span class="pl-c">      &lt;/wrap.frase&gt;</span>
+<span class="pl-c">   &lt;/actor.npc&gt;</span>
+<span class="pl-c"></span>
+<span class="pl-c">   &lt;actor.hero&gt;</span>
+<span class="pl-c">      ...</span>
+<span class="pl-c">   &lt;/actor.hero&gt;</span>
+<span class="pl-c"></span>
+<span class="pl-c">   &lt;actor.remarka&gt;</span>
+<span class="pl-c">      &lt;wrap.frase&gt;</span>
+<span class="pl-c">         $result = '&lt;div&gt;&lt;&lt;$args[2]&gt;&gt;&lt;/div&gt;'</span>
+<span class="pl-c">      &lt;/wrap.frase&gt;</span>
+<span class="pl-c">   &lt;/actor.remarka&gt;</span>
+<span class="pl-c"></span>
+<span class="pl-c">--&gt;</span>
+
+{:
+   Как вас зовут?
+   {:   
+      actor_this:remarka
+      <span class="pl-kos">&lt;</span><span class="pl-ent">em</span><span class="pl-kos">&gt;</span>Что Вы на это ответите?<span class="pl-kos">&lt;/</span><span class="pl-ent">em</span><span class="pl-kos">&gt;</span>
+   :}
+:}</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="<!--
+   dialog_usrid=&quot;testgame&quot;
+   actors=&quot;npc;hero;&quot;
+
+   <actor.npc>
+      <default_passive>
+      <wrap.frase>
+         $result = '<span style=&quot;color:#008888&quot;>Ведущий: — <<$args[2]>></span>'
+      </wrap.frase>
+   </actor.npc>
+
+   <actor.hero>
+      ...
+   </actor.hero>
+
+   <actor.remarka>
+      <wrap.frase>
+         $result = '<div><<$args[2]>></div>'
+      </wrap.frase>
+   </actor.remarka>
+
+-->
+
+{:
+   Как вас зовут?
+   {:   
+      actor_this:remarka
+      <em>Что Вы на это ответите?</em>
+   :}
+:}" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<h4 tabindex="-1" dir="auto"><a id="user-content-ремарки-внутри-реплики" class="anchor" aria-hidden="true" tabindex="-1" href="#ремарки-внутри-реплики"></a>Ремарки внутри реплики</h4>
+<p dir="auto">Ремарки внутри реплики - это некоторые авторские пояснения, которые нужно вывести непосредственно внутри реплики. Например, прервать речь актёра, чтобы пояснить, какое действие он выполняет, пока произносит фразу. Или указать с какой интонацией или силой произносится фраза. Вот примеры таких ремарок:</p>
+
+<strong>Мишель</strong> <em>(громко)</em><strong>:</strong> — Яичница с ветчиной, это сколько?<br>
+<strong>Мыса:</strong> — На весну оставляю,  — <em>хныча, малец потёр багровое ухо.</em> — Голодно будет.<br>
+
+<p dir="auto">В первом случае ремарка идёт сразу после имени и её отличие от имени в том, что она написана нежирным шрифтом и курсивом. Во втором случае ремарка прерывает прямую речь, и в отличие от прямой речи она написана курсивом. Последнюю сделать проще всего. Мы просто вставляем в фразу html-теги, которые изменят наклон текста:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>{:
+   На весну оставляю, — <span class="pl-kos">&lt;</span><span class="pl-ent">em</span><span class="pl-kos">&gt;</span>хныча, малец потёр багровое ухо.<span class="pl-kos">&lt;/</span><span class="pl-ent">em</span><span class="pl-kos">&gt;</span> — Голодно будет.
+:}</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="{:
+   На весну оставляю, — <em>хныча, малец потёр багровое ухо.</em> — Голодно будет.
+:}" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Чтобы сделать ремарку для первого случая, можно прибегнуть к одной из хитростей. Например, можно, как уже было предложено выше, создать роль, которая будет возвращать фразу без форматирования, а в самой фразе прописать всё необходимое форматирование:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-c">&lt;!--</span>
+<span class="pl-c">   ...</span>
+<span class="pl-c"></span>
+<span class="pl-c">   &lt;actor.remarka&gt;</span>
+<span class="pl-c">      &lt;wrap.frase&gt;</span>
+<span class="pl-c">         $result = '&lt;div&gt;&lt;&lt;$args[2]&gt;&gt;&lt;/div&gt;'</span>
+<span class="pl-c">      &lt;/wrap.frase&gt;</span>
+<span class="pl-c">   &lt;/actor.remarka&gt;</span>
+<span class="pl-c"></span>
+<span class="pl-c">--&gt;</span>
+{:
+   ...
+
+
+   {:
+      actor_this:remarka
+      <span class="pl-kos">&lt;</span><span class="pl-ent">strong</span><span class="pl-kos">&gt;</span>Мишель<span class="pl-kos">&lt;/</span><span class="pl-ent">strong</span><span class="pl-kos">&gt;</span> <span class="pl-kos">&lt;</span><span class="pl-ent">em</span><span class="pl-kos">&gt;</span>(громко)<span class="pl-kos">&lt;/</span><span class="pl-ent">em</span><span class="pl-kos">&gt;</span><span class="pl-kos">&lt;</span><span class="pl-ent">strong</span><span class="pl-kos">&gt;</span>:<span class="pl-kos">&lt;/</span><span class="pl-ent">strong</span><span class="pl-kos">&gt;</span> — Яичница с ветчиной, это сколько?
+   :}
+:}</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="<!--
+   ...
+
+   <actor.remarka>
+      <wrap.frase>
+         $result = '<div><<$args[2]>></div>'
+      </wrap.frase>
+   </actor.remarka>
+
+-->
+{:
+   ...
+
+
+   {:
+      actor_this:remarka
+      <strong>Мишель</strong> <em>(громко)</em><strong>:</strong> — Яичница с ветчиной, это сколько?
+   :}
+:}" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Или, если предыдущий вариант вам по каким-либо причинам не подходит (например, имя должно извлекаться из роли или из переменной), создать роль, в обёртку которой уже будет включена ремарка:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-c">&lt;!--</span>
+<span class="pl-c">   ...</span>
+<span class="pl-c"></span>
+<span class="pl-c">   &lt;actor.npc_loud&gt;</span>
+<span class="pl-c">      &lt;wrap.frase&gt;</span>
+<span class="pl-c">         local $name_ = @dialog.role.get_set($args[0], 'name')</span>
+<span class="pl-c">         $result = '&lt;strong&gt;&lt;&lt;$name_&gt;&gt;&lt;/strong&gt; &lt;em&gt;(громко)&lt;/em&gt;&lt;strong&gt;:&lt;/strong&gt; — &lt;&lt;$args[2]&gt;&gt;'</span>
+<span class="pl-c">      &lt;/wrap.frase&gt;</span>
+<span class="pl-c">   &lt;/actor.npc_loud&gt;</span>
+<span class="pl-c"></span>
+<span class="pl-c">--&gt;</span>
+{:
+  
+   {:
+      <span class="pl-c">&lt;!-- actor_this:npc_loud --&gt;</span>
+      Яичница с ветчиной, это сколько?
+   :}
+:}</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="<!--
+   ...
+
+   <actor.npc_loud>
+      <wrap.frase>
+         local $name_ = @dialog.role.get_set($args[0], 'name')
+         $result = '<strong><<$name_>></strong> <em>(громко)</em><strong>:</strong> — <<$args[2]>>'
+      </wrap.frase>
+   </actor.npc_loud>
+
+-->
+{:
+  
+   {:
+      <!-- actor_this:npc_loud -->
+      Яичница с ветчиной, это сколько?
+   :}
+:}" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<h3 tabindex="-1" dir="auto"><a id="user-content-корни-ветви-узлы" class="anchor" aria-hidden="true" tabindex="-1" href="#корни-ветви-узлы"></a>Корни, ветви, узлы</h3>
+<p dir="auto">Из раздела <a href="#">"Простые диалоги"</a> мы узнали, как в принципе пишутся диалоги. Реплики актёра помещаются между тегами "<code>{:</code>" и "<code>:}</code>", а реплики героя между "<code>[:</code>" и "<code>:]</code>". При этом реплики актёра должны выводиться на экран автоматически в виде фраз, а реплики героя сначала представать в виде действий (кнопок).</p>
+<p dir="auto">Чтобы соотнести одни реплики с другими, мы научились <em>вкладывать</em> их друг в друга. Выбор одной из реплик приводит к выводу вложенных реплик, те в свою очередь тянут за собой ещё вложенные реплики и т.д.</p>
+<p dir="auto">Но с чего же модуль начинает? Должна же быть какая-то реплика, с которой начинается вывод всех остальных реплик. Да. Такая реплика должна быть обязательно. Когда мы описали все настройки диалога и все применяемые Роли, мы обязательно должны открыть самую первую пассивную реплику.</p>
+<p dir="auto">В этой реплике можно сразу прописать все необходимые настройки. Например, порядок вывода реплик, настройки отображения кнопок и прочее. Можно всё это и не прописывать, тогда будут применяться либо настройки по умолчанию, либо настройки подтянутые непосредственно из диалога.</p>
+<p dir="auto">Самая первая пассивная реплика называется <em>корнем диалога</em> или <em>корневой репликой</em> (в отличие от easy.dialog 1.0.1). Она может вообще не содержать никаких фраз, а просто заключать в себе все прочие реплики, как это сделано в "диалоге Арагорна" или в "диалоге Бармена". В "диалоге Пьяницы" эта реплика содержит в себе фразу, которая будет воспроизводиться всякий раз при вызове диалога пьяницы.</p>
+<p dir="auto">Ниже представлен пример диалога, где корневая реплика содержит фразу и некоторые настройки вывода реплик:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-c">&lt;!--</span>
+<span class="pl-c">   dialog_usrid="testgame"</span>
+<span class="pl-c">   actors="npc;hero;"</span>
+<span class="pl-c"></span>
+<span class="pl-c">   &lt;actor.npc&gt;</span>
+<span class="pl-c">      &lt;default_passive&gt;</span>
+<span class="pl-c">      &lt;wrap.frase&gt;</span>
+<span class="pl-c">         $result = '&lt;span style="color:#008888"&gt;Ведущий: — &lt;&lt;$args[2]&gt;&gt;&lt;/span&gt;'</span>
+<span class="pl-c">      &lt;/wrap.frase&gt;</span>
+<span class="pl-c">   &lt;/actor.npc&gt;</span>
+<span class="pl-c"></span>
+<span class="pl-c">   &lt;actor.hero&gt;</span>
+<span class="pl-c">      &lt;default_active&gt;</span>
+<span class="pl-c">      &lt;wrap.frase&gt;</span>
+<span class="pl-c">         $result = 'Вася Пупкин: — &lt;&lt;$args[2]&gt;&gt;'</span>
+<span class="pl-c">      &lt;/wrap.frase&gt;</span>
+<span class="pl-c">      &lt;wrap.btn&gt;</span>
+<span class="pl-c">         $result = '&lt;div&gt;&lt;&lt;$args[2]&gt;&gt;&lt;/div&gt;'</span>
+<span class="pl-c">      &lt;/wrap.btn&gt;</span>
+<span class="pl-c">   &lt;/actor.hero&gt;</span>
+<span class="pl-c"></span>
+<span class="pl-c">   &lt;actor.herogreen&gt;</span>
+<span class="pl-c">      &lt;wrap.frase&gt;</span>
+<span class="pl-c">         $result = '&lt;span style="color:#008800"&gt;Вася Пупкин:&lt;/span&gt; — &lt;&lt;$args[2]&gt;&gt;'</span>
+<span class="pl-c">      &lt;/wrap.frase&gt;</span>
+<span class="pl-c">      &lt;wrap.btn&gt;</span>
+<span class="pl-c">         $result = '&lt;div&gt;&lt;&lt;$args[2]&gt;&gt;&lt;/div&gt;'</span>
+<span class="pl-c">      &lt;/wrap.btn&gt;</span>
+<span class="pl-c">   &lt;/actor.herogreen&gt;</span>
+<span class="pl-c"></span>
+<span class="pl-c">   &lt;actor.herored&gt;</span>
+<span class="pl-c">      &lt;wrap.frase&gt;</span>
+<span class="pl-c">         $result = '&lt;span style="color:#ff0000"&gt;Вася Пупкин:&lt;/span&gt; — &lt;&lt;$args[2]&gt;&gt;'</span>
+<span class="pl-c">      &lt;/wrap.frase&gt;</span>
+<span class="pl-c">      &lt;wrap.btn&gt;</span>
+<span class="pl-c">         $result = '&lt;div&gt;&lt;&lt;$args[2]&gt;&gt;&lt;/div&gt;'</span>
+<span class="pl-c">      &lt;/wrap.btn&gt;</span>
+<span class="pl-c">   &lt;/actor.herored&gt;</span>
+<span class="pl-c"></span>
+<span class="pl-c">   &lt;actor.npcbluered&gt;</span>
+<span class="pl-c">      &lt;wrap.frase&gt;</span>
+<span class="pl-c">         $result = '&lt;span style="color:#008888"&gt;Ведущий:&lt;/span&gt; &lt;span style="color:#880000"&gt;— &lt;&lt;$args[2]&gt;&gt;&lt;/span&gt;'</span>
+<span class="pl-c">      &lt;/wrap.frase&gt;</span>
+<span class="pl-c">   &lt;/actor.npcbluered&gt;</span>
+<span class="pl-c"></span>
+<span class="pl-c">   string:25</span>
+<span class="pl-c">--&gt;</span>
+
+{:
+   Как вас зовут? <span class="pl-c">&lt;!-- это корень диалога.</span>
+<span class="pl-c">   Здесь есть фраза, и некоторые настройки вывода реплик:</span>
+<span class="pl-c">   shuffle:random</span>
+<span class="pl-c">   repeat:once --&gt;</span>
+   [:
+      <span class="pl-c">&lt;!-- actor_act:herogreen &lt;&lt;&lt; Здесь меняем роль для активируемых реплик --&gt;</span>
+      Меня зовут Вася.
+      {:Вас зовут Вася?
+         [:
+         <span class="pl-c">&lt;!-- actor_pass:npcnluered &lt;&lt;&lt; Здесь меняем роль для пассивных реплик --&gt;</span>
+         Да, меня зовут Вася.
+            {:да ну нафиг:}
+            [:
+            нет. чистая правда
+            :]
+         :]
+         [:Нет, никто меня так не зовёт:]
+      :}
+      {:
+         Это правда, что вас зовут Васей?
+         [:Правда
+         :]
+         [:Неправда:]
+      :}
+   :]
+   [:
+      <span class="pl-c">&lt;!-- actor_act:herored &lt;&lt;&lt; Здесь меняем роль для активируемых реплик --&gt;</span>
+      Меня зовут Петя.
+      {:
+         Вас зовут Петя?
+         [:Да{:Как это удобно!:}:]
+         [:
+            Нет
+            {:Вас зовут не Петя? Как неудобно!:}
+         :]
+      :}
+      {:
+         Это правда, что вас зовут Петей?
+         [:Правда:]
+         [:Неправда:]
+      :}
+      {:Неужели в самом деле Петей Вас зовут?
+         [:В самом деле:]
+         [:Нет, не в самом:]
+      :}
+   :]
+:}</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="<!--
+   dialog_usrid=&quot;testgame&quot;
+   actors=&quot;npc;hero;&quot;
+
+   <actor.npc>
+      <default_passive>
+      <wrap.frase>
+         $result = '<span style=&quot;color:#008888&quot;>Ведущий: — <<$args[2]>></span>'
+      </wrap.frase>
+   </actor.npc>
+
+   <actor.hero>
+      <default_active>
+      <wrap.frase>
+         $result = 'Вася Пупкин: — <<$args[2]>>'
+      </wrap.frase>
+      <wrap.btn>
+         $result = '<div><<$args[2]>></div>'
+      </wrap.btn>
+   </actor.hero>
+
+   <actor.herogreen>
+      <wrap.frase>
+         $result = '<span style=&quot;color:#008800&quot;>Вася Пупкин:</span> — <<$args[2]>>'
+      </wrap.frase>
+      <wrap.btn>
+         $result = '<div><<$args[2]>></div>'
+      </wrap.btn>
+   </actor.herogreen>
+
+   <actor.herored>
+      <wrap.frase>
+         $result = '<span style=&quot;color:#ff0000&quot;>Вася Пупкин:</span> — <<$args[2]>>'
+      </wrap.frase>
+      <wrap.btn>
+         $result = '<div><<$args[2]>></div>'
+      </wrap.btn>
+   </actor.herored>
+
+   <actor.npcbluered>
+      <wrap.frase>
+         $result = '<span style=&quot;color:#008888&quot;>Ведущий:</span> <span style=&quot;color:#880000&quot;>— <<$args[2]>></span>'
+      </wrap.frase>
+   </actor.npcbluered>
+
+   string:25
+-->
+
+{:
+   Как вас зовут? <!-- это корень диалога.
+   Здесь есть фраза, и некоторые настройки вывода реплик:
+   shuffle:random
+   repeat:once -->
+   [:
+      <!-- actor_act:herogreen <<< Здесь меняем роль для активируемых реплик -->
+      Меня зовут Вася.
+      {:Вас зовут Вася?
+         [:
+         <!-- actor_pass:npcnluered <<< Здесь меняем роль для пассивных реплик -->
+         Да, меня зовут Вася.
+            {:да ну нафиг:}
+            [:
+            нет. чистая правда
+            :]
+         :]
+         [:Нет, никто меня так не зовёт:]
+      :}
+      {:
+         Это правда, что вас зовут Васей?
+         [:Правда
+         :]
+         [:Неправда:]
+      :}
+   :]
+   [:
+      <!-- actor_act:herored <<< Здесь меняем роль для активируемых реплик -->
+      Меня зовут Петя.
+      {:
+         Вас зовут Петя?
+         [:Да{:Как это удобно!:}:]
+         [:
+            Нет
+            {:Вас зовут не Петя? Как неудобно!:}
+         :]
+      :}
+      {:
+         Это правда, что вас зовут Петей?
+         [:Правда:]
+         [:Неправда:]
+      :}
+      {:Неужели в самом деле Петей Вас зовут?
+         [:В самом деле:]
+         [:Нет, не в самом:]
+      :}
+   :]
+:}" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Итак, корень - это реплика, в которую "помещены" все остальные реплики. Корень - это реплика, с которой начинается вывод диалога на экран. Двух корневых реплик в диалоге быть не может, это приведёт к ошибке.</p>
+<p dir="auto">Когда модуль находит первую реплику диалога (его корень) и выводит её на экран (или не выводит, если фраза не прописана), он находит также и все вложенные реплики. В нашем примере, в корневой реплике будут найдены две активируемые реплики, их-то мы и увидим на экране в виде действий.</p>
+<p dir="auto">Искать вложенные в них реплики не имеет смысла, пока игрок не выберет одно из действий, поэтому модуль пока остановится.</p>
+<p dir="auto">Мы тоже остановимся, но совсем по другой причине.</p>
+<p dir="auto">На этом примере мы увидели сразу два элемента диалога: <em>узел</em> и <em>ветви</em>.</p>
+<p dir="auto"><em>Узлом</em> считается любая реплика, в которую "вложены" другие реплики. Не обязательно две. Может быть и одна, и три, и сто тысяч миллионов. Узлы различаются по типам точно так же, как и реплики: узел с репликой персонажа (<em>актёрский узел</em>, <em>пассивный узел</em>) и узел с репликой героя (<em>геройский узел</em>, <em>активируемый узел</em>, <em>узел действия</em>).</p>
+<p dir="auto">Реплика, в которую не <em>вложено</em> ни одной другой реплики, называется <em>финальной</em> (последней, конечной).</p>
+<p dir="auto">Две однотипные реплики, вложенные в одну реплику, считаются (и называются) <em>ветвями диалога</em>. Такие реплики называются <em>одноуровневыми</em>, то есть находящимися на одном уровне.</p>
+<p dir="auto">Уровень реплики считается по количеству узлов, которые ей предшествовали.</p>
+<p dir="auto">Поскольку корневой реплике не предшествует ни одного узла, она считается нулевым уровнем.</p>
+<p dir="auto">Реплика "Как вас зовут?" из примера - нулевой уровень; реплики "Меня зовут Вася" и "Меня зовут Петя" — первый уровень; и т.д.</p>
+<p dir="auto">Чем меньше численно уровень реплики, тем она <em>старше</em>.</p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-наследование-каскадность" class="anchor" aria-hidden="true" tabindex="-1" href="#наследование-каскадность"></a>Наследование, каскадность</h3>
+<p dir="auto">В модуле реализовано наследование настроек Репликами от страших Реплик. Это немного замедляет воспроизведение Реплики, однако экономит память, в которой хранится таблица далогов.</p>
+<p dir="auto">Если модулю нужно воспроизвести реплику в виде кнопки или фразы, он первым делом пытается получить настройки реплики. При этом модуль может получить как полный список настроек, так и частичный.</p>
+<p dir="auto">Если полный список настроек ещё не получен, модуль пытается извлечь настройки из родительской реплики, затем из старших реплик, и так далее. Таким образом, пока не будет получен полный список настроек, необходимых для воспроизведения текущей реплики, модуль продолжает обращаться к всё более старшим репликам.</p>
+<p dir="auto">Таким образом он может дойти до корня и до объекта диалога (Диалог можно рассматривать, как родителя <em>корневой реплики</em>). Если совсем никакие настройки в диалоге не были определены, модуль берёт настройки по-умолчанию, то есть те, которые в него вшиты.</p>
+<p dir="auto">Каскадность наследования настроек выражается в умении модуля подхватывать из родительских элементов те настройки, которые напрямую не указаны в Реплике. Отсюда следует, что мы можем назначать настройки не только отдельным репликам, или всему диалогу целиком, но так же сразу целым веткам диалога. Это позволяет, например, визуально отображать изменение настроения диалога, смену темы и т.п.</p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-скрытый-узел" class="anchor" aria-hidden="true" tabindex="-1" href="#скрытый-узел"></a>Скрытый узел</h3>
+<p dir="auto">Иногда нужно скрыть узел или целую ветку, чтобы она не выводилась ни при каких условиях, пока не будет осуществлён принудительный переход. Чтобы сделать это нужно завести пустой активируемый узел. Особенность работы модуля состоит в том, что он не выводит кнопки без названий, поэтому в пустых активируемых узлах можно прятать другие реплики и целые ветви. Пример:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>[:
+   {: Скрытая реплика :}
+   {: Ещё одна скрытая реплика :}
+   {: А это целая скрытая ветка
+      [:
+         Да, а вот и ответвление
+         {:И финальная реплика:}
+      :]
+      [:
+         Да, а вот и другое ответвление
+         {:И ещё одна финальная:}
+      :]
+   :}
+:]</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="[:
+   {: Скрытая реплика :}
+   {: Ещё одна скрытая реплика :}
+   {: А это целая скрытая ветка
+      [:
+         Да, а вот и ответвление
+         {:И финальная реплика:}
+      :]
+      [:
+         Да, а вот и другое ответвление
+         {:И ещё одна финальная:}
+      :]
+   :}
+:]" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<h3 tabindex="-1" dir="auto"><a id="user-content-как-избежать-очистки-списка-действий" class="anchor" aria-hidden="true" tabindex="-1" href="#как-избежать-очистки-списка-действий"></a>Как избежать очистки списка действий</h3>
+<p dir="auto">Особенность поведения модуля такова, что если узлом была пассивная реплика, а ветвями являются активируемые реплики, производится очистка списка действий (кнопок) и вывод новых. Чтобы вывести новое действие при щелчке на одном из действий списка, но не удалять старые, помещать активируемую реплику следует непосредственно в предыдущую активируемую реплику. Так сделано в примере раздела "Корни, ветви, узлы" в реплике "Да, меня зовут Вася.":</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre>[:
+   Да, меня зовут Вася.
+
+   {:да ну нафиг:}
+   [:нет. чистая правда:] <span class="pl-c">&lt;!-- эта кнопка появится на экране, но кнопки старших реплик не сотрутся --&gt;</span>
+:]</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="[:
+   Да, меня зовут Вася.
+
+   {:да ну нафиг:}
+   [:нет. чистая правда:] <!-- эта кнопка появится на экране, но кнопки старших реплик не сотрутся -->
+:]" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<h2 tabindex="-1" dir="auto"><a id="user-content-работа-с-генератором" class="anchor" aria-hidden="true" tabindex="-1" href="#работа-с-генератором"></a>Работа с генератором</h2>
+<p dir="auto">В релизной версии модуля генератор находится в папке <code>tools/_generator</code>.</p>
+<p dir="auto">Для того, чтобы запустить диалоги на генерацию, сначала требуется отредактировать файл <code>easy.dialog.generator.py</code>:</p>
+<ol dir="auto">
+<li>В переменной <code>dialog_files</code> необходимо сформировать список путей к файлам, в которых написаны диалоги в формате edsynt. Пути можно указывать как в абсолютном, так и в относительном виде.</li>
+<li>В переменной <code>output_path</code> указываем путь к выходному файлу в формате qsps. Именно в этот файл будет записан валидный код QSP с уже сформированной таблицей диалогов.</li>
+<li>Можно отредактировать параметр <code>split_code</code>, если вы хотите загружать реплики в память порционно. Если указать число больше нуля, реплики будут разделены на группы и обёрнуты в конструкции условий с проверкой, равно ли <code>args[0]</code> определённому числу (номеру группы реплик).</li>
+</ol>
+<p dir="auto">После редактирования файла, запустите его в интерпретаторе python — по указанному в <code>output_path</code> пути появится файл с таблицей диалогов.</p>
+<p dir="auto">Если в процессе генерации возникнут какие-либо ошибки, внимательно читайте их текст. В большиснтве случаев генератор будет ругаться на неверно написанный файл диалога. Если так, то исправьте файл и снова запустите генератор.</p>
+<p dir="auto">Если ошибка в работе генератора не связана с неверно написанным файлом диалога, свяжитесь со мной и сообщите об ошибке. Этим вы очень поможете проекту.</p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-работа-с-интерпретатором" class="anchor" aria-hidden="true" tabindex="-1" href="#работа-с-интерпретатором"></a>Работа с интерпретатором</h2>
+<h3 tabindex="-1" dir="auto"><a id="user-content-подключение-интерпретатора" class="anchor" aria-hidden="true" tabindex="-1" href="#подключение-интерпретатора"></a>Подключение интерпретатора</h3>
+<p dir="auto">Чтобы использовать интерпретатор диалогов "easy.dialog", вам необходимо подключить его к своей игре вместе с сопутствующими библиотеками.</p>
+<p dir="auto">Если вы скачали архив со <a href="https://github.com/AleksVersus/easy.dialog/releases">страницы релизов</a>, то в папку со своей игрой из этого архива распакуйте папку <code>lib</code>. Jна и содержит модуль "easy.dialog", а так же библиотечки "easy.database" и "easy.math".</p>
+<p dir="auto">Теперь в своей игре для подключения модулей напишите эти три команды:</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre lang="qsp" class="notranslate"><code>inclib 'lib/easy.dialog.qsp'
+inclib 'lib/easy.database.qsp'
+inclib 'lib/easy.math.qsp'
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="inclib 'lib/easy.dialog.qsp'
+inclib 'lib/easy.database.qsp'
+inclib 'lib/easy.math.qsp'" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><strong>Внимание!!! При подключении библиотек учтите, что к игре добавляются только те локации, названия которых в ней отсутствуют. Просмотрите список локаций в подключаемых библиотеках, чтобы предупредить совпадения имён.</strong></p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-добавление-таблицы-диалогов-в-игру" class="anchor" aria-hidden="true" tabindex="-1" href="#добавление-таблицы-диалогов-в-игру"></a>Добавление таблицы диалогов в игру</h3>
+<p dir="auto">В процессе работы генератор создаёт файл формата qsps, который содержит три локации:</p>
+<ul dir="auto">
+<li><code>dialogs_table</code> — на этой локации размещается вся таблица диалогов, включая все объекты диалогов, ролей и реплик. Эта локация предназначена для загрузки в память таблицы диалогов.
+В зависимости от настроек генератора строки таблицы на этой локации могут быть сгруппированы в блоки условий с проверкой, какое число передано нулевым аргументом (<code>args[0]</code>). Это число соответствует номеру группы строк.
+Если строки разбиты на группы, загрузить всю таблицу диалогов в память, просто обратившись к локации <code>dialogs_table</code> не получится.</li>
+<li><code>dialogs_init</code> — эта локация необходима для инициализации таблицы диалогов в базе данных игры. То есть она проводит необходимую подготовку, чтобы модуль мог работать с диалогами.</li>
+<li><code>dialogs_load</code> — с помощью этой локации вы можете одномоментно загрузить в память всю таблицу диалогов. Использовать её следует только если диалогов немного, или они небольшие.</li>
+</ul>
+<p dir="auto">Все три локации вам нужно скопировать в свою игру, или сконвертировать файл <code>.qsps</code> в <code>.qsp</code> и подключить как библиотеку.</p>
+<p dir="auto">Когда в игру подключены, или встроены все три локации, нужно сделать следующее:</p>
+<ol dir="auto">
+<li>Необходимо инициализировать базу данных в игре, введя, например, на самой первой локации команду <code>@edb.init</code>. Если вы уже пользуетесь "easy.database" в своей игре, значит вы уже это сделали.</li>
+<li>Далее нужно инициализировать в базе данных таблицу диалогов, введя команду <code>@dialogs_init</code>.</li>
+<li>Затем таблицу диалогов нужно загрузить в память. Для этого можно воспользоваться командой <code>@dialogs_load</code>, или последовательно обращаясь к <code>dialogs_table</code>, передавая ей аргументом номер выгружаемой группы строк.</li>
+</ol>
+<p dir="auto">Вот как это выглядит в игре с примерами диалогов, котороя поставляется вместе с модулем:</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre lang="qsp" class="notranslate"><code>@edb.init()
+@dialogs_init()
+@dialogs_load()
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="@edb.init()
+@dialogs_init()
+@dialogs_load()" tabindex="0" role="button">
+      
+      
+    </clipboard-copy>
+  </div></div>
+<h3 tabindex="-1" dir="auto"><a id="user-content-воспроизведение-диалога" class="anchor" aria-hidden="true" tabindex="-1" href="#воспроизведение-диалога"></a>Воспроизведение диалога</h3>
+<p dir="auto">Для воспроизведения диалога в нужном месте следует вызвать команду <code>@dialog.int</code>, указав аргументом уникальное название диалога, которое вы прописывали ему в файлах edsynt перед генерацией.</p>
+<p dir="auto">Пример вызова диалога из гиперссылки:</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre lang="qsp" class="notranslate"><code>*p '&lt;div class="avs_dialog_hide"&gt;'
+   *p '&lt;a href="EXEC: @dialog.int(''robbank'')" class="avs-plain"&gt;Начать диалог&lt;/a&gt;'
+*p '&lt;/div class="avs_dialog_hide"&gt;'
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+<p dir="auto">Если Вам не нужно особым образом встраивать диалог в текст основного описания, модуль просто очистит окно и выведет в него диалог, а после закрытия диалога восстановит содержимое окна основного описания к тому состоянию, которое было до открытия диалога.</p>
+<h4 tabindex="-1" dir="auto"><a id="user-content-встраивание-диалога-в-основное-описание" class="anchor" aria-hidden="true" tabindex="-1" href="#встраивание-диалога-в-основное-описание"></a>Встраивание диалога в Основное описание</h4>
+<p dir="auto">В отличие от первой версии модуля, текущая версия работает только с окном основного описания. То есть она не "запоминает" и не "восстанавливает" содержимое прочих окон.</p>
+<p dir="auto">Чтобы диалог не замещал собой весь текст в окне основного описания, а встраивался в него, необходимо перед воспроизведением диалога вывести в основное описание два специальных тега:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">class</span>="<span class="pl-s">avs_dialog_div</span>"<span class="pl-kos">&gt;</span>Текст между тегами<span class="pl-kos">&lt;/</span><span class="pl-ent">div</span> class="avs_dialog_div"<span class="pl-kos">&gt;</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+<p dir="auto">Обратите внимание, что классы прописаны для обоих тегов: и открывающего и зыкрывающего. Это сделано специально, чтобы не перегружать QSP при поиске тегов в тексте. Любой HTML-рендер исправит неверно записанный закрывающий тег самостоятельно.</p>
+<p dir="auto">Весь текст между этими тегами на время интерпретации диалога будет удалён, а когда игрок завершит диалог, текст восстановится к изначальному состоянию.</p>
+<p dir="auto">Если нужно скрыть какой-то текст на время интерпретации диалога, но не выводить вместо него диалог, используйте другой специальный тег:</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">class</span>="<span class="pl-s">avs_dialog_hide</span>"<span class="pl-kos">&gt;</span><span class="pl-kos">&lt;/</span><span class="pl-ent">div</span> class="avs_dialog_hide"<span class="pl-kos">&gt;</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+<p dir="auto">Например, таким образом можно скрывать ссылки на вызов диалога из основного описания.</p>
+<p dir="auto">Пример описания, в которое встраивается диалог, можно посмотреть в игре с примерами диалогов на локации <code>место;банк</code> в "диалоге Чешира".</p>
+<p dir="auto"><strong>TODO: Обёртка диалога. Имеет смысл рассмотреть вариант, когда вместо описания локации диалог встраивается в некую обёртку, таким образом формируется псевдоокно.</strong></p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-составные-части-интерпретатора-диалогов" class="anchor" aria-hidden="true" tabindex="-1" href="#составные-части-интерпретатора-диалогов"></a>Составные части интерпретатора диалогов</h3>
+<p dir="auto">Теоретически интерпретатор должен работать без вашего вмешательства в его поведение, однако иногда вмешательство необходимо. Например, в "диалоге Арагорна" через уничтожение массива <code>$DIALOG_BUTTONS</code> производится очистка списка кнопок перед закрытием диалога, чтобы игрок не мог ничего нажимать.</p>
+<p dir="auto">На подобный случай здесь и собраны пояснения различных элементов интерпретатора диалогов.</p>
+<h4 tabindex="-1" dir="auto"><a id="user-content-общее-назначение-глобальных-временных-массивов" class="anchor" aria-hidden="true" tabindex="-1" href="#общее-назначение-глобальных-временных-массивов"></a>Общее назначение глобальных временных массивов</h4>
+<p dir="auto">Список массивов, существующих только во время интерпретации диалога. При закрытии диалога уничтожаются.</p>
+<ul dir="auto">
+<li><code>$DIALOG_VALUE</code> — основной массив, сохраняющий различные настройки диалога на время сеанса.</li>
+<li><code>$DIALOG_REPLIC_LOG</code> — массив, сохраняющий лог диалога на время сеанса.</li>
+<li><code>$DIALOG_BUTTONS</code> — массив, сохраняющий список кнопок во время сеанса.</li>
+</ul>
+<h4 tabindex="-1" dir="auto"><a id="user-content-управление-через-внешние-глобальные-переменные" class="anchor" aria-hidden="true" tabindex="-1" href="#управление-через-внешние-глобальные-переменные"></a>Управление через внешние глобальные переменные</h4>
+<p dir="auto">Эти переменные сохраняют своё значение даже когда диалог закрыт, поэтому они влияют на поведение всех диалогов в игре.</p>
+<p dir="auto"><strong>Будьте внимательны!</strong></p>
+<ul dir="auto">
+<li><code>GAME_VALUE['dialogs_log_size']</code> - число реплик, которые сохраняются в логе. Если не указано, то сохраняется сто реплик, включая скрытые.</li>
+<li><code>GAME_VALUE['dialogs_timer_interval']</code> - интервал задержки перед выводом следующей фразы из блока фраз. Если не указано равен 500 мс.</li>
+<li><code>$GAME_VALUE['dialogs_true_goto']</code> — должен содержать код, который выполнится при закрытии диалога (перед удалением временных массивов). Если код не прописан, при закрытии диалога просто очищается окно основного описания и восстанавливается тот текст, который был сохранён перед открытием диалога.
+Здесь может пригодиться команда <code>goto $curloc</code>, так как в процессе воспроизведения диалога значения некоторых переменных могут измениться, и это повлияет на описание локации.</li>
+</ul>
+<h4 tabindex="-1" dir="auto"><a id="user-content-значения-dialog_value" class="anchor" aria-hidden="true" tabindex="-1" href="#значения-dialog_value"></a>Значения DIALOG_VALUE</h4>
+<p dir="auto">Значения в <code>DIALOG_VALUE</code> сохраняются только на время воспроизведения диалога.</p>
+<ul dir="auto">
+<li><code>$DIALOG_VALUE['screen_main']</code> — в этой переменной сохраняется вид окна основного описания до воспроизведения диалога. Из него же потом восстанавливается текст в окне основного описания, когда диалог завершается.</li>
+<li><code>$DIALOG_VALUE['screen_now']</code> — в этой переменной содержится "снимок" экрана вместе с размещённым в нём диалогом. Данный снимок обновляется при интерпретации реплики, и только после этого выводится на экран.</li>
+<li><code>$DIALOG_VALUE['dialog_id']</code> — здесь временно сохраняется первичный ключ строки, в которую прописан объект Диалог.</li>
+<li><code>$DIALOG_VALUE['root_id']</code> — первичный ключ корневой реплики.</li>
+<li><code>DIALOG_VALUE['default_screen_replics_number']</code> — число фраз, одновременно видимых на экране. По умолчанию — 10.</li>
+<li><code>$DIALOG_VALUE['default_replics_repeat']</code> — схема повторения реплик. Стандартный режим: '<code>cicle</code>'.</li>
+<li><code>$DIALOG_VALUE['default_replics_shuffle']</code> — порядок вывода реплик. Стандартный режим: '<code>straight</code>'.</li>
+<li><code>DIALOG_VALUE['default_buttons_length']</code> — Максимальная длина текста в кнопке. Стандартное значение <code>128</code>.</li>
+<li><code>DIALOG_VALUE['timer_start']</code> — переключатель, запускающий таймер, когда необходимо выводить фразы из блока.</li>
+<li><code>DIALOG_VALUE['timer_next_refresh']</code> — в этой переменной сохраняется предельное пороговое время, после которого должна быть выведена фраза из блока фраз. Изменять не рекомендуется.</li>
+<li><code>$DIALOG_VALUE['del_btns_list']</code> — список удалённых с экрана кнопок. Пока идентификатор реплики присутствует в этом списке, кнопка этой реплики не будет выводиться на экран. Переменная очищается при воспроизведении пассивной реплики.</li>
+<li><code>$DIALOG_VALUE['del_replics_list']</code> — список реплик, удалённых из текущего воспроизведения диалога. Пока идентификатор реплики присутствует в этом списке, эта реплика не будет воспроизводиться. <strong>TODO: Возможно не работает для пассивных реплик</strong> Тем не менее реплики удалённые таким образом доступны для воспроизведения, если использовать их метку.</li>
+<li><code>$DIALOG_VALUE['fix_btns_list']</code> — список зафиксированных реплик. <strong>TODO: Это пока не сделано. Предполагается, что можно будет фиксировать некоторые кнопки вверху списка кнопок диалога. Например, так можно реализовывать кнопку закрытия диалога, чтобы не проматывать весь диалог до финальных реплик</strong></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-отладчик" class="anchor" aria-hidden="true" tabindex="-1" href="#отладчик"></a>Отладчик</h3>
+<p dir="auto">Вы можете контролировать работу модуля, используя встроенный отладчик.</p>
+<h4 tabindex="-1" dir="auto"><a id="user-content-подключение-отладчика" class="anchor" aria-hidden="true" tabindex="-1" href="#подключение-отладчика"></a>Подключение отладчика</h4>
+<p dir="auto">Чтобы задействовать в своей игре встроенный в "easy.dialog" отладчик, пропишите в нужном месте, например, на самой первой локации, команду:</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre lang="qsp" class="notranslate"><code>@dialog.usercom('on')
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+<p dir="auto">Соответственно для отключения отладчика достаточно выполнить команду:</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre lang="qsp" class="notranslate"><code>@dialog.usercom('off')
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+<h4 tabindex="-1" dir="auto"><a id="user-content-использование-отладчика" class="anchor" aria-hidden="true" tabindex="-1" href="#использование-отладчика"></a>Использование отладчика</h4>
+<p dir="auto">Чтобы воспользоваться отладчиком, введите в строке ввода ключевое слово <code>eid</code> и соответствующую команду отладчика, а затем нажмите клавишу ввода ("<code>Enter ↵</code>").</p>
+<h4 tabindex="-1" dir="auto"><a id="user-content-команды-отладчика" class="anchor" aria-hidden="true" tabindex="-1" href="#команды-отладчика"></a>Команды отладчика</h4>
+<p dir="auto">Все команды отладчика должны начинаться с ключевого слова <code>eid</code>. Ниже представлен список команд без указания этого слова.</p>
+<ul dir="auto">
+<li><code>help</code> — вывод справки по отладчику.</li>
+<li><code>run</code> - выполнить следующий после <code>run</code> текст, как строку кода QSP. Пример:
+<div class="highlight highlight-source-batchfile notranslate position-relative overflow-auto" dir="auto"><pre>eid run *pl 'Яблок в корзине <span class="pl-k">&lt;&lt;</span>apples<span class="pl-k">&gt;&gt;</span>'</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+При выполнении данной команды на экране появится строчка текста, с подставленным в неё значением переменной.</li>
+<li><code>version</code> - проверить текущую версию модуля. Версия модуля возвращается в текстовом формате.</li>
+<li><code>clr</code> - очистить окно дополнительного описания.</li>
+<li><code>print</code> — вывести в дополнительное описание всю таблицу диалогов. При больших размерах таблицы это может занять время или подвесить игру.</li>
+<li><code>refs</code> - вывести в окно дополнительного описание таблицу с короткими именами диалогов.</li>
+<li><code>log</code> - вывести в окно дополнительного описание сохранённый лог реплик (содержимое <code>$DIALOG_REPLIC_LOG</code>).</li>
+<li><code>html</code> - включить/отключить распознавание HTML в плеере.</li>
+<li><code>INDEX_DIALOG_VALUE=</code> — если ввести текстовый индекс, а затем поставить знак равенства, в окно дополнительного описания будет выведено значение из массива <code>DIALOG_VALUE</code> под указанным индексом. Используемые модулем ячейки перечисленны в разделе <a href="/AleksVersus/easy.dialog/blob/master"><strong>Значения DIALOG_VALUE</strong></a>.
+Пример. С помощью следующей команды, введённой в строку ввода, можно получить в окне дополнительного описания первичный ключ корневой реплики:
+<div class="highlight highlight-source-batchfile notranslate position-relative overflow-auto" dir="auto"><pre>eid root_id=</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+</li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-назначение-локаций-модуля" class="anchor" aria-hidden="true" tabindex="-1" href="#назначение-локаций-модуля"></a>Назначение локаций модуля:</h3>
+<p dir="auto">Назначение локаций можно посмотреть в исходном коде модуля в репозитории: <a href="https://github.com/AleksVersus/easy.dialog">https://github.com/AleksVersus/easy.dialog</a>.</p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-термины-и-понятия-применяемые-в-данном-руководстве" class="anchor" aria-hidden="true" tabindex="-1" href="#термины-и-понятия-применяемые-в-данном-руководстве"></a>Термины и понятия, применяемые в данном руководстве</h2>
+<ul dir="auto">
+<li><strong>Тег</strong> — особая метка в тексте, отмечающая вхождение рассматриваемого текста. Теги могут быть открывающие и закрывающие, а так же одиночные. Комплекс из открывающего и закрывающего тегов может называться двойным тегом или сдвоенным тегом.</li>
+<li><strong>Содержимое тега</strong> — рассматриваемый текст, место вхождения которого обозначено тегами, или тегом. Может использоваться понятие "значение тега". Числовое значение здесь условно обозначается <code>[#значение]</code>, а текстовое - <code>[$значение]</code>. Вместо слова "значение" может употребляться "число", "текст", "шестнадцатеричное число", и другие слова и словосочетания. Если содержимое тега принимает конечное число значений, это будет показано перечислением этих значений через вертикальную черту в квадратных скобках <code>[одно значение|второе значение|третье значение]</code>.</li>
+<li><strong>Диалог</strong> — объект, включающий в себя Роли и Реплики, а так же ряд необходимых установок. Именно Диалоги воспроизводятся интерпретатором.</li>
+<li><strong>Команда</strong> — слово или группа слов, которые провоцируют выполнение определённых операций или действий, запуск механизмов.</li>
+<li><strong>Конструкция</strong> — текст, записанный по определённым правилам.</li>
+<li><strong>Реплика</strong> — текст, заключённый между тегами реплик. Может включать в себя произносимую фразу, другие теги, команды, конструкции. Реплики бывают <em>пассивными</em> (questions) и <em>активируемыми</em> (answers). Пассивные реплики как правило отдаются персонажам, с которыми взаимодействует игрок, в то время, как активируемые реплики — являются вариантами выбора, из которых игроку предложено выбирать.</li>
+<li><strong>Герой</strong> — персонаж, которым непосредственно управляет игрок.</li>
+<li><strong>Актёр</strong> — персонаж, которым игрок не может управлять непосредственно, NPC, непись.</li>
+<li><strong>Фраза</strong> — фраза героя или актёра, которая будет выведена на экран после обработки реплики. Фраза (иногда называется "текст реплики") - единственное содержимое реплики, которое не нужно облекать в специальные конструкции, или помещать между тегами.</li>
+<li><strong>Интерпретация реплики</strong> — процесс извлечения всех конструкций и фразы из реплики, а так же выполнение конструкций и команд, воспроизведение фразы в виде текста, выводимого на экран.</li>
+<li><strong>Пустая реплика</strong> — реплика, в которой отсутствует фраза.</li>
+<li><strong>Узел</strong> — реплика, в которую вложена другая реплика.</li>
+<li><strong>Родительская реплика</strong> — так называется узел по отношению к реплике, которая в него вложена. Реплика "F" - родительская реплика реплики "A". Ещё называется родителем. Всякий узел является родителем вложенной в него реплики. Родительские реплики могут также называться старшими репликами.</li>
+<li><strong>Дочерняя реплика</strong> — так называется реплика по отношению к реплике, в которую она вложена. Реплика "A" - дочерняя реплика реплики "F". Всякая реплика, вложенная в узел, является дочерней. Дочерние реплики также могут называться младшими репликами.</li>
+<li><strong>Корень</strong> — реплика, которая не вложена ни в одну другую реплику. Может называться также корневой репликой, нулевой репликой, начальной репликой.</li>
+<li><strong>Значение по умолчанию</strong> — значение, которое будет возвращено механизмом модуля "easy.dialog", если не указано, или ошибочно указано другое значение. Значения по умолчанию встроены в движок.</li>
+<li><strong>Уровень</strong> — счёт вложений реплик, степень вложения реплики. Если реплика вложена в корень - первый уровень. Если реплика вложена в реплику, вложенную в корень, - второй уровень. И так далее. Верхним (нулевым) уровнем при этом считается корень.</li>
+<li><strong>Ответвления</strong> — одноуровненвые реплики, вложенные в один и тот же узел.</li>
+<li><strong>Ветка</strong> — ответвление вместе со всеми вложенными в него репликами.</li>
+<li><strong>Финал</strong> — реплика, в которую не вложено ни одной другой реплики. Называется так же финальной репликой, конечной репликой, или последней репликой.</li>
+<li><strong>Роль</strong> — особый объект, вложенный в объект Диалог, который описывает внешний вид реплик при воспроизведении их от лица определённого персонажа.</li>
+</ul>
+<h2 tabindex="-1" dir="auto"><a id="user-content-теги-конструкции-команды" class="anchor" aria-hidden="true" tabindex="-1" href="#теги-конструкции-команды"></a>Теги, конструкции, команды</h2>
+<ul dir="auto">
+<li><code>{:[$текст]:}</code> — теги, между которыми записываются реплики неиграбельных персонажей (далее: актёры, неписи, NPC, персонажи). Текст реплики выводится на экран автоматически. Теги пассивных реплик.</li>
+<li><code>[:[$текст]:]</code> — теги, между которыми записываются реплики персонажа, которым управляет игрок. Выводятся на экран в виде доступных игроку действий. При выборе действия, на экран выводится текст реплики. Теги активируемых реплик.</li>
+<li><code>actors="[$список ролей]"</code> — идентификаторы ролей текущего диалога, перечисленные через точку с запятой. <a href="https://github.com/AleksVersus/easy.dialog#%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%80%D0%BE%D0%BB%D0%B5%D0%B9-%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA">Подробнее.</a></li>
+<li><code>dialog_usrid="[$уникальное_название_дилога]"</code> — пользовательский идентификатор диалога. <a href="https://github.com/AleksVersus/easy.dialog#dialog_usrid-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9-%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80-%D0%B4%D0%B8%D0%B0%D0%BB%D0%BE%D0%B3%D0%B0">Подробнее.</a></li>
+<li><code>strings:[#число]</code> — число фраз из лога диалога, одновременно видимых на экране. <a href="https://github.com/AleksVersus/easy.dialog#strings-%D1%87%D0%B8%D1%81%D0%BB%D0%BE-%D1%84%D1%80%D0%B0%D0%B7-%D0%B2-%D0%BB%D0%BE%D0%B3%D0%B5">Подробнее.</a></li>
+<li><code>btn_name:[$название кнопки]:btn_name</code> — название кнопки, которое будет отображаться при интерпретации реплики. <a href="https://github.com/AleksVersus/easy.dialog#btn_name">Подробнее.</a></li>
+<li><code>actor_this:[$роль]</code> — роль, применяемая к конкретной реплике, и не наследуемая вложенными репликами. <a href="https://github.com/AleksVersus/easy.dialog#actor_this">Подробнее.</a></li>
+<li><code>actor_act:[$роль]</code> — роль для активируемых реплик, наследуемая всеми вложенными репликами. <a href="https://github.com/AleksVersus/easy.dialog#actor_act">Подробнее.</a></li>
+<li><code>actor_pass:[$роль]</code> — роль для пассивных реплик, наследуемая всеми вложенными репликами. <a href="https://github.com/AleksVersus/easy.dialog#actor_pass">Подробнее.</a></li>
+<li><code>btn_length:[#число]</code> — длина надписи на кнопке, если фраза оказывается слишком длинной. <a href="https://github.com/AleksVersus/easy.dialog#btn_length">Подробнее.</a></li>
+<li><code>repeat:[one|onced|cycle]</code> — схема воспроизведения пассивных реплик. <a href="https://github.com/AleksVersus/easy.dialog#repeat">Подробнее.</a></li>
+<li><code>shuffle:[random|straight]</code> — порядок воспроизведения пассивных реплик. <a href="https://github.com/AleksVersus/easy.dialog#shuffle">Подробнее.</a></li>
+<li><code>selrepl.del</code> — удаление выбранной реплики на время интерпретации диалога. <a href="https://github.com/AleksVersus/easy.dialog#selrepldel">Подробнее.</a></li>
+<li><code>selrepl.kill</code> — безвозвратное уничтоение реплики. <a href="https://github.com/AleksVersus/easy.dialog#selreplkill">Подробнее.</a></li>
+<li><code>selbtn.del</code> — удаление кнопки из списка кнопок, до последующего воспроизведения. <a href="https://github.com/AleksVersus/easy.dialog#selbtndel">Подробнее.</a></li>
+<li><code>btn.fix</code> — фиксирование кнопки вверху списка. <a href="https://github.com/AleksVersus/easy.dialog#btnfix">Подробнее.</a></li>
+<li><code>&lt;frase_block&gt;[$блок фраз]&lt;/frase_block&gt;</code> — блок фраз, которые выводятся на экран последовательной серией. <a href="https://github.com/AleksVersus/easy.dialog#frase_block">Подробнее.</a></li>
+<li><code>&lt;if&gt;[$условие]&lt;/if&gt;</code> — условие для воспроизведения реплики. <a href="https://github.com/AleksVersus/easy.dialog#if">Подробнее.</a></li>
+<li><code>&lt;dynamic_code&gt;[$валидный код QSP]&lt;/dynamic_code&gt;</code> — динамический код, выполняемый при воспроизведении реплики. <a href="https://github.com/AleksVersus/easy.dialog#dynamic_code">Подробнее.</a></li>
+<li><code>marker:[$метка]</code> — уникальная пользовательская метка реплики. <a href="https://github.com/AleksVersus/easy.dialog#marker">Подробнее.</a></li>
+<li><code>levelup:[#число]</code> — воспроизвести реплику на указанное число уровней вверх. <a href="https://github.com/AleksVersus/easy.dialog#levelup">Подробнее.</a></li>
+<li><code>leveljump:[$метка]</code> — воспроизвести реплику с указанной пользовательской репликой. <a href="https://github.com/AleksVersus/easy.dialog#leveljump">Подробнее.</a></li>
+<li><code>closeup</code> — закрыть диалог. <a href="https://github.com/AleksVersus/easy.dialog#closeup">Подробнее.</a></li>
+<li><code>replic_app:[$метка]</code> — подключение к диалогу реплики с указанной меткой. <a href="https://github.com/AleksVersus/easy.dialog#replic_app">Подробнее.</a></li>
+<li><code>&lt;!--[$ текст комментария]--&gt;</code> — комментарий внутри реплики. <a href="https://github.com/AleksVersus/easy.dialog#%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA">Подробнее.</a></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-теги-и-их-значения" class="anchor" aria-hidden="true" tabindex="-1" href="#теги-и-их-значения"></a>Теги и их значения</h3>
+<p dir="auto">Значением сдвоенного тега считается весь текст с самого первого символа сразу после открывающего тега, до последнего символа включительно перед закрывающим тегом.</p>
+<p dir="auto">В зависимости от назначения тега, пробельные символы и переводы строки в начале значения, будут игнорироваться или напротив - включаться в значение.</p>
+<p dir="auto">Игнорируются все переводы строк и пробельные символы непосредственно после открывающего тега и непосредственно перед закрывающим для:</p>
+<ul dir="auto">
+<li>тегов реплик <code>{: :}</code> и <code>[: :]</code></li>
+<li>тегов <code>&lt;if&gt;&lt;/if&gt;</code></li>
+<li>тегов <code>&lt;dynamic_code&gt;&lt;/dynamic_code&gt;</code></li>
+<li>тегов <code>&lt;frase_block&gt;&lt;/frase_block&gt;</code></li>
+</ul>
+<p dir="auto">Все переводы строк и пробельные символы сохраняются при получении и обработке значений для:</p>
+<ul dir="auto">
+<li>тегов <code>btn_name: :btn_name</code></li>
+<li>тегов <code>&lt;!-- --&gt;</code></li>
+</ul>
+<p dir="auto">Это связано всего лишь с методами распознавания содержимого.</p>
+<p dir="auto">Таким образом в качестве значения сдвоенного тега может использоваться абсолютно любой набор символов. Можно включать в значение тега (в зависимости от нужд) переводы строк, пробелы и символы табуляции.</p>
+<p dir="auto">Ни в коем случае нельзя включать одинаковые сдвоенные теги друг в друга. Запись типа</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-kos">&lt;</span><span class="pl-ent">frase</span><span class="pl-c1">_block</span><span class="pl-kos">&gt;</span>
+   Фраза
+   <span class="pl-kos">&lt;</span><span class="pl-ent">frase</span><span class="pl-c1">_block</span><span class="pl-kos">&gt;</span>
+      фраза фраза фраза
+   <span class="pl-kos">&lt;/</span><span class="pl-ent">frase</span>_block<span class="pl-kos">&gt;</span>
+   Ещё одна фраза
+<span class="pl-kos">&lt;/</span><span class="pl-ent">frase</span>_block<span class="pl-kos">&gt;</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+<p dir="auto">недопустима.</p>
+<p dir="auto">Значением одиночного тега считается весь текст, начиная с первого символа непосредственно сразу после тега и заканчивая включительно символом, стоящим перед первым встреченным пробельным символом или переводом строки.</p>
+<p dir="auto">Таким образом в одиночные теги можно помещать только непробельные символы.</p>
+<p dir="auto">Однако, если одиночный тег и его содержимое заключены в скобки, причём между открывающей скобкой и тегом нет пробелов и переводов строки, в значении тега можно использовать и пробелы и переводы строки.</p>
+<p dir="auto">Если же одиночный тег и его значение записываются без скобок, они должны отделяться от остального текста хотя бы одним пробелом или переводом строки.</p>
+<p dir="auto">Если одиночный тег помещается в сдвоенный тег и не заключается в скобки, он должен отделяться от тегов сдвоенного тега хотя бы одним пробелом. Запись типа</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-c">&lt;!--ncolor:888888--&gt;</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+<p dir="auto">недопустима.</p>
+<p dir="auto">Можно использовать запись</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-c">&lt;!-- ncolor:888888 --&gt;</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+<p dir="auto">или</p>
+<div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-c">&lt;!--(nolor:888888)--&gt;</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    
+  </div></div>
+<h2 tabindex="-1" dir="auto"><a id="user-content-заключение" class="anchor" aria-hidden="true" tabindex="-1" href="#заключение"></a>Заключение</h2>
+<p dir="auto">Если Вы прочитали данное руководство залпом и составление диалогов для интерпретации модулем "easy.dialog" показалось вам слишком сложным, ознакомьтесь с другими возможностями составления диалогов в QSP. Чуть ниже даны ссылки на примеры от <strong>WladySpb</strong> и <strong>y4ndexx</strong>, а так же на пример реализации сложного диалога с помощью движка от <strong>Olegus.t.Gl</strong>. Может быть вам подойдёт что-нибудь из этого. Или перечитайте руководство ещё раз, и ознакомьтесь с примерами диалогов, составленных для модуля, в файле <code>eid.game_start.qsp</code>, чтобы лучше усвоить, как и что работает.</p>
+<p dir="auto">В тексте руководства использованы реплики из киносценариев и пьес разных авторов.</p>
+<p dir="auto">Огромное спасибо <strong>WladySpb</strong> и <strong>y4ndexx</strong>, подготовившим <a href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=72:-11&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" rel="nofollow">примеры диалогов для QSP</a>, добавленные в официальные материалы для разработчиков. Они мне очень помогли, когда я только познакомился с QSP. А так же - <strong>Olegus t.Gl</strong> за реализацию "диалога Чешира", откуда я почерпнул немало идей и решений. Диалоги, реализованные в примерах, а так же <a href="http://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=457&amp;Itemid=57" rel="nofollow">"диалог Чешира"</a>, я постарался воспроизвести в примере использования модуля. Смотри файл <code>eid.game_start.qsp</code> в архиве.</p>
+<p dir="auto">Также выражаю отдельную благодарность <strong>Oliver</strong>'у за неугасимый интерес и тёплые слова, которые поддерживают во мне желание работать над этим и другими проектами для <em><strong>Quest Soft Player</strong></em>.</p>
+<p dir="auto">Если вы хотите поддержать проект, подпишитесь на <a href="https://boosty.to/aleksversus" rel="nofollow">мой бусти</a> (это можно сделать бесплатно), а также на канал <a href="https://www.youtube.com/channel/UCwX8RW2B9yTUFdlivtCGAgA" rel="nofollow">"Пишем игры на QSP"</a> на Ютубе.</p>
+</article>
+</body>
+</html>
