@@ -14,13 +14,15 @@ showstat 0
 showacts 0
 showobjs 0
 !@ описание локации
-'<h1>Примеры диалогов, написанных под модуль easy.dialog v.3.0</h1>'
+'<h1>Примеры диалогов, написанных под модуль easy.dialog v.3.0.0</h1>'
 ''
-'Примеры взяты из примеров построения диалогов от WladySpb и y4ndexx для демонстрации возможностей модуля.
+'Диалоги для демонстрации возможностей модуля взяты из примеров от WladySpb и y4ndexx.
 Локации демонстрации кода опущены. Вы можете посмотреть, как построены диалоги, открыв исходники в репозитории: <a href="https://github.com/AleksVersus/easy.dialog" target="blank">https://github.com/AleksVersus/easy.dialog</a>
+
+<a href="http://aleksversus.narod.ru/index/easy_dialog_3/0-90" target="_blank">Онлайн руководство по использованию easy.dialog</a>
 
 '
 !@ переходы на другие локации:
-*p '<div><a href="EXEC:goto ''место;бар''">Войти в бар "Примеры Диалогов"</a></div>'
-*p '<div><a href="EXEC:goto ''место;банк''">Диалог от Чешира</a></div>'
+*p '<a href="EXEC:goto ''место;бар''"><div class="avs-act-button">Войти в бар "Примеры Диалогов"</div></a>'
+*p '<a href="EXEC:goto ''место;банк''"><div class="avs-act-button">Диалог от Чешира</div></a>'
 --- [start] ---------------------------------
