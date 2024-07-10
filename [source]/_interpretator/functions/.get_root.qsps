@@ -2,11 +2,13 @@ QSP-Game Получаем идентификатор реплики-корня
 
 $args[0] - идентификатор диалога
 # dialog.get_root
-local $res_ = ''
 local $code_ = {
 	local $type_ = @em.tag.getNum($dialogs_sets[$args[0]], 'type')
-	if ($type_ = 'quest' or $type_ = 'answer') and $res_ = '': $res_ = $args[0]
+	if ($type_ = 'quest' or $type_ = 'answer'):
+		$result = $args[0]
+		edb_list_for_each_break_ = 1
+		exit
+	end
 }
-@edb.list.for_each($dialogs_includes[$args[0]], $code_)
-$result = $res_
+$result = @edb.list.for_each($dialogs_includes[$args[0]], $code_)
 --- dialog.get_root ---------------------------------
