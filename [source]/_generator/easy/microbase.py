@@ -120,7 +120,7 @@ class DialogsBase:
 		output_lines.append(f"@edb.dt.new_col('count', 'num')\n")
 		output_lines.append(f"@edb.dt.new_col('position', 'str')\n")
 		output_lines.append(f"@edb.dt.new_col('includes', 'list')\n")
-		output_lines.append(f"@edb.dt.new_col('run', 'str')\n")
+		output_lines.append(f"@edb.dt.new_col('run', 'code')\n")
 		output_lines.append(f"$dialogs['primary_keys_type']='[rstr:16]'\n")
 		output_lines.append(f"@edb.new_table('dlgrels', 'Реляции для диалогов')\n")
 		output_lines.append(f"@edb.dt.new_col('uid', 'str')\n")
