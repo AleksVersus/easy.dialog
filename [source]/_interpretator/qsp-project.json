@@ -1,0 +1,24 @@
+{
+    "project": [
+        {
+            "folders": [{"path": "."}],
+            "module": "..\\..\\..\\[releases]\\easy.dialog\\lib\\easy.dialog.qsp"
+        },
+        {
+            "folders": [{"path": "..\\..\\..\\easy.database\\[source]"}],
+            "module": "..\\..\\..\\[releases]\\easy.dialog\\lib\\easy.database.qsp"
+        },
+        {
+            "folders": [{"path": "..\\..\\..\\easy.math.3\\[source]"}],
+            "module": "..\\..\\..\\[releases]\\easy.dialog\\lib\\easy.math.qsp"
+        },
+        {
+            "folders": [{"path": "..\\..\\[source.game]"}],
+            "module": "..\\..\\..\\[releases]\\easy.dialog\\eid.game_start.qsp"
+        }
+    ],
+    "player": "..\\..\\..\\..\\..\\QSP 580 QG 400b\\qspgui.exe",
+    "start": "..\\..\\..\\[releases]\\easy.dialog\\lib\\easy.dialog.qsp",
+    "preprocessor": "On",
+    "save_temp_files": "False"
+}

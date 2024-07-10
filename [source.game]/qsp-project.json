@@ -1,0 +1,40 @@
+{
+    "project": [
+        {
+            "module": "..\\..\\[releases]\\easy.dialog\\lib\\easy.dialog.qsp",
+            "folders": [
+                {
+                    "path": "..\\[source]"
+                }
+            ]
+        },
+        {
+            "module": "..\\..\\[releases]\\easy.dialog\\eid.game_start.qsp",
+            "folders": [
+                {
+                    "path": "."
+                }
+            ]
+        },
+        {
+            "module": "..\\..\\[releases]\\easy.dialog\\lib\\easy.math.qsp",
+            "folders": [
+                {
+                    "path": "..\\..\\easy.math.3\\[source]"
+                }
+            ]
+        },
+        {
+            "module": "..\\..\\[releases]\\easy.dialog\\lib\\easy.database.qsp",
+            "folders": [
+                {
+                    "path": "..\\..\\easy.database\\[source]"
+                }
+            ]
+        }
+    ],
+    "player": "C:\\Program Files\\qSpider\\qspider.exe",
+    "start": "..\\..\\[releases]\\easy.dialog\\eid.game_start.qsp",
+    "save_temp_files": "False",
+    "preprocessor": "Off"
+}
