@@ -17,7 +17,7 @@
             "module": "..\\..\\..\\[releases]\\easy.dialog\\eid.game_start.qsp"
         }
     ],
-    "player": "..\\..\\..\\..\\..\\QSP 580 QG 400b\\qspgui.exe",
+    "player": "..\\..\\..\\..\\..\\QSP 590 QG 410b\\qspgui.exe",
     "start": "..\\..\\..\\[releases]\\easy.dialog\\lib\\easy.dialog.qsp",
     "preprocessor": "On",
     "save_temp_files": "False"
