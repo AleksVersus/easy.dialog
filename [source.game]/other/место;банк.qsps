@@ -4,8 +4,10 @@ usehtml = 1
 bcolor = rgb(1,1,1)
 fcolor = rgb(136,136,136)
 lcolor = rgb(0, 180, 180)
-$LOGGG = 'пусто'
-*p '<span class="avs-green">На этой локации Вам представлен диалог от Чешира (взят из реализации Олегуса):
+
+*pl '<qsp-variable name="count"></qsp-variable>'	& !@< тестирование работоспособности counter в qSpider 
+
+*pl '<span class="avs-green">На этой локации Вам представлен диалог от Чешира (взят из реализации Олегуса):
 
 <a href="http://qsp.org/index.php?option=com_agora&task=topic&id=457&Itemid=57" class="avs-plain" target="blank">Посмотреть можно здесь.</a>
 

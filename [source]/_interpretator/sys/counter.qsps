@@ -20,5 +20,6 @@ elseif $lcase($trim(($args[0]))) = 'off':
 elseif $lcase($trim(($args[0]))) = 'on':
 	$counter['dialog.timer'] = 'dialog.timer'
 	settimer 100
+	count += 1	& !@< счётчик для проверки qSpider
 end
 --- dialog.timer ---------------------------------
