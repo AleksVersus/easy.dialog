@@ -5,12 +5,7 @@ QSP-Game стартовая локация Easy Dialog
 Поэтому здесь ничего не подключается.
 # dialog.start
 
-	!@ !@ подключение библиотеки easy.database
-	!@ inclib 'easy.database.qsp'
-	!@ !@ подключение библиотеки easy.math:
-	!@ inclib 'easy.math.qsp'
-	!@ включаем обработчик строки ввода
-	$usercom[] = 'dialog.usercom'
+	@dialog.usercom('on')
 	!@ включаем распознавание html
 	usehtml = 1
 	!@ моноширинный шрифт
@@ -21,8 +16,12 @@ QSP-Game стартовая локация Easy Dialog
 	showacts 0
 
 "<h1>Easy Dialog v.<<@dialog.version('str')>></h1>"
+
 'Интерпретатор диалогов для QSP'
-'Для плееров QSP версии 5.9.0 и выше. Модуль ориентирован на использование в <strong>qSpider</strong>.
+
+'Для плееров QSP с версией интерпретатора 5.9.0 и выше. Ваша версия: <<$qspver>>.
+
+Модуль ориентирован на использование в <strong>qSpider</strong>.
 
 Репозиторий с исходниками библиотеки:
 

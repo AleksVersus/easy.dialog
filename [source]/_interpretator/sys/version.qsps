@@ -3,7 +3,7 @@ QSP-Game version of module
 !@ $0 - type of version tag: empty(default) - tuple, 'str' - string
 !@ %r - version tag: tuple of string
 # dialog.version
-%result = [3,0,0] 	& !@ Correct version of module.
+%result = [3,1,0] 	& !@ Correct version of module.
 
 if $args[0] = 'str':
 	$result = $dyneval({
