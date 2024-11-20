@@ -35,6 +35,6 @@
     ],
     "player": "C:\\Users\\aleks\\AppData\\Local\\qSpider\\qSpider.exe",
     "start": "..\\..\\[releases]\\easy.dialog\\eid.game_start.qsp",
-    "save_temp_files": "False",
+    "save_temp_files": false,
     "preprocessor": "Off"
 }

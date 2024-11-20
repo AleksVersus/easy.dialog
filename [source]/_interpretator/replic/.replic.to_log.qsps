@@ -41,8 +41,7 @@ else:
 	!@ строки разбиваем на массив:
 	local $frase_array_
 	!@ @em.str.in_arr($frase_block_,'$frase_array_')
-	scanstr '$frase_array_', $frase_block_, '^(.*)$', 1
-	$LOGGG = @em.arr.print('$frase_array_')
+	scanstr '$frase_array_', $frase_block_, '[\s\n]*([^\n]+)\s*', 1
 	!@ в лог добавляем разделитель, если он ещё не добавлен
 	if arrpos('$DIALOG_REPLIC_LOG', '<avs-hide-replics>') = -1: @dialog.log.add_frase('<avs-hide-replics>')
 	!@ теперь перебираем массив с фразами, закидывая их в лог после разделителя
