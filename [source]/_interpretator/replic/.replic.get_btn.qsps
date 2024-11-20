@@ -9,13 +9,13 @@ local $rbody_ = $dialogs_body[$args[0]]
 local $rparent_ = $dialogs_position[$args[0]]
 
 !@ получаем роль реплики
-local $ractor_ = @em.tag.getNum($rsets, 'actor_this')
-if $ractor_ = '': $ractor_ = @em.tag.getNum($args[1], 'actor_act')
+local $ractor_ = @em.tag.get_num($rsets, 'actor_this')
+if $ractor_ = '': $ractor_ = @em.tag.get_num($args[1], 'actor_act')
 local $wrap_code_ = $iif($ractor_ = '', @dialog.get_wrap('act_btn'), $dialogs_run[$ractor_])
 
 !@ формируем название реплики
-local $ractname_ = @em.tag.getCont($rsets_, 'btn_name')
-if $ractname_ = '':	$ractname_ = @dialog.btn.get_name($rbody_, val(@em.tag.getNum($args[1], 'btn_length')))
+local $ractname_ = @em.tag.get_cont($rsets_, 'btn_name')
+if $ractname_ = '':	$ractname_ = @dialog.btn.get_name($rbody_, val(@em.tag.get_num($args[1], 'btn_length')))
 
 if $ractname_ <> '':
 	$ractname_ = $dyneval($wrap_code_, $args[0], $rparent_, $ractname_)

@@ -18,7 +18,7 @@ actors="hero; alcoholic;"
 	</wrap.btn>
 	<wrap.frase>
 		!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
-		local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
+		local $name_ = @em.tag.get_num($dialogs_sets[$args[0]], 'name')
 		$result += '<div class="avs-hero-replic">'
 			$result += '<span style="color:#000000;"><<$name_>>:</span>'
 			$result += '<span style="color:#000000;"> — <<$args[2]>></span>'
@@ -32,7 +32,7 @@ actors="hero; alcoholic;"
 	<default_passive>
 	<wrap.frase>
 		!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
-		local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
+		local $name_ = @em.tag.get_num($dialogs_sets[$args[0]], 'name')
 		$result += '<div class="avs-barmen-replic">'
 			$result += '<span style="color:#000000;"><<$name_>>:</span>'
 			$result += '<span style="color:#000000;"> — <<$args[2]>></span>'

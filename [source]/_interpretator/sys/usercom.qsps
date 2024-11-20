@@ -11,7 +11,7 @@ QSP-Game Отладчик для модуля диалогов
 	end
 !@ ----------------- switch on-off of input-string -----------------
 
-if $args[0] = '' and if instr($user_text, 'eid') = 1:
+if $args[0] = '' and instr($user_text, 'eid') = 1:
 		local $command_line_ = $trim($mid($user_text, 4))
 		if $command_line_ = 'help':
 			*pl '<h3>Help / Помощь</h3>'
@@ -25,7 +25,7 @@ if $args[0] = '' and if instr($user_text, 'eid') = 1:
 			*pl '* refs - вывести в дополнительное описание таблицу с короткими именами диалогов.'
 			*pl '* log - вывести в доп.описание сохранённый лог реплик.'
 			*pl '* html - включить/отключить распознавание HTML в плеере.'
-			*pl '* ИНДЕКС_ДЛЯ_DIALOG_VALUE= — если ввести текстовый индекс, а затем поставить знак равенства, в окно дополнительного описания будет выведено значение из массива $DIALOG_VALUE под указанным индексомю'
+			*pl '* ИНДЕКС_ДЛЯ_DIALOG_VALUE= — если ввести текстовый индекс, а затем поставить знак равенства, в окно дополнительного описания будет выведено значение из массива $DIALOG_VALUE под указанным индексом.'
 		elseif $command_line_ = 'version' or $command_line_ = 'v':
 			*pl @dialog.version('str')
 		elseif $command_line_ = 'clr':

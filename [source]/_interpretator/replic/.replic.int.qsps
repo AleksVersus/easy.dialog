@@ -34,7 +34,7 @@ $code_ = { $answer_pos_[a] = $args[0] & a += 1 }
 		if @dialog.replic.chk_cond($args[0]):
 			!@ если реплика прошла проверку на соответствие условиям
 			!@ определяем тип реплики
-			local $type_ = @em.tag.getNum($dialogs_sets[$args[0]], 'type')
+			local $type_ = @em.tag.get_num($dialogs_sets[$args[0]], 'type')
 			if $type_ = 'quest':
 				!@ если это реплика неписи (пассивная)
 				local pos_ = @dialog.mt.add($args[0])
@@ -62,9 +62,9 @@ $code_ = { $answer_pos_[a] = $args[0] & a += 1 }
 
 
 local $rsets_ = $dialogs_sets[$args[0]]		&	!@	настройки реплики
-local $rtype_ = @em.tag.getNum($rsets_, 'type') &	!@	Тип реплики
-local $replics_repeat_ = @em.tag.getNum($now_sets_, 'repeat')	& !@ число повторов реплики
-local $replics_shuffle_ = @em.tag.getNum($now_sets_, 'shuffle')	& !@ порядок воспроизведения
+local $rtype_ = @em.tag.get_num($rsets_, 'type') &	!@	Тип реплики
+local $replics_repeat_ = @em.tag.get_num($now_sets_, 'repeat')	& !@ число повторов реплики
+local $replics_shuffle_ = @em.tag.get_num($now_sets_, 'shuffle')	& !@ порядок воспроизведения
 
 !@ когда есть список активируемых реплик. Выгружаются все.
 if a > 0:

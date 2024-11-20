@@ -11,24 +11,24 @@ $args[1] - текущие настройки ветки
 local $rbody_ = $trim($dialogs_body[$args[0]])
 if strcomp($rbody_, '[\n\r\s\t]*'): exit & !@ если реплика пуста, не выводим её на экран
 local $rsets_ = $dialogs_sets[$args[0]]
-local $rtype_ = @em.tag.getNum($rsets_, 'type')
+local $rtype_ = @em.tag.get_num($rsets_, 'type')
 
 !@ получаем роль реплики
-local $ractor_ = @em.tag.getNum($rsets_, 'actor_this')
+local $ractor_ = @em.tag.get_num($rsets_, 'actor_this')
 
 !@ блок фраз уже очищен от преформатирования в генераторе, его можно не чистить.
-$frase_block_= @em.tag.getCont($rbody_,'frase_block')
+$frase_block_= @em.tag.get_cont($rbody_,'frase_block')
 if $frase_block_ = '':
 	if $rtype_='quest':
 		!@ реплика пассивная. Если конкретная роль для реплики не указана, вычисляем
 		!@ пассивную роль, назначенную ветке:
-		if $ractor_ = '': $ractor_ = @em.tag.getNum($args[1], 'actor_pass')
+		if $ractor_ = '': $ractor_ = @em.tag.get_num($args[1], 'actor_pass')
 		!@ получаем обёртку:
 		$wrap_code_ = $iif($ractor_ = '', @dialog.get_wrap('pass_frase'), $dialogs_body[$ractor_])
 	elseif $rtype_='answer':
 		!@ реплика активная. Если конкретная роль для реплики не указана, вычисляем
 		!@ активную роль, назначенную ветке:
-		if $ractor_ = '': $ractor_ = @em.tag.getNum($args[1], 'actor_act')
+		if $ractor_ = '': $ractor_ = @em.tag.get_num($args[1], 'actor_act')
 		!@ получаем обёртку:
 		$wrap_code_ = $iif($ractor_ = '', @dialog.get_wrap('act_frase'), $dialogs_body[$ractor_])
 	end
@@ -40,12 +40,14 @@ else:
 	!@ Если мы имеем дело с блоком фраз,
 	!@ строки разбиваем на массив:
 	local $frase_array_
-	@em.str.inArr($frase_block_,'$frase_array_')
+	!@ @em.str.in_arr($frase_block_,'$frase_array_')
+	scanstr '$frase_array_', $frase_block_, '^(.*)$', 1
+	$LOGGG = @em.arr.print('$frase_array_')
 	!@ в лог добавляем разделитель, если он ещё не добавлен
 	if arrpos('$DIALOG_REPLIC_LOG', '<avs-hide-replics>') = -1: @dialog.log.add_frase('<avs-hide-replics>')
 	!@ теперь перебираем массив с фразами, закидывая их в лог после разделителя
 	loop while arrsize('$frase_array_') > 0:
-		$frase_actor_ = @em.tag.getNum($frase_array_[0], 'actor')
+		$frase_actor_ = @em.tag.get_num($frase_array_[0], 'actor')
 		$replic_text_ = $replace($frase_array_[0], '<'+'actor:<<$frase_actor_>>'+'>')
 		if $replic_text_ <> '':
 			if $frase_actor_ <> '':

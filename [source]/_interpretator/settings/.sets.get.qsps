@@ -7,20 +7,20 @@ local $rtype_, $rsets_
 local $actor_act_, $actor_pass_, $act_length_, $rrepeat_, $rshuffle_
 loop while $rid_ <> '':
 	$rsets_ = $dialogs_sets[$rid_]
-	$rtype_ = @em.tag.getNum($rsets_, 'type')
+	$rtype_ = @em.tag.get_num($rsets_, 'type')
 	if $rtype_ = 'dialog':
-		if $actor_act_ = '': $actor_act_ = @em.tag.getNum($rsets_, 'default_active')
-		if $actor_pass_ = '': $actor_pass_ = @em.tag.getNum($rsets_, 'default_passive')
+		if $actor_act_ = '': $actor_act_ = @em.tag.get_num($rsets_, 'default_active')
+		if $actor_pass_ = '': $actor_pass_ = @em.tag.get_num($rsets_, 'default_passive')
 		!@ эти значения задаются в корневой реплике, а не в диалоге:
 		if $act_length_ = '': $act_length_ = $str(DIALOG_VALUE['default_buttons_length'])
 		if $rrepeat_ = '': $rrepeat_ = $DIALOG_VALUE['default_replics_repeat']
 		if $rshuffle_ = '': $rshuffle_ = $DIALOG_VALUE['default_replics_shuffle']
 	else:
-		if $actor_act_ = '': $actor_act_ = @em.tag.getNum($rsets_, 'actor_act')
-		if $actor_pass_ = '': $actor_pass_ = @em.tag.getNum($rsets_, 'actor_pass')
-		if $act_length_ = '': $act_length_ = @em.tag.getNum($rsets_, 'btn_length')
-		if $rrepeat_ = '': $rrepeat_ = @em.tag.getNum($rsets_, 'repeat')
-		if $rshuffle_ = '': $rshuffle_ = @em.tag.getNum($rsets_, 'shuffle')
+		if $actor_act_ = '': $actor_act_ = @em.tag.get_num($rsets_, 'actor_act')
+		if $actor_pass_ = '': $actor_pass_ = @em.tag.get_num($rsets_, 'actor_pass')
+		if $act_length_ = '': $act_length_ = @em.tag.get_num($rsets_, 'btn_length')
+		if $rrepeat_ = '': $rrepeat_ = @em.tag.get_num($rsets_, 'repeat')
+		if $rshuffle_ = '': $rshuffle_ = @em.tag.get_num($rsets_, 'shuffle')
 	end
 	if $actor_act_ = '' or $actor_pass_ = '' or $act_length_ = '' or $rrepeat_ = '' or $rshuffle_ = '':
 		!@ если хотя бы одна настройка не найдна, пытаемся продолжать поиск

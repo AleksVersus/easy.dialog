@@ -114,7 +114,7 @@ if args[0] = 1:
 	!@ REPLIC_13
 	$dialogs_id['IRыэKГШ2EyRИ_6юЬ'] = 'IRыэKГШ2EyRИ_6юЬ'
 	$dialogs_body['IRыэKГШ2EyRИ_6юЬ'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
-local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
+local $name_ = @em.tag.get_num($dialogs_sets[$args[0]], 'name')
 $result += '<div class="avs-hero-replic">'
 $result += '<span style="color:#000000;"><<$name_>>:</span>'
 $result += '<span style="color:#000000;"> — <<$args[2]>></span>'
@@ -130,7 +130,7 @@ $result += '<div class="avs-act-button"><<$args[2]>></div>'}
 	!@ REPLIC_14
 	$dialogs_id['EtшрЛнУТqБЙZ9Пья'] = 'EtшрЛнУТqБЙZ9Пья'
 	$dialogs_body['EtшрЛнУТqБЙZ9Пья'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
-local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
+local $name_ = @em.tag.get_num($dialogs_sets[$args[0]], 'name')
 $result += '<div class="avs-barmen-replic">'
 $result += '<span style="color:#000000;"><<$name_>>:</span>'
 $result += '<span style="color:#000000;"> — <<$args[2]>></span>'
@@ -301,7 +301,7 @@ if args[0] = 3:
 	!@ REPLIC_32
 	$dialogs_id['QУкicBwМFPKСJЖыШ'] = 'QУкicBwМFPKСJЖыШ'
 	$dialogs_body['QУкicBwМFPKСJЖыШ'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
-local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
+local $name_ = @em.tag.get_num($dialogs_sets[$args[0]], 'name')
 $result += '<div class="avs-hero-replic">'
 $result += '<span style="color:#000000;"><<$name_>>:</span>'
 $result += '<span style="color:#000000;"> — <<$args[2]>></span>'
@@ -317,7 +317,7 @@ $result += '<div class="avs-act-button"><<$args[2]>></div>'}
 	!@ REPLIC_33
 	$dialogs_id['jёВкОцk0lГmScЖiм'] = 'jёВкОцk0lГmScЖiм'
 	$dialogs_body['jёВкОцk0lГmScЖiм'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
-local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
+local $name_ = @em.tag.get_num($dialogs_sets[$args[0]], 'name')
 $result += '<div class="avs-barmen-replic">'
 $result += '<span style="color:#000000;"><<$name_>>:</span>'
 $result += '<span style="color:#000000;"> — <<$args[2]>></span>'
@@ -1394,7 +1394,7 @@ if args[0] = 14:
 	!@ REPLIC_142
 	$dialogs_id['RsyщSvqюPfIы1РЪa'] = 'RsyщSvqюPfIы1РЪa'
 	$dialogs_body['RsyщSvqюPfIы1РЪa'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
-local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
+local $name_ = @em.tag.get_num($dialogs_sets[$args[0]], 'name')
 $result += '<div class="avs-hero-replic">'
 $result += '<span style="color:#ffffff;font-weight:bold;"><<$name_>>:</span>'
 $result += '<span style="color:#dddddd;"> — <<$args[2]>></span>'
@@ -1410,7 +1410,7 @@ $result += '<div class="avs-act-button"><<$args[2]>></div>'}
 	!@ REPLIC_143
 	$dialogs_id['ZrIvЩй9DДрРBDвwZ'] = 'ZrIvЩй9DДрРBDвwZ'
 	$dialogs_body['ZrIvЩй9DДрРBDвwZ'] = {!@ внешний вид реплик в логе диалога Извлекаем имя из роли:
-local $name_ = @em.tag.getNum($dialogs_sets[$args[0]], 'name')
+local $name_ = @em.tag.get_num($dialogs_sets[$args[0]], 'name')
 $result += '<div class="avs-hero-replic">'
 $result += '<span style="color:#c0c0c0;font-weight:bold;"><<$name_>>:</span>'
 $result += '<span style="color:#aaaaaa;"> — <<$args[2]>></span>'

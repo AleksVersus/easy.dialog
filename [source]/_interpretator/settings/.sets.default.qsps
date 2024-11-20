@@ -3,7 +3,7 @@ QSP-Game Выставляем дефолтные настройки диалог
 $args[0] - идентификатор диалога
 # dialog.sets.default
 !@ число строк диалога, одновременно видимых на экране:
-local strings_ = val(@em.tag.getNum($dialogs_sets[$args[0]], 'strings'))
+local strings_ = val(@em.tag.get_num($dialogs_sets[$args[0]], 'strings'))
 DIALOG_VALUE['default_screen_replics_number'] = iif(strings_ > 0, strings_, 10)
 
 !@ Данные настройки целесообразнее хранить в переменных
