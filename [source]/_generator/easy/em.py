@@ -1,35 +1,27 @@
 import re
-import random
+from random import randint
 
 class Str:
 
 	@staticmethod
-	def widetrim(text:str, strip=False):
-		em_str_widetrim_temp_array = text.split('\n')
-		Str.trimmer(em_str_widetrim_temp_array)
-		result = ''
-		for string in em_str_widetrim_temp_array:
-			if strip:
-				result += string.strip() + '\n'
-			else:
-				result += string + '\n'
-		return result[0:-1]
+	def widetrim(text:str, strip=False) -> str:
+		""" Trim texts around empty strings """
+		lines = text.split('\n')
+		lines = Str.trimmer(lines)
+		if strip:
+			lines = [line.strip() for line in lines]
+		return '\n'.join(lines)
 		
 	@staticmethod
-	def trimmer(em_strs:list):
-		run_1 = True
-		run_2 = True
-		while (run_1 or run_2) and len(em_strs)>0:
-			first = re.match(r'^[\s\n]*$', em_strs[0])
-			last = re.match(r'^[\s\n]*$', em_strs[-1])
-			if first is None:
-				run_1 = False
-			else:
-				del em_strs[0]
-			if last is None or len(em_strs)==0:
-				run_2 = False
-			else:
-				del em_strs[-1]
+	def trimmer(em_strs:list) -> list:
+		""" Cut first and last strings. """
+		em_strs = em_strs[:]
+		EMPTIES = re.compile(r'^[\s\n\r\t]*$')
+		while em_strs and EMPTIES.match(em_strs[0]):
+			del em_strs[0]
+		while em_strs and EMPTIES.match(em_strs[-1]):
+			del em_strs[-1]
+		return em_strs
 
 	@staticmethod
 	def random(length=8, include='', exclude='', modes=None):
@@ -85,7 +77,7 @@ class Str:
 			symbols = new_symbols
 		result = ''
 		for i in range(length):
-			result += str(symbols[random.randint(0, len(symbols)-1)])
+			result += str(symbols[randint(0, len(symbols)-1)])
 		return result
 
 	@staticmethod
@@ -228,15 +220,29 @@ class Tag:
 		else:
 			return string_line
 
-def gen_uuid():
+def gen_uuid() -> str:
+	""" UUID-generator """
 	symbols = '0123456789abcdef'
-	result = ''
+	result = []
 	for i in range(36):
 		if i in (8, 13, 18, 23):
-			result += '-'
+			result.append('-')
 		else:
-			result += symbols[random.randint(1, len(symbols)-1)]
-	return result
+			result.append(symbols[randint(0, 15)])
+	return ''.join(result)
+
+def main():
+	text = """    
+   
+   первая строка 1    
+вторая строка 2
+   
+  третья строка
+   
+       """
+	print(Str.widetrim(text))
+	print('>>>')
+	print(Str.widetrim(text, True))
 
 if __name__ == "__main__":
-	...
+	main()
