@@ -1,10 +1,10 @@
 import re
-from random import randint
+from random import (randint, choices)
 
 class Str:
 
 	@staticmethod
-	def widetrim(text:str, strip=False) -> str:
+	def widetrim(text:str, strip:bool=False) -> str:
 		""" Trim texts around empty strings """
 		lines = text.split('\n')
 		lines = Str.trimmer(lines)
@@ -24,7 +24,8 @@ class Str:
 		return em_strs
 
 	@staticmethod
-	def random(length=8, include='', exclude='', modes=None):
+	def random(length:int=8, include:str='', exclude:str='', modes:dict=None) -> str:
+		""" Get random string. """
 		mode = {
 			'decimal': False, r'\d': False,
 			'heximal': False, r'\h': False,
@@ -40,71 +41,37 @@ class Str:
 		if modes is not None:
 			mode.update(modes)
 		key_choose = False
-		symbols, new_symbols = '', ''
+		symbols = []
 		if mode['only-this']:
-			symbols = include
+			symbols = list(include)
 		else:
 			if mode[r'\all'] or mode[r'\d'] or mode['decimal']:
-				symbols += '1234567890'
+				symbols.extend(list('1234567890'))
 				key_choose = True
 			if mode[r'\all'] or mode[r'\h'] or mode['heximal']:
-				symbols += '1234567890abcdef'
+				symbols.extend(list('1234567890abcdef'))
 				key_choose = True
 			if mode[r'\all'] or mode[r'\s'] or mode['space']:
-				symbols += '\t '
+				symbols.extend(list('\t '))
 				key_choose = True
 			if mode[r'\all'] or mode[r'\w']:
-				symbols += 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'
-				symbols += 'ЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮёйцукенгшщзхъфывапролджэячсмитьбю'
-				symbols += '1234567890_'
+				symbols.extend(list('QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'))
+				symbols.extend(list('ЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮёйцукенгшщзхъфывапролджэячсмитьбю'))
+				symbols.extend(list('1234567890_'))
 				key_choose = True
 			if mode[r'\all'] or mode[r'\я'] or mode['cyrillic']:
-				symbols += 'ЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮёйцукенгшщзхъфывапролджэячсмитьбю'
+				symbols.extend(list('ЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮёйцукенгшщзхъфывапролджэячсмитьбю'))
 				key_choose = True
 			if mode[r'\all'] or mode[r'\z'] or mode['latinic']:
-				symbols += 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'
+				symbols.extend(list('QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'))
 				key_choose = True
 			if not key_choose:
-				symbols = r'QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>?1234567890'
-				symbols += r"!@#$%^&*()_+-=`~qwertyuiop[]asdfghjkl;'zxcvbnm,./\|№"
-				symbols += r"ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ"
-			symbols += include
-			while len(symbols)>0:
-				temp = symbols[0]
-				if not temp in exclude:
-					new_symbols += temp
-				symbols = symbols.replace(temp, '')
-			symbols = new_symbols
-		result = ''
-		for i in range(length):
-			result += str(symbols[randint(0, len(symbols)-1)])
-		return result
-
-	@staticmethod
-	def thin(string:str, sparcity=1, separator=' ', modes=None):
-		mode = {
-			'up': False,
-			'left': False,
-			'right': False
-		}
-		if modes is not None:
-			mode.update(modes)
-		result = []
-		if mode['up']:
-			while len(string)>0:
-				t = string[len(string)-(sparcity):]
-				string = string[0:len(string)-(sparcity)]
-				result.append(t)
-			result.reverse()
-		else:
-			while len(string)>0:
-				t = string[0:sparcity]
-				string = string[sparcity:]
-				result.append(t)
-		rr = separator.join(result)
-		if mode['left']: rr = separator + rr
-		if mode['right']: rr += separator
-		return rr
+				symbols = list(r'QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>?1234567890')
+				symbols.extend(list(r"!@#$%^&*()_+-=`~qwertyuiop[]asdfghjkl;'zxcvbnm,./\|№"))
+				symbols.extend(list(r"ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ"))
+			symbols.extend(list(include))
+			symbols = list(set(filter((lambda char: not char in exclude), symbols)))
+		return ''.join(choices(symbols, k=length))
 
 class Tag:
 
