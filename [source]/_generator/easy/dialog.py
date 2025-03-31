@@ -1,6 +1,7 @@
 import os
 
 import re
+from typing import (Dict, Union, List)
 
 import pandas
 
@@ -13,14 +14,17 @@ class EasyDialog:
 	"""
 	def __init__(self, dialog_file_path:str) -> None:
 		""" Constructor of Dialog's Object """
-		self.path = os.path.abspath(dialog_file_path)
+		self.path:str = os.path.abspath(dialog_file_path)
 		with open(self.path, 'r', encoding='utf-8') as fp:
-			self.body = fp.read()
-		self.uid = em.Tag.get_num(self.body, 'dialog_usrid')
+			self.body:str = fp.read()
+		self.uid:str = em.Tag.get_num(self.body, 'dialog_usrid')
 		if self.uid == '':
 			raise Exception('Ошибка! Не указано уникальное название диалога.' + self.path)
-		self.tags_source = None
-		self.microbase = {
+		self.tags_source:Dict[str, Union[str, int]] = {
+			'dialog-body': '',
+			'tags-counter': 0
+		}
+		self.microbase:Dict[str, Dict[str, str]] = {
 			'replic-source': {},
 			'replic-id': {},
 			'replic-position': {},
@@ -30,9 +34,9 @@ class EasyDialog:
 			'replic-includes': {},
 			'replic-run': {},
 		}
-		self.dialog_pk = None # id root (dialog primary key)
-		self.actors = []
-		self.mb_lines_count = 0
+		self.dialog_pk:str = None # id root (dialog primary key)
+		self.actors:List[str] = []
+		self.mb_lines_count:int = 0
 		# конвертируем диалог в тегированный вид
 		self.get_tags_source()
 		# помещаем диалог в микробазу
@@ -341,7 +345,7 @@ class EasyDialog:
 					self.microbase['replic-position'][key] = f'{self.uid}.' + self.microbase['replic-position'][key]
 		self.save_temp_file('.\\04_ids_replace.xlsx', save_temp_file)
 
-	def mb_replic_append(self, number:int, source:str, rid:str, position:str, marker=None, rtype='') -> None:
+	def mb_replic_append(self, number:int, source:str, rid:str, position:str, marker=None, rtype:str='') -> None:
 		self.microbase['replic-source'][str(number)] = source
 		self.microbase['replic-id'][str(number)] = rid
 		self.microbase['replic-position'][str(number)] = position
@@ -366,7 +370,7 @@ class EasyDialog:
 				return key
 		return None
 
-	def get_microbase(self) -> dict:
+	def get_microbase(self) -> Dict[str, Dict[str, str]]:
 		return self.microbase
 
 	def save_temp_file(self, file_path, save_temp_file):

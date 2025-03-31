@@ -4,26 +4,31 @@ import pandas
 
 from . import em
 from .dialog import EasyDialog
+from typing import (List, Dict)
 
 class DialogsBase:
 	"""
 		Microbase for all dialogs in Easy Dialog's Generator.
 	"""
-	def __init__(self, dialogs:list, split_code=0, output_path=".\\dialogs_table.qsps") -> None:
+	def __init__(self,
+				dialogs:List[str],
+				split_code:int=0,
+				output_path:str=".\\dialogs_table.qsps"
+			) -> None:
 		"""
 			Replics DataTable Columns
 			dialogs - list of the paths to dialogs files (dialogs in edsynt format)
 			split_code - if not 0, replics split on `if args[0] = <split_code>` constructions
 				for use in cycled filling of dialog
 		"""
-		self.output_path = os.path.abspath(output_path)
-		self.split_code = (split_code if split_code > 0 else 0)
+		self.output_path:str = os.path.abspath(output_path)
+		self.split_code:int = split_code
 		# извлекаем диалоги в список для последующего конвертирования
-		self.dialogs = []
-		for d in dialogs:
-			self.dialogs.append(EasyDialog(d))
+		self.dialogs:List[EasyDialog] = []
+		for d_path in dialogs:
+			self.dialogs.append(EasyDialog(d_path))
 		# формируем микробазу для реплик
-		self.replics = {}
+		self.replics:Dict[str, List[str]] = {}
 		self.replics['ids'] = []		# уникальный идентификатор реплики
 		self.replics['source'] = []		# фраза, фразовый блок, или обёртка фразы
 		self.replics['position'] = []	# идентификатор родителя
@@ -32,15 +37,16 @@ class DialogsBase:
 		self.replics['type'] = []		# тип реплики
 		self.replics['sets'] = []		# настройки реплики	
 		# табличка сопоставления старых и новых идентификаторов
-		self.ids = {}
+		self.ids:Dict[List[str]] = {}
 		self.ids['old'] = ['']
 		self.ids['new'] = ['']
 		# табличка сопоставления меток и идентификаторов
-		self.ids_mark = {}
+		self.ids_mark:Dict[List[str]] = {}
 		self.ids_mark['ids'] = ['']
 		self.ids_mark['marker'] = ['']
 
 	def to_qsps(self) -> None:
+		""" Convert edg to qsps. """
 		self.fill_replics_table() # заполняем общую микробазу реплик
 		self.gen_qsps() # генерируем валидный код QSPS
 
@@ -70,6 +76,7 @@ class DialogsBase:
 			pandas.DataFrame(self.ids_mark).to_excel('.\\mb_markers_.xlsx')
 
 	def gen_qsps(self) -> None:
+		""" Generate qsps-code from dialogs """
 		output_lines = []
 		unique_ids = []
 		output_lines.append(f"QSP-Game Таблица диалогов\n")
@@ -104,7 +111,7 @@ class DialogsBase:
 					output_lines.append(f'end\n')
 					count = 0
 					args_count += 1
-		output_lines.append(f'- dialogs_table\n')
+		output_lines.append(f'-- dialogs_table\n')
 
 		output_lines.append(f'\nИнициализация таблицы данных диалогов:\n')
 		output_lines.append(f'# dialogs_init\n')
@@ -122,13 +129,13 @@ class DialogsBase:
 		output_lines.append(f"$dlgrels['primary_keys_type']='[rstr:16]'\n")
 		for uid in unique_ids:
 			output_lines.append(f"$dlgrels_id['{uid[0]}'] = '{uid[0]}' & $dlgrels_uid['{uid[0]}'] = '{uid[1]}'\n")
-		output_lines.append(f'- dialogs_init\n')
+		output_lines.append(f'-- dialogs_init\n')
 
 		if self.split_code > 0:
 			output_lines.append(f'\nЦикл для последовательной подгрузки реплик группами:\n')
 			output_lines.append(f'# dialogs_load\n')
 			output_lines.append(f'loop local i = 0 while i < {args_count} step i += 1:\n\t@dialogs_table(i)\nend\n')
-			output_lines.append(f'- dialogs_load\n')
+			output_lines.append(f'-- dialogs_load\n')
 
 		with open(self.output_path, 'w', encoding='utf-8') as fp:
 			fp.writelines(output_lines)
@@ -198,8 +205,7 @@ class DialogsBase:
 		""" генерируем уникальный идентификатор реплики """
 		while True:
 			new_id = em.Str.random(16, modes={r'\all': True}, exclude='\t ')
-			if not new_id in self.ids['new']:
-				return new_id
+			if not new_id in self.ids['new']: return new_id
 
 	def id_by_marker(self, marker:str) -> str:
 		if marker in self.ids_mark['marker']:

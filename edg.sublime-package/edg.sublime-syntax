@@ -47,14 +47,14 @@ contexts:
   qsp_syntax:
     - match: ^\s*<(wrap\.btn|wrap\.frase)>\s*$
       scope: keyword.operator
-      embed: scope:source.locations.QSP
+      embed: scope:source.locations.qsp
       embed_scope: markup.raw
       escape: ^\s*<\/\1>\s*$
       escape_captures:
         0: keyword.operator
     - match: <(dynamic_code|if)>
       scope: keyword.operator
-      embed: scope:source.locations.QSP
+      embed: scope:source.locations.qsp
       embed_scope: markup.raw
       escape: <\/\1>
       escape_captures:
