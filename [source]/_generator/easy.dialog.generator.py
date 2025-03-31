@@ -16,4 +16,7 @@ def main() -> None:
 	eid.to_qsps()
 
 if __name__ == '__main__':
+	import time
+	old = time.time()
 	main()
+	print(time.time() - old)

@@ -145,7 +145,7 @@ class DialogsBase:
 		frase_block = em.Tag.get_cont(source, 'frase_block').split('\n')
 		for i, frase in enumerate(frase_block):
 			actor_id = em.Tag.get_num(frase, 'actor')
-			if actor_id != '':
+			if actor_id:
 				actor_id = self.get_new_id(actor_id)
 				frase_block[i] = em.Tag.del_num(frase, 'actor', rpl=f'<actor:{actor_id}>')
 		fb = "\n".join(frase_block)
@@ -222,13 +222,13 @@ class DialogsBase:
 	def id_append(self, old_id:str, new_id:str) -> None:
 		""" добавляем старый и новый инедекс в табличку сопоставлений """
 		if old_id in self.ids['old']:
-			raise ValueError(f'[96]: ID "{old_id}" already exists! Идентификатор "{old_id}" уже существует!')
+			raise ValueError(f'[96]: ID "{old_id}" already exists!')
 		self.ids['old'].append(old_id)
 		self.ids['new'].append(new_id)
 
 	def marker_append(self, old_id:str, marker:str) -> None:
 		if marker in self.ids_mark['marker']:
-			raise ValueError(f'[98]: The label "{marker}" already exists! Метка "{marker}" уже существует!')
+			raise ValueError(f'[98]: The label "{marker}" already exists!')
 		self.ids_mark['marker'].append(marker)
 		self.ids_mark['ids'].append(old_id)
 			
