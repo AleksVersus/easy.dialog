@@ -1,4 +1,4 @@
-import re
+import re, uuid
 from random import (randint, choices)
 
 from typing import List
@@ -164,14 +164,7 @@ class Tag:
 
 def gen_uuid() -> str:
 	""" UUID-generator """
-	symbols = '0123456789abcdef'
-	result = []
-	for i in range(36):
-		if i in (8, 13, 18, 23):
-			result.append('-')
-		else:
-			result.append(symbols[randint(0, 15)])
-	return ''.join(result)
+	return str(uuid.uuid4()).lower()
 
 def main():
 	...
